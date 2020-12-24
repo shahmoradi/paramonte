@@ -815,14 +815,14 @@ that test all aspects of the ParaMonte kernel library.</p>
   </li>
   <li>
     <p>The issue of Windows file locking, that led to the occasional crashes of the 
-ParaDRAM and ParaDISE simulations in <code class="language-plaintext highlighter-rouge">multiChain</code> parallelism mode, is now resolved.</p>
+ParaDRAM and ParaDISE simulations in <code>multiChain</code> parallelism mode, is now resolved.</p>
   </li>
   <li>
     <p>All overflow / underflow exceptions are now properly handled.</p>
   </li>
   <li>
-    <p>The <code class="language-plaintext highlighter-rouge">ParaDRAM</code> class in <code class="language-plaintext highlighter-rouge">paramonte</code> is now also available 
-as <code class="language-plaintext highlighter-rouge">Paradram</code> and <code class="language-plaintext highlighter-rouge">paradram</code>, although the original label 
+    <p>The <code>ParaDRAM</code> class in <code>paramonte</code> is now also available 
+as <code>Paradram</code> and <code>paradram</code>, although the original label 
 will remain the default preferred method of ParaDRAM 
 object instantiation.</p>
   </li>
@@ -832,7 +832,7 @@ object instantiation.</p>
 
 <ul>
   <li>The interactive mode for displaying plots is now automatically on. 
-The plots are not automatically displayed in <code class="language-plaintext highlighter-rouge">ipython</code> sessions.</li>
+The plots are not automatically displayed in <code>ipython</code> sessions.</li>
 </ul>
 
 <h3 id="version--231--november-15-2020">Version  2.3.1 – November 15, 2020</h3>
@@ -862,8 +862,8 @@ instead of the maximum IAC value. This will lead to less aggressive decorrelatio
 of the final sample, which means significantly larger final sample sizes, without 
 compromising the i.i.d. property of the final refined sample. This behavior can 
 be reversed back to the original by specifying “max” or “maximum” along with 
-the requested refinement method, <code class="language-plaintext highlighter-rouge">SampleRefinementMethod = "batchmeans-max"</code> 
-or <code class="language-plaintext highlighter-rouge">SampleRefinementMethod = "BatchMeans-maximum"</code> (case-insensitive).</p>
+the requested refinement method, <code>SampleRefinementMethod = "batchmeans-max"</code> 
+or <code>SampleRefinementMethod = "BatchMeans-maximum"</code> (case-insensitive).</p>
   </li>
 </ul>
 
@@ -890,7 +890,7 @@ SpecDRAM specifications is now fixed.</li>
 
 <ul>
   <li>Further enhancements and corrections to the 
-<code class="language-plaintext highlighter-rouge">checkForUpdate()</code> function of <code class="language-plaintext highlighter-rouge">paramonte</code> module.</li>
+<code>checkForUpdate()</code> function of <code>paramonte</code> module.</li>
 </ul>
 
 <h3 id="version--222--october-14-2020">Version  2.2.2 – October 14, 2020</h3>
@@ -898,7 +898,7 @@ SpecDRAM specifications is now fixed.</li>
 <p><strong>Minor enhancements</strong></p>
 
 <ul>
-  <li>The <code class="language-plaintext highlighter-rouge">checkForUpdate()</code> function of <code class="language-plaintext highlighter-rouge">paramonte</code> module now 
+  <li>The <code>checkForUpdate()</code> function of <code>paramonte</code> module now 
 works fine when a newer version of the software is available.</li>
 </ul>
 
@@ -915,12 +915,12 @@ works fine when a newer version of the software is available.</li>
 <p><strong>Major enhancements</strong></p>
 
 <ul>
-  <li>The <code class="language-plaintext highlighter-rouge">ParaMonte::Python</code> output file parsers method are now 
+  <li>The <code>ParaMonte::Python</code> output file parsers method are now 
 capable of parsing simulation output contents directly from 
 the web. All that is needed, is to provide the link to the 
 web file as the input file name to the simulation output 
-file parser methods (e.g., <code class="language-plaintext highlighter-rouge">readSample()</code>, <code class="language-plaintext highlighter-rouge">readChain()</code>, 
-<code class="language-plaintext highlighter-rouge">readReport()</code>, <code class="language-plaintext highlighter-rouge">readProgress()</code>, <code class="language-plaintext highlighter-rouge">readRestart()</code>, …).</li>
+file parser methods (e.g., <code>readSample()</code>, <code>readChain()</code>, 
+<code>readReport()</code>, <code>readProgress()</code>, <code>readRestart()</code>, …).</li>
 </ul>
 
 <p><strong>Minor enhancements</strong></p>
@@ -942,8 +942,8 @@ file parser methods (e.g., <code class="language-plaintext highlighter-rouge">re
 <p><strong>Minor enhancements</strong></p>
 
 <ul>
-  <li>A new simulation specification <code class="language-plaintext highlighter-rouge">overwriteRequested</code> has 
-been added to all ParaMonte samplers. If <code class="language-plaintext highlighter-rouge">True</code> and the 
+  <li>A new simulation specification <code>overwriteRequested</code> has 
+been added to all ParaMonte samplers. If <code>True</code> and the 
 ParaMonte sampler detects an existing set of old simulation 
 output files in the output path of the current simulation with 
 the same names as the output file names of the current simulation, 
@@ -956,7 +956,7 @@ then, the ParaMonte sampler will overwrite the existing simulation files.</li>
 
 <ul>
   <li>
-    <p>Minor correction to the value of <code class="language-plaintext highlighter-rouge">__version__</code>, 
+    <p>Minor correction to the value of <code>__version__</code>, 
 now representing solely the version number.</p>
   </li>
   <li>
@@ -989,20 +989,20 @@ library on macOS and Linux have been improved.</li>
 
 <ul>
   <li>
-    <p>The explicit dependencies on <code class="language-plaintext highlighter-rouge">scipy</code>, <code class="language-plaintext highlighter-rouge">matplotlib</code>, and <code class="language-plaintext highlighter-rouge">seaborn</code> are 
+    <p>The explicit dependencies on <code>scipy</code>, <code>matplotlib</code>, and <code>seaborn</code> are 
 now removed from the PyPI setup file of the ParaMonte library as these 
 are only required for the post-processing and visualizations of the 
-simulation results. From now on, only <code class="language-plaintext highlighter-rouge">numpy</code> and <code class="language-plaintext highlighter-rouge">pandas</code> are the 
-minimally-required Python modules, and practically, only <code class="language-plaintext highlighter-rouge">numpy</code>.</p>
+simulation results. From now on, only <code>numpy</code> and <code>pandas</code> are the 
+minimally-required Python modules, and practically, only <code>numpy</code>.</p>
   </li>
   <li>
-    <p>Two new functions <code class="language-plaintext highlighter-rouge">verifyDependencyVersion()</code> and <code class="language-plaintext highlighter-rouge">getDependencyVersion()</code>
+    <p>Two new functions <code>verifyDependencyVersion()</code> and <code>getDependencyVersion()</code>
 are now added to the library that can check for the existence of the 
 ParaMonte library’s visualization dependencies and their required 
 minimum versions.</p>
   </li>
   <li>
-    <p>The <code class="language-plaintext highlighter-rouge">seaborn</code> Python library has now decided to deprecate the <code class="language-plaintext highlighter-rouge">distplot()</code> 
+    <p>The <code>seaborn</code> Python library has now decided to deprecate the <code>distplot()</code> 
 function. The corresponding visualization method in the ParaMonte library 
 has been now updated to a more appropriate name and underlying function.</p>
   </li>
@@ -1015,16 +1015,16 @@ has been now updated to a more appropriate name and underlying function.</p>
 <ul>
   <li>
     <p>The output of the plotting functions is now stored as a list in 
-the <code class="language-plaintext highlighter-rouge">currentFig</code> temporary component of the visualization objects.
+the <code>currentFig</code> temporary component of the visualization objects.
 This way, access to multiple individual objects on the active plot 
 is maintained instead of only the last object. Overall, this is a 
 minor change that will not cause any noticeable change in the 
 behavior of the library in almost in all use cases.</p>
   </li>
   <li>
-    <p>A minor bug regarding the input value for the <code class="language-plaintext highlighter-rouge">outputDelimiter</code> 
-attribute of the <code class="language-plaintext highlighter-rouge">spec</code> component of the <code class="language-plaintext highlighter-rouge">ParaMonteSampler()</code> class,<br />
-used in the <code class="language-plaintext highlighter-rouge">readTabular()</code> internal method, is now fixed.</p>
+    <p>A minor bug regarding the input value for the <code>outputDelimiter</code> 
+attribute of the <code>spec</code> component of the <code>ParaMonteSampler()</code> class,<br />
+used in the <code>readTabular()</code> internal method, is now fixed.</p>
   </li>
 </ul>
 
@@ -1033,8 +1033,8 @@ used in the <code class="language-plaintext highlighter-rouge">readTabular()</co
 <p><strong>Minor enhancements</strong></p>
 
 <ul>
-  <li>Minor enhancement to <code class="language-plaintext highlighter-rouge">checkForUpdate()</code> method of 
-the <code class="language-plaintext highlighter-rouge">paramonte</code> module.</li>
+  <li>Minor enhancement to <code>checkForUpdate()</code> method of 
+the <code>paramonte</code> module.</li>
 </ul>
 
 <h3 id="version--202--september-11-2020">Version  2.0.2 – September 11, 2020</h3>
@@ -1042,8 +1042,8 @@ the <code class="language-plaintext highlighter-rouge">paramonte</code> module.<
 <p><strong>Minor enhancements</strong></p>
 
 <ul>
-  <li>Minor enhancement to <code class="language-plaintext highlighter-rouge">checkForUpdate()</code> method of 
-the <code class="language-plaintext highlighter-rouge">paramonte</code> module.</li>
+  <li>Minor enhancement to <code>checkForUpdate()</code> method of 
+the <code>paramonte</code> module.</li>
 </ul>
 
 <h3 id="version--201--september-10-2020">Version  2.0.1 – September 10, 2020</h3>
@@ -1055,7 +1055,7 @@ the <code class="language-plaintext highlighter-rouge">paramonte</code> module.<
     <p>LGPL3 LICENSE is now switched to MIT LICENSE.md file.</p>
   </li>
   <li>
-    <p>A fix to the <code class="language-plaintext highlighter-rouge">brew</code> software installation now avoids 
+    <p>A fix to the <code>brew</code> software installation now avoids 
 the seemingly-unavoidable crash.</p>
   </li>
 </ul>
@@ -1077,9 +1077,9 @@ of magnitude faster than the previous major release.</p>
   </li>
   <li>
     <p>Several new post-processing functionalities have now been added, such as
-the ability to seamlessly parse the contents of the output <code class="language-plaintext highlighter-rouge">*_report.txt</code>, 
-<code class="language-plaintext highlighter-rouge">*_restart.txt</code>, and <code class="language-plaintext highlighter-rouge">*_progress.txt</code> simulation files, in addition to the
-other output files (<code class="language-plaintext highlighter-rouge">*_sample.txt</code> and <code class="language-plaintext highlighter-rouge">*_chain.txt</code>) that could be parsed
+the ability to seamlessly parse the contents of the output <code>*_report.txt</code>, 
+<code>*_restart.txt</code>, and <code>*_progress.txt</code> simulation files, in addition to the
+other output files (<code>*_sample.txt</code> and <code>*_chain.txt</code>) that could be parsed
 in the previous versions.</p>
   </li>
   <li>
@@ -1106,7 +1106,7 @@ upon code failure, it does not automatically shutdown the Python kernel in Jupyt
 Notebooks. The library now simply throws an error message upon failing instead of 
 restarting the environment.</p>
   </li>
-  <li>The single value assignment to <code class="language-plaintext highlighter-rouge">spec.targetAcceptanceRate</code> component of a ParaDRAM 
+  <li>The single value assignment to <code>spec.targetAcceptanceRate</code> component of a ParaDRAM 
 object is now properly handled. For example, the following code is valid as expected,
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
 <span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="n">ParaDRAM</span><span class="p">()</span>
@@ -1133,7 +1133,7 @@ object is now properly handled. For example, the following code is valid as expe
 <p><strong>Minor enhancements</strong></p>
 
 <ul>
-  <li>The <code class="language-plaintext highlighter-rouge">_ScatterLinePlot</code> dangling class is removed from the package.</li>
+  <li>The <code>_ScatterLinePlot</code> dangling class is removed from the package.</li>
 </ul>
 
 <h3 id="version--110--june-1-2020">Version  1.1.0 – June 1, 2020</h3>

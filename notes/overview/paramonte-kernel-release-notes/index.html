@@ -809,21 +809,21 @@ To access the latest release of the package, visit <a href="https://github.com/c
 to 100% of all lines and functions in the kernel.</li>
   <li>New prebuilt libraries with GNU compilers and Open-MPI on Linux are added.</li>
   <li>New flags are now added to the build scripts of the library that automate the process of code coverage generation.</li>
-  <li>The <code class="language-plaintext highlighter-rouge">testing</code> builds are now removed from the ParaMonte release page as this build is mostly useful for development purposes.</li>
+  <li>The <code>testing</code> builds are now removed from the ParaMonte release page as this build is mostly useful for development purposes.</li>
   <li>The issue of Windows file locking, that led to the occasional crashes of the 
-ParaDRAM and ParaDISE simulations in <code class="language-plaintext highlighter-rouge">multiChain</code> parallelism mode, is now resolved.</li>
+ParaDRAM and ParaDISE simulations in <code>multiChain</code> parallelism mode, is now resolved.</li>
 </ul>
 
 <p><strong>Minor Enhancements</strong></p>
 
 <ul>
-  <li>Minor enhancements to the ParaMonte C/C++/Fortran example build scripts <code class="language-plaintext highlighter-rouge">build.sh</code> and <code class="language-plaintext highlighter-rouge">build.bat</code>.</li>
-  <li>The default build settings are now limited to <code class="language-plaintext highlighter-rouge">heap</code> memory allocation with <code class="language-plaintext highlighter-rouge">dynamic</code> library builds
-for only serial and MPI parallelization for all languages. The <code class="language-plaintext highlighter-rouge">stack</code> memory allocation results in 
+  <li>Minor enhancements to the ParaMonte C/C++/Fortran example build scripts <code>build.sh</code> and <code>build.bat</code>.</li>
+  <li>The default build settings are now limited to <code>heap</code> memory allocation with <code>dynamic</code> library builds
+for only serial and MPI parallelization for all languages. The <code>stack</code> memory allocation results in 
 a ~10% gain in the efficiency of the code. The benefits of stack-memory builds are marginal and are 
 often problematic, in particular, for usage with non-compiled languages. However, users can still 
-build the library with <code class="language-plaintext highlighter-rouge">stack</code> memory allocation by specifying the appropriate build flags with
-the <code class="language-plaintext highlighter-rouge">install.sh</code> on Unix or <code class="language-plaintext highlighter-rouge">install.bat</code> script on Windows systems. For further information, 
+build the library with <code>stack</code> memory allocation by specifying the appropriate build flags with
+the <code>install.sh</code> on Unix or <code>install.bat</code> script on Windows systems. For further information, 
 see the installation guidelines on the ParaMonte documentation website.</li>
   <li>All temporary array creations in debug mode are now resolved, 
 except when Intel compilers are used, in which case, the debug warning messages are silenced.</li>
@@ -879,7 +879,7 @@ except when Intel compilers are used, in which case, the debug warning messages 
 <p><strong>Enhancements</strong></p>
 
 <ul>
-  <li>The ParaMonte C/C++/Fortran example build scripts <code class="language-plaintext highlighter-rouge">build.sh</code> and <code class="language-plaintext highlighter-rouge">build.bat</code> 
+  <li>The ParaMonte C/C++/Fortran example build scripts <code>build.sh</code> and <code>build.bat</code> 
 now check for the existence of both Intel and GNU compilers in the appropriate 
 order that is automatically inferred at the compilation time. Also, the dependencies 
 on the MPI compiler wrappers is now removed as the MPI libraries are not required to 
@@ -947,8 +947,8 @@ instead of the maximum IAC value. This will lead to less aggressive decorrelatio
 of the final sample, which means significantly larger final sample sizes, without 
 compromising the i.i.d. property of the final refined sample. This behavior can 
 be reversed back to the original by specifying “max” or “maximum” along with 
-the requested refinement method, <code class="language-plaintext highlighter-rouge">SampleRefinementMethod = "batchmeans max"</code> 
-or <code class="language-plaintext highlighter-rouge">SampleRefinementMethod = "BatchMeans-max"</code> (case-insensitive).</p>
+the requested refinement method, <code>SampleRefinementMethod = "batchmeans max"</code> 
+or <code>SampleRefinementMethod = "BatchMeans-max"</code> (case-insensitive).</p>
   </li>
 </ul>
 
@@ -1000,7 +1000,7 @@ or <code class="language-plaintext highlighter-rouge">SampleRefinementMethod = "
 <p><strong>Enhancements</strong></p>
 
 <ul>
-  <li>A new simulation specification <code class="language-plaintext highlighter-rouge">overwriteRequested</code> has 
+  <li>A new simulation specification <code>overwriteRequested</code> has 
 been added to all ParaMonte samplers. If TRUE and the 
 ParaMonte sampler detects an existing set of old simulation 
 output files in the output path of the current simulation with 
@@ -1080,7 +1080,7 @@ performances of the simulation.</p>
   <li>
     <p>Major enhancements has been made to the parallel simulation 
 performance analysis reported in the post-processing section 
-of the ParaDRAM simulation output <code class="language-plaintext highlighter-rouge">_report.txt</code> files.</p>
+of the ParaDRAM simulation output <code>_report.txt</code> files.</p>
   </li>
   <li>The ParaMonte C/C++ build processes are now separate from each other.</li>
 </ul>

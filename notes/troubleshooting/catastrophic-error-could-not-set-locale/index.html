@@ -793,12 +793,12 @@ the script runs before the sidebar code runs and the class never gets inserted.
     
     
 <p>While compiling and linking your C/C++ code against the ParaMonte libraries via the Intel C/C++ compilers, in particular, on macOS, you may receive a compiler error message similar to the following,</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Catastrophic error: could not set locale "" to allow processing of multibyte characters
-</code></pre></div></div>
+<pre><code>Catastrophic error: could not set locale "" to allow processing of multibyte characters
+</code></pre>
 
 <p>This is apparently a bug in Intel C/C++ compiler on macOS, as of 2020. Such compile/link time errors can be resolved by passing the following compiler flag to the Intel compilers,</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-no-multibyte-chars
-</code></pre></div></div>
+<pre><code>-no-multibyte-chars
+</code></pre>
 <p>By default, this compiler flag is added to the example-build-scripts of the prebuilt ParaMonte libraries on macOS. Therefore, this problem will only arise if you are manually compiling and linking your example C/C++ codes against the ParaMonte library routines.</p>
 
 <p><br /></p>

@@ -809,8 +809,8 @@ the script runs before the sidebar code runs and the class never gets inserted.
 <p>Regardless of which ParaMonte installation method you choose from the above, you will need some compilers and libraries to link your C/C++/Fortran applications against the ParaMonte library and build your executable, or to run the executable. You likely have many, if not all, of these prerequisites already installed on your system,</p>
 
 <ul>
-  <li>A C/C++ compiler, if you intend to link C/C++ code against the ParaMonte library. Possible compiler options are the <a href="https://software.intel.com/en-us/parallel-studio-xe/choose-download" target="_blank">Intel C/C++ compiler</a> <code class="language-plaintext highlighter-rouge">icc</code>, the macOS’ default C/C++ compiler front-end <code class="language-plaintext highlighter-rouge">clang</code>, and the GNU C/C++ compilers (<code class="language-plaintext highlighter-rouge">gcc</code>/<code class="language-plaintext highlighter-rouge">g++</code>).</li>
-  <li>A Fortran compiler, if you intend to link Fortran code against the ParaMonte library or build the ParaMonte library from scratch on your system. Possible compiler options are the <a href="https://software.intel.com/en-us/parallel-studio-xe/choose-download" target="_blank">Intel Fortran compiler</a> <code class="language-plaintext highlighter-rouge">ifort</code> (version ≥ 2019.1.1) and the GNU Fortran compiler <code class="language-plaintext highlighter-rouge">gfortran</code> (version 10.2.0).</li>
+  <li>A C/C++ compiler, if you intend to link C/C++ code against the ParaMonte library. Possible compiler options are the <a href="https://software.intel.com/en-us/parallel-studio-xe/choose-download" target="_blank">Intel C/C++ compiler</a> <code>icc</code>, the macOS’ default C/C++ compiler front-end <code>clang</code>, and the GNU C/C++ compilers (<code>gcc</code>/<code>g++</code>).</li>
+  <li>A Fortran compiler, if you intend to link Fortran code against the ParaMonte library or build the ParaMonte library from scratch on your system. Possible compiler options are the <a href="https://software.intel.com/en-us/parallel-studio-xe/choose-download" target="_blank">Intel Fortran compiler</a> <code>ifort</code> (version ≥ 2019.1.1) and the GNU Fortran compiler <code>gfortran</code> (version 10.2.0).</li>
   <li>The Open-MPI library (version ≥ 4.0.5), if you intend to use the prebuilt ParaMonte libraries to build MPI-parallelized C/C++/Fortran applications or if you intend to build the MPI-parallel ParaMonte library from scratch on your system.</li>
   <li>The MPICH library (version ≥ 3.2), if you intend to build the MPI-parallel ParaMonte library from scratch on your system and for some reason do not want to install and use the Open-MPI library.</li>
   <li>The OpenCoarrays library (version 2.9.0 or newer) if you intend to use the prebuilt ParaMonte libraries to build Coarray-parallelized Fortran applications or if you intend to build the Coarray-parallel ParaMonte library from scratch on your system.</li>
@@ -1090,36 +1090,36 @@ wget https://github.com/cdslaborg/paramonte/releases/latest/download/<span class
 
     <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> <strong>The ParaMonte build-script can automatically install all the missing prerequisite components (GNU compilers and MPI/Coarray parallelism libraries) on your system if needed, with your permission</strong> (. This automatic installation excludes the Intel C/C++/Fortran compilers as those are proprietary software and you will have to install them by yourself). If you intend to build the ParaMonte library from scratch on your system and you are not sure whether you have the compilers or the MPI libraries already installed on your system, <strong>leave this task to the ParaMonte install script</strong>.</div>
 
-    <p>If you intend to build Coarray-parallel applications, then you can optionally download and install the <a href="http://www.opencoarrays.org/" target="_blank">OpenCoarrays compiler wrapper</a> on your system, or again, <strong>you can leave this task to the ParaMonte library build script to install it for you automatically</strong>. You can check which version of the GNU compilers, the MPI library, or OpenCoarrays <code class="language-plaintext highlighter-rouge">caf</code> compiler wrapper may be already installed on your system by trying the following commands in a Bash shell,</p>
+    <p>If you intend to build Coarray-parallel applications, then you can optionally download and install the <a href="http://www.opencoarrays.org/" target="_blank">OpenCoarrays compiler wrapper</a> on your system, or again, <strong>you can leave this task to the ParaMonte library build script to install it for you automatically</strong>. You can check which version of the GNU compilers, the MPI library, or OpenCoarrays <code>caf</code> compiler wrapper may be already installed on your system by trying the following commands in a Bash shell,</p>
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc <span class="nt">--version</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc (Homebrew GCC 10.2.0) 10.2.0
+    <pre><code>gcc (Homebrew GCC 10.2.0) 10.2.0
 Copyright (C) 2020 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE
-</code></pre></div>    </div>
+</code></pre>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gfortran <span class="nt">--version</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GNU Fortran (Homebrew GCC 10.2.0) 10.2.0
+    <pre><code>GNU Fortran (Homebrew GCC 10.2.0) 10.2.0
 Copyright (C) 2020 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-</code></pre></div>    </div>
+</code></pre>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpiexec <span class="nt">--version</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpiexec (OpenRTE) 4.0.5
+    <pre><code>mpiexec (OpenRTE) 4.0.5
 
 Report bugs to http://www.open-mpi.org/community/help/
-</code></pre></div>    </div>
+</code></pre>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>caf <span class="nt">--version</span>
 </code></pre></div>    </div>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OpenCoarrays Coarray Fortran Compiler Wrapper (caf version 2.9.0)
+    <pre><code>OpenCoarrays Coarray Fortran Compiler Wrapper (caf version 2.9.0)
 Copyright (C) 2015-2020 Sourcery Institute
 Copyright (C) 2015-2020 Sourcery, Inc.
 
@@ -1127,11 +1127,11 @@ OpenCoarrays comes with NO WARRANTY, to the extent permitted by law.
 You may redistribute copies of OpenCoarrays under the terms of the
 BSD 3-Clause License.  For more information about these matters, see
 the file named LICENSE that is distributed with OpenCoarrays.
-</code></pre></div>    </div>
-    <p>If you know that these software already exist on your system, but the Bash terminal appears to not be able to recognize them, for example, by emitting the following message for <code class="language-plaintext highlighter-rouge">caf</code>,</p>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-bash: caf: command not found
-</code></pre></div>    </div>
-    <p>one potential underlying cause could be that the path to the directory of the software is not part of the Bash environmental <code class="language-plaintext highlighter-rouge">PATH</code> variable.</p>
+</code></pre>
+    <p>If you know that these software already exist on your system, but the Bash terminal appears to not be able to recognize them, for example, by emitting the following message for <code>caf</code>,</p>
+    <pre><code>-bash: caf: command not found
+</code></pre>
+    <p>one potential underlying cause could be that the path to the directory of the software is not part of the Bash environmental <code>PATH</code> variable.</p>
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> You can leave this compiler installation step to the ParaMonte library build scripts to install required GNU compilers, as well as the MPI / OpenCoarrays parallel libraries on your system, as explained below.</div>
 
     <p><strong>Alternatively, you can download  and install the <a href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/all-toolkits.html" target="_blank">Intel Fortran Compiler</a> 2019 or newer on your system</strong>, if you intend to build only serial (non-parallel) applications. If you intend to build C/C++ applications, then you may also optionally download and install the Intel C/C++ compiler on your Mac separately.</p>
@@ -1141,9 +1141,9 @@ the file named LICENSE that is distributed with OpenCoarrays.
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort <span class="nt">--version</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort (IFORT) 19.1.0.216 20200306
+    <pre><code>ifort (IFORT) 19.1.0.216 20200306
 Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
-</code></pre></div>    </div>
+</code></pre>
   </li>
   <li><strong>Download the <a href="https://github.com/cdslaborg/paramonte/archive/main.tar.gz">latest source release of the ParaMonte source code</a> from GitHub</strong>, then open a Bash terminal, navigate the directory containing the downloaded tar file and untar it via,
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">tar </span>xvzf paramonte-main.tar.gz
@@ -1151,12 +1151,12 @@ Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 </code></pre></div>    </div>
   </li>
   <li>
-    <p><strong>Call the Bash installation script <code class="language-plaintext highlighter-rouge">install.sh</code> on the command-line interface with the desired flags:</strong></p>
+    <p><strong>Call the Bash installation script <code>install.sh</code> on the command-line interface with the desired flags:</strong></p>
 
     <p>But before doing so, type the following command on the same Bash command line as before,</p>
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x ./install.sh
 </code></pre></div>    </div>
-    <p>The command <code class="language-plaintext highlighter-rouge">chmod</code> ensures that the build-script has executable permission on your system.</p>
+    <p>The command <code>chmod</code> ensures that the build-script has executable permission on your system.</p>
 
     <p><strong>To speed up the build</strong>, you can specify the type of library you want to build by any of the following flags:</p>
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.sh <span class="nt">--help</span>
@@ -1319,22 +1319,22 @@ Calling the <b><code>install.sh</code></b> script with no flags will build the e
 If you’d like to see a build flag that is not currently provided in the above list of flags, (for example, the type of or the method of linking against the compiler libraries), please <a href="../../overview/preface/#who-are-the-paramonte-authors-and-developers">let us know</a> and we will try to add the requested features to the installation scripts in a new release of the ParaMonte library.<br />
 </div>
 
-    <p>The <code class="language-plaintext highlighter-rouge">install.sh</code> script initiates the build process and generates a folder named <code class="language-plaintext highlighter-rouge">build</code> in the root directory of the ParaMonte repository which will contain all build files. The final library files together with the example scripts will be installed in a separate folder named <code class="language-plaintext highlighter-rouge">bin</code> in the same root directory of the ParaMonte project that you have downloaded from GitHub.</p>
+    <p>The <code>install.sh</code> script initiates the build process and generates a folder named <code>build</code> in the root directory of the ParaMonte repository which will contain all build files. The final library files together with the example scripts will be installed in a separate folder named <code>bin</code> in the same root directory of the ParaMonte project that you have downloaded from GitHub.</p>
   </li>
-  <li><strong>Congrats!</strong> You have now built and (locally) installed the ParaMonte library for the configuration and language(s) of your choice on your system. Check out the two new folders <code class="language-plaintext highlighter-rouge">build</code> and <code class="language-plaintext highlighter-rouge">bin</code> that have been automatically created by the install script in the root directory of the uncompressed ParaMonte repository that you have downloaded. Inside the <code class="language-plaintext highlighter-rouge">bin</code> directory, you will see all the different build subdirectories corresponding to the different ParaMonte library build configurations. For example,
+  <li><strong>Congrats!</strong> You have now built and (locally) installed the ParaMonte library for the configuration and language(s) of your choice on your system. Check out the two new folders <code>build</code> and <code>bin</code> that have been automatically created by the install script in the root directory of the uncompressed ParaMonte repository that you have downloaded. Inside the <code>bin</code> directory, you will see all the different build subdirectories corresponding to the different ParaMonte library build configurations. For example,
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.sh --lang C++ --build release --lib dynamic --mem heap --par mpi -s intel
 </code></pre></div>    </div>
     <p>will generate the following subdirectory,</p>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/libparamonte_cpp_darwin_x64_intel_release_dynamic_heap_impi
-</code></pre></div>    </div>
+    <pre><code>./bin/libparamonte_cpp_darwin_x64_intel_release_dynamic_heap_impi
+</code></pre>
     <p>or,</p>
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.sh --lang C++ --build release --lib dynamic --mem heap --par mpi -s gnu
 </code></pre></div>    </div>
     <p>will generate either of the following subdirectories,</p>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/libparamonte_cpp_darwin_x64_gnu_release_dynamic_heap_mpich
+    <pre><code>./bin/libparamonte_cpp_darwin_x64_gnu_release_dynamic_heap_mpich
 ./bin/libparamonte_cpp_darwin_x64_gnu_release_dynamic_heap_openmpi
-</code></pre></div>    </div>
-    <p>in the bin directory of the ParaMonte library, depending on the existing MPI library installed on the system (Intel MPI vs. MPICH vs. OpenMPI). Any of these subdirectories contains the ParaMonte library files along with an example simulation source file and a build-script that can build the example to generate the executable, as well as a <code class="language-plaintext highlighter-rouge">README.md</code> file explaining how to build the supplied example.</p>
+</code></pre>
+    <p>in the bin directory of the ParaMonte library, depending on the existing MPI library installed on the system (Intel MPI vs. MPICH vs. OpenMPI). Any of these subdirectories contains the ParaMonte library files along with an example simulation source file and a build-script that can build the example to generate the executable, as well as a <code>README.md</code> file explaining how to build the supplied example.</p>
   </li>
 </ol>
 

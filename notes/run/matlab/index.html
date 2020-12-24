@@ -796,7 +796,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
 <p><br /></p>
 
-<p>The procedure for running MATLAB simulations, whether serial or parallel, is identical to the procedure for running C/C++/Fortran applications, except that the user needs to replace the executable’s name <code class="language-plaintext highlighter-rouge">main.exe</code> with <code class="language-plaintext highlighter-rouge">matlab -batch "main"</code> on a command prompt to run the MATLAB script. Here, <code class="language-plaintext highlighter-rouge">main</code> is the name of the MATLAB script containing your ParaMonte simulation code (whether serial or parallel, does not matter).</p>
+<p>The procedure for running MATLAB simulations, whether serial or parallel, is identical to the procedure for running C/C++/Fortran applications, except that the user needs to replace the executable’s name <code>main.exe</code> with <code>matlab -batch "main"</code> on a command prompt to run the MATLAB script. Here, <code>main</code> is the name of the MATLAB script containing your ParaMonte simulation code (whether serial or parallel, does not matter).</p>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important: </b>
 If you are a <b>macOS (Darwin)</b> user and you have downloaded the <b>prebuilt</b> ParaMonte libraries <b>directly via a web-browser</b> from the <a href="https://github.com/cdslaborg/paramonte/releases" target="_blank">GitHub release page</a> to use on your macOS system, read <a href="../../troubleshooting/macos-developer-cannot-be-verified/" target="_blank">this troubleshooting page</a> before attempting to run ParaMonte simulations.  
@@ -806,15 +806,15 @@ If you are a <b>macOS (Darwin)</b> user and you have downloaded the <b>prebuilt<
 
 <h3 id="running-matlab-simulations-on-the-command-prompt-on-a-single-processor">Running MATLAB simulations on the command-prompt <strong>on a single processor</strong></h3>
 
-<p>Suppose you want to run <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main.m" target="_blank">this MATLAB script named <code class="language-plaintext highlighter-rouge">main.m</code></a> which calls the ParaMonte library routines to sample a mathematical objective function implemented in <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/MATLAB/logfunc.m" target="_blank">this MATLAB file named <code class="language-plaintext highlighter-rouge">logfunc.m</code></a> on a single processor. Assuming that you have already successfully <a href="../../installation/matlab/" target="_blank">installed the ParaMonte MATLAB library</a> on your system, all you need to do is to,</p>
+<p>Suppose you want to run <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main.m" target="_blank">this MATLAB script named <code>main.m</code></a> which calls the ParaMonte library routines to sample a mathematical objective function implemented in <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/MATLAB/logfunc.m" target="_blank">this MATLAB file named <code>logfunc.m</code></a> on a single processor. Assuming that you have already successfully <a href="../../installation/matlab/" target="_blank">installed the ParaMonte MATLAB library</a> on your system, all you need to do is to,</p>
 <ol>
-  <li>open a MATLAB-aware terminal (e.g., the Windows <code class="language-plaintext highlighter-rouge">cmd.exe</code> command-prompt on Windows or the Bash terminal on Linux/macOS),</li>
+  <li>open a MATLAB-aware terminal (e.g., the Windows <code>cmd.exe</code> command-prompt on Windows or the Bash terminal on Linux/macOS),</li>
   <li>navigate to the folder containing your code, and,</li>
   <li>type the following on the command line,
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>matlab <span class="nt">-batch</span> <span class="s2">"main"</span>
 </code></pre></div>    </div>
 
-    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If the <code class="language-plaintext highlighter-rouge">matlab</code> executable is not recognized by the Bash terminal, see <a href="../../troubleshooting/bash-matlab-command-not-found" target="_blank">this page</a> for a solution.</div>
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If the <code>matlab</code> executable is not recognized by the Bash terminal, see <a href="../../troubleshooting/bash-matlab-command-not-found" target="_blank">this page</a> for a solution.</div>
   </li>
 </ol>
 
@@ -835,7 +835,7 @@ for the <b>first time</b> in MATLAB session. So, <b>make sure to run the above c
 in your MATLAB session.
 </div>
 
-<p>Suppose you want to run <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main_mpi.m" target="_blank">this MPI-enabled MATLAB script named <code class="language-plaintext highlighter-rouge">main_mpi.m</code></a> which calls the ParaMonte library parallel routines to sample a mathematical objective function implemented in <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/MATLAB/logfunc.m" target="_blank">this MATLAB file named <code class="language-plaintext highlighter-rouge">logfunc.m</code></a> on multiple processors.</p>
+<p>Suppose you want to run <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main_mpi.m" target="_blank">this MPI-enabled MATLAB script named <code>main_mpi.m</code></a> which calls the ParaMonte library parallel routines to sample a mathematical objective function implemented in <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/MATLAB/logfunc.m" target="_blank">this MATLAB file named <code>logfunc.m</code></a> on multiple processors.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Note that <b>the only difference</b> between 
@@ -853,31 +853,31 @@ which ensures the MPI-enabled ParaMonte library routines will be called for the 
 
 <p>Assuming that you have already successfully <a href="../../installation/matlab/" target="_blank">installed the ParaMonte MATLAB library</a> on your system, all you need to do is to,</p>
 <ol>
-  <li>open a MATLAB-aware terminal (e.g., the Windows <code class="language-plaintext highlighter-rouge">cmd.exe</code> command-prompt on Windows or the Bash terminal on Linux/macOS),</li>
+  <li>open a MATLAB-aware terminal (e.g., the Windows <code>cmd.exe</code> command-prompt on Windows or the Bash terminal on Linux/macOS),</li>
   <li>navigate to the folder containing your code, and,</li>
   <li>run the following on the command line,
     <ul>
       <li><strong>On Windows</strong><br />
-Invoke the MPI launcher <code class="language-plaintext highlighter-rouge">mpiexec</code> on the command line via,
+Invoke the MPI launcher <code>mpiexec</code> on the command line via,
         <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">mpiexec</span> <span class="na">-localonly -n </span><span class="m">3</span> <span class="kd">matlab</span> <span class="na">-batch </span><span class="s2">"main_mpi"</span>
 </code></pre></div>        </div>
-        <p>where the flag <code class="language-plaintext highlighter-rouge">-localonly</code> ensures that the simulation is run only on a single node. This option avoids the invocation of the Hydra service which would require prior registration of the service. The flag <code class="language-plaintext highlighter-rouge">-n 3</code> assigns three MPI tasks to three physical processors for the simulation. Change the number 3 to as many processor counts as you wish to use.</p>
+        <p>where the flag <code>-localonly</code> ensures that the simulation is run only on a single node. This option avoids the invocation of the Hydra service which would require prior registration of the service. The flag <code>-n 3</code> assigns three MPI tasks to three physical processors for the simulation. Change the number 3 to as many processor counts as you wish to use.</p>
         <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> To run your simulation on a cluster of nodes, follow <a href="https://software.intel.com/en-us/mpi-developer-reference-windows-global-options" target="_blank">the guidelines and instructions provided by the Intel MPI library development team</a>.</div>
       </li>
       <li><strong>On Linux / macOS</strong><br />
-Invoke the MPI launcher <code class="language-plaintext highlighter-rouge">mpiexec</code> on the command line via,
+Invoke the MPI launcher <code>mpiexec</code> on the command line via,
         <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpiexec <span class="nt">-n</span> 3 matlab <span class="nt">-batch</span> <span class="s2">"main_mpi"</span>
 </code></pre></div>        </div>
-        <p>The flag <code class="language-plaintext highlighter-rouge">-n 3</code> assigns three MPI tasks to three physical processors for the simulation. Change the number 3 to as many processor counts as you wish to use.</p>
-        <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Some supercomputing centers (for example, the Texas Advanced Computing Center) may have their dedicated MPI launchers other than <strong><code class="language-plaintext highlighter-rouge">mpiexec</code></strong> to run applications in parallel. A prime example of this is <strong><code class="language-plaintext highlighter-rouge">ibrun</code></strong>. Consult your supercomputing center to ensure you invoke the right MPI launcher for parallel applications, in particular, when running the application on a cluster of nodes of multiple processors.</div>
+        <p>The flag <code>-n 3</code> assigns three MPI tasks to three physical processors for the simulation. Change the number 3 to as many processor counts as you wish to use.</p>
+        <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Some supercomputing centers (for example, the Texas Advanced Computing Center) may have their dedicated MPI launchers other than <strong><code>mpiexec</code></strong> to run applications in parallel. A prime example of this is <strong><code>ibrun</code></strong>. Consult your supercomputing center to ensure you invoke the right MPI launcher for parallel applications, in particular, when running the application on a cluster of nodes of multiple processors.</div>
 
-        <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If the <code class="language-plaintext highlighter-rouge">matlab</code> executable is not recognized by the Bash terminal, see <a href="../../troubleshooting/bash-matlab-command-not-found" target="_blank">this page</a> for a solution.</div>
+        <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If the <code>matlab</code> executable is not recognized by the Bash terminal, see <a href="../../troubleshooting/bash-matlab-command-not-found" target="_blank">this page</a> for a solution.</div>
       </li>
     </ul>
   </li>
 </ol>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Do not specify more parallel (MPI or Coarray) tasks than the available number of physical processors on your system. If there are fewer physical processors available on the machine than the requested parallel tasks, some processors will be assigned more than one task. This will significantly degrade the performance of your simulation and will potentially eliminate any benefits gained from running your simulation in parallel. For example, if you are running a parallel simulation on a quad-core laptop (with four physical processors), then the maximum number of parallel tasks should not go beyond 4 under any circumstances (for example, set <strong><code class="language-plaintext highlighter-rouge">-n 3</code></strong> or <strong><code class="language-plaintext highlighter-rouge">-n 4</code></strong> at most, when invoking the MPI launcher).</div>
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Do not specify more parallel (MPI or Coarray) tasks than the available number of physical processors on your system. If there are fewer physical processors available on the machine than the requested parallel tasks, some processors will be assigned more than one task. This will significantly degrade the performance of your simulation and will potentially eliminate any benefits gained from running your simulation in parallel. For example, if you are running a parallel simulation on a quad-core laptop (with four physical processors), then the maximum number of parallel tasks should not go beyond 4 under any circumstances (for example, set <strong><code>-n 3</code></strong> or <strong><code>-n 4</code></strong> at most, when invoking the MPI launcher).</div>
 
 <h2 id="running-matlab-simulations-from-within-a-matlab-session">Running MATLAB simulations <strong>from within a MATLAB session</strong></h2>
 
@@ -890,15 +890,15 @@ Invoke the MPI launcher <code class="language-plaintext highlighter-rouge">mpiex
         <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">matlab</span>
 </code></pre></div>        </div>
         <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> It is imperative that you open your MATLAB session by calling the matlab executable from the Bash command line since the standard output of the ParaMonte library redirects to the Bash command line as opposed to the MATLAB command line.</div>
-        <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If the <code class="language-plaintext highlighter-rouge">matlab</code> executable is not recognized by the Bash terminal, see <a href="../../troubleshooting/bash-matlab-command-not-found" target="_blank">this page</a> for a solution.</div>
+        <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If the <code>matlab</code> executable is not recognized by the Bash terminal, see <a href="../../troubleshooting/bash-matlab-command-not-found" target="_blank">this page</a> for a solution.</div>
       </li>
     </ul>
   </li>
-  <li>Change the working directory of MATLAB to the folder containing your <code class="language-plaintext highlighter-rouge">main.m</code> script.</li>
+  <li>Change the working directory of MATLAB to the folder containing your <code>main.m</code> script.</li>
   <li>Before running the script, make sure you have added the path to the root directory of the ParaMonte library to your MATLAB’s list of search paths via,
     <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">addpath</span><span class="p">(</span><span class="nb">genpath</span><span class="p">(</span><span class="n">ParaMonteRootDir</span><span class="p">));</span>
 </code></pre></div>    </div>
-    <p>where you will have to replace the variable <code class="language-plaintext highlighter-rouge">ParaMonteRootDir</code> with a string (e.g., <code class="language-plaintext highlighter-rouge">"./"</code>) that points to the root directory of the ParaMonte MATLAB library (i.e., the directory in which the ParaMonte library’s license file <code class="language-plaintext highlighter-rouge">LICENSE</code> exists).</p>
+    <p>where you will have to replace the variable <code>ParaMonteRootDir</code> with a string (e.g., <code>"./"</code>) that points to the root directory of the ParaMonte MATLAB library (i.e., the directory in which the ParaMonte library’s license file <code>LICENSE</code> exists).</p>
   </li>
 </ol>
 

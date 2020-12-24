@@ -887,7 +887,7 @@ D:\&gt;
 </div>
   </li>
   <li>
-    <p><strong>Call the Batch installation script <code class="language-plaintext highlighter-rouge">install.bat</code> on the command-line interface with the desired flags:</strong></p>
+    <p><strong>Call the Batch installation script <code>install.bat</code> on the command-line interface with the desired flags:</strong></p>
 
     <p><strong>To speed up the build</strong>, you can specify the type of library you want to build by any of the following flags:</p>
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">install</span>.bat <span class="na">--help
@@ -956,7 +956,7 @@ for <b>MPI-parallel ParaMonte simulations</b>, wherein both cases, you will have
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.bat --matdram
 </code></pre></div>    </div>
 
-    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Note that multiple values specified for a build flag are always separated by a forward-slash <code class="language-plaintext highlighter-rouge">/</code> character, as in the examples above.</div>
+    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Note that multiple values specified for a build flag are always separated by a forward-slash <code>/</code> character, as in the examples above.</div>
 
     <p>You can also simply try,</p>
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.bat
@@ -992,22 +992,22 @@ Calling the <b><code>install.bat</code></b> script with no flags will build the 
 If you’d like to see a build flag that is not currently provided in the above list of flags, (for example, the type of or the method of linking against the compiler libraries), please <a href="../../overview/preface/#who-are-the-paramonte-authors-and-developers">let us know</a> and we will try to add the requested features to the installation scripts in a new release of the ParaMonte library.<br />
 </div>
 
-    <p>The <code class="language-plaintext highlighter-rouge">install.bat</code> script initiates the build process and generates a folder named <code class="language-plaintext highlighter-rouge">build</code> in the root directory of the ParaMonte repository which will contain all build files. The final library files together with the example scripts will be installed in a separate folder named <code class="language-plaintext highlighter-rouge">bin</code> in the same root directory of the ParaMonte project that you have downloaded from GitHub.</p>
+    <p>The <code>install.bat</code> script initiates the build process and generates a folder named <code>build</code> in the root directory of the ParaMonte repository which will contain all build files. The final library files together with the example scripts will be installed in a separate folder named <code>bin</code> in the same root directory of the ParaMonte project that you have downloaded from GitHub.</p>
   </li>
-  <li><strong>Congrats!</strong> You have now built and (locally) installed the ParaMonte library for the configuration and language(s) of your choice on your system. Check out the two new folders <code class="language-plaintext highlighter-rouge">build</code> and <code class="language-plaintext highlighter-rouge">bin</code> that have been automatically created by the install script in the root directory of the uncompressed ParaMonte repository that you have downloaded. Inside the <code class="language-plaintext highlighter-rouge">bin</code> directory, you will see all the different build subdirectories corresponding to the different ParaMonte library build configurations. For example,
+  <li><strong>Congrats!</strong> You have now built and (locally) installed the ParaMonte library for the configuration and language(s) of your choice on your system. Check out the two new folders <code>build</code> and <code>bin</code> that have been automatically created by the install script in the root directory of the uncompressed ParaMonte repository that you have downloaded. Inside the <code>bin</code> directory, you will see all the different build subdirectories corresponding to the different ParaMonte library build configurations. For example,
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.bat --lang C++ --build release --lib dynamic --mem heap --par mpi -s intel
 </code></pre></div>    </div>
     <p>will generate the following subdirectory,</p>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi
-</code></pre></div>    </div>
+    <pre><code>./bin/libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi
+</code></pre>
     <p>or,</p>
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.bat --lang C++ --build release --lib dynamic --mem heap --par mpi -s gnu
 </code></pre></div>    </div>
     <p>will generate either of the following subdirectories,</p>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/libparamonte_cpp_windows_x64_gnu_release_dynamic_heap_mpich
+    <pre><code>./bin/libparamonte_cpp_windows_x64_gnu_release_dynamic_heap_mpich
 ./bin/libparamonte_cpp_windows_x64_gnu_release_dynamic_heap_openmpi
-</code></pre></div>    </div>
-    <p>in the bin directory of the ParaMonte library, depending on the existing MPI library installed on the system (Intel MPI vs. MPICH vs. OpenMPI). Any of these subdirectories contains the ParaMonte library files along with an example simulation source file and a build-script that can build the example to generate the executable, as well as a <code class="language-plaintext highlighter-rouge">README.md</code> file explaining how to build the supplied example.</p>
+</code></pre>
+    <p>in the bin directory of the ParaMonte library, depending on the existing MPI library installed on the system (Intel MPI vs. MPICH vs. OpenMPI). Any of these subdirectories contains the ParaMonte library files along with an example simulation source file and a build-script that can build the example to generate the executable, as well as a <code>README.md</code> file explaining how to build the supplied example.</p>
   </li>
 </ol>
 

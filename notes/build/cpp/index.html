@@ -796,9 +796,9 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
 <h2 id="preamble">Preamble</h2>
 
-<p>Suppose you have written a <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/C++/logfunc.cpp" target="_blank">file</a> named <code class="language-plaintext highlighter-rouge">logfunc.cpp</code> containing an implementation of your mathematical objective function and a <code class="language-plaintext highlighter-rouge">main.cpp</code> <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main.cpp" target="_blank">file</a> containing call(s) to the ParaMonte routines of your choice to sample the objective function.</p>
+<p>Suppose you have written a <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/C++/logfunc.cpp" target="_blank">file</a> named <code>logfunc.cpp</code> containing an implementation of your mathematical objective function and a <code>main.cpp</code> <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main.cpp" target="_blank">file</a> containing call(s) to the ParaMonte routines of your choice to sample the objective function.</p>
 
-<p>The corresponding required <code class="language-plaintext highlighter-rouge">logfunc.hpp</code> and <code class="language-plaintext highlighter-rouge">paramonte.hpp</code> header files can be also downloaded from <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/C++/logfunc.hpp" target="_blank">here</a> and <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/src/interface/C++/paramonte.hpp" target="_blank">here</a>.</p>
+<p>The corresponding required <code>logfunc.hpp</code> and <code>paramonte.hpp</code> header files can be also downloaded from <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/C++/logfunc.hpp" target="_blank">here</a> and <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/src/interface/C++/paramonte.hpp" target="_blank">here</a>.</p>
 
 <p>At this point, you need to have already made up your mind about which approach you want to take to compile and link your code to the ParaMonte library,</p>
 
@@ -817,25 +817,25 @@ the script runs before the sidebar code runs and the class never gets inserted.
   <li>On <strong>Windows OS</strong>
     <ul>
       <li>
-        <p>We recommend installing and using the <a href="https://www.cdslab.org/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows" target="_blank">Intel Parallel Studio</a> <code class="language-plaintext highlighter-rouge">2019.1.1</code> or newer, although older versions may also work.</p>
+        <p>We recommend installing and using the <a href="https://www.cdslab.org/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows" target="_blank">Intel Parallel Studio</a> <code>2019.1.1</code> or newer, although older versions may also work.</p>
       </li>
       <li>
-        <p>Alternatively, you can also install and use a recent release of the <a href="https://visualstudio.microsoft.com/vs/features/cplusplus/" target="_blank">Microsoft Visual C/C++ compiler (MSVC) 2019</a> or newer on your system. The <code class="language-plaintext highlighter-rouge">community</code> release of this compiler is free to the public and sufficient for many applications.</p>
+        <p>Alternatively, you can also install and use a recent release of the <a href="https://visualstudio.microsoft.com/vs/features/cplusplus/" target="_blank">Microsoft Visual C/C++ compiler (MSVC) 2019</a> or newer on your system. The <code>community</code> release of this compiler is free to the public and sufficient for many applications.</p>
         <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The MSVC compiler, as part of the Microsoft Visual Studio, is a prerequisite for the successful installation of the Intel Parallel Studio on Windows. Therefore, if you have already successfully installed the Intel compilers on your Windows system, you should also be able to use the MSVC C/C++ compiler.</div>
       </li>
     </ul>
   </li>
   <li>On <strong>Linux OS</strong>
     <ul>
-      <li>We recommend installing and using the <a href="https://software.intel.com/en-us/parallel-studio-xe/choose-download" target="_blank">Intel Parallel Studio</a> ≥ <code class="language-plaintext highlighter-rouge">2019.1.1</code> or newer, although older versions may also work.</li>
-      <li>Alternatively, you can also install a recent release of the <a href="https://gcc.gnu.org/" target="_blank">GNU Compiler Collection</a> <code class="language-plaintext highlighter-rouge">gcc/g++/gfortran</code> (preferably version <code class="language-plaintext highlighter-rouge">10.1.0</code> or newer) instead of the Intel compiler suite. If you intend to build parallel applications, you will have to also have a compatible MPI library installed on your system, preferably the <a href="https://www.mpich.org/" target="_blank">MPICH MPI library</a> <code class="language-plaintext highlighter-rouge">3.2</code> or newer.</li>
+      <li>We recommend installing and using the <a href="https://software.intel.com/en-us/parallel-studio-xe/choose-download" target="_blank">Intel Parallel Studio</a> ≥ <code>2019.1.1</code> or newer, although older versions may also work.</li>
+      <li>Alternatively, you can also install a recent release of the <a href="https://gcc.gnu.org/" target="_blank">GNU Compiler Collection</a> <code>gcc/g++/gfortran</code> (preferably version <code>10.1.0</code> or newer) instead of the Intel compiler suite. If you intend to build parallel applications, you will have to also have a compatible MPI library installed on your system, preferably the <a href="https://www.mpich.org/" target="_blank">MPICH MPI library</a> <code>3.2</code> or newer.</li>
     </ul>
   </li>
   <li>On <strong>macOS</strong> <br />
 The situation is slightly complicated on MacOS. Apparently, Apple and Intel corporations have an intense internal rivalry and competition with each other, so much that Apple did not want to help Intel make their MPI library available on macOS. As a result, the Intel Parallel Studio cannot be used to build parallel MPI applications on macOS. Therefore,
     <ul>
       <li>If you intend to build and use <strong>serial ParaMonte applications</strong>, then we still recommend installing and using the <a href="https://software.intel.com/en-us/parallel-studio-xe/choose-download" target="_blank">Intel Compiler Suite ≥ 2019.1.1</a> or newer on your system.</li>
-      <li>If you intend to build and use <strong>parallel ParaMonte applications</strong>, then the best option would be to download and install a recent version of the <a href="https://gcc.gnu.org/" target="_blank">GNU Compiler Collection</a> (preferably, the same version with which the ParaMonte was built: <code class="language-plaintext highlighter-rouge">10.1.0</code>) as well as the <a href="https://www.open-mpi.org/" target="_blank">Open-MPI library</a> <code class="language-plaintext highlighter-rouge">4.0.5</code>.
+      <li>If you intend to build and use <strong>parallel ParaMonte applications</strong>, then the best option would be to download and install a recent version of the <a href="https://gcc.gnu.org/" target="_blank">GNU Compiler Collection</a> (preferably, the same version with which the ParaMonte was built: <code>10.1.0</code>) as well as the <a href="https://www.open-mpi.org/" target="_blank">Open-MPI library</a> <code>4.0.5</code>.
         <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> See the instructions on <a href="../../installation/macos/" target="_blank">the installation page</a> on how to seamlessly install the above compilers and libraries in less than one minute on your Mac.</div>
       </li>
     </ul>
@@ -867,9 +867,9 @@ where you will have to replace <code>libparamonte_cpp_linux_x64_intel_release_dy
       </li>
       <li><strong>or build the ParaMonte library</strong> for the configuration of your choice.</li>
     </ul>
-    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When building the ParaMonte library or downloading the prebuilt ParaMonte libraries, always choose the <strong><code class="language-plaintext highlighter-rouge">release</code></strong> mode as your library build-type among the available three default choices ( <strong><code class="language-plaintext highlighter-rouge">release</code></strong>, <strong><code class="language-plaintext highlighter-rouge">testing</code></strong>, <strong><code class="language-plaintext highlighter-rouge">debug</code></strong> ). The <strong><code class="language-plaintext highlighter-rouge">release</code></strong> build-type results in the highest-performing ParaMonte library build and the fastest runtime simulations. If needed, use the <strong><code class="language-plaintext highlighter-rouge">testing</code></strong> build-type solely for quick application builds for testing purposes and the <strong><code class="language-plaintext highlighter-rouge">debug</code></strong> build-type solely for debugging your simulations at runtime.</div>
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When building the ParaMonte library or downloading the prebuilt ParaMonte libraries, always choose the <strong><code>release</code></strong> mode as your library build-type among the available three default choices ( <strong><code>release</code></strong>, <strong><code>testing</code></strong>, <strong><code>debug</code></strong> ). The <strong><code>release</code></strong> build-type results in the highest-performing ParaMonte library build and the fastest runtime simulations. If needed, use the <strong><code>testing</code></strong> build-type solely for quick application builds for testing purposes and the <strong><code>debug</code></strong> build-type solely for debugging your simulations at runtime.</div>
   </li>
-  <li><strong>Navigate to the directory</strong> containing your uncompressed ParaMonte library files and <strong>paste</strong> (that is, overwrite the existing three <code class="language-plaintext highlighter-rouge">paramonte.in</code>, <code class="language-plaintext highlighter-rouge">logfunc.cpp</code>, and <code class="language-plaintext highlighter-rouge">main.cpp</code> files with) <strong>your files and codes</strong>.</li>
+  <li><strong>Navigate to the directory</strong> containing your uncompressed ParaMonte library files and <strong>paste</strong> (that is, overwrite the existing three <code>paramonte.in</code>, <code>logfunc.cpp</code>, and <code>main.cpp</code> files with) <strong>your files and codes</strong>.</li>
   <li><strong>Open a command-line interface and navigate to the directory</strong> containing your uncompressed ParaMonte library files.
     <ul>
       <li><strong>On Windows</strong>
@@ -878,14 +878,14 @@ where you will have to replace <code>libparamonte_cpp_linux_x64_intel_release_dy
             <p>If you choose to use the Intel C++ compiler to build your application, then we strongly recommend you to use the Intel Parallel Studio’s customized command-line interface that is automatically installed on your system. You can access it from the Windows startup menu as illustrated in the figure below.<br />
 <a href="https://www.cdslab.org/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows" target="_blank"><img src="https://www.cdslab.org/recipes/programming/intel-parallel-studio-installation-windows/intelCMD.png" alt="Intel Parallel Studio's customized command-line interface" /></a><br />
 <br />
-Open a <strong>64-bit</strong> instance of the Intel Parallel Studio’s command-line interface. This command-line prompt comes with all the relevant compiler and linker environmental variables predefined in your session so that you won’t need to manually modify the contents of your environmental <code class="language-plaintext highlighter-rouge">PATH</code> variable.</p>
+Open a <strong>64-bit</strong> instance of the Intel Parallel Studio’s command-line interface. This command-line prompt comes with all the relevant compiler and linker environmental variables predefined in your session so that you won’t need to manually modify the contents of your environmental <code>PATH</code> variable.</p>
           </li>
           <li>
-            <p>If you choose to use the <a href="https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B" target="_blank">MSVC C++ compiler</a> <code class="language-plaintext highlighter-rouge">cl</code>, then we strongly recommend you to use the Microsoft Visual Studio’s customized command-line interface that is automatically installed on your system along with the compiler. It is normally named <strong>x64 Native Tools Command Prompt for VS 2XXX</strong>, where <code class="language-plaintext highlighter-rouge">2XXX</code> is the version of the MSVC you have installed on your system. You can access it from the Windows startup menu as illustrated in the figure below, where the Microsoft Visual Studio 2019 is located (as well as an older existing installation of the Visual Studio 2017).<br />
+            <p>If you choose to use the <a href="https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B" target="_blank">MSVC C++ compiler</a> <code>cl</code>, then we strongly recommend you to use the Microsoft Visual Studio’s customized command-line interface that is automatically installed on your system along with the compiler. It is normally named <strong>x64 Native Tools Command Prompt for VS 2XXX</strong>, where <code>2XXX</code> is the version of the MSVC you have installed on your system. You can access it from the Windows startup menu as illustrated in the figure below, where the Microsoft Visual Studio 2019 is located (as well as an older existing installation of the Visual Studio 2017).<br />
 <img src="/paramonte/images/msvc_cmd.png" alt="Microsoft Visual Studio's customized command-line interface" target="_blank" /><br />
 <br />
-Open an instance of the x64 Native Tools Command Prompt which is automatically installed on your system along with the MSVC compiler. This command-line comes with all the relevant compiler and linker environmental variables predefined in your session so that you won’t need to manually modify the contents of the environmental <code class="language-plaintext highlighter-rouge">PATH</code> variable.</p>
-            <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> It is imperative that you open an x64-compatible version of the MSVC command prompt, just as shown in the above. The ParaMonte library binaries are exclusively built for <code class="language-plaintext highlighter-rouge">x64</code> (<code class="language-plaintext highlighter-rouge">x86_64</code>) type of architecture and therefore any compilation and linking via non-x64 tools will fail.</div>
+Open an instance of the x64 Native Tools Command Prompt which is automatically installed on your system along with the MSVC compiler. This command-line comes with all the relevant compiler and linker environmental variables predefined in your session so that you won’t need to manually modify the contents of the environmental <code>PATH</code> variable.</p>
+            <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> It is imperative that you open an x64-compatible version of the MSVC command prompt, just as shown in the above. The ParaMonte library binaries are exclusively built for <code>x64</code> (<code>x86_64</code>) type of architecture and therefore any compilation and linking via non-x64 tools will fail.</div>
           </li>
         </ul>
       </li>
@@ -940,7 +940,7 @@ By default, the build-script automatically chooses the compiler for building you
 </ul>
 If you specify the <b><code>-c</code></b> compiler option, it is imperative to specify the <b><code>-f</code></b> compiler-flags option along with it. Failure to do so will cause the script to switch to the default inferred flags from the name of the compiler used in the filename of the ParaMonte library that is being used. The inconsistent compiler flags will then cause the application-build to abort.  
 </div>
-    <p>The build-script generates the executable along with a Bash script <code class="language-plaintext highlighter-rouge">run.sh</code> in the same directory, which can be called on the command-line to run the executable. See <a href="../../run/default/#running-the-executable-generated-via-the-quick-automated-approach-on-linux--macos" target="_blank">this page</a> on how to set the number of processors for parallel simulations and run the executable.</p>
+    <p>The build-script generates the executable along with a Bash script <code>run.sh</code> in the same directory, which can be called on the command-line to run the executable. See <a href="../../run/default/#running-the-executable-generated-via-the-quick-automated-approach-on-linux--macos" target="_blank">this page</a> on how to set the number of processors for parallel simulations and run the executable.</p>
   </li>
 </ul>
 
@@ -948,22 +948,22 @@ If you specify the <b><code>-c</code></b> compiler option, it is imperative to s
 
 <h2 id="building-the-executable-do-it-yourself">Building the executable: <strong>Do-it-yourself</strong></h2>
 
-<p>There are currently more than 210 possible configurations with which you can build the ParaMonte library. Covering the compilation and linking procedure for all of these different scenarios here is impossible. To simplify, we will only consider compiling and linking your C++ application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for only dynamic-linking. Before continuing to build your application manually, make sure you follow the guidelines outlined in the <a href="#preamble">Preamble</a> section in the above.</p>
+<p>There are currently more than 210 possible configurations with which you can build the ParaMonte library. Covering the compilation and linking procedure for all of these different scenarios here is impossible. To simplify, we will only consider compiling and linking your C++ application via the ParaMonte library build in <code>release</code> mode for only dynamic-linking. Before continuing to build your application manually, make sure you follow the guidelines outlined in the <a href="#preamble">Preamble</a> section in the above.</p>
 
 <h3 id="building-the-executable-on-windows-via-the-intel-c-compiler">Building the executable on <strong>Windows</strong> via the <strong>Intel C++ compiler</strong></h3>
 
-<p>Depending on the build type you would like to specify for your application ( <code class="language-plaintext highlighter-rouge">release</code>, <code class="language-plaintext highlighter-rouge">testing</code>, <code class="language-plaintext highlighter-rouge">debug</code> ), you may want to define the compiler/linker flags,</p>
+<p>Depending on the build type you would like to specify for your application ( <code>release</code>, <code>testing</code>, <code>debug</code> ), you may want to define the compiler/linker flags,</p>
 
 <ul>
-  <li>for <code class="language-plaintext highlighter-rouge">release</code>:
+  <li>for <code>release</code>:
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">set</span> <span class="s2">"COMPILER_LINKER_FLAGS=/O3 /Qip /Qipo /Qunroll /Qunroll-aggressive /Ob2 /Qinline-dllimport"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">testing</code>:
+  <li>for <code>testing</code>:
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">set</span> <span class="s2">"COMPILER_LINKER_FLAGS=/Od"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">debug</code>:
+  <li>for <code>debug</code>:
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">set</span> <span class="s2">"COMPILER_LINKER_FLAGS=/debug:full /Zi /Od /Wall /traceback /Qcheck-pointers:rw /Qcheck-pointers-undimensioned /Qdiag-error-limit:10 /Qtrapuv"</span>
 </code></pre></div>    </div>
   </li>
@@ -973,16 +973,16 @@ If you specify the <b><code>-c</code></b> compiler option, it is imperative to s
 
 <ul>
   <li>
-    <p>We will consider building the C++ application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+    <p>We will consider building the C++ application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_windows_x64_intel_release_dynamic_heap.zip">here</a>.</p>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.cpp</code> and <code class="language-plaintext highlighter-rouge">main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code>logfunc.cpp</code> and <code>main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">dir</span> <span class="na">/a /b /n
 </span></code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.bat
+    <pre><code>build.bat
 libparamonte_cpp_windows_x64_intel_release_dynamic_heap.dll
 libparamonte_cpp_windows_x64_intel_release_dynamic_heap.exp
 libparamonte_cpp_windows_x64_intel_release_dynamic_heap.lib
@@ -992,7 +992,7 @@ main.cpp
 paramonte.hpp
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
 
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you encounter difficulties in navigating to your target build folder on the command-prompt, see <a href="../../troubleshooting/windows-drive-change/" target="_blank">the troubleshooting page</a> for the possible cause and the solution.</div>
   </li>
@@ -1004,7 +1004,7 @@ README.md
 
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">icl</span> <span class="nv">%COMPILER_LINKER_FLAGS%</span> <span class="kd">logfunc</span>.cpp <span class="kd">main</span>.cpp <span class="kd">libparamonte_cpp_windows_x64_intel_release_dynamic_heap</span>.lib <span class="na">/link /out</span><span class="nl">:main</span>.exe
 </code></pre></div>    </div>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) C++ Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+    <pre><code>Intel(R) C++ Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
 Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 
 logfunc.cpp
@@ -1015,10 +1015,10 @@ Copyright (C) Microsoft Corporation.  All rights reserved.
 -out:main.exe
 C:\Users\SHAHMO~1\AppData\Local\Temp\ipo_4826420.obj
 libparamonte_cpp_windows_x64_intel_release_dynamic_heap.lib
-</code></pre></div>    </div>
+</code></pre>
   </li>
   <li>
-    <p>The above step should generate a <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.cpp</code>.</p>
+    <p>The above step should generate a <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code>logfunc.cpp</code>.</p>
   </li>
 </ul>
 
@@ -1027,16 +1027,16 @@ libparamonte_cpp_windows_x64_intel_release_dynamic_heap.lib
 <ul>
   <li>
     <p>For simplicity, we will only consider the MPI-parallelism here. 
-We will consider building the C++ application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+We will consider building the C++ application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi.zip">here</a>.</p>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.cpp</code> and <code class="language-plaintext highlighter-rouge">main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code>logfunc.cpp</code> and <code>main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">dir</span> <span class="na">/a /b /n
 </span></code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.bat
+    <pre><code>build.bat
 libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi.dll
 libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi.exp
 libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi.lib
@@ -1046,7 +1046,7 @@ main.cpp
 paramonte.hpp
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
 
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you encounter difficulties in navigating to your target build folder on the command-prompt, see <a href="../../troubleshooting/windows-drive-change/" target="_blank">the troubleshooting page</a> for the possible cause and the solution.</div>
   </li>
@@ -1058,7 +1058,7 @@ README.md
 
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">mpiicc</span> <span class="nv">%COMPILER_LINKER_FLAGS%</span> <span class="kd">logfunc</span>.c <span class="kd">main</span>.c <span class="kd">libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi</span>.lib <span class="na">/link /out</span><span class="nl">:main</span>.exe
 </code></pre></div>    </div>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpicc.bat for the Intel(R) MPI Library 2019 Update 4 for Windows*
+    <pre><code>mpicc.bat for the Intel(R) MPI Library 2019 Update 4 for Windows*
 Copyright 2007-2019 Intel Corporation.
 
 Intel(R) C++ Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
@@ -1076,10 +1076,10 @@ impi.lib
 impicxx.lib
 C:\Users\SHAHMO~1\AppData\Local\Temp\ipo_4049220.obj
 libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi.lib
-</code></pre></div>    </div>
+</code></pre>
   </li>
   <li>
-    <p>The above step should generate an MPI-parallelized <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.cpp</code>.</p>
+    <p>The above step should generate an MPI-parallelized <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code>logfunc.cpp</code>.</p>
   </li>
 </ul>
 
@@ -1087,20 +1087,20 @@ libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi.lib
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For directions on how to install the MSVC compiler on your system, follow steps 3 and 4 of the solution provided on <a href="https://www.cdslab.org/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows" target="_blank">this page</a>.</div>
 
-<p>Open an instance of the <strong>x64 Native Tools Command Prompt</strong> which is automatically installed on your system along with the MSVC compiler. As discussed in the <a href="#preamble-setting-up-the-environment">preamble</a>, this command-line comes with all the relevant compiler and linker environmental variables predefined in your session so that you won’t need to manually modify the contents of the environmental <code class="language-plaintext highlighter-rouge">PATH</code> variable.</p>
+<p>Open an instance of the <strong>x64 Native Tools Command Prompt</strong> which is automatically installed on your system along with the MSVC compiler. As discussed in the <a href="#preamble-setting-up-the-environment">preamble</a>, this command-line comes with all the relevant compiler and linker environmental variables predefined in your session so that you won’t need to manually modify the contents of the environmental <code>PATH</code> variable.</p>
 
-<p>Depending on the build type you would like to specify for your application ( <code class="language-plaintext highlighter-rouge">release</code>, <code class="language-plaintext highlighter-rouge">testing</code>, <code class="language-plaintext highlighter-rouge">debug</code> ), you may want to define the compiler/linker flags,</p>
+<p>Depending on the build type you would like to specify for your application ( <code>release</code>, <code>testing</code>, <code>debug</code> ), you may want to define the compiler/linker flags,</p>
 
 <ul>
-  <li>for <code class="language-plaintext highlighter-rouge">release</code>:
+  <li>for <code>release</code>:
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">set</span> <span class="s2">"COMPILER_LINKER_FLAGS=/O2"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">testing</code>:
+  <li>for <code>testing</code>:
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">set</span> <span class="s2">"COMPILER_LINKER_FLAGS=/Od"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">debug</code>:
+  <li>for <code>debug</code>:
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">set</span> <span class="s2">"COMPILER_LINKER_FLAGS=/Od /Z7"</span>
 </code></pre></div>    </div>
   </li>
@@ -1110,16 +1110,16 @@ libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi.lib
 
 <ul>
   <li>
-    <p>We will consider building the C++ application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+    <p>We will consider building the C++ application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_windows_x64_intel_release_dynamic_heap.zip">here</a>.</p>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.cpp</code> and <code class="language-plaintext highlighter-rouge">main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code>logfunc.cpp</code> and <code>main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">dir</span> <span class="na">/a /b /n
 </span></code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.bat
+    <pre><code>build.bat
 libparamonte_cpp_windows_x64_msvc_release_dynamic_heap.dll
 libparamonte_cpp_windows_x64_msvc_release_dynamic_heap.exp
 libparamonte_cpp_windows_x64_msvc_release_dynamic_heap.lib
@@ -1129,16 +1129,16 @@ main.cpp
 paramonte.hpp
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
 
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you encounter difficulties in navigating to your target build folder on the command-prompt, see <a href="../../troubleshooting/windows-drive-change/" target="_blank">the troubleshooting page</a> for the possible cause and the solution.</div>
   </li>
-  <li>Now, we are going to use the MSVC C++ compiler <code class="language-plaintext highlighter-rouge">cl</code> to compile and link your code,
+  <li>Now, we are going to use the MSVC C++ compiler <code>cl</code> to compile and link your code,
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">set</span> <span class="s2">"COMPILER_LINKER_FLAGS=/O2"</span>
 </code></pre></div>    </div>
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">cl</span> <span class="nv">%COMPILER_LINKER_FLAGS%</span> <span class="kd">logfunc</span>.c <span class="kd">main</span>.c <span class="kd">libparamonte_cpp_windows_x64_intel_release_dynamic_heap</span>.lib <span class="na">/link /out</span><span class="nl">:main</span>.exe
 </code></pre></div>    </div>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Microsoft (R) C/C++ Optimizing Compiler Version 19.22.27905 for x64
+    <pre><code>Microsoft (R) C/C++ Optimizing Compiler Version 19.22.27905 for x64
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
 logfunc.cpp
@@ -1152,9 +1152,9 @@ Copyright (C) Microsoft Corporation.  All rights reserved.
 logfunc.obj
 main.obj
 libparamonte_cpp_windows_x64_intel_release_dynamic_heap.lib
-</code></pre></div>    </div>
+</code></pre>
   </li>
-  <li>The above step should generate a <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.cpp</code>.</li>
+  <li>The above step should generate a <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code>logfunc.cpp</code>.</li>
 </ul>
 
 <h4 id="building-the-executable-on-windows-via-the-microsoft-visual-c-compiler-for-parallel-applications">Building the executable on Windows via the Microsoft Visual C++ compiler for <strong>parallel applications</strong></h4>
@@ -1164,16 +1164,16 @@ libparamonte_cpp_windows_x64_intel_release_dynamic_heap.lib
 <ul>
   <li>
     <p>For simplicity, we will only consider the MPI-parallelism here. 
-We will consider building the C++ application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+We will consider building the C++ application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi.zip">here</a>.</p>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.cpp</code> and <code class="language-plaintext highlighter-rouge">main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code>logfunc.cpp</code> and <code>main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">dir</span> <span class="na">/a /b /n
 </span></code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.bat
+    <pre><code>build.bat
 libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi.dll
 libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi.exp
 libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi.lib
@@ -1183,16 +1183,16 @@ main.cpp
 paramonte.hpp
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
 
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you encounter difficulties in navigating to your target build folder on the command-prompt, see <a href="../../troubleshooting/windows-drive-change/" target="_blank">the troubleshooting page</a> for the possible cause and the solution.</div>
   </li>
-  <li>Now, we are going to use the Intel <code class="language-plaintext highlighter-rouge">mpicc</code> or <code class="language-plaintext highlighter-rouge">mpicl</code> C++ MPI compiler wrappers along with the Microsoft C++ compiler <code class="language-plaintext highlighter-rouge">cl.exe</code> (specified by the flag <code class="language-plaintext highlighter-rouge">-cc=cl</code>) to compile and link your code,
+  <li>Now, we are going to use the Intel <code>mpicc</code> or <code>mpicl</code> C++ MPI compiler wrappers along with the Microsoft C++ compiler <code>cl.exe</code> (specified by the flag <code>-cc=cl</code>) to compile and link your code,
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">set</span> <span class="s2">"COMPILER_LINKER_FLAGS=/O2"</span>
 </code></pre></div>    </div>
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">mpicc</span> <span class="na">-cc</span><span class="o">=</span><span class="kd">cl</span> <span class="nv">%COMPILER_LINKER_FLAGS%</span> <span class="kd">logfunc</span>.c <span class="kd">main</span>.c <span class="kd">libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi</span>.lib <span class="na">/link /out</span><span class="nl">:main</span>.exe
 </code></pre></div>    </div>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpicc.bat for the Intel(R) MPI Library 2019 Update 4 for Windows*
+    <pre><code>mpicc.bat for the Intel(R) MPI Library 2019 Update 4 for Windows*
 Copyright 2007-2019 Intel Corporation.
 
 Microsoft (R) C/C++ Optimizing Compiler Version 19.22.27905 for x64
@@ -1213,7 +1213,7 @@ impicxx.lib
 logfunc.obj
 main.obj
 libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi.lib
-</code></pre></div>    </div>
+</code></pre>
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 While building your parallel application, if you encounter linking errors similar to 
 <pre>
@@ -1222,48 +1222,48 @@ LINK : fatal error LNK1181: cannot open input file 'impi.lib'
 then see <a href="../../troubleshooting/finding-mpi-libraries-on-windows/" target="_blank">this troubleshooting page</a> for a possible resolution.
 </div>
   </li>
-  <li>The above step should generate an MPI-parallelized <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.cpp</code>.</li>
+  <li>The above step should generate an MPI-parallelized <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code>logfunc.cpp</code>.</li>
 </ul>
 
 <h3 id="building-the-executable-on-macos-via-the-intel-c-compiler">Building the executable on <strong>macOS</strong> via the <strong>Intel C++ compiler</strong></h3>
 
 <p>Open a Bash terminal that recognizes your local installation of the Intel compilers and libraries.</p>
 
-<p>Depending on the build type you would like to specify for your application ( <code class="language-plaintext highlighter-rouge">release</code>, <code class="language-plaintext highlighter-rouge">testing</code>, <code class="language-plaintext highlighter-rouge">debug</code> ), you may want to define the compiler/linker flags,</p>
+<p>Depending on the build type you would like to specify for your application ( <code>release</code>, <code>testing</code>, <code>debug</code> ), you may want to define the compiler/linker flags,</p>
 
 <ul>
-  <li>for <code class="language-plaintext highlighter-rouge">release</code>:
+  <li>for <code>release</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-no-multibyte-chars -O3"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">testing</code>:
+  <li>for <code>testing</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-no-multibyte-chars -O0"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">debug</code>:
+  <li>for <code>debug</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-no-multibyte-chars -O0 -debug full"</span>
 </code></pre></div>    </div>
   </li>
 </ul>
 
-<p>To understand the reason for adding the compiler flag <code class="language-plaintext highlighter-rouge">-no-multibyte-chars</code> on macOS, see <a href="../../troubleshooting/catastrophic-error-could-not-set-locale/" target="_blank">this troubleshooting page</a></p>
+<p>To understand the reason for adding the compiler flag <code>-no-multibyte-chars</code> on macOS, see <a href="../../troubleshooting/catastrophic-error-could-not-set-locale/" target="_blank">this troubleshooting page</a></p>
 
 <h4 id="building-the-executable-on-macos-via-the-intel-c-compiler-for-serial-applications">Building the executable on macOS via the Intel C++ compiler for <strong>serial applications</strong></h4>
 
 <ul>
-  <li>We will consider building the C++ application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+  <li>We will consider building the C++ application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_darwin_x64_intel_release_dynamic_heap.tar.gz">here</a>.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Although here we are downloading and using the ParaMonte libraries prebuilt via the Intel C++ compiler, in general, you should be able to use the Intel C++ compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU C++ compilers.
 </div>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.cpp</code> and <code class="language-plaintext highlighter-rouge">main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code>logfunc.cpp</code> and <code>main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-1</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.sh
+    <pre><code>build.sh
 libparamonte_cpp_darwin_x64_intel_release_dynamic_heap.dylib
 logfunc.cpp
 logfunc.hpp
@@ -1271,7 +1271,7 @@ main.cpp
 paramonte.hpp
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
   </li>
   <li>
     <p>Now, we are going to use the Intel C++ compiler to compile and link your code,</p>
@@ -1281,25 +1281,25 @@ README.md
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>icpc <span class="nv">$COMPILER_LINKER_FLAGS</span>  logfunc.cpp main.cpp libparamonte_cpp_darwin_x64_intel_release_dynamic_heap.dylib <span class="nt">-o</span> main.exe
 </code></pre></div>    </div>
   </li>
-  <li>The above step should generate a <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.cpp</code>.</li>
+  <li>The above step should generate a <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code>logfunc.cpp</code>.</li>
 </ul>
 
 <h3 id="building-the-executable-on-macos-via-the-gnu-c-compiler">Building the executable on <strong>macOS</strong> via the <strong>GNU C++ compiler</strong></h3>
 
 <p>Open a Bash terminal that recognizes your local installation of the GNU compilers and libraries.</p>
 
-<p>Depending on the build type you would like to specify for your application ( <code class="language-plaintext highlighter-rouge">release</code>, <code class="language-plaintext highlighter-rouge">testing</code>, <code class="language-plaintext highlighter-rouge">debug</code> ), you may want to define the compiler/linker flags,</p>
+<p>Depending on the build type you would like to specify for your application ( <code>release</code>, <code>testing</code>, <code>debug</code> ), you may want to define the compiler/linker flags,</p>
 
 <ul>
-  <li>for <code class="language-plaintext highlighter-rouge">release</code>:
+  <li>for <code>release</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-O3"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">testing</code>:
+  <li>for <code>testing</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-O0"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">debug</code>:
+  <li>for <code>debug</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-O0 -g"</span>
 </code></pre></div>    </div>
   </li>
@@ -1308,19 +1308,19 @@ README.md
 <h4 id="building-the-executable-on-macos-via-the-gnu-c-compiler-for-serial-applications">Building the executable on macOS via the GNU C++ compiler for <strong>serial applications</strong></h4>
 
 <ul>
-  <li>We will consider building the C++ application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+  <li>We will consider building the C++ application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_darwin_x64_gnu_release_dynamic_heap.tar.gz">here</a>.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Although here we are downloading and using the ParaMonte libraries prebuilt via the GNU C++ compiler, in general, you should be able to use the GNU C++ compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU C++ compilers.
 </div>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.cpp</code> and <code class="language-plaintext highlighter-rouge">main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code>logfunc.cpp</code> and <code>main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-1</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.sh
+    <pre><code>build.sh
 libparamonte_cpp_darwin_x64_gnu_release_dynamic_heap.dylib
 logfunc.cpp
 logfunc.hpp
@@ -1328,7 +1328,7 @@ main.cpp
 paramonte.hpp
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
   </li>
   <li>
     <p>Now, we are going to use the GNU C++ compiler to compile and link your code,</p>
@@ -1338,25 +1338,25 @@ README.md
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>g++ <span class="nv">$COMPILER_LINKER_FLAGS</span>  logfunc.cpp main.cpp libparamonte_cpp_darwin_x64_gnu_release_dynamic_heap.dylib <span class="nt">-o</span> main.exe
 </code></pre></div>    </div>
   </li>
-  <li>The above step should generate a <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.cpp</code>.</li>
+  <li>The above step should generate a <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code>logfunc.cpp</code>.</li>
 </ul>
 
 <h4 id="building-the-executable-on-macos-via-the-gnu-c-compiler-for-mpi-parallel-applications">Building the executable on macOS via the GNU C++ compiler for <strong>MPI-parallel applications</strong></h4>
 
 <ul>
-  <li>We will consider building the C++ application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+  <li>We will consider building the C++ application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_darwin_x64_gnu_release_dynamic_heap_mpich.tar.gz">here</a>.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Although here we are downloading and using the ParaMonte libraries prebuilt via the GNU C++ compiler, in general, you should be able to use the GNU C++ compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU C++ compilers.
 </div>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.cpp</code> and <code class="language-plaintext highlighter-rouge">main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code>logfunc.cpp</code> and <code>main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-1</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.sh
+    <pre><code>build.sh
 libparamonte_cpp_darwin_x64_gnu_release_dynamic_heap_mpich.dylib
 logfunc.cpp
 logfunc.hpp
@@ -1364,9 +1364,9 @@ main.cpp
 paramonte.hpp
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you are using the <strong><code class="language-plaintext highlighter-rouge">OpenMPI</code></strong> library in place of the <strong><code class="language-plaintext highlighter-rouge">MPICH</code></strong> MPI library, simply replace the keyword <strong><code class="language-plaintext highlighter-rouge">mpich</code></strong> with <strong><code class="language-plaintext highlighter-rouge">openmpi</code></strong> anywhere it appears on this page.</div>
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you are using the <strong><code>OpenMPI</code></strong> library in place of the <strong><code>MPICH</code></strong> MPI library, simply replace the keyword <strong><code>mpich</code></strong> with <strong><code>openmpi</code></strong> anywhere it appears on this page.</div>
   </li>
   <li>
     <p>Now, we are going to use the Open-MPI compiler wrapper for the GNU C++ compiler to compile and link your code,</p>
@@ -1376,25 +1376,25 @@ README.md
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpicxx <span class="nv">$COMPILER_LINKER_FLAGS</span>  logfunc.cpp main.cpp libparamonte_cpp_darwin_x64_gnu_release_dynamic_heap_mpich.dylib <span class="nt">-o</span> main.exe
 </code></pre></div>    </div>
   </li>
-  <li>The above step should generate an MPI-parallelized <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.cpp</code>.</li>
+  <li>The above step should generate an MPI-parallelized <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code>logfunc.cpp</code>.</li>
 </ul>
 
 <h3 id="building-the-executable-on-linux-via-the-intel-c-compiler">Building the executable on <strong>Linux</strong> via the <strong>Intel C++ compiler</strong></h3>
 
 <p>Open a Bash terminal that recognizes your local installation of the Intel compilers and libraries.</p>
 
-<p>Depending on the build type you would like to specify for your application ( <code class="language-plaintext highlighter-rouge">release</code>, <code class="language-plaintext highlighter-rouge">testing</code>, <code class="language-plaintext highlighter-rouge">debug</code> ), you may want to define the compiler/linker flags,</p>
+<p>Depending on the build type you would like to specify for your application ( <code>release</code>, <code>testing</code>, <code>debug</code> ), you may want to define the compiler/linker flags,</p>
 
 <ul>
-  <li>for <code class="language-plaintext highlighter-rouge">release</code>:
+  <li>for <code>release</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-O3"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">testing</code>:
+  <li>for <code>testing</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-O0"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">debug</code>:
+  <li>for <code>debug</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-O0 -debug full"</span>
 </code></pre></div>    </div>
   </li>
@@ -1403,19 +1403,19 @@ README.md
 <h4 id="building-the-executable-on-linux-via-the-intel-c-compiler-for-serial-applications">Building the executable on Linux via the Intel C++ compiler for <strong>serial applications</strong></h4>
 
 <ul>
-  <li>We will consider building the C++ application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+  <li>We will consider building the C++ application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_linux_x64_intel_release_dynamic_heap.tar.gz">here</a>.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Although here we are downloading and using the ParaMonte libraries prebuilt via the Intel C++ compiler, in general, you should be able to use the Intel C++ compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU C++ compilers.
 </div>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.cpp</code> and <code class="language-plaintext highlighter-rouge">main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code>logfunc.cpp</code> and <code>main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-1</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.sh
+    <pre><code>build.sh
 libparamonte_cpp_linux_x64_intel_release_dynamic_heap.so
 logfunc.cpp
 logfunc.hpp
@@ -1423,7 +1423,7 @@ main.cpp
 paramonte.hpp
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
   </li>
   <li>
     <p>Now, we are going to use the Intel C++ compiler to compile and link your code,</p>
@@ -1433,25 +1433,25 @@ README.md
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>icpc <span class="nv">$COMPILER_LINKER_FLAGS</span>  logfunc.cpp main.cpp libparamonte_cpp_linux_x64_intel_release_dynamic_heap.so <span class="nt">-o</span> main.exe
 </code></pre></div>    </div>
   </li>
-  <li>The above step should generate a <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.cpp</code>.</li>
+  <li>The above step should generate a <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code>logfunc.cpp</code>.</li>
 </ul>
 
 <h4 id="building-the-executable-on-linux-via-the-intel-c-compiler-for-mpi-parallel-applications">Building the executable on Linux via the Intel C++ compiler for <strong>MPI-parallel applications</strong></h4>
 
 <ul>
-  <li>We will consider building the C++ application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+  <li>We will consider building the C++ application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_linux_x64_intel_release_dynamic_heap_impi.tar.gz">here</a>.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Although here we are downloading and using the ParaMonte libraries prebuilt via the Intel C++ compiler, in general, you should be able to use the Intel C++ compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU C++ compilers.
 </div>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.cpp</code> and <code class="language-plaintext highlighter-rouge">main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code>logfunc.cpp</code> and <code>main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-1</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.sh
+    <pre><code>build.sh
 libparamonte_cpp_linux_x64_intel_release_dynamic_heap_impi.so
 logfunc.cpp
 logfunc.hpp
@@ -1459,7 +1459,7 @@ main.cpp
 paramonte.hpp
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
   </li>
   <li>
     <p>Now, we are going to use the Intel MPI compiler wrapper for the Intel C++ compiler to compile and link your code,</p>
@@ -1469,25 +1469,25 @@ README.md
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpiicpc <span class="nv">$COMPILER_LINKER_FLAGS</span>  logfunc.cpp main.cpp libparamonte_cpp_linux_x64_intel_release_dynamic_heap_impi.so <span class="nt">-o</span> main.exe
 </code></pre></div>    </div>
   </li>
-  <li>The above step should generate an MPI-parallelized <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.cpp</code>.</li>
+  <li>The above step should generate an MPI-parallelized <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code>logfunc.cpp</code>.</li>
 </ul>
 
 <h3 id="building-the-executable-on-linux-via-the-gnu-c-compiler">Building the executable on <strong>Linux</strong> via the <strong>GNU C++ compiler</strong></h3>
 
 <p>Open a Bash terminal that recognizes your local installation of the GNU compilers and libraries.</p>
 
-<p>Depending on the build type you would like to specify for your application ( <code class="language-plaintext highlighter-rouge">release</code>, <code class="language-plaintext highlighter-rouge">testing</code>, <code class="language-plaintext highlighter-rouge">debug</code> ), you may want to define the compiler/linker flags,</p>
+<p>Depending on the build type you would like to specify for your application ( <code>release</code>, <code>testing</code>, <code>debug</code> ), you may want to define the compiler/linker flags,</p>
 
 <ul>
-  <li>for <code class="language-plaintext highlighter-rouge">release</code>:
+  <li>for <code>release</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-O3"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">testing</code>:
+  <li>for <code>testing</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-O0"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">debug</code>:
+  <li>for <code>debug</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-O0 -g"</span>
 </code></pre></div>    </div>
   </li>
@@ -1496,19 +1496,19 @@ README.md
 <h4 id="building-the-executable-on-linux-via-the-gnu-c-compiler-for-serial-applications">Building the executable on Linux via the GNU C++ compiler for <strong>serial applications</strong></h4>
 
 <ul>
-  <li>We will consider building the C++ application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+  <li>We will consider building the C++ application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_linux_x64_gnu_release_dynamic_heap.tar.gz">here</a>.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Although here we are downloading and using the ParaMonte libraries prebuilt via the GNU C++ compiler, in general, you should be able to use the GNU C++ compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU C++ compilers.
 </div>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.cpp</code> and <code class="language-plaintext highlighter-rouge">main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code>logfunc.cpp</code> and <code>main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-1</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.sh
+    <pre><code>build.sh
 libparamonte_cpp_linux_x64_gnu_release_dynamic_heap.so
 logfunc.cpp
 logfunc.hpp
@@ -1516,7 +1516,7 @@ main.cpp
 paramonte.hpp
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
   </li>
   <li>
     <p>Now, we are going to use the GNU C++ compiler to compile and link your code,</p>
@@ -1526,25 +1526,25 @@ README.md
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>g++ <span class="nv">$COMPILER_LINKER_FLAGS</span>  logfunc.cpp main.cpp libparamonte_cpp_linux_x64_gnu_release_dynamic_heap.so <span class="nt">-o</span> main.exe
 </code></pre></div>    </div>
   </li>
-  <li>The above step should generate a <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.cpp</code>.</li>
+  <li>The above step should generate a <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code>logfunc.cpp</code>.</li>
 </ul>
 
 <h4 id="building-the-executable-on-linux-via-the-gnu-c-compiler-for-mpi-parallel-applications">Building the executable on Linux via the GNU C++ compiler for <strong>MPI-parallel applications</strong></h4>
 
 <ul>
-  <li>We will consider building the C++ application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+  <li>We will consider building the C++ application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_linux_x64_gnu_release_dynamic_heap_mpich.tar.gz">here</a>.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Although here we are downloading and using the ParaMonte libraries prebuilt via the GNU C++ compiler, in general, you should be able to use the GNU C++ compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU C++ compilers.
 </div>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.cpp</code> and <code class="language-plaintext highlighter-rouge">main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your C++ example codes to this folder (This will overwrite the existing <code>logfunc.cpp</code> and <code>main.cpp</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-1</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.sh
+    <pre><code>build.sh
 libparamonte_cpp_linux_x64_gnu_release_dynamic_heap_mpich.so
 logfunc.cpp
 logfunc.hpp
@@ -1552,9 +1552,9 @@ main.cpp
 paramonte.hpp
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you are using the <strong><code class="language-plaintext highlighter-rouge">OpenMPI</code></strong> library in place of the <strong><code class="language-plaintext highlighter-rouge">MPICH</code></strong> MPI library, simply replace the keyword <strong><code class="language-plaintext highlighter-rouge">mpich</code></strong> with <strong><code class="language-plaintext highlighter-rouge">openmpi</code></strong> anywhere it appears on this page.</div>
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you are using the <strong><code>OpenMPI</code></strong> library in place of the <strong><code>MPICH</code></strong> MPI library, simply replace the keyword <strong><code>mpich</code></strong> with <strong><code>openmpi</code></strong> anywhere it appears on this page.</div>
   </li>
   <li>
     <p>Now, we are going to use the MPICH MPI compiler wrapper for the GNU C++ compiler to compile and link your code,</p>
@@ -1564,7 +1564,7 @@ README.md
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpicxx <span class="nv">$COMPILER_LINKER_FLAGS</span>  logfunc.cpp main.cpp libparamonte_cpp_linux_x64_gnu_release_dynamic_heap_mpich.so <span class="nt">-o</span> main.exe
 </code></pre></div>    </div>
   </li>
-  <li>The above step should generate an MPI-parallelized <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.cpp</code>.</li>
+  <li>The above step should generate an MPI-parallelized <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code>logfunc.cpp</code>.</li>
 </ul>
 
 <p><br /></p>

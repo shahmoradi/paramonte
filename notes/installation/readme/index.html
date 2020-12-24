@@ -798,8 +798,8 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
 <p>Across all supported Operating Systems (OS) and platforms / architectures, a universal naming convention is currently used to build the ParaMonte kernel libraries,</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libparamonte_&lt;interface language: c/cpp/fortran/matlab/python/r/...&gt;_&lt;OS: windows/linux/darwin/...&gt;_&lt;architecture: x64/x86/...&gt;_&lt;compiler suite: intel/gnu/...&gt;_&lt;build type: release/testing/debug&gt;_&lt;library type: dynamic/static&gt;_&lt;memory allocation type: stack/heap&gt;_&lt;parallelism library/type: (none)/mpi/impi/mpich/openmpi/cafsingle/cafshared/cafdistributed/...&gt;.&lt;library file extension: dll/lib/so/a/dylib&gt;  
-</code></pre></div></div>
+<pre><code>libparamonte_&lt;interface language: c/cpp/fortran/matlab/python/r/...&gt;_&lt;OS: windows/linux/darwin/...&gt;_&lt;architecture: x64/x86/...&gt;_&lt;compiler suite: intel/gnu/...&gt;_&lt;build type: release/testing/debug&gt;_&lt;library type: dynamic/static&gt;_&lt;memory allocation type: stack/heap&gt;_&lt;parallelism library/type: (none)/mpi/impi/mpich/openmpi/cafsingle/cafshared/cafdistributed/...&gt;.&lt;library file extension: dll/lib/so/a/dylib&gt;  
+</code></pre>
 
 <p>where,</p>
 
@@ -825,10 +825,10 @@ the script runs before the sidebar code runs and the class never gets inserted.
   </li>
   <li><strong>architecture type</strong> can be either:
     <ul>
-      <li><strong>x64</strong>: indicating a library that is built usage on <code class="language-plaintext highlighter-rouge">amd64</code> 64-bit architectures (also known as <code class="language-plaintext highlighter-rouge">x86_64</code>), or,</li>
+      <li><strong>x64</strong>: indicating a library that is built usage on <code>amd64</code> 64-bit architectures (also known as <code>x86_64</code>), or,</li>
       <li>some other architecture (or <strong>unknown</strong> if it cannot be identified), indicating a library build that is meant to be used on the specific architecture for which the library has been built.</li>
     </ul>
-    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> <code class="language-plaintext highlighter-rouge">x64</code> does NOT stand for Intel’s 64-bit architecture <code class="language-plaintext highlighter-rouge">IA-64</code>  (also called Intel Itanium architecture).</div>
+    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> <code>x64</code> does NOT stand for Intel’s 64-bit architecture <code>IA-64</code>  (also called Intel Itanium architecture).</div>
   </li>
   <li><strong>compiler suite</strong> can be any ParaMonte-compatible compiler vendor name that you are using to build the ParaMonte library. Currently, the ParaMonte build-scripts support only:
     <ul>
@@ -864,7 +864,7 @@ The minimum GNU compiler versions required for building ParaMonte library are <b
       <li><strong>testing</strong>: indicating a build with compiler default optimization flags used only for testing purposes, or,</li>
       <li><strong>debug</strong>: indicating a build with compiler flags that enable tracing of any compile-time or run-time errors.</li>
     </ul>
-    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you are not sure which one is appropriate for your case, always choose <code class="language-plaintext highlighter-rouge">release</code>. In general, the <code class="language-plaintext highlighter-rouge">debug</code> and <code class="language-plaintext highlighter-rouge">testing</code> build types are mostly useful to developers and professional programmers. In some cases where the code consistently crashes in the release mode, it may be useful to run the same simulation using a <code class="language-plaintext highlighter-rouge">debug</code> build of the library to trace the source of the runtime error in the code.</div>
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you are not sure which one is appropriate for your case, always choose <code>release</code>. In general, the <code>debug</code> and <code>testing</code> build types are mostly useful to developers and professional programmers. In some cases where the code consistently crashes in the release mode, it may be useful to run the same simulation using a <code>debug</code> build of the library to trace the source of the runtime error in the code.</div>
   </li>
   <li><strong>library type</strong> can be either:
     <ul>
@@ -878,7 +878,7 @@ The minimum GNU compiler versions required for building ParaMonte library are <b
       <li><strong>stack</strong>: indicating static allocation of all automatic arrays and arrays created for temporary computations on the <a href="https://en.wikipedia.org/wiki/Stack-based_memory_allocation" target="_blank">stack</a>, or,</li>
       <li><strong>heap</strong>: indicating heap allocation of all automatic arrays and arrays created for temporary computations on the <a href="https://en.wikipedia.org/wiki/Memory_management#HEAP" target="_blank">heap</a>).</li>
     </ul>
-    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> In general, stack memory allocation can lead to slightly more efficient codes than heap memory allocation. However, applications that use stack for temporary memory allocations often run into the <strong>stack overflow</strong> kind of errors caused by the application reaching its maximum stack memory usage limit that is set by the operating system. While the stack size for an application can be often increased on both Windows and Unix-like OS, it can be potentially a challenging task for programmers with insufficient experience. Therefore, <strong>if you do not know the difference between stack vs. heap memory allocation, always choose heap-enabled ParaMonte library builds to avoid unexpected <code class="language-plaintext highlighter-rouge">stack overflow</code> errors</strong>.</div>
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> In general, stack memory allocation can lead to slightly more efficient codes than heap memory allocation. However, applications that use stack for temporary memory allocations often run into the <strong>stack overflow</strong> kind of errors caused by the application reaching its maximum stack memory usage limit that is set by the operating system. While the stack size for an application can be often increased on both Windows and Unix-like OS, it can be potentially a challenging task for programmers with insufficient experience. Therefore, <strong>if you do not know the difference between stack vs. heap memory allocation, always choose heap-enabled ParaMonte library builds to avoid unexpected <code>stack overflow</code> errors</strong>.</div>
   </li>
   <li><strong>parallelism type</strong> can be either:
     <ul>
@@ -891,17 +891,17 @@ The minimum GNU compiler versions required for building ParaMonte library are <b
       <li><strong>cafshared</strong>: indicating a library built via Coarray Fortran parallelism paradigm that is meant to be linked against Coarray parallel main applications for coarray-enabled parallel simulations on shared-memory architecture, or,</li>
       <li><strong>cafdistributed</strong>: indicating a library built via Coarray Fortran parallelism paradigm that is meant to be used for coarray-enabled parallel simulations on distributed-memory architecture, or,</li>
     </ul>
-    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> The three Coarray parallelism options are only available when the ParaMonte library is compiled via the Intel Fortran compiler. When compiled via the GNU Fortran compiler, the only option available is <code class="language-plaintext highlighter-rouge">cafsingle</code>. When compiled via the GNU Fortran compiler with <a href="http://www.opencoarrays.org/">OpenCoarrays library</a>, the sole option is <code class="language-plaintext highlighter-rouge">cafdistributed</code>. Also, the Coarray-enabled parallel ParaMonte libraries can only be built as static (archive) libraries. Also, the Coarray parallelism is exclusively available for ParaMonte library builds that are meant to be statically linked against <strong>main</strong> applications exclusively written in Fortran.</div>
+    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> The three Coarray parallelism options are only available when the ParaMonte library is compiled via the Intel Fortran compiler. When compiled via the GNU Fortran compiler, the only option available is <code>cafsingle</code>. When compiled via the GNU Fortran compiler with <a href="http://www.opencoarrays.org/">OpenCoarrays library</a>, the sole option is <code>cafdistributed</code>. Also, the Coarray-enabled parallel ParaMonte libraries can only be built as static (archive) libraries. Also, the Coarray parallelism is exclusively available for ParaMonte library builds that are meant to be statically linked against <strong>main</strong> applications exclusively written in Fortran.</div>
   </li>
 </ul>
 
 <h2 id="supported-platform-and-architecture">Supported platform and architecture</h2>
 
-<p>The ParaMonte library is currently developed with the presumption that it will be used on Windows/Linux/macOS operating systems (OS) built on an <code class="language-plaintext highlighter-rouge">amd64</code> architecture system (also known as <code class="language-plaintext highlighter-rouge">x64</code> on Windows, and <code class="language-plaintext highlighter-rouge">x86_64</code> on Linux and macOS). There is, however, no technical or programming barrier to building ParaMonte for other architectures, as long as a compatible MPI and Fortran/C compilers are available on the specific platform and architecture of interest.</p>
+<p>The ParaMonte library is currently developed with the presumption that it will be used on Windows/Linux/macOS operating systems (OS) built on an <code>amd64</code> architecture system (also known as <code>x64</code> on Windows, and <code>x86_64</code> on Linux and macOS). There is, however, no technical or programming barrier to building ParaMonte for other architectures, as long as a compatible MPI and Fortran/C compilers are available on the specific platform and architecture of interest.</p>
 
 <h3 id="why-are-the-prebuilt-paramonte-libraries-available-only-for-the-x64-architecture">Why are the prebuilt ParaMonte libraries available only for the x64 architecture?</h3>
 
-<p>As of 2020, the <code class="language-plaintext highlighter-rouge">amd64</code> processor architecture takes the lion share of the market demand (illustrated in the figure below). It would be very costly for the ParaMonte developers (in terms of energy, money, and time) to build and release the library for all available architectures in the market. Note, however, that the library can be built for usage on any architecture as long as a ParaMonte-compatible C/Fortran compiler can be installed on the system.</p>
+<p>As of 2020, the <code>amd64</code> processor architecture takes the lion share of the market demand (illustrated in the figure below). It would be very costly for the ParaMonte developers (in terms of energy, money, and time) to build and release the library for all available architectures in the market. Note, however, that the library can be built for usage on any architecture as long as a ParaMonte-compatible C/Fortran compiler can be installed on the system.</p>
 <figure>
     <img src="cpu_arch_market_share.png" width="100%" />
     <figcaption>
@@ -912,28 +912,28 @@ The minimum GNU compiler versions required for building ParaMonte library are <b
 <h3 id="how-can-i-find-out-the-platform-and-architecture-of-my-system">How can I find out the platform and architecture of my system?</h3>
 
 <ul>
-  <li>On <strong>Windows OS</strong>, open a Windows command-line interface (<code class="language-plaintext highlighter-rouge">cmd.exe</code>).
+  <li>On <strong>Windows OS</strong>, open a Windows command-line interface (<code>cmd.exe</code>).
     <ul>
       <li>To find out your system’s OS, type,
         <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> %OS%
 </code></pre></div>        </div>
         <p>which should result in an answer like the following,</p>
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Windows_NT
-</code></pre></div>        </div>
+        <pre><code>Windows_NT
+</code></pre>
       </li>
       <li>To check your system’s platform/architecture, type,
         <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> %PLATFORM%
 </code></pre></div>        </div>
         <p>which should result in an answer like the following,</p>
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x64
-</code></pre></div>        </div>
+        <pre><code>x64
+</code></pre>
         <p>or,</p>
         <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> %PROCESSOR_ARCHITECTURE%
 </code></pre></div>        </div>
         <p>which should result in an answer like the following,</p>
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AMD64
-</code></pre></div>        </div>
-        <p>if your system’s architecture is <code class="language-plaintext highlighter-rouge">amd64</code>.</p>
+        <pre><code>AMD64
+</code></pre>
+        <p>if your system’s architecture is <code>amd64</code>.</p>
       </li>
     </ul>
   </li>
@@ -948,20 +948,20 @@ The minimum GNU compiler versions required for building ParaMonte library are <b
         <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">uname</span> <span class="nt">-s</span>
 </code></pre></div>        </div>
         <p>which should result in an answer like the following,</p>
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Linux
-</code></pre></div>        </div>
+        <pre><code>Linux
+</code></pre>
         <p>or,</p>
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Darwin
-</code></pre></div>        </div>
+        <pre><code>Darwin
+</code></pre>
         <p>depending on the type of your OS.</p>
       </li>
       <li>To check your system’s platform/architecture, type,
         <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">uname</span> <span class="nt">-m</span>
 </code></pre></div>        </div>
         <p>which should result in an answer like the following,</p>
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x86_64
-</code></pre></div>        </div>
-        <p>if your system’s architecture is <code class="language-plaintext highlighter-rouge">amd64</code>.</p>
+        <pre><code>x86_64
+</code></pre>
+        <p>if your system’s architecture is <code>amd64</code>.</p>
       </li>
     </ul>
   </li>

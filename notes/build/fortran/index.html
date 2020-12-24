@@ -796,9 +796,9 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
 <h2 id="preamble">Preamble</h2>
 
-<p>Suppose you have written a <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/Fortran/logfunc.f90" target="_blank">file</a> named <code class="language-plaintext highlighter-rouge">logfunc.f90</code> containing an implementation of your mathematical objective function and a <code class="language-plaintext highlighter-rouge">main.f90</code> <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main.f90" target="_blank">file</a> containing call(s) to the ParaMonte routines of your choice to sample the objective function.</p>
+<p>Suppose you have written a <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/Fortran/logfunc.f90" target="_blank">file</a> named <code>logfunc.f90</code> containing an implementation of your mathematical objective function and a <code>main.f90</code> <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main.f90" target="_blank">file</a> containing call(s) to the ParaMonte routines of your choice to sample the objective function.</p>
 
-<p>The corresponding required <code class="language-plaintext highlighter-rouge">paramonte.f90</code> module interface file can be also downloaded from <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/src/interface/Fortran/paramonte.f90" target="_blank">here</a>.</p>
+<p>The corresponding required <code>paramonte.f90</code> module interface file can be also downloaded from <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/src/interface/Fortran/paramonte.f90" target="_blank">here</a>.</p>
 
 <p>At this point, you need to have already made up your mind about which approach you want to take to compile and link your code to the ParaMonte library,</p>
 
@@ -816,20 +816,20 @@ the script runs before the sidebar code runs and the class never gets inserted.
 <ul>
   <li>On <strong>Windows OS</strong>
     <ul>
-      <li>We recommend installing and using the <a href="https://www.cdslab.org/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows" target="_blank">Intel Parallel Studio</a> <code class="language-plaintext highlighter-rouge">2019.1.1</code> or newer, although older versions may also work.</li>
+      <li>We recommend installing and using the <a href="https://www.cdslab.org/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows" target="_blank">Intel Parallel Studio</a> <code>2019.1.1</code> or newer, although older versions may also work.</li>
     </ul>
   </li>
   <li>On <strong>Linux OS</strong>
     <ul>
-      <li>We recommend installing and using the <a href="https://software.intel.com/en-us/parallel-studio-xe/choose-download" target="_blank">Intel Parallel Studio</a> ≥ <code class="language-plaintext highlighter-rouge">2019.1.1</code> or newer, although older versions may also work.</li>
-      <li>Alternatively, you can also install a recent release of the <a href="https://gcc.gnu.org/" target="_blank">GNU Compiler Collection</a> <code class="language-plaintext highlighter-rouge">gcc/g++/gfortran</code> (preferably version <code class="language-plaintext highlighter-rouge">10.1.0</code> or newer) instead of the Intel compiler suite. If you intend to build parallel applications, you will have to also have a compatible MPI library installed on your system, preferably the <a href="https://www.mpich.org/" target="_blank">MPICH MPI library</a> <code class="language-plaintext highlighter-rouge">3.2</code> or newer.</li>
+      <li>We recommend installing and using the <a href="https://software.intel.com/en-us/parallel-studio-xe/choose-download" target="_blank">Intel Parallel Studio</a> ≥ <code>2019.1.1</code> or newer, although older versions may also work.</li>
+      <li>Alternatively, you can also install a recent release of the <a href="https://gcc.gnu.org/" target="_blank">GNU Compiler Collection</a> <code>gcc/g++/gfortran</code> (preferably version <code>10.1.0</code> or newer) instead of the Intel compiler suite. If you intend to build parallel applications, you will have to also have a compatible MPI library installed on your system, preferably the <a href="https://www.mpich.org/" target="_blank">MPICH MPI library</a> <code>3.2</code> or newer.</li>
     </ul>
   </li>
   <li>On <strong>macOS</strong> <br />
 The situation is slightly complicated on MacOS. Apparently, Apple and Intel corporations have an intense internal rivalry and competition with each other, so much that Apple did not want to help Intel make their MPI library available on macOS. As a result, the Intel Parallel Studio cannot be used to build parallel MPI applications on macOS. Therefore,
     <ul>
       <li>If you intend to build and use <strong>serial ParaMonte applications</strong>, then we still recommend installing and using the <a href="https://software.intel.com/en-us/parallel-studio-xe/choose-download" target="_blank">Intel Compiler Suite ≥ 2019.1.1</a> or newer on your system.</li>
-      <li>If you intend to build and use <strong>parallel ParaMonte applications</strong>, then the best option would be to download and install a recent version of the <a href="https://gcc.gnu.org/" target="_blank">GNU Compiler Collection</a> (preferably, the same version with which the ParaMonte was built: <code class="language-plaintext highlighter-rouge">10.1.0</code>) as well as the <a href="https://www.open-mpi.org/" target="_blank">Open-MPI library</a> <code class="language-plaintext highlighter-rouge">4.0.5</code>.
+      <li>If you intend to build and use <strong>parallel ParaMonte applications</strong>, then the best option would be to download and install a recent version of the <a href="https://gcc.gnu.org/" target="_blank">GNU Compiler Collection</a> (preferably, the same version with which the ParaMonte was built: <code>10.1.0</code>) as well as the <a href="https://www.open-mpi.org/" target="_blank">Open-MPI library</a> <code>4.0.5</code>.
         <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> See the instructions on <a href="../../installation/macos/" target="_blank">the installation page</a> on how to seamlessly install the above compilers and libraries in less than one minute on your Mac.</div>
       </li>
     </ul>
@@ -861,9 +861,9 @@ where you will have to replace <code>libparamonte_fortran_linux_x64_intel_releas
       </li>
       <li><strong>or build the ParaMonte library</strong> for the configuration of your choice.</li>
     </ul>
-    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When building the ParaMonte library or downloading the prebuilt ParaMonte libraries, always choose the <strong><code class="language-plaintext highlighter-rouge">release</code></strong> mode as your library build-type among the available three default choices ( <strong><code class="language-plaintext highlighter-rouge">release</code></strong>, <strong><code class="language-plaintext highlighter-rouge">testing</code></strong>, <strong><code class="language-plaintext highlighter-rouge">debug</code></strong> ). The <strong><code class="language-plaintext highlighter-rouge">release</code></strong> build-type results in the highest-performing ParaMonte library build and the fastest runtime simulations. If needed, use the <strong><code class="language-plaintext highlighter-rouge">testing</code></strong> build-type solely for quick application builds for testing purposes and the <strong><code class="language-plaintext highlighter-rouge">debug</code></strong> build-type solely for debugging your simulations at runtime.</div>
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When building the ParaMonte library or downloading the prebuilt ParaMonte libraries, always choose the <strong><code>release</code></strong> mode as your library build-type among the available three default choices ( <strong><code>release</code></strong>, <strong><code>testing</code></strong>, <strong><code>debug</code></strong> ). The <strong><code>release</code></strong> build-type results in the highest-performing ParaMonte library build and the fastest runtime simulations. If needed, use the <strong><code>testing</code></strong> build-type solely for quick application builds for testing purposes and the <strong><code>debug</code></strong> build-type solely for debugging your simulations at runtime.</div>
   </li>
-  <li><strong>Navigate to the directory</strong> containing your uncompressed ParaMonte library files and <strong>paste</strong> (that is, overwrite the existing three <code class="language-plaintext highlighter-rouge">paramonte.in</code>, <code class="language-plaintext highlighter-rouge">logfunc.f90</code>, and <code class="language-plaintext highlighter-rouge">main.f90</code> files with) <strong>your files and codes</strong>.</li>
+  <li><strong>Navigate to the directory</strong> containing your uncompressed ParaMonte library files and <strong>paste</strong> (that is, overwrite the existing three <code>paramonte.in</code>, <code>logfunc.f90</code>, and <code>main.f90</code> files with) <strong>your files and codes</strong>.</li>
   <li><strong>Open a command-line interface and navigate to the directory</strong> containing your uncompressed ParaMonte library files.
     <ul>
       <li><strong>On Windows</strong>
@@ -871,7 +871,7 @@ where you will have to replace <code>libparamonte_fortran_linux_x64_intel_releas
           <li>If you choose to use the Intel Fortran compiler to build your application, then we strongly recommend you to use the Intel Parallel Studio’s customized command-line interface that is automatically installed on your system. You can access it from the Windows startup menu as illustrated in the figure below.<br />
 <a href="https://www.cdslab.org/recipes/programming/intel-parallel-studio-installation-windows/intel-parallel-studio-installation-windows" target="_blank"><img src="https://www.cdslab.org/recipes/programming/intel-parallel-studio-installation-windows/intelCMD.png" alt="Intel Parallel Studio's customized command-line interface" /></a><br />
 <br />
-Open a <strong>64-bit</strong> instance of the Intel Parallel Studio’s command-line interface. This command-line prompt comes with all the relevant compiler and linker environmental variables predefined in your session so that you won’t need to manually modify the contents of your environmental <code class="language-plaintext highlighter-rouge">PATH</code> variable.</li>
+Open a <strong>64-bit</strong> instance of the Intel Parallel Studio’s command-line interface. This command-line prompt comes with all the relevant compiler and linker environmental variables predefined in your session so that you won’t need to manually modify the contents of your environmental <code>PATH</code> variable.</li>
         </ul>
       </li>
       <li><strong>On Linux / macOS</strong>, use a Bash terminal.</li>
@@ -921,7 +921,7 @@ By default, the build-script automatically chooses the compiler for building you
 </ul>
 If you specify the <b><code>-c</code></b> compiler option, it is imperative to specify the <b><code>-f</code></b> compiler-flags option along with it. Failure to do so will cause the script to switch to the default inferred flags from the name of the compiler used in the filename of the ParaMonte library that is being used. The inconsistent compiler flags will then cause the application-build to abort.  
 </div>
-    <p>The build-script generates the executable along with a Bash script <code class="language-plaintext highlighter-rouge">run.sh</code> in the same directory, which can be called on the command-line to run the executable. See <a href="../../run/default/#running-the-executable-generated-via-the-quick-automated-approach-on-linux--macos" target="_blank">this page</a> on how to set the number of processors for parallel simulations and run the executable.</p>
+    <p>The build-script generates the executable along with a Bash script <code>run.sh</code> in the same directory, which can be called on the command-line to run the executable. See <a href="../../run/default/#running-the-executable-generated-via-the-quick-automated-approach-on-linux--macos" target="_blank">this page</a> on how to set the number of processors for parallel simulations and run the executable.</p>
   </li>
 </ul>
 
@@ -929,22 +929,22 @@ If you specify the <b><code>-c</code></b> compiler option, it is imperative to s
 
 <h2 id="building-the-executable-do-it-yourself">Building the executable: <strong>Do-it-yourself</strong></h2>
 
-<p>There are currently more than 210 possible configurations with which you can build the ParaMonte library. Covering the compilation and linking procedure for all of these different scenarios here is impossible. To simplify, we will only consider compiling and linking your Fortran application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for only dynamic-linking. Before continuing to build your application manually, make sure you follow the guidelines outlined in the <a href="#preamble">Preamble</a> section in the above.</p>
+<p>There are currently more than 210 possible configurations with which you can build the ParaMonte library. Covering the compilation and linking procedure for all of these different scenarios here is impossible. To simplify, we will only consider compiling and linking your Fortran application via the ParaMonte library build in <code>release</code> mode for only dynamic-linking. Before continuing to build your application manually, make sure you follow the guidelines outlined in the <a href="#preamble">Preamble</a> section in the above.</p>
 
 <h3 id="building-the-executable-on-windows-via-the-intel-fortran-compiler">Building the executable on <strong>Windows</strong> via the <strong>Intel Fortran compiler</strong></h3>
 
-<p>Depending on the build type you would like to specify for your application ( <code class="language-plaintext highlighter-rouge">release</code>, <code class="language-plaintext highlighter-rouge">testing</code>, <code class="language-plaintext highlighter-rouge">debug</code> ), you may want to define the compiler/linker flags,</p>
+<p>Depending on the build type you would like to specify for your application ( <code>release</code>, <code>testing</code>, <code>debug</code> ), you may want to define the compiler/linker flags,</p>
 
 <ul>
-  <li>for <code class="language-plaintext highlighter-rouge">release</code>:
+  <li>for <code>release</code>:
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">set</span> <span class="s2">"COMPILER_LINKER_FLAGS=/standard-semantics /O3 /Qip /Qipo /Qunroll /Qunroll-aggressive /fpp"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">testing</code>:
+  <li>for <code>testing</code>:
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">set</span> <span class="s2">"COMPILER_LINKER_FLAGS=/standard-semantics /Od /fpp"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">debug</code>:
+  <li>for <code>debug</code>:
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">set</span> <span class="s2">"COMPILER_LINKER_FLAGS=/standard-semantics /Od /debug:full /CB /Qinit:snan,arrays /warn:all /gen-interfaces /traceback /check:all /fpe-all:0 /Qtrapuv /fpp"</span>
 </code></pre></div>    </div>
   </li>
@@ -955,7 +955,7 @@ If you specify the <b><code>-c</code></b> compiler option, it is imperative to s
 <p>If you are using the same compiler/linker version that has been used to build the ParaMonte library and you would like to use the Object-Oriented (OOP) interface of the ParaMonte routines, then you will have to pass the following preprocessor macro to the compiler as well,</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">set</span> <span class="s2">"PREPROCESSOR_FLAGS=/DIS_COMPATIBLE_COMPILER"</span>
 </code></pre></div></div>
-<p>This will define the preprocessor macro <code class="language-plaintext highlighter-rouge">IS_COMPATIBLE_COMPILER</code>, which will enable the use of the OOP interface of the ParaMonte routines. Otherwise, you may want to unset this variable to ensure that you will be using the old-style Fortran interface to the ParaMonte library,</p>
+<p>This will define the preprocessor macro <code>IS_COMPATIBLE_COMPILER</code>, which will enable the use of the OOP interface of the ParaMonte routines. Otherwise, you may want to unset this variable to ensure that you will be using the old-style Fortran interface to the ParaMonte library,</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">set</span> <span class="s2">"PREPROCESSOR_FLAGS="</span>
 </code></pre></div></div>
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you are using the prebuilt ParaMonte libraries and you are not sure whether you are using a ParaMonte-compatible compiler to build your application, do not pass this preprocessor macro to the compiler. Instead, use <a href="../../examples/fortran/mvn/#calling-the-paramonte-samplers-the-old-less-flexible-but-more-portable-style" target="_blank">the old-style Fortran interface</a> to the ParaMonte library.</div>
@@ -964,16 +964,16 @@ If you specify the <b><code>-c</code></b> compiler option, it is imperative to s
 
 <ul>
   <li>
-    <p>We will consider building the Fortran application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+    <p>We will consider building the Fortran application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_fortran_windows_x64_intel_release_dynamic_heap.zip">here</a>.</p>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.f90</code> and <code class="language-plaintext highlighter-rouge">main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code>logfunc.f90</code> and <code>main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">dir</span> <span class="na">/a /b /n
 </span></code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.bat
+    <pre><code>build.bat
 libparamonte_fortran_windows_x64_intel_release_dynamic_heap.dll
 libparamonte_fortran_windows_x64_intel_release_dynamic_heap.exp
 libparamonte_fortran_windows_x64_intel_release_dynamic_heap.lib
@@ -981,7 +981,7 @@ logfunc.fortran
 main.fortran
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
 
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you encounter difficulties in navigating to your target build folder on the command-prompt, see <a href="../../troubleshooting/windows-drive-change/" target="_blank">the troubleshooting page</a> for the possible cause and the solution.</div>
   </li>
@@ -996,7 +996,7 @@ README.md
 
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">ifort</span> <span class="nv">%COMPILER_LINKER_FLAGS%</span> <span class="nv">%PREPROCESSOR_FLAGS%</span> <span class="kd">paramonte</span>.f90 <span class="kd">logfunc</span>.f90 <span class="kd">main</span>.f90 <span class="kd">libparamonte_fortran_windows_x64_intel_release_dynamic_heap</span>.lib <span class="na">-o </span><span class="kd">main</span><span class="err">.exe</span>
 </code></pre></div>    </div>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
+    <pre><code>Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
 Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 
 Microsoft (R) Incremental Linker Version 14.22.27905.0
@@ -1007,11 +1007,11 @@ Copyright (C) Microsoft Corporation.  All rights reserved.
 logfunc.obj
 main.obj
 libparamonte_fortran_windows_x64_intel_release_dynamic_heap.lib
-</code></pre></div>    </div>
-    <p>Note the <strong>missing</strong> <code class="language-plaintext highlighter-rouge">/DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code class="language-plaintext highlighter-rouge">PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the old-style, but more-portable Fortran interface to the ParaMonte library.</p>
+</code></pre>
+    <p>Note the <strong>missing</strong> <code>/DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code>PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the old-style, but more-portable Fortran interface to the ParaMonte library.</p>
   </li>
   <li>
-    <p>The above step should generate a <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.f90</code>.</p>
+    <p>The above step should generate a <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code>logfunc.f90</code>.</p>
   </li>
 </ul>
 
@@ -1020,16 +1020,16 @@ libparamonte_fortran_windows_x64_intel_release_dynamic_heap.lib
 <ul>
   <li>
     <p>For simplicity, we will only consider the MPI-parallelism here. 
-We will consider building the Fortran application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+We will consider building the Fortran application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_fortran_windows_x64_intel_release_dynamic_heap_impi.zip">here</a>.</p>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.f90</code> and <code class="language-plaintext highlighter-rouge">main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code>logfunc.f90</code> and <code>main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">dir</span> <span class="na">/a /b /n
 </span></code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.bat
+    <pre><code>build.bat
 libparamonte_fortran_windows_x64_intel_release_dynamic_heap_impi.dll
 libparamonte_fortran_windows_x64_intel_release_dynamic_heap_impi.exp
 libparamonte_fortran_windows_x64_intel_release_dynamic_heap_impi.lib
@@ -1037,7 +1037,7 @@ logfunc.fortran
 main.fortran
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
 
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you encounter difficulties in navigating to your target build folder on the command-prompt, see <a href="../../troubleshooting/windows-drive-change/" target="_blank">the troubleshooting page</a> for the possible cause and the solution.</div>
   </li>
@@ -1052,7 +1052,7 @@ README.md
 
     <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">mpiifort</span> <span class="nv">%COMPILER_LINKER_FLAGS%</span> <span class="nv">%PREPROCESSOR_FLAGS%</span> <span class="kd">paramonte</span>.f90 <span class="kd">logfunc</span>.f90 <span class="kd">main</span>.f90 <span class="kd">libparamonte_fortran_windows_x64_intel_release_dynamic_heap_impi</span>.lib <span class="na">-o </span><span class="kd">main</span><span class="err">.exe</span>
 </code></pre></div>    </div>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpifc.bat for the Intel(R) MPI Library 2019 Update 4 for Windows*
+    <pre><code>mpifc.bat for the Intel(R) MPI Library 2019 Update 4 for Windows*
 Copyright 2007-2019 Intel Corporation.
 
 Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.245 Build 20190417
@@ -1068,11 +1068,11 @@ Copyright (C) Microsoft Corporation.  All rights reserved.
 impi.lib
 C:\Users\SHAHMO~1\AppData\Local\Temp\ipo_4449624.obj
 libparamonte_fortran_windows_x64_intel_release_dynamic_heap_impi.lib
-</code></pre></div>    </div>
-    <p>Note the <strong>missing</strong> <code class="language-plaintext highlighter-rouge">/DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code class="language-plaintext highlighter-rouge">PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the old-style, but more-portable Fortran interface to the ParaMonte library.</p>
+</code></pre>
+    <p>Note the <strong>missing</strong> <code>/DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code>PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the old-style, but more-portable Fortran interface to the ParaMonte library.</p>
   </li>
   <li>
-    <p>The above step should generate an MPI-parallelized <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.f90</code>.</p>
+    <p>The above step should generate an MPI-parallelized <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code>logfunc.f90</code>.</p>
   </li>
 </ul>
 
@@ -1080,18 +1080,18 @@ libparamonte_fortran_windows_x64_intel_release_dynamic_heap_impi.lib
 
 <p>Open a Bash terminal that recognizes your local installation of the Intel compilers and libraries.</p>
 
-<p>Depending on the build type you would like to specify for your application ( <code class="language-plaintext highlighter-rouge">release</code>, <code class="language-plaintext highlighter-rouge">testing</code>, <code class="language-plaintext highlighter-rouge">debug</code> ), you may want to define the compiler/linker flags,</p>
+<p>Depending on the build type you would like to specify for your application ( <code>release</code>, <code>testing</code>, <code>debug</code> ), you may want to define the compiler/linker flags,</p>
 
 <ul>
-  <li>for <code class="language-plaintext highlighter-rouge">release</code>:
+  <li>for <code>release</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-standard-semantics -O3 -ip -ipo -unroll -unroll-aggressive -finline-functions -fpp"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">testing</code>:
+  <li>for <code>testing</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-standard-semantics -O0 -fpp"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">debug</code>:
+  <li>for <code>debug</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-standard-semantics -O0 -debug full -fpp"</span>
 </code></pre></div>    </div>
   </li>
@@ -1102,7 +1102,7 @@ libparamonte_fortran_windows_x64_intel_release_dynamic_heap_impi.lib
 <p>If you are using the same compiler/linker version that has been used to build the ParaMonte library and you would like to use the Object-Oriented (OOP) interface of the ParaMonte routines, then you will have to pass the following preprocessor macro to the compiler as well,</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PREPROCESSOR_FLAGS</span><span class="o">=</span><span class="s2">"-DIS_COMPATIBLE_COMPILER"</span>
 </code></pre></div></div>
-<p>This will define the preprocessor macro <code class="language-plaintext highlighter-rouge">IS_COMPATIBLE_COMPILER</code>, which will enable the use of the OOP interface of the ParaMonte routines. Otherwise, you may want to unset this variable to ensure that you will be using the old-style Fortran interface to the ParaMonte library,</p>
+<p>This will define the preprocessor macro <code>IS_COMPATIBLE_COMPILER</code>, which will enable the use of the OOP interface of the ParaMonte routines. Otherwise, you may want to unset this variable to ensure that you will be using the old-style Fortran interface to the ParaMonte library,</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">unset </span>PREPROCESSOR_FLAGS
 </code></pre></div></div>
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you are using the prebuilt ParaMonte libraries and you are not sure whether you are using a ParaMonte-compatible compiler to build your application, do not pass this preprocessor macro to the compiler. Instead, use <a href="../../examples/fortran/mvn/#calling-the-paramonte-samplers-the-old-less-flexible-but-more-portable-style" target="_blank">the old-style Fortran interface</a> to the ParaMonte library.</div>
@@ -1110,25 +1110,25 @@ libparamonte_fortran_windows_x64_intel_release_dynamic_heap_impi.lib
 <h4 id="building-the-executable-on-macos-via-the-intel-fortran-compiler-for-serial-applications">Building the executable on macOS via the Intel Fortran compiler for <strong>serial applications</strong></h4>
 
 <ul>
-  <li>We will consider building the Fortran application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+  <li>We will consider building the Fortran application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_fortran_darwin_x64_intel_release_dynamic_heap.tar.gz">here</a>.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Although here we are downloading and using the ParaMonte libraries prebuilt via the Intel Fortran compiler, in general, you should be able to use the Intel Fortran compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU Fortran compilers.
 </div>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.f90</code> and <code class="language-plaintext highlighter-rouge">main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code>logfunc.f90</code> and <code>main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-1</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.sh
+    <pre><code>build.sh
 libparamonte_fortran_darwin_x64_intel_release_dynamic_heap.dylib
 logfunc.f90
 main.f90
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
   </li>
   <li>
     <p>Now, we are going to use the Intel Fortran compiler to compile and link your code,</p>
@@ -1141,27 +1141,27 @@ README.md
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort <span class="nv">$COMPILER_LINKER_FLAGS</span> <span class="nv">$PREPROCESSOR_FLAGS</span> paramonte.f90 logfunc.f90 main.f90 libparamonte_fortran_darwin_x64_intel_release_dynamic_heap.dylib <span class="nt">-o</span> main.exe
 </code></pre></div>    </div>
 
-    <p>Note the <strong>missing</strong> <code class="language-plaintext highlighter-rouge">-DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code class="language-plaintext highlighter-rouge">PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the procedural-style, but more-portable Fortran interface to the ParaMonte library.</p>
+    <p>Note the <strong>missing</strong> <code>-DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code>PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the procedural-style, but more-portable Fortran interface to the ParaMonte library.</p>
   </li>
-  <li>The above step should generate a <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.f90</code>.</li>
+  <li>The above step should generate a <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code>logfunc.f90</code>.</li>
 </ul>
 
 <h3 id="building-the-executable-on-macos-via-the-gnu-fortran-compiler">Building the executable on <strong>macOS</strong> via the <strong>GNU Fortran compiler</strong></h3>
 
 <p>Open a Bash terminal that recognizes your local installation of the GNU compilers and libraries.</p>
 
-<p>Depending on the build type you would like to specify for your application ( <code class="language-plaintext highlighter-rouge">release</code>, <code class="language-plaintext highlighter-rouge">testing</code>, <code class="language-plaintext highlighter-rouge">debug</code> ), you may want to define the compiler/linker flags,</p>
+<p>Depending on the build type you would like to specify for your application ( <code>release</code>, <code>testing</code>, <code>debug</code> ), you may want to define the compiler/linker flags,</p>
 
 <ul>
-  <li>for <code class="language-plaintext highlighter-rouge">release</code>:
+  <li>for <code>release</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-std=gnu -O3 -funroll-loops -finline-functions -ftree-vectorize -cpp"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">testing</code>:
+  <li>for <code>testing</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-std=gnu -O0 -cpp"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">debug</code>:
+  <li>for <code>debug</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-std=gnu -O0 -g -cpp"</span>
 </code></pre></div>    </div>
   </li>
@@ -1172,7 +1172,7 @@ README.md
 <p>If you are using the same compiler/linker version that has been used to build the ParaMonte library and you would like to use the Object-Oriented (OOP) interface of the ParaMonte routines, then you will have to pass the following preprocessor macro to the compiler as well,</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PREPROCESSOR_FLAGS</span><span class="o">=</span><span class="s2">"-DIS_COMPATIBLE_COMPILER"</span>
 </code></pre></div></div>
-<p>This will define the preprocessor macro <code class="language-plaintext highlighter-rouge">IS_COMPATIBLE_COMPILER</code>, which will enable the use of the OOP interface of the ParaMonte routines. Otherwise, you may want to unset this variable to ensure that you will be using the old-style Fortran interface to the ParaMonte library,</p>
+<p>This will define the preprocessor macro <code>IS_COMPATIBLE_COMPILER</code>, which will enable the use of the OOP interface of the ParaMonte routines. Otherwise, you may want to unset this variable to ensure that you will be using the old-style Fortran interface to the ParaMonte library,</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">unset </span>PREPROCESSOR_FLAGS
 </code></pre></div></div>
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you are using the prebuilt ParaMonte libraries and you are not sure whether you are using a ParaMonte-compatible compiler to build your application, do not pass this preprocessor macro to the compiler. Instead, use <a href="../../examples/fortran/mvn/#calling-the-paramonte-samplers-the-old-less-flexible-but-more-portable-style" target="_blank">the old-style Fortran interface</a> to the ParaMonte library.</div>
@@ -1180,25 +1180,25 @@ README.md
 <h4 id="building-the-executable-on-macos-via-the-gnu-fortran-compiler-for-serial-applications">Building the executable on macOS via the GNU Fortran compiler for <strong>serial applications</strong></h4>
 
 <ul>
-  <li>We will consider building the Fortran application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+  <li>We will consider building the Fortran application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_fortran_darwin_x64_gnu_release_dynamic_heap.tar.gz">here</a>.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Although here we are downloading and using the ParaMonte libraries prebuilt via the GNU Fortran compiler, in general, you should be able to use the GNU Fortran compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU Fortran compilers.
 </div>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.f90</code> and <code class="language-plaintext highlighter-rouge">main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code>logfunc.f90</code> and <code>main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-1</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.sh
+    <pre><code>build.sh
 libparamonte_fortran_darwin_x64_gnu_release_dynamic_heap.dylib
 logfunc.f90
 main.f90
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
   </li>
   <li>
     <p>Now, we are going to use the GNU Fortran compiler to compile and link your code,</p>
@@ -1211,35 +1211,35 @@ README.md
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gfortran <span class="nv">$COMPILER_LINKER_FLAGS</span> <span class="nv">$PREPROCESSOR_FLAGS</span> paramonte.f90 logfunc.f90 main.f90 libparamonte_fortran_darwin_x64_gnu_release_dynamic_heap.dylib <span class="nt">-o</span> main.exe
 </code></pre></div>    </div>
 
-    <p>Note the <strong>missing</strong> <code class="language-plaintext highlighter-rouge">-DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code class="language-plaintext highlighter-rouge">PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the procedural-style, but more-portable Fortran interface to the ParaMonte library.</p>
+    <p>Note the <strong>missing</strong> <code>-DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code>PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the procedural-style, but more-portable Fortran interface to the ParaMonte library.</p>
   </li>
-  <li>The above step should generate a <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.f90</code>.</li>
+  <li>The above step should generate a <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code>logfunc.f90</code>.</li>
 </ul>
 
 <h4 id="building-the-executable-on-macos-via-the-gnu-fortran-compiler-for-mpi-parallel-applications">Building the executable on macOS via the GNU Fortran compiler for <strong>MPI-parallel applications</strong></h4>
 
 <ul>
-  <li>We will consider building the Fortran application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+  <li>We will consider building the Fortran application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_fortran_darwin_x64_gnu_release_dynamic_heap_mpich.tar.gz">here</a>.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Although here we are downloading and using the ParaMonte libraries prebuilt via the GNU Fortran compiler, in general, you should be able to use the GNU Fortran compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU Fortran compilers.
 </div>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.f90</code> and <code class="language-plaintext highlighter-rouge">main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code>logfunc.f90</code> and <code>main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-1</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.sh
+    <pre><code>build.sh
 libparamonte_fortran_darwin_x64_gnu_release_dynamic_heap_mpich.dylib
 logfunc.f90
 main.f90
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you are using the <strong><code class="language-plaintext highlighter-rouge">OpenMPI</code></strong> library in place of the <strong><code class="language-plaintext highlighter-rouge">MPICH</code></strong> MPI library, simply replace the keyword <strong><code class="language-plaintext highlighter-rouge">mpich</code></strong> with <strong><code class="language-plaintext highlighter-rouge">openmpi</code></strong> anywhere it appears on this page.</div>
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you are using the <strong><code>OpenMPI</code></strong> library in place of the <strong><code>MPICH</code></strong> MPI library, simply replace the keyword <strong><code>mpich</code></strong> with <strong><code>openmpi</code></strong> anywhere it appears on this page.</div>
   </li>
   <li>
     <p>Now, we are going to use the Open-MPI compiler wrapper for the GNU Fortran compiler to compile and link your code,</p>
@@ -1252,27 +1252,27 @@ README.md
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpifort <span class="nv">$COMPILER_LINKER_FLAGS</span> <span class="nv">$PREPROCESSOR_FLAGS</span> paramonte.f90 logfunc.f90 main.f90 libparamonte_fortran_darwin_x64_gnu_release_dynamic_heap_mpich.dylib <span class="nt">-o</span> main.exe
 </code></pre></div>    </div>
 
-    <p>Note the <strong>missing</strong> <code class="language-plaintext highlighter-rouge">-DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code class="language-plaintext highlighter-rouge">PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the procedural-style, but more-portable Fortran interface to the ParaMonte library.</p>
+    <p>Note the <strong>missing</strong> <code>-DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code>PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the procedural-style, but more-portable Fortran interface to the ParaMonte library.</p>
   </li>
-  <li>The above step should generate an MPI-parallelized <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.f90</code>.</li>
+  <li>The above step should generate an MPI-parallelized <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code>logfunc.f90</code>.</li>
 </ul>
 
 <h3 id="building-the-executable-on-linux-via-the-intel-fortran-compiler">Building the executable on <strong>Linux</strong> via the <strong>Intel Fortran compiler</strong></h3>
 
 <p>Open a Bash terminal that recognizes your local installation of the Intel compilers and libraries.</p>
 
-<p>Depending on the build type you would like to specify for your application ( <code class="language-plaintext highlighter-rouge">release</code>, <code class="language-plaintext highlighter-rouge">testing</code>, <code class="language-plaintext highlighter-rouge">debug</code> ), you may want to define the compiler/linker flags,</p>
+<p>Depending on the build type you would like to specify for your application ( <code>release</code>, <code>testing</code>, <code>debug</code> ), you may want to define the compiler/linker flags,</p>
 
 <ul>
-  <li>for <code class="language-plaintext highlighter-rouge">release</code>:
+  <li>for <code>release</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-standard-semantics -O3 -ip -ipo -unroll -unroll-aggressive -finline-functions -fpp"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">testing</code>:
+  <li>for <code>testing</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-standard-semantics -O0 -fpp"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">debug</code>:
+  <li>for <code>debug</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-standard-semantics -O0 -debug full -fpp"</span>
 </code></pre></div>    </div>
   </li>
@@ -1283,7 +1283,7 @@ README.md
 <p>If you are using the same compiler/linker version that has been used to build the ParaMonte library and you would like to use the Object-Oriented (OOP) interface of the ParaMonte routines, then you will have to pass the following preprocessor macro to the compiler as well,</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PREPROCESSOR_FLAGS</span><span class="o">=</span><span class="s2">"-DIS_COMPATIBLE_COMPILER"</span>
 </code></pre></div></div>
-<p>This will define the preprocessor macro <code class="language-plaintext highlighter-rouge">IS_COMPATIBLE_COMPILER</code>, which will enable the use of the OOP interface of the ParaMonte routines. Otherwise, you may want to unset this variable to ensure that you will be using the old-style Fortran interface to the ParaMonte library,</p>
+<p>This will define the preprocessor macro <code>IS_COMPATIBLE_COMPILER</code>, which will enable the use of the OOP interface of the ParaMonte routines. Otherwise, you may want to unset this variable to ensure that you will be using the old-style Fortran interface to the ParaMonte library,</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">unset </span>PREPROCESSOR_FLAGS
 </code></pre></div></div>
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you are using the prebuilt ParaMonte libraries and you are not sure whether you are using a ParaMonte-compatible compiler to build your application, do not pass this preprocessor macro to the compiler. Instead, use <a href="../../examples/fortran/mvn/#calling-the-paramonte-samplers-the-old-less-flexible-but-more-portable-style" target="_blank">the old-style Fortran interface</a> to the ParaMonte library.</div>
@@ -1291,25 +1291,25 @@ README.md
 <h4 id="building-the-executable-on-linux-via-the-intel-fortran-compiler-for-serial-applications">Building the executable on Linux via the Intel Fortran compiler for <strong>serial applications</strong></h4>
 
 <ul>
-  <li>We will consider building the Fortran application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+  <li>We will consider building the Fortran application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_fortran_linux_x64_intel_release_dynamic_heap.tar.gz">here</a>.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Although here we are downloading and using the ParaMonte libraries prebuilt via the Intel Fortran compiler, in general, you should be able to use the Intel Fortran compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU Fortran compilers.
 </div>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.f90</code> and <code class="language-plaintext highlighter-rouge">main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code>logfunc.f90</code> and <code>main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-1</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.sh
+    <pre><code>build.sh
 libparamonte_fortran_linux_x64_intel_release_dynamic_heap.so
 logfunc.f90
 main.f90
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
   </li>
   <li>
     <p>Now, we are going to use the Intel Fortran compiler to compile and link your code,</p>
@@ -1322,33 +1322,33 @@ README.md
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifort <span class="nv">$COMPILER_LINKER_FLAGS</span> <span class="nv">$PREPROCESSOR_FLAGS</span> paramonte.f90 logfunc.f90 main.f90 libparamonte_fortran_linux_x64_intel_release_dynamic_heap.so <span class="nt">-o</span> main.exe
 </code></pre></div>    </div>
 
-    <p>Note the <strong>missing</strong> <code class="language-plaintext highlighter-rouge">-DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code class="language-plaintext highlighter-rouge">PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the procedural-style, but more-portable Fortran interface to the ParaMonte library.</p>
+    <p>Note the <strong>missing</strong> <code>-DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code>PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the procedural-style, but more-portable Fortran interface to the ParaMonte library.</p>
   </li>
-  <li>The above step should generate a <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.f90</code>.</li>
+  <li>The above step should generate a <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code>logfunc.f90</code>.</li>
 </ul>
 
 <h4 id="building-the-executable-on-linux-via-the-intel-fortran-compiler-for-mpi-parallel-applications">Building the executable on Linux via the Intel Fortran compiler for <strong>MPI-parallel applications</strong></h4>
 
 <ul>
-  <li>We will consider building the Fortran application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+  <li>We will consider building the Fortran application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_fortran_linux_x64_intel_release_dynamic_heap_impi.tar.gz">here</a>.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Although here we are downloading and using the ParaMonte libraries prebuilt via the Intel Fortran compiler, in general, you should be able to use the Intel Fortran compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU Fortran compilers.
 </div>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.f90</code> and <code class="language-plaintext highlighter-rouge">main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code>logfunc.f90</code> and <code>main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-1</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.sh
+    <pre><code>build.sh
 libparamonte_fortran_linux_x64_intel_release_dynamic_heap_impi.so
 logfunc.f90
 main.f90
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
   </li>
   <li>
     <p>Now, we are going to use the Intel MPI compiler wrapper for the Intel Fortran compiler to compile and link your code,</p>
@@ -1361,27 +1361,27 @@ README.md
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpiifort <span class="nv">$COMPILER_LINKER_FLAGS</span> <span class="nv">$PREPROCESSOR_FLAGS</span> paramonte.f90 logfunc.f90 main.f90 libparamonte_fortran_linux_x64_intel_release_dynamic_heap_impi.so <span class="nt">-o</span> main.exe
 </code></pre></div>    </div>
 
-    <p>Note the <strong>missing</strong> <code class="language-plaintext highlighter-rouge">-DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code class="language-plaintext highlighter-rouge">PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the procedural-style, but more-portable Fortran interface to the ParaMonte library.</p>
+    <p>Note the <strong>missing</strong> <code>-DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code>PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the procedural-style, but more-portable Fortran interface to the ParaMonte library.</p>
   </li>
-  <li>The above step should generate an MPI-parallelized <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.f90</code>.</li>
+  <li>The above step should generate an MPI-parallelized <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code>logfunc.f90</code>.</li>
 </ul>
 
 <h3 id="building-the-executable-on-linux-via-the-gnu-fortran-compiler">Building the executable on <strong>Linux</strong> via the <strong>GNU Fortran compiler</strong></h3>
 
 <p>Open a Bash terminal that recognizes your local installation of the GNU compilers and libraries.</p>
 
-<p>Depending on the build type you would like to specify for your application ( <code class="language-plaintext highlighter-rouge">release</code>, <code class="language-plaintext highlighter-rouge">testing</code>, <code class="language-plaintext highlighter-rouge">debug</code> ), you may want to define the compiler/linker flags,</p>
+<p>Depending on the build type you would like to specify for your application ( <code>release</code>, <code>testing</code>, <code>debug</code> ), you may want to define the compiler/linker flags,</p>
 
 <ul>
-  <li>for <code class="language-plaintext highlighter-rouge">release</code>:
+  <li>for <code>release</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-std=gnu -O3 -funroll-loops -finline-functions -ftree-vectorize -cpp"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">testing</code>:
+  <li>for <code>testing</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-std=gnu -O0 -cpp"</span>
 </code></pre></div>    </div>
   </li>
-  <li>for <code class="language-plaintext highlighter-rouge">debug</code>:
+  <li>for <code>debug</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">COMPILER_LINKER_FLAGS</span><span class="o">=</span><span class="s2">"-std=gnu -O0 -g -cpp"</span>
 </code></pre></div>    </div>
   </li>
@@ -1392,7 +1392,7 @@ README.md
 <p>If you are using the same compiler/linker version that has been used to build the ParaMonte library and you would like to use the Object-Oriented (OOP) interface of the ParaMonte routines, then you will have to pass the following preprocessor macro to the compiler as well,</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PREPROCESSOR_FLAGS</span><span class="o">=</span><span class="s2">"-DIS_COMPATIBLE_COMPILER"</span>
 </code></pre></div></div>
-<p>This will define the preprocessor macro <code class="language-plaintext highlighter-rouge">IS_COMPATIBLE_COMPILER</code>, which will enable the use of the OOP interface of the ParaMonte routines. Otherwise, you may want to unset this variable to ensure that you will be using the old-style Fortran interface to the ParaMonte library,</p>
+<p>This will define the preprocessor macro <code>IS_COMPATIBLE_COMPILER</code>, which will enable the use of the OOP interface of the ParaMonte routines. Otherwise, you may want to unset this variable to ensure that you will be using the old-style Fortran interface to the ParaMonte library,</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">unset </span>PREPROCESSOR_FLAGS
 </code></pre></div></div>
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you are using the prebuilt ParaMonte libraries and you are not sure whether you are using a ParaMonte-compatible compiler to build your application, do not pass this preprocessor macro to the compiler. Instead, use <a href="../../examples/fortran/mvn/#calling-the-paramonte-samplers-the-old-less-flexible-but-more-portable-style" target="_blank">the old-style Fortran interface</a> to the ParaMonte library.</div>
@@ -1400,25 +1400,25 @@ README.md
 <h4 id="building-the-executable-on-linux-via-the-gnu-fortran-compiler-for-serial-applications">Building the executable on Linux via the GNU Fortran compiler for <strong>serial applications</strong></h4>
 
 <ul>
-  <li>We will consider building the Fortran application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+  <li>We will consider building the Fortran application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_fortran_linux_x64_gnu_release_dynamic_heap.tar.gz">here</a>.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Although here we are downloading and using the ParaMonte libraries prebuilt via the GNU Fortran compiler, in general, you should be able to use the GNU Fortran compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU Fortran compilers.
 </div>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.f90</code> and <code class="language-plaintext highlighter-rouge">main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code>logfunc.f90</code> and <code>main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-1</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.sh
+    <pre><code>build.sh
 libparamonte_fortran_linux_x64_gnu_release_dynamic_heap.so
 logfunc.f90
 main.f90
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
   </li>
   <li>
     <p>Now, we are going to use the GNU Fortran compiler to compile and link your code,</p>
@@ -1431,35 +1431,35 @@ README.md
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gfortran <span class="nv">$COMPILER_LINKER_FLAGS</span> <span class="nv">$PREPROCESSOR_FLAGS</span> paramonte.f90 logfunc.f90 main.f90 libparamonte_fortran_linux_x64_gnu_release_dynamic_heap.so <span class="nt">-o</span> main.exe
 </code></pre></div>    </div>
 
-    <p>Note the <strong>missing</strong> <code class="language-plaintext highlighter-rouge">-DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code class="language-plaintext highlighter-rouge">PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the procedural-style, but more-portable Fortran interface to the ParaMonte library.</p>
+    <p>Note the <strong>missing</strong> <code>-DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code>PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the procedural-style, but more-portable Fortran interface to the ParaMonte library.</p>
   </li>
-  <li>The above step should generate a <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.f90</code>.</li>
+  <li>The above step should generate a <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-a-single-processor" target="_blank">run this executable</a> to generate samples from your objective function as implemented in <code>logfunc.f90</code>.</li>
 </ul>
 
 <h4 id="building-the-executable-on-linux-via-the-gnu-fortran-compiler-for-mpi-parallel-applications">Building the executable on Linux via the GNU Fortran compiler for <strong>MPI-parallel applications</strong></h4>
 
 <ul>
-  <li>We will consider building the Fortran application via the ParaMonte library build in <code class="language-plaintext highlighter-rouge">release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
+  <li>We will consider building the Fortran application via the ParaMonte library build in <code>release</code> mode for dynamic-linking. The corresponding prebuilt ParaMonte library can be downloaded from 
  <a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_fortran_linux_x64_gnu_release_dynamic_heap_mpich.tar.gz">here</a>.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Although here we are downloading and using the ParaMonte libraries prebuilt via the GNU Fortran compiler, in general, you should be able to use the GNU Fortran compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU Fortran compilers.
 </div>
   </li>
   <li>
-    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code class="language-plaintext highlighter-rouge">logfunc.f90</code> and <code class="language-plaintext highlighter-rouge">main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
+    <p>Navigate to the folder containing the ParaMonte library on your local system. Move your Fortran example codes to this folder (This will overwrite the existing <code>logfunc.f90</code> and <code>main.f90</code> files in this folder with yours). You should then be able to see the following files inside the folder,</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-1</span>
 </code></pre></div>    </div>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build.sh
+    <pre><code>build.sh
 libparamonte_fortran_linux_x64_gnu_release_dynamic_heap_mpich.so
 logfunc.f90
 main.f90
 paramonte.in
 README.md
-</code></pre></div>    </div>
+</code></pre>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you are using the <strong><code class="language-plaintext highlighter-rouge">OpenMPI</code></strong> library in place of the <strong><code class="language-plaintext highlighter-rouge">MPICH</code></strong> MPI library, simply replace the keyword <strong><code class="language-plaintext highlighter-rouge">mpich</code></strong> with <strong><code class="language-plaintext highlighter-rouge">openmpi</code></strong> anywhere it appears on this page.</div>
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you are using the <strong><code>OpenMPI</code></strong> library in place of the <strong><code>MPICH</code></strong> MPI library, simply replace the keyword <strong><code>mpich</code></strong> with <strong><code>openmpi</code></strong> anywhere it appears on this page.</div>
   </li>
   <li>
     <p>Now, we are going to use the MPICH MPI compiler wrapper for the GNU Fortran compiler to compile and link your code,</p>
@@ -1472,9 +1472,9 @@ README.md
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpifort <span class="nv">$COMPILER_LINKER_FLAGS</span> <span class="nv">$PREPROCESSOR_FLAGS</span> paramonte.f90 logfunc.f90 main.f90 libparamonte_fortran_linux_x64_gnu_release_dynamic_heap_mpich.so <span class="nt">-o</span> main.exe
 </code></pre></div>    </div>
 
-    <p>Note the <strong>missing</strong> <code class="language-plaintext highlighter-rouge">-DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code class="language-plaintext highlighter-rouge">PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the procedural-style, but more-portable Fortran interface to the ParaMonte library.</p>
+    <p>Note the <strong>missing</strong> <code>-DIS_COMPATIBLE_COMPILER</code> macro definition as the value of the <code>PREPROCESSOR_FLAGS</code> environmental variable, implying that we have used the procedural-style, but more-portable Fortran interface to the ParaMonte library.</p>
   </li>
-  <li>The above step should generate an MPI-parallelized <code class="language-plaintext highlighter-rouge">main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code class="language-plaintext highlighter-rouge">logfunc.f90</code>.</li>
+  <li>The above step should generate an MPI-parallelized <code>main.exe</code> executable file in the same directory. You can now <a href="../../run/default/#running-the-manually-generated-executable-on-multiple-processors" target="_blank">run this executable</a> – in parallel on any number of processors you wish – to generate samples from your objective function as implemented in <code>logfunc.f90</code>.</li>
 </ul>
 
 <p><br /></p>

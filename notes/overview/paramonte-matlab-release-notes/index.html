@@ -815,11 +815,11 @@ that test all aspects of the ParaMonte kernel library.</p>
   </li>
   <li>
     <p>The issue of Windows file locking, that led to the occasional crashes of the 
-ParaDRAM and ParaDISE simulations in <code class="language-plaintext highlighter-rouge">multiChain</code> parallelism mode, is now resolved.</p>
+ParaDRAM and ParaDISE simulations in <code>multiChain</code> parallelism mode, is now resolved.</p>
   </li>
   <li>
-    <p>The <code class="language-plaintext highlighter-rouge">ParaDRAM</code> class in <code class="language-plaintext highlighter-rouge">paramonte</code> is now also available 
-as <code class="language-plaintext highlighter-rouge">Paradram</code> and <code class="language-plaintext highlighter-rouge">paradram</code>, although the original label 
+    <p>The <code>ParaDRAM</code> class in <code>paramonte</code> is now also available 
+as <code>Paradram</code> and <code>paradram</code>, although the original label 
 will remain the default preferred method of ParaDRAM 
 object instantiation.</p>
   </li>
@@ -847,7 +847,7 @@ ParaMonte library setup on macOS for the first time.</p>
 
 <ul>
   <li>
-    <p>The <code class="language-plaintext highlighter-rouge">cmake</code> software dependency installation failure now 
+    <p>The <code>cmake</code> software dependency installation failure now 
 does not nullify the installation of other dependencies.</p>
   </li>
   <li>
@@ -863,8 +863,8 @@ instead of the maximum IAC value. This will lead to less aggressive decorrelatio
 of the final sample, which means significantly larger final sample sizes, without 
 compromising the i.i.d. property of the final refined sample. This behavior can 
 be reversed back to the original by specifying “max” or “maximum” along with 
-the requested refinement method, <code class="language-plaintext highlighter-rouge">SampleRefinementMethod = "batchmeans max"</code> 
-or <code class="language-plaintext highlighter-rouge">SampleRefinementMethod = "BatchMeans-max"</code> (case-insensitive).</p>
+the requested refinement method, <code>SampleRefinementMethod = "batchmeans max"</code> 
+or <code>SampleRefinementMethod = "BatchMeans-max"</code> (case-insensitive).</p>
   </li>
 </ul>
 
@@ -874,7 +874,7 @@ or <code class="language-plaintext highlighter-rouge">SampleRefinementMethod = "
 
 <ul>
   <li>Further minor enhancements to the behavior of the 
-<code class="language-plaintext highlighter-rouge">checkForUpdate()</code> method of the <code class="language-plaintext highlighter-rouge">paramonte</code> class.</li>
+<code>checkForUpdate()</code> method of the <code>paramonte</code> class.</li>
 </ul>
 
 <h3 id="version--212--october-15-2020">Version  2.1.2 – October 15, 2020</h3>
@@ -882,7 +882,7 @@ or <code class="language-plaintext highlighter-rouge">SampleRefinementMethod = "
 <p><strong>Minor enhancements</strong></p>
 
 <ul>
-  <li>The <code class="language-plaintext highlighter-rouge">checkForUpdate()</code> method of the <code class="language-plaintext highlighter-rouge">paramonte</code> 
+  <li>The <code>checkForUpdate()</code> method of the <code>paramonte</code> 
 class now functions as expected.</li>
 </ul>
 
@@ -899,8 +899,8 @@ class now functions as expected.</li>
 <p><strong>Minor enhancements</strong></p>
 
 <ul>
-  <li>A new simulation specification <code class="language-plaintext highlighter-rouge">overwriteRequested</code> has 
-been added to all ParaMonte samplers. If <code class="language-plaintext highlighter-rouge">True</code> and the 
+  <li>A new simulation specification <code>overwriteRequested</code> has 
+been added to all ParaMonte samplers. If <code>True</code> and the 
 ParaMonte sampler detects an existing set of old simulation 
 output files in the output path of the current simulation with 
 the same names as the output file names of the current simulation, 
@@ -917,8 +917,8 @@ then, the ParaMonte sampler will overwrite the existing simulation files.</li>
 MPI library on macOS have been improved.</p>
   </li>
   <li>
-    <p>The minor bug in GridPlot class method <code class="language-plaintext highlighter-rouge">rotateAxesLabels()</code> that caused 
-the <code class="language-plaintext highlighter-rouge">readSample()</code> , <code class="language-plaintext highlighter-rouge">readChain()</code>, <code class="language-plaintext highlighter-rouge">readMarkovChain()</code> to crash upon adding 
+    <p>The minor bug in GridPlot class method <code>rotateAxesLabels()</code> that caused 
+the <code>readSample()</code> , <code>readChain()</code>, <code>readMarkovChain()</code> to crash upon adding 
 Grid plots is now fixed.</p>
   </li>
   <li>
@@ -948,28 +948,28 @@ simulation files that match the requested pattern.</p>
   </li>
   <li>
     <p>Several new post-processing functionalities have now been added, such as
-the ability to seamlessly parse the contents of the output <code class="language-plaintext highlighter-rouge">*_report.txt</code>, 
-<code class="language-plaintext highlighter-rouge">*_restart.txt</code>, and <code class="language-plaintext highlighter-rouge">*_progress.txt</code> simulation files, in addition to the
-other output files (<code class="language-plaintext highlighter-rouge">*_sample.txt</code> and <code class="language-plaintext highlighter-rouge">*_chain.txt</code>) that could be parsed
+the ability to seamlessly parse the contents of the output <code>*_report.txt</code>, 
+<code>*_restart.txt</code>, and <code>*_progress.txt</code> simulation files, in addition to the
+other output files (<code>*_sample.txt</code> and <code>*_chain.txt</code>) that could be parsed
 in the previous versions.</p>
   </li>
   <li>
-    <p>The newly-added <code class="language-plaintext highlighter-rouge">readRestart()</code> method is now added to the ParaDRAM sampler 
+    <p>The newly-added <code>readRestart()</code> method is now added to the ParaDRAM sampler 
 class. User can now parse the contents of the output ASCII-format restart files. 
 This is particularly useful to visualize the dynamics of the ParaDRAM sampler class, 
 such as the evolution of the proposal distribution’s location, shape, and covariance 
 matrix.</p>
   </li>
   <li>
-    <p>The <code class="language-plaintext highlighter-rouge">GridPlot()</code> class now has two additional methods <code class="language-plaintext highlighter-rouge">setAxesLabels()</code> and 
-<code class="language-plaintext highlighter-rouge">setAxesLimits()</code> which can directly set the labels and limits of axes, hassle-free.</p>
+    <p>The <code>GridPlot()</code> class now has two additional methods <code>setAxesLabels()</code> and 
+<code>setAxesLimits()</code> which can directly set the labels and limits of axes, hassle-free.</p>
   </li>
 </ul>
 
 <p><strong>Minor enhancements</strong></p>
 
 <ul>
-  <li>The single value assignment to <code class="language-plaintext highlighter-rouge">spec.targetAcceptanceRate</code> component of a ParaDRAM object is now properly handles. 
+  <li>The single value assignment to <code>spec.targetAcceptanceRate</code> component of a ParaDRAM object is now properly handles. 
 For example, the following code is valid as expected,
     <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">import</span> <span class="n">paramonte</span> <span class="n">as</span> <span class="n">pm</span>
 <span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">ParaDRAM</span><span class="p">()</span>
@@ -977,15 +977,15 @@ For example, the following code is valid as expected,
 <span class="n">pmpd</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">targetAcceptanceRate</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span> <span class="err">#</span> <span class="n">this</span> <span class="n">is</span> <span class="n">also</span> <span class="n">valid</span><span class="p">,</span> <span class="nb">which</span> <span class="n">limits</span> <span class="n">the</span> <span class="n">acceptance</span> <span class="n">rate</span> <span class="n">to</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">range</span>
 </code></pre></div>    </div>
   </li>
-  <li>The default background color in all plots is now <code class="language-plaintext highlighter-rouge">"white"</code>.</li>
-  <li>The <code class="language-plaintext highlighter-rouge">rotateAxisLabels()</code> of the <code class="language-plaintext highlighter-rouge">GridPlot()</code> class is now renamed to <code class="language-plaintext highlighter-rouge">rotateAxesLabels()</code>.</li>
+  <li>The default background color in all plots is now <code>"white"</code>.</li>
+  <li>The <code>rotateAxisLabels()</code> of the <code>GridPlot()</code> class is now renamed to <code>rotateAxesLabels()</code>.</li>
 </ul>
 
 <p><strong>Bug fixes</strong></p>
 
 <ul>
-  <li>ParaDRAM <code class="language-plaintext highlighter-rouge">readMarkovChain()</code> no-output-option bug is now fixed. 
-When calling <code class="language-plaintext highlighter-rouge">readMarkovChain()</code>, user can now either provide the output variable or not.</li>
+  <li>ParaDRAM <code>readMarkovChain()</code> no-output-option bug is now fixed. 
+When calling <code>readMarkovChain()</code>, user can now either provide the output variable or not.</li>
 </ul>
 
 <h2 id="version-1xx"><strong>Version 1.x.x</strong></h2>

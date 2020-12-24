@@ -794,7 +794,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
     
 <p><br /></p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The Python distribution that we recommend you to use is <a href="https://www.anaconda.com/distribution/#download-section">Anaconda Python 3</a>. Anaconda Python automatically ships with all the external module dependencies of the ParaMonte Python library, which are not that many (e.g., <code class="language-plaintext highlighter-rouge">numpy</code>, <code class="language-plaintext highlighter-rouge">scipy</code>, <code class="language-plaintext highlighter-rouge">pandas</code>, <code class="language-plaintext highlighter-rouge">matplotlib</code>, <code class="language-plaintext highlighter-rouge">seaborn</code>). Once Anaconda is installed on your system, find and open an Anaconda-provided Windows command-prompt from the Windows startup, as shown in the figure below.<br />
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The Python distribution that we recommend you to use is <a href="https://www.anaconda.com/distribution/#download-section">Anaconda Python 3</a>. Anaconda Python automatically ships with all the external module dependencies of the ParaMonte Python library, which are not that many (e.g., <code>numpy</code>, <code>scipy</code>, <code>pandas</code>, <code>matplotlib</code>, <code>seaborn</code>). Once Anaconda is installed on your system, find and open an Anaconda-provided Windows command-prompt from the Windows startup, as shown in the figure below.<br />
 <br />
 <figure>
     <img src="anaconda_prompt.png" width="800%" />
@@ -813,11 +813,11 @@ the script runs before the sidebar code runs and the class never gets inserted.
   <li>Open an Anaconda command-prompt (on Windows) or a Bash shell (on Unix-like OS such as Linux or Darwin/macOS), then type,
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--user</span> <span class="nt">--upgrade</span> paramonte
 </code></pre></div>    </div>
-    <p>This will install the Python interface to ParaMonte on your system along with any dependencies. If you are inside an <code class="language-plaintext highlighter-rouge">ipython</code> or <code class="language-plaintext highlighter-rouge">jupyter</code> session, try instead,</p>
+    <p>This will install the Python interface to ParaMonte on your system along with any dependencies. If you are inside an <code>ipython</code> or <code>jupyter</code> session, try instead,</p>
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span>pip <span class="nb">install</span> <span class="nt">--user</span> <span class="nt">--upgrade</span> paramonte
 </code></pre></div>    </div>
   </li>
-  <li>Then, open a Python (or <code class="language-plaintext highlighter-rouge">ipython</code> or <code class="language-plaintext highlighter-rouge">jupyter</code>) session and type,
+  <li>Then, open a Python (or <code>ipython</code> or <code>jupyter</code>) session and type,
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import paramonte as pm
 </code></pre></div>    </div>
   </li>
@@ -848,18 +848,18 @@ tar xvzf $libname.tar.gz &amp;&amp; cd $libname
     </ul>
   </li>
   <li>Open an Anaconda command-prompt (on Windows) or a Bash shell (on Unix-like OS such as Linux or Darwin/macOS).</li>
-  <li>Change the working directory of your shell environment to the unzipped directory of the ParaMonte Python library, such that when you list the contents of your current working directory, you see a subdirectory named <strong><code class="language-plaintext highlighter-rouge">paramonte</code></strong>. This subdirectory contains the Python module interface to the ParaMonte library.</li>
-  <li>Open an <strong><code class="language-plaintext highlighter-rouge">ipython</code></strong> or <strong><code class="language-plaintext highlighter-rouge">jupyter</code></strong> session in this environment, and type <strong><code class="language-plaintext highlighter-rouge">import paramonte as pm</code></strong>.</li>
+  <li>Change the working directory of your shell environment to the unzipped directory of the ParaMonte Python library, such that when you list the contents of your current working directory, you see a subdirectory named <strong><code>paramonte</code></strong>. This subdirectory contains the Python module interface to the ParaMonte library.</li>
+  <li>Open an <strong><code>ipython</code></strong> or <strong><code>jupyter</code></strong> session in this environment, and type <strong><code>import paramonte as pm</code></strong>.</li>
   <li>Congratulations! you have successfully installed the Python interface to the ParaMonte library on your system.</li>
 </ol>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Since this is only a local manual installation of the ParaMonte Python library (as opposed to the direct installation from PyPI), every time that you intend to use the ParaMonte library, you will have to navigate to the <strong>parent directory containing the <code class="language-plaintext highlighter-rouge">paramonte</code> subdirectory</strong>. Otherwise, the Python interpreter will not be able to find and <code class="language-plaintext highlighter-rouge">import paramonte</code>.</div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Since this is only a local manual installation of the ParaMonte Python library (as opposed to the direct installation from PyPI), every time that you intend to use the ParaMonte library, you will have to navigate to the <strong>parent directory containing the <code>paramonte</code> subdirectory</strong>. Otherwise, the Python interpreter will not be able to find and <code>import paramonte</code>.</div>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important: </b>
 If you are a <b>macOS (Darwin)</b> user and you have downloaded the <b>prebuilt</b> ParaMonte libraries <b>directly via a web-browser</b> from the <a href="https://github.com/cdslaborg/paramonte/releases" target="_blank">GitHub release page</a> to use on your macOS system, read <a href="../../troubleshooting/macos-developer-cannot-be-verified/" target="_blank">this troubleshooting page</a> before attempting to run ParaMonte simulations.  
 </div>
 
 <h2 id="the-long-way">The long way</h2>
 
-<p>If your platform is other than Windows/Linux/macOS or, if your system’s architecture is other than <code class="language-plaintext highlighter-rouge">amd64</code>, also known as <code class="language-plaintext highlighter-rouge">x64</code>, or, if you are a professional programmer constantly challenging your computer programming knowledge and skills, then the last resort to install the ParaMonte Python library on your system is to build the library from scratch on your system. In such a case, you will have to follow the special instructions given for your platform on this website,</p>
+<p>If your platform is other than Windows/Linux/macOS or, if your system’s architecture is other than <code>amd64</code>, also known as <code>x64</code>, or, if you are a professional programmer constantly challenging your computer programming knowledge and skills, then the last resort to install the ParaMonte Python library on your system is to build the library from scratch on your system. In such a case, you will have to follow the special instructions given for your platform on this website,</p>
 <ul>
   <li><a href="../windows/#building-the-paramonte-library-locally-on-your-system" target="_blank">Windows</a>,</li>
   <li><a href="../macos/#building-the-paramonte-library-locally-on-your-system" target="_blank">Darwin (macOS)</a>,</li>
@@ -867,7 +867,7 @@ If you are a <b>macOS (Darwin)</b> user and you have downloaded the <b>prebuilt<
 </ul>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> 
-On some platforms (e.g., supercomputers) the support for Python’s visualization libraries such as <strong><code class="language-plaintext highlighter-rouge">matplotlib</code></strong> and <strong><code class="language-plaintext highlighter-rouge">seaborn</code></strong> may be weak. In particular, <strong><code class="language-plaintext highlighter-rouge">import matplotlib</code></strong> is known to cause a <strong><code class="language-plaintext highlighter-rouge">segmentation fault</code></strong> error on some platforms, which subsequently leads to the crash of the active Python session. The Python interface of ParaMonte has been implemented in such a way as to ensure that no unnecessary call is made to the visualization libraries as long as the user is only interested in performing a pure ParaMonte simulation, without any visualizations or post-processing of the current (or some old preexisting) ParaMonte simulation output files.
+On some platforms (e.g., supercomputers) the support for Python’s visualization libraries such as <strong><code>matplotlib</code></strong> and <strong><code>seaborn</code></strong> may be weak. In particular, <strong><code>import matplotlib</code></strong> is known to cause a <strong><code>segmentation fault</code></strong> error on some platforms, which subsequently leads to the crash of the active Python session. The Python interface of ParaMonte has been implemented in such a way as to ensure that no unnecessary call is made to the visualization libraries as long as the user is only interested in performing a pure ParaMonte simulation, without any visualizations or post-processing of the current (or some old preexisting) ParaMonte simulation output files.
 </div>
 
 <p><br /></p>

@@ -825,7 +825,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
 <h3 id="working-with-the-natural-logarithm-of-the-objective-function">Working with the natural logarithm of the objective function</h3>
 
-<p>In general, since probabilities are often tiny numbers, we’d want to always work with their natural logarithms in the world of computers to avoid unwanted overflow or underflow of numbers, which can crash our simulations. To highlight the importance of taking the natural logarithms of all input objective functions to the ParaMonte routines, we always name them like <code class="language-plaintext highlighter-rouge">getLogFunc()</code>.</p>
+<p>In general, since probabilities are often tiny numbers, we’d want to always work with their natural logarithms in the world of computers to avoid unwanted overflow or underflow of numbers, which can crash our simulations. To highlight the importance of taking the natural logarithms of all input objective functions to the ParaMonte routines, we always name them like <code>getLogFunc()</code>.</p>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> 
 All ParaMonte routines assume that the user-provided objective functions return the natural logarithms of the actual values of the objective functions.
@@ -919,7 +919,7 @@ All ParaMonte routines assume that the user-provided objective functions return 
 
 <p>Suppose we want to randomly sample the above objective function via the <strong>D</strong>elayed-<strong>R</strong>ejection <strong>A</strong>daptive <strong>M</strong>etropolis-Hastings <strong>M</strong>arkov Chain Monte Carlo sampler of ParaMonte (the <strong>ParaDRAM</strong> sampler).</p>
 
-<p>Depending on whether you have already built the ParaMonte library from scratch on your system or you intend to use the prebuilt ParaMonte libraries, as well as the compiler you are using to build your application, there are two interfaces to the ParaDRAM sampler. These two interfaces are separated via the compiler preprocessor flag <code class="language-plaintext highlighter-rouge">IS_COMPATIBLE_COMPILER</code> in the <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main.f90" target="_blank">main.f90</a> code below,</p>
+<p>Depending on whether you have already built the ParaMonte library from scratch on your system or you intend to use the prebuilt ParaMonte libraries, as well as the compiler you are using to build your application, there are two interfaces to the ParaDRAM sampler. These two interfaces are separated via the compiler preprocessor flag <code>IS_COMPATIBLE_COMPILER</code> in the <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main.f90" target="_blank">main.f90</a> code below,</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span><span class="w">
 </span><span class="c1">!%  </span><span class="w">
@@ -990,11 +990,11 @@ All ParaMonte routines assume that the user-provided objective functions return 
 </span><span class="c1">!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Therefore, if you intend to use the Object-Oriented Programming (OOP) calling interface, you will have to define and pass the preprocessor flag <code class="language-plaintext highlighter-rouge">IS_COMPATIBLE_COMPILER</code> at compile-time to your compiler (to be discussed later). If this flag is not defined at compile-time, the compiler will automatically use the latter procedural-style calling method enclosed between <code class="language-plaintext highlighter-rouge">#else</code> and <code class="language-plaintext highlighter-rouge">#endif</code> Fortran preprocessor directives in the main code above.</p>
+<p>Therefore, if you intend to use the Object-Oriented Programming (OOP) calling interface, you will have to define and pass the preprocessor flag <code>IS_COMPATIBLE_COMPILER</code> at compile-time to your compiler (to be discussed later). If this flag is not defined at compile-time, the compiler will automatically use the latter procedural-style calling method enclosed between <code>#else</code> and <code>#endif</code> Fortran preprocessor directives in the main code above.</p>
 
 <h3 id="calling-the-paramonte-samplers-the-signature-module-file">Calling the ParaMonte samplers: The signature module file</h3>
 
-<p>Here is the contents of the Fortran <code class="language-plaintext highlighter-rouge">paramonte.90</code> <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/src/interface/Fortran/paramonte.f90" target="_blank">signature module file</a> for the ParaMonte library routines,</p>
+<p>Here is the contents of the Fortran <code>paramonte.90</code> <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/src/interface/Fortran/paramonte.f90" target="_blank">signature module file</a> for the ParaMonte library routines,</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span><span class="w">
 </span><span class="c1">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span><span class="w">
@@ -1186,46 +1186,46 @@ All ParaMonte routines assume that the user-provided objective functions return 
 </span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">paramonte</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Again, note that there are two interfaces to the ParaMonte library routines, separated via the compiler preprocessor flag <code class="language-plaintext highlighter-rouge">IS_COMPATIBLE_COMPILER</code> in the signature module file.</p>
+<p>Again, note that there are two interfaces to the ParaMonte library routines, separated via the compiler preprocessor flag <code>IS_COMPATIBLE_COMPILER</code> in the signature module file.</p>
 
 <p>In the following sections, we will describe which interface is suitable for what circumstances.</p>
 
 <h3 id="calling-the-paramonte-samplers-the-modern-object-oriented-style">Calling the ParaMonte samplers: The modern object-oriented style</h3>
 
-<p>The Object-Oriented-Programing (OOP) style interface is the parts of the codes in the above that are enclosed by the <code class="language-plaintext highlighter-rouge">IS_COMPATIBLE_COMPILER</code> preprocessor flag. The OOP interface can be used only if,</p>
+<p>The Object-Oriented-Programing (OOP) style interface is the parts of the codes in the above that are enclosed by the <code>IS_COMPATIBLE_COMPILER</code> preprocessor flag. The OOP interface can be used only if,</p>
 
 <ol>
-  <li>you have built the ParaMonte library from scratch on your system using a Fortran compiler installed on your system (ideally, the Intel <code class="language-plaintext highlighter-rouge">ifort</code> Fortran compiler), or,</li>
+  <li>you have built the ParaMonte library from scratch on your system using a Fortran compiler installed on your system (ideally, the Intel <code>ifort</code> Fortran compiler), or,</li>
   <li>you intend to use the prebuilt ParaMonte libraries which can be downloaded from the <a href="https://github.com/cdslaborg/paramonte/releases" target="_blank">ParaMonte release page on GitHub</a>, but you promise that you are using a compatible compiler to compile your example. Typically this means using the <a href="https://github.com/cdslaborg/paramonte/blob/main/CHANGES.md" target="_blank">same compiler/library suite and version</a> that has been used to build ParaMonte.</li>
 </ol>
 
-<p>If one of the above two scenarios describes your situation, then you can safely use the OOP-style interface (enclosed between the two preprocessor directives <code class="language-plaintext highlighter-rouge">#if defined IS_COMPATIBLE_COMPILER</code> and <code class="language-plaintext highlighter-rouge">#else</code>) in the above code.</p>
+<p>If one of the above two scenarios describes your situation, then you can safely use the OOP-style interface (enclosed between the two preprocessor directives <code>#if defined IS_COMPATIBLE_COMPILER</code> and <code>#else</code>) in the above code.</p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> As you may have noticed in the above main code, one advantage of the object-oriented style is that upon finishing the simulation, all simulation properties and results are stored in a single object (e.g., <strong><code class="language-plaintext highlighter-rouge">pmpd</code></strong> in the above program) which belongs to the <a href="https://github.com/cdslaborg/paramonte/blob/main/src/kernel/ParaDXXX_mod.inc.f90" target="_blank">ParaDRAM_type</a> class. This information can be then readily used and processed for other purposes within your simulation at runtime.</div>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> As you may have noticed in the above main code, one advantage of the object-oriented style is that upon finishing the simulation, all simulation properties and results are stored in a single object (e.g., <strong><code>pmpd</code></strong> in the above program) which belongs to the <a href="https://github.com/cdslaborg/paramonte/blob/main/src/kernel/ParaDXXX_mod.inc.f90" target="_blank">ParaDRAM_type</a> class. This information can be then readily used and processed for other purposes within your simulation at runtime.</div>
 
-<p>Using this modern Fortran style, you can also provide optional arguments at the time of calling the ParaMonte routines. For example, the variables <code class="language-plaintext highlighter-rouge">chainSize</code>, <code class="language-plaintext highlighter-rouge">adaptiveUpdateCount</code>, …, specified in the OOP-style interface of the <code class="language-plaintext highlighter-rouge">runSampler()</code> method in the above code would overwrite any values for the corresponding variables specified taken from the <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/input/paramonte.in" target="_blank">input file</a>: <code class="language-plaintext highlighter-rouge">./paramonte.in</code> (unless you set the input specification variable <a href="../../../usage/paradram/specifications/#inputfilehaspriority" target="_blank">inputFileHasPriority</a> to <code class="language-plaintext highlighter-rouge">true</code> from within the input file).</p>
+<p>Using this modern Fortran style, you can also provide optional arguments at the time of calling the ParaMonte routines. For example, the variables <code>chainSize</code>, <code>adaptiveUpdateCount</code>, …, specified in the OOP-style interface of the <code>runSampler()</code> method in the above code would overwrite any values for the corresponding variables specified taken from the <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/input/paramonte.in" target="_blank">input file</a>: <code>./paramonte.in</code> (unless you set the input specification variable <a href="../../../usage/paradram/specifications/#inputfilehaspriority" target="_blank">inputFileHasPriority</a> to <code>true</code> from within the input file).</p>
 
 <p>In addition to being able to assign simulation specifications from within an input file, the current major release the ParaMonte library also enables the assignment of all simulation specifications from the Fortran Object-Oriented interface to the ParaMonte sampler routines (except the input specification variable <a href="../../../usage/paradram/specifications/#inputfilehaspriority" target="_blank">inputFileHasPriority</a> which is always available only from within the input file).</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> You can view the full object-oriented interface of the <strong><code class="language-plaintext highlighter-rouge">runSampler()</code></strong> method of the <strong><code class="language-plaintext highlighter-rouge">ParaDRAM_type</code></strong> sampler class in <a href="https://github.com/cdslaborg/paramonte/blob/main/src/kernel/ParaDXXX_mod.inc.f90" target="_blank">ParaDRAM_mod.inc.f90</a>.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> You can view the full object-oriented interface of the <strong><code>runSampler()</code></strong> method of the <strong><code>ParaDRAM_type</code></strong> sampler class in <a href="https://github.com/cdslaborg/paramonte/blob/main/src/kernel/ParaDXXX_mod.inc.f90" target="_blank">ParaDRAM_mod.inc.f90</a>.</div>
 
 <h3 id="calling-the-paramonte-samplers-the-old-less-flexible-but-more-portable-style">Calling the ParaMonte samplers: The old, less flexible, but more portable style</h3>
 
 <p>If you intend to use the prebuilt ParaMonte libraries to build your application (or for some reason, you are building your example with a compiler other than the one you used for building the ParaMonte library), then the modern object-oriented style of calling ParaMonte routines described in the previous section may not work for you. This is mainly due to the potential mismatch between the existing symbols in the ParaMonte library and the symbols that your different compiler expects to see in the ParaMonte library.</p>
 
-<p>In such a case, you can use the simpler procedural Fortran interface to the ParaMonte library routines as shown in the above main code, enclosed between <code class="language-plaintext highlighter-rouge">#else</code> and <code class="language-plaintext highlighter-rouge">#endif</code> Fortran preprocessor directives. You can view the <code class="language-plaintext highlighter-rouge">runParaDRAM()</code> sampler routine’s interface in the signature module file <code class="language-plaintext highlighter-rouge">paramonte.f90</code> shown in the previous sections in the above.</p>
+<p>In such a case, you can use the simpler procedural Fortran interface to the ParaMonte library routines as shown in the above main code, enclosed between <code>#else</code> and <code>#endif</code> Fortran preprocessor directives. You can view the <code>runParaDRAM()</code> sampler routine’s interface in the signature module file <code>paramonte.f90</code> shown in the previous sections in the above.</p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Although, the procedural interface provides more portability, there is, in general, no guarantee that this procedural interface compiled by a certain compiler would match an example main code compiled with a different compiler. However, as of today, the procedural interface to the ParaMonte library routines is interoperable between the Intel and GNU Fortran compilers. This means that <strong>you can link your main procedural-interface codes compiled via the GNU Fortran compiler against the ParaMonte libraries prebuilt via the Intel Fortran compiler, and vice versa</strong>. While this is true at the moment, the situation may change in the future releases of the two compilers (although it seems unlikely).</div>
 
 <h3 id="calling-the-paramonte-samplers-the-input-file">Calling the ParaMonte samplers: The input file</h3>
 
-<p>We will store the simulation specifications in a separate external input file whose path <code class="language-plaintext highlighter-rouge">"./paramonte.in"</code> is given by the variable <code class="language-plaintext highlighter-rouge">inputFile</code> in the main code above. See <a href="../../../../notes/usage/paradram/interface" target="_blank">this page</a> for a detailed description of the structure and convention rules of the input files. Also, see <a href="../../../../notes/usage/paradram/specifications" target="_blank">this page</a> for detailed descriptions of the simulation specifications of the ParaDRAM sampler.</p>
+<p>We will store the simulation specifications in a separate external input file whose path <code>"./paramonte.in"</code> is given by the variable <code>inputFile</code> in the main code above. See <a href="../../../../notes/usage/paradram/interface" target="_blank">this page</a> for a detailed description of the structure and convention rules of the input files. Also, see <a href="../../../../notes/usage/paradram/specifications" target="_blank">this page</a> for detailed descriptions of the simulation specifications of the ParaDRAM sampler.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Note that the entire contents of the input file is optional. If not provided, all simulation variables will be assigned appropriate default values. Nevertheless, in some cases the user may need to provide further information about the simulation via the input simulation variables to help the ParaMonte routines yield better performance or more accurate results.</div>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> You can also pass the entire contents of the input file as a string value to the input variable <code class="language-plaintext highlighter-rouge">inputFile</code> of the ParaMonte routines, instead of passing the-path-to-this-input-file.</div>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> You can also pass the entire contents of the input file as a string value to the input variable <code>inputFile</code> of the ParaMonte routines, instead of passing the-path-to-this-input-file.</div>
 
-<p>Here is the contents of this <code class="language-plaintext highlighter-rouge">paramonte.in</code> input file,</p>
+<p>Here is the contents of this <code>paramonte.in</code> input file,</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 !%  
@@ -1339,13 +1339,13 @@ This\n
 
 <h2 id="compiling-and-linking-to-generate-the-executable">Compiling and linking to generate the executable</h2>
 
-<p>Now, follow <a href="../../../build/fortran/" target="_blank">the instructions on this page</a> on how to build your Fortran example for serial and parallel simulations on the Operating System (OS) of you choice: <code class="language-plaintext highlighter-rouge">Windows</code>, <code class="language-plaintext highlighter-rouge">Linux</code>, or <code class="language-plaintext highlighter-rouge">macOS</code> / <code class="language-plaintext highlighter-rouge">Darwin</code>.</p>
+<p>Now, follow <a href="../../../build/fortran/" target="_blank">the instructions on this page</a> on how to build your Fortran example for serial and parallel simulations on the Operating System (OS) of you choice: <code>Windows</code>, <code>Linux</code>, or <code>macOS</code> / <code>Darwin</code>.</p>
 
 <p><br /></p>
 
 <h2 id="running-the-paramonte-simulations">Running the ParaMonte simulations</h2>
 
-<p>Once you have built your application, running the simulation is as simple as calling the generated executable on the command-prompt for serial applications, or invoking the MPI/Coarray launcher on the command-prompt for MPI/Coarray parallel simulations.  Follow <a href="../../../run/default/" target="_blank">the instructions and tips on this page</a> on how to run your Fortran example on either <code class="language-plaintext highlighter-rouge">Windows</code>, <code class="language-plaintext highlighter-rouge">Linux</code>, or <code class="language-plaintext highlighter-rouge">macOS</code> / <code class="language-plaintext highlighter-rouge">Darwin</code> Operating System (OS), on either a single processor or in parallel, on multiple processors or clusters of nodes of processors.</p>
+<p>Once you have built your application, running the simulation is as simple as calling the generated executable on the command-prompt for serial applications, or invoking the MPI/Coarray launcher on the command-prompt for MPI/Coarray parallel simulations.  Follow <a href="../../../run/default/" target="_blank">the instructions and tips on this page</a> on how to run your Fortran example on either <code>Windows</code>, <code>Linux</code>, or <code>macOS</code> / <code>Darwin</code> Operating System (OS), on either a single processor or in parallel, on multiple processors or clusters of nodes of processors.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 If you linking your applications (on <b>Linux</b> or <b>macOS</b>) against a <b>dynamic</b> build of the ParaMonte library, you may encounter runtime errors similar in nature to the following,  
@@ -1361,7 +1361,7 @@ Such an error message imply that the dynamic runtime library mentioned in the er
 
 <h3 id="running-the-paramonte-simulations-on-a-single-processor">Running the ParaMonte simulations on a single processor</h3>
 
-<p>If the executable <code class="language-plaintext highlighter-rouge">main.exe</code> has been built for serial simulations (using one processor), simply call the executable on the command line. The calling method is identical on all three Operating Systems: Windows, Linux, and Darwin (macOS). Here is an example call on Windows OS,</p>
+<p>If the executable <code>main.exe</code> has been built for serial simulations (using one processor), simply call the executable on the command line. The calling method is identical on all three Operating Systems: Windows, Linux, and Darwin (macOS). Here is an example call on Windows OS,</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\example&gt;main.exe
 
@@ -1478,20 +1478,20 @@ Such an error message imply that the dynamic runtime library mentioned in the er
 
 <h3 id="running-the-paramonte-simulations-in-parallel-on-multiple-processors">Running the ParaMonte simulations in parallel on multiple processors</h3>
 
-<p>If the executable <code class="language-plaintext highlighter-rouge">main.exe</code> has been built for MPI-enabled parallel simulations (on multiple processors), you will need to invoke the MPI launcher to start the simulation.</p>
+<p>If the executable <code>main.exe</code> has been built for MPI-enabled parallel simulations (on multiple processors), you will need to invoke the MPI launcher to start the simulation.</p>
 
 <ul>
   <li><strong>On Windows</strong><br />
 For parallel simulations on a single node (of multiple processors), for example on a single computer, the command typically looks like the following,
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpiexec -localonly -n 3 main.exe
 </code></pre></div>    </div>
-    <p>where the flag <code class="language-plaintext highlighter-rouge">-localonly</code> ensures the simulation is run only on a single node. This option avoids the invocation of the Hydra service which would require prior registration. The flag <code class="language-plaintext highlighter-rouge">-n 3</code> assigns three MPI tasks to three physical processors for the simulation. To run your simulation on a cluster of nodes, follow <a href="https://software.intel.com/en-us/mpi-developer-reference-windows-global-options" target="_blank">the guidelines and instructions provided by the Intel MPI library development team</a>.</p>
+    <p>where the flag <code>-localonly</code> ensures the simulation is run only on a single node. This option avoids the invocation of the Hydra service which would require prior registration. The flag <code>-n 3</code> assigns three MPI tasks to three physical processors for the simulation. To run your simulation on a cluster of nodes, follow <a href="https://software.intel.com/en-us/mpi-developer-reference-windows-global-options" target="_blank">the guidelines and instructions provided by the Intel MPI library development team</a>.</p>
   </li>
   <li><strong>On Linux / Darwin (Mac)</strong><br />
-The MPI launcher command for parallel simulations on Linux and Darwin are identical and look very similar to the Windows command (except for the flag <code class="language-plaintext highlighter-rouge">-localonly</code> which is not needed),
+The MPI launcher command for parallel simulations on Linux and Darwin are identical and look very similar to the Windows command (except for the flag <code>-localonly</code> which is not needed),
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpiexec -n 3 main.exe
 </code></pre></div>    </div>
-    <p>where the flag <code class="language-plaintext highlighter-rouge">-n 3</code> assigns three MPI tasks to three physical processors for the simulation.</p>
+    <p>where the flag <code>-n 3</code> assigns three MPI tasks to three physical processors for the simulation.</p>
   </li>
 </ul>
 
@@ -1677,7 +1677,7 @@ Keep in mind that these predictions for the optimal number of processors are onl
 
 <h3 id="final-notes">Final notes</h3>
 
-<p><strong>Mission accomplished</strong>. We have now used the adaptive Markov chain sampler routine of the ParaMonte library to generate random numbers from our objective function of interest. This simulation will generate five files in a folder named <code class="language-plaintext highlighter-rouge">./out/</code> in the current directory, each of which contains some specific information about the simulation. The purpose of each file is indicated by the suffix at the end of its name: <code class="language-plaintext highlighter-rouge">_chain</code>, <code class="language-plaintext highlighter-rouge">_sample</code>, <code class="language-plaintext highlighter-rouge">_report</code>, <code class="language-plaintext highlighter-rouge">_progress</code>, <code class="language-plaintext highlighter-rouge">_restart</code>. If <code class="language-plaintext highlighter-rouge">multichain</code> parallelism is requested via the input simulation specification variable <code class="language-plaintext highlighter-rouge">parallelizationModel = 'multiChain'</code>, then there will be five simulation output files generated for each processor separately and independently of each other. This is as if we have simulated several independent but simultaneous ParaDRAM simulations of our objective function. More details about the contents of each of the ParaDRAM simulation output files can be found on <a href="../../../usage/paradram/output/" target="_blank">this page</a>.</p>
+<p><strong>Mission accomplished</strong>. We have now used the adaptive Markov chain sampler routine of the ParaMonte library to generate random numbers from our objective function of interest. This simulation will generate five files in a folder named <code>./out/</code> in the current directory, each of which contains some specific information about the simulation. The purpose of each file is indicated by the suffix at the end of its name: <code>_chain</code>, <code>_sample</code>, <code>_report</code>, <code>_progress</code>, <code>_restart</code>. If <code>multichain</code> parallelism is requested via the input simulation specification variable <code>parallelizationModel = 'multiChain'</code>, then there will be five simulation output files generated for each processor separately and independently of each other. This is as if we have simulated several independent but simultaneous ParaDRAM simulations of our objective function. More details about the contents of each of the ParaDRAM simulation output files can be found on <a href="../../../usage/paradram/output/" target="_blank">this page</a>.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 Self-contained examples with Multivariate Normal Distribution as the objective function are available on the <a href="https://github.com/cdslaborg/paramonte/releases" target="_blank">the release page of the ParaMonte library on GitHub</a>. These examples come with build-scripts for both Windows and Linux/macOS that can seamlessly build them for you by simply calling the scripts. Depending on the programming language of your choice and your system's architecture, these self-contained examples minimally require a C/C++/Fortran compiler (e.g., Intel Parallel Studio <b>&#8805; 2019.1.1</b> or Microsoft C/C++ compiler <b>&#8805; 2019</b> on Windows, or GNU C/C++/Fortran compilers <b>&#8805; 8.4</b> on Unix-like Operating Systems). If you follow the installation instructions of the ParaMonte library, then all of these build requirements will be automatically installed on your system.

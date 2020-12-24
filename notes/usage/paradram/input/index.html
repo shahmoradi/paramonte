@@ -819,11 +819,11 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
 <ul>
   <li>The structure of the input file for all ParaMonte samplers is the same in all programming languages.</li>
-  <li>The simulation specifications for each ParaMonte sampler (e.g., the ParaDRAM MCMC sampler) must be grouped under the ParaMonte routine’s name. We call each group a <code class="language-plaintext highlighter-rouge">namelist</code>.</li>
-  <li>Each group, corresponding to one ParaMonte sampler routine, is identified by a group-name preceded by an <code class="language-plaintext highlighter-rouge">&amp;</code> and ends by a forward-slash <code class="language-plaintext highlighter-rouge">/</code> (see below for an example input file).</li>
+  <li>The simulation specifications for each ParaMonte sampler (e.g., the ParaDRAM MCMC sampler) must be grouped under the ParaMonte routine’s name. We call each group a <code>namelist</code>.</li>
+  <li>Each group, corresponding to one ParaMonte sampler routine, is identified by a group-name preceded by an <code>&amp;</code> and ends by a forward-slash <code>/</code> (see below for an example input file).</li>
   <li>Multiple namelist groups can coexist within a sinle input file. Only the ones relevant to the simulation of interest will be read and used. The rest will be ignored.</li>
   <li>Comments are allowed anywhere inside the input file.</li>
-  <li>Comments must begin with an exclamation mark (<code class="language-plaintext highlighter-rouge">!</code>).</li>
+  <li>Comments must begin with an exclamation mark (<code>!</code>).</li>
   <li>Comments can appear anywhere on an empty line or, after a value assignment.</li>
 </ul>
 
@@ -831,7 +831,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
 <ul>
   <li><strong>all variable assignments are optional</strong> and can be dropped or commented out. In such cases, the ParaMonte routines will assign appropriate default values  to the missing variables in the input file.</li>
-  <li>Variables within a namelist group can be separated from each other by either colons <code class="language-plaintext highlighter-rouge">,</code> or white-space characters.</li>
+  <li>Variables within a namelist group can be separated from each other by either colons <code>,</code> or white-space characters.</li>
   <li>The <strong>order by which the variables appear</strong> within a namelist group is <strong>irrelevant and unimportant</strong>.</li>
   <li>Variables can be defined multiple times, but only <strong>the last definition will be considered as input</strong>.</li>
   <li><strong>All variable names are case-insensitive</strong>. However, <strong>for clarity</strong>, the ParaMonte library follows the <strong>camelCase code-writing practice</strong>.</li>
@@ -841,23 +841,23 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
 <ul>
   <li>
-    <p>Like variables, values within a namelist group can be separated from each other by either colons <code class="language-plaintext highlighter-rouge">,</code> or white-space characters.</p>
+    <p>Like variables, values within a namelist group can be separated from each other by either colons <code>,</code> or white-space characters.</p>
   </li>
   <li><strong>Strings</strong>
     <ul>
-      <li>String values must be enclosed with either single or double quotation marks: <code class="language-plaintext highlighter-rouge">''</code> or <code class="language-plaintext highlighter-rouge">""</code>.</li>
+      <li>String values must be enclosed with either single or double quotation marks: <code>''</code> or <code>""</code>.</li>
       <li>String values can be continued on multiple lines, however, any additional white-space characters as a result of the line-continuation will NOT be ignored.</li>
     </ul>
   </li>
   <li><strong>Logical (Boolean)</strong>
     <ul>
-      <li>Logical values are all <strong>case-insensitive</strong> and can be either <code class="language-plaintext highlighter-rouge">.true.</code>, <code class="language-plaintext highlighter-rouge">true</code>, or <code class="language-plaintext highlighter-rouge">t</code> for a <code class="language-plaintext highlighter-rouge">TRUE</code> value, and <code class="language-plaintext highlighter-rouge">.false.</code>, <code class="language-plaintext highlighter-rouge">false</code>, or <code class="language-plaintext highlighter-rouge">f</code> for a <code class="language-plaintext highlighter-rouge">FALSE</code> value.</li>
+      <li>Logical values are all <strong>case-insensitive</strong> and can be either <code>.true.</code>, <code>true</code>, or <code>t</code> for a <code>TRUE</code> value, and <code>.false.</code>, <code>false</code>, or <code>f</code> for a <code>FALSE</code> value.</li>
     </ul>
   </li>
   <li><strong>Real (Float)</strong>
     <ul>
       <li>Real values are by default double-precision and capable of holding up to 16 digits of precision and representing numbers as large as $\approx 10^{307}$ and as tiny as $\approx 10^{-307}$.
-        <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> To keep the representation of numbers accurate up to 16 digits, consider using the letter <strong><code class="language-plaintext highlighter-rouge">d</code></strong> instead of <strong><code class="language-plaintext highlighter-rouge">e</code></strong> for the scientific representation of numbers. The letter <strong><code class="language-plaintext highlighter-rouge">d</code></strong> stands for <strong>double precision</strong> (<strong><code class="language-plaintext highlighter-rouge">64-bit</code></strong> real/float). For example, the value <strong><code class="language-plaintext highlighter-rouge">1.d0</code> is guaranteed to be <code class="language-plaintext highlighter-rouge">1.0000000000000000</code></strong> in the simulation, whereas <code class="language-plaintext highlighter-rouge">1.e0</code> is only guaranteed to have single-precision accuracy, although most compilers will represent this as <code class="language-plaintext highlighter-rouge">1.0000000000000000</code> upon conversion to a full-precision value. But in general, it won’t hurt to use <strong><code class="language-plaintext highlighter-rouge">d</code></strong> in place of <strong><code class="language-plaintext highlighter-rouge">e</code></strong> for the scientific representation of double-precision values <strong>only</strong> within the input files (Outside the input files, the number-representation rules of the specific programming language of your choice, in which you are coding your objective function, must be followed).</div>
+        <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> To keep the representation of numbers accurate up to 16 digits, consider using the letter <strong><code>d</code></strong> instead of <strong><code>e</code></strong> for the scientific representation of numbers. The letter <strong><code>d</code></strong> stands for <strong>double precision</strong> (<strong><code>64-bit</code></strong> real/float). For example, the value <strong><code>1.d0</code> is guaranteed to be <code>1.0000000000000000</code></strong> in the simulation, whereas <code>1.e0</code> is only guaranteed to have single-precision accuracy, although most compilers will represent this as <code>1.0000000000000000</code> upon conversion to a full-precision value. But in general, it won’t hurt to use <strong><code>d</code></strong> in place of <strong><code>e</code></strong> for the scientific representation of double-precision values <strong>only</strong> within the input files (Outside the input files, the number-representation rules of the specific programming language of your choice, in which you are coding your objective function, must be followed).</div>
       </li>
     </ul>
   </li>
@@ -866,7 +866,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
 <h3 id="verctors"><strong>Verctors</strong></h3>
 
 <ul>
-  <li>All <strong>vectors and arrays</strong> that are <strong>specified inside the input file</strong> begin with index <code class="language-plaintext highlighter-rouge">1</code>. This follows the convention of the majority of science-oriented programming languages and libraries including but not limited to <strong>Fortran</strong>, <strong>Julia</strong>, <strong>Mathematica</strong>, <strong>MATLAB</strong>, <strong>R</strong>, <a href="https://en.wikipedia.org/wiki/LAPACK"><strong>LAPACK</strong></a>, and <a href="https://en.wikipedia.org/wiki/Eigen_(C%2B%2B_library)" target="_blank"><strong>Eigen (C++)</strong></a>.
+  <li>All <strong>vectors and arrays</strong> that are <strong>specified inside the input file</strong> begin with index <code>1</code>. This follows the convention of the majority of science-oriented programming languages and libraries including but not limited to <strong>Fortran</strong>, <strong>Julia</strong>, <strong>Mathematica</strong>, <strong>MATLAB</strong>, <strong>R</strong>, <a href="https://en.wikipedia.org/wiki/LAPACK"><strong>LAPACK</strong></a>, and <a href="https://en.wikipedia.org/wiki/Eigen_(C%2B%2B_library)" target="_blank"><strong>Eigen (C++)</strong></a>.
     <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Keep in mind that this 1-based indexing-rule applies only to variable assignments that are made inside the external input file. Any specification variable assigned from within a programming language enviroment follows the rules of that language. For example, all variables specified from within <strong>C/C++/Python</strong> follow the zero-based indexing rules of these languages.</div>
   </li>
   <li>Vectors (and arrays) of strings, integers, or real numbers can be specified as comma-separated or space-separated values. For example,
@@ -893,7 +893,7 @@ proposalStartStdVec(1:2) = 1.0, 2.0
 </code></pre></div>    </div>
     <p>Notice that the missing fourth variable will not be read from the input file. Instead, it be assigned a default value by the ParaMonte routines.</p>
   </li>
-  <li>Similar values in a vector that appear sequenctially, can be represented in abbreviated format via a repetition pattern rule involving <code class="language-plaintext highlighter-rouge">*</code>. For example,
+  <li>Similar values in a vector that appear sequenctially, can be represented in abbreviated format via a repetition pattern rule involving <code>*</code>. For example,
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>! vector of length 4, specifying the lower limits of the domain of the objective function along each dimension
 domainLowerLimitVec = -3.d100, 2*-20.0, -100
 </code></pre></div>    </div>
@@ -929,13 +929,13 @@ proposalStartCovMat(:,4) = 0.0, 0.0, 0.0, 1.0,
     <p>or,</p>
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proposalStartCovMat(1:4,1:4) = 1.0, 4*0.0, 1.0, 4*0.0, 1.0, 4*0.0, 1.0
 </code></pre></div>    </div>
-    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> When dealing with multidimensional arrays, keep in mind that the ParaMonte routines read and store array elements in a <a href="https://en.wikipedia.org/wiki/Row-_and_column-major_order" target="_blank">column-major order</a> from the input file. This is why the columns are represented by <code class="language-plaintext highlighter-rouge">:</code> in the second representation of the matrix in the example above (as opposed to rows). Matrix rows are NOT stored sequentially in the computer memory. <strong>For symmetric positive-definite matrices (like covariance or correlation matrices), this convention is irrelevant and unimportant</strong> and does not have any effects (as is the case in the example above).</div>
+    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> When dealing with multidimensional arrays, keep in mind that the ParaMonte routines read and store array elements in a <a href="https://en.wikipedia.org/wiki/Row-_and_column-major_order" target="_blank">column-major order</a> from the input file. This is why the columns are represented by <code>:</code> in the second representation of the matrix in the example above (as opposed to rows). Matrix rows are NOT stored sequentially in the computer memory. <strong>For symmetric positive-definite matrices (like covariance or correlation matrices), this convention is irrelevant and unimportant</strong> and does not have any effects (as is the case in the example above).</div>
   </li>
 </ul>
 
 <h3 id="example-contents-of-a-paramonte-simulation-input-file">Example contents of a ParaMonte simulation input file</h3>
 
-<p>The following box shows the contents of an example input specifications file for a ParaDRAM simulation of an objective function defined on a 4-dimensional domain (Notice the group name <code class="language-plaintext highlighter-rouge">&amp;ParaDRAM</code> at the beginning and <code class="language-plaintext highlighter-rouge">/</code> at the end). Notice the ample usage of the comment symbol wherever the user deems appropriate,</p>
+<p>The following box shows the contents of an example input specifications file for a ParaDRAM simulation of an objective function defined on a 4-dimensional domain (Notice the group name <code>&amp;ParaDRAM</code> at the beginning and <code>/</code> at the end). Notice the ample usage of the comment symbol wherever the user deems appropriate,</p>
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 !%  
 !%  Description:

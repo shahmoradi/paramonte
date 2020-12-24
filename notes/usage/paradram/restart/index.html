@@ -794,7 +794,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
     
 <p><br /></p>
 
-<p>Every ParaDRAM simulation generates an output restart file whose name ends with either <code class="language-plaintext highlighter-rouge">_restart.bin</code> (the default suffix) or <code class="language-plaintext highlighter-rouge">_restart.txt</code>. When the file extension is <code class="language-plaintext highlighter-rouge">.bin</code>, the contents of the file are written in binary format. Although the binary format is NOT human-readable, it has several advantages to the human-readable ASCII-formatted file suffixed by <code class="language-plaintext highlighter-rouge">_restart.txt</code>. The format of the output restart file can be specified via the input specification variable <code class="language-plaintext highlighter-rouge">restartFileFormat</code> described <a href="../../paradram/specifications/#restartfileformat" target="_blank">here</a>.</p>
+<p>Every ParaDRAM simulation generates an output restart file whose name ends with either <code>_restart.bin</code> (the default suffix) or <code>_restart.txt</code>. When the file extension is <code>.bin</code>, the contents of the file are written in binary format. Although the binary format is NOT human-readable, it has several advantages to the human-readable ASCII-formatted file suffixed by <code>_restart.txt</code>. The format of the output restart file can be specified via the input specification variable <code>restartFileFormat</code> described <a href="../../paradram/specifications/#restartfileformat" target="_blank">here</a>.</p>
 
 <p>The output restart file contains all information that is needed to restart a simulation should runtime interruptions happen.</p>
 
@@ -814,9 +814,9 @@ When the user requests the restart file to be written in ASCII format, the ParaD
 
 <h3 id="short-answer"><strong>Short answer</strong></h3>
 
-<p>Simply <strong>rerun the simulation with the same configuration</strong> (i.e., the same input specifications). Most importantly, ensure the value of the input variable <code class="language-plaintext highlighter-rouge">outputFileName</code>, is set to <strong>the same output filename’s prefix</strong> by which the simulation output files are generated.</p>
+<p>Simply <strong>rerun the simulation with the same configuration</strong> (i.e., the same input specifications). Most importantly, ensure the value of the input variable <code>outputFileName</code>, is set to <strong>the same output filename’s prefix</strong> by which the simulation output files are generated.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> We recommend that you always set a value for the input specification variable <strong><code class="language-plaintext highlighter-rouge">outputFileName</code></strong>. If you do so and the simulation gets interrupted for any reason, <strong>all you need to do to restart your simulation is to rerun it</strong>.</div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> We recommend that you always set a value for the input specification variable <strong><code>outputFileName</code></strong>. If you do so and the simulation gets interrupted for any reason, <strong>all you need to do to restart your simulation is to rerun it</strong>.</div>
 
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> If your simulation is in parallel, make sure to <strong>restart the simulation with the same number of processors</strong> as you used in the old simulation. Otherwise, there is no guarantee to obtain fully-deterministic or accurate results.</div>
 
@@ -827,22 +827,22 @@ When the user requests the restart file to be written in ASCII format, the ParaD
 <ul>
   <li>Every time a ParaDRAM simulation begins, the sampler checks for the value of the simulation specification variable <a href="../../paradram/specifications/#outputfilename" target="_blank">outputFileName</a> which is provided by the user. This serves as <strong>the common prefix in the names of all files</strong> that are output by the ParaDRAM sampler.
     <ul>
-      <li>For example, a user-input value of <code class="language-plaintext highlighter-rouge">outputFileName=./out/temp</code> will lead to the generation of a set of ParaDRAM output files with the following names (by the first processor in the simulation),
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>temp_process_1_progress.txt
+      <li>For example, a user-input value of <code>outputFileName=./out/temp</code> will lead to the generation of a set of ParaDRAM output files with the following names (by the first processor in the simulation),
+        <pre><code>temp_process_1_progress.txt
 temp_process_1_restart.txt
 temp_process_1_report.txt
 temp_process_1_sample.txt
 temp_process_1_chain.txt
-</code></pre></div>        </div>
-        <p>which are all stored in the folder <code class="language-plaintext highlighter-rouge">./out/</code> relative to the current working directory from which you called the  sampler.</p>
+</code></pre>
+        <p>which are all stored in the folder <code>./out/</code> relative to the current working directory from which you called the  sampler.</p>
       </li>
-      <li>If the value of <code class="language-plaintext highlighter-rouge">outputFileName</code> ends with a forward- (<code class="language-plaintext highlighter-rouge">/</code>) or backward- (<code class="language-plaintext highlighter-rouge">\</code>) slash on Windows OS, or with a forward-slash (<code class="language-plaintext highlighter-rouge">/</code>) on Linux and Darwin (Mac) OS, then the user-provided value will be treated as the folder name in which the output files will have to be stored. In this case, the ParaDRAM sampler will assign a common random filename-prefix to all of the generated output files (which always starts with <code class="language-plaintext highlighter-rouge">ParaDRAM_run_</code>), for example, <code class="language-plaintext highlighter-rouge">ParaDRAM_run_20200312_060333_408</code> in the following filenames,
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ParaDRAM_run_20200312_060333_408_process_1_progress.txt
+      <li>If the value of <code>outputFileName</code> ends with a forward- (<code>/</code>) or backward- (<code>\</code>) slash on Windows OS, or with a forward-slash (<code>/</code>) on Linux and Darwin (Mac) OS, then the user-provided value will be treated as the folder name in which the output files will have to be stored. In this case, the ParaDRAM sampler will assign a common random filename-prefix to all of the generated output files (which always starts with <code>ParaDRAM_run_</code>), for example, <code>ParaDRAM_run_20200312_060333_408</code> in the following filenames,
+        <pre><code>ParaDRAM_run_20200312_060333_408_process_1_progress.txt
 ParaDRAM_run_20200312_060333_408_process_1_restart.txt
 ParaDRAM_run_20200312_060333_408_process_1_report.txt
 ParaDRAM_run_20200312_060333_408_process_1_sample.txt
 ParaDRAM_run_20200312_060333_408_process_1_chain.txt
-</code></pre></div>        </div>
+</code></pre>
       </li>
     </ul>
   </li>
@@ -850,28 +850,28 @@ ParaDRAM_run_20200312_060333_408_process_1_chain.txt
     <ul>
       <li><strong>Fresh simulation</strong> – If <strong>none of the output files already exist</strong>, the simulation begins as a fresh new simulation.</li>
       <li><strong>Simulation crash</strong> – If <strong>all</strong> of the <strong>output files</strong> with the given prefix <strong>already exist</strong> in the output path, the simulation will abruptly stop with an error message stating that it cannot overwrite an already existing simulation.</li>
-      <li><strong>Restart mode</strong> – If <strong>all output files exist</strong> with the given prefix <strong>except the sample file</strong> (suffixed with <code class="language-plaintext highlighter-rouge">_sample.txt</code>), then the ParaDRAM sampler assumes that this simulation has prematurely ended in the past and that it must restart this unfinished simulation. The reason for this assumption is the following,
+      <li><strong>Restart mode</strong> – If <strong>all output files exist</strong> with the given prefix <strong>except the sample file</strong> (suffixed with <code>_sample.txt</code>), then the ParaDRAM sampler assumes that this simulation has prematurely ended in the past and that it must restart this unfinished simulation. The reason for this assumption is the following,
         <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 When a ParaDRAM simulation ends prematurely, the interruption virtually always happens before the ParaDRAM sampler reaches the final stage of generating the <a href="../../paradram/output/#the-output-sample-file" target="_blank">output sample file</a>.
 </div>
         <p><br />
-<strong>Scenario 1</strong> – Suppose you set the specification variable <code class="language-plaintext highlighter-rouge">outputFileName = "./output/MyRestartSimulation"</code>. Upon starting the simulation, the sampler will generate the following output files ( there will be more than one group of files if <a href="../../paradram/specifications/#parallelizationmodel" target="_blank">parallelizationModel</a> = <code class="language-plaintext highlighter-rouge">"multiChain"</code> ),</p>
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MyRestartSimulation_process_1_progress.txt
+<strong>Scenario 1</strong> – Suppose you set the specification variable <code>outputFileName = "./output/MyRestartSimulation"</code>. Upon starting the simulation, the sampler will generate the following output files ( there will be more than one group of files if <a href="../../paradram/specifications/#parallelizationmodel" target="_blank">parallelizationModel</a> = <code>"multiChain"</code> ),</p>
+        <pre><code>MyRestartSimulation_process_1_progress.txt
 MyRestartSimulation_process_1_restart.txt
 MyRestartSimulation_process_1_report.txt
 MyRestartSimulation_process_1_sample.txt
 MyRestartSimulation_process_1_chain.txt
-</code></pre></div>        </div>
+</code></pre>
         <p>Then, the simulation gets interrupted and ends prematurely for some reason. <strong>To restart this simulation, just rerun the simulation as done in the first time</strong>. <br />
 <br />
-<strong>Scenario 2</strong> – Suppose you do not provide an input value for the specification variable <code class="language-plaintext highlighter-rouge">outputFileName</code>, in which case, the sampler will assign a random prefix to the output files, like the following,</p>
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ParaDRAM_run_20200312_060333_408_process_1_progress.txt
+<strong>Scenario 2</strong> – Suppose you do not provide an input value for the specification variable <code>outputFileName</code>, in which case, the sampler will assign a random prefix to the output files, like the following,</p>
+        <pre><code>ParaDRAM_run_20200312_060333_408_process_1_progress.txt
 ParaDRAM_run_20200312_060333_408_process_1_restart.txt
 ParaDRAM_run_20200312_060333_408_process_1_report.txt
 ParaDRAM_run_20200312_060333_408_process_1_sample.txt
 ParaDRAM_run_20200312_060333_408_process_1_chain.txt
-</code></pre></div>        </div>
-        <p>You run the simulation which is then interrupted and ends prematurely. In these filenames, anything that appears before <code class="language-plaintext highlighter-rouge">_process_</code> is part of the common prefix that the sampler randomly generates: <code class="language-plaintext highlighter-rouge">ParaDRAM_run_20200312_060333_408</code>. Thus, to restart the simulation you will have to set <code class="language-plaintext highlighter-rouge">outputFileName = "./ParaDRAM_run_20200312_060333_408"</code> in your restart-simulation-specifications so that the old output files can be found by the sampler upon the simulation restart.</p>
+</code></pre>
+        <p>You run the simulation which is then interrupted and ends prematurely. In these filenames, anything that appears before <code>_process_</code> is part of the common prefix that the sampler randomly generates: <code>ParaDRAM_run_20200312_060333_408</code>. Thus, to restart the simulation you will have to set <code>outputFileName = "./ParaDRAM_run_20200312_060333_408"</code> in your restart-simulation-specifications so that the old output files can be found by the sampler upon the simulation restart.</p>
       </li>
     </ul>
   </li>
