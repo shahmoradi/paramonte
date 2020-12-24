@@ -1,2 +1,1 @@
-# paramonte
-ParaMonte: Plain Powerfull Parallel Monte Carlo Library 
+ParaMonte Library documentation. For more information visit: [https://www.cdslab.org/paramonte/](https://www.cdslab.org/paramonte/)
