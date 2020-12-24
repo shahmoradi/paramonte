@@ -1,0 +1,651 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>paramonte.vis.Target &mdash; ParaMonte :: Python  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> ParaMonte :: Python
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ParaMonte :: Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../paramonte.html">paramonte</a> &raquo;</li>
+        
+      <li>paramonte.vis.Target</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for paramonte.vis.Target</h1><div class="highlight"><pre>
+<span></span><span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####</span>
+<span class="c1">####   MIT License</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte: plain powerful parallel Monte Carlo library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Copyright (C) 2012-present, The Computational Data Science Lab</span>
+<span class="c1">####</span>
+<span class="c1">####   This file is part of the ParaMonte library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Permission is hereby granted, free of charge, to any person obtaining a </span>
+<span class="c1">####   copy of this software and associated documentation files (the &quot;Software&quot;), </span>
+<span class="c1">####   to deal in the Software without restriction, including without limitation </span>
+<span class="c1">####   the rights to use, copy, modify, merge, publish, distribute, sublicense, </span>
+<span class="c1">####   and/or sell copies of the Software, and to permit persons to whom the </span>
+<span class="c1">####   Software is furnished to do so, subject to the following conditions:</span>
+<span class="c1">####</span>
+<span class="c1">####   The above copyright notice and this permission notice shall be </span>
+<span class="c1">####   included in all copies or substantial portions of the Software.</span>
+<span class="c1">####</span>
+<span class="c1">####   THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, </span>
+<span class="c1">####   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF </span>
+<span class="c1">####   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. </span>
+<span class="c1">####   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, </span>
+<span class="c1">####   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR </span>
+<span class="c1">####   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE </span>
+<span class="c1">####   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+<span class="c1">####</span>
+<span class="c1">####   ACKNOWLEDGMENT</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte is an honor-ware and its currency is acknowledgment and citations.</span>
+<span class="c1">####   As per the ParaMonte library license agreement terms, if you use any parts of </span>
+<span class="c1">####   this library for any purposes, kindly acknowledge the use of ParaMonte in your </span>
+<span class="c1">####   work (education/research/industry/development/...) by citing the ParaMonte </span>
+<span class="c1">####   library as described on this page:</span>
+<span class="c1">####</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/master/ACKNOWLEDGMENT.md</span>
+<span class="c1">####</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+
+<span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">tp</span>
+<span class="kn">import</span> <span class="nn">_pmutils</span> <span class="k">as</span> <span class="nn">pmutils</span>
+
+<span class="n">Struct</span> <span class="o">=</span> <span class="n">pmutils</span><span class="o">.</span><span class="n">Struct</span>
+<span class="n">newline</span> <span class="o">=</span> <span class="n">pmutils</span><span class="o">.</span><span class="n">newline</span>
+
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">#### Target class</span>
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="Target"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/Target/index.html#paramonte.vis.Target.Target">[docs]</a><span class="k">class</span> <span class="nc">Target</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    This is the Target class for generating instances</span>
+<span class="sd">    of a target on the current active figure and axis.</span>
+
+<span class="sd">        **Usage**</span>
+
+<span class="sd">        First generate an object of this class by optionally</span>
+<span class="sd">        passing the following parameters described below. Then call</span>
+<span class="sd">        the ``make()`` method. The generated object is also callable </span>
+<span class="sd">        with the same input parameters as the object&#39;s constructor.</span>
+
+<span class="sd">        **Parameters**</span>
+
+<span class="sd">            values (optional)</span>
+
+<span class="sd">                A pair (list, array, or tuple) of floats, </span>
+<span class="sd">                representing the (x,y) coordinates of the target.</span>
+
+<span class="sd">            axes</span>
+
+<span class="sd">                The axes object to which the target must be added.</span>
+<span class="sd">                The default is ``None`` in which case the output of the </span>
+<span class="sd">                matplotlib&#39;s ``gca()`` function will be used to get the </span>
+<span class="sd">                current active axes.</span>
+
+<span class="sd">        **Attributes**</span>
+
+<span class="sd">            All of the parameters described above, except ``axes``.</span>
+
+<span class="sd">                The input axes object (whether user-provided or automatically fetched)</span>
+<span class="sd">                will be stored as a component of the object&#39;s attribute ``currentFig``.</span>
+
+<span class="sd">            axvline (optional)</span>
+
+<span class="sd">                A structure with two components:</span>
+
+<span class="sd">                    enabled</span>
+
+<span class="sd">                        A logical value, indicating whether an ``axvline`` </span>
+<span class="sd">                        will be added to the plot or not. If set to ``False``</span>
+<span class="sd">                        no vertical target line will be added.</span>
+
+<span class="sd">                    kws</span>
+
+<span class="sd">                        A structure whose components will be passed to the </span>
+<span class="sd">                        matplotlib&#39;s ``axvline()`` function. For example:</span>
+
+<span class="sd">                        .. code-block:: python</span>
+<span class="sd">                            :linenos:</span>
+
+<span class="sd">                            axvline.kws.linewidth = 0.5</span>
+<span class="sd">                            axvline.kws.color = &quot;orangered&quot;</span>
+<span class="sd">                            axvline.kws.linestyle = &quot;:&quot;</span>
+<span class="sd">                            axvline.kws.ymin = 0.1</span>
+<span class="sd">                            axvline.kws.ymax = 1.9</span>
+
+<span class="sd">                        **NOTE**</span>
+
+<span class="sd">                        If a desired property is missing in the </span>
+<span class="sd">                        structure, simply add the property and </span>
+<span class="sd">                        its value to the structure.</span>
+
+<span class="sd">            axhline (optional)</span>
+
+<span class="sd">                A structure with two components:</span>
+
+<span class="sd">                    enabled</span>
+
+<span class="sd">                        A logical value, indicating whether an ``axhline`` </span>
+<span class="sd">                        will be added to the plot or not. If set to ``False``</span>
+<span class="sd">                        no horizontal target line will be added.</span>
+
+<span class="sd">                    kws</span>
+
+<span class="sd">                        A structure whose components will be passed to the </span>
+<span class="sd">                        matplotlib&#39;s ``axhline()`` function. For example:</span>
+
+<span class="sd">                        .. code-block:: python</span>
+<span class="sd">                            :linenos:</span>
+
+<span class="sd">                            axhline.kws.linewidth = 0.5</span>
+<span class="sd">                            axhline.kws.color = &quot;orangered&quot;</span>
+<span class="sd">                            axhline.kws.linestyle = &quot;:&quot;</span>
+<span class="sd">                            axhline.kws.xmin = 0.1</span>
+<span class="sd">                            axhline.kws.xmax = 1.9</span>
+
+<span class="sd">                        **NOTE**</span>
+
+<span class="sd">                        If a desired property is missing in the </span>
+<span class="sd">                        structure, simply add the property and </span>
+<span class="sd">                        its value to the structure.</span>
+
+<span class="sd">            scatter (optional)</span>
+
+<span class="sd">                A structure with two components:</span>
+
+<span class="sd">                    enabled</span>
+
+<span class="sd">                        A logical value, indicating whether an ``scatter`` </span>
+<span class="sd">                        will be added to the plot or not. If set to ``False``</span>
+<span class="sd">                        no target scatter circle will be added.</span>
+
+<span class="sd">                    kws</span>
+
+<span class="sd">                        A structure whose components will be passed to the </span>
+<span class="sd">                        matplotlib&#39;s ``scatter()`` function. For example:</span>
+
+<span class="sd">                        .. code-block:: python</span>
+
+<span class="sd">                            scatter.kws.s = 20</span>
+<span class="sd">                            scatter.kws.color = &quot;orangered&quot;</span>
+
+<span class="sd">                        NOTE: If a desired property is missing in the </span>
+<span class="sd">                        NOTE: structure, simply add the property and </span>
+<span class="sd">                        NOTE: its value to the structure.</span>
+
+<span class="sd">            currentFig</span>
+
+<span class="sd">                An structure which is initially ``None``, but upon making a plot, </span>
+<span class="sd">                is populated with attributes representing all outputs from </span>
+<span class="sd">                matplotlib function calls, with the following attributes:</span>
+
+<span class="sd">                    axes</span>
+
+<span class="sd">                        The output of matplotlib&#39;s ``gca()`` function or,</span>
+<span class="sd">                        the input axes object by the user.</span>
+
+<span class="sd">                    axhline</span>
+
+<span class="sd">                        The output of matplotlib&#39;s ``axhline()`` function.</span>
+
+<span class="sd">                    axvline</span>
+
+<span class="sd">                        The output of matplotlib&#39;s ``axvline()`` function.</span>
+
+<span class="sd">                    scatter</span>
+
+<span class="sd">                        The output of matplotlib&#39;s ``scatter()`` function.</span>
+
+<span class="sd">        **Returns**</span>
+
+<span class="sd">            self</span>
+
+<span class="sd">                An object of class ``Target``.</span>
+
+<span class="sd">    ---------------------------------------------------------------------------</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### __init__</span>
+    <span class="c1">################################################################################################################################</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span>
+                <span class="p">,</span> <span class="n">values</span> <span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span> <span class="n">tp</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span> <span class="n">tp</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="p">,</span> <span class="n">tp</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="p">]</span> <span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+                <span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#: tp.Optional[ plt.axes ] = None</span>
+                <span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">values</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">axvline</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">axhline</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">scatter</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_isdryrun</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_isdryrun</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### __call__</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="Target.__call__"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/Target/index.html#paramonte.vis.Target.Target.__call__">[docs]</a>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span> <span class="bp">self</span>
+                <span class="p">,</span> <span class="n">reself</span> <span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span> <span class="nb">bool</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+                <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Call the ``make()`` method of the </span>
+<span class="sd">        current instance of the class.</span>
+
+<span class="sd">            **Parameters**</span>
+
+<span class="sd">                Any arguments that can be passed to the </span>
+<span class="sd">                ``make()`` method of the target object.</span>
+
+<span class="sd">            **Returns**</span>
+
+<span class="sd">                Any return value from the ``make()``</span>
+<span class="sd">                method of the target object.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">reself</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### make</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="Target.make"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/Target/index.html#paramonte.vis.Target.Target.make">[docs]</a>    <span class="k">def</span> <span class="nf">make</span><span class="p">(</span> <span class="bp">self</span>
+            <span class="p">,</span> <span class="n">reself</span> <span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span> <span class="nb">bool</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Add a target on an existing plot (the current active axes object)</span>
+<span class="sd">        based on the ``values`` attribute of the target object.</span>
+
+<span class="sd">            **Parameters**</span>
+
+<span class="sd">                reself</span>
+
+<span class="sd">                    A logical variable. If ``True``, an instance of </span>
+<span class="sd">                    the object will be returned upon exit to the calling </span>
+<span class="sd">                    routine. The default value is ``False``.</span>
+
+<span class="sd">            **Returns**</span>
+
+<span class="sd">                the object self if ``reself = True`` otherwise, ``None``.</span>
+<span class="sd">                However, this method causes side-effects by manipulating</span>
+<span class="sd">                the existing attributes of the object.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">):</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">key</span><span class="o">==</span><span class="s2">&quot;axes&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">val</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;Unrecognized input &#39;&quot;</span><span class="o">+</span><span class="n">key</span><span class="o">+</span><span class="s2">&quot;&#39; class attribute detected.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">()</span>
+                                <span class="p">)</span>
+
+        <span class="c1"># set what to plot</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### setup the vertical line</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span><span class="p">,</span><span class="n">Struct</span><span class="p">):</span>
+                <span class="c1">#if targetExists: self.axvline.kws.x = self.value[0]</span>
+                <span class="k">if</span> <span class="s2">&quot;linewidth&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">linewidth</span> <span class="o">=</span> <span class="mf">0.5</span>
+                <span class="k">if</span> <span class="s2">&quot;linestyle&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span>
+                <span class="k">if</span> <span class="s2">&quot;zorder&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">zorder</span> <span class="o">=</span> <span class="mi">1000</span>
+                <span class="k">if</span> <span class="s2">&quot;color&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;orangered&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;The axvline.kws component of the current Target object must&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;be an object of class Struct(), essentially a structure with components&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;whose names are the input arguments to the axvline() function of the&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;matplotlib library.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">()</span>
+                                <span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### setup the horizontal line</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span><span class="p">,</span><span class="n">Struct</span><span class="p">):</span>
+                <span class="c1">#if targetExists: self.axhline.kws.y = self.value[1]</span>
+                <span class="k">if</span> <span class="s2">&quot;linewidth&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">linewidth</span> <span class="o">=</span> <span class="mf">0.5</span>
+                <span class="k">if</span> <span class="s2">&quot;linestyle&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span>
+                <span class="k">if</span> <span class="s2">&quot;color&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;orangered&quot;</span>
+                <span class="k">if</span> <span class="s2">&quot;zorder&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">zorder</span> <span class="o">=</span> <span class="mi">1001</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;The axhline.kws component of the current Target object must&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;be an object of class Struct(), essentially a structure with components&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;whose names are the input arguments to the axhline() function of the&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;matplotlib library.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">()</span>
+                                <span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### setup the scatter line</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="p">,</span><span class="n">Struct</span><span class="p">):</span>
+                <span class="c1">#if targetExists: self.scatter.kws.x = self.value[0]</span>
+                <span class="c1">#if targetExists: self.scatter.kws.y = self.value[1]</span>
+                <span class="k">if</span> <span class="s2">&quot;s&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">s</span> <span class="o">=</span> <span class="mi">20</span>
+                <span class="k">if</span> <span class="s2">&quot;color&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;orangered&quot;</span>
+                <span class="k">if</span> <span class="s2">&quot;zorder&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">zorder</span> <span class="o">=</span> <span class="mi">1002</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;The scatter.kws component of the current Target object must&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;be an object of class Struct(), essentially a structure with components&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;whose names are the input arguments to the scatter() function of the&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;matplotlib library.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">()</span>
+                                <span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">############################################################################################################################</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isdryrun</span><span class="p">:</span> <span class="k">return</span>
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span> <span class="c1"># turn on the interactive mode. Used to detach the figure from the command line in ipython</span>
+
+        <span class="c1"># generate figure and axes if needed</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+        <span class="c1">#plt.figure(self.currentFig.figure.number)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### add target</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="n">xlimCurrent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()</span>
+        <span class="n">ylimCurrent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+
+                <span class="c1">#if &quot;ymin&quot; not in vars(self.axvline.kws).keys(): self.axvline.kws.ymin = ylimCurrent[0]</span>
+                <span class="c1">#if &quot;ymax&quot; not in vars(self.axvline.kws).keys(): self.axvline.kws.ymax = ylimCurrent[1]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axvline</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">axvline</span>  <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                                                                        <span class="p">,</span> <span class="o">**</span><span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span>
+                                                                        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+
+                <span class="c1">#if &quot;xmin&quot; not in vars(self.axhline.kws).keys(): self.axhline.kws.xmin = xlimCurrent[0]</span>
+                <span class="c1">#if &quot;xmax&quot; not in vars(self.axhline.kws).keys(): self.axhline.kws.xmax = xlimCurrent[1]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axhline</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">axhline</span>  <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                                                                        <span class="p">,</span> <span class="o">**</span><span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span>
+                                                                        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">scatter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">scatter</span>  <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                                                                        <span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                                                                        <span class="p">,</span> <span class="o">**</span><span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span>
+                                                                        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlimCurrent</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ylimCurrent</span><span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">if</span> <span class="n">reself</span><span class="p">:</span> <span class="k">return</span> <span class="bp">self</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### _getDocString</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="Target._getDocString"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/Target/index.html#paramonte.vis.Target.Target._getDocString">[docs]</a>    <span class="k">def</span> <span class="nf">_getDocString</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">docString</span>   <span class="o">=</span> <span class="n">newline</span> \
+                    <span class="o">+</span> <span class="s2">&quot;Here is the help information on the Target class:&quot;</span> <span class="o">+</span> <span class="n">newline</span> \
+                    <span class="o">+</span> <span class="n">newline</span> \
+                    <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span>
+        <span class="k">return</span> <span class="n">docString</span></div></div>
+
+    <span class="c1">################################################################################################################################</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+    <div>
+        <p>
+            <a href="https://www.cdslab.org/paramonte">ParaMonte: Plain Powerful Parallel Monte Carlo Library</a>.<br/>
+            &copy; Copyright 2020, <a href="https://www.cdslab.org" target="_blank">The Computational Data Science Lab</a>.<br/>
+        </p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </div>
+    <!-- Start of statc -->
+    <div style="color: #ffffff; float: none; width: 100%;">
+        <span style="font-size:0.8em">visitor count: 
+            <script type="text/javascript">
+                var sc_project=12178963; 
+                var sc_invisible=0; 
+                var sc_security="e0dfe0f9"; 
+                var sc_text=3; 
+                var scJsHost = "https://";
+                document.write("<sc"+"ript type='text/javascript' src='" +
+                scJsHost+
+                "statcounter.com/counter/counter.js'></"+"script>");
+            </script>
+        </span>
+    </div>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

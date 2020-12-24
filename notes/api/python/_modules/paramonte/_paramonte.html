@@ -1,0 +1,489 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>paramonte._paramonte &mdash; ParaMonte :: Python  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> ParaMonte :: Python
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ParaMonte :: Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../paramonte.html">paramonte</a> &raquo;</li>
+        
+      <li>paramonte._paramonte</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for paramonte._paramonte</h1><div class="highlight"><pre>
+<span></span><span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####</span>
+<span class="c1">####   MIT License</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte: plain powerful parallel Monte Carlo library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Copyright (C) 2012-present, The Computational Data Science Lab</span>
+<span class="c1">####</span>
+<span class="c1">####   This file is part of the ParaMonte library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Permission is hereby granted, free of charge, to any person obtaining a </span>
+<span class="c1">####   copy of this software and associated documentation files (the &quot;Software&quot;), </span>
+<span class="c1">####   to deal in the Software without restriction, including without limitation </span>
+<span class="c1">####   the rights to use, copy, modify, merge, publish, distribute, sublicense, </span>
+<span class="c1">####   and/or sell copies of the Software, and to permit persons to whom the </span>
+<span class="c1">####   Software is furnished to do so, subject to the following conditions:</span>
+<span class="c1">####</span>
+<span class="c1">####   The above copyright notice and this permission notice shall be </span>
+<span class="c1">####   included in all copies or substantial portions of the Software.</span>
+<span class="c1">####</span>
+<span class="c1">####   THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, </span>
+<span class="c1">####   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF </span>
+<span class="c1">####   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. </span>
+<span class="c1">####   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, </span>
+<span class="c1">####   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR </span>
+<span class="c1">####   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE </span>
+<span class="c1">####   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+<span class="c1">####</span>
+<span class="c1">####   ACKNOWLEDGMENT</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte is an honor-ware and its currency is acknowledgment and citations.</span>
+<span class="c1">####   As per the ParaMonte library license agreement terms, if you use any parts of </span>
+<span class="c1">####   this library for any purposes, kindly acknowledge the use of ParaMonte in your </span>
+<span class="c1">####   work (education/research/industry/development/...) by citing the ParaMonte </span>
+<span class="c1">####   library as described on this page:</span>
+<span class="c1">####</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/master/ACKNOWLEDGMENT.md</span>
+<span class="c1">####</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">platform</span> <span class="k">as</span> <span class="nn">_platform</span>
+
+<span class="kn">import</span> <span class="nn">_dfutils</span> <span class="k">as</span> <span class="nn">dfutils</span>
+<span class="kn">import</span> <span class="nn">_pmutils</span> <span class="k">as</span> <span class="nn">utils</span>
+<span class="kn">from</span> <span class="nn">_message</span> <span class="kn">import</span> <span class="n">note</span><span class="p">,</span> <span class="n">warn</span><span class="p">,</span> <span class="n">abort</span>
+<span class="kn">from</span> <span class="nn">_pmutils</span> <span class="kn">import</span> <span class="n">Struct</span><span class="p">,</span> <span class="n">newline</span><span class="p">,</span> <span class="n">creturn</span>
+
+<span class="c1">####################################################################################################################################</span>
+
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span> <span class="k">as</span> <span class="n">_Path</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">path</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+<span class="n">path</span><span class="o">.</span><span class="n">auxil</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">root</span><span class="p">,</span><span class="s2">&quot;auxil&quot;</span><span class="p">)</span>
+<span class="n">path</span><span class="o">.</span><span class="n">home</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">_Path</span><span class="o">.</span><span class="n">home</span><span class="p">())</span> <span class="c1"># path.home = os.path.expanduser(&quot;~&quot;)</span>
+<span class="n">path</span><span class="o">.</span><span class="n">lib</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">root</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+
+<span class="c1">####################################################################################################################################</span>
+
+<span class="n">names</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">names</span><span class="o">.</span><span class="n">paramonte</span> <span class="o">=</span> <span class="s2">&quot;ParaMonte&quot;</span>
+<span class="n">names</span><span class="o">.</span><span class="n">paradram</span> <span class="o">=</span> <span class="s2">&quot;ParaDRAM&quot;</span>
+<span class="n">names</span><span class="o">.</span><span class="n">paradise</span> <span class="o">=</span> <span class="s2">&quot;ParaDISE&quot;</span>
+<span class="n">names</span><span class="o">.</span><span class="n">paranest</span> <span class="o">=</span> <span class="s2">&quot;ParaNest&quot;</span>
+<span class="n">names</span><span class="o">.</span><span class="n">paratemp</span> <span class="o">=</span> <span class="s2">&quot;ParaTemp&quot;</span>
+
+<span class="c1">####################################################################################################################################</span>
+
+<span class="n">platform</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">platform</span><span class="o">.</span><span class="n">arch</span> <span class="o">=</span> <span class="s2">&quot;x86&quot;</span> <span class="k">if</span> <span class="s2">&quot;32&quot;</span> <span class="ow">in</span> <span class="n">_platform</span><span class="o">.</span><span class="n">architecture</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;x64&quot;</span>
+<span class="n">platform</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">platform</span><span class="o">.</span><span class="n">isWin32</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">name</span><span class="o">==</span><span class="s2">&quot;win32&quot;</span> <span class="k">else</span> <span class="kc">False</span>
+<span class="n">platform</span><span class="o">.</span><span class="n">isLinux</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">name</span><span class="o">==</span><span class="s2">&quot;linux&quot;</span> <span class="k">else</span> <span class="kc">False</span>
+<span class="n">platform</span><span class="o">.</span><span class="n">isMacOS</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">name</span><span class="o">==</span><span class="s2">&quot;darwin&quot;</span> <span class="k">else</span> <span class="kc">False</span>
+<span class="n">platform</span><span class="o">.</span><span class="n">osname</span> <span class="o">=</span> <span class="s2">&quot;windows&quot;</span> <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">isWin32</span> <span class="k">else</span> <span class="n">platform</span><span class="o">.</span><span class="n">name</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">_dt</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">_dt</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">platform</span><span class="o">.</span><span class="n">systemInfoFilePrefix</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">auxil</span><span class="p">,</span> <span class="s2">&quot;.systemInfo_&quot;</span><span class="p">);</span>
+<span class="n">platform</span><span class="o">.</span><span class="n">systemInfoFilePath</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">systemInfoFilePrefix</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">{:04d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">{:02d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">{:02d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">platform</span><span class="o">.</span><span class="n">systemInfoFilePath</span><span class="p">):</span>
+
+    <span class="kn">import</span> <span class="nn">glob</span>
+    <span class="n">fileList</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">platform</span><span class="o">.</span><span class="n">systemInfoFilePrefix</span> <span class="o">+</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">filePath</span> <span class="ow">in</span> <span class="n">fileList</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="n">cmd</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">isWin32</span><span class="p">:</span> <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;systeminfo &gt; &quot;</span> <span class="o">+</span> <span class="n">platform</span><span class="o">.</span><span class="n">systemInfoFilePath</span>
+    <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">isLinux</span><span class="p">:</span> <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;uname -a &gt;&gt;  &quot;</span> <span class="o">+</span> <span class="n">platform</span><span class="o">.</span><span class="n">systemInfoFilePath</span> <span class="o">+</span> <span class="s2">&quot;; lscpu &gt;&gt; &quot;</span> <span class="o">+</span> <span class="n">platform</span><span class="o">.</span><span class="n">systemInfoFilePath</span>
+    <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">isMacOS</span><span class="p">:</span> <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;uname -a &gt;&gt;  &quot;</span> <span class="o">+</span> <span class="n">platform</span><span class="o">.</span><span class="n">systemInfoFilePath</span> <span class="o">+</span> <span class="s2">&quot;; sysctl -a | grep machdep.cpu &gt;&gt; &quot;</span> <span class="o">+</span> <span class="n">platform</span><span class="o">.</span><span class="n">systemInfoFilePath</span>
+
+    <span class="k">if</span> <span class="n">cmd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">platform</span><span class="o">.</span><span class="n">systemInfoFilePath</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">warn</span><span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;Failed to get the system information. skipping...&quot;</span>
+                <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="n">paramonte</span>
+                <span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="p">)</span>
+
+<span class="c1">####################################################################################################################################</span>
+
+<span class="n">website</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">home</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.cdslab.org/paramonte&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">_url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/notes/installation&quot;</span>
+
+<span class="c1"># installation Linux</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">_url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/notes/overview&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">preface</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">changes</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">preface</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/preface&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">changes</span><span class="o">.</span><span class="n">kernel</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">changes</span><span class="o">.</span><span class="n">matlab</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">changes</span><span class="o">.</span><span class="n">python</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">changes</span><span class="o">.</span><span class="n">kernel</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/paramonte-kernel-release-notes&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">changes</span><span class="o">.</span><span class="n">matlab</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/paramonte-matlab-release-notes&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">changes</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/paramonte-python-release-notes&quot;</span>
+
+<span class="c1"># installation Linux</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">linux</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">linux</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/linux&quot;</span>
+
+<span class="c1"># installation Windows</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">windows</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">windows</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/windows&quot;</span>
+
+<span class="c1"># installation Python</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">python</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/python&quot;</span>
+
+<span class="c1"># installation MATLAB</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">matlab</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">matlab</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/matlab&quot;</span>
+
+<span class="c1"># installation macOS</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">macos</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">macos</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/macos&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">macos</span><span class="o">.</span><span class="n">prereqs</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">macos</span><span class="o">.</span><span class="n">prereqs</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">macos</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/#the-compile-time-and-runtime-prerequisites&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">macos</span><span class="o">.</span><span class="n">prereqs</span><span class="o">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">macos</span><span class="o">.</span><span class="n">prereqs</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">macos</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/#prereqs-install&quot;</span>
+
+<span class="c1"># Python examples</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">examples</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">_url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/notes/examples&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">python</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">jupyter</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">postprocess</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">jupyter</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/python/jupyter&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">postprocess</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/python/postprocess&quot;</span>
+
+<span class="c1"># Python API</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">api</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">_url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/notes/api&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">python</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/python/autoapi/paramonte&quot;</span>
+
+<span class="c1"># ParaDRAM</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">_url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/notes/usage&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">_url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/paradram&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">quickstart</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">quickstart</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/interface&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">input</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/input&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">specifications</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">specifications</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/specifications&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">restart</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">restart</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/restart&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">paradram</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/output&quot;</span>
+
+<span class="c1"># GitHub issues</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">github</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/cdslaborg/paramonte&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">issues</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">issues</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/cdslaborg/paramonte/issues&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">release</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">release</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/releases&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">release</span><span class="o">.</span><span class="n">latest</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">release</span><span class="o">.</span><span class="n">latest</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">release</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/latest&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">_url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/archive&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">master</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">zip</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">tar</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">zip</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/master.zip&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/master.tar.gz&quot;</span>
+
+<span class="c1"># GitHub examples</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">examples</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/cdslaborg/paramontex&quot;</span>
+
+<span class="c1"># Intel MPI</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">intel</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">intel</span><span class="o">.</span><span class="n">mpi</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">intel</span><span class="o">.</span><span class="n">mpi</span><span class="o">.</span><span class="n">home</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">intel</span><span class="o">.</span><span class="n">mpi</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://software.intel.com/en-us/mpi-library&quot;</span>
+
+<span class="c1"># Intel Windows</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">intel</span><span class="o">.</span><span class="n">mpi</span><span class="o">.</span><span class="n">windows</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">intel</span><span class="o">.</span><span class="n">mpi</span><span class="o">.</span><span class="n">windows</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://software.intel.com/en-us/get-started-with-mpi-for-windows&quot;</span>
+
+<span class="c1"># OpenMPI</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">openmpi</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">openmpi</span><span class="o">.</span><span class="n">home</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">openmpi</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.open-mpi.org/&quot;</span>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="cite"><a class="viewcode-back" href="../../autoapi/paramonte/_paramonte/index.html#paramonte._paramonte.cite">[docs]</a><span class="k">def</span> <span class="nf">cite</span><span class="p">():</span> <span class="nb">print</span><span class="p">(</span><span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">overview</span><span class="o">.</span><span class="n">preface</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work&quot;</span><span class="p">)</span></div>
+<span class="c1">#citation.kernel = Struct()</span>
+<span class="c1">#citation.kernel.paradram = Struct()</span>
+<span class="c1">#citation.kernel.paradram.bib = &quot;&quot;&quot;</span>
+<span class="c1">#@article{2020arXiv200809589S,</span>
+<span class="c1">#           author = {{Shahmoradi}, Amir and {Bagheri}, Fatemeh},</span>
+<span class="c1">#            title = &quot;{ParaDRAM: A Cross-Language Toolbox for Parallel High-Performance Delayed-Rejection Adaptive Metropolis Markov Chain Monte Carlo Simulations}&quot;,</span>
+<span class="c1">#          journal = {arXiv e-prints},</span>
+<span class="c1">#         keywords = {Computer Science - Computational Engineering, Finance, and Science, Astrophysics - Instrumentation and Methods for Astrophysics, Physics - Data Analysis, Statistics and Probability, Statistics - Computation, Statistics - Machine Learning},</span>
+<span class="c1">#             year = 2020,</span>
+<span class="c1">#            month = aug,</span>
+<span class="c1">#              eid = {arXiv:2008.09589},</span>
+<span class="c1">#            pages = {arXiv:2008.09589},</span>
+<span class="c1">#    archivePrefix = {arXiv},</span>
+<span class="c1">#           eprint = {2008.09589},</span>
+<span class="c1">#     primaryClass = {cs.CE},</span>
+<span class="c1">#           adsurl = {https://ui.adsabs.harvard.edu/abs/2020arXiv200809589S},</span>
+<span class="c1">#          adsnote = {Provided by the SAO/NASA Astrophysics Data System}</span>
+<span class="c1">#}</span>
+<span class="c1">#&quot;&quot;&quot;</span>
+
+<span class="c1">####################################################################################################################################</span>
+
+<span class="kn">from</span> <span class="nn">_Version</span> <span class="kn">import</span> <span class="n">Version</span>
+<span class="n">version</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">versionType</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;interface&quot;</span><span class="p">,</span><span class="s2">&quot;kernel&quot;</span><span class="p">]:</span> <span class="nb">setattr</span><span class="p">(</span><span class="n">version</span><span class="p">,</span><span class="n">versionType</span><span class="p">,</span><span class="n">Version</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">auxil</span><span class="p">,</span><span class="n">versionType</span><span class="p">))</span>
+
+<span class="c1">####################################################################################################################################</span>
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+    <div>
+        <p>
+            <a href="https://www.cdslab.org/paramonte">ParaMonte: Plain Powerful Parallel Monte Carlo Library</a>.<br/>
+            &copy; Copyright 2020, <a href="https://www.cdslab.org" target="_blank">The Computational Data Science Lab</a>.<br/>
+        </p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </div>
+    <!-- Start of statc -->
+    <div style="color: #ffffff; float: none; width: 100%;">
+        <span style="font-size:0.8em">visitor count: 
+            <script type="text/javascript">
+                var sc_project=12178963; 
+                var sc_invisible=0; 
+                var sc_security="e0dfe0f9"; 
+                var sc_text=3; 
+                var scJsHost = "https://";
+                document.write("<sc"+"ript type='text/javascript' src='" +
+                scJsHost+
+                "statcounter.com/counter/counter.js'></"+"script>");
+            </script>
+        </span>
+    </div>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

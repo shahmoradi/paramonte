@@ -1,0 +1,894 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>paramonte._paradram &mdash; ParaMonte :: Python  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> ParaMonte :: Python
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ParaMonte :: Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../paramonte.html">paramonte</a> &raquo;</li>
+        
+      <li>paramonte._paradram</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for paramonte._paradram</h1><div class="highlight"><pre>
+<span></span><span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####</span>
+<span class="c1">####   MIT License</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte: plain powerful parallel Monte Carlo library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Copyright (C) 2012-present, The Computational Data Science Lab</span>
+<span class="c1">####</span>
+<span class="c1">####   This file is part of the ParaMonte library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Permission is hereby granted, free of charge, to any person obtaining a </span>
+<span class="c1">####   copy of this software and associated documentation files (the &quot;Software&quot;), </span>
+<span class="c1">####   to deal in the Software without restriction, including without limitation </span>
+<span class="c1">####   the rights to use, copy, modify, merge, publish, distribute, sublicense, </span>
+<span class="c1">####   and/or sell copies of the Software, and to permit persons to whom the </span>
+<span class="c1">####   Software is furnished to do so, subject to the following conditions:</span>
+<span class="c1">####</span>
+<span class="c1">####   The above copyright notice and this permission notice shall be </span>
+<span class="c1">####   included in all copies or substantial portions of the Software.</span>
+<span class="c1">####</span>
+<span class="c1">####   THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, </span>
+<span class="c1">####   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF </span>
+<span class="c1">####   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. </span>
+<span class="c1">####   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, </span>
+<span class="c1">####   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR </span>
+<span class="c1">####   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE </span>
+<span class="c1">####   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+<span class="c1">####</span>
+<span class="c1">####   ACKNOWLEDGMENT</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte is an honor-ware and its currency is acknowledgment and citations.</span>
+<span class="c1">####   As per the ParaMonte library license agreement terms, if you use any parts of </span>
+<span class="c1">####   this library for any purposes, kindly acknowledge the use of ParaMonte in your </span>
+<span class="c1">####   work (education/research/industry/development/...) by citing the ParaMonte </span>
+<span class="c1">####   library as described on this page:</span>
+<span class="c1">####</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/master/ACKNOWLEDGMENT.md</span>
+<span class="c1">####</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">tp</span>
+
+<span class="kn">from</span> <span class="nn">_ParaMonteSampler</span> <span class="kn">import</span> <span class="n">ParaMonteSampler</span>
+<span class="kn">from</span> <span class="nn">_TabularFileContents</span> <span class="kn">import</span> <span class="n">TabularFileContents</span>
+<span class="kn">import</span> <span class="nn">_paramonte</span> <span class="k">as</span> <span class="nn">pm</span>
+
+<span class="n">newline</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">newline</span>
+
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">#### ParaDRAM class</span>
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="ParaDRAM"><a class="viewcode-back" href="../../autoapi/paramonte/_paradram/index.html#paramonte._paradram.ParaDRAM">[docs]</a><span class="k">class</span> <span class="nc">ParaDRAM</span><span class="p">(</span><span class="n">ParaMonteSampler</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    This is the **ParaDRAM** class to generate instances of **serial** and **parallel**</span>
+<span class="sd">    **Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo** </span>
+<span class="sd">    sampler class of the ParaMonte library. The ``ParaDRAM`` class is a </span>
+<span class="sd">    child of the ``ParaMonteSampler`` class.</span>
+
+<span class="sd">    All ParaDRAM class attributes (input arguments to the ParaDRAM constructor)</span>
+<span class="sd">    are optional and all attributes can be also set after a ParaDRAM instance</span>
+<span class="sd">    is returned by the constructor.</span>
+
+<span class="sd">    Once you set the optional attributes to your desired values,</span>
+<span class="sd">    call the ParaDRAM sampler via the object&#39;s method ``runSampler()``.</span>
+
+<span class="sd">    .. _example-serial-usage:</span>
+
+<span class="sd">    **Example serial usage**</span>
+
+<span class="sd">    Copy and paste the following code enclosed between the</span>
+<span class="sd">    two comment lines in your python/ipython/jupyter session</span>
+<span class="sd">    (ensure the indentations of the pasted lines comply with Python rules):</span>
+
+<span class="sd">    .. code-block:: python</span>
+<span class="sd">        :linenos:</span>
+
+<span class="sd">        ##################################</span>
+<span class="sd">        import paramonte as pm</span>
+<span class="sd">        import numpy as np</span>
+<span class="sd">        def getLogFunc(point):</span>
+<span class="sd">            # return the log of the standard multivariate</span>
+<span class="sd">            # Normal density function with ndim dimensions</span>
+<span class="sd">            return -0.5 * np.sum( point**2 )</span>
+<span class="sd">        pmpd = pm.ParaDRAM()</span>
+<span class="sd">        pmpd.runSampler ( ndim = 4 # assume 4-dimensional objective function</span>
+<span class="sd">                        , getLogFunc = getLogFunc   # the objective function</span>
+<span class="sd">                        )</span>
+<span class="sd">        ##################################</span>
+
+<span class="sd">    where,</span>
+
+<span class="sd">        ndim</span>
+
+<span class="sd">            represents the number of dimensions of the domain of</span>
+<span class="sd">            the user&#39;s objective function ``getLogFunc(point)`` and,</span>
+
+<span class="sd">        getLogFunc(point)</span>
+
+<span class="sd">            represents the user&#39;s objective function to be sampled,</span>
+<span class="sd">            which must take a single input argument ``point`` of type</span>
+<span class="sd">            numpy-float64 array of length ``ndim`` and must return the</span>
+<span class="sd">            natural logarithm of the objective function.</span>
+
+<span class="sd">    .. _example-parallel-usage:</span>
+
+<span class="sd">    **Example parallel usage**</span>
+
+<span class="sd">    Copy and paste the following code enclosed between the</span>
+<span class="sd">    two comment lines in your python/ipython/jupyter session</span>
+<span class="sd">    (ensure the indentations of the pasted lines comply with Python rules):</span>
+
+<span class="sd">    .. code-block:: python</span>
+<span class="sd">        :linenos:</span>
+
+<span class="sd">        ##################################</span>
+<span class="sd">        with open(&quot;main.py&quot;, &quot;w&quot;) as file:</span>
+<span class="sd">            file.write  (&#39;&#39;&#39;</span>
+<span class="sd">        import paramonte as pm</span>
+<span class="sd">        import numpy as np</span>
+<span class="sd">        def getLogFunc(point):</span>
+<span class="sd">            # return the log of the standard multivariate</span>
+<span class="sd">            # Normal density function with ndim dimensions</span>
+<span class="sd">            return -0.5 * np.sum( point**2 )</span>
+<span class="sd">        pmpd = pm.ParaDRAM()</span>
+<span class="sd">        pmpd.mpiEnabled = True</span>
+<span class="sd">        pmpd.runSampler ( ndim = 4 # assume 4-dimensional objective function</span>
+<span class="sd">                        , getLogFunc = getLogFunc   # the objective function</span>
+<span class="sd">                        )</span>
+<span class="sd">        &#39;&#39;&#39;)</span>
+<span class="sd">        ##################################</span>
+
+<span class="sd">    where,</span>
+
+<span class="sd">        ndim</span>
+
+<span class="sd">            represents the number of dimensions of the domain of</span>
+<span class="sd">            the user&#39;s objective function ``getLogFunc(point)`` and,</span>
+
+<span class="sd">        getLogFunc(point)</span>
+
+<span class="sd">            represents the user&#39;s objective function that is to be sampled.</span>
+<span class="sd">            This function must take a single input argument ``point`` of type</span>
+<span class="sd">            numpy-float64 array of length ndim and must return the natural</span>
+<span class="sd">            logarithm of the objective function.</span>
+
+<span class="sd">        mpiEnabled</span>
+
+<span class="sd">            is a logical (boolean) indicator that, if ``True``, will</span>
+<span class="sd">            cause the ParaDRAM simulation to run in parallel</span>
+<span class="sd">            on the requested number of processors.</span>
+<span class="sd">            The default value is ``False``.</span>
+
+<span class="sd">    The above will generate a Parallel-ParaDRAM-simulation Python script in the</span>
+<span class="sd">    current working directory of Python. Note the only difference between the</span>
+<span class="sd">    serial and parallel simulation scripts: the extra line ``pmpd.mpiEnabled = True``</span>
+<span class="sd">    which tell the ParaMonte library to run the simulation in parallel.</span>
+
+<span class="sd">    Assuming that you already have an MPI runtime library installed on your</span>
+<span class="sd">    system (see below), you can now execute this Python script file ``main.py``</span>
+<span class="sd">    in parallel in two ways:</span>
+
+<span class="sd">    1.  from inside ipython or jupyter, type the following,</span>
+
+<span class="sd">        .. code-block:: bash</span>
+
+<span class="sd">            !mpiexec -n 3 python main.py</span>
+
+<span class="sd">    2.  outside of Python environment,</span>
+<span class="sd">        from within a Bash shell (on Linux or Mac) or,</span>
+<span class="sd">        from within an Anaconda command prompt on Windows,</span>
+<span class="sd">        type the following,</span>
+
+<span class="sd">        .. code-block:: bash</span>
+
+<span class="sd">            mpiexec -n 3 python main.py</span>
+
+<span class="sd">    **Note:**</span>
+
+<span class="sd">    On Windows platform, if you are using the Intel MPI library,</span>
+<span class="sd">    we recommend that you also specify the extra flag -localonly,</span>
+
+<span class="sd">    .. code-block:: bash</span>
+
+<span class="sd">        mpiexec -localonly -n 3 python main.py</span>
+
+<span class="sd">    This will cause the simulations to run in parallel only on a single node,</span>
+<span class="sd">    but more importantly, it will also prevent the use of Hydra service and</span>
+<span class="sd">    the requirement for its registration. If you are not on a Windows cluster,</span>
+<span class="sd">    (e.g., you are using your personal device), then we highly recommend</span>
+<span class="sd">    specifying this flag.</span>
+
+
+<span class="sd">    In all cases in the above, the script ``main.py`` will run on 3 processors.</span>
+<span class="sd">    Feel free to change the number of processors to any number desired. But do</span>
+<span class="sd">    not request more than the available number of physical cores on your system.</span>
+
+<span class="sd">    **Tips on parallel usage**</span>
+
+<span class="sd">    For up-to-date detailed instructions on how to run simulations in parallel visit:</span>
+
+<span class="sd">        https://www.cdslab.org/paramonte</span>
+
+<span class="sd">    You can also use the following commands on the Python command-line,</span>
+
+<span class="sd">    .. code-block:: python</span>
+<span class="sd">        :linenos:</span>
+
+<span class="sd">        ##################################</span>
+<span class="sd">        import paramonte as pm</span>
+<span class="sd">        pm.verify() # verify the existence of parallel simulation prerequisites</span>
+<span class="sd">        ##################################</span>
+
+<span class="sd">    to obtain specific information on how to run a parallel simulation,</span>
+<span class="sd">    in particular, in relation to your current installation of ParaMonte.</span>
+<span class="sd">    In general, for parallel simulations:</span>
+
+<span class="sd">    0.  Ensure you need and will get a speedup by running the ParaDRAM sampler</span>
+<span class="sd">        in parallel. Typically, if a single evaluation of the objective function</span>
+<span class="sd">        takes much longer than a few milliseconds, your simulation may then</span>
+<span class="sd">        benefit from the parallel run.</span>
+
+<span class="sd">    1.  Ensure you have an MPI library installed, preferably, the Intel MPI</span>
+<span class="sd">        runtime libraries. An MPI library should be automatically installed</span>
+<span class="sd">        on your system with ParaMonte. If needed, you can download the Intel</span>
+<span class="sd">        MPI library from their website and install it.</span>
+
+<span class="sd">    2.  Ensure the ParaDRAM object property ``mpiEnabled`` is ``True``</span>
+<span class="sd">        (the default is ``False``).</span>
+
+<span class="sd">    3.  Before running the parallel simulation, in particular, on Windows systems,</span>
+<span class="sd">        you may need to define the necessary MPI environmental variables on your system.</span>
+<span class="sd">        To get information on how to define the variables, use the paramonte module&#39;s</span>
+<span class="sd">        function, ``verify()``, as described in the above.</span>
+
+<span class="sd">    4.  Call your main Python code from a Python-aware mpiexec-aware command-line via,</span>
+
+<span class="sd">        .. code-block:: bash</span>
+
+<span class="sd">            mpi_launcher -n num_process python name_of_yor_python_code.py</span>
+
+<span class="sd">        where,</span>
+
+<span class="sd">        1.  &quot;mpi_launcher&quot; is the name of the MPI launcher</span>
+<span class="sd">            of the MPI runtime library that you have installed.</span>
+<span class="sd">            For example, the Intel MPI library&#39;s launcher is named mpiexec,</span>
+<span class="sd">            also recognized by Microsoft, MPICH, and OpenMPI.</span>
+<span class="sd">            Note that on supercomputers, the MPI launcher is usually</span>
+<span class="sd">            something other than ``mpiexec``, for example:</span>
+<span class="sd">            ``ibrun``, ``mpirun``, ...</span>
+
+<span class="sd">        2.  &quot;num_process&quot; represents the number of cores</span>
+<span class="sd">            on which you want to run the program. Replace this</span>
+<span class="sd">            with the an integer number, like, 3 (meaning 3 cores).</span>
+
+<span class="sd">            Do not assign more processes than the available number of</span>
+<span class="sd">            physical cores on your device/cluster. Assigning more cores</span>
+<span class="sd">            than physically available on your system will only slow down</span>
+<span class="sd">            your simulation.</span>
+
+<span class="sd">    Once the above script is saved in the file ``main.py``, open a Python-aware and</span>
+<span class="sd">    MPI-aware command prompt to run the simulation in parallel via the MPI launcher,</span>
+
+<span class="sd">    .. code-block:: bash</span>
+
+<span class="sd">        mpiexec -n 3 python main.py</span>
+
+<span class="sd">    This will execute the Python script ``main.py`` on three processes (images).</span>
+<span class="sd">    Keep in mind that on Windows systems you may need to define MPI environmental</span>
+<span class="sd">    variables before a parallel simulation, as described in the above.</span>
+
+<span class="sd">    **ParaDRAM Class Attributes**</span>
+
+<span class="sd">    See also:</span>
+
+<span class="sd">        https://www.cdslab.org/paramonte/notes/usage/paradram/specifications/</span>
+
+<span class="sd">    All input specifications (attributes) of a ParaDRAM simulation are optional.</span>
+<span class="sd">    However, it is recommended that you provide as much information as possible</span>
+<span class="sd">    about the specific ParaDRAM simulation and the objective function to be sampled</span>
+<span class="sd">    via ParaDRAM simulation specifications.</span>
+
+<span class="sd">    The ParaDRAM simulation specifications have lengthy comprehensive descriptions</span>
+<span class="sd">    that appear in full in the output report file of every ParaDRAM simulation.</span>
+
+<span class="sd">    The best way to learn about individual ParaDRAM simulation attributes</span>
+<span class="sd">    is to a run a minimal serial simulation with the following Python script,</span>
+
+<span class="sd">    .. code-block:: python</span>
+<span class="sd">        :linenos:</span>
+
+<span class="sd">        ##################################</span>
+<span class="sd">        from paramonte import ParaDRAM</span>
+<span class="sd">        pmpd = ParaDRAM()</span>
+<span class="sd">        pmpd.spec.outputFileName = &quot;./test&quot;</span>
+<span class="sd">        def getLogFunc(point): return -sum(point**2)</span>
+<span class="sd">        pmpd.runSampler( ndim = 1, getLogFunc = getLogFunc )</span>
+<span class="sd">        ##################################</span>
+
+<span class="sd">    Running this code will generate a set of simulation output files (in the current</span>
+<span class="sd">    working directory of Python) that begin with the prefix ``test_process_1``. Among</span>
+<span class="sd">    these, the file ``test_process_1_report.txt`` contains the full description of all</span>
+<span class="sd">    input specifications of the ParaDRAM simulation as well as other information</span>
+<span class="sd">    about the simulation results and statistics.</span>
+
+<span class="sd">    **Parameters**</span>
+
+<span class="sd">        None. The simulation specifications can be set once an object is instantiated.</span>
+<span class="sd">        All simulation specification descriptions are collectively available at:</span>
+
+<span class="sd">            https://www.cdslab.org/paramonte/notes/usage/paradram/specifications/</span>
+
+<span class="sd">        Note that this is the new interface. The previous ParaDRAM class interface</span>
+<span class="sd">        used to optionally take all simulation specifications as input. However,</span>
+<span class="sd">        overtime, this approach has become more of liability than any potential</span>
+<span class="sd">        benefit. All simulation specifications have to be now to be set solely</span>
+<span class="sd">        after a ParaDRAM object is instantiated, instead of setting the</span>
+<span class="sd">        specifications via the ParaDRAM class constructor.</span>
+
+<span class="sd">    **Attributes**</span>
+
+<span class="sd">        buildMode</span>
+
+<span class="sd">            optional string argument with the default value &quot;release&quot;.</span>
+<span class="sd">            possible choices are:</span>
+
+<span class="sd">                &quot;debug&quot;</span>
+
+<span class="sd">                    to be used for identifying sources of bug</span>
+<span class="sd">                    and causes of code crash.</span>
+
+<span class="sd">                &quot;release&quot;</span>
+
+<span class="sd">                    to be used in all other normal scenarios</span>
+<span class="sd">                    for maximum runtime efficiency.</span>
+
+<span class="sd">        mpiEnabled</span>
+
+<span class="sd">            optional logical (boolean) indicator which is ``False`` by default.</span>
+<span class="sd">            If it is set to ``True``, it will cause the ParaDRAM simulation</span>
+<span class="sd">            to run in parallel on the requested number of processors.</span>
+<span class="sd">            See the class documentation guidelines in the above for</span>
+<span class="sd">            information on how to run a simulation in parallel.</span>
+
+<span class="sd">        reportEnabled</span>
+
+<span class="sd">            optional logical (boolean) indicator which is ``True`` by default.</span>
+<span class="sd">            If it is set to ``True``, it will cause extensive guidelines to be</span>
+<span class="sd">            printed on the standard output as the simulation or post-processing</span>
+<span class="sd">            continues with hints on the next possible steps that could be taken</span>
+<span class="sd">            in the process. If you do not need such help and information set</span>
+<span class="sd">            this variable to ``False`` to silence all output messages.</span>
+
+<span class="sd">        inputFile</span>
+
+<span class="sd">            optional string input representing the path to</span>
+<span class="sd">            an external input namelist of simulation specifications.</span>
+<span class="sd">            USE THIS OPTIONAL ARGUMENT WITH CAUTION AND</span>
+<span class="sd">            ONLY IF YOU KNOW WHAT YOU ARE DOING.</span>
+
+<span class="sd">            **WARNING**</span>
+
+<span class="sd">            Specifying an input file will cause the ParaDRAM sampler</span>
+<span class="sd">            to ignore all other simulation specifications set by the </span>
+<span class="sd">            user via sampler instance&#39;s `spec`-component attributes.</span>
+
+<span class="sd">        spec</span>
+
+<span class="sd">            A frozen class containing all simulation specifications.</span>
+<span class="sd">            All simulation attributes are by default set to appropriate</span>
+<span class="sd">            values at runtime. To override the default simulation</span>
+<span class="sd">            specifications, set the `spec` attributes to some</span>
+<span class="sd">            desired values of your choice. For possible values, see:</span>
+
+<span class="sd">                https://www.cdslab.org/paramonte/notes/usage/paradram/specifications/</span>
+
+<span class="sd">            If you need help on any of the simulation specifications, try</span>
+<span class="sd">            the supplied ``helpme()`` function in this component, like,</span>
+
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">                :linenos:</span>
+
+<span class="sd">                ##################################</span>
+<span class="sd">                import paramonte as pm</span>
+<span class="sd">                pmpd = pm.ParaDRAM()          # instantiate a ParaDRAM sampler class</span>
+<span class="sd">                pmpd.spec.helpme()            # get help on all simulation specification</span>
+<span class="sd">                pmpd.spec.helpme(&quot;chainSize&quot;) # get help on &quot;chainSize&quot; specifically</span>
+<span class="sd">                ##################################</span>
+
+<span class="sd">    **Methods**</span>
+
+<span class="sd">        See below for information on the methods.</span>
+
+<span class="sd">    **Returns**</span>
+
+<span class="sd">        Object of class ParaDRAM sampler.</span>
+
+<span class="sd">    ---------------------------------------------------------------------------</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        The constructor for ParaDRAM class.</span>
+<span class="sd">        All input parameters are optional and all class</span>
+<span class="sd">        attributes can be changed after the object construction.</span>
+
+<span class="sd">            **Parameters**</span>
+
+<span class="sd">                None</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">methodName</span> <span class="o">=</span> <span class="s2">&quot;ParaDRAM&quot;</span><span class="p">)</span>
+
+        <span class="c1">## ParaMonte specifications</span>
+        <span class="c1">#</span>
+        <span class="c1">#self.spec = pm.utils.FrozenClass()</span>
+        <span class="c1">#</span>
+        <span class="c1">## ParaMonte variables</span>
+        <span class="c1">#self.spec.sampleSize                           = sampleSize</span>
+        <span class="c1">#self.spec.randomSeed                           = randomSeed</span>
+        <span class="c1">#self.spec.description                          = description</span>
+        <span class="c1">#self.spec.outputFileName                       = outputFileName</span>
+        <span class="c1">#self.spec.outputDelimiter                      = outputDelimiter</span>
+        <span class="c1">#self.spec.chainFileFormat                      = chainFileFormat</span>
+        <span class="c1">#self.spec.variableNameList                     = variableNameList</span>
+        <span class="c1">#self.spec.restartFileFormat                    = restartFileFormat</span>
+        <span class="c1">#self.spec.outputColumnWidth                    = outputColumnWidth</span>
+        <span class="c1">#self.spec.outputRealPrecision                  = outputRealPrecision</span>
+        <span class="c1">#self.spec.silentModeRequested                  = silentModeRequested</span>
+        <span class="c1">#self.spec.domainLowerLimitVec                  = domainLowerLimitVec</span>
+        <span class="c1">#self.spec.domainUpperLimitVec                  = domainUpperLimitVec</span>
+        <span class="c1">#self.spec.parallelizationModel                 = parallelizationModel</span>
+        <span class="c1">#self.spec.progressReportPeriod                 = progressReportPeriod</span>
+        <span class="c1">#self.spec.targetAcceptanceRate                 = targetAcceptanceRate</span>
+        <span class="c1">#self.spec.mpiFinalizeRequested                 = mpiFinalizeRequested</span>
+        <span class="c1">#self.spec.maxNumDomainCheckToWarn              = maxNumDomainCheckToWarn</span>
+        <span class="c1">#self.spec.maxNumDomainCheckToStop              = maxNumDomainCheckToStop</span>
+        <span class="c1">## ParaMCMC variables</span>
+        <span class="c1">#self.spec.chainSize                            = chainSize</span>
+        <span class="c1">#self.spec.scaleFactor                          = scaleFactor</span>
+        <span class="c1">#self.spec.startPointVec                        = startPointVec</span>
+        <span class="c1">#self.spec.proposalModel                        = proposalModel</span>
+        <span class="c1">#self.spec.proposalStartCovMat                  = proposalStartCovMat</span>
+        <span class="c1">#self.spec.proposalStartCorMat                  = proposalStartCorMat</span>
+        <span class="c1">#self.spec.proposalStartStdVec                  = proposalStartStdVec</span>
+        <span class="c1">#self.spec.sampleRefinementCount                = sampleRefinementCount</span>
+        <span class="c1">#self.spec.sampleRefinementMethod               = sampleRefinementMethod</span>
+        <span class="c1">#self.spec.randomStartPointRequested            = randomStartPointRequested</span>
+        <span class="c1">#self.spec.randomStartPointDomainLowerLimitVec  = randomStartPointDomainLowerLimitVec</span>
+        <span class="c1">#self.spec.randomStartPointDomainUpperLimitVec  = randomStartPointDomainUpperLimitVec</span>
+        <span class="c1">## ParaDRAM variables</span>
+        <span class="c1">#self.spec.adaptiveUpdateCount                  = adaptiveUpdateCount</span>
+        <span class="c1">#self.spec.adaptiveUpdatePeriod                 = adaptiveUpdatePeriod</span>
+        <span class="c1">#self.spec.greedyAdaptationCount                = greedyAdaptationCount</span>
+        <span class="c1">#self.spec.delayedRejectionCount                = delayedRejectionCount</span>
+        <span class="c1">#self.spec.burninAdaptationMeasure              = burninAdaptationMeasure</span>
+        <span class="c1">#self.spec.delayedRejectionScaleFactorVec       = delayedRejectionScaleFactorVec</span>
+        <span class="c1">#</span>
+        <span class="c1">#self.spec.helpme = SpecDRAM.helpme</span>
+        <span class="c1">#self.spec._freeze()</span>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### runSampler</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="ParaDRAM.runSampler"><a class="viewcode-back" href="../../autoapi/paramonte/_paradram/index.html#paramonte._paradram.ParaDRAM.runSampler">[docs]</a>    <span class="k">def</span> <span class="nf">runSampler</span>  <span class="p">(</span> <span class="bp">self</span>
+                    <span class="p">,</span> <span class="n">ndim</span>          <span class="p">:</span> <span class="nb">int</span>
+                    <span class="p">,</span> <span class="n">getLogFunc</span>    <span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">tp</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span> <span class="nb">float</span><span class="p">]</span>
+                    <span class="p">,</span> <span class="n">inputFile</span>     <span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Run ParaDRAM sampler and return nothing.</span>
+
+<span class="sd">            **Parameters**</span>
+
+<span class="sd">                ndim</span>
+
+<span class="sd">                    An integer representing the number of dimensions of the</span>
+<span class="sd">                    domain of the user&#39;s objective function ``getLogFunc(point)``.</span>
+<span class="sd">                    It must be a positive integer.</span>
+
+<span class="sd">                getLogFunc(point)</span>
+
+<span class="sd">                    represents the user&#39;s objective function to be sampled,</span>
+<span class="sd">                    which must take a single input argument ``point`` of type</span>
+<span class="sd">                    numpy-float64 array of length ``ndim`` and must return the</span>
+<span class="sd">                    natural logarithm of the objective function.</span>
+
+<span class="sd">                inputFile (optional)</span>
+
+<span class="sd">                    A string input representing the path to an external</span>
+<span class="sd">                    input namelist of simulation specifications.</span>
+
+<span class="sd">                        **WARNING**</span>
+
+<span class="sd">                        Use this optional argument with caution and only</span>
+<span class="sd">                        if you know what you are doing. Specifying this option</span>
+<span class="sd">                        will cause the sampler to ignore all other simulation</span>
+<span class="sd">                        specifications set by the user via the ``spec``</span>
+<span class="sd">                        component of the sampler instance.</span>
+
+<span class="sd">            **Returns**</span>
+
+<span class="sd">                None</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ndim</span><span class="p">,</span><span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">ndim</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">pm</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;The input argument ndim must be a positive integer,&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;representing the number of dimensions of the domain of&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;the user&#39;s objective function getLogFunc().&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;You have entered ndim = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ndim</span><span class="p">)</span>
+                    <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                    <span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">callable</span><span class="p">(</span><span class="n">getLogFunc</span><span class="p">):</span>
+            <span class="n">pm</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;The input argument getLogFunc must be a callable function.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;It represents the user&#39;s objective function to be sampled,&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;which must take a single input argument of type numpy&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;float64 array of length ndim and must return the&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;natural logarithm of the objective function.&quot;</span>
+                    <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                    <span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">inputFile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inputFile</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+            <span class="n">pm</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;The input argument ``inputFile`` must be of type str.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;It is an optional string input representing the path to&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;an external input namelist of simulation specifications.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;USE THIS OPTIONAL ARGUMENT WITH CAUTION AND&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;ONLY IF YOU KNOW WHAT YOU ARE DOING.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;Specifying this option will cause the sampler to ignore&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;all other simulation specifications set by the user via&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;the ``spec`` component of the sampler instance.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;You have entered inputFile = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">inputFile</span><span class="p">)</span>
+                    <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                    <span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">getLogFunc2arg</span><span class="p">(</span><span class="n">ndim</span><span class="p">,</span><span class="n">point</span><span class="p">):</span>
+            <span class="n">PointVec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">ndim</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">getLogFunc</span><span class="p">(</span><span class="n">PointVec</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_runSampler</span><span class="p">(</span> <span class="n">ndim</span>
+                        <span class="p">,</span> <span class="n">getLogFunc2arg</span>
+                        <span class="p">,</span> <span class="n">inputFile</span>
+                        <span class="p">)</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### readMarkovChain</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="ParaDRAM.readMarkovChain"><a class="viewcode-back" href="../../autoapi/paramonte/_paradram/index.html#paramonte._paradram.ParaDRAM.readMarkovChain">[docs]</a>    <span class="k">def</span> <span class="nf">readMarkovChain</span> <span class="p">(</span> <span class="bp">self</span>
+                        <span class="p">,</span> <span class="n">file</span>          <span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+                        <span class="p">,</span> <span class="n">delimiter</span>     <span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+                        <span class="p">,</span> <span class="n">parseContents</span> <span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="p">,</span> <span class="n">renabled</span>      <span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+                        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">tp</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="n">TabularFileContents</span><span class="p">]</span> <span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Return a list of the unweighted verbose (Markov-chain) contents</span>
+<span class="sd">        of a set of ParaDRAM output chain files, whose names begin the</span>
+<span class="sd">        user-provided input variable ``file``. This method is to be only</span>
+<span class="sd">        used for the postprocessing of the output chain file(s) of an</span>
+<span class="sd">        already finished ParaDRAM simulation. It is not meant to be called</span>
+<span class="sd">        by all processes in parallel mode, although it is possible.</span>
+
+<span class="sd">            **Parameters**</span>
+
+<span class="sd">                file (optional)</span>
+
+<span class="sd">                    A string representing the path to the chain file with</span>
+<span class="sd">                    the default value of ``None``.</span>
+<span class="sd">                    The path only needs to uniquely identify the simulation</span>
+<span class="sd">                    to which the chain file belongs. For example, specifying</span>
+<span class="sd">                    ``&quot;./mydir/mysim&quot;`` as input will lead to a search for a file</span>
+<span class="sd">                    that begins with ``&quot;mysim&quot;`` and ends with ``&quot;_chain.txt&quot;``</span>
+<span class="sd">                    inside the directory ``&quot;./mydir/&quot;``. If there are multiple</span>
+<span class="sd">                    files with such name, then all of them will be read</span>
+<span class="sd">                    and returned as a list.</span>
+<span class="sd">                    If this input argument is not provided by the user, the</span>
+<span class="sd">                    value of the object attribute ``outputFileName`` will be</span>
+<span class="sd">                    used instead. At least one of the two mentioned routes</span>
+<span class="sd">                    must provide the path to the chain file otherwise,</span>
+<span class="sd">                    this method will break by calling ``sys.exit()``.</span>
+
+<span class="sd">                delimiter (optional)</span>
+
+<span class="sd">                    An input string representing the delimiter used in the</span>
+<span class="sd">                    output chain file. If it is not provided as input argument, the</span>
+<span class="sd">                    value of the corresponding object attribute ``outputDelimiter``</span>
+<span class="sd">                    will be used instead. If none of the two are available,</span>
+<span class="sd">                    the default comma delimiter ``&quot;,&quot;`` will be assumed and used.</span>
+
+<span class="sd">                parseContents (optional)</span>
+
+<span class="sd">                    If set to ``True``, the contents of the file will be parsed</span>
+<span class="sd">                    and stored in a component of the object named ``contents``.</span>
+<span class="sd">                    The default value is ``True``.</span>
+
+<span class="sd">                renabled (optional)</span>
+
+<span class="sd">                    If set to False, the contents of the file(s) will be stored</span>
+<span class="sd">                    as a list in a (new) component of the ParaDRAM object named</span>
+<span class="sd">                    ``markovChainList`` and ``None`` will be the return value</span>
+<span class="sd">                    of the method. If set to True, the reverse will done.</span>
+<span class="sd">                    The default value is ``False``.</span>
+
+<span class="sd">            **Returns**</span>
+
+<span class="sd">                A list of objects, each of which has the following properties:</span>
+
+<span class="sd">                    file</span>
+
+<span class="sd">                        The full absolute path to the chain file.</span>
+
+<span class="sd">                    delimiter</span>
+
+<span class="sd">                        The delimiter used in the chain file.</span>
+
+<span class="sd">                    ndim</span>
+
+<span class="sd">                        The number of dimensions of the domain of the objective</span>
+<span class="sd">                        function from which the chain has been drawn.</span>
+
+<span class="sd">                    count</span>
+
+<span class="sd">                        The number of unique (weighted) points in the chain file.</span>
+<span class="sd">                        This is essentially the number of rows in the chain file</span>
+<span class="sd">                        minus one (representing the header line).</span>
+
+<span class="sd">                    plot</span>
+
+<span class="sd">                        A structure containing the graphics tools for the </span>
+<span class="sd">                        visualization of the contents of the file.</span>
+
+<span class="sd">                    df</span>
+
+<span class="sd">                        The unweighted (Markovian) contents of the chain file in the</span>
+<span class="sd">                        form of a pandas-library DataFrame (hence called ``df``).</span>
+
+<span class="sd">                    contents</span>
+
+<span class="sd">                        corresponding to each column in the progress file, a property</span>
+<span class="sd">                        with the same name as the column header is also created</span>
+<span class="sd">                        for the object which contains the data stored in that column</span>
+<span class="sd">                        of the progress file. These properties are all stored in the </span>
+<span class="sd">                        attribute ``contents``.</span>
+
+<span class="sd">                If ``renabled = True``, the list of objects will be returned as the</span>
+<span class="sd">                return value of the method. Otherwise, the list will be stored in a</span>
+<span class="sd">                component of the ParaDRAM object named ``markovChainList``.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_readTabular</span><span class="p">(</span> <span class="n">file</span> <span class="o">=</span> <span class="n">file</span>
+                                <span class="p">,</span> <span class="n">fileType</span> <span class="o">=</span> <span class="s2">&quot;markovChain&quot;</span>
+                                <span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="n">delimiter</span>
+                                <span class="p">,</span> <span class="n">parseContents</span> <span class="o">=</span> <span class="n">parseContents</span>
+                                <span class="p">,</span> <span class="n">renabled</span> <span class="o">=</span> <span class="n">renabled</span>
+                                <span class="p">)</span></div></div>
+
+    <span class="c1">################################################################################################################################</span>
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+    <div>
+        <p>
+            <a href="https://www.cdslab.org/paramonte">ParaMonte: Plain Powerful Parallel Monte Carlo Library</a>.<br/>
+            &copy; Copyright 2020, <a href="https://www.cdslab.org" target="_blank">The Computational Data Science Lab</a>.<br/>
+        </p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </div>
+    <!-- Start of statc -->
+    <div style="color: #ffffff; float: none; width: 100%;">
+        <span style="font-size:0.8em">visitor count: 
+            <script type="text/javascript">
+                var sc_project=12178963; 
+                var sc_invisible=0; 
+                var sc_security="e0dfe0f9"; 
+                var sc_text=3; 
+                var scJsHost = "https://";
+                document.write("<sc"+"ript type='text/javascript' src='" +
+                scJsHost+
+                "statcounter.com/counter/counter.js'></"+"script>");
+            </script>
+        </span>
+    </div>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

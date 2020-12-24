@@ -1,0 +1,769 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>paramonte._TabularFileContents &mdash; ParaMonte :: Python  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> ParaMonte :: Python
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ParaMonte :: Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../paramonte.html">paramonte</a> &raquo;</li>
+        
+      <li>paramonte._TabularFileContents</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for paramonte._TabularFileContents</h1><div class="highlight"><pre>
+<span></span><span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####</span>
+<span class="c1">####   MIT License</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte: plain powerful parallel Monte Carlo library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Copyright (C) 2012-present, The Computational Data Science Lab</span>
+<span class="c1">####</span>
+<span class="c1">####   This file is part of the ParaMonte library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Permission is hereby granted, free of charge, to any person obtaining a</span>
+<span class="c1">####   copy of this software and associated documentation files (the &quot;Software&quot;),</span>
+<span class="c1">####   to deal in the Software without restriction, including without limitation</span>
+<span class="c1">####   the rights to use, copy, modify, merge, publish, distribute, sublicense,</span>
+<span class="c1">####   and/or sell copies of the Software, and to permit persons to whom the</span>
+<span class="c1">####   Software is furnished to do so, subject to the following conditions:</span>
+<span class="c1">####</span>
+<span class="c1">####   The above copyright notice and this permission notice shall be</span>
+<span class="c1">####   included in all copies or substantial portions of the Software.</span>
+<span class="c1">####</span>
+<span class="c1">####   THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,</span>
+<span class="c1">####   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF</span>
+<span class="c1">####   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.</span>
+<span class="c1">####   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,</span>
+<span class="c1">####   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR</span>
+<span class="c1">####   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE</span>
+<span class="c1">####   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+<span class="c1">####</span>
+<span class="c1">####   ACKNOWLEDGMENT</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte is an honor-ware and its currency is acknowledgment and citations.</span>
+<span class="c1">####   As per the ParaMonte library license agreement terms, if you use any parts of</span>
+<span class="c1">####   this library for any purposes, kindly acknowledge the use of ParaMonte in your</span>
+<span class="c1">####   work (education/research/industry/development/...) by citing the ParaMonte</span>
+<span class="c1">####   library as described on this page:</span>
+<span class="c1">####</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/master/ACKNOWLEDGMENT.md</span>
+<span class="c1">####</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">_paramonte</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="kn">import</span> <span class="nn">_CorCovMat</span> <span class="k">as</span> <span class="nn">ccm</span>
+<span class="kn">from</span> <span class="nn">_AutoCorr</span> <span class="kn">import</span> <span class="n">AutoCorr</span>
+<span class="kn">from</span> <span class="nn">_dfutils</span> <span class="kn">import</span> <span class="n">getMaxLogFunc</span>
+<span class="kn">from</span> <span class="nn">_OutputFileContents</span> <span class="kn">import</span> <span class="n">OutputFileContents</span>
+<span class="kn">from</span> <span class="nn">paramonte.vis.LineScatterPlot</span> <span class="kn">import</span> <span class="n">LineScatterPlot</span>
+<span class="kn">from</span> <span class="nn">paramonte.vis.DensityPlot</span> <span class="kn">import</span> <span class="n">DensityPlot</span>
+<span class="kn">from</span> <span class="nn">paramonte.vis.GridPlot</span> <span class="kn">import</span> <span class="n">GridPlot</span>
+
+<span class="n">Struct</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Struct</span>
+<span class="n">newline</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">newline</span>
+
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">#### TabularFileContents class</span>
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="TabularFileContents"><a class="viewcode-back" href="../../autoapi/paramonte/_TabularFileContents/index.html#paramonte._TabularFileContents.TabularFileContents">[docs]</a><span class="k">class</span> <span class="nc">TabularFileContents</span><span class="p">(</span><span class="n">OutputFileContents</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    This is the **TabularFileContents** class for generating instances</span>
+<span class="sd">    of the ParaMonte tabular output contents. This class is NOT meant to</span>
+<span class="sd">    be directly accessed by the ParaMonte library users. It is internally</span>
+<span class="sd">    used by the ParaMonte library to parse the tabular contents of the</span>
+<span class="sd">    output files generated by the ParaMonte sampler routines. For example,</span>
+<span class="sd">    the ParaDRAM sampler class makes calls to this class via its</span>
+<span class="sd">    ``readSample()`` or ``readChain()`` or ``readMarkovChain()``</span>
+<span class="sd">    or ``readProgress()`` methods to return a list of objects</span>
+<span class="sd">    of class ``TabularFileContents``.</span>
+
+<span class="sd">        **Parameters**</span>
+
+<span class="sd">            file</span>
+
+<span class="sd">                The full path to the file containing the sample/chain.</span>
+
+<span class="sd">            fileType</span>
+
+<span class="sd">                A string containing the type of the file to be parsed.</span>
+<span class="sd">                Current options include but are not limited to:</span>
+<span class="sd">                ``sample``, ``chain``, ``markovChain``, ``progress``</span>
+
+<span class="sd">            delimiter</span>
+
+<span class="sd">                The delimiter used in the sample/chain file, which</span>
+<span class="sd">                must be provided by the user.</span>
+
+<span class="sd">            methodName</span>
+
+<span class="sd">                A string representing the name of the ParaMonte sampler used</span>
+<span class="sd">                to call the constructor of the ``TabularFileContents`` class.</span>
+
+<span class="sd">            parseContents</span>
+
+<span class="sd">                If set to ``True``, the contents of the file will be parsed and</span>
+<span class="sd">                stored in a component of the object named ``contents``.</span>
+<span class="sd">                The default value is ``True``.</span>
+
+<span class="sd">            reportEnabled</span>
+
+<span class="sd">                A logical input parameter indicating whether the ParaMonte</span>
+<span class="sd">                automatic guidelines to the standard output should be provided</span>
+<span class="sd">                or not. The default value is ``True``.</span>
+
+<span class="sd">        **Attributes**</span>
+
+<span class="sd">            file</span>
+
+<span class="sd">                The full path to the file containing the sample/chain.</span>
+
+<span class="sd">            delimiter</span>
+
+<span class="sd">                The delimiter used in the sample/chain file, which</span>
+<span class="sd">                must be provided by the user.</span>
+
+<span class="sd">            ndim</span>
+
+<span class="sd">                The number of dimensions of the domain of the objective</span>
+<span class="sd">                function from which the sample has been drawn.</span>
+
+<span class="sd">            count</span>
+
+<span class="sd">                The number of points (states) in the sample/chain file.</span>
+<span class="sd">                This is essentially, the number of rows in the file</span>
+<span class="sd">                minus one (representing the header line).</span>
+
+<span class="sd">            plot</span>
+
+<span class="sd">                A structure containing the graphics tools for the</span>
+<span class="sd">                visualization of the contents of the file.</span>
+
+<span class="sd">            df</span>
+
+<span class="sd">                If the input file contents is structured in a format that</span>
+<span class="sd">                could be read as a dataframe, then the contents of the file</span>
+<span class="sd">                will be stored in the form of a pandas-library DataFrame</span>
+<span class="sd">                in this property (hence called ``df``).</span>
+
+<span class="sd">            contents</span>
+
+<span class="sd">                If the input file contents is structured in the form of columns,</span>
+<span class="sd">                then a property named ``contents`` is also added to the object.</span>
+<span class="sd">                Each component of contents will named via the header of the file</span>
+<span class="sd">                and will contain data from the corresponding column of the file.</span>
+
+<span class="sd">        **Returns**</span>
+
+<span class="sd">            tabularFileContents</span>
+
+<span class="sd">                An object of class ``TabularFileContents``.</span>
+
+<span class="sd">    ----------------------------------------------------------------------</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span>
+                <span class="p">,</span> <span class="n">file</span>
+                <span class="p">,</span> <span class="n">fileType</span>
+                <span class="p">,</span> <span class="n">delimiter</span>
+                <span class="p">,</span> <span class="n">methodName</span>
+                <span class="p">,</span> <span class="n">parseContents</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="p">):</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">methodName</span><span class="p">,</span> <span class="n">reportEnabled</span><span class="p">)</span>
+
+
+        <span class="n">markovChainRequested</span> <span class="o">=</span> <span class="n">fileType</span><span class="o">==</span><span class="s2">&quot;markovChain&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_isProgressFile</span> <span class="o">=</span> <span class="s2">&quot;progress&quot;</span><span class="o">==</span><span class="n">fileType</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sampleLogFuncColName</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isProgressFile</span> <span class="k">else</span> <span class="s2">&quot;SampleLogFunc&quot;</span>
+
+        <span class="c1">#if &quot;sample&quot;==fileType:</span>
+        <span class="c1">#    fileSuffix = &quot;sample&quot;</span>
+        <span class="c1">#elif fileType==&quot;chain&quot; or markovChainRequested:</span>
+        <span class="c1">#    fileSuffix = &quot;chain&quot;</span>
+        <span class="c1">#elif self._isProgressFile:</span>
+        <span class="c1">#    fileSuffix = &quot;progress&quot;</span>
+        <span class="c1">#else:</span>
+        <span class="c1">#    pm.abort( msg   = &quot;Internal error occurred. The input fileType is not recognized.\n&quot;</span>
+        <span class="c1">#                    + &quot;Please report this error at:\n\n&quot;</span>
+        <span class="c1">#                    + &quot;    &quot; + pm.website.github.issues.url</span>
+        <span class="c1">#            , methodName = self._methodName</span>
+        <span class="c1">#            , marginTop = 1</span>
+        <span class="c1">#            , marginBot = 1</span>
+        <span class="c1">#            )</span>
+
+        <span class="k">if</span> <span class="n">fileType</span><span class="o">!=</span><span class="s2">&quot;sample&quot;</span> <span class="ow">and</span> <span class="n">fileType</span><span class="o">!=</span><span class="s2">&quot;chain&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_isProgressFile</span> <span class="ow">or</span> <span class="n">markovChainRequested</span><span class="p">):</span>
+            <span class="n">pm</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;Internal error occurred. The input fileType is not recognized.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                            <span class="o">+</span> <span class="s2">&quot;Please report this error at:</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                            <span class="o">+</span> <span class="s2">&quot;    &quot;</span> <span class="o">+</span> <span class="n">pm</span><span class="o">.</span><span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">issues</span><span class="o">.</span><span class="n">url</span>
+                    <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                    <span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### data</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">delimiter</span> <span class="o">=</span> <span class="n">delimiter</span>
+
+        <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span>   <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">file</span>
+                                <span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">delimiter</span>
+                                <span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="mi">0</span>
+                                <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isProgressFile</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sampleLogFuncColName</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># index of the first variable</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ndim</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ncol</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span>
+
+        <span class="k">if</span> <span class="n">markovChainRequested</span><span class="p">:</span>
+
+            <span class="n">CumSumWeight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">CumSumWeight</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">:</span> <span class="c1"># it is indeed a compact chain</span>
+                <span class="c1">#dfMarkov = pd.DataFrame( columns=list(self.df.columns), index=list(range(CumSumWeight[-1])) )</span>
+                <span class="n">dfMarkov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="n">CumSumWeight</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">)</span> <span class="p">)</span>
+                <span class="n">istart</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">):</span>
+                    <span class="n">iend</span> <span class="o">=</span> <span class="n">CumSumWeight</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                    <span class="c1">#dfMarkov.iloc[istart:iend,:] = self.df.iloc[i].values</span>
+                    <span class="n">dfMarkov</span><span class="p">[</span><span class="n">istart</span><span class="p">:</span><span class="n">iend</span><span class="p">,:]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+                    <span class="n">istart</span> <span class="o">=</span> <span class="n">iend</span>
+                <span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dfMarkov</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">note</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isProgressFile</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">note</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;ndim = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, count = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">),</span> <span class="n">end</span> <span class="o">=</span> <span class="n">newline</span><span class="p">,</span> <span class="n">pre</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+
+        <span class="c1"># set dynamic properties</span>
+
+        <span class="k">if</span> <span class="n">parseContents</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">note</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;parsing file contents... &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">newline</span><span class="p">,</span> <span class="n">pre</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">icol</span><span class="p">,</span> <span class="n">colName</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+                <span class="nb">setattr</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">contents</span><span class="p">,</span> <span class="n">colName</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">colName</span><span class="p">]</span> <span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### statistics</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isProgressFile</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+
+            <span class="c1">#### add chain cormat</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">note</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;computing the sample correlation matrix... &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">newline</span><span class="p">,</span> <span class="n">pre</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">cormat</span> <span class="o">=</span> <span class="n">ccm</span><span class="o">.</span><span class="n">CorMat</span>  <span class="p">(</span> <span class="n">dataFrame</span>     <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                            <span class="p">,</span> <span class="n">columns</span>       <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+                                            <span class="p">,</span> <span class="n">methodName</span>    <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                                            <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reportEnabled</span>
+                                            <span class="p">,</span> <span class="n">method</span>        <span class="o">=</span> <span class="s2">&quot;pearson&quot;</span>
+                                            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">cormat</span><span class="p">()</span>
+
+            <span class="c1">#### add chain covmat</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">note</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;computing the sample covariance matrix... &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">newline</span><span class="p">,</span> <span class="n">pre</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">covmat</span> <span class="o">=</span> <span class="n">ccm</span><span class="o">.</span><span class="n">CovMat</span>  <span class="p">(</span> <span class="n">dataFrame</span>     <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                            <span class="p">,</span> <span class="n">columns</span>       <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+                                            <span class="p">,</span> <span class="n">methodName</span>    <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                                            <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reportEnabled</span>
+                                            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">covmat</span><span class="p">()</span>
+
+            <span class="c1">#### add chain autocorrelation</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">note</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;computing the sample autocorrelations... &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">newline</span><span class="p">,</span> <span class="n">pre</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">autocorr</span> <span class="o">=</span> <span class="n">AutoCorr</span>  <span class="p">(</span> <span class="n">dataFrame</span>     <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                            <span class="p">,</span> <span class="n">columns</span>       <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+                                            <span class="p">,</span> <span class="n">methodName</span>    <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                                            <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reportEnabled</span>
+                                            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">autocorr</span><span class="p">()</span>
+
+            <span class="c1">#### add chain maxLogFunc</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">maxLogFunc</span> <span class="o">=</span> <span class="n">getMaxLogFunc</span><span class="p">(</span><span class="n">dataFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### graphics</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_plotTypeList</span> <span class="o">=</span>    <span class="p">[</span> <span class="s2">&quot;line&quot;</span>
+                                <span class="p">,</span> <span class="s2">&quot;scatter&quot;</span>
+                                <span class="p">,</span> <span class="s2">&quot;lineScatter&quot;</span>
+                                <span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isProgressFile</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plotTypeList</span> <span class="o">+=</span>  <span class="p">[</span> <span class="s2">&quot;line3&quot;</span>
+                                                            <span class="p">,</span> <span class="s2">&quot;scatter3&quot;</span>
+                                                            <span class="p">,</span> <span class="s2">&quot;lineScatter3&quot;</span>
+                                                            <span class="p">,</span> <span class="s2">&quot;jointplot&quot;</span>
+                                                            <span class="p">,</span> <span class="s2">&quot;histplot&quot;</span>
+                                                            <span class="p">,</span> <span class="s2">&quot;kdeplot1&quot;</span>
+                                                            <span class="p">,</span> <span class="s2">&quot;kdeplot2&quot;</span>
+                                                            <span class="p">,</span> <span class="s2">&quot;contour3&quot;</span>
+                                                            <span class="p">,</span> <span class="s2">&quot;contourf&quot;</span>
+                                                            <span class="p">,</span> <span class="s2">&quot;contour&quot;</span>
+                                                            <span class="p">,</span> <span class="s2">&quot;grid&quot;</span>
+                                                            <span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">note</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;adding the graphics tools... &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">newline</span><span class="p">,</span> <span class="n">pre</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_resetPlot</span><span class="p">(</span><span class="n">resetType</span><span class="o">=</span><span class="s2">&quot;hard&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">reset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resetPlot</span>
+        <span class="c1">#self.plot.helpme = self.helpme</span>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### _resetPlot</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="TabularFileContents._resetPlot"><a class="viewcode-back" href="../../autoapi/paramonte/_TabularFileContents/index.html#paramonte._TabularFileContents.TabularFileContents._resetPlot">[docs]</a>    <span class="k">def</span> <span class="nf">_resetPlot</span>  <span class="p">(</span> <span class="bp">self</span>
+                    <span class="p">,</span> <span class="n">resetType</span> <span class="o">=</span> <span class="s2">&quot;soft&quot;</span>
+                    <span class="p">,</span> <span class="n">plotNames</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span>
+                    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Reset the properties of the plot to the original default settings.</span>
+<span class="sd">        Use this method when you change many attributes of the plot and</span>
+<span class="sd">        you want to clean up and go back to the default settings.</span>
+
+<span class="sd">            **Parameters**</span>
+
+<span class="sd">                resetType (optional)</span>
+
+<span class="sd">                    An optional string with possible value of ``&quot;hard&quot;``.</span>
+<span class="sd">                    If provided, the plot object will be regenerated from scratch.</span>
+<span class="sd">                    This includes reading the original data frame again and resetting</span>
+<span class="sd">                    everything. If not provided, then only the plot settings will be</span>
+<span class="sd">                    reset without reseting the dataFrame.</span>
+
+<span class="sd">                plotNames (optional)</span>
+
+<span class="sd">                    An optional string value or list of string values representing</span>
+<span class="sd">                    the names of plots to reset. If no value is provided,</span>
+<span class="sd">                    then all plots will be reset.</span>
+
+<span class="sd">            **Returns**</span>
+
+<span class="sd">                None</span>
+
+<span class="sd">            **Example**</span>
+
+<span class="sd">                .. code-block:: python</span>
+
+<span class="sd">                    reset(&quot;hard&quot;)                   # regenerate all plots from scratch</span>
+<span class="sd">                    reset(&quot;hard&quot;,&quot;line3&quot;)           # regenerate line3 plot from scratch</span>
+<span class="sd">                    reset(&quot;hard&quot;,[&quot;line&quot;,&quot;line3&quot;])  # regenerate line and line3 plots</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">requestedPlotTypeList</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">plotNames</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">plotTypeLower</span> <span class="o">=</span> <span class="n">plotNames</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">plotTypeLower</span><span class="o">==</span><span class="s2">&quot;all&quot;</span><span class="p">:</span>
+                <span class="n">requestedPlotTypeList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plotTypeList</span>
+            <span class="k">elif</span> <span class="n">plotNames</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plotTypeList</span><span class="p">:</span>
+                <span class="n">requestedPlotTypeList</span> <span class="o">=</span> <span class="p">[</span><span class="n">plotNames</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_reportWrongPlotName</span><span class="p">(</span><span class="n">plotNames</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">plotNames</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">plotName</span> <span class="ow">in</span> <span class="n">plotNames</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">plotName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plotTypeList</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reportWrongPlotName</span><span class="p">(</span><span class="n">plotName</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_reportWrongPlotName</span><span class="p">(</span><span class="s2">&quot;a none-string none-list object.&quot;</span><span class="p">)</span>
+
+        <span class="n">resetTypeIsHard</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">resetType</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">resetTypeIsHard</span> <span class="o">=</span> <span class="n">resetType</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">==</span><span class="s2">&quot;hard&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">resetTypeIsHard</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">pm</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;The input argument resetType must be a string representing&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;the type of the reset to be performed on the plots.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;A list of possible plots includes: </span><span class="se">\&quot;</span><span class="s2">hard</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">soft</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;Here is the help for the ``reset()`` method: &quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resetPlot</span><span class="o">.</span><span class="vm">__doc__</span>
+                    <span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                    <span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### reset plots</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">for</span> <span class="n">requestedPlotType</span> <span class="ow">in</span> <span class="n">requestedPlotTypeList</span><span class="p">:</span>
+
+            <span class="n">plotObject</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">requestedPlotTypeLower</span> <span class="o">=</span> <span class="n">requestedPlotType</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+            <span class="n">is3d</span>        <span class="o">=</span> <span class="s2">&quot;3&quot;</span>           <span class="ow">in</span> <span class="n">requestedPlotTypeLower</span>
+            <span class="n">isLine</span>      <span class="o">=</span> <span class="s2">&quot;line&quot;</span>        <span class="ow">in</span> <span class="n">requestedPlotTypeLower</span>
+            <span class="n">isScatter</span>   <span class="o">=</span> <span class="s2">&quot;scatter&quot;</span>     <span class="ow">in</span> <span class="n">requestedPlotTypeLower</span>
+
+            <span class="n">isJointplot</span> <span class="o">=</span> <span class="s2">&quot;jointplot&quot;</span>   <span class="ow">in</span> <span class="n">requestedPlotTypeLower</span>
+            <span class="n">isHistplot</span>  <span class="o">=</span> <span class="s2">&quot;histplot&quot;</span>    <span class="ow">in</span> <span class="n">requestedPlotTypeLower</span>
+            <span class="n">isKdeplot1</span>  <span class="o">=</span> <span class="s2">&quot;kdeplot1&quot;</span>    <span class="ow">in</span> <span class="n">requestedPlotTypeLower</span>
+            <span class="n">isKdeplot2</span>  <span class="o">=</span> <span class="s2">&quot;kdeplot2&quot;</span>    <span class="ow">in</span> <span class="n">requestedPlotTypeLower</span>
+            <span class="n">isContourf</span>  <span class="o">=</span> <span class="s2">&quot;contourf&quot;</span>    <span class="ow">in</span> <span class="n">requestedPlotTypeLower</span>
+            <span class="n">isContour3</span>  <span class="o">=</span> <span class="s2">&quot;contour3&quot;</span>    <span class="ow">in</span> <span class="n">requestedPlotTypeLower</span>
+            <span class="n">isContour</span>   <span class="o">=</span> <span class="s2">&quot;contour&quot;</span>     <span class="ow">in</span> <span class="n">requestedPlotTypeLower</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">isContourf</span> <span class="ow">or</span> <span class="n">isContour3</span><span class="p">)</span>
+
+            <span class="n">isGridPlot</span>  <span class="o">=</span> <span class="s2">&quot;grid&quot;</span>        <span class="ow">in</span> <span class="n">requestedPlotTypeLower</span>
+
+            <span class="n">isLineScatterPlot</span> <span class="o">=</span> <span class="n">isLine</span> <span class="ow">or</span> <span class="n">isScatter</span>
+            <span class="n">isDensityPlot</span> <span class="o">=</span> <span class="n">isJointplot</span> <span class="ow">or</span> <span class="n">isHistplot</span> <span class="ow">or</span> <span class="n">isKdeplot1</span> <span class="ow">or</span> <span class="n">isKdeplot2</span> <span class="ow">or</span> <span class="n">isContourf</span> <span class="ow">or</span> <span class="n">isContour3</span> <span class="ow">or</span> <span class="n">isContour</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">resetTypeIsHard</span><span class="p">:</span>
+                <span class="n">plotComponent</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;plot&quot;</span><span class="p">)</span>
+                <span class="n">plotObject</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">plotComponent</span><span class="p">,</span> <span class="n">requestedPlotType</span><span class="p">)</span>
+                <span class="n">plotObject</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>
+
+            <span class="c1">########################################################################################################################</span>
+            <span class="c1">#### reset line / scatter</span>
+            <span class="c1">########################################################################################################################</span>
+
+            <span class="k">if</span> <span class="n">isLineScatterPlot</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">resetTypeIsHard</span><span class="p">:</span>
+                    <span class="n">plotObject</span> <span class="o">=</span> <span class="n">LineScatterPlot</span><span class="p">(</span> <span class="n">plotType</span> <span class="o">=</span> <span class="n">requestedPlotType</span>
+                                                <span class="p">,</span> <span class="n">dataFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                                <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                                                <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reportEnabled</span>
+                                                <span class="p">,</span> <span class="n">resetPlot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resetPlot</span>
+                                                <span class="p">)</span>
+
+                <span class="n">plotObject</span><span class="o">.</span><span class="n">ycolumns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">]</span> <span class="c1"># :]</span>
+                <span class="n">plotObject</span><span class="o">.</span><span class="n">ccolumns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sampleLogFuncColName</span>
+                <span class="n">plotObject</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">extend</span> <span class="o">=</span> <span class="s2">&quot;neither&quot;</span>
+                <span class="n">plotObject</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="s2">&quot;vertical&quot;</span>
+                <span class="n">plotObject</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">spacing</span> <span class="o">=</span> <span class="s2">&quot;uniform&quot;</span>
+
+                <span class="k">if</span> <span class="n">is3d</span><span class="p">:</span>
+                    <span class="n">plotObject</span><span class="o">.</span><span class="n">zcolumns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sampleLogFuncColName</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+                        <span class="n">plotObject</span><span class="o">.</span><span class="n">xcolumns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">]</span>
+                        <span class="n">plotObject</span><span class="o">.</span><span class="n">ycolumns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+
+
+                <span class="k">if</span> <span class="n">isLine</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">isScatter</span><span class="p">:</span>
+                        <span class="n">plotObject</span><span class="o">.</span><span class="n">lineCollection</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">False</span>
+                        <span class="n">plotObject</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="n">plotObject</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span>
+                        <span class="n">plotObject</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span>
+                        <span class="n">plotObject</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">linewidth</span> <span class="o">=</span> <span class="mf">0.75</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">plotObject</span><span class="o">.</span><span class="n">lineCollection</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="n">plotObject</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="c1">########################################################################################################################</span>
+            <span class="c1">#### reset density plots: kdeplot / histplot / jointplot / contour / contourf / contour3</span>
+            <span class="c1">########################################################################################################################</span>
+
+            <span class="k">if</span> <span class="n">isDensityPlot</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">resetTypeIsHard</span><span class="p">:</span>
+                    <span class="n">plotObject</span> <span class="o">=</span> <span class="n">DensityPlot</span><span class="p">(</span> <span class="n">plotType</span> <span class="o">=</span> <span class="n">requestedPlotType</span>
+                                            <span class="p">,</span> <span class="n">dataFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                            <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                                            <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reportEnabled</span>
+                                            <span class="p">,</span> <span class="n">resetPlot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resetPlot</span>
+                                            <span class="p">)</span>
+
+                <span class="n">plotObject</span><span class="o">.</span><span class="n">xcolumns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">]</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">isHistplot</span> <span class="ow">or</span> <span class="n">isKdeplot1</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                        <span class="n">plotObject</span><span class="o">.</span><span class="n">xcolumns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                        <span class="n">plotObject</span><span class="o">.</span><span class="n">ycolumns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">]</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">plotObject</span><span class="o">.</span><span class="n">ycolumns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="c1">########################################################################################################################</span>
+            <span class="c1">#### reset GridPlot</span>
+            <span class="c1">########################################################################################################################</span>
+
+            <span class="k">if</span> <span class="n">isGridPlot</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">resetTypeIsHard</span><span class="p">:</span>
+                    <span class="n">plotObject</span> <span class="o">=</span> <span class="n">GridPlot</span>   <span class="p">(</span> <span class="n">plotType</span> <span class="o">=</span> <span class="n">requestedPlotType</span>
+                                            <span class="p">,</span> <span class="n">dataFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                            <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                                            <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reportEnabled</span>
+                                            <span class="p">,</span> <span class="n">resetPlot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resetPlot</span>
+                                            <span class="p">)</span>
+
+                <span class="n">endColindex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">]</span> <span class="p">)</span>
+                <span class="n">plotObject</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">endColindex</span><span class="p">]</span>
+                <span class="n">plotObject</span><span class="o">.</span><span class="n">ccolumn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sampleLogFuncColName</span>
+
+            <span class="c1">########################################################################################################################</span>
+            <span class="c1">#### reset target component</span>
+            <span class="c1">########################################################################################################################</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">isLineScatterPlot</span> <span class="ow">or</span> <span class="n">isDensityPlot</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">plotObject</span><span class="o">.</span><span class="n">_type</span><span class="o">.</span><span class="n">is3d</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isProgressFile</span><span class="p">):</span>
+
+                <span class="n">xtarget</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># dummy</span>
+                <span class="k">if</span> <span class="n">isDensityPlot</span><span class="p">:</span> <span class="n">xtarget</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">plotObject</span><span class="o">.</span><span class="n">xcolumns</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()[</span><span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">maxLogFunc</span><span class="o">.</span><span class="n">idrow</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">plotObject</span><span class="o">.</span><span class="n">_type</span><span class="o">.</span><span class="n">is1d</span><span class="p">:</span> <span class="n">plotObject</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">[</span> <span class="n">xtarget</span><span class="p">,</span> <span class="mi">0</span> <span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">plotObject</span><span class="o">.</span><span class="n">_type</span><span class="o">.</span><span class="n">is2d</span><span class="p">:</span>
+                    <span class="n">ytarget</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">plotObject</span><span class="o">.</span><span class="n">ycolumns</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()[</span><span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">maxLogFunc</span><span class="o">.</span><span class="n">idrow</span><span class="p">]</span>
+                    <span class="n">plotObject</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">[</span> <span class="n">xtarget</span><span class="p">,</span> <span class="n">ytarget</span> <span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">isDensityPlot</span> <span class="ow">and</span> <span class="n">plotObject</span><span class="o">.</span><span class="n">_type</span><span class="o">.</span><span class="n">is1d</span><span class="p">:</span> <span class="n">plotObject</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">if</span> <span class="n">isLine</span> <span class="ow">or</span> <span class="n">isScatter</span><span class="p">:</span> <span class="n">plotObject</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="n">plotObject</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;maxLogFunc&quot;</span>
+
+            <span class="c1">########################################################################################################################</span>
+
+            <span class="k">if</span> <span class="n">plotObject</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="n">requestedPlotType</span><span class="p">,</span> <span class="n">plotObject</span><span class="p">)</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### _reportWrongPlotName</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="TabularFileContents._reportWrongPlotName"><a class="viewcode-back" href="../../autoapi/paramonte/_TabularFileContents/index.html#paramonte._TabularFileContents.TabularFileContents._reportWrongPlotName">[docs]</a>    <span class="k">def</span> <span class="nf">_reportWrongPlotName</span><span class="p">(</span> <span class="bp">self</span>
+                            <span class="p">,</span> <span class="n">plotNames</span>
+                            <span class="p">):</span>
+
+        <span class="n">pm</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;The input argument ``plotNames`` must be a string representing&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                        <span class="o">+</span> <span class="s2">&quot;the name of a plot belonging to the TabularFileContents class or,&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                        <span class="o">+</span> <span class="s2">&quot;a list of such plot names. You have entered: &quot;</span> <span class="o">+</span> <span class="n">plotNames</span> <span class="o">+</span> <span class="n">newline</span>
+                        <span class="o">+</span> <span class="s2">&quot;Possible plots are: &quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                        <span class="o">+</span> <span class="n">newline</span>
+                        <span class="o">+</span> <span class="n">newline</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_plotTypeList</span><span class="p">)</span> <span class="o">+</span> <span class="n">newline</span>
+                        <span class="o">+</span> <span class="n">newline</span>
+                        <span class="o">+</span> <span class="s2">&quot;Here is the help for the ``reset()`` method: &quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                        <span class="o">+</span> <span class="n">newline</span>
+                        <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resetPlot</span><span class="o">.</span><span class="vm">__doc__</span>
+                <span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                <span class="p">)</span></div></div>
+
+    <span class="c1">################################################################################################################################</span>
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+    <div>
+        <p>
+            <a href="https://www.cdslab.org/paramonte">ParaMonte: Plain Powerful Parallel Monte Carlo Library</a>.<br/>
+            &copy; Copyright 2020, <a href="https://www.cdslab.org" target="_blank">The Computational Data Science Lab</a>.<br/>
+        </p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </div>
+    <!-- Start of statc -->
+    <div style="color: #ffffff; float: none; width: 100%;">
+        <span style="font-size:0.8em">visitor count: 
+            <script type="text/javascript">
+                var sc_project=12178963; 
+                var sc_invisible=0; 
+                var sc_security="e0dfe0f9"; 
+                var sc_text=3; 
+                var scJsHost = "https://";
+                document.write("<sc"+"ript type='text/javascript' src='" +
+                scJsHost+
+                "statcounter.com/counter/counter.js'></"+"script>");
+            </script>
+        </span>
+    </div>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

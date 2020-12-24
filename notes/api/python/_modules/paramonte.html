@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>paramonte &mdash; ParaMonte :: Python  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> ParaMonte :: Python
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../autoapi/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ParaMonte :: Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>paramonte</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for paramonte</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># Author:  Amir Shahmoradi</span>
+<span class="c1"># Contact: shahmoradi@utexas.edu</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####</span>
+<span class="c1">####   MIT License</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte: plain powerful parallel Monte Carlo library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Copyright (C) 2012-present, The Computational Data Science Lab</span>
+<span class="c1">####</span>
+<span class="c1">####   This file is part of the ParaMonte library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Permission is hereby granted, free of charge, to any person obtaining a </span>
+<span class="c1">####   copy of this software and associated documentation files (the &quot;Software&quot;), </span>
+<span class="c1">####   to deal in the Software without restriction, including without limitation </span>
+<span class="c1">####   the rights to use, copy, modify, merge, publish, distribute, sublicense, </span>
+<span class="c1">####   and/or sell copies of the Software, and to permit persons to whom the </span>
+<span class="c1">####   Software is furnished to do so, subject to the following conditions:</span>
+<span class="c1">####</span>
+<span class="c1">####   The above copyright notice and this permission notice shall be </span>
+<span class="c1">####   included in all copies or substantial portions of the Software.</span>
+<span class="c1">####</span>
+<span class="c1">####   THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, </span>
+<span class="c1">####   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF </span>
+<span class="c1">####   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. </span>
+<span class="c1">####   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, </span>
+<span class="c1">####   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR </span>
+<span class="c1">####   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE </span>
+<span class="c1">####   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+<span class="c1">####</span>
+<span class="c1">####   ACKNOWLEDGMENT</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte is an honor-ware and its currency is acknowledgment and citations.</span>
+<span class="c1">####   As per the ParaMonte library license agreement terms, if you use any parts of </span>
+<span class="c1">####   this library for any purposes, kindly acknowledge the use of ParaMonte in your </span>
+<span class="c1">####   work (education/research/industry/development/...) by citing the ParaMonte </span>
+<span class="c1">####   library as described on this page:</span>
+<span class="c1">####</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/master/ACKNOWLEDGMENT.md</span>
+<span class="c1">####</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">This is the Python interface to ParaMonte: Plain Powerful Parallel Monte Carlo library.</span>
+
+<span class="sd">What is ParaMonte?</span>
+<span class="sd">==================</span>
+
+<span class="sd">ParaMonte is a serial / parallel library of Monte Carlo routines for sampling </span>
+<span class="sd">mathematical objective functions of arbitrary-dimensions, in particular, </span>
+<span class="sd">the posterior distributions of Bayesian models in data science, </span>
+<span class="sd">Machine Learning, and scientific inference, with the design </span>
+<span class="sd">goal of unifying the</span>
+
+<span class="sd">    **automation** of Monte Carlo simulations,  </span>
+
+<span class="sd">    **user-friendliness** of the library,  </span>
+
+<span class="sd">    **accessibility** from multiple programming environments,  </span>
+
+<span class="sd">    **high-performance** at runtime, and,  </span>
+
+<span class="sd">    **scalability** across many parallel processors.  </span>
+
+<span class="sd">For more information on the installation, usage, and examples, visit:</span>
+
+<span class="sd">    https://www.cdslab.org/paramonte</span>
+
+<span class="sd">For the API documentation, visit:</span>
+
+<span class="sd">    https://www.cdslab.org/paramonte/notes/api/python</span>
+
+<span class="sd">ParaMonte samplers</span>
+<span class="sd">================== </span>
+
+<span class="sd">The routines currently supported by the ParaMonte Python library include:</span>
+
+<span class="sd">    **ParaDRAM**</span>
+
+<span class="sd">        Parallel Delayed-Rejection Adaptive Metropolis-Hastings Markov </span>
+<span class="sd">        Chain Monte Carlo Sampler. For a quick start, example scripts, </span>
+<span class="sd">        and instructions on how to use he ParaDRAM sampler, type the </span>
+<span class="sd">        following commands enclosed between the comment lines </span>
+<span class="sd">        in your Python session,</span>
+
+<span class="sd">        .. code-block:: python</span>
+<span class="sd">            :linenos:</span>
+
+<span class="sd">            ##################################</span>
+<span class="sd">            import paramonte as pm</span>
+<span class="sd">            pm.helpme(&quot;paradram&quot;) # the input value is case-insensitive</span>
+<span class="sd">            ##################################</span>
+
+<span class="sd">        or,</span>
+
+<span class="sd">        .. code-block:: python</span>
+<span class="sd">            :linenos:</span>
+
+<span class="sd">            ##################################</span>
+<span class="sd">            import paramonte as pm</span>
+<span class="sd">            help(pm.ParaDRAM) # get help on ParaDRAM sampler class</span>
+<span class="sd">            ##################################</span>
+
+<span class="sd">Naming conventions</span>
+<span class="sd">==================</span>
+
+<span class="sd">+   The camelCase naming style is used throughout the entire ParaMonte </span>
+<span class="sd">    library, across all programming languages. The ParaMonte library is </span>
+<span class="sd">    a multi-language cross-platform library. To increase the consistently </span>
+<span class="sd">    and similarities of all implementations, a single naming convention </span>
+<span class="sd">    had to be used for all different languages.</span>
+
+<span class="sd">+   All simulation specifications start with a lowercase letter, including </span>
+<span class="sd">    scalar/vector/matrix int, float, string, or boolean variables.</span>
+
+<span class="sd">+   The name of any variable that represents a vector of values is normally </span>
+<span class="sd">    suffixed with ``Vec``, for example: ``startPointVec``, ...</span>
+
+<span class="sd">+   The name of any variable that represents a matrix of values is normally </span>
+<span class="sd">    suffixed with ``Mat``, for example: ``proposalStartCorMat``, ...</span>
+
+<span class="sd">+   The name of any variable that represents a list of varying-size values </span>
+<span class="sd">    is normally suffixed with ``List``, like: ``variableNameList``, ...</span>
+
+<span class="sd">+   All static functions or methods of classes begin with a lowercase verb.</span>
+
+<span class="sd">+   Significant attempt has been made to end all boolean variables with a </span>
+<span class="sd">    passive verb, such that the full variable name virtually forms a </span>
+<span class="sd">    proposition, that is, an English-language statement that should </span>
+<span class="sd">    be either ``True`` or ``False``, set by the user. </span>
+
+<span class="sd">Tips</span>
+<span class="sd">====</span>
+
+<span class="sd">+   When running the ParaMonte samplers, in particular on multiple cores </span>
+<span class="sd">    in parallel, it would be best to close any such aggressive software or</span>
+<span class="sd">    applications as **Dropbox**, **ZoneAlarm**, ... that can interfere with </span>
+<span class="sd">    the ParaMonte simulation output files, potentially causing the sampler to</span>
+<span class="sd">    crash before the successful completion of the simulation. </span>
+<span class="sd">    These situations should however happen only scarcely. </span>
+
+<span class="sd">+   On Windows systems, when restarting an old interrupted ParaMonte simulation, </span>
+<span class="sd">    ensure your Python session is also restarted before the simulation restart. </span>
+<span class="sd">    This may be needed as Windows sometimes locks access to some or all of the </span>
+<span class="sd">    simulation output files.</span>
+
+<span class="sd">+   To unset an already-set input simulation specification, simply set the </span>
+<span class="sd">    simulation attribute to None or re-instantiate the sampler object. </span>
+
+<span class="sd">-------------------------------------------------------------------------------</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
+<span class="kn">import</span> <span class="nn">sys</span> <span class="k">as</span> <span class="nn">_sys</span>
+<span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">_tp</span>
+
+<span class="n">_sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+
+<span class="kn">import</span> <span class="nn">_paramonte</span> <span class="k">as</span> <span class="nn">_pm</span>
+
+<span class="c1">#### objects exposed to the user</span>
+
+<span class="kn">from</span> <span class="nn">_pmreqs</span> <span class="kn">import</span> <span class="n">verify</span><span class="p">,</span> <span class="n">build</span><span class="p">,</span> <span class="n">checkForUpdate</span><span class="p">,</span> <span class="n">verifyDependencyVersion</span><span class="p">,</span> <span class="n">getDependencyVersion</span>
+<span class="kn">from</span> <span class="nn">_paradram</span> <span class="kn">import</span> <span class="n">ParaDRAM</span>
+<span class="kn">from</span> <span class="nn">_paramonte</span> <span class="kn">import</span> <span class="n">version</span><span class="p">,</span> <span class="n">website</span><span class="p">,</span> <span class="n">cite</span>
+
+
+<span class="n">__authors__</span> <span class="o">=</span> <span class="s2">&quot;The Computational Data Science Lab @ The University of Texas&quot;</span>
+<span class="n">__credits__</span> <span class="o">=</span> <span class="s2">&quot;The Peter O&#39;Donnell Fellowship&quot;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="n">version</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>
+<span class="sd">&quot;&quot;&quot;ParaMonte Python interface version, defined at runtime.&quot;&quot;&quot;</span>
+
+<span class="n">verify</span><span class="p">(</span><span class="n">reset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1">####################################################################################################################################</span>
+
+<span class="c1"># def getVersion():</span>
+<span class="c1">#     import warnings</span>
+<span class="c1">#     msg = &quot;getVersion() version will be removed in next release. Use paramonte.version object instead.&quot;</span>
+<span class="c1">#     warnings.warn( msg, DeprecationWarning, stacklevel=2)</span>
+<span class="c1">#     return __version__</span>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="helpme"><a class="viewcode-back" href="../autoapi/paramonte/index.html#paramonte.helpme">[docs]</a><span class="k">def</span> <span class="nf">helpme</span>  <span class="p">(</span> <span class="n">topic</span> <span class="p">:</span> <span class="n">_tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span> <span class="nb">str</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Prints help on the input object.</span>
+
+<span class="sd">        **Parameters**</span>
+
+<span class="sd">            topic</span>
+
+<span class="sd">                A string value that is the name of an object in ``paramonte``</span>
+<span class="sd">                module for which help is needed. To see the list of possible</span>
+<span class="sd">                objects. try: ``pm.helpme(&quot;helpme&quot;)``</span>
+
+<span class="sd">        **Returns**</span>
+
+<span class="sd">            None</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">topics</span> <span class="o">=</span>    <span class="p">{</span> <span class="s2">&quot;paradram&quot;</span><span class="p">:</span> <span class="n">ParaDRAM</span>
+                <span class="p">,</span> <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="n">version</span>
+                <span class="p">,</span> <span class="s2">&quot;verify&quot;</span>  <span class="p">:</span> <span class="n">verify</span>
+                <span class="p">,</span> <span class="s2">&quot;helpme&quot;</span>  <span class="p">:</span> <span class="n">helpme</span>
+                <span class="p">,</span> <span class="s2">&quot;build&quot;</span>   <span class="p">:</span> <span class="n">build</span>
+                <span class="p">}</span>
+
+    <span class="n">usage</span>   <span class="o">=</span> <span class="s2">&quot;    Usage:</span><span class="se">\n\n</span><span class="s2">&quot;</span> \
+            <span class="o">+</span> <span class="s2">&quot;        import paramonte as pm</span><span class="se">\n</span><span class="s2">&quot;</span> \
+            <span class="o">+</span> <span class="s2">&quot;        pm.helpme()      # to get help on paramonte module.</span><span class="se">\n</span><span class="s2">&quot;</span> \
+            <span class="o">+</span> <span class="s2">&quot;        pm.helpme(topic) # to get help on topic.</span><span class="se">\n\n</span><span class="s2">&quot;</span> \
+            <span class="o">+</span> <span class="s2">&quot;    where `topic` in the above can be one of the following string values:</span><span class="se">\n\n</span><span class="s2">&quot;</span> \
+            <span class="o">+</span> <span class="s2">&quot;        &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">topics</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    
+    <span class="k">if</span> <span class="n">topic</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span><span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">topic</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">topics</span><span class="p">[</span><span class="n">topic</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">topic</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">==</span><span class="s2">&quot;helpme&quot;</span><span class="p">:</span> <span class="n">_pm</span><span class="o">.</span><span class="n">note</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">usage</span><span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="s2">&quot;helpme()&quot;</span><span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;) &quot;</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">_pm</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;The requested object &quot;</span> <span class="o">+</span> <span class="n">topic</span> <span class="o">+</span> <span class="s2">&quot;does not exist in paramonte module.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                        <span class="o">+</span> <span class="n">usage</span>
+                <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="s2">&quot;helpme()&quot;</span>
+                <span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+
+<span class="n">__all__</span> <span class="o">=</span>   <span class="p">[</span> <span class="s2">&quot;__authors__&quot;</span>
+            <span class="p">,</span> <span class="s2">&quot;__credits__&quot;</span>
+            <span class="p">,</span> <span class="s2">&quot;__version__&quot;</span>
+            <span class="p">,</span> <span class="s2">&quot;ParaDRAM&quot;</span>
+            <span class="p">,</span> <span class="s2">&quot;version&quot;</span>
+            <span class="p">,</span> <span class="s2">&quot;verify&quot;</span>
+            <span class="p">,</span> <span class="s2">&quot;helpme&quot;</span>
+            <span class="p">,</span> <span class="s2">&quot;build&quot;</span>
+            <span class="p">]</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+    <div>
+        <p>
+            <a href="https://www.cdslab.org/paramonte">ParaMonte: Plain Powerful Parallel Monte Carlo Library</a>.<br/>
+            &copy; Copyright 2020, <a href="https://www.cdslab.org" target="_blank">The Computational Data Science Lab</a>.<br/>
+        </p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </div>
+    <!-- Start of statc -->
+    <div style="color: #ffffff; float: none; width: 100%;">
+        <span style="font-size:0.8em">visitor count: 
+            <script type="text/javascript">
+                var sc_project=12178963; 
+                var sc_invisible=0; 
+                var sc_security="e0dfe0f9"; 
+                var sc_text=3; 
+                var scJsHost = "https://";
+                document.write("<sc"+"ript type='text/javascript' src='" +
+                scJsHost+
+                "statcounter.com/counter/counter.js'></"+"script>");
+            </script>
+        </span>
+    </div>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

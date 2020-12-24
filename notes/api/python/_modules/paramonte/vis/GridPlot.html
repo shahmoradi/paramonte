@@ -1,0 +1,1538 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>paramonte.vis.GridPlot &mdash; ParaMonte :: Python  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> ParaMonte :: Python
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ParaMonte :: Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../paramonte.html">paramonte</a> &raquo;</li>
+        
+      <li>paramonte.vis.GridPlot</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for paramonte.vis.GridPlot</h1><div class="highlight"><pre>
+<span></span><span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####</span>
+<span class="c1">####   MIT License</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte: plain powerful parallel Monte Carlo library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Copyright (C) 2012-present, The Computational Data Science Lab</span>
+<span class="c1">####</span>
+<span class="c1">####   This file is part of the ParaMonte library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Permission is hereby granted, free of charge, to any person obtaining a </span>
+<span class="c1">####   copy of this software and associated documentation files (the &quot;Software&quot;), </span>
+<span class="c1">####   to deal in the Software without restriction, including without limitation </span>
+<span class="c1">####   the rights to use, copy, modify, merge, publish, distribute, sublicense, </span>
+<span class="c1">####   and/or sell copies of the Software, and to permit persons to whom the </span>
+<span class="c1">####   Software is furnished to do so, subject to the following conditions:</span>
+<span class="c1">####</span>
+<span class="c1">####   The above copyright notice and this permission notice shall be </span>
+<span class="c1">####   included in all copies or substantial portions of the Software.</span>
+<span class="c1">####</span>
+<span class="c1">####   THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, </span>
+<span class="c1">####   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF </span>
+<span class="c1">####   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. </span>
+<span class="c1">####   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, </span>
+<span class="c1">####   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR </span>
+<span class="c1">####   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE </span>
+<span class="c1">####   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+<span class="c1">####</span>
+<span class="c1">####   ACKNOWLEDGMENT</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte is an honor-ware and its currency is acknowledgment and citations.</span>
+<span class="c1">####   As per the ParaMonte library license agreement terms, if you use any parts of </span>
+<span class="c1">####   this library for any purposes, kindly acknowledge the use of ParaMonte in your </span>
+<span class="c1">####   work (education/research/industry/development/...) by citing the ParaMonte </span>
+<span class="c1">####   library as described on this page:</span>
+<span class="c1">####</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/master/ACKNOWLEDGMENT.md</span>
+<span class="c1">####</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">tp</span>
+<span class="c1">#import pandas as pd</span>
+<span class="kn">import</span> <span class="nn">weakref</span> <span class="k">as</span> <span class="nn">wref</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span> <span class="k">as</span> <span class="n">dcopy</span>
+
+<span class="kn">import</span> <span class="nn">_paramonte</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="kn">from</span> <span class="nn">paramonte.vis._BasePlot</span> <span class="kn">import</span> <span class="n">BasePlot</span>
+<span class="kn">from</span> <span class="nn">paramonte.vis.LineScatterPlot</span> <span class="kn">import</span> <span class="n">LineScatterPlot</span>
+<span class="kn">from</span> <span class="nn">paramonte.vis.DensityPlot</span> <span class="kn">import</span> <span class="n">DensityPlot</span>
+
+<span class="n">Struct</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Struct</span>
+<span class="n">newline</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">newline</span>
+
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">#### GridPlot class</span>
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="GridPlot"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/GridPlot/index.html#paramonte.vis.GridPlot.GridPlot">[docs]</a><span class="k">class</span> <span class="nc">GridPlot</span><span class="p">(</span><span class="n">BasePlot</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    This is the GridPlot class for generating instances</span>
+<span class="sd">    of histogram and contour figures in two and three dimensions</span>
+<span class="sd">    based on a wide range of plotting tools from the matplotlib,</span>
+<span class="sd">    seaborn, and other Python libraries.</span>
+
+<span class="sd">    Normally, the public users are not supposed to use this class directly,</span>
+<span class="sd">    although they can for the purposes other than plotting the ParaMonte</span>
+<span class="sd">    simulation files.</span>
+
+<span class="sd">        **Parameters**</span>
+
+<span class="sd">            plotType</span>
+
+<span class="sd">                A string indicating the name of the plot to be constructed.</span>
+
+<span class="sd">            dataFrame (optional)</span>
+
+<span class="sd">                A pandas dataFrame whose data will be plotted.</span>
+
+<span class="sd">            methodName (optional)</span>
+
+<span class="sd">                The name of the ParaMonte sample requesting the BasePlot.</span>
+
+<span class="sd">            reportEnabled (optional)</span>
+
+<span class="sd">                A boolean whose value indicates whether guidelines should be </span>
+<span class="sd">                printed in the standard output.</span>
+
+<span class="sd">            resetPlot (optional)</span>
+
+<span class="sd">                A function that resets the properties of the plot as desired </span>
+<span class="sd">                from outside. If provided, a pointer to this function will be</span>
+<span class="sd">                saved for future internal usage.</span>
+
+<span class="sd">        **Attributes**</span>
+
+<span class="sd">            All of the parameters described above, are implicitly </span>
+<span class="sd">            stored in the object.</span>
+
+<span class="sd">            columns</span>
+
+<span class="sd">                An attribute that determines the columns of dataFrame to be </span>
+<span class="sd">                visualized. It can have three forms:</span>
+
+<span class="sd">                    1.  A list of column indices in dataFrame.</span>
+<span class="sd">                    2.  A list of column names in dataFrame.columns.</span>
+<span class="sd">                    3.  A ``range(start,stop,step)`` of column indices.</span>
+
+<span class="sd">                Examples:</span>
+
+<span class="sd">                    1.  ``xcolumns = [0,1,4,3]``</span>
+<span class="sd">                    2.  ``xcolumns = [&quot;SampleLogFunc&quot;,&quot;SampleVariable1&quot;]``</span>
+<span class="sd">                    3.  ``xcolumns = range(17,7,-2)``</span>
+
+<span class="sd">                The default behavior includes up to 5 columns of the dataFrame.</span>
+
+<span class="sd">            ccolumn</span>
+
+<span class="sd">                A string or integer that determines the column </span>
+<span class="sd">                of the dataFrame to serve as the color-values </span>
+<span class="sd">                corresponding to each point in the plot. </span>
+
+<span class="sd">                Examples:</span>
+
+<span class="sd">                    1.  ``ccolumn = 7``</span>
+<span class="sd">                    2.  ``ccolumn = &quot;SampleLogFunc&quot;``</span>
+<span class="sd">                    3.  ``ccolumn = None``</span>
+
+<span class="sd">                **NOTE**</span>
+
+<span class="sd">                The value of ``ccolumns`` has precedence over all </span>
+<span class="sd">                other color properties of individual plotting tools, </span>
+<span class="sd">                unless ``ccolumns = None``.</span>
+<span class="sd">                For example, any value of the ``c`` component of the ``scatter.kws``</span>
+<span class="sd">                component of the ``LineScatterPlot`` object will be overridden by</span>
+<span class="sd">                the specified value for ``ccolumns``.</span>
+
+<span class="sd">            rows</span>
+
+<span class="sd">                An attribute that determines the rows of dataFrame to be </span>
+<span class="sd">                visualized. It can be either:</span>
+
+<span class="sd">                    1.  A ``range(start,stop,step)``, or, </span>
+<span class="sd">                    2.  A list of row indices in dataFrame.index.</span>
+
+<span class="sd">                Examples:</span>
+
+<span class="sd">                    1.  ``rows = range(17,7,-2)``</span>
+<span class="sd">                    2.  ``rows = [i for i in range(7,17)]``</span>
+
+<span class="sd">                The default behavior includes all rows of the dataFrame.</span>
+
+<span class="sd">            set</span>
+
+<span class="sd">                A structure with two attributes:</span>
+
+<span class="sd">                    enabled</span>
+
+<span class="sd">                        A boolean indicating whether a call to the ``set()``</span>
+<span class="sd">                        function of the seaborn library should be made or not.</span>
+
+<span class="sd">                    kws</span>
+
+<span class="sd">                        A structure whose components are directly passed as </span>
+<span class="sd">                        keyword arguments to the ``set()`` function.</span>
+
+<span class="sd">                        Example usage:</span>
+
+<span class="sd">                            .. code-block:: python</span>
+
+<span class="sd">                                set.kws.style = &quot;darkgrid&quot;</span>
+
+<span class="sd">                        **NOTE**</span>
+
+<span class="sd">                        If a desired property is missing among the ``kws`` </span>
+<span class="sd">                        attributes, simply add the field and its value to </span>
+<span class="sd">                        the component.</span>
+
+<span class="sd">            axes (available only in 1D and 2D plots)</span>
+
+<span class="sd">                A structure with one attribute:</span>
+
+<span class="sd">                    kws</span>
+
+<span class="sd">                        A structure whose components are directly passed as </span>
+<span class="sd">                        keyword arguments to the ``gca()`` function of the </span>
+<span class="sd">                        matplotlib library.</span>
+
+<span class="sd">                        Example usage:</span>
+
+<span class="sd">                            .. code-block:: python</span>
+
+<span class="sd">                                axes.kws.facecolor = &quot;w&quot;</span>
+
+<span class="sd">                        **NOTE**</span>
+
+<span class="sd">                        If a desired property is missing among the ``kws`` </span>
+<span class="sd">                        attributes, simply add the field and its value to </span>
+<span class="sd">                        the component.</span>
+
+<span class="sd">            figure</span>
+
+<span class="sd">                A structure with two attributes:</span>
+
+<span class="sd">                    enabled</span>
+
+<span class="sd">                        A boolean indicating whether a call to the ``figure()``</span>
+<span class="sd">                        function of the matplotlib library should be made or not.</span>
+<span class="sd">                        If a call is made, a new figure will be generated.</span>
+<span class="sd">                        Otherwise, the current active figure will be used.</span>
+
+<span class="sd">                    kws</span>
+
+<span class="sd">                        A structure whose components are directly passed as </span>
+<span class="sd">                        keyword arguments to the ``figure()`` function of </span>
+<span class="sd">                        the matplotlib library.</span>
+
+<span class="sd">                        Example usage:</span>
+
+<span class="sd">                            .. code-block:: python</span>
+
+<span class="sd">                                figure.kws.facecolor = &quot;w&quot;</span>
+
+<span class="sd">                        **NOTE**</span>
+
+<span class="sd">                        If a desired property is missing among the ``kws`` </span>
+<span class="sd">                        attributes, simply add the field and its value to </span>
+<span class="sd">                        the component.</span>
+
+<span class="sd">            pairgrid</span>
+
+<span class="sd">                A structure with one attribute:</span>
+
+<span class="sd">                    kws</span>
+
+<span class="sd">                        A structure whose components are directly passed as </span>
+<span class="sd">                        keyword arguments to the ``PairGrid()`` class of </span>
+<span class="sd">                        the seaborn library to generate a pairgrid.</span>
+
+<span class="sd">                        Example usage:</span>
+
+<span class="sd">                            .. code-block:: python</span>
+
+<span class="sd">                                pairgrid.kws.dropna = True</span>
+
+<span class="sd">                        **NOTE**</span>
+
+<span class="sd">                        Passing some keywords, like ``corner`` attribute,</span>
+<span class="sd">                        to the PairGrid will cause potential conflicts with</span>
+<span class="sd">                        other attributes of ParaMonte&#39;s GridPlot. Use this</span>
+<span class="sd">                        attribute with caution. That said, if a desired </span>
+<span class="sd">                        property is missing among the ``kws`` attributes, </span>
+<span class="sd">                        simply add the field and its value to the component.</span>
+
+<span class="sd">            colorbar (exists only for plots that require colorbar)</span>
+
+<span class="sd">                A structure with two attributes:</span>
+
+<span class="sd">                    enabled</span>
+
+<span class="sd">                        A boolean indicating whether a call to the ``colorbar()``</span>
+<span class="sd">                        function of the matplotlib library should be made or not.</span>
+<span class="sd">                        If a call is made, a new figure will be generated.</span>
+<span class="sd">                        Otherwise, the current active figure will be used.</span>
+
+<span class="sd">                    kws</span>
+
+<span class="sd">                        A structure whose components are directly passed as </span>
+<span class="sd">                        keyword arguments to the ``colorbar()`` function of </span>
+<span class="sd">                        the matplotlib library.</span>
+
+<span class="sd">                        **NOTE**</span>
+
+<span class="sd">                        If a desired property is missing among the ``kws`` </span>
+<span class="sd">                        attributes, simply add the field and its value to </span>
+<span class="sd">                        the component.</span>
+
+<span class="sd">                A colorbar will be added to a plot only if a color-mappings </span>
+<span class="sd">                is requested in the plot.</span>
+
+<span class="sd">            plotType</span>
+
+<span class="sd">                A structure with three attributes:</span>
+
+<span class="sd">                    upper</span>
+
+<span class="sd">                        A structure whose components determine what plots</span>
+<span class="sd">                        can and should be added to the upper corner of </span>
+<span class="sd">                        the grid plot.</span>
+
+<span class="sd">                    lower</span>
+
+<span class="sd">                        A structure whose components determine what plots</span>
+<span class="sd">                        can and should be added to the lower corner of </span>
+<span class="sd">                        the grid plot.</span>
+
+<span class="sd">                    diag</span>
+
+<span class="sd">                        A structure whose components determine what plots</span>
+<span class="sd">                        can and should be added to the diagonal of </span>
+<span class="sd">                        the grid plot.</span>
+
+<span class="sd">                Each of the above structures has three components:</span>
+
+<span class="sd">                    enabled</span>
+
+<span class="sd">                        A boolean that determines if the subplots in the</span>
+<span class="sd">                        corresponding section of the grid plot should be </span>
+<span class="sd">                        added or not.</span>
+
+<span class="sd">                    names</span>
+
+<span class="sd">                        A list of strings that represent the types of plots</span>
+<span class="sd">                        that can be added to the corresponding section of </span>
+<span class="sd">                        the grid plot. </span>
+
+<span class="sd">                    value</span>
+
+<span class="sd">                        A string whose value can be one of the elements of </span>
+<span class="sd">                        the ``names`` attribute explained in the above. It </span>
+<span class="sd">                        determines the type of the subplot to be added to </span>
+<span class="sd">                        the corresponding section of the grid plot. </span>
+
+<span class="sd">                Example usage:</span>
+
+<span class="sd">                    .. code-block:: python</span>
+
+<span class="sd">                        plotType.upper.enabled = False # no upper corner plots</span>
+<span class="sd">                        plotType.lower.value = &quot;scatter&quot; # add scatter to lower</span>
+
+<span class="sd">            layout</span>
+
+<span class="sd">                A structure whose components are directly passed to the </span>
+<span class="sd">                corresponding plotting tools of the ParaMonte library to </span>
+<span class="sd">                draw the corresponding subplots, if they are activated.</span>
+
+<span class="sd">                Example usage:</span>
+
+<span class="sd">                    .. code-block:: python</span>
+
+<span class="sd">                        layout.contour.contour.kws.colors = &quot;blue&quot;</span>
+
+<span class="sd">            currentFig</span>
+
+<span class="sd">                A structure whose attributes are the outputs of various plotting </span>
+<span class="sd">                tools used to make the current figure. These include the handle </span>
+<span class="sd">                to the current figure, the handle to the current axes in the plot, </span>
+<span class="sd">                the handle to the colorbar (if any exists), and other Python </span>
+<span class="sd">                plotting tools used to make to generate the figure.</span>
+
+<span class="sd">        **Returns**</span>
+
+<span class="sd">            self</span>
+
+<span class="sd">                An object of class ``GridPlot``.</span>
+
+<span class="sd">    ---------------------------------------------------------------------------</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### __init__</span>
+    <span class="c1">################################################################################################################################</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span>
+                <span class="p">,</span> <span class="n">plotType</span>      <span class="c1"># : str</span>
+                <span class="p">,</span> <span class="n">dataFrame</span>     <span class="o">=</span> <span class="kc">None</span> <span class="c1"># : tp.Optional[ pd.DataFrame ] = None</span>
+                <span class="p">,</span> <span class="n">methodName</span>    <span class="o">=</span> <span class="s2">&quot;ParaMonte&quot;</span> <span class="c1"># : tp.Optional[ str ] = &quot;ParaMonte&quot;</span>
+                <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># : tp.Optional[ bool ] = True</span>
+                <span class="p">,</span> <span class="n">resetPlot</span>     <span class="o">=</span> <span class="kc">None</span>
+                <span class="p">):</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span> <span class="n">plotType</span> <span class="o">=</span> <span class="n">plotType</span>
+                        <span class="p">,</span> <span class="n">dataFrame</span> <span class="o">=</span> <span class="n">dataFrame</span>
+                        <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="n">methodName</span>
+                        <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="n">reportEnabled</span>
+                        <span class="p">,</span> <span class="n">resetPlot</span> <span class="o">=</span> <span class="n">resetPlot</span>
+                        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">resetPlot</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resetPlot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">note</span><span class="p">()</span>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### _reset</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="GridPlot._reset"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/GridPlot/index.html#paramonte.vis.GridPlot.GridPlot._reset">[docs]</a>    <span class="k">def</span> <span class="nf">_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ccolumn</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># use the default colormap data (which is the data count)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">pairgrid</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">colorbar</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### setup corner types</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="n">cornerNames</span> <span class="o">=</span>   <span class="p">[</span> <span class="s2">&quot;line&quot;</span>
+                        <span class="p">,</span> <span class="s2">&quot;scatter&quot;</span>
+                        <span class="p">,</span> <span class="s2">&quot;lineScatter&quot;</span>
+                        <span class="p">,</span> <span class="s2">&quot;contourf&quot;</span>
+                        <span class="p">,</span> <span class="s2">&quot;contour&quot;</span>
+                        <span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">diag</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">diag</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">diag</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;histplot&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">diag</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;histplot&quot;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;lineScatter&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">cornerNames</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;contour&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">cornerNames</span><span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### setup subplot templates</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="n">template</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+
+        <span class="c1"># target</span>
+
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">axvline</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">axhline</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">scatter</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">linewidth</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">zorder</span> <span class="o">=</span> <span class="mi">1000</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">axvline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;orangered&quot;</span>
+
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">linewidth</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">zorder</span> <span class="o">=</span> <span class="mi">1000</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">axhline</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;orangered&quot;</span>
+
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">s</span> <span class="o">=</span> <span class="mi">20</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;orangered&quot;</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">zorder</span> <span class="o">=</span> <span class="mi">1002</span>
+
+        <span class="c1"># contour</span>
+
+        <span class="n">template</span><span class="o">.</span><span class="n">contour</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;winter&quot;</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">levels</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">linewidths</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">linestyles</span> <span class="o">=</span> <span class="s2">&quot;solid&quot;</span>
+
+        <span class="c1"># contourf</span>
+
+        <span class="n">template</span><span class="o">.</span><span class="n">contourf</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">contourf</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">contourf</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">contourf</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;Blues&quot;</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">contourf</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">contourf</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">levels</span> <span class="o">=</span> <span class="mi">50</span>
+
+        <span class="c1"># histplot</span>
+
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">kde</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">bins</span> <span class="o">=</span> <span class="s2">&quot;auto&quot;</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">stat</span> <span class="o">=</span> <span class="s2">&quot;count&quot;</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">kde_kws</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">binwidth</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">binrange</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">multiple</span> <span class="o">=</span> <span class="s2">&quot;stack&quot;</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">element</span> <span class="o">=</span> <span class="s2">&quot;step&quot;</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">shrink</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">fill</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">common_norm</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">common_bins</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">line_kws</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">line_kws</span><span class="p">[</span><span class="s2">&quot;linewidth&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">line_kws</span><span class="p">[</span><span class="s2">&quot;linestyle&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span>
+
+        <span class="c1"># legend template</span>
+
+        <span class="n">template</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+
+        <span class="c1"># colorbar template</span>
+
+        <span class="n">template</span><span class="o">.</span><span class="n">colorbar</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+
+        <span class="c1"># line / scatter / lineScatter</span>
+
+        <span class="n">template</span><span class="o">.</span><span class="n">scatter</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">s</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;winter&quot;</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">edgecolor</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">zorder</span> <span class="o">=</span> <span class="mi">2</span>
+
+        <span class="n">template</span><span class="o">.</span><span class="n">plot</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">linewidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">zorder</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="n">template</span><span class="o">.</span><span class="n">lineCollection</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">lineCollection</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">lineCollection</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">lineCollection</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;winter&quot;</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">lineCollection</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">lineCollection</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">linewidth</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="c1"># figure</span>
+
+        <span class="n">template</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">kws</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### setup subplots layout</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">contour</span>                     <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">figure</span>              <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">figure</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">contour</span>             <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">contour</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">colorbar</span>            <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">colorbar</span><span class="p">)</span>
+        <span class="c1">#self.layout.contour.target              = dcopy(template.target)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">noiseDensity</span>        <span class="o">=</span> <span class="mf">1.e-3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">limits</span>              <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">gridSize</span>            <span class="o">=</span> <span class="mi">512</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">contourf</span>                    <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">contourf</span><span class="o">.</span><span class="n">figure</span>             <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">figure</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">contourf</span><span class="o">.</span><span class="n">contourf</span>           <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">contourf</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">contourf</span><span class="o">.</span><span class="n">colorbar</span>           <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">colorbar</span><span class="p">)</span>
+        <span class="c1">#self.layout.contourf.target             = dcopy(template.target)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">contourf</span><span class="o">.</span><span class="n">noiseDensity</span>       <span class="o">=</span> <span class="mf">1.e-5</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">contourf</span><span class="o">.</span><span class="n">limits</span>             <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">contourf</span><span class="o">.</span><span class="n">gridSize</span>           <span class="o">=</span> <span class="mi">512</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">histplot</span>                    <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">figure</span>             <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">figure</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">histplot</span>           <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">histplot</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">legend</span>             <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">legend</span><span class="p">)</span>
+        <span class="c1">#self.layout.histplot.target             = dcopy(template.target)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">line</span>                        <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">figure</span>                 <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">figure</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">plot</span>                   <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">plot</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">lineCollection</span>         <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">lineCollection</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">colorbar</span>               <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">colorbar</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">legend</span>                 <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">legend</span><span class="p">)</span>
+        <span class="c1">#self.layout.line.target                 = dcopy(template.target)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">scatter</span>                     <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">figure</span>              <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">figure</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">scatter</span>             <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">scatter</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">colorbar</span>            <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">colorbar</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">legend</span>              <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">legend</span><span class="p">)</span>
+        <span class="c1">#self.layout.scatter.target              = dcopy(template.target)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">lineScatter</span>                 <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">lineScatter</span><span class="o">.</span><span class="n">figure</span>          <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">figure</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">lineScatter</span><span class="o">.</span><span class="n">plot</span>            <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">plot</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">lineScatter</span><span class="o">.</span><span class="n">scatter</span>         <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">scatter</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">lineScatter</span><span class="o">.</span><span class="n">lineCollection</span>  <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">lineCollection</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">lineScatter</span><span class="o">.</span><span class="n">colorbar</span>        <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">colorbar</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">lineScatter</span><span class="o">.</span><span class="n">legend</span>          <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">legend</span><span class="p">)</span>
+        <span class="c1">#self.layout.lineScatter.target          = dcopy(template.target)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">lineScatter</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">enabled</span>    <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">lineScatter</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">alpha</span>  <span class="o">=</span> <span class="mf">0.2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">lineScatter</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">color</span>  <span class="o">=</span> <span class="s2">&quot;grey&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">lineScatter</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">linewidth</span> <span class="o">=</span> <span class="mf">0.75</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">lineScatter</span><span class="o">.</span><span class="n">lineCollection</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_isdryrun</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_isdryrun</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### __call__</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="GridPlot.__call__"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/GridPlot/index.html#paramonte.vis.GridPlot.GridPlot.__call__">[docs]</a>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span> <span class="bp">self</span>
+                <span class="p">,</span> <span class="n">reself</span> <span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span> <span class="nb">bool</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+                <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Call the ``make()`` method of the current </span>
+<span class="sd">        instance of the class.</span>
+
+<span class="sd">            **Parameters**</span>
+
+<span class="sd">                Any arguments that can be passed to the </span>
+<span class="sd">                ``make()`` method of the plot object.</span>
+
+<span class="sd">            **Returns**</span>
+
+<span class="sd">                Any return value from the ``make()`` </span>
+<span class="sd">                method of the plot object.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">reself</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### make</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="GridPlot.make"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/GridPlot/index.html#paramonte.vis.GridPlot.GridPlot.make">[docs]</a>    <span class="k">def</span> <span class="nf">make</span><span class="p">(</span> <span class="bp">self</span>
+            <span class="p">,</span> <span class="n">reself</span> <span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span> <span class="nb">bool</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Generate a grid plot from the selected </span>
+<span class="sd">        columns of the object&#39;s dataFrame.</span>
+
+<span class="sd">            **Parameters**</span>
+
+<span class="sd">                reself</span>
+
+<span class="sd">                    A logical variable. If ``True``, an instance of</span>
+<span class="sd">                    the object will be returned  to the calling routine</span>
+<span class="sd">                    upon exit. The default value is ``False``.</span>
+
+<span class="sd">            **Returns**</span>
+
+<span class="sd">                The object self if ``reself = True`` otherwise, ``None``.</span>
+<span class="sd">                However, this method causes side-effects by manipulating</span>
+<span class="sd">                the existing attributes of the object.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">):</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">key</span><span class="o">==</span><span class="s2">&quot;dataFrame&quot;</span><span class="p">:</span>
+                <span class="nb">setattr</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_dfref&quot;</span><span class="p">,</span> <span class="n">wref</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;Unrecognized input &#39;&quot;</span><span class="o">+</span><span class="n">key</span><span class="o">+</span><span class="s2">&quot;&#39; class attribute detected.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">()</span>
+                                <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cEnabled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ccolumn</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### verify the plot types to draw</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">enabled</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">value</span><span class="p">,</span><span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">names</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;Unrecognized input value for the </span><span class="se">\&quot;</span><span class="s2">plotType.upper.value</span><span class="se">\&quot;</span><span class="s2"> of the GridPlot object.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;The possible plot type names are given in </span><span class="se">\&quot;</span><span class="s2">plotType.upper.value</span><span class="se">\&quot;</span><span class="s2"> of the object.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">()</span>
+                            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">enabled</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">value</span><span class="p">,</span><span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">names</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;Unrecognized input value for the </span><span class="se">\&quot;</span><span class="s2">plotType.lower.value</span><span class="se">\&quot;</span><span class="s2"> of the GridPlot object.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;The possible plot type names are given in </span><span class="se">\&quot;</span><span class="s2">plotType.lower.value</span><span class="se">\&quot;</span><span class="s2"> of the object.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">()</span>
+                            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">diag</span><span class="o">.</span><span class="n">enabled</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">diag</span><span class="o">.</span><span class="n">value</span><span class="p">,</span><span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">diag</span><span class="o">.</span><span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">diag</span><span class="o">.</span><span class="n">names</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;Unrecognized input value for the </span><span class="se">\&quot;</span><span class="s2">plotType.diag.value</span><span class="se">\&quot;</span><span class="s2"> of the GridPlot object.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;The possible plot type names are given in </span><span class="se">\&quot;</span><span class="s2">plotType.diag.value</span><span class="se">\&quot;</span><span class="s2"> of the object.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">()</span>
+                            <span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">############################################################################################################################</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isdryrun</span><span class="p">:</span> <span class="k">return</span>
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+        <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span> <span class="c1"># turn on the interactive mode. Used to detach the figure from the command line in ipython</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### generate figure and axes if needed</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_constructBasePlot</span><span class="p">()</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### check data type</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_checkDataType</span><span class="p">()</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### check rows presence. This must be checked here, because it depends on the integrity of the in input dataFrame.</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### check columns presence. This must be checked here, because it depends on the integrity of the in input dataFrame.</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="c1"># assign x columns to plot</span>
+
+        <span class="c1">#if isinstance(self.columns,list):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_colnames</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_colindex</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">dfutils</span><span class="o">.</span><span class="n">getColNamesIndex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+            <span class="n">colindexlen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_colindex</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;The columns component of the current GridPlot object must point to&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;the names of a set of the columns of the input dataFrame to the GridPlot&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;class constructor.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">()</span>
+                            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">colindexlen</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;The length of the ``columns`` component of the GridPlot object cannot be zero.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">()</span>
+                            <span class="p">)</span>
+
+        <span class="c1"># set color data</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cEnabled</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ccolumn</span><span class="p">,</span><span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ccolumn</span><span class="p">,</span><span class="nb">int</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ccolname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ccolindex</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">dfutils</span><span class="o">.</span><span class="n">getColNamesIndex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">ccolumn</span><span class="p">)</span>
+                <span class="c1">#self._cdata = self._dfref().iloc[self.rows,self._colindex[0]].values.flatten()</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ccolumn</span><span class="p">,</span><span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ccolumn</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ccolname</span> <span class="o">=</span> <span class="s2">&quot;Count&quot;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ccolindex</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;The ccolumn component of the current GridPlot object must point to&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;the names of a column of the input dataFrame to the GridPlot&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;class constructor. It represents the set of values that will &quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;be used to colormap the subplots, where needed.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">()</span>
+                                <span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ccolindexlen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ccolindex</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ccolindexlen</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;The length of the ``ccolumn`` component of the GridPlot object cannot be larger than 1.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">()</span>
+                                <span class="p">)</span>
+
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### make pairgrid plot</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">PairGrid</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()[</span><span class="bp">self</span><span class="o">.</span><span class="n">_colnames</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">,:],</span> <span class="o">**</span><span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">fig</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### hide axes as requested</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;upper&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">diag</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;diag&quot;</span><span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### adjust subplot interspaces</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">wspace</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### add subplots</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nrow</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">axes</span><span class="p">[:])</span>
+        <span class="n">nrowMinusOne</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nrow</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ntot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nrow</span><span class="o">**</span><span class="mi">2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ntotStr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ntot</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nrow</span><span class="p">)</span> <span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nrow</span><span class="p">)</span> <span class="p">]</span>
+
+        <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">dataMin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nrow</span><span class="p">)</span>
+        <span class="n">dataMax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nrow</span><span class="p">)</span>
+        <span class="n">dataMargin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nrow</span><span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### add the diagonal subplots</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="n">avgDiagTime</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># must be defined here for later default use, when diag is disabled.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">diag</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+            <span class="c1">#self._progress.note( msg = &quot;generating diagonal subplots... &quot;, end = &quot;&quot; )</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">map_diag</span><span class="p">(</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">,</span> <span class="o">**</span><span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">histplot</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span> <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+            <span class="n">avgDiagTime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">delta</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nrow</span>
+            <span class="c1">#if self._reportEnabled:</span>
+            <span class="c1">#    self._progress.timer.toc()</span>
+            <span class="c1">#    print( &quot;done in &quot; + str(np.round(self._progress.timer.delta,6)) + &quot; seconds.&quot; )</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### add the off-diagonal subplots</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">for</span> <span class="n">irow</span><span class="p">,</span> <span class="n">axRow</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">axes</span><span class="p">[:]):</span>
+
+            <span class="c1"># compute data range</span>
+
+            <span class="c1">#dataMin[irow] = np.min( self._dfref().iloc[self.rows,self._colindex[irow]].values.flatten() )</span>
+            <span class="c1">#dataMax[irow] = np.max( self._dfref().iloc[self.rows,self._colindex[irow]].values.flatten() )</span>
+            <span class="c1">#dataMargin[irow] = (dataMax[irow] - dataMin[irow]) / 10</span>
+
+            <span class="k">for</span> <span class="n">icol</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axRow</span><span class="p">):</span>
+
+                <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">plotEnabled</span> <span class="o">=</span> <span class="kc">False</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">note</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;generating subplot #&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: (&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">irow</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">icol</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;) out of &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ntotStr</span> <span class="o">+</span> <span class="s2">&quot;... &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">icol</span><span class="o">==</span><span class="n">irow</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">diag</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+                
+                    <span class="n">plotEnabled</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="n">requestedPlotType</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">diag</span><span class="o">.</span><span class="n">value</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">diag</span><span class="o">.</span><span class="n">value</span><span class="o">==</span><span class="s2">&quot;histplot&quot;</span><span class="p">:</span> <span class="n">RequestedPlotClass</span> <span class="o">=</span> <span class="n">DensityPlot</span>
+
+                <span class="k">if</span> <span class="n">icol</span><span class="o">&gt;</span><span class="n">irow</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+
+                    <span class="n">plotEnabled</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="n">requestedPlotType</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">value</span>
+                    <span class="n">RequestedPlotClass</span> <span class="o">=</span> <span class="n">DensityPlot</span> <span class="k">if</span> <span class="s2">&quot;contour&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">value</span> <span class="k">else</span> <span class="n">LineScatterPlot</span>
+
+                <span class="k">if</span> <span class="n">icol</span><span class="o">&lt;</span><span class="n">irow</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+
+                    <span class="n">plotEnabled</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="n">requestedPlotType</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">value</span>
+                    <span class="n">RequestedPlotClass</span> <span class="o">=</span> <span class="n">DensityPlot</span> <span class="k">if</span> <span class="s2">&quot;contour&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">value</span> <span class="k">else</span> <span class="n">LineScatterPlot</span>
+
+                <span class="k">if</span> <span class="n">plotEnabled</span><span class="p">:</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span> <span class="o">=</span> <span class="n">RequestedPlotClass</span><span class="p">(</span> <span class="n">plotType</span> <span class="o">=</span> <span class="n">requestedPlotType</span>
+                                                                                <span class="p">,</span> <span class="n">dataFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span>
+                                                                                <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                                                                                <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="kc">False</span>
+                                                                                <span class="p">,</span> <span class="n">resetPlot</span> <span class="o">=</span> <span class="kc">None</span>
+                                                                                <span class="p">)</span>
+
+                    <span class="c1"># set properties from the template</span>
+
+                    <span class="n">propsDist</span> <span class="o">=</span> <span class="n">dcopy</span><span class="p">(</span> <span class="nb">vars</span><span class="p">(</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">,</span><span class="n">requestedPlotType</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+                    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">propsDist</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">],</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span><span class="o">.</span><span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span><span class="o">.</span><span class="n">xcolumns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_colnames</span><span class="p">[</span><span class="n">icol</span><span class="p">]</span>
+
+                    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span><span class="o">.</span><span class="n">_type</span><span class="o">.</span><span class="n">is1d</span><span class="p">:</span>
+
+                        <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span><span class="o">.</span><span class="n">ycolumns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_colnames</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>
+
+                        <span class="k">if</span> <span class="s2">&quot;contourf&quot;</span><span class="o">==</span><span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span><span class="o">.</span><span class="n">_type</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+                            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cEnabled</span><span class="p">:</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span><span class="o">.</span><span class="n">contourf</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">cmap</span> <span class="o">=</span> <span class="kc">None</span>
+                                <span class="c1"># adding colors only makes a unicolor square subplot</span>
+                                <span class="c1">#if &quot;colors&quot; not in vars(self.currentFig.subplotGrid[irow][icol].contourf.kws).keys():</span>
+                                <span class="c1">#    self.currentFig.subplotGrid[irow][icol].contourf.kws.colors = &quot;k&quot;</span>
+
+                        <span class="k">elif</span> <span class="s2">&quot;contour&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span><span class="o">.</span><span class="n">_type</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+                            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cEnabled</span><span class="p">:</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">cmap</span> <span class="o">=</span> <span class="kc">None</span>
+                                <span class="c1">#if &quot;colors&quot; not in vars(self.currentFig.subplotGrid[irow][icol].contour.kws).keys():</span>
+                                <span class="c1">#if &quot;colors&quot; in vars(self.layput.contour.contour.kws).keys():</span>
+                                <span class="c1">#    self.currentFig.subplotGrid[irow][icol].contour.kws.colors = &quot;k&quot;</span>
+
+                        <span class="k">else</span><span class="p">:</span>
+
+                            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span><span class="o">.</span><span class="n">ccolumns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ccolumn</span>
+
+                    <span class="c1"># make plot</span>
+
+                    <span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">icol</span><span class="o">!=</span><span class="n">irow</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span><span class="o">.</span><span class="n">make</span><span class="p">()</span>
+
+                    <span class="c1"># set the ticks and labels</span>
+
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">icol</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">irow</span> <span class="o">&lt;</span> <span class="n">nrowMinusOne</span><span class="p">:</span>
+                            <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">icol</span> <span class="o">&gt;</span> <span class="n">irow</span><span class="p">:</span>
+                            <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+                            <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+                <span class="c1"># report progress</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reportEnabled</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">irow</span><span class="o">==</span><span class="n">icol</span><span class="p">:</span>
+                        <span class="n">delta</span> <span class="o">=</span> <span class="n">avgDiagTime</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">delta</span>
+                    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;done in &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; seconds.&quot;</span> <span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+
+        <span class="c1"># add colorbar</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_addColorBar</span><span class="p">()</span>
+
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">if</span> <span class="n">reself</span><span class="p">:</span> <span class="k">return</span> <span class="bp">self</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### _addColorBar</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="GridPlot._addColorBar"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/GridPlot/index.html#paramonte.vis.GridPlot.GridPlot._addColorBar">[docs]</a>    <span class="k">def</span> <span class="nf">_addColorBar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cEnabled</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">note</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;generating colorbar... &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+
+            <span class="n">mappable</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">isDensityMappable</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="c1"># search for line / scatter mappable</span>
+
+            <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;scatter&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                    <span class="n">mappable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">scatterList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;line&quot;</span><span class="o">==</span><span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">value</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">lineCollection</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+                    <span class="n">mappable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">lineCollectionList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;lineScatter&quot;</span><span class="o">==</span><span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">value</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">lineScatter</span><span class="o">.</span><span class="n">lineCollection</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+                    <span class="n">mappable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">lineCollectionList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;scatter&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                    <span class="n">mappable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">scatterList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;line&quot;</span><span class="o">==</span><span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">value</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">lineCollection</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+                    <span class="n">mappable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">lineCollectionList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;lineScatter&quot;</span><span class="o">==</span><span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">value</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">lineScatter</span><span class="o">.</span><span class="n">lineCollection</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+                    <span class="n">mappable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">lineCollectionList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="c1"># search for contour mappable</span>
+
+            <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;contour&quot;</span><span class="o">==</span><span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                    <span class="n">mappable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">contourList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">isDensityMappable</span> <span class="o">=</span> <span class="kc">True</span>
+
+                <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;contourf&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                    <span class="n">mappable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">contourfList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">isDensityMappable</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;contour&quot;</span><span class="o">==</span><span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                    <span class="n">mappable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">contourList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">isDensityMappable</span> <span class="o">=</span> <span class="kc">True</span>
+
+                <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;contourf&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                    <span class="n">mappable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">contourfList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">isDensityMappable</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="c1"># add colorbar</span>
+
+            <span class="k">if</span> <span class="n">mappable</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">mappable</span> <span class="o">=</span> <span class="n">mappable</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">axes</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">colorbar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span> <span class="o">**</span><span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">kws</span><span class="p">)</span> <span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">isDensityMappable</span><span class="p">:</span>
+                    <span class="n">colorBarLabel</span> <span class="o">=</span> <span class="s2">&quot;Density&quot;</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ccolindexlen</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                    <span class="n">colorBarLabel</span> <span class="o">=</span> <span class="s2">&quot;Count from the Series Start&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">colorBarLabel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ccolname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">colorBarLabel</span><span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">set_figwidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">get_figwidth</span><span class="p">()</span><span class="o">*</span><span class="mf">1.3333</span><span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+                <span class="n">delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">delta</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;done in &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; seconds.&quot;</span>
+
+            <span class="k">else</span><span class="p">:</span>
+
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;No mappable were found in the current GridPlot. skipping...&quot;</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reportEnabled</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span> <span class="n">msg</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">newline</span> <span class="p">)</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### hide</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="GridPlot.hide"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/GridPlot/index.html#paramonte.vis.GridPlot.GridPlot.hide">[docs]</a>    <span class="k">def</span> <span class="nf">hide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">part</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Hides the requested part of the grid plot.</span>
+
+<span class="sd">        **Parameters**</span>
+
+<span class="sd">            part</span>
+
+<span class="sd">                A string with the following possible values:</span>
+
+<span class="sd">                    &quot;lower&quot;</span>
+<span class="sd">                        hides the lower triangle of the grid plot.</span>
+
+<span class="sd">                    &quot;upper&quot;</span>
+<span class="sd">                        hides the upper triangle of the grid plot.</span>
+
+<span class="sd">                    &quot;diag&quot;</span>
+<span class="sd">                        hides the diagonal of the grid plot.</span>
+
+<span class="sd">                    &quot;all&quot;</span>
+<span class="sd">                        hides all grid plots and the colorbar.</span>
+
+<span class="sd">                    &quot;colorbar&quot;</span>
+<span class="sd">                        hides the colorbar of the grid plot.</span>
+
+<span class="sd">                    The string can also be a mix of the above keywords,</span>
+<span class="sd">                    separated by the ``+`` sign or some other delimiter.</span>
+<span class="sd">                    For example, ``&quot;lower+upper+colorbar&quot;``</span>
+
+<span class="sd">        **Returns**</span>
+
+<span class="sd">            None</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">allhidden</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span> <span class="ow">in</span> <span class="n">part</span>
+        <span class="k">if</span> <span class="n">allhidden</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;upper&quot;</span> <span class="ow">in</span> <span class="n">part</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">map_upper</span><span class="p">(</span><span class="n">_hide_current_axis</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">allhidden</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;lower&quot;</span> <span class="ow">in</span> <span class="n">part</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">map_lower</span><span class="p">(</span><span class="n">_hide_current_axis</span><span class="p">)</span>
+            <span class="n">colnames</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">dfutils</span><span class="o">.</span><span class="n">getColNamesIndex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">allhidden</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">colnames</span><span class="p">)):</span>
+                    <span class="n">ax</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">axes</span><span class="p">[:][</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">colnames</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">colnames</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">allhidden</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;diag&quot;</span> <span class="ow">in</span> <span class="n">part</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">map_diag</span><span class="p">(</span><span class="n">_hide_current_axis</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">allhidden</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;colorbar&quot;</span> <span class="ow">in</span> <span class="n">part</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span></div>
+        <span class="c1">#self.currentFig.figure.set_figwidth(self.currentFig.figure.get_figwidth()*1.3333)</span>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### show</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="GridPlot.show"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/GridPlot/index.html#paramonte.vis.GridPlot.GridPlot.show">[docs]</a>    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">part</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Shows the requested part of the grid plot.</span>
+
+<span class="sd">            **Parameters**</span>
+
+<span class="sd">                part</span>
+<span class="sd">                    a string with the following possible values:</span>
+
+<span class="sd">                        &quot;lower&quot;</span>
+<span class="sd">                            shows the lower triangle of the grid plot.</span>
+
+<span class="sd">                        &quot;upper&quot;</span>
+<span class="sd">                            shows the lower triangle of the grid plot.</span>
+
+<span class="sd">                        &quot;diag&quot;</span>
+<span class="sd">                            shows the diagonal of the grid plot.</span>
+
+<span class="sd">                        &quot;all&quot;</span>
+<span class="sd">                            shows all grid plots.</span>
+
+<span class="sd">                        &quot;colorbar&quot;</span>
+<span class="sd">                            shows the colorbar of the grid plot.</span>
+
+<span class="sd">                        The string can also be a mix of the above keywords,</span>
+<span class="sd">                        separated by the ``+`` sign or some other delimiter.</span>
+<span class="sd">                        For example, ``&quot;lower+upper+colorbar&quot;``</span>
+
+<span class="sd">            **Returns**</span>
+
+<span class="sd">                None</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">allshown</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span> <span class="ow">in</span> <span class="n">part</span>
+        <span class="k">if</span> <span class="n">allshown</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;upper&quot;</span> <span class="ow">in</span> <span class="n">part</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">map_upper</span><span class="p">(</span><span class="n">_show_current_axis</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">allshown</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;lower&quot;</span> <span class="ow">in</span> <span class="n">part</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">map_lower</span><span class="p">(</span><span class="n">_show_current_axis</span><span class="p">)</span>
+            <span class="n">colnames</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">dfutils</span><span class="o">.</span><span class="n">getColNamesIndex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">colnamesLength</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">colnames</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colnamesLength</span><span class="p">):</span>
+                <span class="n">ax</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">axes</span><span class="p">[:][</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">colnamesLength</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">allshown</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;diag&quot;</span> <span class="ow">in</span> <span class="n">part</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">map_diag</span><span class="p">(</span><span class="n">_show_current_axis</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">allshown</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;colorbar&quot;</span> <span class="ow">in</span> <span class="n">part</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_addColorBar</span><span class="p">()</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### addTarget</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="GridPlot.addTarget"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/GridPlot/index.html#paramonte.vis.GridPlot.GridPlot.addTarget">[docs]</a>    <span class="k">def</span> <span class="nf">addTarget</span>   <span class="p">(</span> <span class="bp">self</span>
+                    <span class="p">,</span> <span class="n">value</span> <span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="p">,</span> <span class="n">tp</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="p">,</span> <span class="n">tp</span><span class="o">.</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Call the target callable associated with each element of</span>
+<span class="sd">        currentFig.subplotGrid of the GridPlot object to add target</span>
+<span class="sd">        points and/or lines to all plots of the ``GridPlot`` figure.</span>
+<span class="sd">        This method is supposed to be called only after a grid plot</span>
+<span class="sd">        has been generated.</span>
+
+<span class="sd">        **Parameters**</span>
+
+<span class="sd">            value (optional)</span>
+
+<span class="sd">                A numpy array, or list, or tuple whose length equals the</span>
+<span class="sd">                number of columns/rows of the grid plot, each element of</span>
+<span class="sd">                which represents the target value associated with the</span>
+<span class="sd">                corresponding variable on the ``x`` axis of the plot,</span>
+<span class="sd">                from the left to the right.</span>
+
+<span class="sd">                Alternatively, ``value`` can be a string with the following </span>
+<span class="sd">                possible value:</span>
+
+<span class="sd">                    &quot;mode&quot;</span>
+
+<span class="sd">                        The variable values corresponding to the mode of the </span>
+<span class="sd">                        &quot;SampleLogFunc&quot; column of the input dataFrame will </span>
+<span class="sd">                        be used. If no &quot;SampleLogFunc&quot; columns name exists </span>
+<span class="sd">                        in the input dataFrame, an exception will be raised.</span>
+
+<span class="sd">                        This is the **default value** for the input variable </span>
+<span class="sd">                        ``value``.</span>
+
+<span class="sd">                    &quot;mean&quot;</span>
+
+<span class="sd">                        The variable values corresponding to the mode of the </span>
+<span class="sd">                        &quot;SampleLogFunc&quot; column of the input dataFrame will </span>
+<span class="sd">                        be used. If no &quot;SampleLogFunc&quot; columns name exists </span>
+<span class="sd">                        in the input dataFrame, an exception will be raised.</span>
+
+<span class="sd">                If not provided, the default will be set to the state</span>
+<span class="sd">                (coordinates) of the mode of the &quot;SampleLogFunc&quot; column </span>
+<span class="sd">                in the input dataFrame to the object. This would work only</span>
+<span class="sd">                when the input dataFrame is the contents of a ParaMonte</span>
+<span class="sd">                output chain or sample file.</span>
+
+<span class="sd">        **Returns**</span>
+
+<span class="sd">            None. However, this method causes side-effects by manipulating</span>
+<span class="sd">            the existing attributes of the ``Target`` objects in </span>
+<span class="sd">            ``currentFig.subplotGrid`` of the GridPlot object.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;mode&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">value</span><span class="o">==</span><span class="s2">&quot;mode&quot;</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">_dfutils</span> <span class="kn">import</span> <span class="n">getMaxLogFunc</span>
+                <span class="n">maxLogFunc</span> <span class="o">=</span> <span class="n">getMaxLogFunc</span><span class="p">(</span><span class="n">dataFrame</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">,:])</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">maxLogFunc</span><span class="o">.</span><span class="n">dfrow</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_colindex</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">value</span><span class="o">==</span><span class="s2">&quot;mean&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()[</span><span class="bp">self</span><span class="o">.</span><span class="n">_colnames</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">,:]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="n">value</span><span class="o">==</span><span class="s2">&quot;median&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()[</span><span class="bp">self</span><span class="o">.</span><span class="n">_colnames</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">,:]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Iterable</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;The input argument ``value`` must be either a string or an array of target value.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;Here is the help information for addTarget():&quot;</span>
+                                <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">addTarget</span><span class="o">.</span><span class="vm">__doc__</span>
+                                <span class="p">)</span>
+
+        <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">irow</span><span class="p">,</span> <span class="n">plotObjectRow</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">subplotGrid</span><span class="p">[:]):</span>
+
+            <span class="k">for</span> <span class="n">icol</span><span class="p">,</span> <span class="n">plotObject</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">plotObjectRow</span><span class="p">):</span>
+
+                <span class="n">counter</span> <span class="o">+=</span> <span class="mi">0</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">note</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;generating target #&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: (&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">irow</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">icol</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;) out of &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ntotStr</span> <span class="o">+</span> <span class="s2">&quot;... &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="p">)</span>
+
+                <span class="c1">#import matplotlib.pyplot as plt</span>
+                <span class="c1">#plt.sca(self.currentFig.pairgrid.axes[irow][icol])</span>
+                <span class="k">if</span> <span class="n">icol</span><span class="o">&gt;</span><span class="n">irow</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">upper</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+                    <span class="n">plotObject</span><span class="o">.</span><span class="n">target</span><span class="p">(</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[</span> <span class="n">value</span><span class="p">[</span><span class="n">icol</span><span class="p">],</span> <span class="n">value</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span> <span class="p">],</span> <span class="n">axes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span> <span class="p">)</span>
+                <span class="k">elif</span> <span class="n">icol</span><span class="o">&lt;</span><span class="n">irow</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">lower</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+                    <span class="n">plotObject</span><span class="o">.</span><span class="n">target</span><span class="p">(</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[</span> <span class="n">value</span><span class="p">[</span><span class="n">icol</span><span class="p">],</span> <span class="n">value</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span> <span class="p">],</span> <span class="n">axes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span> <span class="p">)</span>
+                <span class="k">elif</span> <span class="n">icol</span><span class="o">==</span><span class="n">irow</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotType</span><span class="o">.</span><span class="n">diag</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+                    <span class="n">plotObject</span><span class="o">.</span><span class="n">target</span><span class="p">(</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[</span> <span class="n">value</span><span class="p">[</span><span class="n">icol</span><span class="p">],</span> <span class="n">value</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span> <span class="p">],</span> <span class="n">axes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">pairgrid</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">irow</span><span class="p">][</span><span class="n">icol</span><span class="p">]</span> <span class="p">)</span>
+
+                <span class="c1"># report progress</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reportEnabled</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+                    <span class="n">delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">delta</span>
+                    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;done in &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; seconds.&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">newline</span> <span class="p">)</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### _getDocString</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="GridPlot._getDocString"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/GridPlot/index.html#paramonte.vis.GridPlot.GridPlot._getDocString">[docs]</a>    <span class="k">def</span> <span class="nf">_getDocString</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">docString</span>   <span class="o">=</span> <span class="n">newline</span> \
+                    <span class="o">+</span> <span class="s2">&quot;Here is the help information on the GridPlot class:&quot;</span> <span class="o">+</span> <span class="n">newline</span> \
+                    <span class="o">+</span> <span class="n">newline</span> \
+                    <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span> \
+                    <span class="o">+</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">docString</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### helpme</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="GridPlot.helpme"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/GridPlot/index.html#paramonte.vis.GridPlot.GridPlot.helpme">[docs]</a>    <span class="k">def</span> <span class="nf">helpme</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">topic</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Print the documentation for the input string topic. </span>
+<span class="sd">        If the topic does not exist, the documentation for</span>
+<span class="sd">        the object will be printed.</span>
+<span class="sd">     </span>
+<span class="sd">            **Parameters**</span>
+<span class="sd">         </span>
+<span class="sd">                topic (optional)</span>
+
+<span class="sd">                A string containing the name of the object </span>
+<span class="sd">                for which help is needed.</span>
+
+<span class="sd">            **Returns**</span>
+<span class="sd">         </span>
+<span class="sd">                None</span>
+<span class="sd">         </span>
+<span class="sd">            **Example**</span>
+
+<span class="sd">                .. code-block:: python</span>
+<span class="sd">                    :linenos:</span>
+
+<span class="sd">                    helpme()</span>
+<span class="sd">                    helpme(&quot;make&quot;)</span>
+<span class="sd">                    helpme(&quot;helpme&quot;)</span>
+<span class="sd">                    helpme(&quot;getLogLinSpace&quot;)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">exec</span><span class="p">(</span><span class="s2">&quot;print(self.&quot;</span><span class="o">+</span><span class="n">topic</span><span class="o">+</span><span class="s2">&quot;.__doc__)&quot;</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">())</span>
+        <span class="k">return</span> <span class="kc">None</span></div></div>
+
+    <span class="c1">################################################################################################################################</span>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="_hide_current_axis"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/GridPlot/index.html#paramonte.vis.GridPlot._hide_current_axis">[docs]</a><span class="k">def</span> <span class="nf">_hide_current_axis</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="_show_current_axis"><a class="viewcode-back" href="../../../autoapi/paramonte/vis/GridPlot/index.html#paramonte.vis.GridPlot._show_current_axis">[docs]</a><span class="k">def</span> <span class="nf">_show_current_axis</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+    <div>
+        <p>
+            <a href="https://www.cdslab.org/paramonte">ParaMonte: Plain Powerful Parallel Monte Carlo Library</a>.<br/>
+            &copy; Copyright 2020, <a href="https://www.cdslab.org" target="_blank">The Computational Data Science Lab</a>.<br/>
+        </p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </div>
+    <!-- Start of statc -->
+    <div style="color: #ffffff; float: none; width: 100%;">
+        <span style="font-size:0.8em">visitor count: 
+            <script type="text/javascript">
+                var sc_project=12178963; 
+                var sc_invisible=0; 
+                var sc_security="e0dfe0f9"; 
+                var sc_text=3; 
+                var scJsHost = "https://";
+                document.write("<sc"+"ript type='text/javascript' src='" +
+                scJsHost+
+                "statcounter.com/counter/counter.js'></"+"script>");
+            </script>
+        </span>
+    </div>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

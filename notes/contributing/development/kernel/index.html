@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="developmentguidelinesgeneralcontributioncontributing,  development, guidelines, kernel, contribution, contributing">
+<title>Kernel development guidelines | ParaMonte: Parallel Monte Carlo Library</title>
+<link rel="stylesheet" href="/paramonte/css/prismOkaidia.css">
+<script src="/paramonte/js/prismOkaidia.js"></script>
+<!--
+<link rel="stylesheet" href="/paramonte/css/syntax.css">
+-->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/paramonte/css/bootstrap.min.css">
+
+
+
+<link rel="stylesheet" href="/paramonte/css/customstyles.css">
+<link rel="stylesheet" href="/paramonte/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/paramonte/css/theme-cdslab.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/paramonte/js/jquery.navgoco.min.js"></script>
+<!-- make sidebar non-accordion -->
+<script src="/paramonte/js/lockScrollbarPosition.js"></script>
+<!-- make sidebar non-accordion -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.sidenav').navgoco({
+              accordion: false,
+              caret: '<span class="caret"></span>',
+              openClass: 'open',
+              save: true,
+              cookie: {
+                  name: 'navgoco',
+                  expires: false,
+                  path: '/'
+              },
+              slide: {
+                  duration: 400,
+                  easing: 'swing'
+              }
+          });
+    });
+</script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<!--
+-->
+<script src="/paramonte/js/toc.js"></script>
+<script src="/paramonte/js/customscripts.js"></script>
+<link rel="shortcut icon" href="/paramonte/images/favicon.ico">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="" href="/paramonte/feed.xml">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6JB9XNG83"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J6JB9XNG83');
+</script>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+    </head>
+    <body>
+        <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div id="sticky" class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-book fa-lg navbar-brand" href="/paramonte/index.html">&nbsp;<span class="projectTitle"> ParaMonte: Parallel Monte Carlo Library</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                    
+                        
+                            <li><a href="https://github.com/cdslaborg/paramonte" target="_blank" rel="noopener">GitHub</a></li>
+                        
+                    
+                        
+                            <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/78946-paramonte" target="_blank" rel="noopener">MathWorks</a></li>
+                        
+                    
+                        
+                            <li><a href="https://pypi.org/project/paramonte/" target="_blank" rel="noopener">PyPI</a></li>
+                        
+                    
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CDSLab<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/#about" target="_blank" rel="noopener">About</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/people" target="_blank" rel="noopener">People</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/research" target="_blank" rel="noopener">Research</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/matlab/" target="_blank" rel="noopener">MATLAB Programming</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/python/" target="_blank" rel="noopener">Python Programming</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="keyword search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/paramonte/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: "/paramonte/search.json",
+                                searchResultTemplate: '<li><a href="https://www.cdslab.org/paramonte{url}" title="Kernel development guidelines">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+        <!-- Page Content -->
+        <div class="container">
+            <div id="main">
+                <!-- Content Row -->
+                <div class="row">
+                    
+                    
+                        <!-- Sidebar Column -->
+                        <div class="col-md-3" id="tg-sb-sidebar">
+                            
+<ul id="mysidebar" class="sidenav">
+    <!--
+    -->
+    <li class="sidebarTitle">Table of Pages </li>
+    
+        
+            
+                <li>
+                    <a title="Overview" href="#"><b>Overview</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Preface" href="/paramonte/notes/overview/preface/">Preface</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte kernel release notes" href="/paramonte/notes/overview/paramonte-kernel-release-notes/">ParaMonte kernel release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte MATLAB release notes" href="/paramonte/notes/overview/paramonte-matlab-release-notes/">ParaMonte MATLAB release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Python release notes" href="/paramonte/notes/overview/paramonte-python-release-notes/">ParaMonte Python release notes</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Installation" href="#"><b>Installation</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte pre-installation notes" href="/paramonte/notes/installation/readme/">ParaMonte pre-installation notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C/C++/Fortran - Windows" href="/paramonte/notes/installation/windows/">ParaMonte C/C++/Fortran - Windows</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C/C++/Fortran - macOS" href="/paramonte/notes/installation/macos/">ParaMonte C/C++/Fortran - macOS</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C/C++/Fortran - Linux" href="/paramonte/notes/installation/linux/">ParaMonte C/C++/Fortran - Linux</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte MATLAB" href="/paramonte/notes/installation/matlab/">ParaMonte MATLAB</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Python" href="/paramonte/notes/installation/python/">ParaMonte Python</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="API documentation" href="#"><b>API documentation</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Kernel API" href="https://cdslaborg.github.io/paramonte-kernel-doc/html/" target="_blank" rel="noopener">ParaMonte Kernel API</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Python API" href="/paramonte/notes/api/python/autoapi/paramonte/">ParaMonte Python API</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte MATLAB API" href="/paramonte/notes/api/matlab/">ParaMonte MATLAB API</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Usage - ParaDRAM sampler" href="#"><b>Usage - ParaDRAM sampler</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM quick start" href="/paramonte/notes/usage/paradram/interface/">ParaDRAM quick start</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM optional input file" href="/paramonte/notes/usage/paradram/input/">ParaDRAM optional input file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation specifications" href="/paramonte/notes/usage/paradram/specifications/">ParaDRAM simulation specifications</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation output files" href="/paramonte/notes/usage/paradram/output/">ParaDRAM simulation output files</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation restart" href="/paramonte/notes/usage/paradram/restart/">ParaDRAM simulation restart</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Building ParaMonte application" href="#"><b>Building ParaMonte application</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Building ParaMonte C application" href="/paramonte/notes/build/c/">Building ParaMonte C application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Building ParaMonte C++ application" href="/paramonte/notes/build/cpp/">Building ParaMonte C++ application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Building ParaMonte Fortran application" href="/paramonte/notes/build/fortran/">Building ParaMonte Fortran application</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Running ParaMonte application" href="#"><b>Running ParaMonte application</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Running C/C++/Fortran application" href="/paramonte/notes/run/default/">Running C/C++/Fortran application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Running MATLAB application" href="/paramonte/notes/run/matlab/">Running MATLAB application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Running Python application" href="/paramonte/notes/run/python/">Running Python application</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="C examples" href="#"><b>C examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Sampling a Multivariate Normal distribution" href="/paramonte/notes/examples/c/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="C++ examples" href="#"><b>C++ examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Sampling a Multivariate Normal distribution" href="/paramonte/notes/examples/cpp/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Fortran examples" href="#"><b>Fortran examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Sampling a Multivariate Normal distribution" href="/paramonte/notes/examples/fortran/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="MATLAB examples" href="#"><b>MATLAB examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="MATLAB Live Scripts" href="/paramonte/notes/examples/matlab/mlx/">MATLAB Live Scripts</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Post-processing existing simulations" href="/paramonte/notes/examples/matlab/postprocess/">Post-processing existing simulations</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Python examples" href="#"><b>Python examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Jupyter Notebooks" href="/paramonte/notes/examples/python/jupyter/">Jupyter Notebooks</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Post-processing existing simulations" href="/paramonte/notes/examples/python/postprocess/">Post-processing existing simulations</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Code Coverage Reports" href="#"><b>Code Coverage Reports</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Guidelines" href="/paramonte/notes/codecov/">Guidelines</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - Serial" href="https://cdslaborg.github.io/paramonte-codecov/kernel/serial/" target="_blank" rel="noopener">Kernel - Serial</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - MPI Parallel" href="https://cdslaborg.github.io/paramonte-codecov/kernel/mpi/" target="_blank" rel="noopener">Kernel - MPI Parallel</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - Coarray Parallel" href="https://cdslaborg.github.io/paramonte-codecov/kernel/caf/" target="_blank" rel="noopener">Kernel - Coarray Parallel</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Contributing to ParaMonte" href="#"><b>Contributing to ParaMonte</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Reporting defects" href="/paramonte/notes/contributing/defects">Reporting defects</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Requesting enhancements" href="/paramonte/notes/contributing/enhancements">Requesting enhancements</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Development guidelines - general" href="/paramonte/notes/contributing/development/general/">Development guidelines - general</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li class="active"><a title="Development guidelines - kernel" href="/paramonte/notes/contributing/development/kernel/">Development guidelines - kernel</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Troubleshooting" href="#"><b>Troubleshooting</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Enhancement-requests and bug-reports" href="/paramonte/notes/troubleshooting/issues/">Enhancement-requests and bug-reports</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="-bash: Permission denied" href="/paramonte/notes/troubleshooting/bash-permission-denied/">-bash: Permission denied</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="bash: matlab: command not found" href="/paramonte/notes/troubleshooting/bash-matlab-command-not-found/">bash: matlab: command not found</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="catastrophic error: cannot open source file" href="/paramonte/notes/troubleshooting/catastrophic-error-cannot-open-source-file/">catastrophic error: cannot open source file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Catastrophic error: could not set locale" href="/paramonte/notes/troubleshooting/catastrophic-error-could-not-set-locale/">Catastrophic error: could not set locale</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="xcrun: error: unable to find utility "clang"" href="/paramonte/notes/troubleshooting/xcrun-error-unable-to-find-utility-clang/">xcrun: error: unable to find utility "clang"</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="changing directory on Windows CMD" href="/paramonte/notes/troubleshooting/windows-drive-change/">changing directory on Windows CMD</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="error while loading shared libraries" href="/paramonte/notes/troubleshooting/error-while-loading-shared-libraries/">error while loading shared libraries</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="finding the MPI libraries on Windows" href="/paramonte/notes/troubleshooting/finding-mpi-libraries-on-windows/">finding the MPI libraries on Windows</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Fortran runtime error: End of file" href="/paramonte/notes/troubleshooting/fortran-runtime-error-end-of-file/">Fortran runtime error: End of file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="libgfortran not found" href="/paramonte/notes/troubleshooting/libgfortran-not-found/">libgfortran not found</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="macOS: developer cannot be verified" href="/paramonte/notes/troubleshooting/macos-developer-cannot-be-verified/">macOS: developer cannot be verified</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: could not find module" href="/paramonte/notes/troubleshooting/python-could-not-find-module/">Python: could not find module</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: module object is not callable" href="/paramonte/notes/troubleshooting/python-module-object-is-not-callable/">Python: module object is not callable</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: segmentation-fault error" href="/paramonte/notes/troubleshooting/python-segmentation-fault/">Python: segmentation-fault error</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+    
+    <!-- if you aren't using the accordion, uncomment this block:
+    -->
+    <p class="external">
+        <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+    </p>
+</ul>
+<!--
+This highlights the active parent class in the navgoco sidebar. 
+This is critical so that the parent expands when you're viewing a page.
+This must appear below the sidebar code above.
+Otherwise, if placed inside customscripts.js,
+the script runs before the sidebar code runs and the class never gets inserted.
+-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+                        </div>
+                        
+                    
+                    <!-- Content Column -->
+                    <div class="col-md-9" id="tg-sb-content">
+                        <div class="post-header">
+   <h1 class="post-title-main">Kernel development guidelines</h1>
+</div>
+
+<div class="post-content">
+    
+    
+    
+        <br>
+        
+<script>
+    $( document ).ready(function() {
+        // Handler for .ready() called.
+        $('#toc').toc({ minimumHeaders: 0 
+                      , listType: 'ol'
+                      , showSpeed: 0
+                      , headers: 'h2,h3,h4,h5,h6'
+        });
+        /* the following offset helps account for the space taken up by the floating toolbar. */
+        $('#toc').on('click', 'a', function() {
+            var target = $(this.getAttribute('href')), scroll_target = target.offset().top$(window).scrollTop(scroll_target - 10);
+            return false
+        })
+    });
+</script>
+
+<div id="toc"></div>
+
+    
+    
+    
+<div id="toc"></div>
+
+<div align="center">
+    <a href="https://github.com/cdslaborg/paramonte/issues?q=is%3Aissue+is%3Aclosed" target="_blank"><img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed-raw/cdslaborg/paramonte?color=green&amp;style=flat-square" /></a>
+    <a href="https://github.com/cdslaborg/paramonte/issues?q=is%3Aopen+is%3Aissue" target="_blank"><img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/cdslaborg/paramonte?style=flat-square" /></a>
+    <a href="https://github.com/cdslaborg/paramonte/pulls?q=is%3Apr+is%3Aclosed" target="_blank"><img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed-raw/cdslaborg/paramonte?color=green&amp;style=flat-square" /></a>
+    <a href="https://github.com/cdslaborg/paramonte/pulls?q=is%3Aopen+is%3Apr" target="_blank"><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr-raw/cdslaborg/paramonte?style=flat-square" /></a>
+    <br />
+    <a href="https://github.com/cdslaborg/paramonte/watchers" target="_blank"><img alt="GitHub watchers" src="https://img.shields.io/github/watchers/cdslaborg/paramonte?style=social" /></a>
+    &nbsp;
+    <a href="https://github.com/cdslaborg/paramonte/stargazers" target="_blank"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/cdslaborg/paramonte?style=social" /></a>
+    &nbsp;
+    <a href="https://github.com/cdslaborg/paramonte/network/members" target="_blank"><img alt="GitHub forks" src="https://img.shields.io/github/forks/cdslaborg/paramonte?style=social" /></a>
+</div>
+
+<p><br /></p>
+
+<p>Thank you for your interest in contributing to ParaMonte! Your help is very much appreciated. 
+Below are some tips and guidelines to get started with <strong>contributing to the ParaMonte kernel routines</strong>.</p>
+
+<h2 id="initial-steps">Initial steps</h2>
+
+<ul>
+  <li>First, read the <a href="../general/" target="_blank">general development guidelines</a>.</li>
+  <li>Take a look at the <a href="https://github.com/cdslaborg/paramonte/issues" target="_blank">issues</a> page. 
+Make sure you find an open issue <strong>about the kernel routines</strong> and that you do not duplicate someone else’s work.</li>
+  <li>If your contribution does not exist as an issue, post a <a href="https://github.com/cdslaborg/paramonte/issues/new/choose" target="_blank">new issue</a> discussing the changes you’re proposing to implement, 
+whether bug fix(es) or enhancement/feature request(s), or give the rest of developers a heads up that you are going to start work on <a href="https://github.com/cdslaborg/paramonte/issues" target="_blank">an open issue</a>.</li>
+  <li><a href="https://help.github.com/articles/fork-a-repo/" target="_blank">Fork the ParaMonte git project</a> to your private account.</li>
+</ul>
+
+<h2 id="kernel-development-conventions">Kernel development conventions</h2>
+
+<p>Pay careful attention to the following conventions used in the development of the kernel routines.</p>
+
+<h3 id="preprocessor-directives">Preprocessor directives</h3>
+
+<p>The kernel routines of ParaMonte heavily rely on the compiler preprocessing directives to implement multiple completely different parallelism paradigms (serial, MPI, Coarray) that are specifically tailored for the needs of multiple completely different programming languages (C, C++, Fortran, Julia, MATLAB, Python, R, …) for different builds (<code class="language-plaintext highlighter-rouge">debug</code>, <code class="language-plaintext highlighter-rouge">testing</code>, <code class="language-plaintext highlighter-rouge">release</code>), for different operating systems (<code class="language-plaintext highlighter-rouge">Windows</code>, <code class="language-plaintext highlighter-rouge">Linux</code>, <code class="language-plaintext highlighter-rouge">macOS</code>, <code class="language-plaintext highlighter-rouge">WSL</code>), and many more.</p>
+
+<p>Despite significant efforts to minimize the use of preprocessor directive in the kernel routines, their frequent usage is unavoidable as they greatly minimize the cost of development. Simultaneously, however, the preprocessor directive can increase confusion and and lead to implicit bugs that are hard to detect.</p>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Any code section that requires some specific operating system, platform, compiler, programming language, compiler settings, or parallelism paradigms must be fenced with the appropriate preprocessor macros such that it is executed only in the appropriate circumstances. Failure to do so, will lead to a non-portable codebase. In general, there must exist an <code class="language-plaintext highlighter-rouge">#else</code> preprocessor section for any fenced code section that appropriately handles other possible scenarios, if the other scenarios are not possible, it is followed by an <code class="language-plaintext highlighter-rouge">#error "error message"</code> preprocessor directive.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The preprocessor macros must be always defined with uppercase characters. This is to easily distinguish macros from other variables in the regular sections of the code.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Define macros as propositions that evaluate to either TRUE or FALSE. For example, <code class="language-plaintext highlighter-rouge">OS_IS_WIDOWS</code> or <code class="language-plaintext highlighter-rouge">MPI_ENABLED</code>.</div>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When developing or debugging a particular feature that is bound to a specific set of preprocessor macros, you can request the compiler to generate intermediate preprocessed files that are free from preprocessor directives and let you focus on the problem better. In doing so, keep in mind that every change you make to the intermediate codes has be carefully implemented in the original set of codes.</div>
+
+<h4 id="platform-preprocessor-directives">Platform preprocessor directives</h4>
+
+<p>If there is any section of the code that must be exclusively executed on a particular platform or Operating System (OS), it must be properly fenced by the appropriate preprocessor flag.</p>
+
+<ol>
+  <li>The <code class="language-plaintext highlighter-rouge">OS_IS_WINDOWS</code> preprocessor macro must be defined for any code section that exclusively belongs to Windows operating systems.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">OS_IS_DARWIN</code> preprocessor macro must be defined for any code section that exclusively belongs to macOS operating systems.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">OS_IS_LINUX</code> preprocessor macro must be defined for any code section that exclusively belongs to Linux operating systems.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">OS_IS_WSL</code> preprocessor macro must be defined for any code section that exclusively belongs to Microsoft Subsystem for Linux.
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The <code class="language-plaintext highlighter-rouge">OS_IS_WSL</code> preprocessor macro is mostly useful for defining code sections that are written for compatibility with Microsoft Subsystem for Linux Version 1 (<strong>WSL1</strong>). For example, WSL1 is known to have issues with passing internal procedures to external routines since <a href="https://github.com/Microsoft/WSL/issues/3083" target="_blank">WSL has a non-executable stack</a>. Although, <a href="https://github.com/Microsoft/WSL/issues/286" target="_blank">this issue</a> appears to have been resolved in <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#WSL_2">WSL2</a>, as a developer, you should be mindful of all users on all platforms.</div>
+  </li>
+</ol>
+
+<p>Several issues also need special care when developing ParaMonte on Windows OS:</p>
+
+<ul>
+  <li>On Windows systems, <strong>file-locking</strong> by a processor often leads to problems and program crashes in parallel simulations. Since, currently only Intel compilers are supported and tested with the ParaMonte library, a quick remedy is activate the shared file manipulation via the Intel compiler <code class="language-plaintext highlighter-rouge">SHARED</code> argument that can be passed to <code class="language-plaintext highlighter-rouge">open()</code> statements. For example,
+    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">open</span><span class="p">(</span><span class="w"> </span><span class="n">unit</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="o">%</span><span class="n">SampleFile</span><span class="o">%</span><span class="n">unit</span><span class="w">            </span><span class="p">&amp;</span><span class="w">
+    </span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="o">%</span><span class="n">SampleFile</span><span class="o">%</span><span class="n">Path</span><span class="o">%</span><span class="n">original</span><span class="w">   </span><span class="p">&amp;</span><span class="w">
+    </span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="o">%</span><span class="n">SampleFile</span><span class="o">%</span><span class="n">status</span><span class="w">          </span><span class="p">&amp;</span><span class="w">
+    </span><span class="p">,</span><span class="w"> </span><span class="n">iostat</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="o">%</span><span class="n">SampleFile</span><span class="o">%</span><span class="n">Err</span><span class="o">%</span><span class="n">stat</span><span class="w">        </span><span class="p">&amp;</span><span class="w">
+</span><span class="cp">#if defined INTEL_COMPILER_ENABLED &amp;&amp; defined OS_IS_WINDOWS</span><span class="w">
+    </span><span class="p">,</span><span class="w"> </span><span class="n">SHARED</span><span class="w">                                      </span><span class="p">&amp;</span><span class="w">
+</span><span class="cp">#endif</span><span class="w">
+    </span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="o">%</span><span class="n">SampleFile</span><span class="o">%</span><span class="n">Position</span><span class="o">%</span><span class="k">value</span><span class="w">  </span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>To properly build shared (DLL) libraries on Windows OS, every procedure name must be correctly extracted via Intel compiler <code class="language-plaintext highlighter-rouge">DLLEXPORT</code> directive. Currently, all names are manually extracted immediately below each procedure’s interface. This is normally not an issue, as long the symbols are correctly exported when the procedure is being developed. However, this can quickly become a challenge if the developer uses a wrong symbol name for the procedure or completely forgets to export the symbol.
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> A potential solution to this problem is to enable builds with CMAKE on Windows and <a href="https://blog.kitware.com/create-dlls-on-windows-without-declspec-using-new-cmake-export-all-feature/" target="_blank">request CMAKE to automatically export all symbols</a>. Indeed, extending the current cmake build system of the ParaMonte library to Windows would be a great contribution to the package, if you can accomplish it. Before doing so, check the issues page of the project to make sure you would not duplicate someone else’s work.</div>
+  </li>
+</ul>
+
+<h4 id="compiler-suite-preprocessor-directives">Compiler suite preprocessor directives</h4>
+
+<p>Generally, one should avoid the use of code that bind the library to a particular compiler suite. Sometimes, however, this is unavoidable. Currently, the library supports builds with the <strong>Intel</strong> and <strong>GNU</strong> compiler suites.</p>
+
+<ol>
+  <li>The <code class="language-plaintext highlighter-rouge">INTEL_COMPILER_ENABLED</code> preprocessor macro must be defined for any code section that requires the Intel compiler to recognize the syntax. This preprocessor flag is automatically defined by the ParaMonte build scripts and passed to the Intel preprocessor when the Intel compiler is used to build the library.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">GNU_COMPILER_ENABLED</code> preprocessor macro must be defined for any code section that requires the GNU compiler to recognize the syntax. This preprocessor flag is automatically defined by the GNU preprocessor on all platforms.</li>
+</ol>
+
+<h4 id="parallelism-preprocessor-directives">Parallelism preprocessor directives</h4>
+
+<p>There are currently two preprocessor directives that determine the type of parallelism to which the code section sandwiched by the preprocessor macro belongs.</p>
+
+<ol>
+  <li>The <code class="language-plaintext highlighter-rouge">MPI_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to MPI-parallelized versions of the kernel routines.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">CAF_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to CAF-parallelized versions of the kernel routines (Coarray parallelism).</li>
+  <li>The <code class="language-plaintext highlighter-rouge">OMP_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to OMP-parallelized versions of the kernel routines (OpenMP parallelism). As of Dec 2020, there is no section of the kernel routines uses OpenMP parallelism.</li>
+</ol>
+
+<p>For example, if a section is MPI-parallelized, it must be fenced with the following preprocessor directive,</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#if defined MPI_ENABLED</span><span class="w">
+</span><span class="k">call</span><span class="w"> </span><span class="n">mpi_initialized</span><span class="p">(</span><span class="w"> </span><span class="n">isInitialized</span><span class="p">,</span><span class="w"> </span><span class="n">ierrMPI</span><span class="w"> </span><span class="p">)</span><span class="w">
+</span><span class="cp">#endif</span><span class="w">
+</span></code></pre></div></div>
+
+<p>or, if a section must be executed in either MPI or Coarray parallelisms, it must be fenced via the following preprocessor directive,</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#if defined CAF_ENABLED || defined MPI_ENABLED</span><span class="w">
+</span><span class="kt">integer</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">imageID</span><span class="w">
+</span><span class="cp">#endif</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="library-type-preprocessor-directives">Library type preprocessor directives</h4>
+
+<p>Any code section that must be activated for a particular library build type (<code class="language-plaintext highlighter-rouge">static</code> vs. <code class="language-plaintext highlighter-rouge">dynamic</code> build) must be fenced with appropriate preprocessing macros.</p>
+
+<ol>
+  <li>The <code class="language-plaintext highlighter-rouge">DLL_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to dynamic library builds. Although <code class="language-plaintext highlighter-rouge">DLL</code> is reminiscent of Windows shared library files, the ParaMonte build scripts define this preprocessor macro for all dynamic library builds irrespective of the platform (Windows, Linux, macOS, …).</li>
+</ol>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Use this preprocessor macro in combination with <strong><code class="language-plaintext highlighter-rouge">IFORT_ENABLED</code></strong> to enable DLL symbol export by the Intel <strong><code class="language-plaintext highlighter-rouge">ifort</code></strong> compiler on macOS and Windows operating systems.</div>
+
+<h4 id="library-build-preprocessor-directives">Library build preprocessor directives</h4>
+
+<p>Occasionally, it is necessary to define sections of code that should run only in a particular library build. Currently, the ParaMonte library build scripts support three different library builds (<code class="language-plaintext highlighter-rouge">debug</code>, <code class="language-plaintext highlighter-rouge">testing</code>, and <code class="language-plaintext highlighter-rouge">release</code>). Any code section that does not belong to the release (production) build must be appropriately fenced with appropriate preprocessor flags.</p>
+
+<ol>
+  <li>The <code class="language-plaintext highlighter-rouge">DEBUG_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to the <code class="language-plaintext highlighter-rouge">debug</code> library builds. Use this macro to fence sections of code that help with the debugging of the code.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">TESTING_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to the <code class="language-plaintext highlighter-rouge">testing</code> library builds. Use this macro to fence sections of code that must be activated during the testing of the library.</li>
+</ol>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The <code class="language-plaintext highlighter-rouge">TESTING_ENABLED</code> preprocessor macro often appears together with <code class="language-plaintext highlighter-rouge">DEBUG_ENABLED</code> and <code class="language-plaintext highlighter-rouge">CODECOV_ENABLED</code>. The testing mode deactivates all compiler optimizations, but also prevents the addition of the debugging symbols to the object files. This leads to faster compilation of the source files which is often desired for testing purposes.</div>
+
+<h4 id="library-interface-preprocessor-directives">Library interface preprocessor directives</h4>
+
+<p>To make the ParaMonte an inter-operable cross-language library, it is necessary to tailor sections of code for the particular languages of interest. The kernel connection to all languages other than Fortran is provided via the <code class="language-plaintext highlighter-rouge">FCI_ENABLED</code> preprocessor macro in the ParaMonte library.</p>
+
+<ol>
+  <li>The <code class="language-plaintext highlighter-rouge">CFI_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible from any programming language other than Fortran, most importantly, the C programming language.</li>
+</ol>
+
+<p>In addition, some code sections might have to be exclusively executed when the library is invoked from a particular programming language. In such cases, the relevant code section must be properly fenced with the appropriate language-specific preprocessor macros.</p>
+
+<ol>
+  <li>The <code class="language-plaintext highlighter-rouge">C_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the C programming language.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">CPP_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the C++ programming language.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">FORTRAN_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the Fortran programming language.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">JULIA_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the Julia programming language.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">MATLAB_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the MATLAB programming language.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">MATHEMATICA_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the Mathematica programming language.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">PYTHON_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the Python programming language.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">R_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the R programming language.</li>
+</ol>
+
+<h3 id="coding-style-conventions">Coding style conventions</h3>
+
+<p>The following coding style are enforced within the kernel files. 
+If you do not follows these rules in your contribution, please provide an explanation and justification of the alternative approach that you have taken in your contribution.</p>
+
+<ul>
+  <li>
+    <p><a href="../general/#general-coding-style-conventions" target="_blank">Strict naming conventions are enforced</a> within the entire library, including the kernel routines.</p>
+  </li>
+  <li>
+    <p>Strict semantic compliance with the latest Fortran standard (2018).</p>
+  </li>
+  <li>Strict source-code compliance with the latest Fortran standard. However, there are important vital exceptions to this rule,
+    <ul>
+      <li>It often preferable and sometimes essential to continue the source code lines beyond the current maximum line length limit specified by the standard, which is 132 characters. This maximum line length limit restriction is planned to be lifted in the next release of Fortran 202X standard. Nevertheless, a line length of approximately 200 characters is about where you should seriously think of breaking and continuing the code on multiple lines, if needed.</li>
+      <li>Strict parallelism compliance with the Coarray Fortran parallelism is not required (via coarrays). In other words, you can implement parallelism that is provided by external libraries, the most prominent example of which is the Message Passing Interface (MPI) Library. However, in doing so, you will have properly fence the MPI section with the proper preprocessor macro as explained in the previous section.</li>
+      <li>The minimal and efficient use of preprocessor macros and directives is allowed and encouraged to avoid code duplication and improve productivity.</li>
+    </ul>
+  </li>
+  <li>
+    <p>All Coarray variables or objects (that are communicated between processes) must begin with the <code class="language-plaintext highlighter-rouge">co_</code> prefix. Example: <code class="language-plaintext highlighter-rouge">co_logFunc</code>.<br />
+<strong>Why?</strong> This helps easily identify object that are responsible for inter-process communications in the Coarray implementation of the library.</p>
+  </li>
+  <li>
+    <p>All <strong>m</strong>odule <strong>v</strong>ariables or module objects must begin with <code class="language-plaintext highlighter-rouge">mv_</code>, unless there is a good justification for not doing so. Example: <code class="language-plaintext highlighter-rouge">mv_state</code>, <code class="language-plaintext highlighter-rouge">comv_logFuncState</code>.<br />
+Why? module variables are global, at least within the scope of the module, and at most, everywhere in the program. Global variables are extremely susceptible of creating extremely difficult hard-to-identify bugs in the code and are hard to follow. Adding the prefix <code class="language-plaintext highlighter-rouge">mv_</code> to all global variables, resolves at least part of the problem by explicitly declaring the variable as global to the developer via its name.</p>
+  </li>
+  <li>
+    <p>All <strong>m</strong>odule <strong>c</strong>onstant variables that are supposed to be defined only once throughout the entire runtime must be prefixed with <code class="language-plaintext highlighter-rouge">mc_</code> instead of <code class="language-plaintext highlighter-rouge">mv_</code>. Example: <code class="language-plaintext highlighter-rouge">mc_imageCount = 3</code>.<br />
+<strong>Why?</strong> Adding the prefix <code class="language-plaintext highlighter-rouge">mc_</code> helps other developers to realize that the object is not supposed to change value at runtime beyond the first initialization. Note that this type of variable is different from a compile-time constant, since its value must be defined at runtime, which could be different from one run to another. However, once set, the value is expected to remain constant throughout the current simulation.</p>
+  </li>
+  <li>
+    <p>All constants (parameters) are upper-case separated by underscore. Example: <code class="language-plaintext highlighter-rouge">FILE_EXT = ".txt"</code>.</p>
+  </li>
+  <li>All module names must begin with an uppercase letter and more importantly, must end with the prefix <code class="language-plaintext highlighter-rouge">_mod</code>. Example: <code class="language-plaintext highlighter-rouge">ParaMCMC_mod</code>.<br />
+<strong>Why?</strong> This helps create multiple different entity names from a single base name. For example,
+    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span><span class="w"> </span><span class="n">String_mod</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">String_type</span><span class="w">
+</span><span class="k">type</span><span class="p">(</span><span class="n">String_type</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">string</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Each module must be stored in a separate source file and the name of the source file must be the same as the module name, unless there is a good justification to do it otherwise. This is a strict rule to maintain the integrity of the library source file and the build scripts.</p>
+  </li>
+  <li>
+    <p>All submodule names must begin with an uppercase letter and more importantly, must end with the prefix <code class="language-plaintext highlighter-rouge">_smod</code>. Example: <code class="language-plaintext highlighter-rouge">Routines_smod</code>.</p>
+  </li>
+  <li>If a module has submodules, the name of the submodule file should follow the module name after <code class="language-plaintext highlighter-rouge">@</code>. For example the following submodule,
+    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="p">(</span><span class="n">Decoration_mod</span><span class="p">)</span><span class="w"> </span><span class="n">Routines_smod</span><span class="w">
+</span><span class="err">...</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">Routines_smod</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>will have to be stored in a source file with the name <code class="language-plaintext highlighter-rouge">Decoration_mod@Routines_smod.f90</code>.</p>
+  </li>
+  <li>All type and class names must begin with an uppercase letter and more importantly, must end with the prefix <code class="language-plaintext highlighter-rouge">_type</code>. Example: <code class="language-plaintext highlighter-rouge">ParaMCMC_type</code>.<br />
+<strong>Why?</strong> This helps create multiple different entity names from a single base name. For example,
+    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span><span class="w"> </span><span class="n">String_mod</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">String_type</span><span class="w">
+</span><span class="k">type</span><span class="p">(</span><span class="n">String_type</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">string</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="final-steps">Final steps</h2>
+
+<p>Once you have implemented your contributions,</p>
+
+<ul>
+  <li>do not forget to test your contributions by adding new kernel tests to the unit-testing framework of the library.</li>
+  <li>Also, generate code coverage report to ensure your contributions do not lower the overall code coverage of the kernel routines.</li>
+  <li>Follow the <a href="../general/#all-contributors" target="_blank">generic contribution guidelines</a> to submit and merge your contributions with the main branch of the library on GitHub.</li>
+</ul>
+
+<p><br /></p>
+
+<div class="bs-callout bs-callout-danger">If you have any questions about the topics discussed on this page, feel free to ask in the comment section below or reach out to <a href="../../../overview/preface/#who-are-the-paramonte-authors-and-developers" target="_blank">the ParaMonte library authors</a>.</div>
+
+<p><br /></p>
+
+
+    
+    
+        
+    <div style="margin-top:3rem">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'paramonte'; // required: replace example with your forum shortname
+    
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+</div>
+<hr class="shaded"/>
+<footer>
+    <div class="row">
+        <div class="social-icons">
+
+    
+    <span class="social-icon">
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+
+    
+    <span class="social-icon">
+        <a href="https://instagram.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://medium.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-medium fa-stack-xs"></i>
+                <!--
+                -->
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+</div>
+
+        <div class="col-lg-12 footer">
+            &copy;2020 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
+            Last updated on December 24, 2020 <br />
+            
+                <span>Page last updated:</span>December 15, 2020<br/>
+            
+        <p>
+            <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="/paramonte/images/logo.png" }}" alt="cdslab.org" /></a>
+            <div style="color: #ffffff; float: none; width: 100%;">
+    <span style="font-size:0.8em">vcount: 
+        <script type="text/javascript">
+            var sc_project=12178963; 
+            var sc_invisible=0; 
+            var sc_security="e0dfe0f9"; 
+            var sc_text=3; 
+            var scJsHost = "https://";
+            document.write("<sc"+"ript type='text/javascript' src='" +
+            scJsHost+
+            "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+    </span>
+</div>
+        </p>
+        </div>
+    </div>
+    <!--Mathjax LaTeX engine-->
+    
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+        MathJax.Hub.Config({
+            config: ["MMLorHTML.js"],
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX"],
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: ".8em",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                autoNumber: "AMS",
+                },
+                unicode: {
+                fonts: "STIXGeneral,'Arial Unicode MS'" 
+                }
+            },
+            showProcessingMessages: false
+        });
+    </script>
+    <style TYPE="text/css">
+        code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+    </style>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+            }
+        });
+        MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</footer>
+
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /#main -->
+        </div>
+        
+    </body>
+    
+</html>

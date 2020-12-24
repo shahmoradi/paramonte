@@ -1,0 +1,552 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>paramonte._ParaDRAMChain &mdash; ParaMonte :: Python  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> ParaMonte :: Python
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ParaMonte :: Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../paramonte.html">paramonte</a> &raquo;</li>
+        
+      <li>paramonte._ParaDRAMChain</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for paramonte._ParaDRAMChain</h1><div class="highlight"><pre>
+<span></span><span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte: plain powerful parallel Monte Carlo library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Copyright (C) 2012-present, The Computational Data Science Lab</span>
+<span class="c1">####</span>
+<span class="c1">####   This file is part of the ParaMonte library.</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte is free software: you can redistribute it and/or modify it</span>
+<span class="c1">####   under the terms of the GNU Lesser General Public License as published</span>
+<span class="c1">####   by the Free Software Foundation, version 3 of the License.</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte is distributed in the hope that it will be useful,</span>
+<span class="c1">####   but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1">####   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="c1">####   GNU Lesser General Public License for more details.</span>
+<span class="c1">####</span>
+<span class="c1">####   You should have received a copy of the GNU Lesser General Public License</span>
+<span class="c1">####   along with the ParaMonte library. If not, see,</span>
+<span class="c1">####</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/master/LICENSE</span>
+<span class="c1">####</span>
+<span class="c1">####   ACKNOWLEDGMENT</span>
+<span class="c1">####</span>
+<span class="c1">####   As per the ParaMonte library license agreement terms,</span>
+<span class="c1">####   if you use any parts of this library for any purposes,</span>
+<span class="c1">####   we ask you to acknowledge the use of the ParaMonte library</span>
+<span class="c1">####   in your work (education/research/industry/development/...)</span>
+<span class="c1">####   by citing the ParaMonte library as described on this page:</span>
+<span class="c1">####</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/master/ACKNOWLEDGMENT.md</span>
+<span class="c1">####</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">_np</span>
+<span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">_tp</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">_pd</span>
+
+<span class="kn">import</span> <span class="nn">_paramonte</span> <span class="k">as</span> <span class="nn">_pm</span>
+
+<span class="n">_timer</span> <span class="o">=</span> <span class="n">_pm</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="n">_methodName</span><span class="o">=</span><span class="n">_pm</span><span class="o">.</span><span class="n">names</span><span class="o">.</span><span class="n">paradram</span><span class="p">)</span>
+
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">#### _ParaDRAMChain class</span>
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="_Struct"><a class="viewcode-back" href="../../autoapi/paramonte/_ParaDRAMChain/index.html#paramonte._ParaDRAMChain._Struct">[docs]</a><span class="k">class</span> <span class="nc">_Struct</span><span class="p">:</span>
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="_ParaDRAMChain"><a class="viewcode-back" href="../../autoapi/paramonte/_ParaDRAMChain/index.html#paramonte._ParaDRAMChain._ParaDRAMChain">[docs]</a><span class="k">class</span> <span class="nc">_ParaDRAMChain</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    .. py:class:: _ParaDRAMChain</span>
+
+<span class="sd">    This is the _ParaDRAMChain class for generating instances </span>
+<span class="sd">    of ParaDRAM sample/chain. The ParaDRAM class&#39;s ``readSample()`` or </span>
+<span class="sd">    ``readChain()`` or ``readMarkovChain()`` methods return an object or </span>
+<span class="sd">    a list of objects of class ``_ParaDRAMChain``.</span>
+
+<span class="sd">        **Parameters**</span>
+
+<span class="sd">            file</span>
+<span class="sd">                full path to the file containing the sample/chain.</span>
+
+<span class="sd">            delimiter</span>
+<span class="sd">                the delimiter used in the sample/chain file, which </span>
+<span class="sd">                must be provided by the user.</span>
+
+<span class="sd">            parseContents</span>
+<span class="sd">                If set to ``True``, the contents of the file will be parsed and </span>
+<span class="sd">                stored in a component of the object named ``contents``.</span>
+<span class="sd">                The default value is True.</span>
+
+<span class="sd">            markovChainRequested</span>
+<span class="sd">                boolean value indicating weather the full Markov Chain</span>
+<span class="sd">                has to be generated from the potentially-weighted sample </span>
+<span class="sd">                in the input file. If True, each sampled state in the resulting </span>
+<span class="sd">                output dataframe is guaranteed to have a weight of 1.</span>
+
+<span class="sd">        **Attributes**</span>
+
+<span class="sd">            file</span>
+<span class="sd">                full path to the file containing the sample/chain.</span>
+
+<span class="sd">            delimiter</span>
+<span class="sd">                the delimiter used in the sample/chain file, which </span>
+<span class="sd">                must be provided by the user.</span>
+
+<span class="sd">            ndim</span>
+<span class="sd">                number of dimensions of the domain of the objective </span>
+<span class="sd">                function from which the sample has been drawn.</span>
+
+<span class="sd">            count</span>
+<span class="sd">                number of points (states) in the sample/chain file. </span>
+<span class="sd">                This is essentially, the number of rows in the file </span>
+<span class="sd">                minus one (representing the header line).</span>
+
+<span class="sd">            [df]</span>
+<span class="sd">                if the input file contents is structured in a format that</span>
+<span class="sd">                could be read as a dataframe, then the contents of the file</span>
+<span class="sd">                will be stored in the form of a pandas-library DataFrame </span>
+<span class="sd">                in this property (hence called ``df``).</span>
+
+<span class="sd">            [contents]</span>
+<span class="sd">                if the input file contents is structured in the form of columns,</span>
+<span class="sd">                then a property named ``contents`` is also added to the object.</span>
+<span class="sd">                Each component of contents will named via the header of the file</span>
+<span class="sd">                and will contain data from the corresponding column of the file.</span>
+
+<span class="sd">        **Returns**</span>
+
+<span class="sd">            outputChain</span>
+<span class="sd">                an object of class ``_ParaDRAMChain``</span>
+
+<span class="sd">    ----------------------------------------------------------------------</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span>
+                <span class="p">,</span> <span class="n">file</span>
+                <span class="p">,</span> <span class="n">delimiter</span>
+                <span class="p">,</span> <span class="n">parseContents</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="p">,</span> <span class="n">markovChainRequested</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="p">,</span> <span class="n">mpiDisabled</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="p">):</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### data</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delimiter</span> <span class="o">=</span> <span class="n">delimiter</span>
+
+        <span class="c1">#with open(file, &#39;r&#39;) as targetFile: Line = targetFile.readlines()</span>
+        <span class="c1">#self.colHeaderList = Line[0][:-1].split(delimiter)</span>
+        <span class="c1">#ndimPlusOffset = len(self.colHeaderList)</span>
+        <span class="c1">#self.dataMat = _np.zeros( (self.count,ndimPlusOffset) )</span>
+        <span class="c1">#for isample,line in enumerate(Line[1:]): # ignore the header line</span>
+        <span class="c1">#    self.dataMat[isample][0:ndimPlusOffset] = _np.array( line[:-1].split(delimiter) )</span>
+        <span class="c1">#self.dataMat = self.dataMat.T</span>
+
+        <span class="n">_timer</span><span class="o">.</span><span class="n">tic</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;reading file contents... &quot;</span> <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span><span class="n">_pd</span><span class="o">.</span><span class="n">read_csv</span>   <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">file</span>
+                                <span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">delimiter</span>
+                                <span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="mi">0</span>
+                                <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;SampleLogFunc&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># index of the first variable</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ndim</span>   <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span>  <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">markovChainRequested</span><span class="p">:</span>
+
+            <span class="n">CumSumWeight</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">_np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">CumSumWeight</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">:</span> <span class="c1"># it is indeed a compact chain</span>
+                <span class="c1">#dfMarkov = _pd.DataFrame( columns=list(self.df.columns), index=list(range(CumSumWeight[-1])) )</span>
+                <span class="n">dfMarkov</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="n">CumSumWeight</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">)</span> <span class="p">)</span>
+                <span class="n">istart</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">):</span>
+                    <span class="n">iend</span> <span class="o">=</span> <span class="n">CumSumWeight</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                    <span class="c1">#dfMarkov.iloc[istart:iend,:] = self.df.iloc[i].values</span>
+                    <span class="n">dfMarkov</span><span class="p">[</span><span class="n">istart</span><span class="p">:</span><span class="n">iend</span><span class="p">,:]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+                    <span class="n">istart</span> <span class="o">=</span> <span class="n">iend</span>
+                <span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">_pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dfMarkov</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span>
+
+        <span class="n">_timer</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">mpiDisabled</span><span class="p">:</span>
+            <span class="n">_pm</span><span class="o">.</span><span class="n">note</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;ndim = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, count = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+                    <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="n">_pm</span><span class="o">.</span><span class="n">names</span><span class="o">.</span><span class="n">paradram</span>
+                    <span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                    <span class="p">)</span>
+
+        <span class="c1"># set dynamic properties</span>
+
+        <span class="k">if</span> <span class="n">parseContents</span><span class="p">:</span>
+            <span class="n">_timer</span><span class="o">.</span><span class="n">tic</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;parsing file contents... &quot;</span> <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">_Struct</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">icol</span><span class="p">,</span> <span class="n">colName</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+                <span class="nb">setattr</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">contents</span><span class="p">,</span> <span class="n">colName</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="n">colName</span><span class="p">]</span> <span class="p">)</span>
+            <span class="n">_timer</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### statistics</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span> <span class="o">=</span> <span class="n">_Struct</span><span class="p">()</span>
+        
+        <span class="c1"># add chain cormat</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">cormat</span> <span class="o">=</span> <span class="n">_pm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">CorMat</span><span class="p">(</span> <span class="n">dataFrame</span>     <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                            <span class="p">,</span> <span class="n">columns</span>       <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+                                            <span class="p">,</span> <span class="n">method</span>        <span class="o">=</span> <span class="s2">&quot;pearson&quot;</span>
+                                            <span class="p">)</span>
+        
+        <span class="n">_timer</span><span class="o">.</span><span class="n">tic</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;computing sample correlation matrix... &quot;</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">cormat</span><span class="p">()</span>
+        <span class="n">_timer</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+
+        <span class="c1"># add chain covmat</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">covmat</span> <span class="o">=</span> <span class="n">_pm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">CovMat</span><span class="p">(</span> <span class="n">dataFrame</span>     <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                            <span class="p">,</span> <span class="n">columns</span>       <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+                                            <span class="p">)</span>
+
+        <span class="n">_timer</span><span class="o">.</span><span class="n">tic</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;computing sample covariance matrix... &quot;</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">covmat</span><span class="p">()</span>
+        <span class="n">_timer</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">maxLogFunc</span> <span class="o">=</span> <span class="n">_pm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">getMaxLogFunc</span><span class="p">(</span><span class="n">dataFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">)</span>
+        <span class="c1">#self.stats.maxLogFunc = _Struct()</span>
+        <span class="c1">#self.stats.maxLogFunc.idrow = self.df[[&quot;SampleLogFunc&quot;]].idxmax().values[0]</span>
+        <span class="c1">#self.stats.maxLogFunc.value = self.df[[&quot;SampleLogFunc&quot;]].iat[self.stats.maxLogFunc.idrow,0]</span>
+        <span class="c1">#self.stats.maxLogFunc.dfrow = self.df.iloc[self.stats.maxLogFunc.idrow,:]</span>
+        <span class="c1">#self.stats.maxLogFunc.state = self.df.iloc[self.stats.maxLogFunc.idrow,self._offset:]</span>
+
+        <span class="c1"># add chain autocorrelation</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">acf</span> <span class="o">=</span> <span class="n">_pm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">AutoCorr</span> <span class="p">(</span> <span class="n">dataFrame</span>     <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                            <span class="p">,</span> <span class="n">columns</span>       <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+                                            <span class="p">)</span>
+
+        <span class="n">_timer</span><span class="o">.</span><span class="n">tic</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;computing autocorrelations... &quot;</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">acf</span><span class="p">()</span>
+        <span class="n">_timer</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+
+<span class="c1">#!DEC$ ifdef PMVIS_ENABLED</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### graphics</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="n">_timer</span><span class="o">.</span><span class="n">tic</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;adding graphics tools... &quot;</span> <span class="p">)</span>
+
+        <span class="c1"># add HistPlot</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span> <span class="o">=</span> <span class="n">_Struct</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span> <span class="o">=</span> <span class="n">_pm</span><span class="o">.</span><span class="n">vis</span><span class="o">.</span><span class="n">HistPlot</span>   <span class="p">(</span> <span class="n">dataFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                            <span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">:]</span>
+                                            <span class="p">)</span>
+
+        <span class="c1"># add LinePlot</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span> <span class="o">=</span> <span class="n">_pm</span><span class="o">.</span><span class="n">vis</span><span class="o">.</span><span class="n">LinePlot</span>   <span class="p">(</span> <span class="n">dataFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                            <span class="p">,</span> <span class="n">ycolumns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">:]</span>
+                                            <span class="p">,</span> <span class="n">ccolumns</span> <span class="o">=</span> <span class="s2">&quot;SampleLogFunc&quot;</span>
+                                            <span class="p">,</span> <span class="n">lc_kws</span> <span class="o">=</span>  <span class="p">{</span>
+                                                        <span class="c1">#&quot;linewidth&quot;:0.75,</span>
+                                                        <span class="c1">#&quot;cmap&quot;:&quot;viridis&quot;,</span>
+                                                        <span class="s2">&quot;cmap&quot;</span><span class="p">:</span><span class="s2">&quot;autumn&quot;</span><span class="p">,</span>
+                                                        <span class="c1">#&quot;alpha&quot;:0.5,</span>
+                                                        <span class="p">}</span>
+                                            <span class="p">,</span> <span class="n">colorbar_kws</span> <span class="o">=</span>    <span class="p">{</span>
+                                                                <span class="s2">&quot;extend&quot;</span><span class="p">:</span><span class="s2">&quot;neither&quot;</span><span class="p">,</span>
+                                                                <span class="s2">&quot;orientation&quot;</span><span class="p">:</span><span class="s2">&quot;vertical&quot;</span><span class="p">,</span>
+                                                                <span class="c1">#&quot;spacing&quot;:&quot;uniform&quot;,</span>
+                                                                <span class="p">}</span>
+                                            <span class="c1">#, legend_kws = None</span>
+                                            <span class="p">)</span>
+
+        <span class="c1"># add ScatterPlot</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span> <span class="o">=</span> <span class="n">_pm</span><span class="o">.</span><span class="n">vis</span><span class="o">.</span><span class="n">ScatterPlot</span> <span class="p">(</span> <span class="n">dataFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                                <span class="p">,</span> <span class="n">ycolumns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">:]</span>
+                                                <span class="p">,</span> <span class="n">ccolumns</span> <span class="o">=</span> <span class="s2">&quot;SampleLogFunc&quot;</span>
+                                                <span class="c1">#, scatter_kws = {}</span>
+                                                <span class="p">,</span> <span class="n">colorbar_kws</span> <span class="o">=</span>    <span class="p">{</span>
+                                                                    <span class="s2">&quot;extend&quot;</span><span class="p">:</span><span class="s2">&quot;neither&quot;</span><span class="p">,</span>
+                                                                    <span class="s2">&quot;orientation&quot;</span><span class="p">:</span><span class="s2">&quot;vertical&quot;</span><span class="p">,</span>
+                                                                    <span class="c1">#&quot;spacing&quot;:&quot;uniform&quot;,</span>
+                                                                    <span class="p">}</span>
+                                                <span class="c1">#, legend_kws = None</span>
+                                                <span class="p">)</span>
+
+        <span class="c1"># add DensityMapPlot</span>
+
+        <span class="n">xindex</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span>
+        <span class="n">yindex</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> <span class="n">xindex</span><span class="p">,</span> <span class="n">yindex</span> <span class="o">=</span> <span class="n">yindex</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">xindex</span><span class="o">-</span><span class="mi">1</span>
+            
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">density</span> <span class="o">=</span> <span class="n">_pm</span><span class="o">.</span><span class="n">vis</span><span class="o">.</span><span class="n">DensityMapPlot</span>  <span class="p">(</span> <span class="n">dataFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                                    <span class="p">,</span> <span class="n">xcolumn</span> <span class="o">=</span> <span class="n">xindex</span>
+                                                    <span class="p">,</span> <span class="n">ycolumn</span> <span class="o">=</span> <span class="n">yindex</span>
+                                                    <span class="p">)</span>
+        <span class="c1">#print(self.stats.maxLogFunc.idrow,xindex,yindex)</span>
+        <span class="c1">#print(self.df)</span>
+        <span class="c1">#print(self.df.iat[self.stats.maxLogFunc.idrow,xindex])</span>
+        <span class="c1">#print(self.df.iat[self.stats.maxLogFunc.idrow,yindex])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">density</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="fm">__init__</span>   <span class="p">(</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">maxLogFunc</span><span class="o">.</span><span class="n">idrow</span><span class="p">,</span><span class="n">xindex</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">maxLogFunc</span><span class="o">.</span><span class="n">idrow</span><span class="p">,</span><span class="n">yindex</span><span class="p">]</span> <span class="p">]</span>
+                                            <span class="p">,</span> <span class="n">scatter_kws</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;maxLogFunc&quot;</span><span class="p">}</span>
+                                            <span class="p">)</span>
+
+        <span class="c1"># add GridPlot</span>
+
+        <span class="n">endColindex</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">]</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="n">_pm</span><span class="o">.</span><span class="n">vis</span><span class="o">.</span><span class="n">GridPlot</span>   <span class="p">(</span> <span class="n">dataFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                            <span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">:</span><span class="n">endColindex</span><span class="p">]</span>
+                                            <span class="p">,</span> <span class="n">scatterplot_kws</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ccolumns&quot;</span><span class="p">:</span> <span class="s2">&quot;SampleLogFunc&quot;</span><span class="p">}</span>
+                                            <span class="p">,</span> <span class="n">_methodName</span> <span class="o">=</span> <span class="n">_pm</span><span class="o">.</span><span class="n">names</span><span class="o">.</span><span class="n">paradram</span>
+                                            <span class="p">)</span>
+
+        <span class="c1"># add ScatterLinePlot</span>
+
+<span class="c1">#       self.plot._scatterline = _pm.vis.ScatterLinePlot( dataFrame = self.df</span>
+<span class="c1">#                                                       , ycolumns = self.df.columns[self._offset:]</span>
+<span class="c1">#                                                       , lccolumns = &quot;SampleLogFunc&quot;</span>
+<span class="c1">#                                                       , lc_kws =  {</span>
+<span class="c1">#                                                                   #&quot;linewidth&quot;:0.75,</span>
+<span class="c1">#                                                                   #&quot;cmap&quot;:&quot;viridis&quot;,</span>
+<span class="c1">#                                                                   &quot;cmap&quot;:&quot;autumn&quot;,</span>
+<span class="c1">#                                                                   #&quot;alpha&quot;:0.5,</span>
+<span class="c1">#                                                                   }</span>
+<span class="c1">#                                                       #, scatter_kws = {}</span>
+<span class="c1">#                                                       , colorbar_kws =    {</span>
+<span class="c1">#                                                                           &quot;extend&quot;:&quot;neither&quot;,</span>
+<span class="c1">#                                                                           &quot;orientation&quot;:&quot;vertical&quot;,</span>
+<span class="c1">#                                                                           #&quot;spacing&quot;:&quot;uniform&quot;,</span>
+<span class="c1">#                                                                           }</span>
+<span class="c1">#                                                       #, legend_kws = None</span>
+<span class="c1">#                                                       )</span>
+
+        <span class="n">_timer</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+
+<span class="c1">#!DEC$ endif</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+    <div>
+        <p>
+            <a href="https://www.cdslab.org/paramonte">ParaMonte: Plain Powerful Parallel Monte Carlo Library</a>.<br/>
+            &copy; Copyright 2020, <a href="https://www.cdslab.org" target="_blank">The Computational Data Science Lab</a>.<br/>
+        </p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </div>
+    <!-- Start of statc -->
+    <div style="color: #ffffff; float: none; width: 100%;">
+        <span style="font-size:0.8em">visitor count: 
+            <script type="text/javascript">
+                var sc_project=12178963; 
+                var sc_invisible=0; 
+                var sc_security="e0dfe0f9"; 
+                var sc_text=3; 
+                var scJsHost = "https://";
+                document.write("<sc"+"ript type='text/javascript' src='" +
+                scJsHost+
+                "statcounter.com/counter/counter.js'></"+"script>");
+            </script>
+        </span>
+    </div>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
