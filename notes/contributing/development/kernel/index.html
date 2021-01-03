@@ -908,10 +908,10 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 
 <h4 id="library-type-preprocessor-directives">Library type preprocessor directives</h4>
 
-<p>Any code section that must be activated for a particular library build type (<code>static</code> vs. <code>dynamic</code> build) must be fenced with appropriate preprocessing macros.</p>
+<p>Any code section that must be activated for a particular library build type (<code>static</code> vs. <code>shared</code>) must be fenced with appropriate preprocessing macros.</p>
 
 <ol>
-  <li>The <code>DLL_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to dynamic library builds. Although <code>DLL</code> is reminiscent of Windows shared library files, the ParaMonte build scripts define this preprocessor macro for all dynamic library builds irrespective of the platform (Windows, Linux, macOS, …).</li>
+  <li>The <code>DLL_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to shared library builds. Although <code>DLL</code> is reminiscent of Windows shared library files, the ParaMonte build scripts define this preprocessor macro for all shared library builds irrespective of the platform (Windows, Linux, macOS, …).</li>
 </ol>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Use this preprocessor macro in combination with <strong><code>IFORT_ENABLED</code></strong> to enable DLL symbol export by the Intel <strong><code>ifort</code></strong> compiler on macOS and Windows operating systems.</div>
@@ -1121,8 +1121,8 @@ Why? module variables are global, at least within the scope of the module, and a
 </div>
 
         <div class="col-lg-12 footer">
-            &copy;2020 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on December 27, 2020 <br />
+            &copy;2021 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
+            Last updated on January 3, 2021 <br />
             
                 <span>Page last updated:</span>December 15, 2020<br/>
             

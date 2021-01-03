@@ -213,7 +213,7 @@ two comment lines in your python/ipython/jupyter session
 <span class="k">def</span> <span class="nf">getLogFunc</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
     <span class="c1"># return the log of a multivariate Normal</span>
     <span class="c1"># density function with ndim dimensions</span>
-    <span class="k">return</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="n">point</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">point</span><span class="p">)</span>
 <span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">ParaDRAM</span><span class="p">()</span>
 <span class="n">pmpd</span><span class="o">.</span><span class="n">runSampler</span> <span class="p">(</span> <span class="n">ndim</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># assume 4-dimensional objective function</span>
                 <span class="p">,</span> <span class="n">getLogFunc</span> <span class="o">=</span> <span class="n">getLogFunc</span>   <span class="c1"># the objective function</span>
@@ -263,7 +263,7 @@ two comment lines in your python/ipython/jupyter session
 <span class="s1">def getLogFunc(point):</span>
 <span class="s1">    # return the log of the standard multivariate</span>
 <span class="s1">    # Normal density function with ndim dimensions</span>
-<span class="s1">    return -0.5 * np.sum( point**2 )</span>
+<span class="s1">    return -0.5 * np.dot(point, point)</span>
 <span class="s1">pmpd = pm.ParaDRAM()</span>
 <span class="s1">pmpd.mpiEnabled = True</span>
 <span class="s1">pmpd.runSampler ( ndim = 4 # assume 4-dimensional objective function</span>

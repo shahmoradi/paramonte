@@ -815,10 +815,10 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
     <ul>
       <li>
-        <p><a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_c_windows_x64_intel_release_dynamic_heap.zip">libparamonte_c_windows_x64_intel_release_dynamic_heap</a> for <strong>serial</strong> simulations.</p>
+        <p><a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_c_windows_x64_intel_release_shared_heap.zip">libparamonte_c_windows_x64_intel_release_shared_heap</a> for <strong>serial</strong> simulations.</p>
       </li>
       <li>
-        <p><a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_c_windows_x64_intel_release_dynamic_heap_impi.zip">libparamonte_c_windows_x64_intel_release_dynamic_heap_impi.zip</a> for <strong>MPI-parallel</strong> simulations via the Intel MPI library.</p>
+        <p><a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_c_windows_x64_intel_release_shared_heap_impi.zip">libparamonte_c_windows_x64_intel_release_shared_heap_impi.zip</a> for <strong>MPI-parallel</strong> simulations via the Intel MPI library.</p>
       </li>
     </ul>
   </li>
@@ -827,10 +827,10 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
     <ul>
       <li>
-        <p><a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_windows_x64_intel_release_dynamic_heap.zip">libparamonte_cpp_windows_x64_intel_release_dynamic_heap.zip</a> for <strong>serial</strong> simulations.</p>
+        <p><a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_windows_x64_intel_release_shared_heap.zip">libparamonte_cpp_windows_x64_intel_release_shared_heap.zip</a> for <strong>serial</strong> simulations.</p>
       </li>
       <li>
-        <p><a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi.zip">libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi.zip</a> for <strong>MPI-parallel</strong> simulations via the Intel MPI library.</p>
+        <p><a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_cpp_windows_x64_intel_release_shared_heap_impi.zip">libparamonte_cpp_windows_x64_intel_release_shared_heap_impi.zip</a> for <strong>MPI-parallel</strong> simulations via the Intel MPI library.</p>
       </li>
     </ul>
   </li>
@@ -839,10 +839,10 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
     <ul>
       <li>
-        <p><a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_fortran_windows_x64_intel_release_dynamic_heap.zip">libparamonte_fortran_windows_x64_intel_release_dynamic_heap.zip</a> for <strong>serial</strong> simulations.</p>
+        <p><a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_fortran_windows_x64_intel_release_shared_heap.zip">libparamonte_fortran_windows_x64_intel_release_shared_heap.zip</a> for <strong>serial</strong> simulations.</p>
       </li>
       <li>
-        <p><a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_fortran_windows_x64_intel_release_dynamic_heap_impi.zip">libparamonte_fortran_windows_x64_intel_release_dynamic_heap_impi.zip</a> for <strong>MPI-parallel</strong> simulations via the Intel MPI library.</p>
+        <p><a href="https://github.com/cdslaborg/paramonte/releases/latest/download/libparamonte_fortran_windows_x64_intel_release_shared_heap_impi.zip">libparamonte_fortran_windows_x64_intel_release_shared_heap_impi.zip</a> for <strong>MPI-parallel</strong> simulations via the Intel MPI library.</p>
       </li>
     </ul>
   </li>
@@ -899,13 +899,13 @@ Usage:
 
 Example:
 
-    install.bat --lang C/C++/Fortran --build release --lib dynamic/static --mem heap --par none/mpi --nproc 3
+    install.bat --lang C/C++/Fortran --build release --lib static/shared --mem heap --par none/mpi --nproc 3
 
 Flag definitions:
 
     --build         : the ParaMonte library build types. Possible values: release, testing, debug
     --lang          : the ParaMonte library language choices to build for. Possible values (case-insensitive): C/C++/Fortran/MATLAB/Python
-    --lib           : the ParaMonte library type. Possible values: static, dynamic
+    --lib           : the ParaMonte library type. Possible values: static, shared (or equivalently, dynamic)
     --par           : the ParaMonte library parallelism type. Possible values: none mpi cafsingle cafshared
     --mem           : the ParaMonte library memory type for array allocations. Possible values: stack heap
     --test          : the ParaMonte library test type: none, basic, sampler, all
@@ -925,7 +925,7 @@ NOTE: Use the forward-slash character / to separate multiple values for a single
 NOTE: Use only one white-space character to separate flags and values from each other.
 NOTE: For any option that is not specified, the build will be done for all of the possible options of the flag.
 NOTE: Some values of some of the flags are inconsistent with each other. For example:
-NOTE:     Coarray Fortran parallelism "--par cafsingle/cafshared" cannot be specified along with dynamic library "--lib dynamic".
+NOTE:     Coarray Fortran parallelism "--par cafsingle/cafshared" cannot be specified along with shared library "--lib shared".
 NOTE:     Coarray Fortran parallelism "--par cafsingle/cafshared" cannot be specified along with C/MATLAB/Python languages "--lang C/MATLAB/Python".
 NOTE:     Heap memory allocation "--mem heap" cannot be specified along with static library "--lib static".
 
@@ -933,9 +933,9 @@ NOTE:     Heap memory allocation "--mem heap" cannot be specified along with sta
 </code></pre></div>    </div>
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 If you are not sure which build would be the most appropriate for your usage, we recommend the following configuration for <b>serial ParaMonte simulations</b>,
-<pre>install.bat --lang LANGUAGE --build release --lib dynamic --mem heap --par none</pre>
+<pre>install.bat --lang LANGUAGE --build release --lib shared --mem heap --par none</pre>
 and,
-<pre>install.bat --lang LANGUAGE --build release --lib dynamic --mem heap --par mpi</pre>
+<pre>install.bat --lang LANGUAGE --build release --lib shared --mem heap --par mpi</pre>
 for <b>MPI-parallel ParaMonte simulations</b>, wherein both cases, you will have to replace the word <b>LANGUAGE</b> with the programming language of your choice: <b>C</b> (to build the ParaMonte C library), <b>C++</b> (to build the ParaMonte C++ library), <b>Fortran</b> (to build the ParaMonte Fortran library), <b>MATLAB</b> (to build the ParaMonte MATLAB library), or <b>Python</b> (to build the ParaMonte Python library).  
 <br />
     
@@ -946,8 +946,8 @@ for <b>MPI-parallel ParaMonte simulations</b>, wherein both cases, you will have
     <p>or, to build the ParaMonte MATLAB library in release mode for both serial and parallel applications, try,</p>
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.bat --lang matlab --build release --par none/mpi
 </code></pre></div>    </div>
-    <p>or, to build dynamic ParaMonte C/C++ libraries in release mode for both serial and MPI-parallel applications, try,</p>
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.bat --lang C --lib dynamic --mem heap --par none/mpi --build release
+    <p>or, to build shared ParaMonte C/C++ libraries in release mode for both serial and MPI-parallel applications, try,</p>
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.bat --lang C --lib shared --mem heap --par none/mpi --build release
 </code></pre></div>    </div>
     <p>or, to build a static ParaMonte Fortran library in both release and debug modes, with Coarray shared-memory parallelism enabled, for both heap and stack memory allocations, try,</p>
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.bat --lang Fortran --lib static --par cafshared --mem stack/heap --build debug/release
@@ -985,7 +985,7 @@ Calling the <b><code>install.bat</code></b> script with no flags will build the 
 <b><code>heap</code></b>
 ) for the two different library types (
 <b><code>static</code></b>, 
-<b><code>dynamic</code></b>
+<b><code>shared</code></b>
 ). Depending on your system specifications, this can be a very lengthy process, typically taking a few hours or more to finish.
 </div>
     <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> 
@@ -995,17 +995,17 @@ If you’d like to see a build flag that is not currently provided in the above 
     <p>The <code>install.bat</code> script initiates the build process and generates a folder named <code>build</code> in the root directory of the ParaMonte repository which will contain all build files. The final library files together with the example scripts will be installed in a separate folder named <code>bin</code> in the same root directory of the ParaMonte project that you have downloaded from GitHub.</p>
   </li>
   <li><strong>Congrats!</strong> You have now built and (locally) installed the ParaMonte library for the configuration and language(s) of your choice on your system. Check out the two new folders <code>build</code> and <code>bin</code> that have been automatically created by the install script in the root directory of the uncompressed ParaMonte repository that you have downloaded. Inside the <code>bin</code> directory, you will see all the different build subdirectories corresponding to the different ParaMonte library build configurations. For example,
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.bat --lang C++ --build release --lib dynamic --mem heap --par mpi -s intel
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.bat --lang C++ --build release --lib shared --mem heap --par mpi -s intel
 </code></pre></div>    </div>
     <p>will generate the following subdirectory,</p>
-    <pre><code>./bin/libparamonte_cpp_windows_x64_intel_release_dynamic_heap_impi
+    <pre><code>./bin/libparamonte_cpp_windows_x64_intel_release_shared_heap_impi
 </code></pre>
     <p>or,</p>
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.bat --lang C++ --build release --lib dynamic --mem heap --par mpi -s gnu
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.bat --lang C++ --build release --lib shared --mem heap --par mpi -s gnu
 </code></pre></div>    </div>
     <p>will generate either of the following subdirectories,</p>
-    <pre><code>./bin/libparamonte_cpp_windows_x64_gnu_release_dynamic_heap_mpich
-./bin/libparamonte_cpp_windows_x64_gnu_release_dynamic_heap_openmpi
+    <pre><code>./bin/libparamonte_cpp_windows_x64_gnu_release_shared_heap_mpich
+./bin/libparamonte_cpp_windows_x64_gnu_release_shared_heap_openmpi
 </code></pre>
     <p>in the bin directory of the ParaMonte library, depending on the existing MPI library installed on the system (Intel MPI vs. MPICH vs. OpenMPI). Any of these subdirectories contains the ParaMonte library files along with an example simulation source file and a build-script that can build the example to generate the executable, as well as a <code>README.md</code> file explaining how to build the supplied example.</p>
   </li>
@@ -1113,8 +1113,8 @@ If you’d like to see a build flag that is not currently provided in the above 
 </div>
 
         <div class="col-lg-12 footer">
-            &copy;2020 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on December 27, 2020 <br />
+            &copy;2021 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
+            Last updated on January 3, 2021 <br />
             
                 <span>Page last updated:</span>January 1, 2020<br/>
             

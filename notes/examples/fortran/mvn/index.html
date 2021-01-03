@@ -1348,11 +1348,11 @@ This\n
 <p>Once you have built your application, running the simulation is as simple as calling the generated executable on the command-prompt for serial applications, or invoking the MPI/Coarray launcher on the command-prompt for MPI/Coarray parallel simulations.  Follow <a href="../../../run/default/" target="_blank">the instructions and tips on this page</a> on how to run your Fortran example on either <code>Windows</code>, <code>Linux</code>, or <code>macOS</code> / <code>Darwin</code> Operating System (OS), on either a single processor or in parallel, on multiple processors or clusters of nodes of processors.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
-If you linking your applications (on <b>Linux</b> or <b>macOS</b>) against a <b>dynamic</b> build of the ParaMonte library, you may encounter runtime errors similar in nature to the following,  
+If you linking your applications (on <b>Linux</b> or <b>macOS</b>) against a <b>shared</b> build of the ParaMonte library, you may encounter runtime errors similar in nature to the following,  
 <pre>
-main.exe: <b>error while loading shared libraries</b>: libparamonte_c_linux_x64_gnu_release_dynamic_heap.so: <b>cannot open shared object file: No such file or directory</b>
+main.exe: <b>error while loading shared libraries</b>: libparamonte_c_linux_x64_gnu_release_shared_heap.so: <b>cannot open shared object file: No such file or directory</b>
 </pre>
-Such an error message imply that the dynamic runtime library mentioned in the error message is missing from the known search paths to application. To resolve such runtime errors, you will have to add the path to the required runtime shared library to your Bash environmental variable <b><code>LD_LIBRARY_PATH</code></b>. For example, the following will prepend the current directory to the list of paths for the runtime library search.  
+Such an error message imply that the shared runtime library mentioned in the error message is missing from the known search paths to application. To resolve such runtime errors, you will have to add the path to the required runtime shared library to your Bash environmental variable <b><code>LD_LIBRARY_PATH</code></b>. For example, the following will prepend the current directory to the list of paths for the runtime library search.  
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>.:<span class="nv">$LD_LIBRARY_PATH</span></code></pre></figure>
 
@@ -1789,8 +1789,8 @@ Self-contained examples with Multivariate Normal Distribution as the objective f
 </div>
 
         <div class="col-lg-12 footer">
-            &copy;2020 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on December 27, 2020 <br />
+            &copy;2021 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
+            Last updated on January 3, 2021 <br />
             
                 <span>Page last updated:</span>January 1, 2020<br/>
             
