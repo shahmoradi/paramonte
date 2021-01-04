@@ -825,8 +825,45 @@ file paths that contain white-space (blank) or other exotic characters.</p>
 <p><strong>Minor enhancements</strong></p>
 
 <ul>
+  <li>
+    <p>As of this version, when the <code>ParaMonte::MATLAB</code> library is called in MATLAB 
+<code>-batch</code> mode (from the command line) for the first time, the library avoids 
+asking the user’s response to the question of installing an MPI library if it 
+is missing on the user’s system. This will prevent undesired crashes of the 
+simulations for the first time when the simulation is run from outside the 
+MATLAB session. However, the onus will be on the user to ensure an MPICH 
+library exists on the system if they intend to run simulations in parallel.</p>
+  </li>
+  <li>The <code>ParaMonte::MATLAB</code> library packages for different Operating systems and 
+processor architecture are now separate from each other. This change was made 
+to lower the overall size of <code>ParaMonte::MATLAB</code> by only keeping the relevant 
+files in each packaging of the library. The current release contains three 
+separate packages for <code>ParaMonte::MATLAB</code>,
+    <ul>
+      <li><code>libparamonte_matlab_windows_x64</code>,</li>
+      <li><code>libparamonte_matlab_darwin_x64</code>,</li>
+      <li><code>libparamonte_matlab_linux_x64</code>.</li>
+    </ul>
+  </li>
   <li>Typo-fixes in the documentation of the library.</li>
 </ul>
+
+<p><strong>MATLAB versions used for this release</strong></p>
+
+<ul>
+  <li><strong>Windows</strong>: <code>MATLAB 9.6.0.1072779 (R2019a)</code></li>
+  <li><strong>Linux</strong>: <code>MATLAB 9.8.0.1323502 (R2020a)</code></li>
+  <li><strong>macOS</strong>: <code>MATLAB 9.8.0.1323502 (R2020a)</code></li>
+</ul>
+
+<p><strong>MATLAB version compatibility</strong></p>
+
+<p>This release has been tested with MATLAB 2018, 2019, and 2020. 
+It should be also compatible with MATLAB 2017, but is not tested.
+If you notice an incompatibility with any of the above MATLAB versions,
+please report this issue to the developers for a resolution at:</p>
+
+<p>https://github.com/cdslaborg/paramonte/issues</p>
 
 <h3 id="version--240--december-23-2020">Version  2.4.0 – December 23, 2020</h3>
 
