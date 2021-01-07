@@ -911,10 +911,10 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 <p>Any code section that must be activated for a particular library build type (<code>static</code> vs. <code>shared</code>) must be fenced with appropriate preprocessing macros.</p>
 
 <ol>
-  <li>The <code>DLL_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to shared library builds. Although <code>DLL</code> is reminiscent of Windows shared library files, the ParaMonte build scripts define this preprocessor macro for all shared library builds irrespective of the platform (Windows, Linux, macOS, …).</li>
+  <li>The <code>DLL_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to shared library builds. Although <code>DLL</code> is reminiscent of Windows shared library files, the ParaMonte build scripts define this preprocessor macro for all shared library builds irrespective of the platform (Windows, Linux, macOS, …).
+    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Use this preprocessor macro in combination with <strong><code>IFORT_ENABLED</code></strong> to enable DLL symbol export by the Intel <strong><code>ifort</code></strong> compiler on macOS and Windows operating systems.</div>
+  </li>
 </ol>
-
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Use this preprocessor macro in combination with <strong><code>IFORT_ENABLED</code></strong> to enable DLL symbol export by the Intel <strong><code>ifort</code></strong> compiler on macOS and Windows operating systems.</div>
 
 <h4 id="library-build-preprocessor-directives">Library build preprocessor directives</h4>
 
@@ -922,10 +922,10 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 
 <ol>
   <li>The <code>DEBUG_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to the <code>debug</code> library builds. Use this macro to fence sections of code that help with the debugging of the code.</li>
-  <li>The <code>TESTING_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to the <code>testing</code> library builds. Use this macro to fence sections of code that must be activated during the testing of the library.</li>
+  <li>The <code>TESTING_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to the <code>testing</code> library builds. Use this macro to fence sections of code that must be activated during the testing of the library.
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The <code>TESTING_ENABLED</code> preprocessor macro often appears together with <code>DEBUG_ENABLED</code> and <code>CODECOV_ENABLED</code>. The testing mode deactivates all compiler optimizations, but also prevents the addition of the debugging symbols to the object files. This leads to faster compilation of the source files which is often desired for testing purposes.</div>
+  </li>
 </ol>
-
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The <code>TESTING_ENABLED</code> preprocessor macro often appears together with <code>DEBUG_ENABLED</code> and <code>CODECOV_ENABLED</code>. The testing mode deactivates all compiler optimizations, but also prevents the addition of the debugging symbols to the object files. This leads to faster compilation of the source files which is often desired for testing purposes.</div>
 
 <h4 id="library-interface-preprocessor-directives">Library interface preprocessor directives</h4>
 
@@ -995,9 +995,9 @@ Why? module variables are global, at least within the scope of the module, and a
     <p>All submodule names must begin with an uppercase letter and more importantly, must end with the prefix <code>_smod</code>. Example: <code>Routines_smod</code>.</p>
   </li>
   <li>If a module has submodules, the name of the submodule file should follow the module name after <code>@</code>. For example the following submodule,
-    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span><span class="w"> </span><span class="p">(</span><span class="n">Decoration_mod</span><span class="p">)</span><span class="w"> </span><span class="n">Routines_smod</span><span class="w">
+    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">submodule</span><span class="w"> </span><span class="p">(</span><span class="n">Decoration_mod</span><span class="p">)</span><span class="w"> </span><span class="n">Routines_smod</span><span class="w">
 </span><span class="err">...</span><span class="w">
-</span><span class="k">end</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">Routines_smod</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">submodule</span><span class="w"> </span><span class="n">Routines_smod</span><span class="w">
 </span></code></pre></div>    </div>
     <p>will have to be stored in a source file with the name <code>Decoration_mod@Routines_smod.f90</code>.</p>
   </li>
@@ -1014,7 +1014,7 @@ Why? module variables are global, at least within the scope of the module, and a
 <p>Once you have implemented your contributions,</p>
 
 <ul>
-  <li>do not forget to test your contributions by adding new kernel tests to the unit-testing framework of the library.</li>
+  <li>Do not forget to test your contributions by adding new kernel tests to the unit-testing framework of the library.</li>
   <li>Also, generate code coverage report to ensure your contributions do not lower the overall code coverage of the kernel routines.</li>
   <li>Follow the <a href="../general/#all-contributors" target="_blank">generic contribution guidelines</a> to submit and merge your contributions with the main branch of the library on GitHub.</li>
 </ul>
@@ -1122,7 +1122,7 @@ Why? module variables are global, at least within the scope of the module, and a
 
         <div class="col-lg-12 footer">
             &copy;2021 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on January 6, 2021 <br />
+            Last updated on January 7, 2021 <br />
             
                 <span>Page last updated:</span>December 15, 2020<br/>
             
