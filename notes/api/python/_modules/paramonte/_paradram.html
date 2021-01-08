@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.5.1
+                2.5.2
               </div>
             
           
@@ -169,33 +169,33 @@
 <span class="c1">####</span>
 <span class="c1">####   This file is part of the ParaMonte library.</span>
 <span class="c1">####</span>
-<span class="c1">####   Permission is hereby granted, free of charge, to any person obtaining a </span>
-<span class="c1">####   copy of this software and associated documentation files (the &quot;Software&quot;), </span>
-<span class="c1">####   to deal in the Software without restriction, including without limitation </span>
-<span class="c1">####   the rights to use, copy, modify, merge, publish, distribute, sublicense, </span>
-<span class="c1">####   and/or sell copies of the Software, and to permit persons to whom the </span>
+<span class="c1">####   Permission is hereby granted, free of charge, to any person obtaining a</span>
+<span class="c1">####   copy of this software and associated documentation files (the &quot;Software&quot;),</span>
+<span class="c1">####   to deal in the Software without restriction, including without limitation</span>
+<span class="c1">####   the rights to use, copy, modify, merge, publish, distribute, sublicense,</span>
+<span class="c1">####   and/or sell copies of the Software, and to permit persons to whom the</span>
 <span class="c1">####   Software is furnished to do so, subject to the following conditions:</span>
 <span class="c1">####</span>
-<span class="c1">####   The above copyright notice and this permission notice shall be </span>
+<span class="c1">####   The above copyright notice and this permission notice shall be</span>
 <span class="c1">####   included in all copies or substantial portions of the Software.</span>
 <span class="c1">####</span>
-<span class="c1">####   THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, </span>
-<span class="c1">####   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF </span>
-<span class="c1">####   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. </span>
-<span class="c1">####   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, </span>
-<span class="c1">####   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR </span>
-<span class="c1">####   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE </span>
+<span class="c1">####   THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,</span>
+<span class="c1">####   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF</span>
+<span class="c1">####   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.</span>
+<span class="c1">####   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,</span>
+<span class="c1">####   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR</span>
+<span class="c1">####   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE</span>
 <span class="c1">####   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
 <span class="c1">####</span>
 <span class="c1">####   ACKNOWLEDGMENT</span>
 <span class="c1">####</span>
 <span class="c1">####   ParaMonte is an honor-ware and its currency is acknowledgment and citations.</span>
-<span class="c1">####   As per the ParaMonte library license agreement terms, if you use any parts of </span>
-<span class="c1">####   this library for any purposes, kindly acknowledge the use of ParaMonte in your </span>
-<span class="c1">####   work (education/research/industry/development/...) by citing the ParaMonte </span>
+<span class="c1">####   As per the ParaMonte library license agreement terms, if you use any parts of</span>
+<span class="c1">####   this library for any purposes, kindly acknowledge the use of ParaMonte in your</span>
+<span class="c1">####   work (education/research/industry/development/...) by citing the ParaMonte</span>
 <span class="c1">####   library as described on this page:</span>
 <span class="c1">####</span>
-<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/master/ACKNOWLEDGMENT.md</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/main/ACKNOWLEDGMENT.md</span>
 <span class="c1">####</span>
 <span class="c1">####################################################################################################################################</span>
 <span class="c1">####################################################################################################################################</span>
@@ -217,11 +217,11 @@
     <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">    This is the **ParaDRAM** class to generate instances of **serial** and **parallel**</span>
-<span class="sd">    **Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo** </span>
-<span class="sd">    sampler class of the ParaMonte library. The ``ParaDRAM`` class is a </span>
+<span class="sd">    **Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo**</span>
+<span class="sd">    sampler class of the ParaMonte library. The ``ParaDRAM`` class is a</span>
 <span class="sd">    child of the ``ParaMonteSampler`` class.</span>
 
-<span class="sd">    All ParaDRAM class attributes are optional and all </span>
+<span class="sd">    All ParaDRAM class attributes are optional and all</span>
 <span class="sd">    attributes can be set after a ParaDRAM instance</span>
 <span class="sd">    is returned by the constructor.</span>
 
@@ -240,12 +240,12 @@
 <span class="sd">        :linenos:</span>
 
 <span class="sd">        ##################################</span>
-<span class="sd">        import paramonte as pm</span>
 <span class="sd">        import numpy as np</span>
+<span class="sd">        import paramonte as pm</span>
 <span class="sd">        def getLogFunc(point):</span>
-<span class="sd">            # return the log of a multivariate Normal </span>
+<span class="sd">            # return the log of a multivariate Normal</span>
 <span class="sd">            # density function with ndim dimensions</span>
-<span class="sd">            return -0.5 * np.sum( point**2 )</span>
+<span class="sd">            return -0.5 * np.dot(point, point)</span>
 <span class="sd">        pmpd = pm.ParaDRAM()</span>
 <span class="sd">        pmpd.runSampler ( ndim = 4 # assume 4-dimensional objective function</span>
 <span class="sd">                        , getLogFunc = getLogFunc   # the objective function</span>
@@ -278,14 +278,14 @@
 <span class="sd">        :linenos:</span>
 
 <span class="sd">        ##################################</span>
-<span class="sd">        with open(&quot;main.py&quot;, &quot;w&quot;) as file:</span>
+<span class="sd">        with open(&quot;main_mpi.py&quot;, &quot;w&quot;) as file:</span>
 <span class="sd">            file.write  (&#39;&#39;&#39;</span>
-<span class="sd">        import paramonte as pm</span>
 <span class="sd">        import numpy as np</span>
+<span class="sd">        import paramonte as pm</span>
 <span class="sd">        def getLogFunc(point):</span>
 <span class="sd">            # return the log of the standard multivariate</span>
 <span class="sd">            # Normal density function with ndim dimensions</span>
-<span class="sd">            return -0.5 * np.sum( point**2 )</span>
+<span class="sd">            return -0.5 * np.dot(point, point)</span>
 <span class="sd">        pmpd = pm.ParaDRAM()</span>
 <span class="sd">        pmpd.mpiEnabled = True</span>
 <span class="sd">        pmpd.runSampler ( ndim = 4 # assume 4-dimensional objective function</span>
@@ -318,17 +318,17 @@
 <span class="sd">    The above will generate a Parallel-ParaDRAM-simulation Python script in the</span>
 <span class="sd">    current working directory of Python. Note the only difference between the</span>
 <span class="sd">    serial and parallel simulation scripts: the extra line ``pmpd.mpiEnabled = True``</span>
-<span class="sd">    which tell the ParaMonte library to run the simulation in parallel.</span>
+<span class="sd">    which forces the ParaMonte library to invoke the parallel sampler to run the simulation.</span>
 
 <span class="sd">    Assuming that you already have an MPI runtime library installed on your</span>
-<span class="sd">    system (see below), you can now execute this Python script file ``main.py``</span>
-<span class="sd">    in parallel in two ways:</span>
+<span class="sd">    system (see the **Tips on parallel usage** below), you can now execute this</span>
+<span class="sd">    Python script file ``main.py`` in parallel in two ways:</span>
 
 <span class="sd">    1.  from inside ipython or jupyter, type the following,</span>
 
 <span class="sd">        .. code-block:: bash</span>
 
-<span class="sd">            !mpiexec -n 3 python main.py</span>
+<span class="sd">            !mpiexec -n 3 python main_mpi.py</span>
 
 <span class="sd">    2.  outside of Python environment,</span>
 <span class="sd">        from within a Bash shell (on Linux or Mac) or,</span>
@@ -337,7 +337,7 @@
 
 <span class="sd">        .. code-block:: bash</span>
 
-<span class="sd">            mpiexec -n 3 python main.py</span>
+<span class="sd">            mpiexec -n 3 python main_mpi.py</span>
 
 <span class="sd">    **Note:**</span>
 
@@ -346,7 +346,7 @@
 
 <span class="sd">    .. code-block:: bash</span>
 
-<span class="sd">        mpiexec -localonly -n 3 python main.py</span>
+<span class="sd">        mpiexec -localonly -n 3 python main_mpi.py</span>
 
 <span class="sd">    This will cause the simulations to run in parallel only on a single node,</span>
 <span class="sd">    but more importantly, it will also prevent the use of Hydra service and</span>
@@ -422,14 +422,14 @@
 <span class="sd">            than physically available on your system will only slow down</span>
 <span class="sd">            your simulation.</span>
 
-<span class="sd">    Once the above script is saved in the file ``main.py``, open a Python-aware and</span>
+<span class="sd">    Once the above script is saved in the file ``main_mpi.py``, open a Python-aware and</span>
 <span class="sd">    MPI-aware command prompt to run the simulation in parallel via the MPI launcher,</span>
 
 <span class="sd">    .. code-block:: bash</span>
 
-<span class="sd">        mpiexec -n 3 python main.py</span>
+<span class="sd">        mpiexec -n 3 python main_mpi.py</span>
 
-<span class="sd">    This will execute the Python script ``main.py`` on three processes (images).</span>
+<span class="sd">    This will execute the Python script ``main_mpi.py`` on three processes (images).</span>
 <span class="sd">    Keep in mind that on Windows systems you may need to define MPI environmental</span>
 <span class="sd">    variables before a parallel simulation, as described in the above.</span>
 
@@ -519,14 +519,13 @@
 
 <span class="sd">            optional string input representing the path to</span>
 <span class="sd">            an external input namelist of simulation specifications.</span>
-<span class="sd">            USE THIS OPTIONAL ARGUMENT WITH CAUTION AND</span>
-<span class="sd">            ONLY IF YOU KNOW WHAT YOU ARE DOING.</span>
 
 <span class="sd">            **WARNING**</span>
 
-<span class="sd">            Specifying an input file will cause the ParaDRAM sampler</span>
-<span class="sd">            to ignore all other simulation specifications set by the </span>
-<span class="sd">            user via sampler instance&#39;s `spec`-component attributes.</span>
+<span class="sd">            **Use this optional argument only if you know the consequences**.</span>
+<span class="sd">            Specifying an input file will cause the ParaDRAM sampler to ignore</span>
+<span class="sd">            all other simulation specifications set by the user via the sampler</span>
+<span class="sd">            instance&#39;s `spec`-component attributes.</span>
 
 <span class="sd">        spec</span>
 
@@ -577,11 +576,11 @@
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">methodName</span> <span class="o">=</span> <span class="s2">&quot;ParaDRAM&quot;</span><span class="p">)</span>
 
-        <span class="c1">## ParaMonte specifications</span>
+        <span class="c1">#### ParaMonte specifications</span>
         <span class="c1">#</span>
         <span class="c1">#self.spec = pm.utils.FrozenClass()</span>
         <span class="c1">#</span>
-        <span class="c1">## ParaMonte variables</span>
+        <span class="c1">#### ParaMonte variables</span>
         <span class="c1">#self.spec.sampleSize                           = sampleSize</span>
         <span class="c1">#self.spec.randomSeed                           = randomSeed</span>
         <span class="c1">#self.spec.description                          = description</span>
@@ -601,7 +600,7 @@
         <span class="c1">#self.spec.mpiFinalizeRequested                 = mpiFinalizeRequested</span>
         <span class="c1">#self.spec.maxNumDomainCheckToWarn              = maxNumDomainCheckToWarn</span>
         <span class="c1">#self.spec.maxNumDomainCheckToStop              = maxNumDomainCheckToStop</span>
-        <span class="c1">## ParaMCMC variables</span>
+        <span class="c1">#### ParaMCMC variables</span>
         <span class="c1">#self.spec.chainSize                            = chainSize</span>
         <span class="c1">#self.spec.scaleFactor                          = scaleFactor</span>
         <span class="c1">#self.spec.startPointVec                        = startPointVec</span>
@@ -614,7 +613,7 @@
         <span class="c1">#self.spec.randomStartPointRequested            = randomStartPointRequested</span>
         <span class="c1">#self.spec.randomStartPointDomainLowerLimitVec  = randomStartPointDomainLowerLimitVec</span>
         <span class="c1">#self.spec.randomStartPointDomainUpperLimitVec  = randomStartPointDomainUpperLimitVec</span>
-        <span class="c1">## ParaDRAM variables</span>
+        <span class="c1">#### ParaDRAM variables</span>
         <span class="c1">#self.spec.adaptiveUpdateCount                  = adaptiveUpdateCount</span>
         <span class="c1">#self.spec.adaptiveUpdatePeriod                 = adaptiveUpdatePeriod</span>
         <span class="c1">#self.spec.greedyAdaptationCount                = greedyAdaptationCount</span>
@@ -802,7 +801,7 @@
 
 <span class="sd">                    plot</span>
 
-<span class="sd">                        A structure containing the graphics tools for the </span>
+<span class="sd">                        A structure containing the graphics tools for the</span>
 <span class="sd">                        visualization of the contents of the file.</span>
 
 <span class="sd">                    df</span>
@@ -815,7 +814,7 @@
 <span class="sd">                        corresponding to each column in the progress file, a property</span>
 <span class="sd">                        with the same name as the column header is also created</span>
 <span class="sd">                        for the object which contains the data stored in that column</span>
-<span class="sd">                        of the progress file. These properties are all stored in the </span>
+<span class="sd">                        of the progress file. These properties are all stored in the</span>
 <span class="sd">                        attribute ``contents``.</span>
 
 <span class="sd">                If ``renabled = True``, the list of objects will be returned as the</span>

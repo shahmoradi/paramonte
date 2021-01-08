@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.5.1
+                2.5.2
               </div>
             
           
@@ -169,33 +169,33 @@
 <span class="c1">####</span>
 <span class="c1">####   This file is part of the ParaMonte library.</span>
 <span class="c1">####</span>
-<span class="c1">####   Permission is hereby granted, free of charge, to any person obtaining a </span>
-<span class="c1">####   copy of this software and associated documentation files (the &quot;Software&quot;), </span>
-<span class="c1">####   to deal in the Software without restriction, including without limitation </span>
-<span class="c1">####   the rights to use, copy, modify, merge, publish, distribute, sublicense, </span>
-<span class="c1">####   and/or sell copies of the Software, and to permit persons to whom the </span>
+<span class="c1">####   Permission is hereby granted, free of charge, to any person obtaining a</span>
+<span class="c1">####   copy of this software and associated documentation files (the &quot;Software&quot;),</span>
+<span class="c1">####   to deal in the Software without restriction, including without limitation</span>
+<span class="c1">####   the rights to use, copy, modify, merge, publish, distribute, sublicense,</span>
+<span class="c1">####   and/or sell copies of the Software, and to permit persons to whom the</span>
 <span class="c1">####   Software is furnished to do so, subject to the following conditions:</span>
 <span class="c1">####</span>
-<span class="c1">####   The above copyright notice and this permission notice shall be </span>
+<span class="c1">####   The above copyright notice and this permission notice shall be</span>
 <span class="c1">####   included in all copies or substantial portions of the Software.</span>
 <span class="c1">####</span>
-<span class="c1">####   THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, </span>
-<span class="c1">####   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF </span>
-<span class="c1">####   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. </span>
-<span class="c1">####   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, </span>
-<span class="c1">####   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR </span>
-<span class="c1">####   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE </span>
+<span class="c1">####   THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,</span>
+<span class="c1">####   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF</span>
+<span class="c1">####   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.</span>
+<span class="c1">####   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,</span>
+<span class="c1">####   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR</span>
+<span class="c1">####   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE</span>
 <span class="c1">####   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
 <span class="c1">####</span>
 <span class="c1">####   ACKNOWLEDGMENT</span>
 <span class="c1">####</span>
 <span class="c1">####   ParaMonte is an honor-ware and its currency is acknowledgment and citations.</span>
-<span class="c1">####   As per the ParaMonte library license agreement terms, if you use any parts of </span>
-<span class="c1">####   this library for any purposes, kindly acknowledge the use of ParaMonte in your </span>
-<span class="c1">####   work (education/research/industry/development/...) by citing the ParaMonte </span>
+<span class="c1">####   As per the ParaMonte library license agreement terms, if you use any parts of</span>
+<span class="c1">####   this library for any purposes, kindly acknowledge the use of ParaMonte in your</span>
+<span class="c1">####   work (education/research/industry/development/...) by citing the ParaMonte</span>
 <span class="c1">####   library as described on this page:</span>
 <span class="c1">####</span>
-<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/master/ACKNOWLEDGMENT.md</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/main/ACKNOWLEDGMENT.md</span>
 <span class="c1">####</span>
 <span class="c1">####################################################################################################################################</span>
 <span class="c1">####################################################################################################################################</span>
@@ -214,12 +214,25 @@
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span> <span class="k">as</span> <span class="n">_Path</span>
 
 <span class="n">path</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">path</span><span class="o">.</span><span class="n">home</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">_Path</span><span class="o">.</span><span class="n">home</span><span class="p">())</span> <span class="c1"># path.home = os.path.expanduser(&quot;~&quot;)</span>
 <span class="n">path</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
 <span class="n">path</span><span class="o">.</span><span class="n">auxil</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">root</span><span class="p">,</span><span class="s2">&quot;auxil&quot;</span><span class="p">)</span>
-<span class="n">path</span><span class="o">.</span><span class="n">home</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">_Path</span><span class="o">.</span><span class="n">home</span><span class="p">())</span> <span class="c1"># path.home = os.path.expanduser(&quot;~&quot;)</span>
-<span class="n">path</span><span class="o">.</span><span class="n">lib</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">root</span>
+<span class="n">path</span><span class="o">.</span><span class="n">download</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">auxil</span> <span class="c1"># os.path.join(path.root,&quot;download&quot;)</span>
+
+<span class="n">path</span><span class="o">.</span><span class="n">lib</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">path</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;root&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">root</span><span class="p">,</span><span class="s2">&quot;lib&quot;</span><span class="p">)</span>
+<span class="n">path</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;x64&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">path</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;x64&quot;</span><span class="p">][</span><span class="s2">&quot;root&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;root&quot;</span><span class="p">],</span><span class="s2">&quot;x64&quot;</span><span class="p">)</span>
+<span class="n">path</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;x64&quot;</span><span class="p">][</span><span class="s2">&quot;gnu&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;x64&quot;</span><span class="p">][</span><span class="s2">&quot;root&quot;</span><span class="p">],</span><span class="s2">&quot;gnu&quot;</span><span class="p">)</span>
+<span class="n">path</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;x64&quot;</span><span class="p">][</span><span class="s2">&quot;intel&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;x64&quot;</span><span class="p">][</span><span class="s2">&quot;root&quot;</span><span class="p">],</span><span class="s2">&quot;intel&quot;</span><span class="p">)</span>
 
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+
+<span class="c1">####################################################################################################################################</span>
+
+<span class="kn">from</span> <span class="nn">_Version</span> <span class="kn">import</span> <span class="n">Version</span>
+<span class="n">version</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">versionType</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;interface&quot;</span><span class="p">,</span><span class="s2">&quot;kernel&quot;</span><span class="p">]:</span> <span class="nb">setattr</span><span class="p">(</span><span class="n">version</span><span class="p">,</span><span class="n">versionType</span><span class="p">,</span><span class="n">Version</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">auxil</span><span class="p">,</span><span class="n">versionType</span><span class="p">))</span>
 
 <span class="c1">####################################################################################################################################</span>
 
@@ -239,6 +252,14 @@
 <span class="n">platform</span><span class="o">.</span><span class="n">isLinux</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">name</span><span class="o">==</span><span class="s2">&quot;linux&quot;</span> <span class="k">else</span> <span class="kc">False</span>
 <span class="n">platform</span><span class="o">.</span><span class="n">isMacOS</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">name</span><span class="o">==</span><span class="s2">&quot;darwin&quot;</span> <span class="k">else</span> <span class="kc">False</span>
 <span class="n">platform</span><span class="o">.</span><span class="n">osname</span> <span class="o">=</span> <span class="s2">&quot;windows&quot;</span> <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">isWin32</span> <span class="k">else</span> <span class="n">platform</span><span class="o">.</span><span class="n">name</span>
+<span class="n">platform</span><span class="o">.</span><span class="n">isWSL</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">isLinux</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">subprocess</span>
+        <span class="n">cmdout</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">getoutput</span><span class="p">(</span><span class="s2">&quot;uname -a&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">platform</span><span class="o">.</span><span class="n">isWSL</span> <span class="o">=</span> <span class="s2">&quot;microsoft&quot;</span> <span class="ow">in</span> <span class="n">cmdout</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
 
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">_dt</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="n">_dt</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
@@ -366,18 +387,29 @@
 <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">release</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/releases&quot;</span>
 <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">release</span><span class="o">.</span><span class="n">latest</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
 <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">release</span><span class="o">.</span><span class="n">latest</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">release</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/latest&quot;</span>
+
 <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
 <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">_url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/archive&quot;</span>
-<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">master</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
-<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">zip</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
-<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">tar</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
-<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">zip</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/master.zip&quot;</span>
-<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/master.tar.gz&quot;</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">latest</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">latest</span><span class="o">.</span><span class="n">zip</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">latest</span><span class="o">.</span><span class="n">tar</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">latest</span><span class="o">.</span><span class="n">zip</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/main.zip&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">latest</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/main.tar.gz&quot;</span>
+
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">zip</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">tar</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;v&quot;</span> <span class="o">+</span> <span class="n">version</span><span class="o">.</span><span class="n">kernel</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>
+<span class="c1"># comment the above line and uncomment the line below for testing unpublished versions</span>
+<span class="c1">#website.github.archive.current._name = &quot;dev&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">zip</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">_name</span> <span class="o">+</span> <span class="s2">&quot;.zip&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">_url</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">_name</span> <span class="o">+</span> <span class="s2">&quot;.tar.gz&quot;</span>
 
 <span class="c1"># GitHub examples</span>
 
 <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">examples</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
-<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/cdslaborg/paramontex&quot;</span>
+<span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/cdslaborg/paramonte.svg?branch=main&quot;</span>
 
 <span class="c1"># Intel MPI</span>
 
@@ -396,6 +428,67 @@
 <span class="n">website</span><span class="o">.</span><span class="n">openmpi</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
 <span class="n">website</span><span class="o">.</span><span class="n">openmpi</span><span class="o">.</span><span class="n">home</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
 <span class="n">website</span><span class="o">.</span><span class="n">openmpi</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.open-mpi.org/&quot;</span>
+
+<span class="c1">####################################################################################################################################</span>
+
+<span class="n">path</span><span class="o">.</span><span class="n">archive</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">vname</span> <span class="o">=</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">_name</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;v&quot;</span> <span class="k">else</span> <span class="n">website</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">_name</span>
+<span class="n">path</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">download</span><span class="p">,</span> <span class="s2">&quot;paramonte-&quot;</span> <span class="o">+</span> <span class="n">vname</span><span class="p">)</span>
+<span class="n">path</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">install</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+<span class="n">path</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">root</span><span class="p">,</span><span class="s2">&quot;bin&quot;</span><span class="p">,</span><span class="s2">&quot;libparamonte_Python&quot;</span><span class="p">)</span>
+<span class="n">path</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">lib</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">root</span><span class="p">,</span><span class="s2">&quot;paramonte&quot;</span><span class="p">,</span><span class="s2">&quot;lib&quot;</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;path to the directory of uncompressed paramonte archive.&quot;&quot;&quot;</span>
+
+<span class="n">path</span><span class="o">.</span><span class="n">localInstall</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">path</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">root</span> <span class="p">,</span> <span class="s2">&quot;build&quot;</span><span class="p">,</span> <span class="s2">&quot;prerequisites&quot;</span><span class="p">,</span> <span class="s2">&quot;prerequisites&quot;</span><span class="p">,</span> <span class="s2">&quot;installations&quot;</span> <span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;path to the directory of the local installation of the paramonte kernel.&quot;&quot;&quot;</span>
+
+<span class="c1">####################################################################################################################################</span>
+
+<span class="c1">#### setup env</span>
+
+<span class="k">if</span> <span class="s2">&quot;PATH&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">isWin32</span><span class="p">:</span>
+
+    <span class="n">pathList</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">thisPath</span> <span class="ow">in</span> <span class="n">pathList</span><span class="p">:</span>
+        <span class="n">pathLower</span> <span class="o">=</span> <span class="n">thisPath</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;mpiintel64bin&quot;</span> <span class="ow">in</span> <span class="n">pathLower</span><span class="p">):</span>
+            <span class="n">mpiPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">thisPath</span><span class="p">,</span><span class="s2">&quot;release&quot;</span><span class="p">)</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mpiPath</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span>
+            <span class="n">libfabricPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">thisPath</span><span class="p">),</span><span class="s2">&quot;libfabric&quot;</span><span class="p">,</span><span class="s2">&quot;bin&quot;</span><span class="p">)</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">libfabricPath</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span>
+            <span class="k">break</span>
+
+    <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">arch</span><span class="o">==</span><span class="s2">&quot;x64&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">isWin32</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;x64&quot;</span><span class="p">][</span><span class="s2">&quot;root&quot;</span><span class="p">]</span> \
+                                                <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> \
+                                                <span class="o">+</span> <span class="n">path</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;x64&quot;</span><span class="p">][</span><span class="s2">&quot;intel&quot;</span><span class="p">]</span> \
+                                                <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> \
+                                                <span class="o">+</span> <span class="n">path</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;x64&quot;</span><span class="p">][</span><span class="s2">&quot;gnu&quot;</span><span class="p">]</span> \
+                                                <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> \
+                                                <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span>
+
+<span class="k">else</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="s2">&quot;LD_LIBRARY_PATH&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span>
+
+    <span class="n">libdir</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib&quot;</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">libdir</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">libdir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>
+
+    <span class="n">libdir</span> <span class="o">=</span> <span class="s2">&quot;/usr/local/lib&quot;</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">libdir</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">libdir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>
+
+    <span class="n">libdir</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib64&quot;</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">libdir</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">libdir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>
+
+    <span class="n">libdir</span> <span class="o">=</span> <span class="s2">&quot;/usr/local/lib64&quot;</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">libdir</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">libdir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>
+
+    <span class="n">pathlibs</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">arch</span><span class="o">==</span><span class="s2">&quot;x64&quot;</span><span class="p">:</span> <span class="n">pathlibs</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;x64&quot;</span><span class="p">][</span><span class="s2">&quot;gnu&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">path</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;x64&quot;</span><span class="p">][</span><span class="s2">&quot;intel&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pathlibs</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>
+
 
 <span class="c1">####################################################################################################################################</span>
 
@@ -419,12 +512,6 @@
 <span class="c1">#          adsnote = {Provided by the SAO/NASA Astrophysics Data System}</span>
 <span class="c1">#}</span>
 <span class="c1">#&quot;&quot;&quot;</span>
-
-<span class="c1">####################################################################################################################################</span>
-
-<span class="kn">from</span> <span class="nn">_Version</span> <span class="kn">import</span> <span class="n">Version</span>
-<span class="n">version</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">versionType</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;interface&quot;</span><span class="p">,</span><span class="s2">&quot;kernel&quot;</span><span class="p">]:</span> <span class="nb">setattr</span><span class="p">(</span><span class="n">version</span><span class="p">,</span><span class="n">versionType</span><span class="p">,</span><span class="n">Version</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">auxil</span><span class="p">,</span><span class="n">versionType</span><span class="p">))</span>
 
 <span class="c1">####################################################################################################################################</span>
 

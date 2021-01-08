@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.5.1
+                2.5.2
               </div>
             
           
@@ -195,7 +195,7 @@
 <span class="c1">####   work (education/research/industry/development/...) by citing the ParaMonte </span>
 <span class="c1">####   library as described on this page:</span>
 <span class="c1">####</span>
-<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/master/ACKNOWLEDGMENT.md</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/main/ACKNOWLEDGMENT.md</span>
 <span class="c1">####</span>
 <span class="c1">####################################################################################################################################</span>
 <span class="c1">####################################################################################################################################</span>
@@ -216,7 +216,7 @@
 
 <div class="viewcode-block" id="getLogFuncRaw"><a class="viewcode-back" href="../../autoapi/paramonte/mvn/index.html#paramonte.mvn.getLogFuncRaw">[docs]</a><span class="k">def</span> <span class="nf">getLogFuncRaw</span><span class="p">(</span><span class="n">ndim</span><span class="p">,</span><span class="n">Point</span><span class="p">):</span> <span class="k">return</span> <span class="n">LOG_SMVN_COEF</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span> <span class="n">Point</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">ndim</span><span class="p">]</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span></div>
 
-<div class="viewcode-block" id="getLogFunc"><a class="viewcode-back" href="../../autoapi/paramonte/mvn/index.html#paramonte.mvn.getLogFunc">[docs]</a><span class="k">def</span> <span class="nf">getLogFunc</span><span class="p">(</span><span class="n">Point</span><span class="p">):</span> <span class="k">return</span> <span class="n">LOG_SMVN_COEF</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span> <span class="n">Point</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span></div>
+<div class="viewcode-block" id="getLogFunc"><a class="viewcode-back" href="../../autoapi/paramonte/mvn/index.html#paramonte.mvn.getLogFunc">[docs]</a><span class="k">def</span> <span class="nf">getLogFunc</span><span class="p">(</span><span class="n">Point</span><span class="p">):</span> <span class="k">return</span> <span class="n">LOG_SMVN_COEF</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">point</span><span class="p">,</span><span class="n">point</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

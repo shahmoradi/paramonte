@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                2.5.1
+                2.5.2
               </div>
             
           
@@ -195,7 +195,7 @@
 <span class="c1">####   work (education/research/industry/development/...) by citing the ParaMonte</span>
 <span class="c1">####   library as described on this page:</span>
 <span class="c1">####</span>
-<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/master/ACKNOWLEDGMENT.md</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/main/ACKNOWLEDGMENT.md</span>
 <span class="c1">####</span>
 <span class="c1">####################################################################################################################################</span>
 <span class="c1">####################################################################################################################################</span>
@@ -417,8 +417,8 @@
 <span class="sd">        the user-provided input objective function ``getLogFuncRaw(ndim,point)`` is</span>
 <span class="sd">        a C-style raw pointer. This requires the user to guarantee that ``point`` will</span>
 <span class="sd">        be always used with array bounds in their implementation of the objective function.</span>
-<span class="sd">        The use of ``_runSampler()`` in place of ``runSampler()`` leads to a slight</span>
-<span class="sd">        performance gain in the simulations.</span>
+<span class="sd">        The use of ``_runSampler()`` in place of ``runSampler()`` might lead to a slight</span>
+<span class="sd">        performance gain in the simulations, that is often negligible.</span>
 
 <span class="sd">            **Example serial usage**</span>
 
@@ -530,19 +530,26 @@
 
         <span class="n">cstype</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">dummyList</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">parallelism</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">errorOccurred</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">buildMode</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
             <span class="n">errorOccurred</span> <span class="o">=</span> <span class="kc">False</span>
             <span class="k">if</span> <span class="s2">&quot;-&quot;</span> <span class="ow">in</span> <span class="n">buildMode</span><span class="p">:</span>
-                <span class="n">dummyList</span> <span class="o">=</span> <span class="n">buildMode</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
-                <span class="n">buildMode</span> <span class="o">=</span> <span class="n">dummyList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># build type</span>
-                <span class="n">cstype</span> <span class="o">=</span> <span class="n">dummyList</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># compiler suite</span>
+                <span class="n">dummyList</span> <span class="o">=</span> <span class="n">buildMode</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">dummyList</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;debug&quot;</span><span class="p">,</span><span class="s2">&quot;testing&quot;</span><span class="p">,</span><span class="s2">&quot;release&quot;</span><span class="p">]:</span>
+                        <span class="n">buildMode</span> <span class="o">=</span> <span class="n">item</span>
+                    <span class="k">elif</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;impi&quot;</span><span class="p">,</span><span class="s2">&quot;mpich&quot;</span><span class="p">,</span><span class="s2">&quot;openmpi&quot;</span><span class="p">]:</span>
+                        <span class="n">parallelism</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">item</span>
+                    <span class="k">elif</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;intel&quot;</span><span class="p">,</span><span class="s2">&quot;gnu&quot;</span><span class="p">]:</span>
+                        <span class="n">cstype</span> <span class="o">=</span> <span class="n">item</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">errorOccurred</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="k">break</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">errorOccurred</span><span class="p">:</span> <span class="n">errorOccurred</span> <span class="o">=</span> <span class="n">buildMode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;release&quot;</span><span class="p">,</span> <span class="s2">&quot;testing&quot;</span><span class="p">,</span> <span class="s2">&quot;debug&quot;</span><span class="p">]</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">errorOccurred</span> <span class="ow">and</span> <span class="n">cstype</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="n">errorOccurred</span> <span class="o">=</span> <span class="ow">not</span> <span class="p">(</span><span class="n">cstype</span><span class="o">==</span><span class="s2">&quot;gnu&quot;</span> <span class="ow">or</span> <span class="n">cstype</span><span class="o">==</span><span class="s2">&quot;intel&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">errorOccurred</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">dummyList</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="n">buildMode</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dummyList</span><span class="p">)</span>
-            <span class="n">pm</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;The object attribute ``buildMode`` must be of type ``str``.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+            <span class="n">pm</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;The object&#39;s attribute ``buildMode`` must be of type ``str``.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
                             <span class="o">+</span> <span class="s2">&quot;It is an optional string argument with default value </span><span class="se">\&quot;</span><span class="s2">release</span><span class="se">\&quot;</span><span class="s2">.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
                             <span class="o">+</span> <span class="s2">&quot;possible choices are:&quot;</span> <span class="o">+</span> <span class="n">newline</span>
                             <span class="o">+</span> <span class="n">newline</span>
@@ -608,106 +615,52 @@
 
         <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 
-        <span class="c1">#### setup env</span>
+        <span class="c1">#if pm.platform.isLinux:</span>
+        <span class="c1">#    from _pmreqs import getLocalInstallDir</span>
+        <span class="c1">#    localInstallDir = getLocalInstallDir()</span>
+        <span class="c1">#</span>
+        <span class="c1">#    if localInstallDir.gnu.root is not None:</span>
+        <span class="c1">#        for object in os.scandir(localInstallDir.gnu.root):</span>
+        <span class="c1">#            if object.is_dir() and (&quot;lib&quot; in object.name) and object not in os.environ[&quot;LD_LIBRARY_PATH&quot;]:</span>
+        <span class="c1">#                os.environ[&quot;LD_LIBRARY_PATH&quot;] = object.path + os.pathsep + os.environ[&quot;LD_LIBRARY_PATH&quot;]</span>
+        <span class="c1">#    if localInstallDir.mpi.root is not None:</span>
+        <span class="c1">#        if localInstallDir.mpi.bin is not None:</span>
+        <span class="c1">#            if localInstallDir.mpi.bin not in os.environ[&quot;PATH&quot;]: os.environ[&quot;PATH&quot;] = localInstallDir.mpi.bin + os.pathsep + os.environ[&quot;PATH&quot;]</span>
+        <span class="c1">#        for object in os.scandir(localInstallDir.mpi.root):</span>
+        <span class="c1">#            if object.is_dir() and (&quot;lib&quot; in object.name):</span>
+        <span class="c1">#                os.environ[&quot;LD_LIBRARY_PATH&quot;] = object.path + os.pathsep + os.environ[&quot;LD_LIBRARY_PATH&quot;]</span>
+        <span class="c1">#        if localInstallDir.mpi.lib is not None: os.environ[&quot;LD_LIBRARY_PATH&quot;] = localInstallDir.mpi.lib + os.pathsep + os.environ[&quot;LD_LIBRARY_PATH&quot;]</span>
 
-        <span class="k">if</span> <span class="n">pm</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">isWin32</span><span class="p">:</span>
+        <span class="c1">#### determine the mpi library brand. @todo: This could be later moved to pmreqs as it does not need to be executed every time.</span>
 
-            <span class="k">if</span> <span class="s2">&quot;PATH&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">root</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">root</span>
-
-            <span class="c1">#mpiFound = False</span>
-            <span class="n">pathList</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">pathList</span><span class="p">:</span>
-                <span class="n">pathLower</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-                <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;mpiintel64bin&quot;</span> <span class="ow">in</span> <span class="n">pathLower</span><span class="p">):</span>
-                    <span class="c1">#mpiFound = True</span>
-                    <span class="c1">#bldMode = buildMode</span>
-                    <span class="c1">#if bldMode==&quot;testing&quot;: bldMode = &quot;release&quot;</span>
-                    <span class="n">mpiPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s2">&quot;release&quot;</span><span class="p">)</span>
-                    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mpiPath</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span>
-                    <span class="n">libfabricPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="p">),</span><span class="s2">&quot;libfabric&quot;</span><span class="p">,</span><span class="s2">&quot;bin&quot;</span><span class="p">)</span>
-                    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">libfabricPath</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span>
-                    <span class="k">break</span>
-
-        <span class="k">else</span><span class="p">:</span>
-
-            <span class="k">if</span> <span class="s2">&quot;LD_LIBRARY_PATH&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">reportEnabled</span> <span class="ow">and</span> <span class="n">pm</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">isLinux</span><span class="p">:</span>
-                    <span class="n">pm</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;LD_LIBRARY_PATH environmental variable is not defined in &quot;</span> <span class="o">+</span> <span class="n">newline</span>
-                                    <span class="o">+</span> <span class="s2">&quot;your Python session. Consider running the following command &quot;</span> <span class="o">+</span> <span class="n">newline</span>
-                                    <span class="o">+</span> <span class="s2">&quot;in your Bash shell before reopening Python and using ParaMonte: &quot;</span> <span class="o">+</span> <span class="n">newline</span>
-                                    <span class="o">+</span> <span class="n">newline</span>
-                                    <span class="o">+</span> <span class="s2">&quot;    export LD_LIBRARY_PATH=.&quot;</span>
-                            <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
-                            <span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">1</span>
-                            <span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span>
-                            <span class="p">)</span>
-            <span class="n">libdir</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib&quot;</span>
-            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">libdir</span><span class="p">):</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">libdir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>
-            <span class="n">libdir</span> <span class="o">=</span> <span class="s2">&quot;/usr/local/lib&quot;</span>
-            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">libdir</span><span class="p">):</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">libdir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>
-            <span class="n">libdir</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib64&quot;</span>
-            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">libdir</span><span class="p">):</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">libdir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>
-            <span class="n">libdir</span> <span class="o">=</span> <span class="s2">&quot;/usr/local/lib64&quot;</span>
-            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">libdir</span><span class="p">):</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">libdir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">root</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>
-
-            <span class="kn">from</span> <span class="nn">_pmreqs</span> <span class="kn">import</span> <span class="n">getLocalInstallDir</span>
-            <span class="n">localInstallDir</span> <span class="o">=</span> <span class="n">getLocalInstallDir</span><span class="p">()</span>
-
-            <span class="k">if</span> <span class="n">localInstallDir</span><span class="o">.</span><span class="n">gnu</span><span class="o">.</span><span class="n">root</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">for</span> <span class="nb">object</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">scandir</span><span class="p">(</span><span class="n">localInstallDir</span><span class="o">.</span><span class="n">gnu</span><span class="o">.</span><span class="n">root</span><span class="p">):</span>
-                    <span class="k">if</span> <span class="nb">object</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;lib&quot;</span> <span class="ow">in</span> <span class="nb">object</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
-                        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>
-
-            <span class="k">if</span> <span class="n">localInstallDir</span><span class="o">.</span><span class="n">mpi</span><span class="o">.</span><span class="n">root</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">localInstallDir</span><span class="o">.</span><span class="n">mpi</span><span class="o">.</span><span class="n">bin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">localInstallDir</span><span class="o">.</span><span class="n">mpi</span><span class="o">.</span><span class="n">bin</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span>
-                <span class="k">for</span> <span class="nb">object</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">scandir</span><span class="p">(</span><span class="n">localInstallDir</span><span class="o">.</span><span class="n">mpi</span><span class="o">.</span><span class="n">root</span><span class="p">):</span>
-                    <span class="k">if</span> <span class="nb">object</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;lib&quot;</span> <span class="ow">in</span> <span class="nb">object</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
-                        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>
-                <span class="k">if</span> <span class="n">localInstallDir</span><span class="o">.</span><span class="n">mpi</span><span class="o">.</span><span class="n">lib</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">localInstallDir</span><span class="o">.</span><span class="n">mpi</span><span class="o">.</span><span class="n">lib</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">]</span>
-
-        <span class="c1">#### determine the mpi library brand. @todo: This must be later moved to pmreqs as it does not need to be executed every time.</span>
-
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mpiEnabled</span><span class="p">:</span>
-            <span class="kn">import</span> <span class="nn">subprocess</span>
-            <span class="n">cmdout</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">getoutput</span><span class="p">(</span><span class="s2">&quot;mpiexec --version&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-            <span class="k">if</span> <span class="s2">&quot;intel&quot;</span> <span class="ow">in</span> <span class="n">cmdout</span><span class="p">:</span>
-                <span class="n">parallelism</span> <span class="o">=</span> <span class="s2">&quot;_impi&quot;</span>
-            <span class="k">elif</span> <span class="s2">&quot;hydra&quot;</span> <span class="ow">in</span> <span class="n">cmdout</span> <span class="ow">or</span> <span class="s2">&quot;mpich&quot;</span> <span class="ow">in</span> <span class="n">cmdout</span><span class="p">:</span>
-                <span class="n">parallelism</span> <span class="o">=</span> <span class="s2">&quot;_mpich&quot;</span>
-            <span class="k">elif</span> <span class="s2">&quot;openrte&quot;</span> <span class="ow">in</span> <span class="n">cmdout</span> <span class="ow">or</span> <span class="s2">&quot;open-mpi&quot;</span> <span class="ow">in</span> <span class="n">cmdout</span> <span class="ow">or</span> <span class="s2">&quot;openmpi&quot;</span> <span class="ow">in</span> <span class="n">cmdout</span><span class="p">:</span>
-                <span class="n">parallelism</span> <span class="o">=</span> <span class="s2">&quot;_openmpi&quot;</span>
-            <span class="k">else</span><span class="p">:</span> <span class="c1"># assume defaults</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">isWin32</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">isLinux</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">parallelism</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mpiEnabled</span><span class="p">:</span> 
+                <span class="kn">import</span> <span class="nn">subprocess</span>
+                <span class="n">cmdout</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">getoutput</span><span class="p">(</span><span class="s2">&quot;mpiexec --version&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                <span class="k">if</span> <span class="s2">&quot;intel&quot;</span> <span class="ow">in</span> <span class="n">cmdout</span><span class="p">:</span>
                     <span class="n">parallelism</span> <span class="o">=</span> <span class="s2">&quot;_impi&quot;</span>
-                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">isMacOS</span><span class="p">:</span>
+                <span class="k">elif</span> <span class="s2">&quot;hydra&quot;</span> <span class="ow">in</span> <span class="n">cmdout</span> <span class="ow">or</span> <span class="s2">&quot;mpich&quot;</span> <span class="ow">in</span> <span class="n">cmdout</span><span class="p">:</span>
+                    <span class="n">parallelism</span> <span class="o">=</span> <span class="s2">&quot;_mpich&quot;</span>
+                <span class="k">elif</span> <span class="s2">&quot;openrte&quot;</span> <span class="ow">in</span> <span class="n">cmdout</span> <span class="ow">or</span> <span class="s2">&quot;open-mpi&quot;</span> <span class="ow">in</span> <span class="n">cmdout</span> <span class="ow">or</span> <span class="s2">&quot;openmpi&quot;</span> <span class="ow">in</span> <span class="n">cmdout</span><span class="p">:</span>
                     <span class="n">parallelism</span> <span class="o">=</span> <span class="s2">&quot;_openmpi&quot;</span>
-            <span class="k">if</span> <span class="n">cstype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">parallelism</span><span class="o">==</span><span class="s2">&quot;_impi&quot;</span><span class="p">:</span>
-                    <span class="n">cstype</span> <span class="o">=</span> <span class="s2">&quot;intel&quot;</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">cstype</span> <span class="o">=</span> <span class="s2">&quot;gnu&quot;</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">parallelism</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-            <span class="n">pm</span><span class="o">.</span><span class="n">note</span><span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;Running the &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span> <span class="o">+</span> <span class="s2">&quot; sampler in serial mode...&quot;</span> <span class="o">+</span> <span class="n">newline</span>
-                            <span class="o">+</span> <span class="s2">&quot;To run the &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span> <span class="o">+</span> <span class="s2">&quot; sampler in parallel mode visit:&quot;</span> <span class="o">+</span> <span class="n">newline</span>
-                            <span class="o">+</span> <span class="n">newline</span>
-                            <span class="o">+</span> <span class="s2">&quot;    &quot;</span> <span class="o">+</span> <span class="n">pm</span><span class="o">.</span><span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="n">newline</span>
-                            <span class="o">+</span> <span class="n">newline</span>
-                            <span class="o">+</span> <span class="s2">&quot;If you are using Jupyter notebook, check the Jupyter&#39;s &quot;</span> <span class="o">+</span> <span class="n">newline</span>
-                            <span class="o">+</span> <span class="s2">&quot;terminal window for realtime simulation progress and report.&quot;</span>
-                    <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
-                    <span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">1</span>
-                    <span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span>
-                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span> <span class="c1"># assume defaults</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">isWin32</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">isLinux</span><span class="p">:</span>
+                        <span class="n">parallelism</span> <span class="o">=</span> <span class="s2">&quot;_impi&quot;</span>
+                    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">isMacOS</span><span class="p">:</span>
+                        <span class="n">parallelism</span> <span class="o">=</span> <span class="s2">&quot;_openmpi&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">parallelism</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                <span class="n">pm</span><span class="o">.</span><span class="n">note</span><span class="p">(</span> <span class="n">msg</span>    <span class="o">=</span> <span class="s2">&quot;Running the &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span> <span class="o">+</span> <span class="s2">&quot; sampler in serial mode...&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;To run the &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span> <span class="o">+</span> <span class="s2">&quot; sampler in parallel mode visit:&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;    &quot;</span> <span class="o">+</span> <span class="n">pm</span><span class="o">.</span><span class="n">website</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;If you are using Jupyter notebook, check the Jupyter&#39;s &quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;terminal window for realtime simulation progress and report.&quot;</span>
+                        <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                        <span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">1</span>
+                        <span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span>
+                        <span class="p">)</span>
 
         <span class="c1"># import ParaMonte dll define result (None) AND argument (pointer to a c function) type</span>
 
@@ -716,14 +669,20 @@
         <span class="n">buildModeList</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">buildMode</span><span class="p">)</span>
         <span class="n">pmcsList</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;intel&quot;</span><span class="p">,</span><span class="s2">&quot;gnu&quot;</span><span class="p">]</span>
 
-        <span class="k">if</span> <span class="n">cstype</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">cstype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">parallelism</span><span class="o">==</span><span class="s2">&quot;_impi&quot;</span><span class="p">:</span>
+                <span class="n">cstype</span> <span class="o">=</span> <span class="s2">&quot;intel&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">cstype</span> <span class="o">=</span> <span class="s2">&quot;gnu&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
             <span class="n">pmcsList</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">pmcsList</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">cstype</span><span class="p">))</span>
             <span class="n">pmcsList</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">cstype</span><span class="p">)</span>
 
         <span class="n">libNameSuffix</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;windows&quot;</span> <span class="p">:</span> <span class="s2">&quot;.dll&quot;</span>
                         <span class="p">,</span> <span class="s2">&quot;cygwin&quot;</span>  <span class="p">:</span> <span class="s2">&quot;.dll&quot;</span>
-                        <span class="p">,</span> <span class="s2">&quot;darwin&quot;</span>  <span class="p">:</span> <span class="s2">&quot;.dylib&quot;</span>
+                        <span class="p">,</span> <span class="s2">&quot;mingw&quot;</span>   <span class="p">:</span> <span class="s2">&quot;.dll&quot;</span>
                         <span class="p">,</span> <span class="s2">&quot;linux&quot;</span>   <span class="p">:</span> <span class="s2">&quot;.so&quot;</span>
+                        <span class="p">,</span> <span class="s2">&quot;darwin&quot;</span>  <span class="p">:</span> <span class="s2">&quot;.dylib&quot;</span>
                         <span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pm</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">osname</span><span class="p">,</span> <span class="s2">&quot;.so&quot;</span><span class="p">)</span>
 
         <span class="n">libPath</span> <span class="o">=</span> <span class="kc">None</span>
@@ -736,19 +695,20 @@
 
                 <span class="c1">#### Build the library name</span>
 
-                <span class="n">libName</span> <span class="o">=</span> <span class="n">libNamePrefix</span> <span class="o">+</span> <span class="n">pmcs</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">buildMode</span> <span class="o">+</span> <span class="s2">&quot;_dynamic_heap&quot;</span> <span class="o">+</span> <span class="n">parallelism</span> <span class="o">+</span> <span class="n">libNameSuffix</span>
+                <span class="n">libName</span> <span class="o">=</span> <span class="n">libNamePrefix</span> <span class="o">+</span> <span class="n">pmcs</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">buildMode</span> <span class="o">+</span> <span class="s2">&quot;_shared_heap&quot;</span> <span class="o">+</span> <span class="n">parallelism</span> <span class="o">+</span> <span class="n">libNameSuffix</span>
                 <span class="n">libPath</span> <span class="o">=</span> <span class="n">find_library</span><span class="p">(</span><span class="n">libName</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">libPath</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">libPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">pm</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="n">libName</span> <span class="p">)</span>
-
+                <span class="k">if</span> <span class="n">libPath</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">libPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">pm</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="n">pm</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">arch</span><span class="p">][</span><span class="n">pmcs</span><span class="p">],</span> <span class="n">libName</span> <span class="p">)</span>
                 <span class="n">libFound</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">libPath</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">libFound</span><span class="p">:</span> <span class="k">break</span>
 
-            <span class="k">if</span> <span class="n">libFound</span><span class="p">:</span> <span class="c1"># check if lib file exists</span>
+            <span class="c1"># exist the loop if the library has been found</span>
+
+            <span class="k">if</span> <span class="n">libFound</span><span class="p">:</span> 
                 <span class="k">break</span>
             <span class="c1">#else:</span>
             <span class="c1">#    if self.reportEnabled:</span>
-            <span class="c1">#        pm.warn( msg   = &quot;ParaMonte dynamic library for the requested build mode &quot; + buildMode + &quot; not found.&quot; + newline</span>
-            <span class="c1">#                        + &quot;Searching for ParaMonte dynamic library in other build modes...&quot;</span>
+            <span class="c1">#        pm.warn( msg   = &quot;The ParaMonte shared library for the requested build mode &quot; + buildMode + &quot; not found.&quot; + newline</span>
+            <span class="c1">#                        + &quot;Searching for the ParaMonte shared library in other build modes...&quot;</span>
             <span class="c1">#                , methodName = self._methodName</span>
             <span class="c1">#                , marginTop = 1</span>
             <span class="c1">#                , marginBot = 1</span>
@@ -782,7 +742,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">parallelMsg</span> <span class="o">=</span> <span class="s2">&quot;Please report this issue at:&quot;</span> <span class="o">+</span> <span class="n">newline</span>
 
-            <span class="n">pm</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;Exhausted all possible ParaMonte dynamic library search&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+            <span class="n">pm</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;Exhausted all possible ParaMonte shared library search&quot;</span> <span class="o">+</span> <span class="n">newline</span>
                             <span class="o">+</span> <span class="s2">&quot;names but could not find any compatible library.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
                             <span class="c1">#+ &quot;Last search:&quot; + newline</span>
                             <span class="c1">#+ newline</span>
@@ -928,7 +888,11 @@
            <span class="c1">#while isLoaded(libPath):</span>
            <span class="c1">#    dlclose(pmdll._handle)</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">ct</span><span class="o">.</span><span class="n">dlclose</span><span class="p">(</span><span class="n">pmdll</span><span class="o">.</span><span class="n">_handle</span><span class="p">)</span>
+                <span class="c1">#ct.dlclose(pmdll._handle)</span>
+                <span class="n">_dlclose_func</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">cdll</span><span class="o">.</span><span class="n">LoadLibrary</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dlclose</span>
+                <span class="n">_dlclose_func</span><span class="o">.</span><span class="n">argtypes</span> <span class="o">=</span> <span class="p">[</span><span class="n">ct</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">]</span>
+                <span class="n">_dlclose_func</span><span class="p">(</span><span class="n">pmdll</span><span class="o">.</span><span class="n">_handle</span><span class="p">)</span>
+                <span class="k">del</span> <span class="n">pmdll</span>
             <span class="k">except</span><span class="p">:</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">reportEnabled</span><span class="p">:</span>
                     <span class="n">pm</span><span class="o">.</span><span class="n">warn</span> <span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;Failed to properly close the ParaMonte shared library file. &quot;</span> <span class="o">+</span> <span class="n">newline</span>
