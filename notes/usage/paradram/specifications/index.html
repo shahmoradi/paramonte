@@ -1728,9 +1728,8 @@ Delayed Rejection (DR) scheme is activated (by setting delayedRejectionCount&gt;
 of the DR process, the proposal distribution from the last stage is scaled by the factor 
 delayedRejectionScaleFactorVec(i). Missing elements of the delayedRejectionScaleFactorVec in the 
 input to ParaDRAM will be set to the default value. The default value at all stages is 0.5^(1/ndim) 
-= 0.840896415253715, which reduces the volume of the covariance matrix of the proposal from the last 
-DR stage by one half. The variable ndim represents the number of dimensions of the Domain of the 
-objective function.
+where ndim is the number of dimensions of the domain of the objective function. This default value effectively 
+reduces the volume of the covariance matrix of the proposal distribution by half compared to the last DR stage.
 </code></pre></div></div>
 <p>See also the input simulation specification 
 <a href="#delayedrejectioncount">delayedRejectionCount</a>.<br />
@@ -1839,7 +1838,7 @@ objective function.
 
         <div class="col-lg-12 footer">
             &copy;2021 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on January 19, 2021 <br />
+            Last updated on January 26, 2021 <br />
             
                 <span>Page last updated:</span>January 1, 2020<br/>
             
