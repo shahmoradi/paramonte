@@ -801,11 +801,11 @@ All of such errors imply that the compiler/linker cannot locate the required <b>
 
 <ol>
     <li>
-        Locate the missing share object files on your system, if you do already know that they exist on your system and help the compiler find them by redefining the Bash environmental variable <b><code>LD_LIBRARY_PATH</code></b>,  
+        If you are confident that the missing shared library files already exist on your system, then locate the missing files and help your compiler (or the ParaMonte library) find the missing files by redefining the Bash environmental variable <b><code>LD_LIBRARY_PATH</code></b>,  
         
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>PATH_2_SHARED_OBJECT_FOLDER:<span class="nv">$LD_LIBRARY_PATH</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>PATH_TO_SHARED_OBJECT_FOLDER:<span class="nv">$LD_LIBRARY_PATH</span></code></pre></figure>
 
-        where you will have to replace <b><code>PATH_2_SHARED_OBJECT_FOLDER</code></b> with the path to the folder containing the required object file(s).
+        where you will have to replace <b><code>PATH_TO_SHARED_OBJECT_FOLDER</code></b> with the path to the folder containing the required object file(s).
         <br />
         For example, for a local build of the ParaMonte library for which the required GNU compilers have been also automatically built by the ParaMonte build-scripts, this libgfortran.so.5 shared object file resides in the build directory,  
         <pre>/build/prerequisites/prerequisites/installations/gnu/10.1.0/lib64</pre> relative to the root directory of the ParaMonte library.
@@ -943,7 +943,7 @@ All of such errors imply that the compiler/linker cannot locate the required <b>
 
         <div class="col-lg-12 footer">
             &copy;2021 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on March 15, 2021 <br />
+            Last updated on March 17, 2021 <br />
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="/paramonte/images/logo.png" }}" alt="cdslab.org" /></a>
