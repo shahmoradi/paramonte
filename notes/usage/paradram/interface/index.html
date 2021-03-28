@@ -850,9 +850,9 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
 <h3 id="calling-the-paradram-sampler-from-matlab">Calling the ParaDRAM sampler from MATLAB</h3>
 
-<p>The simulation specifications are all automatically set to the appropriate default values. However, if needed, there are two ways to assign non-default values to the simulation specifications from the MATLAB language (somewhat similar to the Fortran interface to the ParaMonte library):</p>
+<p>The simulation specifications are all automatically set to the appropriate default values. However, if needed, there are two ways to assign non-default values to the simulation specifications from the MATLAB language (somewhat similar to the Fortran interface to the ParaMonte library as the two languages have very similar syntax rules):</p>
 <ol>
-  <li>One good way is to assign all simulation specifications as attributes of the ParaMonte sampler object that you have constructed. For example, here is a very simple ParaDRAM simulation in MATLAB,
+  <li>The recommended way is to assign all simulation specifications as attributes of the ParaMonte sampler object that you have constructed. For example, here is a very simple ParaDRAM simulation in MATLAB,
     <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">addpath</span><span class="p">(</span><span class="nb">genpath</span><span class="p">(</span><span class="s2">"./"</span><span class="p">),</span><span class="s2">"-begin"</span><span class="p">);</span>        <span class="c1">% path to the paramonte library</span>
 <span class="n">getLogFunc</span> <span class="o">=</span> <span class="o">@</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span><span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span>           <span class="c1">% define a simple log multivariate Normal (MVN) target density</span>
 <span class="n">pm</span> <span class="o">=</span> <span class="n">paramonte</span><span class="p">();</span>                       <span class="c1">% generate a paramonte class instance</span>
