@@ -1,0 +1,865 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>paramonte.paradram &mdash; ParaMonte - Python  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> ParaMonte - Python
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ParaMonte - Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">paramonte.paradram</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/autoapi/paramonte/paradram/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-paramonte.paradram">
+<span id="paramonte-paradram"></span><h1><a class="reference internal" href="#module-paramonte.paradram" title="paramonte.paradram"><code class="xref py py-mod docutils literal notranslate"><span class="pre">paramonte.paradram</span></code></a><a class="headerlink" href="#module-paramonte.paradram" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#paramonte.paradram.ParaDRAM" title="paramonte.paradram.ParaDRAM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParaDRAM</span></code></a>(sampleSize: tp.Optional[int] = None, randomSeed: tp.Optional[int] = None, description: tp.Optional[str] = None, outputFileName: tp.Optional[str] = None, outputDelimiter: tp.Optional[str] = None, chainFileFormat: tp.Optional[str] = None, variableNameList: tp.Optional[tp.List[str]] = None, restartFileFormat: tp.Optional[str] = None, outputColumnWidth: tp.Optional[int] = None, outputRealPrecision: tp.Optional[int] = None, silentModeRequested: tp.Optional[bool] = None, domainLowerLimitVec: tp.Optional[tp.List[float]] = None, domainUpperLimitVec: tp.Optional[tp.List[float]] = None, parallelizationModel: tp.Optional[str] = None, progressReportPeriod: tp.Optional[int] = None, targetAcceptanceRate: tp.Optional[float] = None, mpiFinalizeRequested: tp.Optional[bool] = None, maxNumDomainCheckToWarn: tp.Optional[int] = None, maxNumDomainCheckToStop: tp.Optional[int] = None, chainSize: tp.Optional[int] = None, scaleFactor: tp.Optional[float] = None, startPointVec: tp.Optional[tp.List[float]] = None, proposalModel: tp.Optional[str] = None, proposalStartCovMat: tp.Optional[tp.Union[np.mat, tp.List[tp.List[float]]]] = None, proposalStartCorMat: tp.Optional[tp.Union[np.mat, tp.List[tp.List[float]]]] = None, proposalStartStdVec: tp.Optional[tp.Union[np.mat, tp.List[float]]] = None, sampleRefinementCount: tp.Optional[int] = None, sampleRefinementMethod: tp.Optional[str] = None, randomStartPointRequested: tp.Optional[bool] = None, randomStartPointDomainLowerLimitVec: tp.Optional[tp.List[float]] = None, randomStartPointDomainUpperLimitVec: tp.Optional[tp.List[float]] = None, adaptiveUpdateCount: tp.Optional[int] = None, adaptiveUpdatePeriod: tp.Optional[int] = None, greedyAdaptationCount: tp.Optional[int] = None, delayedRejectionCount: tp.Optional[int] = None, burninAdaptationMeasure: tp.Optional[float] = None, delayedRejectionScaleFactorVec: tp.Optional[tp.Union[np.mat, tp.List[float]]] = None)</p></td>
+<td><p><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt id="paramonte.paradram.ParaDRAM">
+<em class="property">class </em><code class="sig-prename descclassname">paramonte.paradram.</code><code class="sig-name descname">ParaDRAM</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sampleSize</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">randomSeed</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">description</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">outputFileName</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">outputDelimiter</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">chainFileFormat</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">variableNameList</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>tp.List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restartFileFormat</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">outputColumnWidth</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">outputRealPrecision</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">silentModeRequested</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">domainLowerLimitVec</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>tp.List<span class="p">[</span>float<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">domainUpperLimitVec</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>tp.List<span class="p">[</span>float<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">parallelizationModel</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">progressReportPeriod</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">targetAcceptanceRate</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>float<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mpiFinalizeRequested</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maxNumDomainCheckToWarn</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maxNumDomainCheckToStop</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">chainSize</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scaleFactor</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>float<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">startPointVec</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>tp.List<span class="p">[</span>float<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">proposalModel</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">proposalStartCovMat</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>tp.Union<span class="p">[</span>np.mat<span class="p">, </span>tp.List<span class="p">[</span>tp.List<span class="p">[</span>float<span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">proposalStartCorMat</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>tp.Union<span class="p">[</span>np.mat<span class="p">, </span>tp.List<span class="p">[</span>tp.List<span class="p">[</span>float<span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">proposalStartStdVec</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>tp.Union<span class="p">[</span>np.mat<span class="p">, </span>tp.List<span class="p">[</span>float<span class="p">]</span><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sampleRefinementCount</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sampleRefinementMethod</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">randomStartPointRequested</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">randomStartPointDomainLowerLimitVec</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>tp.List<span class="p">[</span>float<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">randomStartPointDomainUpperLimitVec</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>tp.List<span class="p">[</span>float<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">adaptiveUpdateCount</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">adaptiveUpdatePeriod</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">greedyAdaptationCount</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">delayedRejectionCount</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">burninAdaptationMeasure</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>float<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">delayedRejectionScaleFactorVec</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>tp.Union<span class="p">[</span>np.mat<span class="p">, </span>tp.List<span class="p">[</span>float<span class="p">]</span><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#paramonte.paradram.ParaDRAM" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>This is the <strong>ParaDRAM</strong> class for generating instances of the <strong>serial</strong> and <strong>parallel</strong>
+<strong>Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo</strong>
+sampler of the ParaMonte library.</p>
+<blockquote>
+<div><p>All ParaDRAM class attributes (input arguments to the ParaDRAM constructor)
+are optional and all attributes can be also set after a ParaDRAM instance
+is returned by the constructor.</p>
+<p>Once you set the optional attributes to your desired values,
+call the ParaDRAM sampler via the object’s method <code class="docutils literal notranslate"><span class="pre">runSampler()</span></code>.</p>
+<p id="example-serial-usage"><strong>Example serial usage</strong></p>
+<p>Copy and paste the following code enclosed between the
+two comment lines in your python/ipython/jupyter session
+(make sure the indentations of the pasted lines comply with Python rules):</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">##################################</span>
+<span class="kn">import</span> <span class="nn">paramonte</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">def</span> <span class="nf">getLogFunc</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+    <span class="c1"># return the log of the standard multivariate</span>
+    <span class="c1"># Normal density function with ndim dimensions</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span> <span class="n">point</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span>
+<span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">ParaDRAM</span><span class="p">()</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">runSampler</span> <span class="p">(</span> <span class="n">ndim</span> <span class="o">=</span> <span class="mi">4</span>                  <span class="c1"># number of dimensions of the objective function</span>
+                <span class="p">,</span> <span class="n">getLogFunc</span> <span class="o">=</span> <span class="n">getLogFunc</span>   <span class="c1"># the objective function</span>
+                <span class="p">)</span>
+<span class="c1">##################################</span>
+</pre></div>
+</td></tr></table></div>
+<p>where,</p>
+<blockquote>
+<div><dl class="simple">
+<dt>ndim</dt><dd><p>represents the number of dimensions of the domain of
+the user’s objective function <code class="docutils literal notranslate"><span class="pre">getLogFunc(point)</span></code> and,</p>
+</dd>
+<dt>getLogFunc(point)</dt><dd><p>represents the user’s objective function to be sampled,
+which must take a single input argument <code class="docutils literal notranslate"><span class="pre">point</span></code> of type
+numpy-float64 array of length <code class="docutils literal notranslate"><span class="pre">ndim</span></code> and must return the
+natural logarithm of the objective function.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p id="example-parallel-usage"><strong>Example parallel usage</strong></p>
+<p>Copy and paste the following code enclosed between the
+two comment lines in your python/ipython/jupyter session
+(make sure the indentations of the pasted lines comply with Python rules):</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">##################################</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;main.py&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span>  <span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">import paramonte as pm</span>
+<span class="s1">import numpy as np</span>
+<span class="s1">def getLogFunc(point):</span>
+<span class="s1">    # return the log of the standard multivariate</span>
+<span class="s1">    # Normal density function with ndim dimensions</span>
+<span class="s1">    return -0.5 * np.sum( np.double( point )**2 )</span>
+<span class="s1">pmpd = pm.ParaDRAM()</span>
+<span class="s1">pmpd.mpiEnabled = True</span>
+<span class="s1">pmpd.runSampler ( ndim = 4                  # number of dimensions of the objective function</span>
+<span class="s1">                , getLogFunc = getLogFunc   # the objective function</span>
+<span class="s1">                )</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="c1">##################################</span>
+</pre></div>
+</td></tr></table></div>
+<p>where,</p>
+<blockquote>
+<div><dl class="simple">
+<dt>ndim</dt><dd><p>represents the number of dimensions of the domain of
+the user’s objective function <code class="docutils literal notranslate"><span class="pre">getLogFunc(point)</span></code> and,</p>
+</dd>
+<dt>getLogFunc(point)</dt><dd><p>represents the user’s objective function that is to be sampled.
+This function must take a single input argument <code class="docutils literal notranslate"><span class="pre">point</span></code> of type
+numpy-float64 array of length ndim and must return the natural
+logarithm of the objective function.</p>
+</dd>
+<dt>mpiEnabled</dt><dd><p>is a logical (boolean) indicator that, if <code class="docutils literal notranslate"><span class="pre">True</span></code>, will
+cause the ParaDRAM simulation to run in parallel
+on the requested number of processors.
+The default value is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>The above will generate a Parallel-ParaDRAM-simulation Python script in the current working
+directory of Python. Note the only difference between the serial and parallel simulation
+scripts: the extra line <code class="docutils literal notranslate"><span class="pre">pmpd.mpiEnabled</span> <span class="pre">=</span> <span class="pre">True</span></code> which tell the ParaMonte library to run
+the simulation in parallel.</p>
+<p>Assuming that you already have an MPI runtime library installed on your system (see below),
+you can now execute this Python script file <code class="docutils literal notranslate"><span class="pre">main.py</span></code> in parallel in two ways:</p>
+<ol class="arabic">
+<li><p>from inside ipython or jupyter, type the following,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>!mpiexec -n <span class="m">3</span> python main.py
+</pre></div>
+</div>
+</li>
+<li><p>outside of Python environment,
+from within a Bash shell (on Linux or Mac) or,
+from within an Anaconda command prompt on Windows,
+type the following,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mpiexec -n <span class="m">3</span> python main.py
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>Note:</strong></p>
+<p>On Windows platform, if you are using the Intel MPI library,
+we recommend that you also specify the extra flag -localonly,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mpiexec -localonly -n <span class="m">3</span> python main.py
+</pre></div>
+</div>
+<p>This will cause the simulations to run in parallel only on a single node,
+but more importantly, it will also prevent the use of Hydra service and
+the requirement for its registration. If you are not on a Windows cluster,
+(e.g., you are using your personal device), then we highly recommend
+specifying this flag.</p>
+<p>In all cases in the above, the script <code class="docutils literal notranslate"><span class="pre">main.py</span></code> will run on 3 processors.
+Feel free to change the number of processors to any number desired. But do
+not request more than the available number of physical cores on your system.</p>
+<p><strong>Tips on parallel usage</strong></p>
+<p>For up-to-date detailed instructions on how to run simulations in parallel visit:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://www.cdslab.org/paramonte">https://www.cdslab.org/paramonte</a></p>
+</div></blockquote>
+<p>You can also use the following commands on the Python command-line,</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">##################################</span>
+<span class="kn">import</span> <span class="nn">paramonte</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="n">pm</span><span class="o">.</span><span class="n">verify</span><span class="p">()</span> <span class="c1"># verify the existence of parallel simulation prerequisites</span>
+<span class="c1">##################################</span>
+</pre></div>
+</td></tr></table></div>
+<p>to obtain specific information on how to run a parallel simulation,
+in particular, in relation to your current installation of ParaMonte.
+In general, for parallel simulations:</p>
+<ol class="arabic" start="0">
+<li><p>Ensure you need and will get a speedup by running the ParaDRAM sampler
+in parallel. Typically, if a single evaluation of the objective function
+takes much longer than a few milliseconds, your simulation may then
+benefit from the parallel run.</p></li>
+<li><p>Ensure you have an MPI library installed, preferably, the Intel MPI
+runtime libraries. An MPI library should be automatically installed
+on your system with ParaMonte. If needed, you can download the Intel
+MPI library from their website and install it.</p></li>
+<li><p>Ensure the ParaDRAM object property <code class="docutils literal notranslate"><span class="pre">mpiEnabled</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>
+(the default is <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p></li>
+<li><p>Before running the parallel simulation, in particular, on Windows systems,
+you may need to define the necessary MPI environmental variables on your system.
+To get information on how to define the variables, use the paramonte modules’s
+function, <code class="docutils literal notranslate"><span class="pre">verify()</span></code>, as described in the above.</p></li>
+<li><p>Call your main Python code from a Python-aware mpiexec-aware command-line via,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mpi_launcher -n num_process python name_of_yor_python_code.py
+</pre></div>
+</div>
+<p>where,</p>
+<ol class="arabic">
+<li><p>“mpi_launcher” is the name of the MPI launcher
+of the MPI runtime library that you have installed.
+For example, the Intel MPI library’s launcher is named mpiexec,
+also recognized by Microsoft, MPICH, and OpenMPI.
+Note that on supercomputers, the MPI launcher is usually
+something other than <code class="docutils literal notranslate"><span class="pre">mpiexec</span></code>, for example:
+<code class="docutils literal notranslate"><span class="pre">ibrun</span></code>, <code class="docutils literal notranslate"><span class="pre">mpirun</span></code>, …</p></li>
+<li><p>“num_process” represents the number of cores
+on which you want to run the program. Replace this
+with the an integer number, like, 3 (meaning 3 cores).</p>
+<p>Do not assign more processes than the available number of
+physical cores on your device/cluster. Assigning more cores
+than physically available on your system will only slow down
+your simulation.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>Once the above script is saved in the file <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, open a Python-aware and
+MPI-aware command prompt to run the simulation in parallel via the MPI launcher,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mpiexec -n <span class="m">3</span> python main.py
+</pre></div>
+</div>
+<p>This will execute the Python script main.py on three processes (images).
+Keep in mind that on Windows systems you may need to define MPI environmental
+variables before a parallel simulation, as descibed in the above.</p>
+<p><strong>ParaDRAM Class Attributes</strong></p>
+<p>See also:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://www.cdslab.org/paramonte/notes/usage/paradram/specifications/">https://www.cdslab.org/paramonte/notes/usage/paradram/specifications/</a></p>
+</div></blockquote>
+<p>All input specifications (attributes) of a ParaDRAM simulation are optional.
+However, it is recomended that you provide as much information as possible
+about the specific ParaDRAM simulation and the objective function to be sampled
+via ParaDRAM simulation specifications.</p>
+<p>The ParaDRAM simulation specifications have lengthy comprehensive descriptions
+that appear in full in the output report file of every ParaDRAM simulation.</p>
+<p>The best way to learn about individual ParaDRAM simulation attributes
+is to a run a minimal serial simulation with the following Python script,</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">##################################</span>
+<span class="kn">from</span> <span class="nn">paramonte</span> <span class="kn">import</span> <span class="n">ParaDRAM</span>
+<span class="n">pmpd</span> <span class="o">=</span> <span class="n">ParaDRAM</span><span class="p">()</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">outputFileName</span> <span class="o">=</span> <span class="s2">&quot;./test&quot;</span>
+<span class="k">def</span> <span class="nf">getLogFunc</span><span class="p">(</span><span class="n">point</span><span class="p">):</span> <span class="k">return</span> <span class="o">-</span><span class="nb">sum</span><span class="p">(</span><span class="n">point</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">runSampler</span><span class="p">(</span> <span class="n">ndim</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">getLogFunc</span> <span class="o">=</span> <span class="n">getLogFunc</span> <span class="p">)</span>
+<span class="c1">##################################</span>
+</pre></div>
+</td></tr></table></div>
+<p>Running this code will generate a set of simulation output files (in the current
+working directory of Python) that begin with the prefix <code class="docutils literal notranslate"><span class="pre">test_process_1</span></code>. Among
+these, the file <code class="docutils literal notranslate"><span class="pre">test_process_1_report.txt</span></code> contains the full description of all
+input specifications of the ParaDRAM simulation as well as other information
+about the simulation results and statistics.</p>
+</div></blockquote>
+<dl class="py method">
+<dt id="paramonte.paradram.ParaDRAM._getInputFile">
+<code class="sig-name descname">_getInputFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">inputFile</span></em><span class="sig-paren">)</span><a class="headerlink" href="#paramonte.paradram.ParaDRAM._getInputFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="paramonte.paradram.ParaDRAM.runSampler">
+<code class="sig-name descname">runSampler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">ndim</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">getLogFunc</span><span class="p">:</span> <span class="n">tp.Callable<span class="p">[</span><span class="p">[</span>tp.List<span class="p">[</span>float<span class="p">]</span><span class="p">]</span><span class="p">, </span>float<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">buildMode</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">'release'</span></em>, <em class="sig-param"><span class="n">mpiEnabled</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">inputFile</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#paramonte.paradram.ParaDRAM.runSampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run ParaDRAM sampler and return nothing.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl>
+<dt>ndim</dt><dd><p>integer representing the number of dimensions of the
+domain of the user’s objective function <code class="docutils literal notranslate"><span class="pre">getLogFunc(point)</span></code>.
+It must be a positive integer.</p>
+</dd>
+<dt>getLogFunc(point)</dt><dd><p>represents the user’s objective function to be sampled,
+which must take a single input argument <code class="docutils literal notranslate"><span class="pre">point</span></code> of type
+numpy-float64 array of length <code class="docutils literal notranslate"><span class="pre">ndim</span></code> and must return the
+natural logarithm of the objective function.</p>
+</dd>
+<dt>buildMode</dt><dd><p>optional string argument with default value “release”.
+possible choices are:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“debug”</dt><dd><p>to be used for identifying sources of bug
+and causes of code crash.</p>
+</dd>
+<dt>“release”</dt><dd><p>to be used in all other normal scenarios
+for maximum runtime efficiency.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+<dt>mpiEnabled</dt><dd><p>optional logical (boolean) indicator which is None by default.
+If it is set to True, it will cause the ParaDRAM simulation
+to run in parallel on the requested number of processors.
+If it is not provided, its value will taken from the
+<code class="docutils literal notranslate"><span class="pre">mpiEnabled</span></code> property of the sampler object.
+See ParaDRAM class information on how
+to run a simulation in parallel.</p>
+</dd>
+<dt>inputFile</dt><dd><p>optional string input representing the path to
+an external input namelist of simulation specifications.</p>
+<blockquote>
+<div><p><strong>Warning</strong></p>
+<p><strong>Use this optional argument with caution and only if
+you know what you are doing. Specifying this option
+will cause paradram to ignore all other paradram
+simulation specifications set by the user via
+paradram instance attributes.</strong></p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><p>None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="paramonte.paradram.ParaDRAM._runSampler">
+<code class="sig-name descname">_runSampler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">ndim</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">getLogFuncRaw</span><span class="p">:</span> <span class="n">tp.Callable<span class="p">[</span><span class="p">[</span>int<span class="p">, </span>tp.List<span class="p">[</span>float<span class="p">]</span><span class="p">]</span><span class="p">, </span>float<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">buildMode</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">'release'</span></em>, <em class="sig-param"><span class="n">mpiEnabled</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">inputFile</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#paramonte.paradram.ParaDRAM._runSampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run ParaDRAM sampler and return nothing. This method is identical to
+the <code class="docutils literal notranslate"><span class="pre">runSampler()</span></code> method, except that the input <code class="docutils literal notranslate"><span class="pre">point</span></code> parameter to
+the user-provided input objective function <code class="docutils literal notranslate"><span class="pre">getLogFuncRaw(ndim,point)</span></code> is
+a C-style raw pointer. This requires the user to guarantee that <code class="docutils literal notranslate"><span class="pre">point</span></code> will
+be always used with array bounds in their implementation of the objective function.
+The use of <code class="docutils literal notranslate"><span class="pre">_runSampler()</span></code> in place of <code class="docutils literal notranslate"><span class="pre">runSampler()</span></code> leads to a slight
+performance gain in the simulations.</p>
+<blockquote>
+<div><p><strong>Example serial usage</strong></p>
+<p>Copy and paste the following code enclosed between the
+two comment lines in your python/ipython/jupyter session
+(make sure the indentations of the pasted lines comply with Python rules):</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">##################################</span>
+<span class="kn">import</span> <span class="nn">paramonte</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">def</span> <span class="nf">getLogFuncRaw</span><span class="p">(</span><span class="n">ndim</span><span class="p">,</span><span class="n">point</span><span class="p">):</span>
+    <span class="c1"># return the log of the standard multivariate</span>
+    <span class="c1"># Normal density function with ndim dimensions</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">(</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">ndim</span><span class="p">]</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span>
+<span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">ParaDRAM</span><span class="p">()</span>
+<span class="n">pmpd</span><span class="o">.</span><span class="n">_runSampler</span><span class="p">(</span> <span class="n">ndim</span> <span class="o">=</span> <span class="mi">4</span>                      <span class="c1"># length of point</span>
+                <span class="p">,</span> <span class="n">getLogFuncRaw</span> <span class="o">=</span> <span class="n">getLogFuncRaw</span> <span class="c1"># the objective function</span>
+                <span class="p">)</span>
+<span class="c1">##################################</span>
+</pre></div>
+</td></tr></table></div>
+<p>where,</p>
+<blockquote>
+<div><dl>
+<dt>ndim</dt><dd><p>represents the number of dimensions of the domain of
+the user’s objective function <code class="docutils literal notranslate"><span class="pre">getLogFuncRaw(ndim,</span> <span class="pre">point)</span></code> and,</p>
+</dd>
+<dt>getLogFuncRaw(ndim, point)</dt><dd><p>represents the user’s objective function to be sampled,
+where,</p>
+<blockquote>
+<div><dl class="simple">
+<dt>ndim</dt><dd><p>is a 32-bit integer, representing the number of
+dimensions of the domain of the user-provided
+objective function.</p>
+</dd>
+<dt>point</dt><dd><p>is a C-style array-pointer of length <code class="docutils literal notranslate"><span class="pre">ndim</span></code>
+and type float64. Note that the bounds of
+<code class="docutils literal notranslate"><span class="pre">point</span></code> must be always specified wherever
+it is used within the objective function.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>On output, it must return the natural logarithm of
+the objective function.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><p>All input parameters have the same meaning as the parameters
+of <code class="docutils literal notranslate"><span class="pre">runSampler()</span></code>. The only difference is in the input
+parameters to the objective function <code class="docutils literal notranslate"><span class="pre">getLogFuncRaw</span></code>.</p>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><p>None</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="paramonte.paradram.ParaDRAM.readChain">
+<code class="sig-name descname">readChain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">file</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">delimiter</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">parseContents</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">renabled</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#paramonte.paradram.ParaDRAM.readChain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of the contents of a set of ParaDRAM output
+chain files whose names begin the user-provided input file.
+This method is to be only used for postprocessing of the output
+chain file(s) of an already finished ParaDRAM simulation.
+It is not meant to be called by all processes in parallel mode,
+although it is possible.</p>
+<blockquote>
+<div><p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>file</dt><dd><p>A string representing the path to the chain file with
+the default value of None.
+The path only needs to uniquely identify the simulation
+to which the chain file belongs. For example, specifying
+“./mydir/mysim” as input will lead to a search for a file
+that begins with “mysim” and ends with “_chain.txt”
+inside the directory “./mydir/”. If there are multiple
+files with such name, then all of them will be read
+and returned as a list.
+If this input argument is not provided by the user, the
+value of the object attribute outputFileName
+will be used instead. At least one of the two mentioned
+routes must provide the path to the chain file otherwise,
+this method will break by calling <code class="docutils literal notranslate"><span class="pre">sys.exit()</span></code>.</p>
+</dd>
+<dt>delimiter</dt><dd><p>Optional input string representing the delimiter used in the
+output chain file. If it is not provided as input argument,
+the value of the corresponding object attribute outputDelimiter
+will be used instead. If none of the two are available,
+the default comma delimiter “,” will be assumed and used.</p>
+</dd>
+<dt>parseContents</dt><dd><p>If set to True, the contents of the file will be parsed and
+stored in a component of the object named <code class="docutils literal notranslate"><span class="pre">contents</span></code>.
+The default value is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</dd>
+<dt>renabled</dt><dd><p>If set to False, the contents of the file(s) will be stored as a
+list in a (new) component of the ParaDRAM object named <code class="docutils literal notranslate"><span class="pre">chainList</span></code>
+and <code class="docutils literal notranslate"><span class="pre">None</span></code> will be the return value of the method.
+If set to True, the reverse will done.
+The default value is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><p>a list of objects, each of which has the following properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>file</dt><dd><p>full absolute path to the chain file.</p>
+</dd>
+<dt>delimiter</dt><dd><p>the delimiter used in the chain file.</p>
+</dd>
+<dt>ndim</dt><dd><p>number of dimensions of the domain of the objective function
+from which the chain has been drawn.</p>
+</dd>
+<dt>count</dt><dd><p>the number of unique (weighted) points in the chain file.
+This is essentially the number of rows in the chain file
+minus one (representing the header line).</p>
+</dd>
+<dt>df</dt><dd><p>the contents of the chain file in the form of
+a pandas-library DataFrame (hence called <code class="docutils literal notranslate"><span class="pre">df</span></code>).</p>
+</dd>
+<dt>dynamic attributes:</dt><dd><p>corresponding to each column in the chain file, a property
+with the same name as the column header is also created
+for the object which contains the data stored in that column
+of the chain file.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>If <code class="docutils literal notranslate"><span class="pre">renabled</span> <span class="pre">=</span> <span class="pre">True</span></code>, the list of objects will be returned as the
+return value of the method. Otherwise, the list will be stored in a
+component of the ParaDRAM object named <code class="docutils literal notranslate"><span class="pre">chainList</span></code>.</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="paramonte.paradram.ParaDRAM.readMarkovChain">
+<code class="sig-name descname">readMarkovChain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">file</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">delimiter</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">parseContents</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">renabled</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#paramonte.paradram.ParaDRAM.readMarkovChain" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="id0">
+<code class="sig-name descname">readMarkovChain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">file</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">delimiter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">parseContents</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">renabled</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Return a list of the unweighted (Markov-chain) contents of a set of
+ParaDRAM output chain files, whose names begin the user-provided
+input variable ‘file’. This method is to be only used for postprocessing
+of the output chain file(s) of an already finished ParaDRAM simulation.
+It is not meant to be called by all processes in parallel mode,
+although it is possible.</p>
+<blockquote>
+<div><p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>file</dt><dd><p>A string representing the path to the chain file with
+the default value of None.
+The path only needs to uniquely identify the simulation
+to which the chain file belongs. For example, specifying
+“./mydir/mysim” as input will lead to a search for a file
+that begins with “mysim” and ends with “_chain.txt”
+inside the directory “./mydir/”. If there are multiple
+files with such name, then all of them will be read
+and returned as a list.
+If this input argument is not provided by the user, the
+value of the object attribute outputFileName
+will be used instead. At least one of the two mentioned
+routes must provide the path to the chain file otherwise,
+this method will break by calling <code class="docutils literal notranslate"><span class="pre">sys.exit()</span></code>.</p>
+</dd>
+<dt>delimiter</dt><dd><p>Optional input string representing the delimiter used in the
+output chain file. If it is not provided as input argument,
+the value of the corresponding object attribute outputDelimiter
+will be used instead. If none of the two are available,
+the default comma delimiter “,” will be assumed and used.</p>
+</dd>
+<dt>parseContents</dt><dd><p>If set to True, the contents of the file will be parsed and
+stored in a component of the object named <code class="docutils literal notranslate"><span class="pre">contents</span></code>.
+The default value is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</dd>
+<dt>renabled</dt><dd><p>If set to False, the contents of the file(s) will be stored as a
+list in a (new) component of the ParaDRAM object named <code class="docutils literal notranslate"><span class="pre">markovChainList</span></code>
+and <code class="docutils literal notranslate"><span class="pre">None</span></code> will be the return value of the method.
+If set to True, the reverse will done.
+The default value is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><p>a list of objects, each of which has the following properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>file</dt><dd><p>full absolute path to the chain file.</p>
+</dd>
+<dt>delimiter</dt><dd><p>the delimiter used in the chain file.</p>
+</dd>
+<dt>ndim</dt><dd><p>number of dimensions of the domain of the objective function
+from which the chain has been drawn.</p>
+</dd>
+<dt>count</dt><dd><p>the number of unique (weighted) points in the chain file.
+This is essentially the number of rows in the chain file
+minus one (representing the header line).</p>
+</dd>
+<dt>df</dt><dd><p>the unweighted (Markovian) contents of the chain file in the
+form of a pandas-library DataFrame (hence called <code class="docutils literal notranslate"><span class="pre">df</span></code>).</p>
+</dd>
+<dt>dynamic attributes:</dt><dd><p>corresponding to each column in the chain file, a property
+with the same name as the column header is also created
+for the object which contains the data stored in that column
+of the chain file.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>If <code class="docutils literal notranslate"><span class="pre">renabled</span> <span class="pre">=</span> <span class="pre">True</span></code>, the list of objects will be returned as the
+return value of the method. Otherwise, the list will be stored in a
+component of the ParaDRAM object named <code class="docutils literal notranslate"><span class="pre">markovChainList</span></code>.</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="paramonte.paradram.ParaDRAM.readSample">
+<code class="sig-name descname">readSample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">file</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">delimiter</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">parseContents</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">renabled</span><span class="p">:</span> <span class="n">tp.Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#paramonte.paradram.ParaDRAM.readSample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of the contents of a set of ParaDRAM output
+sample files whose names contain the user-provided input file.
+This method is to be only used for postprocessing of the output
+sample file(s) of an already finished ParaDRAM simulation.
+It is not meant to be called by all processes in parallel mode,
+although it is possible.</p>
+<blockquote>
+<div><p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>file</dt><dd><p>A string representing the path to the sample file with
+the default value of None.
+The path only needs to uniquely identify the simulation
+to which the sample file belongs. For example, specifying
+“./mydir/mysim” as input will lead to a search for a file
+that begins with “mysim” and ends with “_sample.txt”
+inside the directory “./mydir/”. If there are multiple
+files with such name, then all of them will be read
+and returned as a list.
+If this input argument is not provided by the user, the
+value of the object attribute outputFileName
+will be used instead. At least one of the two mentioned
+routes must provide the path to the sample file otherwise,
+this method will break by calling <code class="docutils literal notranslate"><span class="pre">sys.exit()</span></code>.</p>
+</dd>
+<dt>delimiter</dt><dd><p>Optional input string representing the delimiter used in the
+output sample file. If it is not provided as input argument,
+the value of the corresponding object attribute outputDelimiter
+will be used instead. If none of the two are available,
+the default comma delimiter “,” will be assumed and used.</p>
+</dd>
+<dt>parseContents</dt><dd><p>If set to True, the contents of the file will be parsed and
+stored in a component of the object named <code class="docutils literal notranslate"><span class="pre">contents</span></code>.
+The default value is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</dd>
+<dt>renabled</dt><dd><p>If set to False, the contents of the file(s) will be stored as a
+list in a (new) component of the ParaDRAM object named <code class="docutils literal notranslate"><span class="pre">sampleList</span></code>
+and <code class="docutils literal notranslate"><span class="pre">None</span></code> will be the return value of the method.
+If set to True, the reverse will done.
+The default value is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><p>a list of objects, each of which has the following properties:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>file</dt><dd><p>full absolute path to the sample file.</p>
+</dd>
+<dt>delimiter</dt><dd><p>the delimiter used in the sample file.</p>
+</dd>
+<dt>ndim</dt><dd><p>number of dimensions of the domain of the objective function
+from which the sample has been drawn.</p>
+</dd>
+<dt>count</dt><dd><p>number of sampled points in the sample file.</p>
+</dd>
+<dt>df</dt><dd><p>the contents of the sample file in the form of
+a pandas-library DataFrame (hence called <code class="docutils literal notranslate"><span class="pre">df</span></code>).</p>
+</dd>
+<dt>dynamic attributes:</dt><dd><p>corresponding to each column in the sample file, a property
+with the same name as the column header is also created
+for the object which contains the data stored in that column
+of the sample file.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>If <code class="docutils literal notranslate"><span class="pre">renabled</span> <span class="pre">=</span> <span class="pre">True</span></code>, the list of objects will be returned as the
+return value of the method. Otherwise, the list will be stored in a
+component of the ParaDRAM object named <code class="docutils literal notranslate"><span class="pre">sampleList</span></code>.</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+    <div>
+        <p>
+            <a href="https://www.cdslab.org/paramonte">ParaMonte: Plain Powerful Parallel Monte Carlo Library</a>.<br/>
+            &copy; Copyright 2020, <a href="https://www.cdslab.org" target="_blank">The Computational Data Science Lab</a>.<br/>
+        </p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </div>
+    <!-- Start of statc -->
+    <div style="color: #ffffff; float: none; width: 100%;">
+        <span style="font-size:0.8em">visitor count: 
+            <script type="text/javascript">
+                var sc_project=12178963; 
+                var sc_invisible=0; 
+                var sc_security="e0dfe0f9"; 
+                var sc_text=3; 
+                var scJsHost = "https://";
+                document.write("<sc"+"ript type='text/javascript' src='" +
+                scJsHost+
+                "statcounter.com/counter/counter.js'></"+"script>");
+            </script>
+        </span>
+    </div>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
