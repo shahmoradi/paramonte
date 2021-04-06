@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="defectstroubleshootingdebugbugcontributioncontributing,  defects, troubleshooting, debug, bug, contribution, contributing">
-<title>Reporting Defects | ParaMonte: Parallel Monte Carlo Library</title>
+<meta name="keywords" content=" python ParaDRAM Fortran C C++ output sample chain report restart progress">
+<title>The ParaDRAM simulation parallelization tips | ParaMonte: Parallel Monte Carlo Library</title>
 <link rel="stylesheet" href="/paramonte/css/prismOkaidia.css">
 <script src="/paramonte/js/prismOkaidia.js"></script>
 <!--
@@ -206,7 +206,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: "/paramonte/search.json",
-                                searchResultTemplate: '<li><a href="https://www.cdslab.org/paramonte{url}" title="Reporting Defects">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="https://www.cdslab.org/paramonte{url}" title="The ParaDRAM simulation parallelization tips">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -396,7 +396,7 @@
                         
                                 
                                     
-                                        <li><a title="ParaDRAM parallelization tips" href="/paramonte/notes/usage/paradram/parallelization/">ParaDRAM parallelization tips</a></li>
+                                        <li class="active"><a title="ParaDRAM parallelization tips" href="/paramonte/notes/usage/paradram/parallelization/">ParaDRAM parallelization tips</a></li>
                                     
                                     
                                 
@@ -769,7 +769,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
                     <!-- Content Column -->
                     <div class="col-md-9" id="tg-sb-content">
                         <div class="post-header">
-   <h1 class="post-title-main">Reporting Defects</h1>
+   <h1 class="post-title-main">The ParaDRAM simulation parallelization tips</h1>
 </div>
 
 <div class="post-content">
@@ -799,47 +799,40 @@ the script runs before the sidebar code runs and the class never gets inserted.
     
     
     
-<div id="toc"></div>
-
-<div align="center">
-    <a href="https://github.com/cdslaborg/paramonte/issues?q=is%3Aissue+is%3Aclosed" target="_blank"><img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed-raw/cdslaborg/paramonte?color=green&amp;style=flat-square" /></a>
-    <a href="https://github.com/cdslaborg/paramonte/issues?q=is%3Aopen+is%3Aissue" target="_blank"><img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/cdslaborg/paramonte?style=flat-square" /></a>
-    <a href="https://github.com/cdslaborg/paramonte/pulls?q=is%3Apr+is%3Aclosed" target="_blank"><img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed-raw/cdslaborg/paramonte?color=green&amp;style=flat-square" /></a>
-    <a href="https://github.com/cdslaborg/paramonte/pulls?q=is%3Aopen+is%3Apr" target="_blank"><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr-raw/cdslaborg/paramonte?style=flat-square" /></a>
-    <br />
-    <a href="https://github.com/cdslaborg/paramonte/watchers" target="_blank"><img alt="GitHub watchers" src="https://img.shields.io/github/watchers/cdslaborg/paramonte?style=social" /></a>
-    &nbsp;
-    <a href="https://github.com/cdslaborg/paramonte/stargazers" target="_blank"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/cdslaborg/paramonte?style=social" /></a>
-    &nbsp;
-    <a href="https://github.com/cdslaborg/paramonte/network/members" target="_blank"><img alt="GitHub forks" src="https://img.shields.io/github/forks/cdslaborg/paramonte?style=social" /></a>
-</div>
-
 <p><br /></p>
 
-<p>If you encounter problems during the course of Installing the ParaMonte library or using the library, please take the following actions,</p>
+<h2 id="general-tips">General tips</h2>
 
 <ol>
-  <li>Search the <a href="https://github.com/cdslaborg/paramonte/issues" target="_blank">issues</a> page (including <a href="https://github.com/cdslaborg/paramonte/issues?q=is%3Aissue+is%3Aclosed" target="_blank">closed issues</a>) 
-to see if anyone has encountered the same problem. If so add your experience to that issue thread.</li>
-  <li>If unable to resolve the problem, please file a <a href="https://github.com/cdslaborg/paramonte/issues/new?assignees=&amp;labels=&amp;template=reproducible-bug-report.md&amp;title=Defect%3A+" target="_blank">new issue</a> and include the following information:
-    <ul>
-      <li>The programming language interface within which the bug has been detected.</li>
-      <li>The specific compiler (for C. C++, Fortran) or language interpreter (for Julia, Python, R, …) used.</li>
-      <li>If parallel, the communication library being used e.g., MPICH, OpenMPI, MVAPICH, Intel MPI, GASNet, … and the version number.</li>
-      <li>The ParaMonte library version number. If you are building from the <code>main</code> (formerly <code>master</code>) branch on GitHub, then preferably provide the commit SHA.</li>
-      <li>Conditions required to reproduce the problem,
-        <ul>
-          <li>The Operating System, name and version.</li>
-          <li>The Architecture of machine/hardware the code is running on.</li>
-          <li>If parallel, the number of MPI ranks/processing elements/coarray images being run on.</li>
-          <li>If applicable, your code compilation process, including all flags and commands.</li>
-          <li>If possible, a minimal reproducer code that could trigger the bug.</li>
-        </ul>
-      </li>
-    </ul>
+  <li>Regardless of the programming language, always code your simulations for single-core serial runs first.</li>
+  <li>Once you test the functionality of your program and the accuracy of the results in serial mode, inspect the runtime of your simulations for potential speedup benefits via parallel computing.</li>
+  <li>The runtime of a single objective function call in your simulation problem must be significantly more than the average inter-process communication time to see any benefits from going parallel.
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Given the available contemporary technologies, parallel communications typically require $1-1000\mu s$. This estimate depends heavily on the the CPU, network architecture, and the number of cores involved in the inter-process communications.</div>
   </li>
-  <li>Any help you can provide diagnosing, isolating and fixing the
-problem is appreciated! Please see the <a href="../development/general/" target="_blank">development guidelines</a> for more information.</li>
+</ol>
+
+<h2 id="paradram-parallelization-tips">ParaDRAM parallelization tips</h2>
+
+<p>By default, the ParaDRAM sampler utilizes a Fork-Join parallelism paradigm where multiple proposals are generated and inspected for acceptance at each MCMC iteration. This is in addition to and different from the <strong>perfect-parallelism</strong> paradigm whereby multiple MCMC chains are simulated simultaneously in parallel independently of each other. The choice of parallelism paradigm can be changed from the default Fork-Join via the input simulation specification <a href="../specifications/#parallelizationmodel" target="_blank">parallelizationModel</a>.</p>
+
+<h3 id="running-in-parallel-to-check-for-mcmc-convergence">Running in parallel to check for MCMC convergence</h3>
+
+<p>Use the <strong>perfect parallelism</strong> paradigm (corresponding to the input specification <code>parallelizationModel = "multi chain"</code>) if you worry the objective function might be multi-modal. Upon concluding the simulation, the sampler will automatically perform and report the results of a series of <a href="https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test" target="_blank">Kolmogorov-Smirnov (KS) tests</a> for lack of convergence of the multiple chains to the same global mode (peak) of the objective function. The evidence for multi-modality will show itself as extremely small KS-test probabilities. Typically, <a href="https://github.com/cdslaborg/paramontex/blob/f4f02fc9bde5407d9348984f2762a3fd05cee6f7/Python/Jupyter/sampling_multivariate_normal_distribution_via_paradram_parallel/out/mvn_parallel_multiChain_process_1_report.txt#L1616" target="_blank">KS-test probabilities larger than $\sim0.01$</a> indicate no evidence for a lack of convergence of the multiple parallel chains to the same global peak in the domain of the objective function. The smaller the probabilities are, the higher the evidence will be for a lack of convergence.</p>
+
+<h3 id="running-in-parallel-for-simulation-speedup">Running in parallel for simulation speedup</h3>
+
+<p>Use the <strong>fork-join parallelism</strong> paradigm (corresponding to the input specification <code>parallelizationModel = "single chain"</code>) to reduce the simulation runtime. For this to happen, the runtime of a single objective function call must be significantly longer than inter-process communications. If you are unsure of the runtime cost of objective function call, you can run a short simulation with the ParaDRAM sampler to generate the desired information for the production decision making. Upon concluding each simulation, the ParaDRAM sampler generates a <a href="https://github.com/cdslaborg/paramontex/blob/f4f02fc9bde5407d9348984f2762a3fd05cee6f7/Python/Jupyter/sampling_multivariate_normal_distribution_via_paradram_parallel/out/mvn_parallel_singleChain_process_1_report.txt#L1256" target="_blank">comprehensive analysis</a> of the parallel performance of the simulation in the <a href="https://github.com/cdslaborg/paramontex/blob/main/Python/Jupyter/sampling_multivariate_normal_distribution_via_paradram_parallel/out/mvn_parallel_singleChain_process_1_report.txt" target="_blank">output report file</a> of the simulation.</p>
+
+<p>The output simulation performance analysis contains the predicted optimal number of processors for the parallel simulation under the given simulation setup and objective function. Simply run a short trial simulation with you best guess for the optimal number of processors. Then use <a href="https://github.com/cdslaborg/paramontex/blob/f4f02fc9bde5407d9348984f2762a3fd05cee6f7/Python/Jupyter/sampling_multivariate_normal_distribution_via_paradram_parallel/out/mvn_parallel_singleChain_process_1_report.txt#L1338" target="_blank">the predictions in the simulation output</a> to adjust the number of processors for the optimal efficiency in the production run.</p>
+
+<h4 id="factors-affecting-the-parallel-runtime-efficiency">Factors affecting the parallel runtime efficiency</h4>
+
+<p>The efficiency of the parallel simulation depends heavily on two factors:</p>
+<ol>
+  <li>The cost of the objective function call (as compared to the inter-process communication cost).</li>
+  <li>The efficiency of the MCMC sampler. <strong>As a rule of thumb for maximum efficiency</strong>, the number of processors should be set to a number less than the inverse of the mean efficiency (i.e. the mean acceptance rate) of the MCMC sampler. This can hold true only if the cost of a single objective function call is significantly more than the inter-process communication cost. In other words, this is the ideal scenario.
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Although the optimal average MCMC acceptance rate is generally believed to be around $0.234$, lowering the efficiency to increase the number of parallel cores – and therefore, the parallelization efficiency – is often a reasonably good strategy. The MCMC acceptance rate of a given ParaDRAM simulation can be set via the simulation specification <a href="../specifications/#targetacceptancerate" target="_blank">targetAcceptanceRate</a> or more appropriately,  adjusted by varying the value of <a href="../specifications/#scalefactor" target="_blank">scaleFactor</a> property of the simulation.</div>
+  </li>
 </ol>
 
 <p><br /></p>
