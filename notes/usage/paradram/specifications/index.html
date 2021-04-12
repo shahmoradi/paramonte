@@ -1631,16 +1631,16 @@ ones) of length ndim.
 <h3 id="adaptiveupdateperiod">adaptiveUpdatePeriod</h3>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Every adaptiveUpdatePeriod calls to the objective function, the parameters of the proposal distribution 
-will be updated. The variable adaptiveUpdatePeriod must be a positive integer (&gt;0). The smaller the 
+will be updated. The variable adaptiveUpdatePeriod must be a positive non-zero integer. The smaller the 
 value of adaptiveUpdatePeriod, the easier it will be for the ParaDRAM kernel to adapt the proposal 
 distribution to the covariance structure of the objective function. However, this will happen at the 
 expense of slower simulation runtime as the adaptation process can become computationally expensive, 
-in particular, for very high dimensional objective functions (ndim&gt;&gt;1). The larger the value of 
+in particular, for very high dimensional objective functions (ndim &gt;&gt; 1). The larger the value of 
 adaptiveUpdatePeriod, the easier it will be for the ParaDRAM kernel to keep the sampling efficiency 
 close to the requested target acceptance rate range (if specified via the input variable 
 targetAcceptanceRate). However, too large values for adaptiveUpdatePeriod will only delay the adaptation 
 of the proposal distribution to the global structure of the objective function that is being sampled. 
-If adaptiveUpdatePeriod&gt;=chainSize, then no adaptive updates to the proposal distribution will be 
+If adaptiveUpdatePeriod &gt;= chainSize, then no adaptive updates to the proposal distribution will be 
 made. The default value is 4 * ndim, where ndim is the dimension of the domain of the objective 
 function to be sampled.
 </code></pre></div></div>
@@ -1846,7 +1846,7 @@ reduces the volume of the covariance matrix of the proposal distribution by half
 
         <div class="col-lg-12 footer">
             &copy;2021 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on April 8, 2021 <br />
+            Last updated on April 11, 2021 <br />
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="/paramonte/images/logo.png" }}" alt="cdslab.org" /></a>
