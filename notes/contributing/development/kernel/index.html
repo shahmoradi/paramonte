@@ -844,7 +844,7 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The preprocessor macros must be always defined with uppercase characters. This is to easily distinguish macros from other variables in the regular sections of the code.</div>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Define macros as propositions that evaluate to either TRUE or FALSE. For example, <code>OS_IS_WIDOWS</code> or <code>MPI_ENABLED</code>.</div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Define macros as propositions that evaluate to either TRUE or FALSE. For example, <code>OS_IS_WINDOWS</code> or <code>MPI_ENABLED</code>.</div>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When developing or debugging a particular feature that is bound to a specific set of preprocessor macros, you can request the compiler to generate intermediate preprocessed files that are free from preprocessor directives and let you focus on the problem better. In doing so, keep in mind that every change you make to the intermediate codes has be carefully implemented in the original set of codes.</div>
 
@@ -853,10 +853,10 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 <p>If there is any section of the code that must be exclusively executed on a particular platform or Operating System (OS), it must be properly fenced by the appropriate preprocessor flag.</p>
 
 <ol>
-  <li>The <code>OS_IS_WINDOWS</code> preprocessor macro must be defined for any code section that exclusively belongs to Windows operating systems.</li>
-  <li>The <code>OS_IS_DARWIN</code> preprocessor macro must be defined for any code section that exclusively belongs to macOS operating systems.</li>
-  <li>The <code>OS_IS_LINUX</code> preprocessor macro must be defined for any code section that exclusively belongs to Linux operating systems.</li>
-  <li>The <code>OS_IS_WSL</code> preprocessor macro must be defined for any code section that exclusively belongs to Microsoft Subsystem for Linux.
+  <li>The <code>OS_IS_WINDOWS</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to Windows operating systems.</li>
+  <li>The <code>OS_IS_DARWIN</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to macOS operating systems.</li>
+  <li>The <code>OS_IS_LINUX</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to Linux operating systems.</li>
+  <li>The <code>OS_IS_WSL</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to Microsoft Subsystem for Linux.
     <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The <code>OS_IS_WSL</code> preprocessor macro is mostly useful for defining code sections that are written for compatibility with Microsoft Subsystem for Linux Version 1 (<strong>WSL1</strong>). For example, WSL1 is known to have issues with passing internal procedures to external routines since <a href="https://github.com/Microsoft/WSL/issues/3083" target="_blank">WSL has a non-executable stack</a>. Although, <a href="https://github.com/Microsoft/WSL/issues/286" target="_blank">this issue</a> appears to have been resolved in <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#WSL_2">WSL2</a>, as a developer, you should be mindful of all users on all platforms.</div>
   </li>
 </ol>
@@ -885,8 +885,8 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 <p>Generally, one should avoid the use of code that bind the library to a particular compiler suite. Sometimes, however, this is unavoidable. Currently, the library supports builds with the <strong>Intel</strong> and <strong>GNU</strong> compiler suites.</p>
 
 <ol>
-  <li>The <code>INTEL_COMPILER_ENABLED</code> preprocessor macro must be defined for any code section that requires the Intel compiler to recognize the syntax. This preprocessor flag is automatically defined by the ParaMonte build scripts and passed to the Intel preprocessor when the Intel compiler is used to build the library.</li>
-  <li>The <code>GNU_COMPILER_ENABLED</code> preprocessor macro must be defined for any code section that requires the GNU compiler to recognize the syntax. This preprocessor flag is automatically defined by the GNU preprocessor on all platforms.</li>
+  <li>The <code>INTEL_COMPILER_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that requires the Intel compiler to recognize the syntax. This preprocessor flag is automatically defined by the ParaMonte build scripts and passed to the Intel preprocessor when the Intel compiler is used to build the library.</li>
+  <li>The <code>GNU_COMPILER_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that requires the GNU compiler to recognize the syntax. This preprocessor flag is automatically defined by the GNU preprocessor on all platforms.</li>
 </ol>
 
 <h4 id="parallelism-preprocessor-directives">Parallelism preprocessor directives</h4>
@@ -894,9 +894,9 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 <p>There are currently two preprocessor directives that determine the type of parallelism to which the code section sandwiched by the preprocessor macro belongs.</p>
 
 <ol>
-  <li>The <code>MPI_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to MPI-parallelized versions of the kernel routines.</li>
-  <li>The <code>CAF_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to CAF-parallelized versions of the kernel routines (Coarray parallelism).</li>
-  <li>The <code>OMP_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to OMP-parallelized versions of the kernel routines (OpenMP parallelism). As of Dec 2020, there is no section of the kernel routines uses OpenMP parallelism.</li>
+  <li>The <code>MPI_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to MPI-parallelized versions of the kernel routines.</li>
+  <li>The <code>CAF_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to CAF-parallelized versions of the kernel routines (Coarray parallelism).</li>
+  <li>The <code>OMP_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to OMP-parallelized versions of the kernel routines (OpenMP parallelism). As of Dec 2020, there is no section of the kernel routines uses OpenMP parallelism.</li>
 </ol>
 
 <p>For example, if a section is MPI-parallelized, it must be fenced with the following preprocessor directive,</p>
@@ -918,7 +918,7 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 <p>Any code section that must be activated for a particular library build type (<code>static</code> vs. <code>shared</code>) must be fenced with appropriate preprocessing macros.</p>
 
 <ol>
-  <li>The <code>DLL_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to shared library builds. Although <code>DLL</code> is reminiscent of Windows shared library files, the ParaMonte build scripts define this preprocessor macro for all shared library builds irrespective of the platform (Windows, Linux, macOS, …).
+  <li>The <code>DLL_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to shared library builds. Although <code>DLL</code> is reminiscent of Windows shared library files, the ParaMonte build scripts define this preprocessor macro for all shared library builds irrespective of the platform (Windows, Linux, macOS, …).
     <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Use this preprocessor macro in combination with <strong><code>IFORT_ENABLED</code></strong> to enable DLL symbol export by the Intel <strong><code>ifort</code></strong> compiler on macOS and Windows operating systems.</div>
   </li>
 </ol>
@@ -928,8 +928,8 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 <p>Occasionally, it is necessary to define sections of code that should run only in a particular library build. Currently, the ParaMonte library build scripts support three different library builds (<code>debug</code>, <code>testing</code>, and <code>release</code>). Any code section that does not belong to the release (production) build must be appropriately fenced with appropriate preprocessor flags.</p>
 
 <ol>
-  <li>The <code>DEBUG_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to the <code>debug</code> library builds. Use this macro to fence sections of code that help with the debugging of the code.</li>
-  <li>The <code>TESTING_ENABLED</code> preprocessor macro must be defined for any code section that exclusively belongs to the <code>testing</code> library builds. Use this macro to fence sections of code that must be activated during the testing of the library.
+  <li>The <code>DEBUG_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to the <code>debug</code> library builds. Use this macro to fence sections of code that help with the debugging of the code.</li>
+  <li>The <code>TESTING_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to the <code>testing</code> library builds. Use this macro to fence sections of code that must be activated during the testing of the library.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The <code>TESTING_ENABLED</code> preprocessor macro often appears together with <code>DEBUG_ENABLED</code> and <code>CODECOV_ENABLED</code>. The testing mode deactivates all compiler optimizations, but also prevents the addition of the debugging symbols to the object files. This leads to faster compilation of the source files which is often desired for testing purposes.</div>
   </li>
 </ol>
@@ -939,20 +939,20 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 <p>To make the ParaMonte an inter-operable cross-language library, it is necessary to tailor sections of code for the particular languages of interest. The kernel connection to all languages other than Fortran is provided via the <code>FCI_ENABLED</code> preprocessor macro in the ParaMonte library.</p>
 
 <ol>
-  <li>The <code>CFI_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible from any programming language other than Fortran, most importantly, the C programming language.</li>
+  <li>The <code>CFI_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any section of the code that is meant to be accessible from any programming language other than Fortran, most importantly, the C programming language.</li>
 </ol>
 
 <p>In addition, some code sections might have to be exclusively executed when the library is invoked from a particular programming language. In such cases, the relevant code section must be properly fenced with the appropriate language-specific preprocessor macros.</p>
 
 <ol>
-  <li>The <code>C_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the C programming language.</li>
-  <li>The <code>CPP_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the C++ programming language.</li>
-  <li>The <code>FORTRAN_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the Fortran programming language.</li>
-  <li>The <code>JULIA_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the Julia programming language.</li>
-  <li>The <code>MATLAB_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the MATLAB programming language.</li>
-  <li>The <code>MATHEMATICA_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the Mathematica programming language.</li>
-  <li>The <code>PYTHON_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the Python programming language.</li>
-  <li>The <code>R_ENABLED</code> preprocessor macro must be defined for any section of the code that is meant to be accessible only when the library is built for the R programming language.</li>
+  <li>The <code>C_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any section of the code that is meant to be accessible only when the library is built for the C programming language.</li>
+  <li>The <code>CPP_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any section of the code that is meant to be accessible only when the library is built for the C++ programming language.</li>
+  <li>The <code>FORTRAN_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any section of the code that is meant to be accessible only when the library is built for the Fortran programming language.</li>
+  <li>The <code>JULIA_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any section of the code that is meant to be accessible only when the library is built for the Julia programming language.</li>
+  <li>The <code>MATLAB_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any section of the code that is meant to be accessible only when the library is built for the MATLAB programming language.</li>
+  <li>The <code>MATHEMATICA_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any section of the code that is meant to be accessible only when the library is built for the Mathematica programming language.</li>
+  <li>The <code>PYTHON_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any section of the code that is meant to be accessible only when the library is built for the Python programming language.</li>
+  <li>The <code>R_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any section of the code that is meant to be accessible only when the library is built for the R programming language.</li>
 </ol>
 
 <h3 id="coding-style-conventions">Coding style conventions</h3>
@@ -1012,6 +1012,26 @@ Why? module variables are global, at least within the scope of the module, and a
 <strong>Why?</strong> This helps create multiple different entity names from a single base name. For example,
     <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span><span class="w"> </span><span class="n">String_mod</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">String_type</span><span class="w">
 </span><span class="k">type</span><span class="p">(</span><span class="n">String_type</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">string</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="comments">Comments</h3>
+
+<ul>
+  <li>
+    <p>In general, the code itself should be expressive enough to obviate any need for comments. 
+However, when needed, comments are encouraged and should be kept informative and concise.</p>
+  </li>
+  <li>
+    <p>Use the <a href="">Doxygen</a> convention and style for code annotations and documentation. 
+See the ParaMonte kernel source code for samples of Doxygen documentations of the kernel routines.</p>
+  </li>
+  <li>
+    <p>If there is any work or comment to be left for the future developer(s) including yourself, use the syntax of Doxygen 
+<code>\todo</code> (or less preferably <code>@todo</code>) to define future tasks and <code>\author</code> (or less preferably <code>@author</code>) to introduce yourself 
+to the future developer within the code comments. For example,</p>
+    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">! \todo: There room for performance improvement here by pre-computing the following array in procedure xxx.</span><span class="w">
 </span></code></pre></div>    </div>
   </li>
 </ul>
@@ -1129,7 +1149,7 @@ Why? module variables are global, at least within the scope of the module, and a
 
         <div class="col-lg-12 footer">
             &copy;2021 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on April 11, 2021 <br />
+            Last updated on April 12, 2021 <br />
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="/paramonte/images/logo.png" }}" alt="cdslab.org" /></a>
