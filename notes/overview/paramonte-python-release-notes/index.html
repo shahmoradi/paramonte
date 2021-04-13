@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="release_note_1,  release_note_1">
+<title> | ParaMonte: Parallel Monte Carlo Library</title>
+<link rel="stylesheet" href="/paramonte/css/prismOkaidia.css">
+<script src="/paramonte/js/prismOkaidia.js"></script>
+<!--
+<link rel="stylesheet" href="/paramonte/css/syntax.css">
+-->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/paramonte/css/bootstrap.min.css">
+
+
+
+<link rel="stylesheet" href="/paramonte/css/customstyles.css">
+<link rel="stylesheet" href="/paramonte/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/paramonte/css/theme-cdslab.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/paramonte/js/jquery.navgoco.min.js"></script>
+<!-- make sidebar non-accordion -->
+<script src="/paramonte/js/lockScrollbarPosition.js"></script>
+<!-- make sidebar non-accordion -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.sidenav').navgoco({
+              accordion: false,
+              caret: '<span class="caret"></span>',
+              openClass: 'open',
+              save: true,
+              cookie: {
+                  name: 'navgoco',
+                  expires: false,
+                  path: '/'
+              },
+              slide: {
+                  duration: 400,
+                  easing: 'swing'
+              }
+          });
+    });
+</script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<!--
+-->
+<script src="/paramonte/js/toc.js"></script>
+<script src="/paramonte/js/customscripts.js"></script>
+<link rel="shortcut icon" href="/paramonte/images/favicon.ico">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="" href="/paramonte/feed.xml">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6JB9XNG83"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J6JB9XNG83');
+</script>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+    </head>
+    <body>
+        <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div id="sticky" class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-book fa-lg navbar-brand" href="/paramonte/index.html">&nbsp;<span class="projectTitle"> ParaMonte: Parallel Monte Carlo Library</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                    
+                        
+                            <li><a href="https://github.com/cdslaborg/paramonte" target="_blank" rel="noopener">GitHub</a></li>
+                        
+                    
+                        
+                            <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/78946-paramonte" target="_blank" rel="noopener">MathWorks</a></li>
+                        
+                    
+                        
+                            <li><a href="https://pypi.org/project/paramonte/" target="_blank" rel="noopener">PyPI</a></li>
+                        
+                    
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CDSLab<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/#about" target="_blank" rel="noopener">About</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/people" target="_blank" rel="noopener">People</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/research" target="_blank" rel="noopener">Research</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/matlab/" target="_blank" rel="noopener">MATLAB Programming</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/python/" target="_blank" rel="noopener">Python Programming</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="keyword search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/paramonte/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: "/paramonte/search.json",
+                                searchResultTemplate: '<li><a href="https://www.cdslab.org/paramonte{url}" title="">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+        <!-- Page Content -->
+        <div class="container">
+            <div id="main">
+                <!-- Content Row -->
+                <div class="row">
+                    
+                    
+                        <!-- Sidebar Column -->
+                        <div class="col-md-3" id="tg-sb-sidebar">
+                            
+<ul id="mysidebar" class="sidenav">
+    <!--
+    -->
+    <li class="sidebarTitle">Table of Pages </li>
+    
+        
+            
+                <li>
+                    <a title="Overview" href="#"><b>Overview</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Preface" href="/paramonte/notes/overview/preface/">Preface</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte kernel release notes" href="/paramonte/notes/overview/paramonte-kernel-release-notes/">ParaMonte kernel release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte MATLAB release notes" href="/paramonte/notes/overview/paramonte-matlab-release-notes/">ParaMonte MATLAB release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li class="active"><a title="ParaMonte Python release notes" href="/paramonte/notes/overview/paramonte-python-release-notes/">ParaMonte Python release notes</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Installation" href="#"><b>Installation</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte pre-installation notes" href="/paramonte/notes/installation/readme/">ParaMonte pre-installation notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C/C++/Fortran - Windows" href="/paramonte/notes/installation/windows/">ParaMonte C/C++/Fortran - Windows</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C/C++/Fortran - macOS" href="/paramonte/notes/installation/macos/">ParaMonte C/C++/Fortran - macOS</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C/C++/Fortran - Linux" href="/paramonte/notes/installation/linux/">ParaMonte C/C++/Fortran - Linux</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte MATLAB" href="/paramonte/notes/installation/matlab/">ParaMonte MATLAB</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Python" href="/paramonte/notes/installation/python/">ParaMonte Python</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="API documentation" href="#"><b>API documentation</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Kernel API" href="https://cdslaborg.github.io/paramonte-kernel-doc/html/" target="_blank" rel="noopener">ParaMonte Kernel API</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Python API" href="/paramonte/notes/api/python/autoapi/paramonte/">ParaMonte Python API</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte MATLAB API" href="/paramonte/notes/api/matlab/">ParaMonte MATLAB API</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Usage - ParaDRAM sampler" href="#"><b>Usage - ParaDRAM sampler</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM quick start" href="/paramonte/notes/usage/paradram/interface/">ParaDRAM quick start</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM optional input file" href="/paramonte/notes/usage/paradram/input/">ParaDRAM optional input file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation specifications" href="/paramonte/notes/usage/paradram/specifications/">ParaDRAM simulation specifications</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation output files" href="/paramonte/notes/usage/paradram/output/">ParaDRAM simulation output files</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation restart" href="/paramonte/notes/usage/paradram/restart/">ParaDRAM simulation restart</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM parallelization tips" href="/paramonte/notes/usage/paradram/parallelization/">ParaDRAM parallelization tips</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Building ParaMonte application" href="#"><b>Building ParaMonte application</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Building ParaMonte C application" href="/paramonte/notes/build/c/">Building ParaMonte C application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Building ParaMonte C++ application" href="/paramonte/notes/build/cpp/">Building ParaMonte C++ application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Building ParaMonte Fortran application" href="/paramonte/notes/build/fortran/">Building ParaMonte Fortran application</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Running ParaMonte application" href="#"><b>Running ParaMonte application</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Running C/C++/Fortran application" href="/paramonte/notes/run/default/">Running C/C++/Fortran application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Running MATLAB application" href="/paramonte/notes/run/matlab/">Running MATLAB application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Running Python application" href="/paramonte/notes/run/python/">Running Python application</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="C examples" href="#"><b>C examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Sampling a Multivariate Normal distribution" href="/paramonte/notes/examples/c/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="C++ examples" href="#"><b>C++ examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Sampling a Multivariate Normal distribution" href="/paramonte/notes/examples/cpp/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Fortran examples" href="#"><b>Fortran examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Sampling a Multivariate Normal distribution" href="/paramonte/notes/examples/fortran/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="MATLAB examples" href="#"><b>MATLAB examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="MATLAB Live Scripts" href="/paramonte/notes/examples/matlab/mlx/">MATLAB Live Scripts</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Post-processing existing simulations" href="/paramonte/notes/examples/matlab/postprocess/">Post-processing existing simulations</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Python examples" href="#"><b>Python examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Jupyter Notebooks" href="/paramonte/notes/examples/python/jupyter/">Jupyter Notebooks</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Post-processing existing simulations" href="/paramonte/notes/examples/python/postprocess/">Post-processing existing simulations</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Code Coverage Reports" href="#"><b>Code Coverage Reports</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Guidelines" href="/paramonte/notes/codecov/">Guidelines</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - Serial" href="https://cdslaborg.github.io/paramonte-codecov/kernel/serial/" target="_blank" rel="noopener">Kernel - Serial</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - MPI Parallel" href="https://cdslaborg.github.io/paramonte-codecov/kernel/mpi/" target="_blank" rel="noopener">Kernel - MPI Parallel</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - Coarray Parallel" href="https://cdslaborg.github.io/paramonte-codecov/kernel/caf/" target="_blank" rel="noopener">Kernel - Coarray Parallel</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Contributing to ParaMonte" href="#"><b>Contributing to ParaMonte</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Reporting defects" href="/paramonte/notes/contributing/defects">Reporting defects</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Requesting enhancements" href="/paramonte/notes/contributing/enhancements">Requesting enhancements</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Development guidelines - general" href="/paramonte/notes/contributing/development/general/">Development guidelines - general</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Development guidelines - kernel" href="/paramonte/notes/contributing/development/kernel/">Development guidelines - kernel</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Troubleshooting" href="#"><b>Troubleshooting</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Enhancement-requests and bug-reports" href="/paramonte/notes/troubleshooting/issues/">Enhancement-requests and bug-reports</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="-bash: Permission denied" href="/paramonte/notes/troubleshooting/bash-permission-denied/">-bash: Permission denied</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="bash: matlab: command not found" href="/paramonte/notes/troubleshooting/bash-matlab-command-not-found/">bash: matlab: command not found</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="catastrophic error: cannot open source file" href="/paramonte/notes/troubleshooting/catastrophic-error-cannot-open-source-file/">catastrophic error: cannot open source file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Catastrophic error: could not set locale" href="/paramonte/notes/troubleshooting/catastrophic-error-could-not-set-locale/">Catastrophic error: could not set locale</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="xcrun: error: unable to find utility "clang"" href="/paramonte/notes/troubleshooting/xcrun-error-unable-to-find-utility-clang/">xcrun: error: unable to find utility "clang"</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="changing directory on Windows CMD" href="/paramonte/notes/troubleshooting/windows-drive-change/">changing directory on Windows CMD</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="error while loading shared libraries" href="/paramonte/notes/troubleshooting/error-while-loading-shared-libraries/">error while loading shared libraries</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="finding the MPI libraries on Windows" href="/paramonte/notes/troubleshooting/finding-mpi-libraries-on-windows/">finding the MPI libraries on Windows</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Fortran runtime error: End of file" href="/paramonte/notes/troubleshooting/fortran-runtime-error-end-of-file/">Fortran runtime error: End of file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="libgfortran not found" href="/paramonte/notes/troubleshooting/libgfortran-not-found/">libgfortran not found</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="macOS: developer cannot be verified" href="/paramonte/notes/troubleshooting/macos-developer-cannot-be-verified/">macOS: developer cannot be verified</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: could not find module" href="/paramonte/notes/troubleshooting/python-could-not-find-module/">Python: could not find module</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: module object is not callable" href="/paramonte/notes/troubleshooting/python-module-object-is-not-callable/">Python: module object is not callable</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: segmentation-fault error" href="/paramonte/notes/troubleshooting/python-segmentation-fault/">Python: segmentation-fault error</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+    
+    <!-- if you aren't using the accordion, uncomment this block:
+    -->
+    <p class="external">
+        <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+    </p>
+</ul>
+<!--
+This highlights the active parent class in the navgoco sidebar. 
+This is critical so that the parent expands when you're viewing a page.
+This must appear below the sidebar code above.
+Otherwise, if placed inside customscripts.js,
+the script runs before the sidebar code runs and the class never gets inserted.
+-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+                        </div>
+                        
+                    
+                    <!-- Content Column -->
+                    <div class="col-md-9" id="tg-sb-content">
+                        <div class="post-header">
+   <h1 class="post-title-main"></h1>
+</div>
+
+<div class="post-content">
+    
+    
+    
+        <br>
+        
+<script>
+    $( document ).ready(function() {
+        // Handler for .ready() called.
+        $('#toc').toc({ minimumHeaders: 0 
+                      , listType: 'ol'
+                      , showSpeed: 0
+                      , headers: 'h2,h3,h4,h5,h6'
+        });
+        /* the following offset helps account for the space taken up by the floating toolbar. */
+        $('#toc').on('click', 'a', function() {
+            var target = $(this.getAttribute('href')), scroll_target = target.offset().top$(window).scrollTop(scroll_target - 10);
+            return false
+        })
+    });
+</script>
+
+<div id="toc"></div>
+
+    
+    
+    
+<h1 id="paramonte-python-release-notes">ParaMonte Python release notes</h1>
+
+<p>This project follows <a href="https://semver.org/">Semantic Versioning</a>. 
+To access the latest release of the package, visit <a href="https://github.com/cdslaborg/paramonte/releases">the ParaMonte GitHub repository release page</a> or <a href="https://pypi.org/project/paramonte/">the ParaMonte page on the Python Package Index</a>.</p>
+
+<h2 id="version-2xx"><strong>Version 2.x.x</strong></h2>
+
+<h3 id="version--252--january-8-2020">Version  2.5.2 – January 8, 2020</h3>
+
+<ul>
+  <li>Minor enhancements to the <code>checkForUpdate()</code> function of paramonte module. 
+This function now relies on a more robust method of latest-version-checking.</li>
+</ul>
+
+<h3 id="version--251--january-3-2020">Version  2.5.1 – January 3, 2020</h3>
+
+<ul>
+  <li>Minor enhancements and bug fixes.</li>
+</ul>
+
+<h3 id="version--250--january-1-2020">Version  2.5.0 – January 1, 2020</h3>
+
+<p><strong>Major enhancements</strong></p>
+
+<ul>
+  <li>
+    <p>This release is a a major step toward further portability 
+of the kernel routines of the <code>ParaMonte::Python</code> library. The kernel 
+library dependencies are now properly handled and recognized at runtime
+without such aggressive actions as permanently redefining the environmental
+path variables, most importantly, <code>PATH</code> and <code>LD_LIBRARY_PATH</code> on Linux/macOS.</p>
+  </li>
+  <li>
+    <p>The <code>ParaMonte::Python</code> library is now capable of recognizing the existing MPI
+libraries such as MPICH and OpenMPI on user’s system and avoid further 
+installation of a new MPI library if it is deemed unnecessary.</p>
+  </li>
+  <li>
+    <p>The ParaMonte kernel routines are now capable of handling user-input 
+file paths that contain white-space (blank) or other exotic characters.</p>
+  </li>
+  <li>
+    <p>Enhancements to the <code>build()</code> function of the paramonte module.</p>
+  </li>
+</ul>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>
+    <p>Typo-fixes in the documentation of the library.</p>
+  </li>
+  <li>
+    <p>The <code>ParaMonte::Python</code> library packages for different Operating systems and 
+processor architecture are now separate from each other. This change was made
+to lower the overall size of <code>ParaMonte::Python</code> by only keeping the relevant 
+files in each packaging of the library. The current release contains three 
+separate packages for <code>ParaMonte::Python</code>,</p>
+    <ul>
+      <li><code>libparamonte_python_windows_x64</code>,</li>
+      <li><code>libparamonte_python_darwin_x64</code>,</li>
+      <li><code>libparamonte_python_linux_x64</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="version--240--december-17-2020">Version  2.4.0 – December 17, 2020</h3>
+
+<p><strong>Major enhancements</strong></p>
+
+<ul>
+  <li>
+    <p>This update presents several major performance, accuracy, 
+and verification enhancements to the ParaMonte kernel routines,
+in particular, to the ParaDRAM sampler.</p>
+  </li>
+  <li>
+    <p>An extensive set of over 866 tests have been added 
+that test all aspects of the ParaMonte kernel library.</p>
+  </li>
+  <li>
+    <p>The issue of Windows file locking, that led to the occasional crashes of the 
+ParaDRAM and ParaDISE simulations in <code>multiChain</code> parallelism mode, is now resolved.</p>
+  </li>
+  <li>
+    <p>All overflow / underflow exceptions are now properly handled.</p>
+  </li>
+  <li>
+    <p>The <code>ParaDRAM</code> class in <code>paramonte</code> is now also available 
+as <code>Paradram</code> and <code>paradram</code>, although the original label 
+will remain the default preferred method of ParaDRAM 
+object instantiation.</p>
+  </li>
+</ul>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>The interactive mode for displaying plots is now automatically on. 
+The plots are not automatically displayed in <code>ipython</code> sessions.</li>
+</ul>
+
+<h3 id="version--231--november-15-2020">Version  2.3.1 – November 15, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>Minor enhancements to the Kernel library 
+build scripts and dependencies management.</li>
+</ul>
+
+<h3 id="version--230--october-29-2020">Version  2.3.0 – October 29, 2020</h3>
+
+<p><strong>Enhancements</strong></p>
+
+<ul>
+  <li>
+    <p>The IO debugging info of all ParaMonte samplers have been enhanced. 
+In cases of wrong syntax or syntax-breaking input values in the simulation 
+output files, the error messages are now more informative and point directly 
+to the exact location of of error in the input file.</p>
+  </li>
+  <li>
+    <p>The Integrated Autocorrelation (IAC) for sample refinement in ParaDRAM 
+sampler of ParaMonte is now set to the average of all variables’ IAC values 
+instead of the maximum IAC value. This will lead to less aggressive decorrelation 
+of the final sample, which means significantly larger final sample sizes, without 
+compromising the i.i.d. property of the final refined sample. This behavior can 
+be reversed back to the original by specifying “max” or “maximum” along with 
+the requested refinement method, <code>SampleRefinementMethod = "batchmeans-max"</code> 
+or <code>SampleRefinementMethod = "BatchMeans-maximum"</code> (case-insensitive).</p>
+  </li>
+</ul>
+
+<h3 id="version--225--october-20-2020">Version  2.2.5 – October 20, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>Enhancements to the messages for incompatible architecture.</li>
+</ul>
+
+<h3 id="version--224--october-18-2020">Version  2.2.4 – October 18, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>The bug preventing the setting of 
+SpecDRAM specifications is now fixed.</li>
+</ul>
+
+<h3 id="version--223--october-15-2020">Version  2.2.3 – October 15, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>Further enhancements and corrections to the 
+<code>checkForUpdate()</code> function of <code>paramonte</code> module.</li>
+</ul>
+
+<h3 id="version--222--october-14-2020">Version  2.2.2 – October 14, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>The <code>checkForUpdate()</code> function of <code>paramonte</code> module now 
+works fine when a newer version of the software is available.</li>
+</ul>
+
+<h3 id="version--221--october-11-2020">Version  2.2.1 – October 11, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>Documentation enhancements and typo fixes.</li>
+</ul>
+
+<h3 id="version--220--october-11-2020">Version  2.2.0 – October 11, 2020</h3>
+
+<p><strong>Major enhancements</strong></p>
+
+<ul>
+  <li>The <code>ParaMonte::Python</code> output file parsers method are now 
+capable of parsing simulation output contents directly from 
+the web. All that is needed, is to provide the link to the 
+web file as the input file name to the simulation output 
+file parser methods (e.g., <code>readSample()</code>, <code>readChain()</code>, 
+<code>readReport()</code>, <code>readProgress()</code>, <code>readRestart()</code>, …).</li>
+</ul>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>A bug in the y-axis variable names in the heatmap plot is now fixed.</li>
+</ul>
+
+<h3 id="version--211--october-9-2020">Version  2.1.1 – October 9, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>A Linux bug in the installation of the MPI library is now fixed.</li>
+</ul>
+
+<h3 id="version--210--october-3-2020">Version  2.1.0 – October 3, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>A new simulation specification <code>overwriteRequested</code> has 
+been added to all ParaMonte samplers. If <code>True</code> and the 
+ParaMonte sampler detects an existing set of old simulation 
+output files in the output path of the current simulation with 
+the same names as the output file names of the current simulation, 
+then, the ParaMonte sampler will overwrite the existing simulation files.</li>
+</ul>
+
+<h3 id="version--209--october-2-2020">Version  2.0.9 – October 2, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>
+    <p>Minor correction to the value of <code>__version__</code>, 
+now representing solely the version number.</p>
+  </li>
+  <li>
+    <p>A simple example-usage Python script is now 
+added to the README.md file of the package.</p>
+  </li>
+</ul>
+
+<h3 id="version--208--september-29-2020">Version  2.0.8 – September 29, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>Enhanced error messages for situations when 
+the MPI library cannot be found on the system.</li>
+</ul>
+
+<h3 id="version--207--september-26-2020">Version  2.0.7 – September 26, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>The guidelines for the installation of the MPI 
+library on macOS and Linux have been improved.</li>
+</ul>
+
+<h3 id="version--206--september-25-2020">Version  2.0.6 – September 25, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>
+    <p>The explicit dependencies on <code>scipy</code>, <code>matplotlib</code>, and <code>seaborn</code> are 
+now removed from the PyPI setup file of the ParaMonte library as these 
+are only required for the post-processing and visualizations of the 
+simulation results. From now on, only <code>numpy</code> and <code>pandas</code> are the 
+minimally-required Python modules, and practically, only <code>numpy</code>.</p>
+  </li>
+  <li>
+    <p>Two new functions <code>verifyDependencyVersion()</code> and <code>getDependencyVersion()</code>
+are now added to the library that can check for the existence of the 
+ParaMonte library’s visualization dependencies and their required 
+minimum versions.</p>
+  </li>
+  <li>
+    <p>The <code>seaborn</code> Python library has now decided to deprecate the <code>distplot()</code> 
+function. The corresponding visualization method in the ParaMonte library 
+has been now updated to a more appropriate name and underlying function.</p>
+  </li>
+</ul>
+
+<h3 id="version--204--september-22-2020">Version  2.0.4 – September 22, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>
+    <p>The output of the plotting functions is now stored as a list in 
+the <code>currentFig</code> temporary component of the visualization objects.
+This way, access to multiple individual objects on the active plot 
+is maintained instead of only the last object. Overall, this is a 
+minor change that will not cause any noticeable change in the 
+behavior of the library in almost in all use cases.</p>
+  </li>
+  <li>
+    <p>A minor bug regarding the input value for the <code>outputDelimiter</code> 
+attribute of the <code>spec</code> component of the <code>ParaMonteSampler()</code> class,<br />
+used in the <code>readTabular()</code> internal method, is now fixed.</p>
+  </li>
+</ul>
+
+<h3 id="version--203--september-11-2020">Version  2.0.3 – September 11, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>Minor enhancement to <code>checkForUpdate()</code> method of 
+the <code>paramonte</code> module.</li>
+</ul>
+
+<h3 id="version--202--september-11-2020">Version  2.0.2 – September 11, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>Minor enhancement to <code>checkForUpdate()</code> method of 
+the <code>paramonte</code> module.</li>
+</ul>
+
+<h3 id="version--201--september-10-2020">Version  2.0.1 – September 10, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>
+    <p>LGPL3 LICENSE is now switched to MIT LICENSE.md file.</p>
+  </li>
+  <li>
+    <p>A fix to the <code>brew</code> software installation now avoids 
+the seemingly-unavoidable crash.</p>
+  </li>
+</ul>
+
+<h3 id="version--200--september-6-2020">Version  2.0.0 – September 6, 2020</h3>
+
+<p><strong>Major enhancements to the ParaMonte / ParaDRAM sampler interfaces</strong></p>
+
+<ul>
+  <li>
+    <p>The entire ParaMonte Python interface library has been revamped.
+The new naming conventions, visualization, and computing tools 
+are significantly nicer to deal with and in some cases, orders 
+of magnitude faster than the previous major release.</p>
+  </li>
+  <li>
+    <p>The kernel density estimates and visualization tools are now on average 
+<strong>100 times or more faster than the previous release of the library</strong>.</p>
+  </li>
+  <li>
+    <p>Several new post-processing functionalities have now been added, such as
+the ability to seamlessly parse the contents of the output <code>*_report.txt</code>, 
+<code>*_restart.txt</code>, and <code>*_progress.txt</code> simulation files, in addition to the
+other output files (<code>*_sample.txt</code> and <code>*_chain.txt</code>) that could be parsed
+in the previous versions.</p>
+  </li>
+  <li>
+    <p>The new major release also includes 3D visualization tools, such as 3D 
+line, scatter, or line+scatter plots as well as fast 2D and 3D kernel 
+density estimate contour plotting tools.</p>
+  </li>
+</ul>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>
+    <p>The simulation output files reading is now completely overhauled. In particular, 
+the output file reader methods are now capable of handling input file paths that 
+point to a directory. In such cases, it will search the input directory for files 
+matching the requested file name pattern. If no input file is provided to the file 
+reader methods, the current working directory will be search for the the potential 
+simulation files that match the requested pattern.</p>
+  </li>
+  <li>
+    <p>The error-signaling behavior of the library now is very much controlled, that is, 
+upon code failure, it does not automatically shutdown the Python kernel in Jupyter 
+Notebooks. The library now simply throws an error message upon failing instead of 
+restarting the environment.</p>
+  </li>
+  <li>The single value assignment to <code>spec.targetAcceptanceRate</code> component of a ParaDRAM 
+object is now properly handled. For example, the following code is valid as expected,
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
+<span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="n">ParaDRAM</span><span class="p">()</span>
+<span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">targetAcceptanceRate</span> <span class="o">=</span> <span class="mf">0.23</span> <span class="c1"># this is now valid
+</span><span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">targetAcceptanceRate</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span> <span class="c1"># this is also valid, which limits the acceptance rate to the specified range
+</span></code></pre></div>    </div>
+  </li>
+  <li>The minimum required dependency versions are now raised to the following,
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">python_requires</span> <span class="o">=</span> <span class="s">"&gt;=3.5"</span>
+<span class="n">install_requires</span> <span class="o">=</span> <span class="p">[</span> <span class="s">"numpy&gt;=1.18.0"</span>
+                   <span class="p">,</span> <span class="s">"scipy&gt;=1.4.0"</span>
+                   <span class="p">,</span> <span class="s">"pandas&gt;=1.0.0"</span>
+                   <span class="p">,</span> <span class="s">"seaborn&gt;=0.10.0"</span>
+                   <span class="p">,</span> <span class="s">"matplotlib&gt;=3.2.0"</span>
+                   <span class="p">]</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="version-1xx"><strong>Version 1.x.x</strong></h2>
+
+<h3 id="version--111--june-7-2020">Version  1.1.1 – June 7, 2020</h3>
+
+<p><strong>Minor enhancements</strong></p>
+
+<ul>
+  <li>The <code>_ScatterLinePlot</code> dangling class is removed from the package.</li>
+</ul>
+
+<h3 id="version--110--june-1-2020">Version  1.1.0 – June 1, 2020</h3>
+
+<ul>
+  <li>Major enhancements to the ParaMonte kernel library.</li>
+  <li>Major bug fixes in the ParaMonte Python library.</li>
+  <li>The ParaMonte kernel and Python interface versions are now reposted separately as components of the paramonte module.</li>
+</ul>
+
+<h3 id="version--1012--april-6-2020">Version  1.0.12 – April 6, 2020</h3>
+
+<ul>
+  <li>Minor enhancements and bug fixes to the kernel routines.</li>
+</ul>
+
+<h3 id="version--1011--april-4-2020">Version  1.0.11 – April 4, 2020</h3>
+
+<ul>
+  <li>Minor enhancements and bug fixes to the GridPlot.</li>
+</ul>
+
+<h3 id="version--1010--march-28-2020">Version  1.0.10 – March 28, 2020</h3>
+
+<ul>
+  <li>Minor bug fix.</li>
+</ul>
+
+<h3 id="version--109--march-27-2020">Version  1.0.9 – March 27, 2020</h3>
+
+<ul>
+  <li>Minor enhancements.</li>
+</ul>
+
+<h3 id="version--108--march-27-2020">Version  1.0.8 – March 27, 2020</h3>
+
+<ul>
+  <li>Minor enhancements.</li>
+</ul>
+
+<h3 id="version--107--march-26-2020">Version  1.0.7 – March 26, 2020</h3>
+
+<ul>
+  <li>Minor corrections.</li>
+</ul>
+
+<h3 id="version--106--march-22-2020">Version  1.0.6 – March 22, 2020</h3>
+
+<ul>
+  <li>Minor bug fixes.</li>
+</ul>
+
+<h3 id="version--105--march-21-2020">Version  1.0.5 – March 21, 2020</h3>
+
+<ul>
+  <li>Minor bug fix.</li>
+</ul>
+
+<h3 id="version--104--march-20-2020">Version  1.0.4 – March 20, 2020</h3>
+
+<ul>
+  <li>support for macOS (Darwin) added.</li>
+</ul>
+
+<h3 id="version--103--february-13-2020">Version  1.0.3 – February 13, 2020</h3>
+
+<ul>
+  <li>Minor bug fixes.</li>
+</ul>
+
+<h3 id="version--102--february-13-2020">Version  1.0.2 – February 13, 2020</h3>
+
+<ul>
+  <li>Minor bug fixes to the parallel routines.</li>
+</ul>
+
+<h3 id="version--101--february-13-2020">Version  1.0.1 – February 13, 2020</h3>
+
+<ul>
+  <li>Minor bug fixes.</li>
+</ul>
+
+<h3 id="version--100--january-1-2020--initial-release">Version  1.0.0 – January 1, 2020 – Initial release</h3>
+
+<ul>
+  <li>This is the first public release of the ParaMonte library.</li>
+</ul>
+
+<p><strong>New features</strong></p>
+<ul>
+  <li>ParaDRAM sampler: <strong>Para</strong>llel <strong>D</strong>elayed-<strong>R</strong>ejection <strong>A</strong>daptive Metropolis-Hastings <strong>M</strong>arkov Chain Monte Carlo Sampler.</li>
+  <li>ParaMonte Interface to the Python Programming languages.</li>
+  <li>ParaMonte simulation-output visualization via the ParaMonte Python interface.</li>
+</ul>
+
+<p><br /></p>
+
+<div class="bs-callout bs-callout-danger">If you have any questions about the topics discussed on this page, feel free to ask in the comment section below, or <a href="https://github.com/cdslaborg/paramonte/issues/new/choose" target="_blank">raise an issue</a> on the GitHub page of the library, or reach out to <a href="../../../overview/preface/#who-are-the-paramonte-authors-and-developers" target="_blank">the ParaMonte library authors</a>.</div>
+
+<p><br /></p>
+
+
+    
+    
+        
+    <div style="margin-top:3rem">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'paramonte'; // required: replace example with your forum shortname
+    
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+</div>
+<hr class="shaded"/>
+<footer>
+    <div class="row">
+        <div class="social-icons">
+
+    
+    <span class="social-icon">
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+
+    
+    <span class="social-icon">
+        <a href="https://instagram.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://medium.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-medium fa-stack-xs"></i>
+                <!--
+                -->
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+</div>
+
+        <div class="col-lg-12 footer">
+            &copy;2021 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
+            Last updated on April 12, 2021 <br />
+            
+        <p>
+            <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="/paramonte/images/logo.png" }}" alt="cdslab.org" /></a>
+            <div style="color: #ffffff; float: none; width: 100%;">
+    <span style="font-size:0.8em">vcount: 
+        <script type="text/javascript">
+            var sc_project=12178963; 
+            var sc_invisible=0; 
+            var sc_security="e0dfe0f9"; 
+            var sc_text=3; 
+            var scJsHost = "https://";
+            document.write("<sc"+"ript type='text/javascript' src='" +
+            scJsHost+
+            "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+    </span>
+</div>
+        </p>
+        </div>
+    </div>
+    <!--Mathjax LaTeX engine-->
+    
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+        MathJax.Hub.Config({
+            config: ["MMLorHTML.js"],
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX"],
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: ".8em",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                autoNumber: "AMS",
+                },
+                unicode: {
+                fonts: "STIXGeneral,'Arial Unicode MS'" 
+                }
+            },
+            showProcessingMessages: false
+        });
+    </script>
+    <style TYPE="text/css">
+        code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+    </style>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+            }
+        });
+        MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</footer>
+
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /#main -->
+        </div>
+        
+    </body>
+    
+</html>

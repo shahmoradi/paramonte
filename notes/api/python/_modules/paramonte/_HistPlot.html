@@ -1,0 +1,639 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>paramonte._HistPlot &mdash; ParaMonte :: Python  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> ParaMonte :: Python
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ParaMonte :: Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../paramonte.html">paramonte</a> &raquo;</li>
+        
+      <li>paramonte._HistPlot</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for paramonte._HistPlot</h1><div class="highlight"><pre>
+<span></span><span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte: plain powerful parallel Monte Carlo library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Copyright (C) 2012-present, The Computational Data Science Lab</span>
+<span class="c1">####</span>
+<span class="c1">####   This file is part of the ParaMonte library.</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte is free software: you can redistribute it and/or modify it</span>
+<span class="c1">####   under the terms of the GNU Lesser General Public License as published</span>
+<span class="c1">####   by the Free Software Foundation, version 3 of the License.</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte is distributed in the hope that it will be useful,</span>
+<span class="c1">####   but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1">####   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="c1">####   GNU Lesser General Public License for more details.</span>
+<span class="c1">####</span>
+<span class="c1">####   You should have received a copy of the GNU Lesser General Public License</span>
+<span class="c1">####   along with the ParaMonte library. If not, see,</span>
+<span class="c1">####</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/master/LICENSE</span>
+<span class="c1">####</span>
+<span class="c1">####   ACKNOWLEDGMENT</span>
+<span class="c1">####</span>
+<span class="c1">####   As per the ParaMonte library license agreement terms,</span>
+<span class="c1">####   if you use any parts of this library for any purposes,</span>
+<span class="c1">####   we ask you to acknowledge the use of the ParaMonte library</span>
+<span class="c1">####   in your work (education/research/industry/development/...)</span>
+<span class="c1">####   by citing the ParaMonte library as described on this page:</span>
+<span class="c1">####</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/master/ACKNOWLEDGMENT.md</span>
+<span class="c1">####</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">_np</span>
+<span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">_tp</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">_pd</span>
+<span class="kn">import</span> <span class="nn">weakref</span> <span class="k">as</span> <span class="nn">_wref</span>
+
+<span class="kn">import</span> <span class="nn">_dfutils</span> <span class="k">as</span> <span class="nn">dfutils</span>
+
+<span class="c1">#!DEC$ ifdef PMVIS_ENABLED</span>
+
+<span class="c1">#import seaborn as _sns</span>
+<span class="c1">#from matplotlib import pyplot as _plt</span>
+
+<span class="kn">from</span> <span class="nn">_visutils</span> <span class="kn">import</span> <span class="n">Target</span><span class="p">,</span> <span class="n">ParaMonteFigure</span>
+
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">#### HistPlot class</span>
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="HistPlot"><a class="viewcode-back" href="../../autoapi/paramonte/_HistPlot/index.html#paramonte._HistPlot.HistPlot">[docs]</a><span class="k">class</span> <span class="nc">HistPlot</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    .. py:class:: HistPlot</span>
+
+<span class="sd">    This is the HistPlot class for generating instances </span>
+<span class="sd">    of histogram figures based on seaborn library&#39;s ``distplot()``.</span>
+
+<span class="sd">        **Usage** </span>
+
+<span class="sd">            First generate an object of this class by optionally </span>
+<span class="sd">            passing the following parameters described below. Then call </span>
+<span class="sd">            the ``plot()`` method.</span>
+
+<span class="sd">        **Parameters**</span>
+
+<span class="sd">            dataFrame</span>
+<span class="sd">                a pandas dataframe containing the data to plot.</span>
+
+<span class="sd">            columns</span>
+<span class="sd">                optional argument that determines the columns of dataframe to be visualized. </span>
+<span class="sd">                It can have three forms:</span>
+
+<span class="sd">                    1. a list of column indices in dataFrame.</span>
+<span class="sd">                    2. a list of column names in dataFrame.columns.</span>
+<span class="sd">                    3. a ``range(start,stop,step)``, representing the column indices in dataFrame.</span>
+
+<span class="sd">                Examples:</span>
+
+<span class="sd">                    1. ``columns = [0,1,4,3]``</span>
+<span class="sd">                    2. ``columns = [&quot;SampleLogFunc&quot;,&quot;SampleVariable1&quot;]``</span>
+<span class="sd">                    3. ``columns = range(17,7,-2)``</span>
+
+<span class="sd">                If not provided, the default behavior includes all columns of the dataframe.</span>
+
+<span class="sd">            rows</span>
+<span class="sd">                optional argument that determines the rows of dataframe to be visualized. </span>
+<span class="sd">                It can be either:</span>
+
+<span class="sd">                    1. a ``range(start,stop,step)``, or, </span>
+<span class="sd">                    2. a list of row indices in dataFrame.index.</span>
+
+<span class="sd">                Examples:</span>
+
+<span class="sd">                    1. ``rows = range(17,7,-2)``</span>
+<span class="sd">                    2. ``rows = [i for i in range(7,17)]``</span>
+
+<span class="sd">                If not provided, the default behavior includes all rows of the dataframe.</span>
+
+<span class="sd">            set_kws</span>
+<span class="sd">                optional dictionary of keyword arguments to be passed to seaborn&#39;s </span>
+<span class="sd">                ``set()`` function. For example: </span>
+
+<span class="sd">                .. code-block:: python</span>
+
+<span class="sd">                    set_kws = {&quot;style&quot;:&quot;darkgrid&quot;}</span>
+
+<span class="sd">                if set to ``None``, then no call to ``set()`` function will be made.</span>
+
+<span class="sd">            figure_kws</span>
+<span class="sd">                optional dictionary of keyword arguments to be passed to matplotlib&#39;s </span>
+<span class="sd">                ``figure()`` function. For example: </span>
+
+<span class="sd">                .. code-block:: python</span>
+
+<span class="sd">                    figure_kws = {&quot;facecolor&quot;:&quot;w&quot;,&quot;dpi&quot;:150}</span>
+
+<span class="sd">            legend_kws</span>
+<span class="sd">                optional dictionary of keyword arguments to be passed to matplotlib&#39;s </span>
+<span class="sd">                ``legend()`` function. If it is not provided, the legend will be added</span>
+<span class="sd">                to the plot. If it is set to ``{}``, then the legend will be added </span>
+<span class="sd">                to the plot and automatically adjusted. For example: </span>
+
+<span class="sd">                .. code-block:: python</span>
+
+<span class="sd">                    legend_kws = {&quot;labels&quot;:[&quot;Variable1&quot;,&quot;Variable2&quot;]}</span>
+
+<span class="sd">            distplot_kws</span>
+<span class="sd">                optional dictionary of keyword arguments to be passed to seaborn&#39;s </span>
+<span class="sd">                ``distplot()`` function. For example: </span>
+
+<span class="sd">                .. code-block:: python</span>
+
+<span class="sd">                    distplot_kws =  {&quot;hist_kws&quot;:{ &quot;histtype&quot;:&quot;step&quot;</span>
+<span class="sd">                                                , &quot;linewidth&quot;:0</span>
+<span class="sd">                                                , &quot;alpha&quot;:1</span>
+<span class="sd">                                                , &quot;color&quot;:&quot;g&quot;</span>
+<span class="sd">                                                }</span>
+<span class="sd">                                    , &quot;kde&quot;:False</span>
+<span class="sd">                                    }</span>
+
+<span class="sd">            outputFile</span>
+<span class="sd">                optional string representing the name of the output file in which </span>
+<span class="sd">                the figure will be saved. If not provided, no output file will be generated.</span>
+<span class="sd">                and the corresponding attribute of object will be ``None``.</span>
+
+<span class="sd">            currentFig</span>
+<span class="sd">                an object of class ParaMonteFigure containing all outputs from </span>
+<span class="sd">                matplotlib function calls, with the following attributes:</span>
+
+<span class="sd">                    figure</span>
+<span class="sd">                        the output of matplotlib&#39;s ``figure()`` function.</span>
+
+<span class="sd">                    axes</span>
+<span class="sd">                        the output of seaborns&#39;s ``distplot()`` function.</span>
+
+<span class="sd">                    legend</span>
+<span class="sd">                        the output of matplotlib&#39;s ``legend()`` function.</span>
+
+<span class="sd">                    outputFile</span>
+<span class="sd">                        a string value representing the name of the output file to which </span>
+<span class="sd">                        the figure has been written. </span>
+
+<span class="sd">        **Attributes**</span>
+
+<span class="sd">            All of the parameters described above, except dataFrame.</span>
+<span class="sd">                a reference to the dataFrame will be implicitly stored in the object.</span>
+
+<span class="sd">            target</span>
+<span class="sd">                a callable object of ParaMonte library&#39;s class Target which can </span>
+<span class="sd">                be used to add target point and lines to the current active plot.</span>
+
+<span class="sd">            currentFig</span>
+<span class="sd">                an object of class ParaMonteFigure which is initially None, but upon </span>
+<span class="sd">                making a plot, is populated with attributes representing all outputs </span>
+<span class="sd">                from matplotlib/seaborn function calls, with the following attributes:</span>
+
+<span class="sd">                    figure</span>
+<span class="sd">                        the output of matplotlib&#39;s ``figure()`` function.</span>
+
+<span class="sd">                    axes</span>
+<span class="sd">                        the output of seaborns&#39;s ``heatmap()`` function.</span>
+
+<span class="sd">                    legend</span>
+<span class="sd">                        the output of matplotlib&#39;s ``legend()`` function.</span>
+
+<span class="sd">        **Returns**</span>
+
+<span class="sd">            self</span>
+<span class="sd">                an object of class ``HistPlot``.</span>
+
+<span class="sd">    ---------------------------------------------------------------------------</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span>
+                <span class="p">,</span> <span class="n">dataFrame</span>         <span class="p">:</span> <span class="n">_tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span> <span class="n">_pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="p">,</span> <span class="n">columns</span>           <span class="p">:</span> <span class="n">_tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span> <span class="n">_tp</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">range</span> <span class="p">,</span> <span class="n">_tp</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="p">,</span> <span class="n">_tp</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="p">]</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="p">,</span> <span class="n">rows</span>              <span class="p">:</span> <span class="n">_tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span> <span class="n">_tp</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span> <span class="nb">range</span> <span class="p">,</span> <span class="n">_tp</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="p">]</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="p">,</span> <span class="n">set_kws</span>           <span class="p">:</span> <span class="n">_tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">_tp</span><span class="o">.</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+                <span class="p">,</span> <span class="n">figure_kws</span>        <span class="p">:</span> <span class="n">_tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">_tp</span><span class="o">.</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+                <span class="p">,</span> <span class="n">legend_kws</span>        <span class="p">:</span> <span class="n">_tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">_tp</span><span class="o">.</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+                <span class="p">,</span> <span class="n">distplot_kws</span>      <span class="p">:</span> <span class="n">_tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">_tp</span><span class="o">.</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+                <span class="p">,</span> <span class="n">outputFile</span>        <span class="p">:</span> <span class="n">_tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">dataFrame</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">_wref</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="n">dataFrame</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">columns</span>        <span class="o">=</span> <span class="n">columns</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rows</span>           <span class="o">=</span> <span class="n">rows</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_kws</span>        <span class="o">=</span> <span class="n">set_kws</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span>     <span class="o">=</span> <span class="n">figure_kws</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">legend_kws</span>     <span class="o">=</span> <span class="n">legend_kws</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span>   <span class="o">=</span> <span class="n">distplot_kws</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">outputFile</span>     <span class="o">=</span> <span class="n">outputFile</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span>     <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target</span>         <span class="o">=</span> <span class="n">Target</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_isdryrun</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_isdryrun</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="HistPlot.__call__"><a class="viewcode-back" href="../../autoapi/paramonte/_HistPlot/index.html#paramonte._HistPlot.HistPlot.__call__">[docs]</a>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span> <span class="bp">self</span>
+                <span class="p">,</span> <span class="n">reself</span>    <span class="p">:</span> <span class="n">_tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span> <span class="nb">bool</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+                <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        .. py:method:: __call__(self, reself = False, **kwargs)</span>
+
+<span class="sd">        calls the ``plot()`` method of the current instance of the class.</span>
+
+<span class="sd">            **Parameters**</span>
+
+<span class="sd">                reself</span>
+<span class="sd">                    logical variable. If ``True``, an instance of the object </span>
+<span class="sd">                    will be returned upon exit to the calling routine.</span>
+<span class="sd">                    The default value is False.</span>
+
+<span class="sd">                also, </span>
+<span class="sd">                    any attributes of the current instance of the class.</span>
+
+<span class="sd">            **Returns**</span>
+
+<span class="sd">                the object self if ``reself = True`` otherwise, None.</span>
+<span class="sd">                However, this method causes side-effects by manipulating </span>
+<span class="sd">                the existing attributes of the object.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">):</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">key</span><span class="o">==</span><span class="s2">&quot;dataFrame&quot;</span><span class="p">:</span>
+                <span class="nb">setattr</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_dfref&quot;</span><span class="p">,</span> <span class="n">_wref</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;Unrecognized input &#39;&quot;</span><span class="o">+</span><span class="n">key</span><span class="o">+</span><span class="s2">&quot;&#39; class attribute detected.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                <span class="o">+</span> <span class="s2">&quot;For allowed attributes, use help(objectname) on Python command line,</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                <span class="o">+</span> <span class="s2">&quot;where objectname should be replaced with the name of the object being called.&quot;</span>
+                                <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">reself</span><span class="p">:</span> <span class="k">return</span> <span class="bp">self</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="HistPlot.plot"><a class="viewcode-back" href="../../autoapi/paramonte/_HistPlot/index.html#paramonte._HistPlot.HistPlot.plot">[docs]</a>    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        .. py:method:: plot(self)</span>
+
+<span class="sd">        Generate a histogram from the selected columns of object&#39;s dataframe.</span>
+
+<span class="sd">            **Parameters**</span>
+
+<span class="sd">                None</span>
+
+<span class="sd">            **Returns**</span>
+
+<span class="sd">                None. However, this method causes side-effects by manipulating </span>
+<span class="sd">                the existing attributes of the object.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="o">==</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="o">=</span><span class="p">{}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="p">,</span><span class="nb">dict</span><span class="p">):</span>
+                <span class="k">if</span> <span class="s2">&quot;dpi&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="p">[</span><span class="s2">&quot;dpi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">150</span>
+                <span class="k">if</span> <span class="s2">&quot;facecolor&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="p">[</span><span class="s2">&quot;facecolor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;w&quot;</span>
+                <span class="k">if</span> <span class="s2">&quot;edgecolor&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="p">[</span><span class="s2">&quot;edgecolor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;w&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;The input argument &#39;figure_kws&#39; must be a dictionary,</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                <span class="o">+</span> <span class="s2">&quot;each (key,value) pair of which represents an (attribute,value)</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                <span class="o">+</span> <span class="s2">&quot;of matplotlib library&#39;s figure() function.&quot;</span>
+                                <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span><span class="o">==</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span><span class="o">=</span><span class="p">{}</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span><span class="p">,</span><span class="nb">dict</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s2">&quot;kde&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span><span class="p">[</span><span class="s2">&quot;kde&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">if</span> <span class="s2">&quot;hist_kws&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span><span class="p">[</span><span class="s2">&quot;hist_kws&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+            <span class="k">if</span> <span class="s2">&quot;linewidth&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span><span class="p">[</span><span class="s2">&quot;hist_kws&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span><span class="p">[</span><span class="s2">&quot;hist_kws&quot;</span><span class="p">][</span><span class="s2">&quot;linewidth&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="s2">&quot;histtype&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span><span class="p">[</span><span class="s2">&quot;hist_kws&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span><span class="p">[</span><span class="s2">&quot;hist_kws&quot;</span><span class="p">][</span><span class="s2">&quot;histtype&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;stepfilled&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span><span class="p">[</span><span class="s2">&quot;hist_kws&quot;</span><span class="p">][</span><span class="s2">&quot;density&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span><span class="p">[</span><span class="s2">&quot;kde&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;The input argument &#39;distplot_kws&#39; must be a dictionary,</span><span class="se">\n</span><span class="s2">&quot;</span>
+                            <span class="o">+</span> <span class="s2">&quot;each (key,value) pair of which represents an (attribute,value)</span><span class="se">\n</span><span class="s2">&quot;</span>
+                            <span class="o">+</span> <span class="s2">&quot;of matplotlib library&#39;s figure() function.&quot;</span>
+                            <span class="p">)</span>
+
+        <span class="c1">#########################</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_kws</span><span class="o">==</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_kws</span><span class="o">=</span><span class="p">{}</span>
+        <span class="n">figEnabled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">figEnabled</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="o">==</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="o">=</span><span class="p">{}</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="p">,</span><span class="nb">dict</span><span class="p">):</span>
+                <span class="k">if</span> <span class="s2">&quot;dpi&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="p">[</span><span class="s2">&quot;dpi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">150</span>
+                <span class="k">if</span> <span class="s2">&quot;facecolor&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="p">[</span><span class="s2">&quot;facecolor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;w&quot;</span>
+                <span class="k">if</span> <span class="s2">&quot;edgecolor&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span><span class="p">[</span><span class="s2">&quot;edgecolor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;w&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;The input argument &#39;figure_kws&#39; must be a dictionary,</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                <span class="o">+</span> <span class="s2">&quot;each (key,value) pair of which represents an (attribute,value)</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                <span class="o">+</span> <span class="s2">&quot;of matplotlib library&#39;s figure() function.&quot;</span>
+                                <span class="p">)</span>
+
+        <span class="c1">#########################</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isdryrun</span><span class="p">:</span> <span class="k">return</span>
+        <span class="c1">#########################</span>
+
+        <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">_sns</span>
+        <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">_plt</span>
+
+        <span class="c1"># generate figure and axes if needed</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span> <span class="o">=</span> <span class="n">ParaMonteFigure</span><span class="p">()</span>
+        <span class="n">figEnabled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">figEnabled</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_kws</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="n">_sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">set_kws</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="n">_plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">figure_kws</span> <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">_plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">_plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
+
+        <span class="c1"># check data type</span>
+
+        <span class="n">noDataPassed</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">noDataPassed</span> <span class="o">=</span> <span class="s2">&quot;It appears that no data has been passed for plotting.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">,</span><span class="n">_wref</span><span class="o">.</span><span class="n">ref</span><span class="p">):</span>
+            <span class="n">noDataPassed</span> <span class="o">=</span> <span class="s2">&quot;It appears that you have messed with the</span><span class="se">\n</span><span class="s2">internal representation of data in the object.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">(),</span><span class="n">_pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+            <span class="n">noDataPassed</span> <span class="o">=</span> <span class="s2">&quot;The input data is not a pandas&#39; dataframe.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="n">noDataPassed</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="n">noDataPassed</span>
+                            <span class="o">+</span> <span class="s2">&quot;The input data must be a pandas&#39; dataframe.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                            <span class="o">+</span> <span class="s2">&quot;Please pass a dataFrame to the constructor or at</span><span class="se">\n</span><span class="s2">&quot;</span>
+                            <span class="o">+</span> <span class="s2">&quot;the time of calling the object (which is callable with</span><span class="se">\n</span><span class="s2">&quot;</span>
+                            <span class="o">+</span> <span class="s2">&quot;the same input arguments as the object&#39;s constructor.&quot;</span>
+                            <span class="p">)</span>
+
+        <span class="c1">#########################</span>
+
+        <span class="c1"># check columns presence</span>
+
+        <span class="n">colnames</span><span class="p">,</span> <span class="n">colindex</span> <span class="o">=</span> <span class="n">dfutils</span><span class="o">.</span><span class="n">getColNamesIndex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+        <span class="c1"># check rows presence</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">rowindex</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rowindex</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span>
+
+        <span class="n">selectedRows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">rowindex</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">icol</span> <span class="ow">in</span> <span class="n">colindex</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span><span class="n">_sns</span><span class="o">.</span><span class="n">distplot</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">selectedRows</span><span class="p">,</span><span class="n">icol</span><span class="p">]</span>
+                                                <span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span>
+                                                <span class="c1">#, kde = False</span>
+                                                <span class="c1">#, hist_kws = {&quot;histtype&quot;: &quot;step&quot;, &quot;linewidth&quot;: 1, &quot;alpha&quot;: 1}#, &quot;color&quot;: &quot;g&quot;}</span>
+                                                <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">distplot_kws</span><span class="p">[</span><span class="s2">&quot;kde&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Probability Density&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">colindex</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">colnames</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Value&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">legend_kws</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">legend_kws</span><span class="o">==</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">legend_kws</span><span class="o">=</span><span class="p">{}</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">legend_kws</span><span class="p">,</span><span class="nb">dict</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">legend_kws</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="s2">&quot;labels&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">legend_kws</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="bp">self</span><span class="o">.</span><span class="n">legend_kws</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">colnames</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">legend_kws</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">colnames</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;The input argument `legend_kws` must be a dictionary,</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                <span class="o">+</span> <span class="s2">&quot;each (key,value) pair of which represents an (attribute,value)</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                <span class="o">+</span> <span class="s2">&quot;of matplotlib library&#39;s legend() function.&quot;</span>
+                                <span class="p">)</span>
+
+        <span class="n">_plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputFile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> 
+            <span class="bp">self</span><span class="o">.</span><span class="n">currentFig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span><span class="o">.</span><span class="n">savefig</span>   <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputFile</span>
+                                                        <span class="p">,</span> <span class="n">bbox_inches</span> <span class="o">=</span> <span class="s1">&#39;tight&#39;</span>
+                                                        <span class="p">,</span> <span class="n">pad_inches</span> <span class="o">=</span> <span class="mf">0.0</span>
+                                                        <span class="p">)</span></div></div>
+
+    <span class="c1">################################################################################################################################</span>
+
+<span class="c1">#!DEC$ endif</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+    <div>
+        <p>
+            <a href="https://www.cdslab.org/paramonte">ParaMonte: Plain Powerful Parallel Monte Carlo Library</a>.<br/>
+            &copy; Copyright 2020, <a href="https://www.cdslab.org" target="_blank">The Computational Data Science Lab</a>.<br/>
+        </p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </div>
+    <!-- Start of statc -->
+    <div style="color: #ffffff; float: none; width: 100%;">
+        <span style="font-size:0.8em">visitor count: 
+            <script type="text/javascript">
+                var sc_project=12178963; 
+                var sc_invisible=0; 
+                var sc_security="e0dfe0f9"; 
+                var sc_text=3; 
+                var scJsHost = "https://";
+                document.write("<sc"+"ript type='text/javascript' src='" +
+                scJsHost+
+                "statcounter.com/counter/counter.js'></"+"script>");
+            </script>
+        </span>
+    </div>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

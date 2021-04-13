@@ -1,0 +1,67 @@
+:mod:`paramonte._statistics`
+============================
+
+.. py:module:: paramonte._statistics
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   paramonte._statistics._Struct
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   paramonte._statistics.getMaxLogFunc
+
+
+.. py:class:: _Struct
+
+
+.. function:: getMaxLogFunc(dataFrame: _pd.DataFrame, column: _tp.Optional[str] = 'SampleLogFunc')
+
+   .. py:function:: getMaxLogFunc(dataFrame, column = "SampleLogFunc")
+
+   Returns a structure with components containing the properties of the 
+   input ``dataFrame``, corresponding to the mode (maximum) of the data 
+   in the column of the dataFrame that is identified by ``column``. 
+
+       **Parameters**
+
+           dataFrame
+               a Pandas dataframe containing the output sample data from a 
+               ParaMonte simulation.
+
+           column
+               A string containing the name of the column of the input 
+               ``dataFrame`` that contains values of the objective function
+               (or its logarithm).
+
+       **Returns**
+
+           maxLogFunc
+               A structure with the following components:
+
+                   idrow
+                       the ID of the row of ``dataFrame`` corresponding to the 
+                       mode of ``column``, 
+                   value
+                       the value of ``column`` at maximum, 
+                   dfrow
+                       the entire row of ``dataFrame`` corresponding to the 
+                       mode of ``column``, 
+                   state
+                       the location (state) within the domain of the objective 
+                       function where the maximum of ``column`` occurs.
+
+
+
