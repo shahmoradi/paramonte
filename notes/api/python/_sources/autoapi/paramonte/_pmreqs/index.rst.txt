@@ -1,0 +1,260 @@
+:mod:`paramonte._pmreqs`
+========================
+
+.. py:module:: paramonte._pmreqs
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   paramonte._pmreqs.verify
+   paramonte._pmreqs.getUserResponse
+   paramonte._pmreqs.download
+   paramonte._pmreqs.warnForUnsupportedPlatform
+   paramonte._pmreqs.getBashrcContents
+   paramonte._pmreqs.getBashProfileContents
+   paramonte._pmreqs.setupUnixPath
+   paramonte._pmreqs.getLocalInstallDir
+   paramonte._pmreqs.findMPI
+   paramonte._pmreqs.getPrereqs
+   paramonte._pmreqs.getDefaultIntelLinuxMpiPath
+   paramonte._pmreqs.getDependencyList
+   paramonte._pmreqs.installMPI
+   paramonte._pmreqs.buildParaMontePrereqsForMac
+   paramonte._pmreqs.getMacosInstallHelpMsg
+   paramonte._pmreqs.writeVerificationStatusFile
+   paramonte._pmreqs.dispFinalMessage
+   paramonte._pmreqs.displayParaMonteBanner
+   paramonte._pmreqs.build
+   paramonte._pmreqs.getVersionTriplet
+   paramonte._pmreqs.getPreviousVersion
+   paramonte._pmreqs.getDependencyVersion
+   paramonte._pmreqs.displayDependencyVersionMessage
+   paramonte._pmreqs.verifyDependencyVersion
+   paramonte._pmreqs.checkForUpdate
+
+
+.. data:: Struct
+   
+
+   
+
+.. data:: newline
+   
+
+   
+
+.. data:: verificationStatusFilePath
+   
+
+   
+
+.. data:: buildInstructionNoteWindows
+   :annotation: = 
+
+   
+
+.. data:: buildInstructionNoteUnix
+   
+
+   
+
+.. function:: verify(reset=True)
+
+   Checks (or rechecks) the requirements of the installed ParaMonte library.
+
+   **Usage**
+
+       .. code-block:: python
+
+           import paramonte as pm
+           pm.verify()
+
+   **Parameters**
+
+       reset
+
+           A boolean whose default value is ``True``. If ``True``,
+           a thorough verification of the existence of the required
+           libraries will performed, as if it is the first ParaMonte
+           module import.
+
+   **Returns**
+
+       None
+
+
+.. function:: getUserResponse(msg='')
+
+
+.. function:: download(url, filePath)
+
+
+.. function:: warnForUnsupportedPlatform()
+
+
+.. function:: getBashrcContents()
+
+
+.. function:: getBashProfileContents()
+
+
+.. function:: setupUnixPath()
+
+
+.. function:: getLocalInstallDir()
+
+
+.. function:: findMPI()
+
+   Return a structure containing the paths to
+   the different components of the MPI library.
+
+       WARNING
+
+           No ``return`` must be specified in this routine,
+           except at the very end of the function.
+
+
+.. function:: getPrereqs(DependencyList=None)
+
+
+.. function:: getDefaultIntelLinuxMpiPath(prereqs=None)
+
+
+.. function:: getDependencyList()
+
+
+.. function:: installMPI()
+
+
+.. function:: buildParaMontePrereqsForMac()
+
+
+.. function:: getMacosInstallHelpMsg(app='')
+
+
+.. function:: writeVerificationStatusFile(verificationEnabledString)
+
+
+.. function:: dispFinalMessage()
+
+
+.. function:: displayParaMonteBanner()
+
+
+.. function:: build(flags='')
+
+   Builds the ParaMonte library kernel on the user's system from scratch.
+
+   **Parameters**
+
+       flags (optional)
+
+           A string containing any of the ParaMonte install script flags.
+           If the operating system is Unix-based (e.g., Linux or macOS) then
+           the value of ``flags`` must conform to the rules and syntax of
+           the flags of the Bash install script of the ParaMonte library
+           on GitHub. If the operating system is Windows, then the value
+           of ``flags`` must conform to the rules and syntax of the flags
+           of the Batch install script of the ParaMonte library on GitHub.
+           The default value is an empty string ``""``. For more information
+           on the possible values of ``flags``, visit:
+
+           https://github.com/cdslaborg/paramonte/blob/main/install.sh.usage.txt
+
+   **Example usage**:
+
+       .. code-block:: python
+           :linenos:
+
+           import paramonte as pm
+           pm.build(flags = '--lang python --par none --build "debug release"')
+
+   **Returns**
+
+       None.
+
+
+.. function:: getVersionTriplet(versionDumpString)
+
+   Take an input version string like, "1.1.1" and return an integer triplet list.
+
+
+.. function:: getPreviousVersion(currentVerionString)
+
+   Take an input version string like, "1.1.1" and return another string representing the version before the input version, like, 1.1.0.
+
+
+.. data:: dependencyVersionDict
+   
+
+   
+
+.. function:: getDependencyVersion(pkg: tp.Optional[str] = None)
+
+   Return the minimum required version of the Python library
+   for the successful use of the ParaMonte library visualization
+   and post-processing tools.
+
+       **Parameters**
+
+           pkg
+
+               An optional string representing the name of the
+               Python package whose version is being inquired.
+
+       **Returns**
+
+           A string representing the required minimum version
+           of the input ``pkg``. If ``pkg`` is missing or the
+           package dependency does not exist within the ParaMonte
+           library, the dictionary of all dependencies will
+           be returned.
+
+
+.. function:: displayDependencyVersionMessage()
+
+
+.. function:: verifyDependencyVersion()
+
+   Verify the existence of the required Python packages and
+   their minimum versions on the current system.
+
+       **Parameters**
+
+           None
+
+       **Returns**
+
+           None
+
+
+.. function:: checkForUpdate(package='paramonte')
+
+   Check whether a new version of the input package name
+   (presumably, ``"paramonte"``) is available for download
+   from the PyPI repository. This is done via the ``pip`` tool.
+   Depending on whether a new version of the package is available,
+   display an appropriate message with instructions on how to install
+   the latest version.
+
+       **Parameters**
+
+           package (optional)
+
+               The name of the Python package on PyPI repository
+               whose laest version will be checked against the current
+               version.
+
+       **Returns**
+
+           None
+
+
