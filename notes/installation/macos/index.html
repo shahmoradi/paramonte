@@ -1146,7 +1146,7 @@ Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
 </code></pre></div>    </div>
   </li>
   <li>
-    <p><strong>Call the Bash installation script <code>install.sh</code> on the command-line interface with the desired flags:</strong></p>
+    <p><strong>Call the Bash installation script <code>./install.sh</code> on the command-line interface with the desired flags:</strong></p>
 
     <p>But before doing so, type the following command on the same Bash command line as before,</p>
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x ./install.sh
@@ -1154,10 +1154,8 @@ Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
     <p>The command <code>chmod</code> ensures that the build-script has executable permission on your system.</p>
 
     <p><strong>To speed up the build</strong>, you can specify the type of library you want to build by any of the following flags:</p>
-
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh <span class="nt">--help</span>
 </code></pre></div>    </div>
-
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    
 usage:
 
@@ -1245,32 +1243,32 @@ NOTE:     The flag -m stack (stack memory allocation) cannot be specified with -
 </code></pre></div>    </div>
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 If you are not sure which build would be the most appropriate for your usage, we recommend the following configuration for <b>serial ParaMonte simulations</b>,
-<pre>install.sh --lang LANGUAGE --build release --lib shared --mem heap --par none</pre>
+<pre>./install.sh --lang LANGUAGE --build release --lib shared --mem heap --par none</pre>
 and,
-<pre>install.sh --lang LANGUAGE --build release --lib shared --mem heap --par mpi</pre>
+<pre>./install.sh --lang LANGUAGE --build release --lib shared --mem heap --par mpi</pre>
 for <b>MPI-parallel ParaMonte simulations</b>, wherein both cases, you will have to replace the word <b>LANGUAGE</b> with the programming language of your choice: <b>C</b> (to build the ParaMonte C library), <b>C++</b> (to build the ParaMonte C++ library), <b>Fortran</b> (to build the ParaMonte Fortran library), <b>MATLAB</b> (to build the ParaMonte MATLAB library), or <b>Python</b> (to build the ParaMonte Python library).  
 <br />
     
 If you have multiple compiler suites (e.g., both Intel and GNU compilers) installed on your system and you wish to use one over the other to build the ParaMonte library, you can also specify the <b><code>-s</code></b> or <b><code>--compiler_suite</code></b> flag on the command line. For example, to build the library via the Intel compilers,  
-<pre>install.sh --lang LANGUAGE --build release --lib shared --mem heap --par none -s intel</pre>
+<pre>./install.sh --lang LANGUAGE --build release --lib shared --mem heap --par none -s intel</pre>
 or, to build the library via the GNU compilers,  
-<pre>install.sh --lang LANGUAGE --build release --lib shared --mem heap --par none -s gnu</pre>
+<pre>./install.sh --lang LANGUAGE --build release --lib shared --mem heap --par none -s gnu</pre>
     
 </div>
     <p>For example, to build the ParaMonte Python library in release mode for both serial and parallel applications, try,</p>
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.sh --lang python --build release --par "none mpi"
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh --lang python --build release --par "none mpi"
 </code></pre></div>    </div>
     <p>or, to build the ParaMonte MATLAB library in release mode for both serial and parallel applications, try,</p>
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.sh --lang matlab --build release --par "none mpi"
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh --lang matlab --build release --par "none mpi"
 </code></pre></div>    </div>
     <p>or, to build shared ParaMonte C/C++ libraries in release mode for both serial and MPI-parallel applications, try,</p>
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.sh --lang C --lib shared --mem heap --par "none mpi" --build release
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh --lang C --lib shared --mem heap --par "none mpi" --build release
 </code></pre></div>    </div>
     <p>or, to build a static ParaMonte Fortran library in both release and debug modes, with Coarray shared-memory parallelism enabled, for both heap and stack memory allocations, try,</p>
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.sh --lang Fortran --lib static --par cafshared --mem "stack heap" --build "debug release"
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh --lang Fortran --lib static --par cafshared --mem "stack heap" --build "debug release"
 </code></pre></div>    </div>
     <p>or, to build the <strong>ParaMonte MatDRAM MATLAB library</strong>, try,</p>
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.sh --matdram
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh --matdram
 </code></pre></div>    </div>
 
     <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Note that multiple values specified for a build flag values are always separated by a white-space character and are enclosed together with quotation marks (“”), as in the examples above.</div>
@@ -1280,16 +1278,16 @@ or, to build the library via the GNU compilers,
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 By default, <b>if you have both GNU and Intel compiler suites installed on your system</b>, the ParaMonte build scripts will automatically build the library via the Intel compilers. To override this default behavior and build the library via the GNU compilers, you can specify either the <b><code>-s gnu</code></b> or <b><code>--compiler_suite gnu</code></b> build flag when calling the build script. For example, to build the ParaMonte C/C++ library in release mode as a shared library for both serial and MPI-parallel applications via the GNU compilers, try,  
 <pre>
-install.sh --lang C --lib shared --mem heap --par "none mpi" --build release -s gnu
+./install.sh --lang C --lib shared --mem heap --par "none mpi" --build release -s gnu
 </pre>
 </div>
 
     <p>You can also simply try,</p>
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.sh
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh
 </code></pre></div>    </div>
     <p>to build the ParaMonte library for all possible configurations for all supported languages.</p>
     <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning: </b>
-Calling the <b><code>install.sh</code></b> script with no flags will build the entire ParaMonte library for all three build modes (
+Calling the <b><code>./install.sh</code></b> script with no flags will build the entire ParaMonte library for all three build modes (
 <b><code>release</code></b>, 
 <b><code>testing</code></b>, 
 <b><code>debug</code></b>
@@ -1320,16 +1318,16 @@ Calling the <b><code>install.sh</code></b> script with no flags will build the e
 If you’d like to see a build flag that is not currently provided in the above list of flags, (for example, the type of or the method of linking against the compiler libraries), please <a href="../../overview/preface/#who-are-the-paramonte-authors-and-developers">let us know</a> and we will try to add the requested features to the installation scripts in a new release of the ParaMonte library.<br />
 </div>
 
-    <p>The <code>install.sh</code> script initiates the build process and generates a folder named <code>build</code> in the root directory of the ParaMonte repository which will contain all build files. The final library files together with the example scripts will be installed in a separate folder named <code>bin</code> in the same root directory of the ParaMonte project that you have downloaded from GitHub.</p>
+    <p>The <code>./install.sh</code> script initiates the build process and generates a folder named <code>build</code> in the root directory of the ParaMonte repository which will contain all build files. The final library files together with the example scripts will be installed in a separate folder named <code>bin</code> in the same root directory of the ParaMonte project that you have downloaded from GitHub.</p>
   </li>
   <li><strong>Congrats!</strong> You have now built and (locally) installed the ParaMonte library for the configuration and language(s) of your choice on your system. Check out the two new folders <code>build</code> and <code>bin</code> that have been automatically created by the install script in the root directory of the uncompressed ParaMonte repository that you have downloaded. Inside the <code>bin</code> directory, you will see all the different build subdirectories corresponding to the different ParaMonte library build configurations. For example,
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.sh --lang C++ --build release --lib shared --mem heap --par mpi -s intel
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh --lang C++ --build release --lib shared --mem heap --par mpi -s intel
 </code></pre></div>    </div>
     <p>will generate the following subdirectory,</p>
     <pre><code>./bin/libparamonte_cpp_darwin_x64_intel_release_shared_heap_impi
 </code></pre>
     <p>or,</p>
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.sh --lang C++ --build release --lib shared --mem heap --par mpi -s gnu
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh --lang C++ --build release --lib shared --mem heap --par mpi -s gnu
 </code></pre></div>    </div>
     <p>will generate either of the following subdirectories,</p>
     <pre><code>./bin/libparamonte_cpp_darwin_x64_gnu_release_shared_heap_mpich
