@@ -1,0 +1,412 @@
+:mod:`EllipsoidPlot`
+====================
+
+.. py:module:: EllipsoidPlot
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   EllipsoidPlot.EllipsoidPlot
+
+
+
+.. data:: Struct
+   
+
+   
+
+.. data:: newline
+   
+
+   
+
+.. py:class:: EllipsoidPlot(matrix: tp.Union[np.ndarray, tp.List[np.ndarray]], plotType: str, methodName: tp.Optional[str] = 'ParaMonte', reportEnabled: tp.Optional[bool] = True, resetPlot=None)
+
+   Bases: :class:`paramonte.vis._BasePlot.BasePlot`
+
+   This is the EllipsoidPlot class for generating instances of
+   ellipsoid-evolution plots via matplotlib's builtin function 
+   `plot()`. It generates a plot of 2D ellipsoids corresponding 
+   to the input list of covariance/correlation matrices.
+
+   **NOTE**
+
+   This is a low-level ParaMonte class and is NOT meant
+   to be directly instantiated by the users,
+   although it is possible.
+
+       **Parameters**
+
+           matrix
+
+               A 3D numpy array representing the covariance/correlation 
+               matrices of the ellipsoids to plot. The size of the array 
+               is ``(count, ndim, ndim)`` where ``count`` represents the 
+               number of ellipsoids and ``ndim`` is in the number of 
+               dimensions of the (hyper-)ellipsoids.
+
+           plotType
+
+               A string indicating the type of the plot to be made. 
+               Possible values include: 
+
+                   ``"covmat2"``
+                   ``"covmat3"``
+                   ``"cormat2"``
+                   ``"cormat3"``
+
+           methodName (optional)
+
+               A string indicating the ParaMonte sampler that 
+               is instantiating this EllipsoidPlot object. This 
+               variable is solely used for progress reporting 
+               and has no relevance to the plotting.
+               The default value is ``"ParaMonte"``.
+
+           reportEnabled (optional)
+
+               A logical input parameter indicating whether the 
+               ParaMonte automatic guidelines to the standard output 
+               should be provided or not. The default value is ``True``.
+
+           resetPlot (optional)
+
+               An user-specified function that can be later called to 
+               reset the settings of the instantiated Ellipsoid plot.
+               If ``None`` is provided, then the `reset()`` of the 
+               Ellipsoid object will be set to the default ``_reset()``
+               function of the Ellipsoid object.
+               The default value is ``None``.
+
+       **Attributes**
+
+           ndim
+
+               An integer, representing the number of dimensions of the 
+               domain of the objective function as inferred from the 
+               contents of the dataFrame. It is the rank of the 
+               input matrix.
+
+           matrix
+
+               The same as the corresponding input parameter ``matrix``
+               to the ``EllipsoidPlot`` class constructor in the above.
+
+           center
+
+               A 2D numpy array representing the centers of the ellipsoids
+               to plot. The size of the array is ``(count, ndim)`` where
+               ``count`` represents the number of ellipsoids and ``ndim``
+               is in the number of dimensions of the (hyper-)ellipsoids.
+
+           zdata (optional, exists only in the case of 3D Ellipsoid plots)
+
+               Optional property that, if provided, results in the creation 
+               of 3D ellipsoid plots and its data represents the z-axis 
+               values of the plot. It must be a numeric vector of the 
+               same length as ``center`` and ``matrix``.
+
+               The default value is the index of the covariance/correlation 
+               matrices in the input data frame.
+
+           dimensionPair
+
+               A pair of indices (vector of length 2) whose value determine 
+               the rows and columns from the covariance/correlation matrix 
+               which will be plotted. 
+               The default value is ``dimensionPair = [1,2]`` 
+               (corresponding to Python indices of [0,1]).
+
+               Example usage:
+
+                   1.  ``dimensionPair = [1,2]``
+                   2.  ``dimensionPair = [3,1]``
+
+               **WARNING**
+
+               In all cases, the indices must be distinct from 
+               each other and less than ``ndim`` where ``ndim`` 
+               is the rank of the covariance/correlation matrices.
+
+           npoint
+
+               The number of points used to represent the ellipsoids. 
+               The higher the value of ``npoint``, the higher-resolution 
+               the resulting ellipsoids will look like.
+
+               The default value is ``100``.
+
+           colorbar (exists only for plots that require colorbar)
+
+               A structure with two attributes:
+
+                   enabled
+
+                       A boolean indicating whether a call to the ``colorbar()``
+                       function of the matplotlib library should be made or not.
+                       If a call is made, a new figure will be generated.
+                       Otherwise, the current active figure will be used.
+
+                   kws
+
+                       A structure whose components are directly passed as 
+                       keyword arguments to the ``colorbar()`` function of 
+                       the matplotlib library.
+
+                       **NOTE**
+
+                       If a desired property is missing among the ``kws`` 
+                       attributes, simply add the field and its value to 
+                       the component.
+
+               A colorbar will be added to a plot only if a color-mappings 
+               is requested in the plot.
+
+           colormap
+
+               A structure with the following components:
+               
+                   enabled
+
+                       A logical value indicating whether the ellipsoids 
+                       must be color-mapped or not.
+
+                   name
+
+                       A string representing the name of the color mapping 
+                       from the matplotlib library's ``cm`` class, to be 
+                       applied to the plot. 
+
+                   values
+
+                       A numeric vector of the same length as the number 
+                       of ellipsoids in ``matrix``, each element of which 
+                       will determine the color of the corresponding 
+                       ellipsoid in the plot.
+
+                       If the values are set to ``None`` or an empty list, 
+                       then a range of values corresponding to the count of 
+                       ellipsoids will be used.
+
+                   _rgba
+
+                       The RGB vector corresponding to the values. This is 
+                       not meant to be directly manipulated by the user.
+
+               Example usage:
+
+                   1.  ``colormap.enabled = True``
+                   2.  ``colormap.name = "winter"``
+
+           legend (may not exist for some types of plots)
+
+               A structure with two attributes:
+
+                   enabled
+
+                       A boolean indicating whether a call to the ``legend()``
+                       function of the matplotlib library should be made or not.
+                       If a call is made, a new figure will be generated.
+                       Otherwise, the current active figure will be used.
+
+                   kws
+
+                       A structure whose components are directly passed as 
+                       keyword arguments to the ``legend()`` function.
+
+                       Example usage:
+
+                       .. code-block:: python
+
+                           legend.kws.labels = ["Variable1", "Variable2"]
+
+                       **NOTE**
+
+                       If a desired property is missing among the ``kws`` 
+                       attributes, simply add the field and its value to 
+                       the component.
+
+               A legend will be added to a plot only if no color-mappings 
+               are requested in the plot.
+
+           plot
+
+               A structure with two components:
+
+                   enabled
+
+                       A logical value. If ``true``, 
+                       the ellipsoids will be plotted.
+
+                   kws
+                       A structure whose components will be 
+                       passed to the ``plot()`` function of 
+                       the matplotlib library.
+
+                       Example usage:
+
+                           ``plot.kws.linewidth = 2``
+
+                       **NOTE**
+
+                       If a desired property is missing among the ``kws`` 
+                       attributes, simply add the field and its value to 
+                       the component.
+
+           title
+
+               A structure with the following components:
+
+                   enabled
+
+                       A logical value. If ``true``, 
+                       a title will be added to the plot.
+
+                   label
+
+                       A string representing the content of 
+                       the title to be added to the plot.
+
+                   kws
+
+                       A structure whose components will be 
+                       passed to the ``title()`` function 
+                       of the matplotlib library.
+
+                       **NOTE**
+
+                       If a desired property is missing among the ``kws`` 
+                       attributes, simply add the field and its value to 
+                       the component.
+
+           target
+
+               An object of class ``Target`` for adding target 
+               values to the plots. For more information, see the 
+               documentation of the ``Target()`` class.
+
+       **Superclass Attributes**
+
+           See the documentation for the ``BasePlot`` class.
+
+       **Returns**
+
+           An object of ``EllipsoidPlot`` class.
+
+   ---------------------------------------------------------------------------
+
+   .. method:: _reset(self)
+
+
+
+   .. method:: __call__(self, reself: tp.Optional[bool] = False, **kwargs)
+
+
+      Call the ``make()`` method of the current 
+      instance of the class.
+
+          **Parameters**
+
+              Any arguments that can be passed to the 
+              ``make()`` method of the plot object.
+
+          **Returns**
+
+              Any return value from the ``make()`` 
+              method of the plot object.
+
+
+   .. method:: make(self, reself: tp.Optional[bool] = False, **kwargs)
+
+
+      Generate an EllipsoidPlot from the input data the 
+      EllipsoidPlot object.
+
+          **Parameters**
+
+              reself
+
+                  A logical variable. If ``True``, an instance of the 
+                  object will be returned upon exit to the calling 
+                  routine. The default value is ``False``.
+
+          **Returns**
+
+              the object self if ``reself = True`` otherwise, ``None``.
+              However, this method causes side-effects by manipulating
+              the existing attributes of the object.
+
+
+   .. method:: makeEllipsoid(self, covMat, meanVec, npoint=50)
+
+
+      Return the coordinates of the boundary of an 
+      ellipsoid represented by the input ``covMat``
+      covariance matrix and the ``meanVec`` center.
+
+          **Parameters**
+
+              covMat
+
+                  The representative covariance matrix 
+                  of the ellipsoid.
+
+              meanVec
+
+                  A vector representing the center 
+                  of the ellipsoid.
+
+              npoint
+
+                  The number of points with which the 
+                  ellipsoid is represented. The more,
+                  the higher the resolution will be.
+                  The default value is 50.
+
+          **Returns**
+
+              A matrix of size ``(2, npoint)`` that contains 
+              the boundary points of the generated ellipsoid 
+              corresponding to the input matrix. 
+
+
+   .. method:: _getDocString(self)
+
+
+
+   .. method:: helpme(self, topic=None)
+
+
+      Print the documentation for the input string topic. 
+      If the topic does not exist, the documentation for
+      the object will be printed.
+
+          **Parameters**
+       
+              topic (optional)
+
+              A string containing the name of the object 
+              for which help is needed.
+
+          **Returns**
+       
+              None
+       
+          **Example**
+
+              .. code-block:: python
+                  :linenos:
+
+                  helpme()
+                  helpme("make")
+                  helpme("helpme")
+                  helpme("getLogLinSpace")
+
+
+

@@ -1,0 +1,649 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>paramonte._GridPlot &mdash; ParaMonte - Python  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> ParaMonte - Python
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ParaMonte - Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">paramonte._GridPlot</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/autoapi/paramonte/_GridPlot/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-paramonte._GridPlot">
+<span id="paramonte-gridplot"></span><h1><a class="reference internal" href="#module-paramonte._GridPlot" title="paramonte._GridPlot"><code class="xref py py-mod docutils literal notranslate"><span class="pre">paramonte._GridPlot</span></code></a><a class="headerlink" href="#module-paramonte._GridPlot" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id0" title="paramonte._GridPlot.GridPlot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GridPlot</span></code></a>(dataFrame: _tp.Optional[_pd.DataFrame] = None, columns: _tp.Optional[_tp.Union[str, range, _tp.List[int], _tp.List[str]]] = None, rows: _tp.Optional[_tp.Union[range, _tp.List[int]]] = None, set_kws: _tp.Optional[_tp.Dict] = (), pairgrid_kws: _tp.Optional[_tp.Dict] = (), kdeplot_kws: _tp.Optional[_tp.Dict] = (), distplot_kws: _tp.Optional[_tp.Dict] = (), lineplot_kws: _tp.Optional[_tp.Dict] = (), scatterplot_kws: _tp.Optional[_tp.Dict] = (), colorbar_kws: _tp.Optional[_tp.Dict] = (), outputFile: _tp.Optional[str] = None, kdecorner: _tp.Optional[str] = 'auto', lscorner: _tp.Optional[str] = 'auto', _methodName: _tp.Optional[str] = '')</p></td>
+<td><p><dl class="py class">
+<dt id="paramonte._GridPlot.GridPlot">
+<em class="property">class </em><code class="sig-prename descclassname">paramonte._GridPlot.</code><code class="sig-name descname">GridPlot</code><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#GridPlot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paramonte._GridPlot.GridPlot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#paramonte._GridPlot.hide_current_axis" title="paramonte._GridPlot.hide_current_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hide_current_axis</span></code></a>(*args, **kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#paramonte._GridPlot.show_current_axis" title="paramonte._GridPlot.show_current_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_current_axis</span></code></a>(*args, **kwds)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py data">
+<dt id="paramonte._GridPlot._eol">
+<code class="sig-prename descclassname">paramonte._GridPlot.</code><code class="sig-name descname">_eol</code><em class="property"> =</em><a class="headerlink" href="#paramonte._GridPlot._eol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="paramonte._GridPlot.hide_current_axis">
+<code class="sig-prename descclassname">paramonte._GridPlot.</code><code class="sig-name descname">hide_current_axis</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#hide_current_axis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paramonte._GridPlot.hide_current_axis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="paramonte._GridPlot.show_current_axis">
+<code class="sig-prename descclassname">paramonte._GridPlot.</code><code class="sig-name descname">show_current_axis</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#show_current_axis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paramonte._GridPlot.show_current_axis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="id0">
+<em class="property">class </em><code class="sig-prename descclassname">paramonte._GridPlot.</code><code class="sig-name descname">GridPlot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataFrame</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>_pd.DataFrame<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">columns</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>_tp.Union<span class="p">[</span>str<span class="p">, </span>range<span class="p">, </span>_tp.List<span class="p">[</span>int<span class="p">]</span><span class="p">, </span>_tp.List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rows</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>_tp.Union<span class="p">[</span>range<span class="p">, </span>_tp.List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">set_kws</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>_tp.Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">()</span></em>, <em class="sig-param"><span class="n">pairgrid_kws</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>_tp.Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">()</span></em>, <em class="sig-param"><span class="n">kdeplot_kws</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>_tp.Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">()</span></em>, <em class="sig-param"><span class="n">distplot_kws</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>_tp.Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">()</span></em>, <em class="sig-param"><span class="n">lineplot_kws</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>_tp.Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">()</span></em>, <em class="sig-param"><span class="n">scatterplot_kws</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>_tp.Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">()</span></em>, <em class="sig-param"><span class="n">colorbar_kws</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>_tp.Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">()</span></em>, <em class="sig-param"><span class="n">outputFile</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">kdecorner</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">lscorner</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">_methodName</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#GridPlot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py class">
+<dt id="paramonte._GridPlot.GridPlot.GridPlot">
+<em class="property">class </em><code class="sig-name descname">GridPlot</code><a class="headerlink" href="#paramonte._GridPlot.GridPlot.GridPlot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>This is the GridPlot class for generating instances
+of matrix-shaped figures of the following form:
+The <strong>upper triangle</strong> subplots can optionally represent nothing
+or the birvariate line-and/or-scatter plots of data.
+The <strong>diagonal elements</strong> represent the histograms of data.
+The <strong>lower triangle</strong> subplots can optionally represent nothing
+or the birvariate line-and/or-scatter plots of data.</p>
+<blockquote>
+<div><p><strong>Usage</strong></p>
+<blockquote>
+<div><p>First generate an object of this class by optionally
+passing the following parameters described below. Then call
+the <code class="docutils literal notranslate"><span class="pre">plot()</span></code> method. The generated object is also callable with
+the same input parameters as the object’s constructor.</p>
+</div></blockquote>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl>
+<dt>dataFrame</dt><dd><p>a Pandas dataframe from which the selected data will be plotted.</p>
+</dd>
+<dt>columns</dt><dd><p>optional argument that determines the columns of dataframe to serve as
+the x-values. It can have three forms:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>a list of column indices in the input dataFrame.</p></li>
+<li><p>a list of column names in dataFrame.columns.</p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">range(start,stop,step)</span></code>, representing the column indices
+in the input dataFrame.</p></li>
+</ol>
+</div></blockquote>
+<p>Examples:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">columns</span> <span class="pre">=</span> <span class="pre">[0,1,4,3]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">columns</span> <span class="pre">=</span> <span class="pre">[&quot;SampleLogFunc&quot;,&quot;SampleVariable1&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">columns</span> <span class="pre">=</span> <span class="pre">range(17,7,-2)</span></code></p></li>
+</ol>
+</div></blockquote>
+<p>However, in all cases, it must have a length that is either 1 or equal
+to the length of ycolumns. If the length is 1, then <code class="docutils literal notranslate"><span class="pre">xcolumns</span></code> will be
+plotted against data corresponding to each element of <code class="docutils literal notranslate"><span class="pre">ycolumns</span></code>.
+If not provided, the default will be the count of the rows of the
+input dataFrame.</p>
+</dd>
+<dt>rows</dt><dd><p>optional argument that determines the rows of dataframe
+to be visualized. It can be either:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>a <code class="docutils literal notranslate"><span class="pre">range(start,stop,step)</span></code>, or,</p></li>
+<li><p>a list of row indices in <code class="docutils literal notranslate"><span class="pre">dataFrame.index</span></code>.</p></li>
+</ol>
+</div></blockquote>
+<p>Examples:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">rows</span> <span class="pre">=</span> <span class="pre">range(17,7,-2)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rows</span> <span class="pre">=</span> <span class="pre">[i</span> <span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(7,17)]</span></code></p></li>
+</ol>
+</div></blockquote>
+<p>If not provided, the default includes all rows of the dataframe.</p>
+</dd>
+<dt>set_kws</dt><dd><p>optional dictionary of keyword arguments to be passed to seaborn’s
+<code class="docutils literal notranslate"><span class="pre">set()</span></code> function. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">set_kws</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;style&quot;</span><span class="p">:</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>If set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, then no call to <code class="docutils literal notranslate"><span class="pre">set()</span></code> function will be made.</p>
+</dd>
+<dt>pairgrid_kws</dt><dd><p>optional dictionary of keyword arguments to be passed to the PairGrid
+class of seaborn library for making a grid of axes on which the data
+will be plotted.</p>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">{}</span></code>. It is recommended that you leave this parameter
+unchanged from the default value, otherwise, unpredicted behavior
+may occur.</p>
+</dd>
+<dt>distplot_kws</dt><dd><p>optional dictionary of keyword arguments to be passed to <code class="docutils literal notranslate"><span class="pre">distplot()</span></code>
+function of seaborn library for making histograms of data on the
+diagonal elements of the grid plot. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">distplot_kws</span> <span class="o">=</span>  <span class="p">{</span> <span class="s2">&quot;kde&quot;</span><span class="p">:</span><span class="kc">False</span>
+                <span class="p">,</span> <span class="n">hist_kws</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;histtype&quot;</span><span class="p">:</span> <span class="s2">&quot;stepfilled&quot;</span>
+                             <span class="p">,</span> <span class="s2">&quot;linewidth&quot;</span><span class="p">:</span> <span class="mi">1</span>
+                             <span class="p">}</span>
+                <span class="p">}</span>
+</pre></div>
+</div>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">{}</span></code>.
+If set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, no histograms will be added to diagonal of the grid plot.</p>
+</dd>
+<dt>kdeplot_kws</dt><dd><p>optional dictionary of keyword arguments to be passed to <code class="docutils literal notranslate"><span class="pre">kdeplot()</span></code>
+function of seaborn library for making histograms of data on the
+diagonal elements of the grid plot. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">kdeplot_kws</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;n_levels&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                <span class="s2">&quot;shade&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;shade_lowest&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;cmap&quot;</span><span class="p">:</span> <span class="s2">&quot;Blues&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;cbar&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s2">&quot;zorder&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="p">}</span>
+</pre></div>
+</div>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">{}</span></code>.
+If set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, no kdeplots will be added to the grid plot.</p>
+</dd>
+<dt>lineplot_kws</dt><dd><p>optional dictionary of keyword arguments to be passed to an instance of
+ParaMonte’s LinePlot class for making colored line plots of the requested
+columns of data on the upper triangle of the grid plot.
+The default is <code class="docutils literal notranslate"><span class="pre">{}</span></code>.
+If set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, no line plots will be added to upper triangle.</p>
+</dd>
+<dt>scatterplot_kws</dt><dd><p>optional dictionary of keyword arguments to be passed to an instance of
+ParaMonte’s ScatterPlot class for making scatter plots of the requested
+columns of data on the upper triangle of the grid plot.
+The default is <code class="docutils literal notranslate"><span class="pre">{}</span></code>.
+If set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, no scatter plots will be added to upper triangle.</p>
+</dd>
+<dt>colorbar_kws</dt><dd><p>optional dictionary of keyword arguments to be passed to matplotlib’s
+<code class="docutils literal notranslate"><span class="pre">figure.colorbar()</span></code> function. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colorbar_kws</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;orientation&quot;</span><span class="p">:</span><span class="s2">&quot;vertical&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Despite the potential existence of three types of colored
+plots on the grid plot, only one colorbar will be added to the figure.
+The colorbar preference is in the following order:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>colored scatterplot, if requested,</p></li>
+<li><p>colored lineplot, if requested,</p></li>
+<li><p>kdeplot, if requested,</p></li>
+</ol>
+</div></blockquote>
+<p>If set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, no colorbar will be plotted.</p>
+</dd>
+<dt>outputFile</dt><dd><p>optional string representing the name of the output file in which
+the figure will be saved. If not provided, no output file will be generated.</p>
+</dd>
+<dt>kdecorner</dt><dd><p>optional string representing the corner (upper/lower triangle) of the grid
+plot where the kdeplots will be added.
+Possible values are: <code class="docutils literal notranslate"><span class="pre">&quot;upper&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;lower&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+The default is <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code>, which is the lower or any empty corner.
+If set to <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code>, the corner will be automatically determined.
+If set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, no kdeplots will be added to the grid plot.</p>
+</dd>
+<dt>lscorner</dt><dd><p>optional string representing the corner (upper/lower triangle) of the grid
+plot where the line/scatter plots will be added.
+Possible values are: <code class="docutils literal notranslate"><span class="pre">&quot;upper&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;lower&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+The default is <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code>, which is the upper or any empty corner.
+If set to <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code>, the corner will be automatically determined.
+If set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, no scatter or line plots will be added to the grid plot.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Attributes</strong></p>
+<blockquote>
+<div><dl>
+<dt>All of the parameters described above, except dataFrame.</dt><dd><p>a reference to the dataFrame will be implicitly stored in the object.</p>
+</dd>
+<dt>addTarget</dt><dd><p>a method which calls the individual callable Target objects of each subplot
+to add target point and lines to all of the plots.</p>
+</dd>
+<dt>currentFig</dt><dd><p>an object of class ParaMonteFigure which is initially None, but upon
+making a plot, is populated with attributes representing all outputs
+from matplotlib/seaborn function calls, with the following attributes:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>figure</dt><dd><p>the output of matplotlib’s <code class="docutils literal notranslate"><span class="pre">figure()</span></code> function.</p>
+</dd>
+<dt>addTarget</dt><dd><p>a method which calls an object of ParaMonte library’s Target
+class to add target point and lines to all plots of the grid.</p>
+</dd>
+<dt>pairgrid</dt><dd><p>the output of seaborn’s <code class="docutils literal notranslate"><span class="pre">PairGrid()</span></code> class.</p>
+</dd>
+<dt>scatterplotList</dt><dd><p>a list each element of which corresponds to one row of the PairGrid,
+and is itself a list of scatterplot objects.</p>
+</dd>
+<dt>lineplotList</dt><dd><p>a list each element of which corresponds to one row of the PairGrid,
+and is itself a list of lineplot objects.</p>
+</dd>
+<dt>colorbar</dt><dd><p>the output of matplotlib’s <code class="docutils literal notranslate"><span class="pre">Figure.colorbar()</span></code> function.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>self</dt><dd><p>an object of class <code class="docutils literal notranslate"><span class="pre">GridPlot</span></code>.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+<dl class="py method">
+<dt id="paramonte._GridPlot.GridPlot.__call__">
+<code class="sig-name descname">__call__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">reself</span><span class="p">:</span> <span class="n">_tp.Optional<span class="p">[</span>bool<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#GridPlot.__call__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paramonte._GridPlot.GridPlot.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="id1">
+<code class="sig-name descname">__call__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">reself</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#GridPlot.__call__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>calls the <code class="docutils literal notranslate"><span class="pre">plot()</span></code> method of the current instance of the class.</p>
+<blockquote>
+<div><p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>reself</dt><dd><p>logical variable. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, an instance of the object
+will be returned upon exit to the calling routine.
+The default value is False.</p>
+</dd>
+<dt>also,</dt><dd><p>any attributes of the current instance of the class.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><p>the object self if <code class="docutils literal notranslate"><span class="pre">reself</span> <span class="pre">=</span> <span class="pre">True</span></code> otherwise, None.
+However, this method causes side-effects by manipulating
+the existing attributes of the object.</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="paramonte._GridPlot.GridPlot.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#GridPlot.plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paramonte._GridPlot.GridPlot.plot" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="id2">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#GridPlot.plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Generate a grid plot from the selected columns of the object’s dataframe.</p>
+<blockquote>
+<div><p><strong>Parameters</strong></p>
+<blockquote>
+<div><p>None</p>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><p>None. However, this method causes side-effects by manipulating
+the existing attributes of the object.</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="paramonte._GridPlot.GridPlot._addcbar">
+<code class="sig-name descname">_addcbar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#GridPlot._addcbar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paramonte._GridPlot.GridPlot._addcbar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="paramonte._GridPlot.GridPlot.hide">
+<code class="sig-name descname">hide</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">part</span><span class="o">=</span><span class="default_value">'all'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#GridPlot.hide"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paramonte._GridPlot.GridPlot.hide" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="id3">
+<code class="sig-name descname">hide</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">part</span><span class="o">=</span><span class="default_value">'all'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#GridPlot.hide"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Hides the requested part of the grid plot.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl>
+<dt>part</dt><dd><p>a string with the following possible values:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“lower”</dt><dd><p>hides the lower triangle of the grid plot.</p>
+</dd>
+<dt>“upper”</dt><dd><p>hides the upper triangle of the grid plot.</p>
+</dd>
+<dt>“diag”</dt><dd><p>hides the diagonal of the grid plot.</p>
+</dd>
+<dt>“all”</dt><dd><p>hides all grid plots and the colorbar.</p>
+</dd>
+<dt>“cbar”</dt><dd><p>hides the colorbar of the grid plot.</p>
+</dd>
+</dl>
+<p>The string can also be a mix of the above keywords,
+separated by the <code class="docutils literal notranslate"><span class="pre">+</span></code> sign or some other delimiter.
+For example, <code class="docutils literal notranslate"><span class="pre">&quot;lower+upper+cbar&quot;</span></code></p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><p>None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="paramonte._GridPlot.GridPlot.show">
+<code class="sig-name descname">show</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">part</span><span class="o">=</span><span class="default_value">'all'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#GridPlot.show"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paramonte._GridPlot.GridPlot.show" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="id4">
+<code class="sig-name descname">show</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">part</span><span class="o">=</span><span class="default_value">'all'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#GridPlot.show"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Shows the requested part of the grid plot.</p>
+<blockquote>
+<div><p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl>
+<dt>part</dt><dd><p>a string with the following possible values:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“lower”</dt><dd><p>shows the lower triangle of the grid plot.</p>
+</dd>
+<dt>“upper”</dt><dd><p>shows the lower triangle of the grid plot.</p>
+</dd>
+<dt>“diag”</dt><dd><p>shows the diagonal of the grid plot.</p>
+</dd>
+<dt>“all”</dt><dd><p>shows all grid plots.</p>
+</dd>
+<dt>“cbar”</dt><dd><p>shows the colorbar of the grid plot.</p>
+</dd>
+</dl>
+<p>The string can also be a mix of the above keywords,
+separated by the <code class="docutils literal notranslate"><span class="pre">+</span></code> sign or some other delimiter.
+For example, <code class="docutils literal notranslate"><span class="pre">&quot;lower+upper+cbar&quot;</span></code></p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><p>None</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="paramonte._GridPlot.GridPlot.addTarget">
+<code class="sig-name descname">addTarget</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">values</span><span class="p">:</span> <span class="n">_tp.Union<span class="p">[</span>_np.ndarray<span class="p">, </span>_tp.List<span class="p">[</span>float<span class="p">]</span><span class="p">, </span>_tp.Tuple<span class="p">[</span>float<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">target_kws</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#GridPlot.addTarget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paramonte._GridPlot.GridPlot.addTarget" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="id5">
+<code class="sig-name descname">addTarget</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">target_kws</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/paramonte/_GridPlot.html#GridPlot.addTarget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>calls target callable associated with each element of
+currentFig.targetList of the GridPlot object to add target
+points and/or lines to all plots of the <code class="docutils literal notranslate"><span class="pre">GridPlot</span></code> figure.
+This method is supposed to called only after a grid plot
+has been generated.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>values</dt><dd><p>a numpy array, or list, or tuple whose length equals the
+number of columns/rows of the grid plot, each element of
+which represents the target value associated with the
+corresponding variable on the x axis of the plot,
+from left to right.
+If not provided, the default will be set to the state
+(coordinates) of the “SampleLongFunc” column in the
+input dataframe to the object. This would work only
+when the input dataframe is the contents of a ParaMonte
+output chain or sample file.</p>
+</dd>
+<dt>also,</dt><dd><p>any attributes of the Target class.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><p>None. However, this method causes side-effects by manipulating
+the existing attributes of the <code class="docutils literal notranslate"><span class="pre">Target</span></code> objects in <code class="docutils literal notranslate"><span class="pre">targetList</span></code>.</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+    <div>
+        <p>
+            <a href="https://www.cdslab.org/paramonte">ParaMonte: Plain Powerful Parallel Monte Carlo Library</a>.<br/>
+            &copy; Copyright 2020, <a href="https://www.cdslab.org" target="_blank">The Computational Data Science Lab</a>.<br/>
+        </p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </div>
+    <!-- Start of statc -->
+    <div style="color: #ffffff; float: none; width: 100%;">
+        <span style="font-size:0.8em">visitor count: 
+            <script type="text/javascript">
+                var sc_project=12178963; 
+                var sc_invisible=0; 
+                var sc_security="e0dfe0f9"; 
+                var sc_text=3; 
+                var scJsHost = "https://";
+                document.write("<sc"+"ript type='text/javascript' src='" +
+                scJsHost+
+                "statcounter.com/counter/counter.js'></"+"script>");
+            </script>
+        </span>
+    </div>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
