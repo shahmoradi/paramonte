@@ -844,7 +844,7 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The preprocessor macros must be always defined with uppercase characters. This is to easily distinguish macros from other variables in the regular sections of the code.</div>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Define macros as propositions that evaluate to either TRUE or FALSE. For example, <code>OS_IS_WINDOWS</code> or <code>MPI_ENABLED</code>.</div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Define macros as propositions that evaluate to either TRUE or FALSE. For example, <code>WINDOWS_ENABLED</code> or <code>MPI_ENABLED</code>.</div>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When developing or debugging a particular feature that is bound to a specific set of preprocessor macros, you can request the compiler to generate intermediate preprocessed files that are free from preprocessor directives and let you focus on the problem better. In doing so, keep in mind that every change you make to the intermediate codes has be carefully implemented in the original set of codes.</div>
 
@@ -853,11 +853,11 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 <p>If there is any section of the code that must be exclusively executed on a particular platform or Operating System (OS), it must be properly fenced by the appropriate preprocessor flag.</p>
 
 <ol>
-  <li>The <code>OS_IS_WINDOWS</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to Windows operating systems.</li>
-  <li>The <code>OS_IS_DARWIN</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to macOS operating systems.</li>
-  <li>The <code>OS_IS_LINUX</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to Linux operating systems.</li>
-  <li>The <code>OS_IS_WSL</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to Microsoft Subsystem for Linux.
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The <code>OS_IS_WSL</code> preprocessor macro is mostly useful for defining code sections that are written for compatibility with Microsoft Subsystem for Linux Version 1 (<strong>WSL1</strong>). For example, WSL1 is known to have issues with passing internal procedures to external routines since <a href="https://github.com/Microsoft/WSL/issues/3083" target="_blank">WSL has a non-executable stack</a>. Although, <a href="https://github.com/Microsoft/WSL/issues/286" target="_blank">this issue</a> appears to have been resolved in <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#WSL_2">WSL2</a>, as a developer, you should be mindful of all users on all platforms.</div>
+  <li>The <code>WINDOWS_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to Windows operating systems.</li>
+  <li>The <code>DARWIN_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to macOS operating systems.</li>
+  <li>The <code>LINUX_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to Linux operating systems.</li>
+  <li>The <code>WSL_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to Microsoft Subsystem for Linux.
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The <code>WSL_ENABLED</code> preprocessor macro is mostly useful for defining code sections that are written for compatibility with Microsoft Subsystem for Linux Version 1 (<strong>WSL1</strong>). For example, WSL1 is known to have issues with passing internal procedures to external routines since <a href="https://github.com/Microsoft/WSL/issues/3083" target="_blank">WSL has a non-executable stack</a>. Although, <a href="https://github.com/Microsoft/WSL/issues/286" target="_blank">this issue</a> appears to have been resolved in <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#WSL_2">WSL2</a>, as a developer, you should be mindful of all users on all platforms.</div>
   </li>
 </ol>
 
@@ -869,7 +869,7 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
     </span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="o">%</span><span class="n">SampleFile</span><span class="o">%</span><span class="n">Path</span><span class="o">%</span><span class="n">original</span><span class="w">   </span><span class="p">&amp;</span><span class="w">
     </span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="o">%</span><span class="n">SampleFile</span><span class="o">%</span><span class="n">status</span><span class="w">          </span><span class="p">&amp;</span><span class="w">
     </span><span class="p">,</span><span class="w"> </span><span class="n">iostat</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="o">%</span><span class="n">SampleFile</span><span class="o">%</span><span class="n">Err</span><span class="o">%</span><span class="n">stat</span><span class="w">        </span><span class="p">&amp;</span><span class="w">
-</span><span class="cp">#if defined INTEL_COMPILER_ENABLED &amp;&amp; defined OS_IS_WINDOWS</span><span class="w">
+</span><span class="cp">#if INTEL_COMPILER_ENABLED &amp;&amp; WINDOWS_ENABLED</span><span class="w">
     </span><span class="p">,</span><span class="w"> </span><span class="n">SHARED</span><span class="w">                                      </span><span class="p">&amp;</span><span class="w">
 </span><span class="cp">#endif</span><span class="w">
     </span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="o">%</span><span class="n">SampleFile</span><span class="o">%</span><span class="n">Position</span><span class="o">%</span><span class="k">value</span><span class="w">  </span><span class="p">)</span><span class="w">
@@ -1149,7 +1149,7 @@ to the future developer within the code comments. For example,</p>
 
         <div class="col-lg-12 footer">
             &copy;2021 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on May 23, 2021<br/>
+            Last updated on June 22, 2021<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="/paramonte/images/logo.png" }}" alt="cdslab.org" /></a>
