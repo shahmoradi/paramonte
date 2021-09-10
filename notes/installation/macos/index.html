@@ -1165,25 +1165,26 @@ usage:
     -b &lt;build mode: release testing debug&gt; \
     -l &lt;library type: static shared (or equivalently, dynamic)&gt; \
     -p &lt;parallelism type: none mpi cafsingle cafshared cafdistributed&gt; \
-    -m &lt;memory allocation type: stack heap&gt;
-    -t &lt;ParaMonte test type: none basic sampler all&gt;
-    -x &lt;ParaMonte example run enabled: true false&gt;
+    -m &lt;memory allocation type: stack heap&gt; \
+    -t &lt;ParaMonte test type: none basic sampler all&gt; \
+    -x &lt;ParaMonte example run enabled: true false&gt; \
     -c &lt;generate code coverage report&gt; \
-    -f &lt;path to Fortran compiler&gt;
-    -M &lt;path to mpiexec&gt;
-    -F &lt;purge the existing prerequisite library installations and perform a fresh installation&gt;
-    -y &lt;assume yes as answer to all installation permission inquiries&gt;
-    -B &lt;perform GCC bootstrap installation&gt;
-    -n &lt;default number of processors for parallel application&gt;
+    -f &lt;path to Fortran compiler&gt; \
+    -M &lt;path to mpiexec&gt; \
+    -F &lt;purge the existing prerequisite library installations and perform a fresh installation&gt; \
+    -y &lt;assume yes as answer to all installation permission inquiries&gt; \
+    -B &lt;perform GCC bootstrap installation&gt; \
+    -n &lt;default number of processors for parallel application&gt; \
+    -j &lt;default number of processors for parallel library build&gt; \
     -h &lt;help on the script usage&gt;
 
 example:
 
-    ./install.sh -L "Python C" -b "release debug" -l shared -p "none mpi" -m heap -n 3
+    ./install.sh -L "Python C" -b "release debug" -l shared -p "none mpi" -m heap -n 3 -j 4
 
     or equivalently,
 
-    ./install.sh --lang "Python C" --build "release debug" --lib shared --par "none mpi" --mem heap --nproc 3
+    ./install.sh --lang "Python C" --build "release debug" --lib shared --par "none mpi" --mem heap --nproc 3 --njob 4
 
     The above two commands will build the library for the C and Python programming languages.
 
@@ -1230,6 +1231,7 @@ flag definitions:
     -a | --matdram          : build (only) the ParaMonte MatDRAM MATLAB library and return.
     -n | --nproc            : the default number of processes (coarray images) on which the ParaMonte examples/tests (if any) will be run: positive integer
                               If not provided, 3 will be used.
+    -j | --njob             : the default number of processes to be used for building the ParaMonte library. The default is 1.
     -h | --help             : help with the script usage
 
 NOTE: All flags are optional.
@@ -1440,7 +1442,7 @@ If you’d like to see a build flag that is not currently provided in the above 
 
         <div class="col-lg-12 footer">
             &copy;2021 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on June 22, 2021<br/>
+            Last updated on September 10, 2021<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="/paramonte/images/logo.png" }}" alt="cdslab.org" /></a>
