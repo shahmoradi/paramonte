@@ -812,10 +812,10 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
 <p>Suppose we have stored this file in <code>"./temp/mvn_serial_process_1_sample.txt"</code> locally on the system, with respect to the current working directory of the Python session. Then,</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
-<span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="n">ParaDRAM</span><span class="p">()</span> <span class="c1"># instantiate an object of class ParaDRAM.
-</span><span class="n">pmpd</span><span class="p">.</span><span class="n">readSample</span><span class="p">(</span><span class="nb">file</span> <span class="o">=</span> <span class="s">"./temp/mvn_serial_process_1_sample.txt"</span><span class="p">)</span> <span class="c1"># read the downloaded sample file and store it in the newly-created pmpd.sampleList property.
-</span><span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># this newly-created pmpd.sampleList Python-list property contains the contents of the sample file and other relevant tools.
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
+<span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="nc">ParaDRAM</span><span class="p">()</span> <span class="c1"># instantiate an object of class ParaDRAM.
+</span><span class="n">pmpd</span><span class="p">.</span><span class="nf">readSample</span><span class="p">(</span><span class="nb">file</span> <span class="o">=</span> <span class="sh">"</span><span class="s">./temp/mvn_serial_process_1_sample.txt</span><span class="sh">"</span><span class="p">)</span> <span class="c1"># read the downloaded sample file and store it in the newly-created pmpd.sampleList property.
+</span><span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">()</span> <span class="c1"># this newly-created pmpd.sampleList Python-list property contains the contents of the sample file and other relevant tools.
 </span></code></pre></div></div>
 
 <p><strong>Done.</strong> The rest of the postprocessing of the simulation data, such as statistical analysis or plotting, is identical to the Python examples provided on <a href="../jupyter" target="_blank">this page</a>.</p>
@@ -823,21 +823,21 @@ the script runs before the sidebar code runs and the class never gets inserted.
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 By default, the simulation output files are assumed to be <b>comma-delimited</b> (that is, <b>Comma-Separated-Value (CSV)</b> file). If the delimiter used in the file is different from comma (<b><code>,</code></b>), we can specify the delimiter by passing it explicitly,  
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
-<span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="n">ParaDRAM</span><span class="p">()</span> <span class="c1"># instantiate an object of class ParaDRAM.
-</span><span class="n">pmpd</span><span class="p">.</span><span class="n">readSample</span><span class="p">(</span><span class="nb">file</span> <span class="o">=</span> <span class="s">"./temp/mvn_serial_process_1_sample.txt"</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s">","</span><span class="p">)</span> <span class="c1"># read the downloaded sample file by explicitly passing the delimiter used in the sample file.</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="n">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
+<span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="nc">ParaDRAM</span><span class="p">()</span> <span class="c1"># instantiate an object of class ParaDRAM.
+</span><span class="n">pmpd</span><span class="p">.</span><span class="nf">readSample</span><span class="p">(</span><span class="nb">file</span> <span class="o">=</span> <span class="sh">"</span><span class="s">./temp/mvn_serial_process_1_sample.txt</span><span class="sh">"</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="sh">"</span><span class="s">,</span><span class="sh">"</span><span class="p">)</span> <span class="c1"># read the downloaded sample file by explicitly passing the delimiter used in the sample file.</span></code></pre></figure>
   
 </div>
 
 <p><strong>Alternative method:</strong></p>
 
 <p>Alternatively, we could also specify both the filename and delimiter as attributes of the <code>pmpd</code> object and avoid passing them directly to the <code>pmpd.readSample()</code> method,</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
-<span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="n">ParaDRAM</span><span class="p">()</span> <span class="c1"># instantiate an object of class ParaDRAM.
-</span><span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">outputFileName</span> <span class="o">=</span> <span class="s">"./temp/mvn_serial_process_1_sample.txt"</span>
-<span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">outputDelimiter</span> <span class="o">=</span> <span class="s">","</span>
-<span class="n">pmpd</span><span class="p">.</span><span class="n">readSample</span><span class="p">()</span> <span class="c1"># read the downloaded sample file and store it in the newly-created pmpd.sampleList property.
-</span><span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># this newly-created pmpd.sampleList Python-list property contains the contents of the sample file and other relevant tools.
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
+<span class="n">pmpd</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="nc">ParaDRAM</span><span class="p">()</span> <span class="c1"># instantiate an object of class ParaDRAM.
+</span><span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">outputFileName</span> <span class="o">=</span> <span class="sh">"</span><span class="s">./temp/mvn_serial_process_1_sample.txt</span><span class="sh">"</span>
+<span class="n">pmpd</span><span class="p">.</span><span class="n">spec</span><span class="p">.</span><span class="n">outputDelimiter</span> <span class="o">=</span> <span class="sh">"</span><span class="s">,</span><span class="sh">"</span>
+<span class="n">pmpd</span><span class="p">.</span><span class="nf">readSample</span><span class="p">()</span> <span class="c1"># read the downloaded sample file and store it in the newly-created pmpd.sampleList property.
+</span><span class="n">pmpd</span><span class="p">.</span><span class="n">sampleList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">()</span> <span class="c1"># this newly-created pmpd.sampleList Python-list property contains the contents of the sample file and other relevant tools.
 </span></code></pre></div></div>
 
 <p><br /></p>
@@ -942,8 +942,8 @@ By default, the simulation output files are assumed to be <b>comma-delimited</b>
 </div>
 
         <div class="col-lg-12 footer">
-            &copy;2021 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on November 3, 2021<br/>
+            &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
+            Last updated on March 13, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="/paramonte/images/logo.png" }}" alt="cdslab.org" /></a>
