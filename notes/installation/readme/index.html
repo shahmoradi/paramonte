@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" installation getting_started Windows Darwin macOS Linux naming compiler architecture x32 x64 x86_64 operating_system OS Fortran C C++ build Python MPI MPICH OpenMPI Open-MPI Coarray dynamic shared static interoperation">
+<title>ParaMonte pre-installation notes | ParaMonte: Parallel Monte Carlo Library</title>
+<link rel="stylesheet" href="/paramonte/css/prismOkaidia.css">
+<script src="/paramonte/js/prismOkaidia.js"></script>
+<!--
+<link rel="stylesheet" href="/paramonte/css/syntax.css">
+-->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/paramonte/css/bootstrap.min.css">
+
+
+
+<link rel="stylesheet" href="/paramonte/css/customstyles.css">
+<link rel="stylesheet" href="/paramonte/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/paramonte/css/theme-cdslab.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/paramonte/js/jquery.navgoco.min.js"></script>
+<!-- make sidebar non-accordion -->
+<script src="/paramonte/js/lockScrollbarPosition.js"></script>
+<!-- make sidebar non-accordion -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.sidenav').navgoco({
+              accordion: false,
+              caret: '<span class="caret"></span>',
+              openClass: 'open',
+              save: true,
+              cookie: {
+                  name: 'navgoco',
+                  expires: false,
+                  path: '/'
+              },
+              slide: {
+                  duration: 400,
+                  easing: 'swing'
+              }
+          });
+    });
+</script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<!--
+-->
+<script src="/paramonte/js/toc.js"></script>
+<script src="/paramonte/js/customscripts.js"></script>
+<link rel="shortcut icon" href="/paramonte/images/favicon.ico">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="" href="/paramonte/feed.xml">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6JB9XNG83"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J6JB9XNG83');
+</script>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+    </head>
+    <body>
+        <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div id="sticky" class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-book fa-lg navbar-brand" href="/paramonte/index.html">&nbsp;<span class="projectTitle"> ParaMonte: Parallel Monte Carlo Library</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                    
+                        
+                            <li><a href="https://github.com/cdslaborg/paramonte" target="_blank" rel="noopener">GitHub</a></li>
+                        
+                    
+                        
+                            <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/78946-paramonte" target="_blank" rel="noopener">MathWorks</a></li>
+                        
+                    
+                        
+                            <li><a href="https://pypi.org/project/paramonte/" target="_blank" rel="noopener">PyPI</a></li>
+                        
+                    
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CDSLab<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/#about" target="_blank" rel="noopener">About</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/people" target="_blank" rel="noopener">People</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/research" target="_blank" rel="noopener">Research</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/matlab/" target="_blank" rel="noopener">MATLAB Programming</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/python/" target="_blank" rel="noopener">Python Programming</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="keyword search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/paramonte/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: "/paramonte/search.json",
+                                searchResultTemplate: '<li><a href="https://www.cdslab.org/paramonte{url}" title="ParaMonte pre-installation notes">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+        <!-- Page Content -->
+        <div class="container">
+            <div id="main">
+                <!-- Content Row -->
+                <div class="row">
+                    
+                    
+                        <!-- Sidebar Column -->
+                        <div class="col-md-3" id="tg-sb-sidebar">
+                            
+<ul id="mysidebar" class="sidenav">
+    <!--
+    -->
+    <li class="sidebarTitle">Table of Pages </li>
+    
+        
+            
+                <li>
+                    <a title="Overview" href="#"><b>Overview</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Preface" href="/paramonte/notes/overview/preface/">Preface</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte kernel release notes" href="/paramonte/notes/overview/paramonte-kernel-release-notes/">ParaMonte kernel release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte MATLAB release notes" href="/paramonte/notes/overview/paramonte-matlab-release-notes/">ParaMonte MATLAB release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Python release notes" href="/paramonte/notes/overview/paramonte-python-release-notes/">ParaMonte Python release notes</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Installation" href="#"><b>Installation</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li class="active"><a title="ParaMonte pre-installation notes" href="/paramonte/notes/installation/readme/">ParaMonte pre-installation notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C/C++/Fortran - Windows" href="/paramonte/notes/installation/windows/">ParaMonte C/C++/Fortran - Windows</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C/C++/Fortran - macOS" href="/paramonte/notes/installation/macos/">ParaMonte C/C++/Fortran - macOS</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C/C++/Fortran - Linux" href="/paramonte/notes/installation/linux/">ParaMonte C/C++/Fortran - Linux</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte MATLAB" href="/paramonte/notes/installation/matlab/">ParaMonte MATLAB</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Python" href="/paramonte/notes/installation/python/">ParaMonte Python</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="API documentation" href="#"><b>API documentation</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Kernel API" href="https://cdslaborg.github.io/paramonte-kernel-doc/html/" target="_blank" rel="noopener">ParaMonte Kernel API</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Python API" href="/paramonte/notes/api/python/autoapi/paramonte/">ParaMonte Python API</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte MATLAB API" href="/paramonte/notes/api/matlab/">ParaMonte MATLAB API</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Usage - ParaDRAM sampler" href="#"><b>Usage - ParaDRAM sampler</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM quick start" href="/paramonte/notes/usage/paradram/interface/">ParaDRAM quick start</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM optional input file" href="/paramonte/notes/usage/paradram/input/">ParaDRAM optional input file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation specifications" href="/paramonte/notes/usage/paradram/specifications/">ParaDRAM simulation specifications</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation output files" href="/paramonte/notes/usage/paradram/output/">ParaDRAM simulation output files</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation restart" href="/paramonte/notes/usage/paradram/restart/">ParaDRAM simulation restart</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM parallelization tips" href="/paramonte/notes/usage/paradram/parallelization/">ParaDRAM parallelization tips</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Building ParaMonte application" href="#"><b>Building ParaMonte application</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Building ParaMonte C application" href="/paramonte/notes/build/c/">Building ParaMonte C application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Building ParaMonte C++ application" href="/paramonte/notes/build/cpp/">Building ParaMonte C++ application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Building ParaMonte Fortran application" href="/paramonte/notes/build/fortran/">Building ParaMonte Fortran application</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Running ParaMonte application" href="#"><b>Running ParaMonte application</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Running C/C++/Fortran application" href="/paramonte/notes/run/default/">Running C/C++/Fortran application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Running MATLAB application" href="/paramonte/notes/run/matlab/">Running MATLAB application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Running Python application" href="/paramonte/notes/run/python/">Running Python application</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="C examples" href="#"><b>C examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Sampling a Multivariate Normal distribution" href="/paramonte/notes/examples/c/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="C++ examples" href="#"><b>C++ examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Sampling a Multivariate Normal distribution" href="/paramonte/notes/examples/cpp/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Fortran examples" href="#"><b>Fortran examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Sampling a Multivariate Normal distribution" href="/paramonte/notes/examples/fortran/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="MATLAB examples" href="#"><b>MATLAB examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="MATLAB Live Scripts" href="/paramonte/notes/examples/matlab/mlx/">MATLAB Live Scripts</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Post-processing existing simulations" href="/paramonte/notes/examples/matlab/postprocess/">Post-processing existing simulations</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Python examples" href="#"><b>Python examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Jupyter Notebooks" href="/paramonte/notes/examples/python/jupyter/">Jupyter Notebooks</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Post-processing existing simulations" href="/paramonte/notes/examples/python/postprocess/">Post-processing existing simulations</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Code Coverage Reports" href="#"><b>Code Coverage Reports</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Guidelines" href="/paramonte/notes/codecov/">Guidelines</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - Serial" href="https://cdslaborg.github.io/paramonte-codecov/kernel/serial/" target="_blank" rel="noopener">Kernel - Serial</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - MPI Parallel" href="https://cdslaborg.github.io/paramonte-codecov/kernel/mpi/" target="_blank" rel="noopener">Kernel - MPI Parallel</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - Coarray Parallel" href="https://cdslaborg.github.io/paramonte-codecov/kernel/caf/" target="_blank" rel="noopener">Kernel - Coarray Parallel</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Contributing to ParaMonte" href="#"><b>Contributing to ParaMonte</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Reporting defects" href="/paramonte/notes/contributing/defects">Reporting defects</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Requesting enhancements" href="/paramonte/notes/contributing/enhancements">Requesting enhancements</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Development guidelines - general" href="/paramonte/notes/contributing/development/general/">Development guidelines - general</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Development guidelines - kernel" href="/paramonte/notes/contributing/development/kernel/">Development guidelines - kernel</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Troubleshooting" href="#"><b>Troubleshooting</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Enhancement-requests and bug-reports" href="/paramonte/notes/troubleshooting/issues/">Enhancement-requests and bug-reports</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="-bash: Permission denied" href="/paramonte/notes/troubleshooting/bash-permission-denied/">-bash: Permission denied</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="bash: matlab: command not found" href="/paramonte/notes/troubleshooting/bash-matlab-command-not-found/">bash: matlab: command not found</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="catastrophic error: cannot open source file" href="/paramonte/notes/troubleshooting/catastrophic-error-cannot-open-source-file/">catastrophic error: cannot open source file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Catastrophic error: could not set locale" href="/paramonte/notes/troubleshooting/catastrophic-error-could-not-set-locale/">Catastrophic error: could not set locale</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="xcrun: error: unable to find utility "clang"" href="/paramonte/notes/troubleshooting/xcrun-error-unable-to-find-utility-clang/">xcrun: error: unable to find utility "clang"</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="changing directory on Windows CMD" href="/paramonte/notes/troubleshooting/windows-drive-change/">changing directory on Windows CMD</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="error while loading shared libraries" href="/paramonte/notes/troubleshooting/error-while-loading-shared-libraries/">error while loading shared libraries</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="finding the MPI libraries on Windows" href="/paramonte/notes/troubleshooting/finding-mpi-libraries-on-windows/">finding the MPI libraries on Windows</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Fortran runtime error: End of file" href="/paramonte/notes/troubleshooting/fortran-runtime-error-end-of-file/">Fortran runtime error: End of file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="libgfortran not found" href="/paramonte/notes/troubleshooting/libgfortran-not-found/">libgfortran not found</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="macOS: developer cannot be verified" href="/paramonte/notes/troubleshooting/macos-developer-cannot-be-verified/">macOS: developer cannot be verified</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: could not find module" href="/paramonte/notes/troubleshooting/python-could-not-find-module/">Python: could not find module</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: module object is not callable" href="/paramonte/notes/troubleshooting/python-module-object-is-not-callable/">Python: module object is not callable</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: segmentation-fault error" href="/paramonte/notes/troubleshooting/python-segmentation-fault/">Python: segmentation-fault error</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+    
+    <!-- if you aren't using the accordion, uncomment this block:
+    -->
+    <p class="external">
+        <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+    </p>
+</ul>
+<!--
+This highlights the active parent class in the navgoco sidebar. 
+This is critical so that the parent expands when you're viewing a page.
+This must appear below the sidebar code above.
+Otherwise, if placed inside customscripts.js,
+the script runs before the sidebar code runs and the class never gets inserted.
+-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+                        </div>
+                        
+                    
+                    <!-- Content Column -->
+                    <div class="col-md-9" id="tg-sb-content">
+                        <div class="post-header">
+   <h1 class="post-title-main">ParaMonte pre-installation notes</h1>
+</div>
+
+<div class="post-content">
+    
+    
+    
+        <br>
+        
+<script>
+    $( document ).ready(function() {
+        // Handler for .ready() called.
+        $('#toc').toc({ minimumHeaders: 0 
+                      , listType: 'ol'
+                      , showSpeed: 0
+                      , headers: 'h2,h3,h4,h5,h6'
+        });
+        /* the following offset helps account for the space taken up by the floating toolbar. */
+        $('#toc').on('click', 'a', function() {
+            var target = $(this.getAttribute('href')), scroll_target = target.offset().top$(window).scrollTop(scroll_target - 10);
+            return false
+        })
+    });
+</script>
+
+<div id="toc"></div>
+
+    
+    
+    
+<p><br /></p>
+
+<h2 id="naming-convention-used-for-paramonte-library-builds">Naming convention used for ParaMonte library builds</h2>
+
+<p>Across all supported Operating Systems (OS) and platforms / architectures, a universal naming convention is currently used to build the ParaMonte kernel libraries,</p>
+
+<pre><code>libparamonte_&lt;interface language: c/cpp/fortran/matlab/python/r/...&gt;_&lt;OS: windows/linux/darwin/...&gt;_&lt;architecture: x64/x86/...&gt;_&lt;compiler suite: intel/gnu/...&gt;_&lt;build type: release/testing/debug&gt;_&lt;library type: shared/static&gt;_&lt;memory allocation type: stack/heap&gt;_&lt;parallelism library/type: (none)/mpi/impi/mpich/openmpi/cafsingle/cafshared/cafdistributed/...&gt;.&lt;library file extension: dll/lib/so/a/dylib&gt;  
+</code></pre>
+
+<p>where,</p>
+
+<ul>
+  <li><strong>interface language</strong> can be either:
+    <ul>
+      <li><strong>c</strong>: indicating a library build that is meant to be called and used from C or C-complaint main applications.</li>
+      <li><strong>cpp</strong>: indicating a library build that is meant to be called and used from C++ main applications.</li>
+      <li><strong>fortran</strong>: indicating a library build that is meant to be called and used from Fortran main applications.</li>
+      <li><strong>matlab</strong>: indicating a library build that is meant to be called and used from MATLAB main applications.</li>
+      <li><strong>python</strong>: indicating a library build that is meant to be called and used from Python main applications.</li>
+      <li><strong>r</strong>: indicating a library build that is meant to be called and used from R main applications.</li>
+    </ul>
+  </li>
+  <li><strong>operating system type</strong> can be either:
+    <ul>
+      <li><strong>windows</strong>: indicating a library that can only be used on Windows OS, or,</li>
+      <li><strong>darwin</strong>: indicating a library that can only be used on macOS, or,</li>
+      <li><strong>linux</strong>: indicating a library that can only be used on Linux OS, or,</li>
+      <li>some other name (or <strong>unknown</strong> if it cannot be identified), indicating a library build that is meant to be used on the specific OS for which the library has been built.</li>
+    </ul>
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The ParaMonte build-scripts have only been tested on Windows, Linux, and Darwin operating systems. However, it should be possible to build ParaMonte on any other platform or architecture on which 1. the GNU compiler Collection or the Intel Parallel Studio can be installed, 2. a Unix Bash script or a Windows Bash script can run.</div>
+  </li>
+  <li><strong>architecture type</strong> can be either:
+    <ul>
+      <li><strong>x64</strong>: indicating a library that is built usage on <code>amd64</code> 64-bit architectures (also known as <code>x86_64</code>), or,</li>
+      <li>some other architecture (or <strong>unknown</strong> if it cannot be identified), indicating a library build that is meant to be used on the specific architecture for which the library has been built.</li>
+    </ul>
+    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> <code>x64</code> does NOT stand for Intel’s 64-bit architecture <code>IA-64</code>  (also called Intel Itanium architecture).</div>
+  </li>
+  <li><strong>compiler suite</strong> can be any ParaMonte-compatible compiler vendor name that you are using to build the ParaMonte library. Currently, the ParaMonte build-scripts support only:
+    <ul>
+      <li><strong>intel</strong>: 
+on Windows and Linux OS for both serial and parallel ParaMonte library builds, as well as on Darwin (macOS), but only for serial ParaMonte library builds,
+        <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important: </b>
+The minimum Intel compiler versions required for building the ParaMonte library from source are,
+<br />
+<ul>
+    <li>
+        <b>Intel icl / ifort &#8805; 2019.1.1</b> on <b>Windows</b>, 
+    </li>
+    <li>
+        <b>Intel icc / icpc / ifort &#8805; 2019.1.1</b> on <b>Linux</b>, 
+    </li>
+    <li>
+        <b>Intel icc / icpc / ifort &#8805; 2019.1.1</b> on <b>macOS (Darwin)</b>, 
+    </li>
+</ul> 
+</div>
+      </li>
+      <li><strong>gnu</strong>: 
+on Linux and Darwin OS for both serial and parallel ParaMonte library builds.
+        <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important: </b>
+The minimum GNU compiler versions required for building ParaMonte library are <b>GNU gcc / g++ / gfortran &gt; 8.4</b>.
+</div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>build type</strong> can be either:
+    <ul>
+      <li><strong>release</strong>: indicating a build with compiler flags that ensure the fastest possible simulations at runtime, or,</li>
+      <li><strong>testing</strong>: indicating a build with compiler default optimization flags used only for testing purposes, or,</li>
+      <li><strong>debug</strong>: indicating a build with compiler flags that enable tracing of any compile-time or run-time errors.</li>
+    </ul>
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you are not sure which one is appropriate for your case, always choose <code>release</code>. In general, the <code>debug</code> and <code>testing</code> build types are mostly useful to developers and professional programmers. In some cases where the code consistently crashes in the release mode, it may be useful to run the same simulation using a <code>debug</code> build of the library to trace the source of the runtime error in the code.</div>
+  </li>
+  <li><strong>library type</strong> can be either:
+    <ul>
+      <li><strong>shared</strong>: indicating a dynamically-linked ParaMonte library build, or,</li>
+      <li><strong>static</strong>: indicating a statically-linked (archive) ParaMonte library build.</li>
+    </ul>
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you are not sure which library type is suitable in your case, choose shared over static ParaMonte library builds.</div>
+  </li>
+  <li><strong>memory allocation type</strong> can be either:
+    <ul>
+      <li><strong>stack</strong>: indicating static allocation of all automatic arrays and arrays created for temporary computations on the <a href="https://en.wikipedia.org/wiki/Stack-based_memory_allocation" target="_blank">stack</a>, or,</li>
+      <li><strong>heap</strong>: indicating heap allocation of all automatic arrays and arrays created for temporary computations on the <a href="https://en.wikipedia.org/wiki/Memory_management#HEAP" target="_blank">heap</a>).</li>
+    </ul>
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> In general, stack memory allocation can lead to slightly more efficient codes than heap memory allocation. However, applications that use stack for temporary memory allocations often run into the <strong>stack overflow</strong> kind of errors caused by the application reaching its maximum stack memory usage limit that is set by the operating system. While the stack size for an application can be often increased on both Windows and Unix-like OS, it can be potentially a challenging task for programmers with insufficient experience. Therefore, <strong>if you do not know the difference between stack vs. heap memory allocation, always choose heap-enabled ParaMonte library builds to avoid unexpected <code>stack overflow</code> errors</strong>.</div>
+  </li>
+  <li><strong>parallelism type</strong> can be either:
+    <ul>
+      <li><strong>NULL</strong>: or nothing (empty), indicating no parallelism, that is, a library built for serial simulations, or,</li>
+      <li><strong>mpi</strong>: indicating a library built via (some unknown brand) Message Passing Interface (MPI) that is meant to be linked against parallel main applications for parallel simulations via MPI, or,</li>
+      <li><strong>impi</strong>: indicating a library built via the Intel Message Passing Interface (MPI) that is meant to be linked against parallel main applications for parallel simulations via Intel MPI, or,</li>
+      <li><strong>mpich</strong>: indicating a library built via the MPICH Message Passing Interface (MPI) that is meant to be linked against parallel main applications for parallel simulations via MPICH MPI, or,</li>
+      <li><strong>openmpi</strong>: indicating a library built via the OpenMPI Message Passing Interface (MPI) that is meant to be linked against parallel main applications for parallel simulations via OpenMPI, or,</li>
+      <li><strong>cafsingle</strong>: indicating a library built via Coarray Fortran parallelism paradigm that is meant to be linked against Coarray parallel main applications optimized and usable for serial simulations only (i.e., no parallelization), or,</li>
+      <li><strong>cafshared</strong>: indicating a library built via Coarray Fortran parallelism paradigm that is meant to be linked against Coarray parallel main applications for coarray-enabled parallel simulations on shared-memory architecture, or,</li>
+      <li><strong>cafdistributed</strong>: indicating a library built via Coarray Fortran parallelism paradigm that is meant to be used for coarray-enabled parallel simulations on distributed-memory architecture, or,</li>
+    </ul>
+    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> The three Coarray parallelism options are only available when the ParaMonte library is compiled via the Intel Fortran compiler. When compiled via the GNU Fortran compiler, the only option available is <code>cafsingle</code>. When compiled via the GNU Fortran compiler with <a href="http://www.opencoarrays.org/">OpenCoarrays library</a>, the sole option is <code>cafdistributed</code>. Also, the Coarray-enabled parallel ParaMonte libraries can only be built as static (archive) libraries. Also, the Coarray parallelism is exclusively available for ParaMonte library builds that are meant to be statically linked against <strong>main</strong> applications exclusively written in Fortran.</div>
+  </li>
+</ul>
+
+<h2 id="supported-platform-and-architecture">Supported platform and architecture</h2>
+
+<p>The ParaMonte library is currently developed with the presumption that it will be used on Windows/Linux/macOS operating systems (OS) built on an <code>amd64</code> architecture system (also known as <code>x64</code> on Windows, and <code>x86_64</code> on Linux and macOS). There is, however, no technical or programming barrier to building ParaMonte for other architectures, as long as a compatible MPI and Fortran/C compilers are available on the specific platform and architecture of interest.</p>
+
+<h3 id="why-are-the-prebuilt-paramonte-libraries-available-only-for-the-x64-architecture">Why are the prebuilt ParaMonte libraries available only for the x64 architecture?</h3>
+
+<p>As of 2020, the <code>amd64</code> processor architecture takes the lion share of the market demand (illustrated in the figure below). It would be very costly for the ParaMonte developers (in terms of energy, money, and time) to build and release the library for all available architectures in the market. Note, however, that the library can be built for usage on any architecture as long as a ParaMonte-compatible C/Fortran compiler can be installed on the system.</p>
+<figure>
+    <img src="cpu_arch_market_share.png" width="100%" />
+    <figcaption>
+        An illustration of the dynamics of the market share for different families of microprocessors in the <a href="https://www.top500.org/" target="_blank">TOP500 supercomputer ranking list</a>, from 1992 to 2019.
+    </figcaption>
+</figure>
+
+<h3 id="how-can-i-find-out-the-platform-and-architecture-of-my-system">How can I find out the platform and architecture of my system?</h3>
+
+<ul>
+  <li>On <strong>Windows OS</strong>, open a Windows command-line interface (<code>cmd.exe</code>).
+    <ul>
+      <li>To find out your system’s OS, type,
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> %OS%
+</code></pre></div>        </div>
+        <p>which should result in an answer like the following,</p>
+        <pre><code>Windows_NT
+</code></pre>
+      </li>
+      <li>To check your system’s platform/architecture, type,
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> %PLATFORM%
+</code></pre></div>        </div>
+        <p>which should result in an answer like the following,</p>
+        <pre><code>x64
+</code></pre>
+        <p>or,</p>
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> %PROCESSOR_ARCHITECTURE%
+</code></pre></div>        </div>
+        <p>which should result in an answer like the following,</p>
+        <pre><code>AMD64
+</code></pre>
+        <p>if your system’s architecture is <code>amd64</code>.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>On <strong>Unix-like OS</strong> (Linux/macOS), open a Bash shell.
+    <ul>
+      <li>To find out your system’s OS, type,
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">uname</span> <span class="nt">-s</span>
+</code></pre></div>        </div>
+        <p>which should result in an answer like the following,</p>
+        <pre><code>Linux
+</code></pre>
+        <p>or,</p>
+        <pre><code>Darwin
+</code></pre>
+        <p>depending on the type of your OS.</p>
+      </li>
+      <li>To check your system’s platform/architecture, type,
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">uname</span> <span class="nt">-m</span>
+</code></pre></div>        </div>
+        <p>which should result in an answer like the following,</p>
+        <pre><code>x86_64
+</code></pre>
+        <p>if your system’s architecture is <code>amd64</code>.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<div class="bs-callout bs-callout-danger">If you have any questions about the topics discussed on this page, feel free to ask in the comment section below, or <a href="https://github.com/cdslaborg/paramonte/issues/new/choose" target="_blank">raise an issue</a> on the GitHub page of the library, or reach out to <a href="../../../overview/preface/#who-are-the-paramonte-authors-and-developers" target="_blank">the ParaMonte library authors</a>.</div>
+
+<p><br /></p>
+
+
+    
+    
+        
+    <div style="margin-top:3rem">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'paramonte'; // required: replace example with your forum shortname
+    
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+</div>
+<hr class="shaded"/>
+<footer>
+    <div class="row">
+        <div class="social-icons">
+
+    
+    <span class="social-icon">
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+
+    
+    <span class="social-icon">
+        <a href="https://instagram.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://medium.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-medium fa-stack-xs"></i>
+                <!--
+                -->
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+</div>
+
+        <div class="col-lg-12 footer">
+            &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
+            Last updated on March 13, 2024<br/>
+            
+        <p>
+            <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="/paramonte/images/logo.png" }}" alt="cdslab.org" /></a>
+            <!-- hitwebcounter Code START -->
+
+<div style="text-align:right; float: none; width: 100%; font-size:0.9em; margin-top: -15px">
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7807987&style=0007&nbdigits=8&type=page&initCount=155531" title="Free Counter" Alt="web counter"   border="0" />
+    <br>
+    <span style="color: #ffffff;">
+        <script type="text/javascript">
+            var sc_project=12178963;
+            var sc_invisible=0;
+            var sc_security="e0dfe0f9";
+            var sc_text=3;
+            var scJsHost = "https://";
+            document.write("<sc"+"ript type='text/javascript' src='" +
+            scJsHost+
+            "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+    </span>
+</div>
+        </p>
+        </div>
+    </div>
+    <!--Mathjax LaTeX engine-->
+    
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+        MathJax.Hub.Config({
+            config: ["MMLorHTML.js"],
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX"],
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: ".8em",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                autoNumber: "AMS",
+                },
+                unicode: {
+                fonts: "STIXGeneral,'Arial Unicode MS'" 
+                }
+            },
+            showProcessingMessages: false
+        });
+    </script>
+    <style TYPE="text/css">
+        code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+    </style>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+            }
+        });
+        MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</footer>
+
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /#main -->
+        </div>
+        
+    </body>
+    
+</html>
