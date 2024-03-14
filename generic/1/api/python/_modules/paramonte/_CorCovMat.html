@@ -1,0 +1,812 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>paramonte._CorCovMat &mdash; ParaMonte :: Python  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> ParaMonte :: Python
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ParaMonte :: Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../paramonte.html">paramonte</a> &raquo;</li>
+        
+      <li>paramonte._CorCovMat</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for paramonte._CorCovMat</h1><div class="highlight"><pre>
+<span></span><span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####</span>
+<span class="c1">####   MIT License</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte: plain powerful parallel Monte Carlo library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Copyright (C) 2012-present, The Computational Data Science Lab</span>
+<span class="c1">####</span>
+<span class="c1">####   This file is part of the ParaMonte library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Permission is hereby granted, free of charge, to any person obtaining a </span>
+<span class="c1">####   copy of this software and associated documentation files (the &quot;Software&quot;), </span>
+<span class="c1">####   to deal in the Software without restriction, including without limitation </span>
+<span class="c1">####   the rights to use, copy, modify, merge, publish, distribute, sublicense, </span>
+<span class="c1">####   and/or sell copies of the Software, and to permit persons to whom the </span>
+<span class="c1">####   Software is furnished to do so, subject to the following conditions:</span>
+<span class="c1">####</span>
+<span class="c1">####   The above copyright notice and this permission notice shall be </span>
+<span class="c1">####   included in all copies or substantial portions of the Software.</span>
+<span class="c1">####</span>
+<span class="c1">####   THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, </span>
+<span class="c1">####   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF </span>
+<span class="c1">####   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. </span>
+<span class="c1">####   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, </span>
+<span class="c1">####   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR </span>
+<span class="c1">####   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE </span>
+<span class="c1">####   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+<span class="c1">####</span>
+<span class="c1">####   ACKNOWLEDGMENT</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte is an honor-ware and its currency is acknowledgment and citations.</span>
+<span class="c1">####   As per the ParaMonte library license agreement terms, if you use any parts of </span>
+<span class="c1">####   this library for any purposes, kindly acknowledge the use of ParaMonte in your </span>
+<span class="c1">####   work (education/research/industry/development/...) by citing the ParaMonte </span>
+<span class="c1">####   library as described on this page:</span>
+<span class="c1">####</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/main/ACKNOWLEDGMENT.md</span>
+<span class="c1">####</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">tp</span>
+<span class="kn">import</span> <span class="nn">weakref</span> <span class="k">as</span> <span class="nn">wref</span>
+
+<span class="kn">import</span> <span class="nn">_message</span> <span class="k">as</span> <span class="nn">err</span>
+<span class="kn">import</span> <span class="nn">_dfutils</span> <span class="k">as</span> <span class="nn">dfutils</span>
+<span class="kn">import</span> <span class="nn">_pmutils</span> <span class="k">as</span> <span class="nn">pmutils</span>
+<span class="kn">from</span> <span class="nn">paramonte.vis.HeatMapPlot</span> <span class="kn">import</span> <span class="n">HeatMapPlot</span>
+
+<span class="n">Struct</span> <span class="o">=</span> <span class="n">pmutils</span><span class="o">.</span><span class="n">Struct</span>
+<span class="n">newline</span> <span class="o">=</span> <span class="n">pmutils</span><span class="o">.</span><span class="n">newline</span>
+
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">#### getCorFromCov</span>
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="getCorFromCov"><a class="viewcode-back" href="../../autoapi/paramonte/_CorCovMat/index.html#paramonte._CorCovMat.getCorFromCov">[docs]</a><span class="k">def</span> <span class="nf">getCorFromCov</span><span class="p">(</span><span class="n">covMat</span><span class="p">):</span>
+    <span class="n">stdVec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">covMat</span><span class="p">))</span>
+    <span class="n">corMat</span> <span class="o">=</span> <span class="n">covMat</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">stdVec</span><span class="p">,</span> <span class="n">stdVec</span><span class="p">)</span>
+    <span class="n">corMat</span><span class="p">[</span><span class="n">covMat</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">corMat</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">#### CorCovMat class</span>
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="CorCovMat"><a class="viewcode-back" href="../../autoapi/paramonte/_CorCovMat/index.html#paramonte._CorCovMat.CorCovMat">[docs]</a><span class="k">class</span> <span class="nc">CorCovMat</span><span class="p">:</span>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### __init__</span>
+    <span class="c1">################################################################################################################################</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span>
+                <span class="p">,</span> <span class="n">dataFrame</span>     <span class="c1"># : tp.Optional[ pd.DataFrame ]</span>
+                <span class="p">,</span> <span class="n">columns</span>       <span class="o">=</span> <span class="kc">None</span> <span class="c1"># : tp.Optional[ tp.Union[ range , tp.List[int] , tp.List[str] ] ] = None</span>
+                <span class="p">,</span> <span class="n">methodName</span>    <span class="o">=</span> <span class="s2">&quot;ParaMonte&quot;</span> <span class="c1"># : tp.Optional[ str ] = &quot;ParaMonte&quot;</span>
+                <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># : tp.Optional[ bool ] = True</span>
+                <span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rows</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">dataFrame</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">wref</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="n">dataFrame</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span> <span class="o">=</span> <span class="n">methodName</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reportEnabled</span> <span class="o">=</span> <span class="n">reportEnabled</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span> <span class="o">=</span> <span class="n">pmutils</span><span class="o">.</span><span class="n">Progress</span>   <span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="kc">None</span>
+                                            <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="n">methodName</span>
+                                            <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="n">reportEnabled</span>
+                                            <span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                            <span class="p">)</span>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### __call__</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="CorCovMat.__call__"><a class="viewcode-back" href="../../autoapi/paramonte/_CorCovMat/index.html#paramonte._CorCovMat.CorCovMat.__call__">[docs]</a>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span> <span class="bp">self</span>
+                <span class="p">,</span> <span class="n">reself</span>    <span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span> <span class="nb">bool</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+                <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Call the ``get()`` method of the current instance of the class.</span>
+
+<span class="sd">            **Parameters**</span>
+
+<span class="sd">                reself</span>
+
+<span class="sd">                    A logical variable. If ``True``, an instance of the </span>
+<span class="sd">                    object will be returned upon exit to the calling routine.</span>
+<span class="sd">                    The default value is False.</span>
+
+<span class="sd">                Also, any attributes of the current instance of the class.</span>
+
+<span class="sd">            **Returns**</span>
+
+<span class="sd">                The object self if ``reself = True`` otherwise, ``None``.</span>
+<span class="sd">                However, this method causes side-effects by manipulating </span>
+<span class="sd">                the existing attributes of the object.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">reself</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### get</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="CorCovMat.get"><a class="viewcode-back" href="../../autoapi/paramonte/_CorCovMat/index.html#paramonte._CorCovMat.CorCovMat.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span> <span class="p">(</span> <span class="bp">self</span>
+            <span class="p">,</span> <span class="n">reself</span> <span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span> <span class="nb">bool</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Compute the correlation / covariance matrix of the selected </span>
+<span class="sd">        columns of the input dataframe to the object&#39;s constructor.</span>
+
+<span class="sd">            **Parameters**</span>
+
+<span class="sd">                reself</span>
+
+<span class="sd">                    A logical variable. If ``True``, an instance of </span>
+<span class="sd">                    the object will be returned  to the calling routine </span>
+<span class="sd">                    upon exit. The default value is ``False``.</span>
+
+<span class="sd">            **Returns**</span>
+
+<span class="sd">                The object self if ``reself = True`` otherwise, ``None``.</span>
+
+<span class="sd">                **NOTE**</span>
+
+<span class="sd">                This method causes side-effects by manipulating</span>
+<span class="sd">                the existing attributes of the object.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">):</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">key</span><span class="o">==</span><span class="s2">&quot;dataFrame&quot;</span><span class="p">:</span>
+                <span class="nb">setattr</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_dfref&quot;</span><span class="p">,</span> <span class="n">wref</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="s2">&quot;Unrecognized input &#39;&quot;</span><span class="o">+</span><span class="n">key</span><span class="o">+</span><span class="s2">&quot;&#39; class attribute detected.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getDocString</span><span class="p">()</span>
+                                <span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="s2">&quot;method&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_isCorMat</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_matrixType</span> <span class="o">=</span> <span class="s2">&quot;correlation&quot;</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">method</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;pearson&quot;</span><span class="p">,</span><span class="s2">&quot;kendall&quot;</span><span class="p">,</span><span class="s2">&quot;spearman&quot;</span><span class="p">]:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;The requested correlation type must be one of the following string values,</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                <span class="o">+</span> <span class="s2">&quot;    pearson  : standard correlation coefficient</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                <span class="o">+</span> <span class="s2">&quot;    kendall  : Kendall Tau correlation coefficient</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                <span class="o">+</span> <span class="s2">&quot;    spearman : Spearman rank correlation.&quot;</span>
+                                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_isCorMat</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_matrixType</span> <span class="o">=</span> <span class="s2">&quot;covariance&quot;</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### check columns presence</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">colnames</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span>
+            <span class="n">colindex</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">colnames</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+            <span class="n">colnames</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span>
+            <span class="n">colindex</span> <span class="o">=</span> <span class="n">dfutils</span><span class="o">.</span><span class="n">nam2num</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span> <span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span> <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span><span class="nb">int</span><span class="p">)</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+            <span class="n">colindex</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span>
+            <span class="n">colnames</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">colindex</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;The input argument &#39;columns&#39; must be a list whose elements are all</span><span class="se">\n</span><span class="s2">&quot;</span>
+                            <span class="o">+</span> <span class="s2">&quot;    1.   string-valued, each representing the name of the column from</span><span class="se">\n</span><span class="s2">&quot;</span>
+                            <span class="o">+</span> <span class="s2">&quot;         the input dataframe to the object&#39;s constructor, to be included</span><span class="se">\n</span><span class="s2">&quot;</span>
+                            <span class="o">+</span> <span class="s2">&quot;         in the &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_matrixType</span> <span class="o">+</span> <span class="s2">&quot; matrix construction, or,</span><span class="se">\n</span><span class="s2">&quot;</span>
+                            <span class="o">+</span> <span class="s2">&quot;    2.   integer-valued, each representing the index of the column from</span><span class="se">\n</span><span class="s2">&quot;</span>
+                            <span class="o">+</span> <span class="s2">&quot;         the input dataframe to the object&#39;s constructor, to be included</span><span class="se">\n</span><span class="s2">&quot;</span>
+                            <span class="o">+</span> <span class="s2">&quot;         in the &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_matrixType</span> <span class="o">+</span> <span class="s2">&quot; matrix construction.&quot;</span>
+                            <span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### check rows presence. This must be checked here, because it depends on the integrity of the in input dataFrame.</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### construct the matrix dataframe</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">if</span>  <span class="bp">self</span><span class="o">.</span><span class="n">_isCorMat</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">,</span><span class="n">colindex</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dfref</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">,</span><span class="n">colindex</span><span class="p">]</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### specify columns/index names</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">colnames</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">index</span>   <span class="o">=</span> <span class="n">colnames</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### graphics</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_plotTypeList</span> <span class="o">=</span>    <span class="p">[</span> <span class="s2">&quot;heatmap&quot;</span>
+                                <span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">note</span><span class="p">(</span> <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;adding the &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_matrixType</span> <span class="o">+</span> <span class="s2">&quot; graphics tools... &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">newline</span><span class="p">,</span> <span class="n">pre</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_resetPlot</span><span class="p">(</span><span class="n">resetType</span><span class="o">=</span><span class="s2">&quot;hard&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">reset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resetPlot</span>
+
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">if</span> <span class="n">reself</span><span class="p">:</span> <span class="k">return</span> <span class="bp">self</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### _resetPlot</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="CorCovMat._resetPlot"><a class="viewcode-back" href="../../autoapi/paramonte/_CorCovMat/index.html#paramonte._CorCovMat.CorCovMat._resetPlot">[docs]</a>    <span class="k">def</span> <span class="nf">_resetPlot</span>  <span class="p">(</span> <span class="bp">self</span>
+                    <span class="p">,</span> <span class="n">resetType</span> <span class="o">=</span> <span class="s2">&quot;soft&quot;</span>
+                    <span class="p">,</span> <span class="n">plotNames</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span>
+                    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Reset the properties of the plot to the original default settings.</span>
+<span class="sd">        Use this method when you change many attributes of the plot and</span>
+<span class="sd">        you want to clean up and go back to the default settings.</span>
+
+<span class="sd">            **Parameters**</span>
+
+<span class="sd">                resetType (optional)</span>
+
+<span class="sd">                    An optional string with possible value of ``&quot;hard&quot;``.</span>
+<span class="sd">                    If provided, the plot object will be regenerated from scratch.</span>
+<span class="sd">                    This includes reading the original data frame again and resetting</span>
+<span class="sd">                    everything. If not provided, then only the plot settings will be</span>
+<span class="sd">                    reset without reseting the dataFrame.</span>
+
+<span class="sd">                plotNames (optional)</span>
+
+<span class="sd">                    An optional string value or list of string values representing </span>
+<span class="sd">                    the names of plots to reset. If no value is provided, </span>
+<span class="sd">                    then all plots will be reset.</span>
+
+<span class="sd">            **Returns**</span>
+
+<span class="sd">                None</span>
+
+<span class="sd">            **Example**</span>
+
+<span class="sd">                .. code-block:: python</span>
+
+<span class="sd">                    reset(&quot;hard&quot;)                    # regenerate all plots from scratch</span>
+<span class="sd">                    reset(&quot;hard&quot;,&quot;heatmap&quot;)          # regenerate heatmap plot from scratch</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">plotNames</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">plotTypeLower</span> <span class="o">=</span> <span class="n">plotNames</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">plotTypeLower</span><span class="o">==</span><span class="s2">&quot;all&quot;</span><span class="p">:</span>
+                <span class="n">requestedPlotTypeList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plotTypeList</span>
+            <span class="k">elif</span> <span class="n">plotNames</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plotTypeList</span><span class="p">:</span>
+                <span class="n">requestedPlotTypeList</span> <span class="o">=</span> <span class="p">[</span><span class="n">plotNames</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_reportWrongPlotName</span><span class="p">(</span><span class="n">plotNames</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">plotNames</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">plotName</span> <span class="ow">in</span> <span class="n">plotNames</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">plotName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plotTypeList</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reportWrongPlotName</span><span class="p">(</span><span class="n">plotName</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_reportWrongPlotName</span><span class="p">(</span><span class="s2">&quot;a none-string none-list object.&quot;</span><span class="p">)</span>
+
+        <span class="n">resetTypeIsHard</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">resetType</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">resetTypeIsHard</span> <span class="o">=</span> <span class="n">resetType</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">==</span><span class="s2">&quot;hard&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">err</span><span class="o">.</span><span class="n">abort</span>   <span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;The input argument resetType must be a string representing&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;the type of the reset to be performed on the plots.&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;A list of possible plots includes: </span><span class="se">\&quot;</span><span class="s2">hard</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">soft</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="s2">&quot;Here is the help for the ``reset()`` method: &quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="n">newline</span>
+                                <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resetPlot</span><span class="o">.</span><span class="vm">__doc__</span>
+                        <span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">1</span>
+                        <span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span>
+                        <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                        <span class="p">)</span>
+
+        <span class="c1">############################################################################################################################</span>
+        <span class="c1">#### reset plots</span>
+        <span class="c1">############################################################################################################################</span>
+
+        <span class="k">for</span> <span class="n">requestedPlotType</span> <span class="ow">in</span> <span class="n">requestedPlotTypeList</span><span class="p">:</span>
+
+            <span class="n">plotObject</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">requestedPlotTypeLower</span> <span class="o">=</span> <span class="n">requestedPlotType</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+            <span class="n">isHeatmap</span>  <span class="o">=</span> <span class="s2">&quot;heatmap&quot;</span> <span class="ow">in</span> <span class="n">requestedPlotTypeLower</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">resetTypeIsHard</span><span class="p">:</span>
+                <span class="n">plotComponent</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;plot&quot;</span><span class="p">)</span>
+                <span class="n">plotObject</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">plotComponent</span><span class="p">,</span> <span class="n">requestedPlotType</span><span class="p">)</span>
+                <span class="n">plotObject</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>
+
+            <span class="c1">########################################################################################################################</span>
+            <span class="c1">#### reset heatmap</span>
+            <span class="c1">########################################################################################################################</span>
+
+            <span class="k">if</span> <span class="n">isHeatmap</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">resetTypeIsHard</span><span class="p">:</span>
+                    <span class="n">plotObject</span> <span class="o">=</span> <span class="n">HeatMapPlot</span><span class="p">(</span> <span class="n">plotType</span> <span class="o">=</span> <span class="n">requestedPlotType</span>
+                                            <span class="p">,</span> <span class="n">dataFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span>
+                                            <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                                            <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reportEnabled</span>
+                                            <span class="p">,</span> <span class="n">resetPlot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resetPlot</span>
+                                            <span class="p">)</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isCorMat</span><span class="p">:</span>
+
+                    <span class="n">plotObject</span><span class="o">.</span><span class="n">annotPrecision</span> <span class="o">=</span> <span class="mi">2</span>
+                    <span class="n">plotObject</span><span class="o">.</span><span class="n">heatmap</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">cbar_kws</span> <span class="o">=</span>   <span class="p">{</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&#39;s Correlation Strength&quot;</span>
+                                                        <span class="p">,</span> <span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="s2">&quot;vertical&quot;</span>
+                                                        <span class="p">,</span> <span class="s2">&quot;ticks&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+                                                        <span class="p">}</span>
+
+                    <span class="n">plotObject</span><span class="o">.</span><span class="n">heatmap</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">vmin</span>   <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+                    <span class="n">plotObject</span><span class="o">.</span><span class="n">heatmap</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">vmax</span>   <span class="o">=</span> <span class="o">+</span><span class="mi">1</span>
+                    <span class="n">plotObject</span><span class="o">.</span><span class="n">heatmap</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="k">else</span><span class="p">:</span>
+
+                    <span class="n">plotObject</span><span class="o">.</span><span class="n">annotPrecision</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="n">plotObject</span><span class="o">.</span><span class="n">heatmap</span><span class="o">.</span><span class="n">kws</span><span class="o">.</span><span class="n">cbar_kws</span> <span class="o">=</span>   <span class="p">{</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Covariance Strength&quot;</span>
+                                                        <span class="p">,</span> <span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="s2">&quot;vertical&quot;</span>
+                                                        <span class="p">}</span>
+
+            <span class="c1">########################################################################################################################</span>
+
+            <span class="k">if</span> <span class="n">plotObject</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="n">requestedPlotType</span><span class="p">,</span> <span class="n">plotObject</span><span class="p">)</span></div>
+
+    <span class="c1">################################################################################################################################</span>
+    <span class="c1">#### _reportWrongPlotName</span>
+    <span class="c1">################################################################################################################################</span>
+
+<div class="viewcode-block" id="CorCovMat._reportWrongPlotName"><a class="viewcode-back" href="../../autoapi/paramonte/_CorCovMat/index.html#paramonte._CorCovMat.CorCovMat._reportWrongPlotName">[docs]</a>    <span class="k">def</span> <span class="nf">_reportWrongPlotName</span><span class="p">(</span> <span class="bp">self</span>
+                            <span class="p">,</span> <span class="n">plotNames</span>
+                            <span class="p">):</span>
+
+        <span class="n">err</span><span class="o">.</span><span class="n">abort</span>   <span class="p">(</span> <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;The input argument plotNames must be a string representing&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;the name of a plot belonging to the CorCovMat class or,&quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;a list of such plot names. You have entered: &quot;</span> <span class="o">+</span> <span class="n">plotNames</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;Possible plots are: &quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="n">newline</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_plotTypeList</span><span class="p">)</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="s2">&quot;Here is the help for the ``reset()`` method: &quot;</span> <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="n">newline</span>
+                            <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resetPlot</span><span class="o">.</span><span class="vm">__doc__</span>
+                    <span class="p">,</span> <span class="n">marginTop</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="p">,</span> <span class="n">marginBot</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="p">,</span> <span class="n">methodName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_methodName</span>
+                    <span class="p">)</span></div></div>
+
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">#### CorMat class</span>
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="CorMat"><a class="viewcode-back" href="../../autoapi/paramonte/_CorCovMat/index.html#paramonte._CorCovMat.CorMat">[docs]</a><span class="k">class</span> <span class="nc">CorMat</span><span class="p">(</span><span class="n">CorCovMat</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    This is the class for generating object of type ``CorMat`` which, </span>
+<span class="sd">    upon construction, will provide methods to compute and plot the </span>
+<span class="sd">    correlation matrix of the selected columns of the input dataFrame.</span>
+
+<span class="sd">        **Parameters**</span>
+
+<span class="sd">            dataFrame</span>
+
+<span class="sd">                A Pandas dataFrame based upon the selected columns of which </span>
+<span class="sd">                the correlation matrix will be computed.</span>
+
+<span class="sd">            columns (optional)</span>
+
+<span class="sd">                optional argument that determines the columns of the input </span>
+<span class="sd">                dataFrame to be used in the computation of the correlation </span>
+<span class="sd">                matrix. It can have three forms:</span>
+
+<span class="sd">                    1.  A list of column indices from the input dataFrame. </span>
+<span class="sd">                    2.  A list of column names from dataFrame.columns. </span>
+<span class="sd">                    3.  A ``range(start,stop,step)`` of column indices.</span>
+
+<span class="sd">                Examples:</span>
+
+<span class="sd">                    1.  ``columns = [0,1,4,3]``</span>
+<span class="sd">                    2.  ``columns = [&quot;SampleLogFunc&quot;,&quot;SampleVariable1&quot;]``</span>
+<span class="sd">                    3.  ``columns = range(17,7,-2)``</span>
+
+<span class="sd">                The default behavior includes all columns of the dataFrame.</span>
+
+<span class="sd">            method (optional)</span>
+
+<span class="sd">                A string value representing the method to be used </span>
+<span class="sd">                for the computation of correlations:</span>
+
+<span class="sd">                    1.  ``&#39;pearson&#39;``    : standard correlation coefficient, </span>
+<span class="sd">                    2.  ``&#39;kendall&#39;``    : Kendall Tau correlation coefficient, </span>
+<span class="sd">                    3.  ``&#39;spearman&#39;``   : Spearman rank correlation.</span>
+
+<span class="sd">                The default value is ``&#39;pearson&#39;``.</span>
+
+<span class="sd">        **Attributes**</span>
+
+<span class="sd">            All of the parameters described above, except dataFrame.</span>
+
+<span class="sd">                A reference to the dataFrame will be implicitly </span>
+<span class="sd">                stored in the object.</span>
+
+<span class="sd">            df</span>
+
+<span class="sd">                A pandas dataframe containing the computed correlation matrix.</span>
+
+<span class="sd">            rows</span>
+
+<span class="sd">                A list that determines the rows of the input dataFrame to be </span>
+<span class="sd">                used in the computation of the correlation matrix. </span>
+<span class="sd">                It can be either:</span>
+
+<span class="sd">                    1.  A ``range(start,stop,step)``, or, </span>
+<span class="sd">                    2.  A list of row indices from ``dataFrame.index``.</span>
+
+<span class="sd">                Examples:</span>
+
+<span class="sd">                    1.  ``rows = range(17,7,-2)``</span>
+<span class="sd">                    2.  ``rows = [i for i in range(7,17)]``</span>
+
+<span class="sd">                The default behavior includes all rows of the dataFrame.</span>
+
+<span class="sd">            plot</span>
+
+<span class="sd">                A structure containing the following plotting tools:</span>
+
+<span class="sd">                    heatmap</span>
+
+<span class="sd">                        A callable object of class HeatMap which will </span>
+<span class="sd">                        enable plotting of the correlation matrix.</span>
+
+<span class="sd">        **Returns**</span>
+
+<span class="sd">            self</span>
+
+<span class="sd">                An object of type class ``CorMat``.</span>
+
+<span class="sd">    ---------------------------------------------------------------------------</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span>
+                <span class="p">,</span> <span class="n">dataFrame</span>     <span class="c1"># : tp.Optional[ pd.DataFrame ]</span>
+                <span class="p">,</span> <span class="n">columns</span>       <span class="o">=</span> <span class="kc">None</span> <span class="c1"># : tp.Optional[ tp.Union[ range , tp.List[int] , tp.List[str] ] ] = None</span>
+                <span class="p">,</span> <span class="n">methodName</span>    <span class="o">=</span> <span class="s2">&quot;ParaMonte&quot;</span> <span class="c1"># : tp.Optional[ str ] = &quot;ParaMonte&quot;</span>
+                <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># : tp.Optional[ bool ] = True</span>
+                <span class="p">,</span> <span class="n">method</span>        <span class="o">=</span> <span class="s2">&quot;pearson&quot;</span> <span class="c1"># : tp.Optional[str] = &quot;pearson&quot;</span>
+                <span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">method</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span> <span class="n">dataFrame</span>     <span class="o">=</span> <span class="n">dataFrame</span>
+                        <span class="p">,</span> <span class="n">columns</span>       <span class="o">=</span> <span class="n">columns</span>
+                        <span class="p">,</span> <span class="n">methodName</span>    <span class="o">=</span> <span class="n">methodName</span>
+                        <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="n">reportEnabled</span>
+                        <span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">#### CovMat class</span>
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="CovMat"><a class="viewcode-back" href="../../autoapi/paramonte/_CorCovMat/index.html#paramonte._CorCovMat.CovMat">[docs]</a><span class="k">class</span> <span class="nc">CovMat</span><span class="p">(</span><span class="n">CorCovMat</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    This is the class for generating object of type ``CovMat`` which, </span>
+<span class="sd">    upon construction, will provide methods to compute and plot the </span>
+<span class="sd">    covariance matrix of the selected columns of the input dataFrame.</span>
+
+<span class="sd">        **Parameters**</span>
+
+<span class="sd">            dataFrame</span>
+
+<span class="sd">                A Pandas dataframe based upon the selected columns of </span>
+<span class="sd">                which the covariance matrix will be computed.</span>
+
+<span class="sd">            columns (optional)</span>
+
+<span class="sd">                A argument that determines the columns of the input </span>
+<span class="sd">                dataFrame to be used in the computation of the covariance </span>
+<span class="sd">                matrix. It can have three forms:</span>
+
+<span class="sd">                    1.  A list of column indices from the input dataFrame.</span>
+<span class="sd">                    2.  A list of column names from dataFrame.columns.</span>
+<span class="sd">                    3.  A ``range(start,stop,step)`` of column indices.</span>
+
+<span class="sd">                Examples:</span>
+
+<span class="sd">                    1.  ``columns = [0,1,4,3]``</span>
+<span class="sd">                    2.  ``columns = [&quot;SampleLogFunc&quot;,&quot;SampleVariable1&quot;]``</span>
+<span class="sd">                    3.  ``columns = range(17,7,-2)``</span>
+
+<span class="sd">                The default behavior includes all columns of the dataFrame.</span>
+
+<span class="sd">        **Attributes**</span>
+
+<span class="sd">            All of the parameters described above, except dataFrame.</span>
+
+<span class="sd">                A reference to the dataFrame will be implicitly </span>
+<span class="sd">                stored in the object.</span>
+
+<span class="sd">            df</span>
+
+<span class="sd">                A pandas dataframe containing the computed covariance matrix.</span>
+
+<span class="sd">            rows</span>
+
+<span class="sd">                A list that determines the rows of the input dataFrame to be </span>
+<span class="sd">                used in the computation of the covariance matrix. It can be either:</span>
+
+<span class="sd">                    1.  A ``range(start,stop,step)``, or, </span>
+<span class="sd">                    2.  A list of row indices from ``dataFrame.index``.</span>
+
+<span class="sd">                Examples:</span>
+
+<span class="sd">                    1.  ``rows = range(17,7,-2)``</span>
+<span class="sd">                    2.  ``rows = [i for i in range(7,17)]``</span>
+
+<span class="sd">                The default behavior includes all rows of the dataFrame.</span>
+
+<span class="sd">            plot</span>
+
+<span class="sd">                A structure containing the following plotting tools:</span>
+
+<span class="sd">                    heatmap</span>
+
+<span class="sd">                        A callable object of class HeatMap which will </span>
+<span class="sd">                        enable plotting of the correlation matrix.</span>
+
+<span class="sd">        **Returns**</span>
+
+<span class="sd">            self</span>
+
+<span class="sd">                An object of type class ``CovMat``.</span>
+
+<span class="sd">    ---------------------------------------------------------------------------</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span>
+                <span class="p">,</span> <span class="n">dataFrame</span>     <span class="c1"># : tp.Optional[ pd.DataFrame ]</span>
+                <span class="p">,</span> <span class="n">columns</span>       <span class="o">=</span> <span class="kc">None</span> <span class="c1"># : tp.Optional[ tp.Union[ range , tp.List[int] , tp.List[str] ] ] = None</span>
+                <span class="p">,</span> <span class="n">methodName</span>    <span class="o">=</span> <span class="s2">&quot;ParaMonte&quot;</span> <span class="c1"># : tp.Optional[ str ] = &quot;ParaMonte&quot;</span>
+                <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># : tp.Optional[ bool ] = True</span>
+                <span class="p">):</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span> <span class="n">dataFrame</span>     <span class="o">=</span> <span class="n">dataFrame</span>
+                        <span class="p">,</span> <span class="n">columns</span>       <span class="o">=</span> <span class="n">columns</span>
+                        <span class="p">,</span> <span class="n">methodName</span>    <span class="o">=</span> <span class="n">methodName</span>
+                        <span class="p">,</span> <span class="n">reportEnabled</span> <span class="o">=</span> <span class="n">reportEnabled</span>
+                        <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+    <div>
+        <p>
+            <a href="https://www.cdslab.org/paramonte">ParaMonte: Plain Powerful Parallel Monte Carlo Library</a>.<br/>
+            &copy; Copyright 2020, <a href="https://www.cdslab.org" target="_blank">The Computational Data Science Lab</a>.<br/>
+        </p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </div>
+    <!-- Start of statc -->
+    <div style="color: #ffffff; float: none; width: 100%;">
+        <span style="font-size:0.8em">visitor count: 
+            <script type="text/javascript">
+                var sc_project=12178963; 
+                var sc_invisible=0; 
+                var sc_security="e0dfe0f9"; 
+                var sc_text=3; 
+                var scJsHost = "https://";
+                document.write("<sc"+"ript type='text/javascript' src='" +
+                scJsHost+
+                "statcounter.com/counter/counter.js'></"+"script>");
+            </script>
+        </span>
+    </div>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

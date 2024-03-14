@@ -1,1 +1,3 @@
-ParaMonte Library documentation. For more information visit: [https://www.cdslab.org/paramonte/](https://www.cdslab.org/paramonte/)
+### ParaMonte library documentation repository  
+
+This repository contains the final, automatically-generated ParaMonte library documentations.

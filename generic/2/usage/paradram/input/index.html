@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" C C++ Fortran python input file ParaDRAM API usage interface">
+<title>The structure of the optional input file | ParaMonte: Parallel Monte Carlo and Machine Learning Library</title>
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/prismOkaidia.css">
+<script src="https://www.cdslab.org/paramonte/generic/2/js/prismOkaidia.js"></script>
+<!--
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/syntax.css">
+-->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://www.cdslab.org/paramonte/generic/2/css/bootstrap.min.css">
+
+
+
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/customstyles.css">
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/theme-cdslab.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://www.cdslab.org/paramonte/generic/2/js/jquery.navgoco.min.js"></script>
+<!-- make sidebar non-accordion -->
+<script src="https://www.cdslab.org/paramonte/generic/2/js/lockScrollBarPosition.js"></script>
+<!-- make sidebar non-accordion -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.sidenav').navgoco({
+              accordion: false,
+              caret: '<span class="caret"></span>',
+              openClass: 'open',
+              save: true,
+              cookie: {
+                  name: 'navgoco',
+                  expires: false,
+                  path: '/'
+              },
+              slide: {
+                  duration: 400,
+                  easing: 'swing'
+              }
+          });
+    });
+</script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<!--
+-->
+<script src="https://www.cdslab.org/paramonte/generic/2/js/toc.js"></script>
+<script src="https://www.cdslab.org/paramonte/generic/2/js/customscripts.js"></script>
+<link rel="shortcut icon" href="https://www.cdslab.org/paramonte/generic/2/images/favicon.ico">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="" href="https://www.cdslab.org/paramonte/generic/2/feed.xml">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6JB9XNG83"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J6JB9XNG83');
+</script>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+    </head>
+    <body>
+        <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div id="sticky" class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-book fa-lg navbar-brand" href="https://www.cdslab.org/paramonte/generic/2/index.html">&nbsp;<span class="projectTitle"> ParaMonte 2</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                    
+                        
+                            <li><a href="https://github.com/cdslaborg/paramonte" target="_blank" rel="noopener">GitHub</a></li>
+                        
+                    
+                        
+                            <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/78946-paramonte" target="_blank" rel="noopener">MathWorks</a></li>
+                        
+                    
+                        
+                            <li><a href="https://pypi.org/project/paramonte/" target="_blank" rel="noopener">PyPI</a></li>
+                        
+                    
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CDSLab<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/#about" target="_blank" rel="noopener">About</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/people" target="_blank" rel="noopener">People</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/research" target="_blank" rel="noopener">Research</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/matlab/" target="_blank" rel="noopener">MATLAB Programming</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/python/" target="_blank" rel="noopener">Python Programming</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">History<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/paramonte/generic/2/../latest" target="_blank" rel="noopener">latest</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/paramonte/generic/2/../2" target="_blank" rel="noopener">version 2</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/paramonte/generic/2/../1" target="_blank" rel="noopener">version 1</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="keyword search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="https://www.cdslab.org/paramonte/generic/2/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: "https://www.cdslab.org/paramonte/generic/2/search.json",
+                                searchResultTemplate: '<li><a href="https://www.cdslab.org/paramonte/generic/2{url}" title="The structure of the optional input file">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+        <!-- Page Content -->
+        <div class="container">
+            <div id="main">
+                <!-- Content Row -->
+                <div class="row">
+                    
+                    
+                        <!-- Sidebar Column -->
+                        <div class="col-md-3" id="tg-sb-sidebar">
+                            
+<ul id="mysidebar" class="sidenav">
+    <!--
+    -->
+    <li class="sidebarTitle"> </li>
+    
+        
+            
+                <li>
+                    <a title="Overview" href="#"><b>Overview</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Preface" href="https://www.cdslab.org/paramonte/generic/2/overview/preface/">Preface</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-c-release-notes/">ParaMonte C release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C++ release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-cpp-release-notes/">ParaMonte C++ release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Fortran release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-fortran-release-notes/">ParaMonte Fortran release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte MATLAB release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-matlab-release-notes/">ParaMonte MATLAB release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Python release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-python-release-notes/">ParaMonte Python release notes</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Installation" href="#"><b>Installation</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte pre-installation notes" href="https://www.cdslab.org/paramonte/generic/2/installation/readme/">ParaMonte pre-installation notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte installation quickstart" href="https://www.cdslab.org/paramonte/generic/2/installation/QUICKSTART.md">ParaMonte installation quickstart</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte installation guidelines" href="https://www.cdslab.org/paramonte/generic/2/installation/install.md">ParaMonte installation guidelines</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte installation in Unix Bash" href="https://www.cdslab.org/paramonte/generic/2/installation/install.sh.md">ParaMonte installation in Unix Bash</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte installation in Windows CMD" href="https://www.cdslab.org/paramonte/generic/2/installation/install.bat.md">ParaMonte installation in Windows CMD</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte installation configuration" href="https://www.cdslab.org/paramonte/generic/2/installation/install.config.md">ParaMonte installation configuration</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte installation via CMake" href="https://www.cdslab.org/paramonte/generic/2/installation/CMakeLists.md">ParaMonte installation via CMake</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="API documentation" href="#"><b>API documentation</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C API" href="https://www.cdslab.org/paramonte/generic/2{{site.baseurl}}/../c/2/">ParaMonte C API</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C++ API" href="https://www.cdslab.org/paramonte/generic/2">ParaMonte C++ API</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Fortran API" href="https://www.cdslab.org/paramonte/generic/2">ParaMonte Fortran API</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Usage: ParaDRAM sampler" href="#"><b>Usage: ParaDRAM sampler</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM quick start" href="https://www.cdslab.org/paramonte/generic/2/usage/paradram/interface/">ParaDRAM quick start</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li class="active"><a title="ParaDRAM optional input file" href="https://www.cdslab.org/paramonte/generic/2/usage/paradram/input/">ParaDRAM optional input file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation output files" href="https://www.cdslab.org/paramonte/generic/2/usage/paradram/output/">ParaDRAM simulation output files</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation restart" href="https://www.cdslab.org/paramonte/generic/2/usage/paradram/restart/">ParaDRAM simulation restart</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM parallelization tips" href="https://www.cdslab.org/paramonte/generic/2/usage/paradram/parallelization/">ParaDRAM parallelization tips</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Code Coverage Reports" href="#"><b>Code Coverage Reports</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Guidelines" href="https://www.cdslab.org/paramonte/generic/2/codecov/">Guidelines</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - Serial" href="https://cdslaborg.github.io/paramonte-codecov/kernel/serial/" target="_blank" rel="noopener">Kernel - Serial</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - MPI Parallel" href="https://cdslaborg.github.io/paramonte-codecov/kernel/mpi/" target="_blank" rel="noopener">Kernel - MPI Parallel</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - Coarray Parallel" href="https://cdslaborg.github.io/paramonte-codecov/kernel/caf/" target="_blank" rel="noopener">Kernel - Coarray Parallel</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Contributing to ParaMonte" href="#"><b>Contributing to ParaMonte</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Reporting defects" href="https://www.cdslab.org/paramonte/generic/2/contributing/defects">Reporting defects</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Requesting enhancements" href="https://www.cdslab.org/paramonte/generic/2/contributing/enhancements">Requesting enhancements</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Development guidelines - general" href="https://www.cdslab.org/paramonte/generic/2/contributing/development/general/">Development guidelines - general</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Development guidelines - kernel" href="https://www.cdslab.org/paramonte/generic/2/contributing/development/kernel/">Development guidelines - kernel</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Troubleshooting" href="#"><b>Troubleshooting</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Enhancement-requests and bug-reports" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/issues/">Enhancement-requests and bug-reports</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="-bash: Permission denied" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/bash-permission-denied/">-bash: Permission denied</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="bash: matlab: command not found" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/bash-matlab-command-not-found/">bash: matlab: command not found</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="catastrophic error: cannot open source file" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/catastrophic-error-cannot-open-source-file/">catastrophic error: cannot open source file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Catastrophic error: could not set locale" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/catastrophic-error-could-not-set-locale/">Catastrophic error: could not set locale</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="xcrun: error: unable to find utility "clang"" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/xcrun-error-unable-to-find-utility-clang/">xcrun: error: unable to find utility "clang"</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="changing directory on Windows CMD" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/windows-drive-change/">changing directory on Windows CMD</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="error while loading shared libraries" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/error-while-loading-shared-libraries/">error while loading shared libraries</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="finding the MPI libraries on Windows" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/finding-mpi-libraries-on-windows/">finding the MPI libraries on Windows</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Fortran runtime error: End of file" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/fortran-runtime-error-end-of-file/">Fortran runtime error: End of file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="libgfortran not found" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/libgfortran-not-found/">libgfortran not found</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="macOS: developer cannot be verified" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/macos-developer-cannot-be-verified/">macOS: developer cannot be verified</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: could not find module" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/python-could-not-find-module/">Python: could not find module</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: module object is not callable" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/python-module-object-is-not-callable/">Python: module object is not callable</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: segmentation-fault error" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/python-segmentation-fault/">Python: segmentation-fault error</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+    
+    <!-- if you aren't using the accordion, uncomment this block:
+    -->
+    <p class="external">
+        <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+    </p>
+</ul>
+<!--
+This highlights the active parent class in the navgoco sidebar. 
+This is critical so that the parent expands when you're viewing a page.
+This must appear below the sidebar code above.
+Otherwise, if placed inside customscripts.js,
+the script runs before the sidebar code runs and the class never gets inserted.
+-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+                        </div>
+                        
+                    
+                    <!-- Content Column -->
+                    <div class="col-md-9" id="tg-sb-content">
+                        <div class="post-header">
+   <h1 class="post-title-main">The structure of the optional input file</h1>
+</div>
+
+<div class="post-content">
+    
+    
+    
+        <br>
+        
+<script>
+    $( document ).ready(function() {
+        // Handler for .ready() called.
+        $('#toc').toc({ minimumHeaders: 0 
+                      , listType: 'ol'
+                      , showSpeed: 0
+                      , headers: 'h2,h3,h4,h5,h6'
+        });
+        /* the following offset helps account for the space taken up by the floating toolbar. */
+        $('#toc').on('click', 'a', function() {
+            var target = $(this.getAttribute('href')), scroll_target = target.offset().top$(window).scrollTop(scroll_target - 10);
+            return false
+        })
+    });
+</script>
+
+<div id="toc"></div>
+
+    
+    
+    
+<p><br /></p>
+
+<h2 id="when-is-the-input-file-needed">When is the input file needed?</h2>
+
+<p>The input files to the ParaMonte library sampler routines are <strong>optional</strong>. If not provided, all simulation specifications will be set to appropriate default values or the ParaMonte routine’s best guess for the proper values. However, if the user wants to fine-tune the specifics of a ParaMonte simulation, then depending on the programming language interface to the ParaMonte library, the input file may or may not be the sole method of setting up the simulation specifications,</p>
+
+<ul>
+  <li>The <strong>C/C++</strong> programming language: Providing the path to an <strong>input external file</strong> is <strong>the sole method of simulation setup</strong> by the user.</li>
+  <li>The <strong>Fortran</strong> programming language: Providing the path to an <strong>input external file</strong> is <strong>the preferred method of simulation setup</strong> by the user. However, the input file is not the sole method of specifying the simulation setup. See <a href="https://www.cdslab.org/paramonte/generic/2/../../fortran/2/interfacepm__sampling_1_1getErrSampling.html">the ParaMonte Fortran documentation</a> for more information about the alternative, less flexible method.</li>
+  <li>The <strong>MATLAB</strong> programming language: Providing the path to an <strong>input external file</strong> is <strong>NOT the preferred method</strong> of simulation setup by the user. This is because <a href="https://www.mathworks.com/matlabcentral/fileexchange/78946-paramonte">the ParaMonte MATLAB library</a> already has a much more flexible dynamic method of simulation specifications setup from within the MATLAB programming language. Nevertheless, it is equally possible to specify everything from within an input simulation specifications file.
+    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> When you provide the path to an input file, all other simulation specifications made from the MATLAB programming environment will be ignored in favor of the corresponding values that may or may not be present in the specified external input file.</div>
+  </li>
+  <li>The <strong>Python</strong> programming language: Providing the path to an <strong>input external file</strong> is <strong>NOT the preferred method</strong> of simulation setup by the user. This is because <a href="https://pypi.org/project/paramonte/">the ParaMonte Python library</a> already has a much more flexible dynamic method of simulation specifications setup from within the Python programming language. Nevertheless, it is equally possible to specify everything from within an input simulation specifications file.
+    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> When you provide the path to an input file, all other simulation specifications made from within the Python programming environment will be ignored in favor of the corresponding values that may or may not be present in the specified external input file.</div>
+  </li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> If an external input file whose path is given to the ParaMonte sampler routine does not exist (or if the path fails to point to the file properly), then the ParaMonte sampler will continue with the simulation; however, with default values assigned to all simulation specification variables. In this case, the ParaMonte routines will print a WARNING message on the screen, highlighting this failure to locate and read the external input file.</div>
+
+<h2 id="the-structure-of-the-optional-input-file">The structure of the optional input file</h2>
+
+<p>Here is a summary of useful guidelines and rules for writing ParaMonte input files.</p>
+
+<h3 id="organization"><strong>Organization</strong></h3>
+
+<ul>
+  <li>The input file structure for all ParaMonte samplers is the same in all programming languages.</li>
+  <li>The simulation specifications for each ParaMonte sampler (e.g., the ParaDRAM MCMC sampler) must be grouped under the ParaMonte routine’s name. We call each group a <code>namelist</code>.</li>
+  <li>Each group, corresponding to one ParaMonte sampler routine, is identified by a group name preceded by an <code>&amp;</code> and ending by a forward slash <code>/</code> (see below for an example input file).</li>
+  <li>Multiple namelist groups can coexist within a single input file. Only the ones relevant to the simulation of interest will be read and used. The rest will be ignored.</li>
+  <li>Comments are allowed anywhere inside the input file.</li>
+  <li>Comments must begin with an exclamation mark (<code>!</code>).</li>
+  <li>Comments can appear on an empty line or after a value assignment.</li>
+</ul>
+
+<h3 id="variables"><strong>Variables</strong></h3>
+
+<ul>
+  <li><strong>all variable assignments are optional</strong> and can be dropped or commented out. In such cases, the ParaMonte routines will assign appropriate default values to the missing variables in the input file.<br />
+Variables within a namelist group can be separated from each other by colon or whitespace characters.</li>
+  <li>The <strong>order by which the variables appear</strong> within a namelist group is <strong>irrelevant and unimportant</strong>.</li>
+  <li>Variables can be defined multiple times, but only <strong>the last definition will be considered as input</strong>.</li>
+  <li><strong>All variable names are case-insensitive</strong>. However, <strong>for clarity</strong>, the ParaMonte library follows the <strong>camelCase code-writing practice</strong>.</li>
+</ul>
+
+<h3 id="values"><strong>Values</strong></h3>
+
+<p>Like variables, values within a namelist group can be separated from each other by either a colon or whitespace characters.</p>
+
+<ul>
+  <li><strong>Strings</strong>
+    <ul>
+      <li>String values must be enclosed with single or double quotation marks: <code>''</code> or <code>"  "</code>.
+String values can be continued on multiple lines; however, any additional whitespace characters caused by the line continuation will NOT be ignored.</li>
+    </ul>
+  </li>
+  <li><strong>Logical (Boolean)</strong><br />
+Logical values are all <strong>case-insensitive</strong> and can be either <code>.true.</code>, <code>true</code>, or <code>t</code> for a <code>TRUE</code> value or <code>.false.</code>, <code>false</code>, or <code>f</code> for a <code>FALSE</code> value.</li>
+  <li><strong>Real (Float)</strong>
+    <ul>
+      <li>Real values are by default double-precision in MATLAB and Python programming languages, but can be <code>single</code>, <code>double</code>, or <code>quad</code> precision within the C and C++ programming languages and any precision supported by the processor within the Fortran programming language.</li>
+      <li>The double precision is capable of holding up to <code>16</code> digits of precision and representing numbers as large as $\approx 10^{307}$ and as tiny as $\approx 10^{-307}$.</li>
+    </ul>
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> To keep the representation of numbers accurate up to 16 digits, consider using the letter <strong><code>d</code></strong> instead of <strong><code>e</code></strong> for the scientific representation of numbers. The letter <strong><code>d</code></strong> stands for <strong>double precision</strong> (<strong><code>64-bit</code></strong> real/float). For example, the value <strong><code>1.d0</code> is guaranteed to be <code>1.0000000000000000</code></strong> in the simulation, whereas <code>1.e0</code> is only guaranteed to have single-precision accuracy. However, most compilers will represent this as <code>1.0000000000000000</code> upon conversion to a full-precision value. But in general, it won’t hurt to use <strong><code>d</code></strong> in place of <strong><code>e</code></strong> for the scientific representation of double-precision values <strong>only</strong> within the input files (Outside the input files, the number-representation rules of the specific programming language of your choice, in which you are coding your objective function, must be followed).</div>
+  </li>
+</ul>
+
+<h3 id="verctors"><strong>Verctors</strong></h3>
+
+<ul>
+  <li>All <strong>vectors and arrays</strong> that are <strong>specified inside the input file</strong> begin with index <code>1</code>. This follows the convention of the majority of science-oriented programming languages and libraries including but not limited to <strong>Fortran</strong>, <strong>Julia</strong>, <strong>Mathematica</strong>, <strong>MATLAB</strong>, <strong>R</strong>, <a href="https://en.wikipedia.org/wiki/LAPACK"><strong>LAPACK</strong></a>, and <a href="https://en.wikipedia.org/wiki/Eigen_(C%2B%2B_library)"><strong>Eigen (C++)</strong></a>.
+    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Remember that this 1-based indexing rule applies only to variable assignments made inside the external input file. Any specification variable assigned from within a programming language environment follows the rules of that language. For example, all variables specified from within <strong>C/C++/Python</strong> follow the zero-based indexing rules of these languages.</div>
+  </li>
+  <li>Vectors (and arrays) of strings, integers, or real numbers can be specified as comma-separated or space-separated values. For example,
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>! real-valued vector of length 4, specified as the starting point of an MCMC simulation
+proposalStartPoint = 1.0, -100 3, 5.6e7 8.d1
+</code></pre></div>    </div>
+    <p>You may have noticed above that some values are comma-separated while others are space-separated. This is valid.</p>
+  </li>
+  <li>Vector (an array) values may be specified separately on multiple lines and in random order like the following,
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>! a vector of strings specifying the names of the variables that are going to be sampled in the simulation, 
+! each corresponds to one dimension of the objective function.
+domainAxisName(2) = "secondVariable"
+domainAxisName(1) = "FirstVariable"
+domainAxisName(3:4) = "ThirdVariable", "FourthVariable"
+</code></pre></div>    </div>
+  </li>
+  <li>Vector values may be selectively provided in the input file and some values may be missing. For example,
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>! a vector of length 4 specifying the random walker's step sizes along different dimensions of the objective function in a ParaDRAM simulation.
+proposalStdVec(3) = 3.0
+proposalStdVec(1:2) = 1.0, 2.0
+</code></pre></div>    </div>
+    <p>or,</p>
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proposalStdVec = 1.0, 2.0, 3.0     ! this is identical to the above representation
+</code></pre></div>    </div>
+    <p>Notice that the missing fourth variable will not be read from the input file. Instead, the ParaMonte routines will assign it a default value.</p>
+  </li>
+  <li>Similar values in a vector that appear sequentially can be represented in abbreviated format via a repetition pattern rule involving <code>*</code>. For example,
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>! vector of length 4, specifying the lower limits of the domain of the objective function along each dimension
+domainCubeLimitLower = -3.d100, 2*-20.0, -100
+</code></pre></div>    </div>
+    <p>is equivalent to,</p>
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>domainCubeLimitLower = -3.d100, -20.0, -20.0, -100
+</code></pre></div>    </div>
+    <p>or,</p>
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>domainCubeLimitLower = 3*-3.d100
+</code></pre></div>    </div>
+    <p>is equivalent to,</p>
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>domainCubeLimitLower = -3.d100, -3.d100, -3.d100,    ! notice the fourth value is missing
+</code></pre></div>    </div>
+    <p>In the latter example, only the first three values were provided. In such cases, the missing elements will be assigned appropriate default values.</p>
+  </li>
+</ul>
+
+<h3 id="arrays"><strong>Arrays</strong></h3>
+
+<ul>
+  <li>The Array representation rules are identical to the vectors described in the previous section. For example, the following array value assignments are all equivalent,
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>! a symmetric matrix of size 4-by-4 of 64-bit real numbers representing the initial covariance matrix of the ParaDRAM sampler
+proposalCovMat =   1.0, 0.0, 0.0, 0.0,
+                        0.0, 1.0, 0.0, 0.0,
+                        0.0, 0.0, 1.0, 0.0,
+                        0.0, 0.0, 0.0, 1.0,
+</code></pre></div>    </div>
+    <p>or,</p>
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proposalCovMat(:,1) = 1.0, 0.0, 0.0, 0.0,
+proposalCovMat(:,2) = 0.0, 1.0, 0.0, 0.0,
+proposalCovMat(:,3) = 0.0, 0.0, 1.0, 0.0,
+proposalCovMat(:,4) = 0.0, 0.0, 0.0, 1.0,
+</code></pre></div>    </div>
+    <p>or,</p>
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proposalCovMat(1:4,1:4) = 1.0, 4*0.0, 1.0, 4*0.0, 1.0, 4*0.0, 1.0
+</code></pre></div>    </div>
+    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> When dealing with multidimensional arrays, keep in mind that the ParaMonte routines read and store array elements in a <a href="https://en.wikipedia.org/wiki/Row-_and_column-major_order" target="_blank">column-major order</a> from the input file. This is why the columns are represented by <code>:</code> in the second matrix representation in the example above (instead of rows). Matrix rows are NOT stored sequentially in the computer memory. <strong>For symmetric positive-definite matrices (like covariance or correlation matrices), this convention is irrelevant and unimportant</strong> and does not have any effects (as is the case in the example above).</div>
+  </li>
+</ul>
+
+<h3 id="example-contents-of-a-paramonte-simulation-input-file">Example contents of a ParaMonte simulation input file</h3>
+
+<p>The following box shows an example input specifications file for a ParaDRAM simulation of an objective function defined on a 4-dimensional domain (Notice the group name <code>&amp;ParaDRAM</code> at the beginning and <code>/</code> at the end). Notice the ample usage of the comment symbol wherever the user deems it appropriate,</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!   DESCRIPTION:
+!
+!       The external input file for sampling the 4-dimensional Multivariate Normal distribution function as implemented in the accompanying source files.
+!       This file is common between all supported programming language environments.
+!
+!   NOTE:
+!
+!       All simulation specifications (including this whole file) are optional and can be nearly safely commented out.
+!       However, if domain boundaries are finite, set them explicitly.
+!
+!   USAGE:
+!
+!       --  Comments must begin with an exclamation mark `!`.
+!       --  Comments can appear anywhere on an empty line or, after a variable assignment
+!           (but not in the middle of a variable assignment whether in single or multiple lines).
+!       --  All variable assignments are optional and can be commented out. In such cases, appropriate default values will be assigned.
+!       --  Use ParaDRAM namelist (group) name to group a set of ParaDRAM simulation specification variables.
+!       --  The order of the input variables in the namelist groups is irrelevant and unimportant.
+!       --  Variables can be defined multiple times, but only the last definition will be considered as input.
+!       --  All variable names are case insensitive. However, for clarity, this software follows the camelCase code-writing practice.
+!       --  String values must be enclosed with either single or double quotation marks.
+!       --  Logical values are case-insensitive and can be either .true., true, or t for a TRUE value, and .false., false, or f for a FALSE value.
+!       --  All vectors and arrays in the input file begin with index 1. This is following the convention of
+!           the majority of science-oriented programming languages: Fortran, Julia, Mathematica, MATLAB, and R.
+!
+!      For comprehensive guidelines on the input file organization and rules, visit:
+!
+!           https://www.cdslab.org/paramonte/notes/usage/paradram/input/
+!
+!      To see detailed descriptions of each of variables, visit:
+!
+!           https://www.cdslab.org/paramonte/notes/usage/paradram/specifications/
+!
+&amp;paradram
+
+    ! Base specifications.
+
+    description                             = "
+This\n
+    is a\n
+        multi-line\n
+            description.\\n"                                        ! strings must be enclosed with "" or '' and can be continued on multiple lines.
+                                                                    ! No comments within strings are allowed.
+    domain                                  = "cube"
+    domainAxisName                          = "variable1"
+                                              "variable2"           ! values can appear in multiple lines.
+    domainBallCenter                        = 0 0 0 0               ! values can be separated with blanks or commas.
+    domainBallCorMat                        = 1 0 0 0
+                                              0 1 0 0
+                                              0 0 1 0
+                                              0 0 0 1
+    domainBallCovMat                        = 1 0 0 0
+                                              0 1 0 0
+                                              0 0 1 0
+                                              0 0 0 1
+    domainBallStdVec                        = 1 1 1 1
+    domainCubeLimitLower                    = 4*-1.e10              ! repetition pattern rules apply here. 4 dimensions =&gt; 4-element vector of values.
+    domainCubeLimitUpper(1)                 = +1.e10                ! Elements of vectors can be set individually.
+    domainCubeLimitUpper(2:4)               = 3*+1.e10              ! Elements of vectors can be set individually.
+    domainErrCount                          = 100
+    domainErrCountMax                       = 1000
+    inputFileHasPriority                    = FALSE                 ! This is relevant only to simulations within the Fortran programming language.
+    outputChainFileFormat                   = "compact"
+   !outputColumnWidth                       = 25                    ! This is an example of a variable that is commented out.
+                                                                    ! Therefore, its value will not be read by the sampler routine.
+                                                                    ! To pass it to the routine, simply remove the `!` mark at the beginning of the line.
+    outputFileName                          = "./out/mvn"           ! A forward-slash character at the end of the string value would indicate the specified path
+                                                                    ! is to be interpreted as the name of the folder to contain the simulation output files.
+                                                                    ! The base name for the simulation output files will be generated from the current date and time.
+                                                                    ! Otherwise, the specified base name at the end of the string will be used in naming the simulation output files.
+    outputPrecision                         = 17
+    outputReportPeriod                      = 1000
+    outputRestartFileFormat                 = "ascii"
+    outputSampleSize                        = -1
+    outputSeparator                         = ","
+    outputSplashMode                        = "normal"              ! or quiet or silent.
+    outputStatus                            = "retry"               ! or extend.
+    parallelism                             = "multi chain"         ! "singleChain" would also work. Similarly, "multichain", "multi chain", or "multiChain".
+    parallelismMpiFinalizeEnabled           = false                 ! TRUE, true, .true., .t., and t would be also all valid logical values representing truth.
+    parallelismNumThread                    = 3                     ! number of threads to use in shared-memory parallelism.
+   !randomSeed                              = 2136275,
+   !targetAcceptanceRate                    = 0.23e0
+
+    ! MCMC specifications.
+
+    outputChainSize                         = 10000
+    outputSampleRefinementCount             = 10
+    outputSampleRefinementMethod            = "BatchMeans"
+    proposal                                = "normal"              ! or "uniform" as you wish.
+    proposalCorMat(:, 1)                    = 1 0 0 0               ! first matrix column.
+    proposalCorMat(:, 2:4)                  = 0 1 0 0
+                                              0 0 1 0
+                                              0 0 0 1               ! other matrix columns.
+    proposalCovMat                          = 1 0 0 0
+                                              0 1 0 0
+                                              0 0 1 0
+                                              0 0 0 1               ! or specify all matrix elements in one statement.
+    proposalScaleFactor                     = "2*0.5*Gelman"        ! The asterisk here means multiplication since it is enclosed within quotation marks.
+   !proposalStart                           = 4*1.e0                ! four values of 1.e0 are specified here by the repetition pattern symbol *
+    proposalStartDomainCubeLimitLower       = 4*-10.e0              ! repetition pattern rules apply again here. 4 dimensions =&gt; 4-element vector of values.
+    proposalStartDomainCubeLimitUpper       = 4*+10.e0              ! repetition pattern rules apply again here. 4 dimensions =&gt; 4-element vector of values.
+    proposalStartRandomized                 = false
+    proposalStdVec                          = 4*1.0                 ! repetition pattern rules apply again here. 4 dimensions =&gt; 4-element vector of values.
+
+    ! DRAM specifications.
+
+    burninAdaptationMeasure                 = 1.
+    proposalAdaptationCount                 = 10000000
+    proposalAdaptationCountGreedy           = 0
+    proposalAdaptationPeriod                = 35
+    proposalDelayedRejectionCount           = 5
+    proposalDelayedRejectionScaleFactor     = 4*1., 2.              ! The first four elements are 1, followed by 2.
+
+/
+
+</code></pre></div></div>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
+The following rules and conventions are held for all ParaMonte sampler routines:  
+<ul>
+    <li>
+        The simulation specifications of any specific ParaMonte routine (e.g., the ParaDRAM sampler) are identical across all supported programming languages.
+    </li>
+    <li>
+        When specified <b>from within an input file</b>, all <b>variable names are case-insensitive</b>. However, when specified from <b>within a programming language</b>, all <b>variable names are treated based on the rules of that language</b>. For example, all routines and variable names are case-insensitive within the Fortran programming language. At the same time, the <b>camelCase</b> convention strictly holds for all names defined in Python and C/C++ calls to the ParaMonte library.
+    </li>
+    <li>
+        The best and the most up-to-date method of learning about the simulation specifications of a ParaMonte routine of choice is to run a simple toy simulation problem and then look at the contents of the output <b><code>*_report.txt</code></b> file generated by the ParaMonte routine.  
+    </li>
+</ul>
+</div>
+
+<h2 id="why-is-input-file-the-preferred-method-of-simulation-setup">Why is input-file the preferred method of simulation setup?</h2>
+
+<p>Specifying the properties of a ParaMonte simulation via an <strong>external input file</strong> is particularly <strong>beneficial</strong> when the ParaMonte library routines are called from <strong>within compiled languages (e.g., C/C++/Fortran)</strong>. The reasons might be already clear to advanced programmers:</p>
+
+<ul>
+  <li>Specifying the simulation properties in an external input file ensures your simulation’s highest level of flexibility and portability by avoiding the hardcoding of simulation specifications into your compiled code. Imagine you specify a simulation property inside your code, compile and run it, and then realize that you want to change that property value to something else. <strong>Without an external input file, you would have to recompile your code every time for every property change.</strong></li>
+  <li>Also, the same specification input file can be used to set up the same simulation settings from any programming language without a single line of change in the input file. <strong>The contents of the input files are programming-language-agnostic</strong>.</li>
+  <li>When specified from the input file, all variable names are case-insensitive across all programming languages.</li>
+  <li>The order by which the simulation specification variables appear in the input file is irrelevant.</li>
+  <li>Multiple simulation namelist groups, each corresponding to an independent call to a different ParaMonte routine, can be placed within a single input file, resulting in a cleaner, more portable organization of the input data for the given simulation problem.</li>
+</ul>
+
+<p><br /></p>
+
+<div class="bs-callout bs-callout-danger">If you have any questions about the topics discussed on this page, feel free to ask in the comment section below, or <a href="https://github.com/cdslaborg/paramonte/issues/new/choose" target="_blank">raise an issue</a> on the GitHub page of the library, or reach out to <a href="../../../overview/preface/#who-are-the-paramonte-authors-and-developers" target="_blank">the ParaMonte library authors</a>.</div>
+
+<p><br /></p>
+
+
+    
+    
+        
+    <div style="margin-top:3rem">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'paramonte'; // required: replace example with your forum shortname
+    
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+</div>
+<hr class="shaded"/>
+<footer>
+    <div class="row">
+        <div class="social-icons">
+
+    
+    <span class="social-icon">
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+
+    
+    <span class="social-icon">
+        <a href="https://instagram.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://medium.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-medium fa-stack-xs"></i>
+                <!--
+                -->
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+</div>
+
+        <div class="col-lg-12 footer">
+            &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
+            Last updated on March 14, 2024<br/>
+            
+        <p>
+            <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/2/images/logo.png" }}" alt="cdslab.org" /></a>
+            <!-- hitwebcounter Code START -->
+
+<div style="text-align:right; float: none; width: 100%; font-size:0.9em; margin-top: -15px">
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7807987&style=0007&nbdigits=8&type=page&initCount=155531" title="Free Counter" Alt="web counter"   border="0" />
+    <br>
+    <span style="color: #ffffff;">
+        <script type="text/javascript">
+            var sc_project=12178963;
+            var sc_invisible=0;
+            var sc_security="e0dfe0f9";
+            var sc_text=3;
+            var scJsHost = "https://";
+            document.write("<sc"+"ript type='text/javascript' src='" +
+            scJsHost+
+            "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+    </span>
+</div>
+        </p>
+        </div>
+    </div>
+    <!--Mathjax LaTeX engine-->
+    
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+        MathJax.Hub.Config({
+            config: ["MMLorHTML.js"],
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX"],
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: ".8em",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                autoNumber: "AMS",
+                },
+                unicode: {
+                fonts: "STIXGeneral,'Arial Unicode MS'" 
+                }
+            },
+            showProcessingMessages: false
+        });
+    </script>
+    <style TYPE="text/css">
+        code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+    </style>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+            }
+        });
+        MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</footer>
+
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /#main -->
+        </div>
+        
+    </body>
+    
+</html>

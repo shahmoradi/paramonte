@@ -1,0 +1,28 @@
+var namespacepm__mathRoot =
+[
+    [ "bisection_type", "structpm__mathRoot_1_1bisection__type.html", null ],
+    [ "bracket_type", "structpm__mathRoot_1_1bracket__type.html", null ],
+    [ "brent_type", "structpm__mathRoot_1_1brent__type.html", null ],
+    [ "false_type", "structpm__mathRoot_1_1false__type.html", null ],
+    [ "getRoot", "interfacepm__mathRoot_1_1getRoot.html", null ],
+    [ "halley_type", "structpm__mathRoot_1_1halley__type.html", null ],
+    [ "hybrid_type", "structpm__mathRoot_1_1hybrid__type.html", null ],
+    [ "iteration_type", "structpm__mathRoot_1_1iteration__type.html", null ],
+    [ "method_type", "structpm__mathRoot_1_1method__type.html", null ],
+    [ "newton_type", "structpm__mathRoot_1_1newton__type.html", null ],
+    [ "ridders_type", "structpm__mathRoot_1_1ridders__type.html", null ],
+    [ "schroder_type", "structpm__mathRoot_1_1schroder__type.html", null ],
+    [ "secant_type", "structpm__mathRoot_1_1secant__type.html", null ],
+    [ "setRoot", "interfacepm__mathRoot_1_1setRoot.html", null ],
+    [ "toms748_type", "structpm__mathRoot_1_1toms748__type.html", null ],
+    [ "bisection", "namespacepm__mathRoot.html#a5504dde0cb89575fd6f0882739a0d7b7", null ],
+    [ "brent", "namespacepm__mathRoot.html#a3409e5000efdde261d2f3265678d0436", null ],
+    [ "false", "namespacepm__mathRoot.html#a7e707e2dada15fddfbd434f621f6b1ef", null ],
+    [ "halley", "namespacepm__mathRoot.html#add19d3b40dedb3c60958cb830fdcd2cc", null ],
+    [ "MODULE_NAME", "namespacepm__mathRoot.html#af4b747491d87135fb50b95df1746e856", null ],
+    [ "newton", "namespacepm__mathRoot.html#a4ab1ab19049b29b25610aef4eaedfd3e", null ],
+    [ "ridders", "namespacepm__mathRoot.html#a3e803f26dcf937fbb6158b0dbbd94960", null ],
+    [ "schroder", "namespacepm__mathRoot.html#aea044c5c7944004b6c2f9c050e3cf810", null ],
+    [ "secant", "namespacepm__mathRoot.html#aeada6d7662ab9da56ae68e165f35be3b", null ],
+    [ "toms748", "namespacepm__mathRoot.html#a471263361906d447d3ec06b1bf3eef0b", null ]
+];

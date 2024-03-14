@@ -1,0 +1,2903 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" installation getting_started Windows Darwin macOS Linux naming compiler architecture x32 x64 x86_64 operating_system OS Fortran C C++ build Python MPI MPICH OpenMPI Open-MPI Coarray dynamic shared static interoperation">
+<title>ParaMonte installation configuration flags | ParaMonte: Parallel Monte Carlo and Machine Learning Library</title>
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/latest/css/prismOkaidia.css">
+<script src="https://www.cdslab.org/paramonte/generic/latest/js/prismOkaidia.js"></script>
+<!--
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/latest/css/syntax.css">
+-->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://www.cdslab.org/paramonte/generic/latest/css/bootstrap.min.css">
+
+
+
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/latest/css/customstyles.css">
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/latest/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/latest/css/theme-cdslab.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://www.cdslab.org/paramonte/generic/latest/js/jquery.navgoco.min.js"></script>
+<!-- make sidebar non-accordion -->
+<script src="https://www.cdslab.org/paramonte/generic/latest/js/lockScrollBarPosition.js"></script>
+<!-- make sidebar non-accordion -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.sidenav').navgoco({
+              accordion: false,
+              caret: '<span class="caret"></span>',
+              openClass: 'open',
+              save: true,
+              cookie: {
+                  name: 'navgoco',
+                  expires: false,
+                  path: '/'
+              },
+              slide: {
+                  duration: 400,
+                  easing: 'swing'
+              }
+          });
+    });
+</script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<!--
+-->
+<script src="https://www.cdslab.org/paramonte/generic/latest/js/toc.js"></script>
+<script src="https://www.cdslab.org/paramonte/generic/latest/js/customscripts.js"></script>
+<link rel="shortcut icon" href="https://www.cdslab.org/paramonte/generic/latest/images/favicon.ico">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="" href="https://www.cdslab.org/paramonte/generic/latest/feed.xml">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6JB9XNG83"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J6JB9XNG83');
+</script>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+    </head>
+    <body>
+        <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div id="sticky" class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-book fa-lg navbar-brand" href="https://www.cdslab.org/paramonte/generic/latest/index.html">&nbsp;<span class="projectTitle"> ParaMonte 2</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                    
+                        
+                            <li><a href="https://github.com/cdslaborg/paramonte" target="_blank" rel="noopener">GitHub</a></li>
+                        
+                    
+                        
+                            <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/78946-paramonte" target="_blank" rel="noopener">MathWorks</a></li>
+                        
+                    
+                        
+                            <li><a href="https://pypi.org/project/paramonte/" target="_blank" rel="noopener">PyPI</a></li>
+                        
+                    
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CDSLab<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/#about" target="_blank" rel="noopener">About</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/people" target="_blank" rel="noopener">People</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/research" target="_blank" rel="noopener">Research</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/matlab/" target="_blank" rel="noopener">MATLAB Programming</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/python/" target="_blank" rel="noopener">Python Programming</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">History<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/paramonte/generic/latest/../latest" target="_blank" rel="noopener">latest</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/paramonte/generic/latest/../2" target="_blank" rel="noopener">version 2</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/paramonte/generic/latest/../1" target="_blank" rel="noopener">version 1</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="keyword search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="https://www.cdslab.org/paramonte/generic/latest/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: "https://www.cdslab.org/paramonte/generic/latest/search.json",
+                                searchResultTemplate: '<li><a href="https://www.cdslab.org/paramonte/generic/latest{url}" title="ParaMonte installation configuration flags">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+        <!-- Page Content -->
+        <div class="container">
+            <div id="main">
+                <!-- Content Row -->
+                <div class="row">
+                    
+                    
+                        <!-- Sidebar Column -->
+                        <div class="col-md-3" id="tg-sb-sidebar">
+                            
+<ul id="mysidebar" class="sidenav">
+    <!--
+    -->
+    <li class="sidebarTitle"> </li>
+    
+        
+            
+                <li>
+                    <a title="Overview" href="#"><b>Overview</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Preface" href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/">Preface</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-c-release-notes/">ParaMonte C release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C++ release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-cpp-release-notes/">ParaMonte C++ release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Fortran release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-fortran-release-notes/">ParaMonte Fortran release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte MATLAB release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-matlab-release-notes/">ParaMonte MATLAB release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Python release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-python-release-notes/">ParaMonte Python release notes</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Installation" href="#"><b>Installation</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte pre-installation notes" href="https://www.cdslab.org/paramonte/generic/latest/installation/readme/">ParaMonte pre-installation notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte installation quickstart" href="https://www.cdslab.org/paramonte/generic/latest/installation/QUICKSTART.md">ParaMonte installation quickstart</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte installation guidelines" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.md">ParaMonte installation guidelines</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte installation in Unix Bash" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.sh.md">ParaMonte installation in Unix Bash</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte installation in Windows CMD" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.bat.md">ParaMonte installation in Windows CMD</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte installation configuration" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.config.md">ParaMonte installation configuration</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte installation via CMake" href="https://www.cdslab.org/paramonte/generic/latest/installation/CMakeLists.md">ParaMonte installation via CMake</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="API documentation" href="#"><b>API documentation</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C API" href="https://www.cdslab.org/paramonte/generic/latest{{site.baseurl}}/../c/2/">ParaMonte C API</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C++ API" href="https://www.cdslab.org/paramonte/generic/latest">ParaMonte C++ API</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Fortran API" href="https://www.cdslab.org/paramonte/generic/latest">ParaMonte Fortran API</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Usage: ParaDRAM sampler" href="#"><b>Usage: ParaDRAM sampler</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM quick start" href="https://www.cdslab.org/paramonte/generic/latest/usage/paradram/interface/">ParaDRAM quick start</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM optional input file" href="https://www.cdslab.org/paramonte/generic/latest/usage/paradram/input/">ParaDRAM optional input file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation output files" href="https://www.cdslab.org/paramonte/generic/latest/usage/paradram/output/">ParaDRAM simulation output files</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation restart" href="https://www.cdslab.org/paramonte/generic/latest/usage/paradram/restart/">ParaDRAM simulation restart</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM parallelization tips" href="https://www.cdslab.org/paramonte/generic/latest/usage/paradram/parallelization/">ParaDRAM parallelization tips</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Code Coverage Reports" href="#"><b>Code Coverage Reports</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Guidelines" href="https://www.cdslab.org/paramonte/generic/latest/codecov/">Guidelines</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - Serial" href="https://cdslaborg.github.io/paramonte-codecov/kernel/serial/" target="_blank" rel="noopener">Kernel - Serial</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - MPI Parallel" href="https://cdslaborg.github.io/paramonte-codecov/kernel/mpi/" target="_blank" rel="noopener">Kernel - MPI Parallel</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - Coarray Parallel" href="https://cdslaborg.github.io/paramonte-codecov/kernel/caf/" target="_blank" rel="noopener">Kernel - Coarray Parallel</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Contributing to ParaMonte" href="#"><b>Contributing to ParaMonte</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Reporting defects" href="https://www.cdslab.org/paramonte/generic/latest/contributing/defects">Reporting defects</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Requesting enhancements" href="https://www.cdslab.org/paramonte/generic/latest/contributing/enhancements">Requesting enhancements</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Development guidelines - general" href="https://www.cdslab.org/paramonte/generic/latest/contributing/development/general/">Development guidelines - general</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Development guidelines - kernel" href="https://www.cdslab.org/paramonte/generic/latest/contributing/development/kernel/">Development guidelines - kernel</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Troubleshooting" href="#"><b>Troubleshooting</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Enhancement-requests and bug-reports" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/issues/">Enhancement-requests and bug-reports</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="-bash: Permission denied" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/bash-permission-denied/">-bash: Permission denied</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="bash: matlab: command not found" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/bash-matlab-command-not-found/">bash: matlab: command not found</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="catastrophic error: cannot open source file" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/catastrophic-error-cannot-open-source-file/">catastrophic error: cannot open source file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Catastrophic error: could not set locale" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/catastrophic-error-could-not-set-locale/">Catastrophic error: could not set locale</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="xcrun: error: unable to find utility "clang"" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/xcrun-error-unable-to-find-utility-clang/">xcrun: error: unable to find utility "clang"</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="changing directory on Windows CMD" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/windows-drive-change/">changing directory on Windows CMD</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="error while loading shared libraries" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/error-while-loading-shared-libraries/">error while loading shared libraries</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="finding the MPI libraries on Windows" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/finding-mpi-libraries-on-windows/">finding the MPI libraries on Windows</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Fortran runtime error: End of file" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/fortran-runtime-error-end-of-file/">Fortran runtime error: End of file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="libgfortran not found" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/libgfortran-not-found/">libgfortran not found</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="macOS: developer cannot be verified" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/macos-developer-cannot-be-verified/">macOS: developer cannot be verified</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: could not find module" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/python-could-not-find-module/">Python: could not find module</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: module object is not callable" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/python-module-object-is-not-callable/">Python: module object is not callable</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: segmentation-fault error" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/python-segmentation-fault/">Python: segmentation-fault error</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+    
+    <!-- if you aren't using the accordion, uncomment this block:
+    -->
+    <p class="external">
+        <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+    </p>
+</ul>
+<!--
+This highlights the active parent class in the navgoco sidebar. 
+This is critical so that the parent expands when you're viewing a page.
+This must appear below the sidebar code above.
+Otherwise, if placed inside customscripts.js,
+the script runs before the sidebar code runs and the class never gets inserted.
+-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+                        </div>
+                        
+                    
+                    <!-- Content Column -->
+                    <div class="col-md-9" id="tg-sb-content">
+                        <div class="post-header">
+   <h1 class="post-title-main">ParaMonte installation configuration flags</h1>
+</div>
+
+<div class="post-content">
+    
+    
+    
+        <br>
+        
+<script>
+    $( document ).ready(function() {
+        // Handler for .ready() called.
+        $('#toc').toc({ minimumHeaders: 0 
+                      , listType: 'ol'
+                      , showSpeed: 0
+                      , headers: 'h2,h3,h4,h5,h6'
+        });
+        /* the following offset helps account for the space taken up by the floating toolbar. */
+        $('#toc').on('click', 'a', function() {
+            var target = $(this.getAttribute('href')), scroll_target = target.offset().top$(window).scrollTop(scroll_target - 10);
+            return false
+        })
+    });
+</script>
+
+<div id="toc"></div>
+
+    
+    
+    
+<p><br /></p>
+
+<blockquote>
+  <p>See <a href="./install.md">install.md</a> for general installation guidelines.</p>
+</blockquote>
+
+<p>This file contains information about the ParaMonte library build configuration flags.</p>
+
+<p>The ParaMonte library build scripts accept a large number of 
+optional flags that can be used to configure the library build.</p>
+
+<p>Nearly all configuration flags can be specified as command line arguments
+to the <a href="./install.bat.md">install.bat</a>, <a href="./install.sh.md">install.sh</a>, or 
+the <a href="./CMakeLists.md">CMake binary executable</a>. Some flags may be essential
+to directly call the CMake executable binary, while others are available
+only as optional arguments to the library install scripts mentioned above.</p>
+
+<p>Due to the sheer number of available optional flags, they are categorized 
+in tiers sorted by their relevance and importance to the end users.</p>
+
+<ol>
+  <li><a href="#TIER-1-ParaMonte-library-build-configuration-flags">TIER-1 ParaMonte library build configuration flags</a></li>
+  <li><a href="#TIER-2-ParaMonte-library-build-configuration-flags">TIER-2 ParaMonte library build configuration flags</a></li>
+  <li><a href="#TIER-3-ParaMonte-library-build-configuration-flags">TIER-3 ParaMonte library build configuration flags</a></li>
+  <li><a href="#TIER-4-ParaMonte-library-build-configuration-flags">TIER-4 ParaMonte library build configuration flags</a></li>
+</ol>
+
+<h2 id="tier-1-paramonte-library-build-configuration-flags">TIER-1 ParaMonte library build configuration flags</h2>
+
+<p>The ParaMonte TIER-1 build flags set the most important and useful build configurations.
+Assuming the required compilers and external (e.g., Coarray, MPI parallel) libraries are 
+available on the system, these flags can readily customized the library build.</p>
+
+<h3 id="build"><code>build</code></h3>
+
+<p>Specifies the library build type for which the library will be built.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--build</span> <span class="s2">"build_type"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dbuild=<span class="s2">"build_type"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>build_type</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>debug</code></td>
+      <td>For debugging.</td>
+    </tr>
+    <tr>
+      <td><code>testing</code></td>
+      <td>For quick testing with minimal optimizations.</td>
+    </tr>
+    <tr>
+      <td><code>release</code></td>
+      <td>For production-ready application builds (default).</td>
+    </tr>
+    <tr>
+      <td><code>ipo</code></td>
+      <td>Same as specifying <code>release</code> but with link-time optimizations.</td>
+    </tr>
+    <tr>
+      <td><code>tuned</code></td>
+      <td>Same as specifying <code>ipo</code> but builds for all supported architectures.</td>
+    </tr>
+    <tr>
+      <td><code>native</code></td>
+      <td>Same as specifying <code>ipo</code> but builds only for the current architecture (<strong>non-portable</strong>).</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>When specified for install scripts, the <code>build</code> flag can take a semi-colon-separated
+list of library build values for which the library will be built in the specified order.</p>
+</blockquote>
+
+<blockquote>
+  <p>If <code>testing</code> is specified, it is automatically converted to <code>RelwithDebInfo</code>.</p>
+</blockquote>
+
+<blockquote>
+  <p>This option, if provided, will overwrite the value of <code>CMAKE_BUILD_TYPE</code> in CMake scripts.</p>
+</blockquote>
+
+<blockquote>
+  <p>Beware that <code>ipo</code>, <code>tuned</code>, <code>native</code> builds are currently only recognized
+used with the <code>intel</code> and <code>gnu</code> Fortran compilers. If specified with unsupported
+compilers, they are automatically converted to <code>release</code>.</p>
+</blockquote>
+
+<blockquote>
+  <p>The <code>ipo</code>, <code>tuned</code>, and <code>native</code> builds can take very long and generate large binaries.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>build_type</code> is <code>release</code>.</p>
+
+<h3 id="lang"><code>lang</code></h3>
+
+<p>Specifies the target programming language(s) for
+which the library will be built and accessed from.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--lang</span> <span class="s2">"programming_language"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dlang=<span class="s2">"programming_language"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>programming_language</code> can be any of the following
+values (which defines the corresponding macro in the library),</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Target programming language</th>
+      <th>Library macro definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>c</code></td>
+      <td>C</td>
+      <td><code>C_ENABLED=1</code></td>
+    </tr>
+    <tr>
+      <td><code>cpp</code></td>
+      <td>C++</td>
+      <td><code>CPP_ENABLED=1</code></td>
+    </tr>
+    <tr>
+      <td><code>fortran</code></td>
+      <td>Fortran</td>
+      <td><code>FORTRAN_ENABLED=1</code></td>
+    </tr>
+    <tr>
+      <td><code>go</code></td>
+      <td>Go</td>
+      <td><code>GO_ENABLED=1</code></td>
+    </tr>
+    <tr>
+      <td><code>java</code></td>
+      <td>Java</td>
+      <td><code>JAVA_ENABLED=1</code></td>
+    </tr>
+    <tr>
+      <td><code>julia</code></td>
+      <td>Julia</td>
+      <td><code>JULIA_ENABLED=1</code></td>
+    </tr>
+    <tr>
+      <td><code>mathematica</code></td>
+      <td>Mathematica</td>
+      <td><code>MATTHEMATICA_ENABLED=1</code></td>
+    </tr>
+    <tr>
+      <td><code>matlab</code></td>
+      <td>MATLAB</td>
+      <td><code>MATLAB_ENABLED=1</code></td>
+    </tr>
+    <tr>
+      <td><code>python</code></td>
+      <td>Python</td>
+      <td><code>PYTHON_ENABLED=1</code></td>
+    </tr>
+    <tr>
+      <td><code>r</code></td>
+      <td>R</td>
+      <td><code>R_ENABLED=1</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>When specified for install scripts, the <code>lang</code> flag can take a semi-colon-separated
+list of programming languages for which the library will be built in the specified order.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>programming_language</code> is <code>fortran</code>.</p>
+
+<h3 id="lib"><code>lib</code></h3>
+
+<p>Specifies the library file type for which the library will be built.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--lib</span> <span class="s2">"library_type"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dlib=<span class="s2">"library_type"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>library_type</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>static</code></td>
+      <td>For static library file (<code>*.lib</code>, <code>*.a</code> generation) (and linking).</td>
+    </tr>
+    <tr>
+      <td><code>shared</code></td>
+      <td>For dynamic library file (<code>*.dll, *.dylib</code>, <code>*.so</code>) generation (and linking).</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>When specified for install scripts, the <code>lib</code> flag can take a semi-colon-separated
+list of possible values for which the library will be built in the specified order.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>library_type</code> is <code>shared</code>.</p>
+
+<h3 id="mem"><code>mem</code></h3>
+
+<p>Specifies the library memory usage type for which the library will be built.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--mem</span> <span class="s2">"memory_allocation_type"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dmem=<span class="s2">"memory_allocation_type"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>memory_allocation_type</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>stack</code></td>
+      <td>All arrays (, if possible, including allocatable,) are stored on the Stack</td>
+    </tr>
+    <tr>
+      <td><code>heap</code></td>
+      <td>Most arrays of significant size (e.g., &gt; 10 elements) will be stored on the Heap.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>The use of Heap memory can be significantly slower than the Stack in isolated cases.</p>
+</blockquote>
+
+<blockquote>
+  <p>The stack memory allocations can lead to “stack overflow” or “segmentation fault”
+that are frequently extremely hard to identify.</p>
+</blockquote>
+
+<blockquote>
+  <p>If you use <code>stack</code> be sure to increase the stack memory allocated
+by the Operating System for your output binary before execution.</p>
+</blockquote>
+
+<blockquote>
+  <p>When specified for install scripts, the <code>mem</code> flag can take a semi-colon-separated
+list of possible values for which the library will be built in the specified order.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>memory_allocation_type</code> is <code>heap</code>.</p>
+
+<h3 id="par"><code>par</code></h3>
+
+<p>Specifies the library parallelization paradigm for which the library will be built.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--par</span> <span class="s2">"parallelization_type"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dpar=<span class="s2">"parallelization_type"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>parallelization_type</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>none</code></td>
+      <td>No parallelism enabled (serial).</td>
+    </tr>
+    <tr>
+      <td><code>serial</code></td>
+      <td>No parallelism enabled (serial).</td>
+    </tr>
+    <tr>
+      <td><code>mpi</code></td>
+      <td>MPI parallelism enabled.</td>
+    </tr>
+    <tr>
+      <td><code>omp</code></td>
+      <td>OpenMP parallelism enabled.</td>
+    </tr>
+    <tr>
+      <td><code>openmp</code></td>
+      <td>OpenMP parallelism enabled.</td>
+    </tr>
+    <tr>
+      <td><code>cafsingle</code></td>
+      <td>Coarray parallelism syntax enabled (but effectively serial).</td>
+    </tr>
+    <tr>
+      <td><code>cafshared</code></td>
+      <td>Coarray parallelism enabled on shared memory architecture.</td>
+    </tr>
+    <tr>
+      <td><code>cafdist</code></td>
+      <td>Coarray parallelism enabled on distributed memory architecture.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>When specified for install scripts, the <code>par</code> flag can take a semi-colon-separated
+list of possible values for which the library will be built in the specified order.</p>
+</blockquote>
+
+<blockquote>
+  <p>Beware that the Coarray parallelism in the current library version 2.0 is non-functional.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>parallelization_type</code> is <code>none</code>.</p>
+
+<h2 id="tier-2-paramonte-library-build-configuration-flags">TIER-2 ParaMonte library build configuration flags</h2>
+
+<p>The ParaMonte TIER-2 build flags set the additional optional arguments that 
+run library benchmarks, examples, or tests, or are critical for the correct 
+selection of compilers or external compilation libraries, or customize the
+build and installation folders.</p>
+
+<h3 id="bdir"><code>bdir</code></h3>
+
+<p>Specifies the library build directory where all
+CMake and other relevant files will be stored
+before outputting the final product to the
+specified deployment directory via <code>ddir</code>.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--bdir</span> <span class="s2">"cmake_build_directory_path"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable): <strong>Not Available.</strong></li>
+</ul>
+
+<p>where <code>cmake_build_directory_path</code> is the path
+to the directory where the library should be built.</p>
+
+<blockquote>
+  <p>This option cannot be specified as a flag to the CMake binary
+because the CMake build scripts must already exist in this folder.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>cmake_build_directory_path</code> is,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">bdir</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">root</span><span class="k">}</span><span class="s2">/bld/</span><span class="k">${</span><span class="nv">os</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">arch</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">csid</span><span class="k">}${</span><span class="nv">csvs</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">bld</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">lib</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">mem</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">par</span><span class="k">}</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<p>where</p>
+
+<ul>
+  <li><code>${root}</code>   is replaced with the path to the root directory of the project where the LICENSE file exists.</li>
+  <li><code>${os}</code>     is replaced with the lower-case operating system name (<code>windows</code>, <code>linux</code>, <code>darwin</code>, <code>mingw</code>, <code>msys</code>, …),</li>
+  <li><code>${arch}</code>   is replaced with the lower-case CPU architecture (<code>amd64</code>, <code>arm64</code>, …),</li>
+  <li><code>${csid}</code>   is replaced with the lower-case compiler vendor name (<code>intel</code>, <code>gnu</code>, …),</li>
+  <li><code>${csvs}</code>   is replaced with the lower-case compiler vendor major version,</li>
+  <li><code>${bld}</code>    is replaced with the specified value for the <code>build</code> configuration flag (<code>debug</code>, <code>release</code>, …),</li>
+  <li><code>${lib}</code>    is replaced with the specified value for the <code>lib</code> configuration flag (<code>static</code>, <code>shared</code>, …),</li>
+  <li><code>${mem}</code>    is replaced with the specified value for the <code>mem</code> configuration flag (<code>stack</code>, <code>heap</code>, …),</li>
+  <li><code>${par}</code>    is replaced with a value determined from the <code>mem</code> configuration flag:
+Value               | Scenario
+——————–|———
+<code>cafsingle</code>         | If the library is built for Coarray single-image parallelism.
+<code>cafshared</code>         | If the library is built for Coarray shared-memory parallelism
+<code>cafdist</code>           | If the library is built for Coarray distributed-memory parallelism.
+<code>mpi</code>               | If the library is built for MPI parallelism using an unknown MPI distribution.
+<code>impi</code>              | If the library is built for MPI parallelism using an Intel MPI distribution.
+<code>mpich</code>             | If the library is built for MPI parallelism using an MPICH MPI distribution.
+<code>openmpi</code>           | If the library is built for MPI parallelism using an OpenMPI distribution.
+<code>openmp</code>            | If the library is built for OpenMP parallelism.
+<code>serial</code>            | If the library is built for serial applications.</li>
+</ul>
+
+<h3 id="bench"><code>bench</code></h3>
+
+<p>Specifies the library benchmarks to build and run after building library.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--bench</span> <span class="s2">"benchmark_list"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dbench=<span class="s2">"benchmark_list"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>benchmark_list</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>none</code></td>
+      <td>No library benchmarks will be built.</td>
+    </tr>
+    <tr>
+      <td><code>all</code></td>
+      <td>Build and run all library benchmarks.</td>
+    </tr>
+    <tr>
+      <td>file</td>
+      <td>Build and run all library benchmarks listed in the file.</td>
+    </tr>
+    <tr>
+      <td>b1;b2;…;bn</td>
+      <td>Build and run all modules and procedures benchmarks matching the semicolon-separated strings.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>The specified file can be automatically generated by the <code>getList.py</code>
+Python script in the corresponding language subfolder of the <code>benchmark</code>
+folder in the root directory of the project.</p>
+</blockquote>
+
+<blockquote>
+  <p>Specified items in a given file can be excluded by
+adding an exclamation mark at the beginning of the line.</p>
+</blockquote>
+
+<blockquote>
+  <p>Setting this option to anything other than <code>none</code> will lead to building
+and running the corresponding ParaMonte library benchmarks on the command line.</p>
+</blockquote>
+
+<blockquote>
+  <p>The benchmarks will be built and run in the corresponding library benchmark subfolder in the build folder.</p>
+</blockquote>
+
+<blockquote>
+  <p>Not all supported programming languages may have benchmarks.
+Where unavailable, this option should not be specified.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>benchmark_list</code> is <code>none</code>.</p>
+
+<h3 id="blas"><code>blas</code></h3>
+
+<p>Specifies the BLAS implementation against which certain ParaMonte library routines will be linked.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--blas</span> <span class="s2">"cmake_blas_vendor"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dblas=<span class="s2">"cmake_blas_vendor"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>cmake_blas_vendor</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>none</code></td>
+      <td>No BLAS library will be linked to the ParaMonte library.</td>
+    </tr>
+    <tr>
+      <td><code>default</code></td>
+      <td>The local OpenBLAS submodule within the ParaMonte repository will be built and used for linking.</td>
+    </tr>
+    <tr>
+      <td><code>any</code></td>
+      <td>Any BLAS library CMake finds will be linked to the ParaMonte library.</td>
+    </tr>
+    <tr>
+      <td>vendor</td>
+      <td>Any vendor name recognized by the CMake <code>BLA_VENDOR</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>When the value <code>default</code> is specified, the BLAS library will be built
+via the default OpenBLAS local external submodule of the ParaMonte library,
+if the OpenBLAS submodule exists in the <code>external</code> folder of the local clone
+of the ParaMonte repository. If the local copy of <code>OpenBLAS</code> library exists,
+the library will be linked against OpenBLAS, otherwise, the library will be
+built without any BLAS dependency.</p>
+</blockquote>
+
+<blockquote>
+  <p>This option relevant to the ParaMonte library benchmarks and linear algebra routines.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>cmake_blas_vendor</code> is <code>none</code>.</p>
+
+<h3 id="checking"><code>checking</code></h3>
+
+<p>Specifies the library runtime checking policy for which the library will be built.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--checking</span> <span class="s2">"checking_type"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dchecking=<span class="s2">"checking_type"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>checking_type</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>nocheck</code></td>
+      <td>No runtime checks will be performed.</td>
+    </tr>
+    <tr>
+      <td><code>checked</code></td>
+      <td>All runtime checks will be performed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>When specified for install scripts, the <code>checking</code> flag can take a semi-colon-separated
+list of possible values for which the library will be built in the specified order.</p>
+</blockquote>
+
+<blockquote>
+  <p>Specifying <code>checked</code> leads to defining the FPP macro <code>CHECK_ENABLED=1</code>,
+activating additional diagnostic runtime checks within the library.</p>
+</blockquote>
+
+<blockquote>
+  <p>This option is very useful for debugging purposes but significantly
+degrades the runtime performance and increases the library size.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>checking_type</code> is,</p>
+
+<ol>
+  <li><code>nocheck</code> if <code>build</code> is set to <code>release</code>, <code>ipo</code>, <code>tuned</code>, or <code>native</code>,</li>
+  <li><code>checked</code> if <code>build</code> is set to <code>debug</code> or <code>testing</code>, or <code>codecov</code> is set to <code>true</code>.</li>
+</ol>
+
+<h3 id="ddir"><code>ddir</code></h3>
+
+<p>Specifies the library deployment directory to
+which the full ParaMonte package will be copied.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--ddir</span> <span class="s2">"deploy_directory_path"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dddir=<span class="s2">"deploy_directory_path"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>deploy_directory_path</code> is the path to the
+directory where the library binaries should be deployed.</p>
+
+<p><strong>optional</strong>. The default value for <code>deploy_directory_path</code> is
+<code>"./bin"</code> where <code>.</code> refers to the path to the root directory
+of the project where the main <code>CMakeLists.txt</code> file exists.</p>
+
+<h3 id="exam"><code>exam</code></h3>
+
+<p>Specifies the library examples to build and run after building library.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--exam</span> <span class="s2">"example_list"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dexam=<span class="s2">"example_list"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>example_list</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>none</code></td>
+      <td>No library examples will be built.</td>
+    </tr>
+    <tr>
+      <td><code>all</code></td>
+      <td>Build and run all library examples.</td>
+    </tr>
+    <tr>
+      <td>file</td>
+      <td>Build and run all library examples listed in the file.</td>
+    </tr>
+    <tr>
+      <td>e1;e2;…;en</td>
+      <td>Build and run all modules and procedures examples matching the semicolon-separated strings.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>The specified file can be automatically generated by the <code>getList.py</code>
+Python script in the corresponding language subfolder of the <code>example</code>
+folder in the root directory of the project.</p>
+</blockquote>
+
+<blockquote>
+  <p>The file path can be specified either as an absolute path or a path relative
+to the root directory of the ParaMonte repository on the local machine.</p>
+</blockquote>
+
+<blockquote>
+  <p>Specific items in a given file can be excluded by
+adding an exclamation mark at the beginning of the line.</p>
+</blockquote>
+
+<blockquote>
+  <p>Setting this option to anything other than <code>none</code> will lead to building
+and running the corresponding ParaMonte library examples on the command line.</p>
+</blockquote>
+
+<blockquote>
+  <p>The examples will be built and run in the corresponding library example subfolder in the build folder.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>example_list</code> is <code>none</code>.</p>
+
+<h3 id="fc"><code>fc</code></h3>
+
+<p>Specifies the path to the Fortran compiler binary
+executable file with which the library will be built.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--fc</span> <span class="s2">"fortran_compiler_executable_path"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dfc=<span class="s2">"fortran_compiler_executable_path"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>fortran_compiler_executable_path</code> points to the
+specific Fortran compiler executable name (or its path) to be used.</p>
+
+<blockquote>
+  <p>Setting this will overwrite the default CMake compiler choice by setting
+<code>CMAKE_Fortran_COMPILER</code> CMake variable <strong>before</strong> project initiation.</p>
+</blockquote>
+
+<blockquote>
+  <p>We highly recommend to specify the Fortran compiler choice explicitly via this argument
+as CMake often has difficultly choosing the right Fortran compiler among several options.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>fortran_compiler_executable_path</code>
+is automatically determined by CMake or the build scripts.</p>
+
+<h3 id="lapack"><code>lapack</code></h3>
+
+<p>Specifies the LAPACK implementation against which certain ParaMonte library routines will be linked.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--lapack</span> <span class="s2">"cmake_lapack_vendor"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dlapack=<span class="s2">"cmake_lapack_vendor"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>cmake_lapack_vendor</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>none</code></td>
+      <td>No LAPACK library will be linked to the ParaMonte library.</td>
+    </tr>
+    <tr>
+      <td><code>default</code></td>
+      <td>The local OpenBLAS submodule within the ParaMonte repository will be built and used for linking.</td>
+    </tr>
+    <tr>
+      <td><code>any</code></td>
+      <td>Any LAPACK library CMake finds will be linked to the ParaMonte library.</td>
+    </tr>
+    <tr>
+      <td>vendor</td>
+      <td>Any vendor name recognized by the CMake <code>BLA_VENDOR</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>When the value <code>default</code> is specified, the LAPACK library will be built
+via the default OpenBLAS local external submodule of the ParaMonte library,
+if the OpenBLAS submodule exists in the <code>external</code> folder of the local clone
+of the ParaMonte repository. If the local copy of <code>OpenBLAS</code> library exists,
+the library will be linked against OpenBLAS, otherwise, the library will be
+built without any LAPACK dependency.</p>
+</blockquote>
+
+<blockquote>
+  <p>This option relevant to the ParaMonte library benchmarks and linear algebra routines.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>cmake_lapack_vendor</code> is <code>none</code>.</p>
+
+<h3 id="matlabdir"><code>matlabdir</code></h3>
+
+<p>Specifies the path to the MATLAB binary executable against which the library will be linked.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--matlabdir</span> <span class="s2">"matlab_executable_dir_path"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dmatlabdir=<span class="s2">"matlab_executable_dir_path"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>matlab_executable_dir_path</code> is the path to the directory containing the
+MATLAB executable binary file (virtually always named <code>matlab</code> or <code>matlab.exe</code>).</p>
+
+<blockquote>
+  <p>Beware this MATLAB binary directory almost always ends with <code>/bin</code>.</p>
+</blockquote>
+
+<blockquote>
+  <p>This option is relevant only to builds where the <code>lang</code> configuration flag is set to <code>matlab</code>.
+The specified value is ignored for all language builds of the ParaMonte library.</p>
+</blockquote>
+
+<blockquote>
+  <p>Specifying this option helps CMake find the MATLAB library dependencies.</p>
+</blockquote>
+
+<blockquote>
+  <p>This option is essential when the library is to be linked against
+a particular installation of MATLAB among multiple installations.</p>
+</blockquote>
+
+<blockquote>
+  <p>We highly recommend to specify the MATLAB choice explicitly via this argument
+as CMake often has difficultly choosing the right MATLAB version among several options.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>matlab_executable_dir_path</code>
+is determined automatically by CMake.</p>
+
+<h3 id="me"><code>me</code></h3>
+
+<p>Specifies the path to the MPI launcher <code>mpiexec</code>
+binary executable file for MPI-parallel applications.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--me</span> <span class="s2">"mpiexec_path"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dme=<span class="s2">"mpiexec_path"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>mpiexec_path</code> is the path (or name) of the <code>mpiexec</code> executable to be used.</p>
+
+<blockquote>
+  <p>This option is relevant only to MPI-parallel library builds and is otherwise ignored.</p>
+</blockquote>
+
+<blockquote>
+  <p>The specified value will the overwrite the CMake MPI library choice by
+setting <code>MPIEXEC_EXECUTABLE</code> CMake variable <strong>before</strong> project initiation.</p>
+</blockquote>
+
+<blockquote>
+  <p>We highly recommend to specify the MPI library choice explicitly via this argument
+as CMake often has difficultly choosing the right MPI compiler among several options.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>mpiexec_path</code>
+is automatically determined by CMake or the build scripts.</p>
+
+<h3 id="test"><code>test</code></h3>
+
+<p>Specifies the library testing mode for which the library will be built.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--test</span> <span class="s2">"testing_type"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dtest=<span class="s2">"testing_type"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>testing_type</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>none</code></td>
+      <td>The build is configured for no testing.</td>
+    </tr>
+    <tr>
+      <td><code>all</code></td>
+      <td>The build activates all library tests.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>Enabling tests requires setting the value of the build flag <code>mod</code> to <code>"all"</code>.
+This is particularly important for the programming languages other than Fortran
+where the default value of <code>mod</code> is usually not <code>"all"</code>.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>testing_type</code> is <code>none</code>.</p>
+
+<h2 id="tier-3-paramonte-library-build-configuration-flags">TIER-3 ParaMonte library build configuration flags</h2>
+
+<p>The ParaMonte TIER-3 build flags are mostly relevant to the ParaMonte library developers
+or advanced users who wish to further customize the library configurations for their needs.<br />
+Some of the available options with intricate implications require careful attention before usage.</p>
+
+<h3 id="benchpp"><code>benchpp</code></h3>
+
+<p>Specifies the library benchmarks postprocessing scripts to run after building the library.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--benchpp</span> <span class="s2">"benchmark_postprocessing_list"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dbenchpp=<span class="s2">"benchmark_postprocessing_list"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>benchmark_postprocessing_list</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>none</code></td>
+      <td>Do not run benchmarks postprocessing scripts.</td>
+    </tr>
+    <tr>
+      <td><code>all</code></td>
+      <td>Run all benchmarks postprocessing scripts.</td>
+    </tr>
+    <tr>
+      <td>file</td>
+      <td>Run all library benchmarks postprocessing scripts listed in the file.</td>
+    </tr>
+    <tr>
+      <td>b1;b2;…;bn</td>
+      <td>Run all modules and procedures benchmarks postprocessing scripts matching the semicolon-separated strings.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>The specified file can be automatically generated by the <code>getList.py</code>
+Python script in the corresponding language subfolder of the <code>benchmark</code>
+folder in the root directory of the project.</p>
+</blockquote>
+
+<blockquote>
+  <p>Specific items in a given file can be excluded by
+adding an exclamation mark at the beginning of the line.</p>
+</blockquote>
+
+<blockquote>
+  <p>Setting this option to anything other than <code>none</code> will lead to running
+the Python postprocessing scripts for the corresponding ParaMonte library
+benchmarks that have been previously built and run on the command line.</p>
+</blockquote>
+
+<blockquote>
+  <p>Frequently, postprocessing scripts merely generate visualizations.
+The visualizations are essential for the ParaMonte library documentation.</p>
+</blockquote>
+
+<blockquote>
+  <p>Setting this option to anything other than <code>none</code> will lead to running
+the corresponding ParaMonte library benchmarks postprocessing scripts on the command line.</p>
+</blockquote>
+
+<blockquote>
+  <p>The benchmarks postprocessing scripts will be executed in the corresponding library benchmark subfolder in the build folder.</p>
+</blockquote>
+
+<blockquote>
+  <p>Not all supported programming languages may have benchmarks postprocessing scripts.
+Check the <code>benchmark</code> folder in the root directory of the repository before using this flag.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>benchmark_postprocessing_list</code>
+is the same as the value set for the option <code>bench</code>.</p>
+
+<h3 id="cfi"><code>cfi</code></h3>
+
+<p>Specifies whether the library must be built with C-Fortran interoperable types and kinds.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--cfi</span> <span class="s2">"c_fortran_interoperability_list"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dcfi=<span class="s2">"c_fortran_interoperability_list"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>c_fortran_interoperability_list</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>none</code></td>
+      <td>Sets the macro <code>CFI_ENABLED=0</code> to disable C-Fortran type interoperability.</td>
+    </tr>
+    <tr>
+      <td><code>all</code></td>
+      <td>Sets the macro <code>CFI_ENABLED=1</code> to enable C-Fortran type interoperability.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>This is a low level option and mostly useful to the developers of the ParaMonte library.</p>
+</blockquote>
+
+<blockquote>
+  <p>This option has extremely limited usage for the end users and may be removed in the future.</p>
+</blockquote>
+
+<blockquote>
+  <p>The <code>none</code> value can be specified only when <code>lang</code> is set to <code>fortran</code>.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default is <code>none</code> if <code>lang</code> is set to <code>fortran</code>, otherwise <code>all</code>.</p>
+
+<h3 id="codecov"><code>codecov</code></h3>
+
+<p>Determines whether Code Coverage report must be generated.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--codecov</span> <span class="s2">"code_coverage_type"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dcodecov=<span class="s2">"code_coverage_type"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>code_coverage_type</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>none</code></td>
+      <td>Sets the macro <code>CODECOV_ENABLED=0</code> to disable Code Coverage analysis.</td>
+    </tr>
+    <tr>
+      <td><code>all</code></td>
+      <td>Sets the macro <code>CODECOV_ENABLED=1</code> to enable Code Coverage analysis.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>This is a low level option and mostly useful to the developers of the ParaMonte library.</p>
+</blockquote>
+
+<blockquote>
+  <p>This option is currently only tested and verified to work on Linux systems.
+This option is currently only tested and verified to work with GNU compilers.
+This option is currently only tested and verified to work with GNU GCOV and LCOV software.
+This option is currently only tested and verified to work with the <code>install.sh</code> build script.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>codecov</code> is <code>none</code>.</p>
+
+<h3 id="deps"><code>deps</code></h3>
+
+<p>Specifies the library dependencies to copy to the final deployment directory.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--deps</span> <span class="s2">"dependencies_list"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Ddeps=<span class="s2">"dependencies_list"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>dependencies_list</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>none</code></td>
+      <td>The lower-level library dependencies will be NOT copied to the installation location.</td>
+    </tr>
+    <tr>
+      <td><code>all</code></td>
+      <td>The lower-level library dependencies will be copied to the installation location.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>This is a low level option and mostly useful to the developers of the ParaMonte library.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>dependencies_list</code> is <code>none</code>.</p>
+
+<h3 id="exampp"><code>exampp</code></h3>
+
+<p>Specifies the library examples postprocessing scripts to run after building the library.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--exampp</span> <span class="s2">"example_postprocessing_list"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dexampp=<span class="s2">"example_postprocessing_list"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>example_postprocessing_list</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>none</code></td>
+      <td>Do not run examples postprocessing scripts.</td>
+    </tr>
+    <tr>
+      <td><code>all</code></td>
+      <td>Run all examples postprocessing scripts.</td>
+    </tr>
+    <tr>
+      <td>file</td>
+      <td>Run all library examples postprocessing scripts listed in the file.</td>
+    </tr>
+    <tr>
+      <td>e1;e2;…;en</td>
+      <td>Run all modules and procedures examples postprocessing scripts matching the semicolon-separated strings.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>The specified file can be automatically generated by the <code>getList.py</code>
+Python script in the corresponding language subfolder of the <code>example</code>
+folder in the root directory of the project.</p>
+</blockquote>
+
+<blockquote>
+  <p>Specific items in a given file can be excluded by
+adding an exclamation mark at the beginning of the line.</p>
+</blockquote>
+
+<blockquote>
+  <p>Setting this option to anything other than <code>none</code> will lead to running
+the Python postprocessing scripts for the corresponding ParaMonte library
+examples that have been previously built and run on the command line.</p>
+</blockquote>
+
+<blockquote>
+  <p>Frequently, postprocessing scripts merely generate visualizations.
+The visualizations are essential for the ParaMonte library documentation.</p>
+</blockquote>
+
+<blockquote>
+  <p>Setting this option to anything other than <code>none</code> will lead to running
+the corresponding ParaMonte library examples postprocessing scripts on the command line.</p>
+</blockquote>
+
+<blockquote>
+  <p>The examples postprocessing scripts will be executed in the corresponding library example subfolder in the build folder.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>example_postprocessing_list</code>
+is the same as the value set for the option <code>exam</code>.</p>
+
+<h3 id="fcf"><code>fcf</code></h3>
+
+<p>Specifies any additional compile flags passed to
+the Fortran compiler with which the library is built.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--fcf</span> <span class="s2">"additional_fortran_compiler_flags"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dfcf=<span class="s2">"additional_fortran_compiler_flags"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>additional_fortran_compiler_flags</code> is string of Fortran compiler flags
+separated by semicolon <code>;</code> that are added to library default compiler flags.</p>
+
+<blockquote>
+  <p>The contents of <code>fcf</code> is passed to the compiler as is without any changes.</p>
+</blockquote>
+
+<blockquote>
+  <p>Any additional preprocessor macros for the compiler can be specified using this option.</p>
+</blockquote>
+
+<blockquote>
+  <p>This is low-level build option, mostly useful for the library developers.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>fcf</code> is an empty string.</p>
+
+<h3 id="flf"><code>flf</code></h3>
+
+<p>Specifies any additional linker flags passed to
+the Fortran linker with which the library object files are linked.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--flf</span> <span class="s2">"additional_fortran_linker_flags"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dflf=<span class="s2">"additional_fortran_linker_flags"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>additional_fortran_linker_flags</code> is string of Fortran linker flags
+separated by semicolon <code>;</code> that are added to library default linker flags.</p>
+
+<blockquote>
+  <p>The contents of <code>flf</code> is passed to the linker as is without any changes.</p>
+</blockquote>
+
+<blockquote>
+  <p>This is low-level build option, mostly useful for the library developers.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>flf</code> is an empty string.</p>
+
+<h3 id="fpp"><code>fpp</code></h3>
+
+<p>Specifies the preprocessing style of the Fortran source files before building the library.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--fpp</span> <span class="s2">"fortran_preprocessing_style"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dfpp=<span class="s2">"fortran_preprocessing_style"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>fortran_preprocessing_style</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>none</code></td>
+      <td>No preprocessed source files will be output to the deploy directory.</td>
+    </tr>
+    <tr>
+      <td><code>default</code></td>
+      <td>The preprocessed compiler-specific source files will be output to the <code>fpp</code> subdirectory.</td>
+    </tr>
+    <tr>
+      <td><code>generic</code></td>
+      <td>The preprocessed compiler-agnostic source files will be output to the <code>fpp</code> subdirectory.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>This option is relevant to only the Intel and GNU compiler suites.</p>
+</blockquote>
+
+<blockquote>
+  <p>When <code>default</code> is specified as the value of <code>fpp</code>, preprocessed source files may contain
+non-portable compiler-specific extensions to the standard Fortran commands and syntax.</p>
+</blockquote>
+
+<blockquote>
+  <p>Specifying <code>default</code> while building the library with GNU compilers will define macro <code>GNU_ENABLED=1</code>.</p>
+</blockquote>
+
+<blockquote>
+  <p>Specifying <code>default</code> while building the library with Intel compilers will define macro <code>INTEL_ENABLED=1</code>.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>fortran_preprocessing_style</code> depends on the value of <code>lang</code> flag.</p>
+<ol>
+  <li>If the <code>lang</code> configuration flag is set to <code>fortran</code>, then <code>fortran_preprocessing_style</code> is set to,
+    <ol>
+      <li><code>default</code> if the compiler choice belongs to the family of Intel or GNU compilers.</li>
+      <li><code>generic</code> if the compiler choice belongs to other vendors.</li>
+    </ol>
+  </li>
+  <li>If the <code>lang</code> configuration flag is set to any possibility other than <code>fortran</code>,
+then <code>fortran_preprocessing_style</code> is set to <code>none</code>.</li>
+</ol>
+
+<h3 id="fresh"><code>fresh</code></h3>
+
+<p>Specifies the subdirectories of the build and deployment directories 
+that must be deleted before starting the new CMake configuration and build.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--fresh</span> <span class="s2">"subdirectories_to_delete"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dfresh=<span class="s2">"subdirectories_to_delete"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>subdirectories_to_delete</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>all</code></td>
+      <td>All build and deployment directories for the current library build configuration will be deleted before the new build.</td>
+    </tr>
+    <tr>
+      <td><code>bdir</code></td>
+      <td>All build and deployment directories for the current library build configuration will be deleted before the new build.</td>
+    </tr>
+    <tr>
+      <td>xx/yy</td>
+      <td>The specified <code>yy</code> sub-subdirectory in the <code>xx</code> subdirectory of the build directory will be deleted before the new build.</td>
+    </tr>
+    <tr>
+      <td>filename</td>
+      <td>The specified filename in the current build directory will be deleted before the new build.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>This option is simplifies the task of cleaning CMake build directory when library for a given build is being built repeatedly.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>subdirectories_to_delete</code> is <code>none</code>.</p>
+
+<h3 id="g"><code>G</code></h3>
+
+<p>Specifies the CMake build generator.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">-G</span> <span class="s2">"cmake_build_generator"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-G <span class="s2">"cmake_build_generator"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>cmake_build_generator</code> can be any of the possible CMake build generators.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>NMake Makefiles</code></td>
+      <td>Generates NMake makefiles.</td>
+    </tr>
+    <tr>
+      <td><code>MinGW Makefiles</code></td>
+      <td>Generates makefiles for use with mingw32-make under a Windows command prompt.</td>
+    </tr>
+    <tr>
+      <td><code>MSYS Makefiles</code></td>
+      <td>Generates makefiles for use with MSYS (Minimal SYStem) make under the MSYS shell.</td>
+    </tr>
+    <tr>
+      <td><code>Unix Makefiles</code></td>
+      <td>Generates standard UNIX makefiles.</td>
+    </tr>
+    <tr>
+      <td>other</td>
+      <td>Any build generator supported by CMake.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>This is a low-level build setting that is automated by the ParaMonte install scripts.
+This optional flag can be used to enforce a particular CMake build generator when
+the install scripts fail to identify the right build generator for CMake.</p>
+</blockquote>
+
+<blockquote>
+  <p>This build flag <strong>must be explicitly set</strong> when CMake executable is directly invoked.</p>
+</blockquote>
+
+<p><strong>optional</strong>. Only when specified for the install scripts. 
+The default value for <code>cmake_build_generator</code> is</p>
+<ol>
+  <li><code>Unix Makefiles</code> on Unix systems (macOS, Linux).</li>
+  <li><code>MSYS Makefiles</code> on Windows systems within MSYS environments (e.g., MSYS terminal).</li>
+  <li><code>MinGW Makefiles</code> on Windows systems within Bash MinGW environments (e.g., Git Bash terminal) or Windows CMD terminal.</li>
+  <li><code>NMake Makefiles</code> on Windows systems within CMD terminal environments.</li>
+</ol>
+
+<h3 id="j"><code>j</code></h3>
+
+<p>Specifies the number parallel threads to be used by the Make software for parallel library build.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">-j</span> <span class="s2">"num_parallel_threads"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-j <span class="s2">"num_parallel_threads"</span>
+</code></pre></div>    </div>
+    <p>or</p>
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-j
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>num_parallel_threads</code> must be a positive integer.</p>
+
+<blockquote>
+  <p>This option is only relevant to the GNU Make software.</p>
+</blockquote>
+
+<blockquote>
+  <p>This option does not impact builds made via Microsoft NMake software as of Jan 2024.</p>
+</blockquote>
+
+<blockquote>
+  <p>Specifying a null value when invoking CMake executable binary directly is equivalent to using the maximum available number of threads.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default is the maximum number of parallel threads available on the system.</p>
+
+<h3 id="libname"><code>libname</code></h3>
+
+<p>Specifies the binary name of the output library built.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--libname</span> <span class="s2">"desired_paramonte_library_name"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dlibname=<span class="s2">"desired_paramonte_library_name"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>desired_paramonte_library_name</code> points to the
+specific name to be used for generating the output library.</p>
+
+<p><strong>optional</strong>. The default value for <code>desired_paramonte_library_name</code> is <code>libparamonte</code>.</p>
+
+<h3 id="mod"><code>mod</code></h3>
+
+<p>Specifies the list of desired ParaMonte library modules (all source files beginning with <code>pm_</code>)
+to compile and add to the final output library file.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--mod</span> <span class="s2">"module_list"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dmod=<span class="s2">"module_list"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>module_list</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>all</code></td>
+      <td>Add and build all modules and their dependencies.</td>
+    </tr>
+    <tr>
+      <td><code>reset</code></td>
+      <td>Rebuild the dependencies list for the last specified value of <code>mod</code>.</td>
+    </tr>
+    <tr>
+      <td>m1;m2;…;mn</td>
+      <td>Add and build all modules matching any of the semicolon-separated strings <code>m1</code>, … and their dependencies will be built.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>This option is particularly useful for reducing the library size and
+build time by only specifying components are important to the end user.</p>
+</blockquote>
+
+<blockquote>
+  <p>To expedite the build process, the generated source file list
+based on the specified value for <code>mod</code> is cached within CMake,
+such that subsequent calls to cmake do not regenerate the source
+file list unless the value of <code>mod</code> is explicitly changed or set
+to <code>reset</code>.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>module_list</code> is <code>all</code> when option <code>lang</code> is set to <code>fortran</code>
+and <code>pm_sampling</code> when <code>lang</code> is set to any other possible value (all other programming languages).</p>
+
+<h3 id="pdt"><code>pdt</code></h3>
+
+<p>Specifies whether the Parameterized Derived Types (PDT) interfaces
+of the ParaMonte library should be considered or dropped in the build.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--pdt</span> <span class="s2">"pdt_list"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dpdt=<span class="s2">"pdt_list"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>pdt_list</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>none</code></td>
+      <td>Deactivates the PDT interfaces within the library  by defining macro <code>PDT_ENABLED=0</code>.</td>
+    </tr>
+    <tr>
+      <td><code>all</code></td>
+      <td>Activates the PDT interfaces within the library by defining macro <code>PDT_ENABLED=1</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>This option primarily exists because of the sparse compiler implementation of
+Parameterized Derived Types (PDT) feature of the Fortran programming language.</p>
+</blockquote>
+
+<blockquote>
+  <p>While the PDT interfaces work just fine with the Intel compilers, the current
+implementation status of PDTs in GNU compilers is highly inadequate and leads
+to frequent runtime crashes. This option safely deactivates the PDT interfaces
+and their implementations within the ParaMonte library.</p>
+</blockquote>
+
+<blockquote>
+  <p>This is a low level option and mostly useful to the developers of the ParaMonte library.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default is <code>none</code>.</p>
+
+<h3 id="perfprof"><code>perfprof</code></h3>
+
+<p>Specifies whether the library should be compiled for performance profiling.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--perfprof</span> <span class="s2">"perfprof_list"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dperfprof=<span class="s2">"perfprof_list"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>perfprof_list</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>none</code></td>
+      <td>Deactivates compiler flags for performance profiling of the library.</td>
+    </tr>
+    <tr>
+      <td><code>all</code></td>
+      <td>Activates compiler flags for performance profiling of the library.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>This is a low level option and mostly useful to the developers of the ParaMonte library.</p>
+</blockquote>
+
+<blockquote>
+  <p>Performance profiling is currently available only for the GNU Fortran compiler.
+CMake will stop with an error if Intel compilers are specified for performance profiling.
+This option has no effects on the build for all other compiler choices.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default is <code>none</code>.</p>
+
+<h3 id="purity"><code>purity</code></h3>
+
+<p>Specifies whether (designated) procedures should be compiled with <code>pure</code> or <code>impure</code> attribute.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--purity</span> <span class="s2">"purity_type"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dpurity=<span class="s2">"purity_type"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>purity_type</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>pure</code></td>
+      <td>Sets the macro <code>PURE=pure</code> to add <code>pure</code> attribute to the designated procedures.</td>
+    </tr>
+    <tr>
+      <td><code>impure</code></td>
+      <td>Sets the macro <code>PURE=impure</code> to add <code>impure</code> attribute to the designated procedures.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>This is a low level option and mostly useful to the developers of the ParaMonte library.</p>
+</blockquote>
+
+<blockquote>
+  <p>Specifying <code>pure</code> can potentially lead to faster runtimes by
+hinting to the compiler which procedures are <code>pure</code> and can be inlined.</p>
+</blockquote>
+
+<blockquote>
+  <p>This option must be unset or set to <code>impure</code> when <code>checking</code> is set to <code>checked</code>.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>purity_type</code> is <code>pure</code> if <code>checking</code> is set to <code>nocheck</code>,
+otherwise <code>impure</code> if <code>checking</code> is set to <code>checked</code>.</p>
+
+<h2 id="tier-4-paramonte-library-build-configuration-flags">TIER-4 ParaMonte library build configuration flags</h2>
+
+<p>The ParaMonte TIER-4 build flags set the additional optional arguments that 
+change the behavior of the library at the lowest level by setting the types.<br />
+These build flags are mostly relevant to the ParaMonte library developers or 
+advanced users who wish to reduce the final library size or supported types.</p>
+
+<p>The values of these build options are automatically set by the CMake scripts.<br />
+Changing the default behavior requires careful attention to the consequences.</p>
+
+<p>The Fortran language 2023 supports five intrinsic types:</p>
+
+<ul>
+  <li>character</li>
+  <li>integer</li>
+  <li>logical</li>
+  <li>complex</li>
+  <li>real</li>
+</ul>
+
+<p>each of which can have a range of possible kind type
+parameter values that are specific to the compiler and platform.</p>
+
+<p>The ParaMonte library currently allows building the library for
+up to 5 different kind type parameters as specified by the
+following variables in the <code>iso_fortran_env</code> intrinsic
+module of the standard:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>character_kinds</code></td>
+      <td>The constant vector of supported character kinds.</td>
+    </tr>
+    <tr>
+      <td><code>integer_kinds</code></td>
+      <td>The constant vector of supported integer kinds.</td>
+    </tr>
+    <tr>
+      <td><code>logical_kinds</code></td>
+      <td>The constant vector of supported logical kinds.</td>
+    </tr>
+    <tr>
+      <td><code>real_kinds</code></td>
+      <td>The constant vector of supported complex/real kinds.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>By default, the library is built for all supported kinds that are <strong>fully</strong> supported by the compiler.
+This can lead to code bloat and long compilation times if all kinds are activated.
+If only specific kinds are desired, the following flags can be used to build the
+library only for the selected kinds (specified by their element indices in the
+corresponding constant vectors from the <code>iso_fortran_env</code> intrinsic module).</p>
+
+<blockquote>
+  <p>The unicode support within gfortran is an example of a type kind parameter
+that is supported by the compiler but not fully implemented and not functional.
+As such, the type kind parameter corresponding to uniccode is dropped in the library build.</p>
+</blockquote>
+
+<h3 id="cki"><code>cki</code></h3>
+
+<p>Specifies a list of <code>complex</code> kind indices
+for which the ParaMonte library must be built.</p>
+
+<p>Specifies any additional linker flags passed to
+the Fortran linker with which the library object files are linked.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--cki</span> <span class="s2">"complex_kinds_indices"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dcki=<span class="s2">"complex_kinds_indices"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>complex_kinds_indices</code> is a semicolon-separated list of
+indices of the <code>complex_kinds(:)</code> constant vector of <code>iso_fortran_env</code>
+intrinsic module of Fortran.</p>
+
+<p>For example, setting <code>complex_kinds_indices</code> to <code>1;3;6</code> will
+build the library for the kinds in <code>complex_kinds([1, 3, 6])</code>.</p>
+
+<blockquote>
+  <p>No more than fives indices can be simultaneously specified in every single build, because
+the ParaMonte library is currently configured for builds with up to 5 kinds for each type.</p>
+</blockquote>
+
+<blockquote>
+  <p>The complex kinds can be normally limited to only the two default compiler
+choices for the complex kind without any harm to the library build and run.
+This can lead to noticeable savings in library size and build time.</p>
+</blockquote>
+
+<blockquote>
+  <p>The minimally-required <code>complex</code> type kind parameter indices for the Intel and GNU compilers are <code>1;2</code>.</p>
+</blockquote>
+
+<blockquote>
+  <p>Beware some ParaMonte algorithms require compatible <code>complex</code> and <code>real</code> kind,
+necessitating the use of the same kind type parameters for both data types.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>complex_kinds_indices</code>
+is the kinds specified for the <code>real</code> type (below).</p>
+
+<h3 id="iki"><code>iki</code></h3>
+
+<p>Specifies a list of <code>integer</code> kind indices
+for which the ParaMonte library must be built.</p>
+
+<p>Specifies any additional linker flags passed to
+the Fortran linker with which the library object files are linked.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--iki</span> <span class="s2">"integer_kinds_indices"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Diki=<span class="s2">"integer_kinds_indices"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>integer_kinds_indices</code> is a semicolon-separated list of
+indices of the <code>integer_kinds(:)</code> constant vector of <code>iso_fortran_env</code>
+intrinsic module of Fortran.</p>
+
+<p>For example, setting <code>integer_kinds_indices</code> to <code>1;3;6</code> will
+build the library for the kinds in <code>integer_kinds([1, 3, 6])</code>.</p>
+
+<blockquote>
+  <p>No more than fives indices can be simultaneously specified in every single build, because
+the ParaMonte library is currently configured for builds with up to fives kinds for each type.</p>
+</blockquote>
+
+<blockquote>
+  <p>If ever specified, always ensure the two default integer kinds supported by
+the Fortran programming language are included in the specified list of indices.</p>
+</blockquote>
+
+<blockquote>
+  <p>The minimally-required <code>integer</code> type kind parameter indices for the Intel and GNU compilers are <code>3;4</code>.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>integer_kinds_indices</code> is all kinds
+supported by the compiler for the C/C++/Fortran programming languages
+and only the minimally-required kind type parameters for
+all other programming languages.</p>
+
+<h3 id="lki"><code>lki</code></h3>
+
+<p>Specifies a list of <code>logical</code> kind indices
+for which the ParaMonte library must be built.</p>
+
+<p>Specifies any additional linker flags passed to
+the Fortran linker with which the library object files are linked.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--lki</span> <span class="s2">"logical_kinds_indices"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dlki=<span class="s2">"logical_kinds_indices"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>logical_kinds_indices</code> is a semicolon-separated list of
+indices of the <code>logical_kinds(:)</code> constant vector of <code>iso_fortran_env</code>
+intrinsic module of Fortran.</p>
+
+<p>For example, setting <code>logical_kinds_indices</code> to <code>1;3;6</code> will
+build the library for the kinds in <code>logical_kinds([1, 3, 6])</code>.</p>
+
+<blockquote>
+  <p>The logical kinds can be normally limited to only the default compiler
+choice for the logical kind without any harm to the library build and run.
+This can lead to noticeable savings in library size and build time.</p>
+</blockquote>
+
+<blockquote>
+  <p>The minimally-required <code>logical</code> type kind parameter indices for the Intel and GNU compilers are <code>3</code>.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>logical_kinds_indices</code> is all kinds
+supported by the compiler for the Fortran programming language and
+only the minimally-required kind type parameter for
+all other programming languages.</p>
+
+<h3 id="rki"><code>rki</code></h3>
+
+<p>Specifies a list of <code>real</code> kind indices
+for which the ParaMonte library must be built.</p>
+
+<p>Specifies any additional linker flags passed to
+the Fortran linker with which the library object files are linked.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--rki</span> <span class="s2">"real_kinds_indices"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Drki=<span class="s2">"real_kinds_indices"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>real_kinds_indices</code> is a semicolon-separated list of
+indices of the <code>real_kinds(:)</code> constant vector of <code>iso_fortran_env</code>
+intrinsic module of Fortran.</p>
+
+<p>For example, setting <code>real_kinds_indices</code> to <code>1;3;6</code> will
+build the library for the kinds in <code>real_kinds([1, 3, 6])</code>.</p>
+
+<blockquote>
+  <p>No more than fives indices can be simultaneously specified in every single build, because
+the ParaMonte library is currently configured for builds with up to 5 kinds for each type.</p>
+</blockquote>
+
+<blockquote>
+  <p>The real kinds can be normally limited to only the two default compiler
+choices for the real kind without any harm to the library build and run.
+This can lead to noticeable savings in library size and build time.</p>
+</blockquote>
+
+<blockquote>
+  <p>The minimally-required <code>real</code> type kind parameter indices for the Intel and GNU compilers are <code>1;2</code>.</p>
+</blockquote>
+
+<blockquote>
+  <p>Beware some ParaMonte algorithms require compatible <code>complex</code> and <code>real</code> kind,
+necessitating the use of the same kind type parameters for both data types.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>real_kinds_indices</code> is all kinds
+supported by the compiler for the C/C++/Fortran programming languages
+and only the minimally-required kind type parameters for
+all other programming languages.</p>
+
+<h3 id="ski"><code>ski</code></h3>
+
+<p>Specifies a list of <code>character</code> kind indices
+for which the ParaMonte library must be built.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--ski</span> <span class="s2">"character_kinds_indices"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dski=<span class="s2">"character_kinds_indices"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>character_kinds_indices</code> is a semicolon-separated list of
+indices of the <code>character_kinds(:)</code> constant vector of <code>iso_fortran_env</code>
+intrinsic module of Fortran.</p>
+
+<p>For example, setting <code>character_kinds_indices</code> to <code>1;3;6</code> will
+build the library for the kinds in <code>character_kinds([1, 3, 6])</code>.</p>
+
+<blockquote>
+  <p>No more than fives indices can be simultaneously specified in every single build, because
+the ParaMonte library is currently configured for builds with up to fives kinds for each type.</p>
+</blockquote>
+
+<blockquote>
+  <p>The minimally-required <code>character</code> type kind parameter indices for the Intel and GNU compilers are <code>1</code>.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>character_kinds_indices</code>
+is all kind numbers fully supported by the compiler.</p>
+
+<p><br /></p>
+
+<div class="bs-callout bs-callout-danger">If you have any questions about the topics discussed on this page, feel free to ask in the comment section below, or <a href="https://github.com/cdslaborg/paramonte/issues/new/choose" target="_blank">raise an issue</a> on the GitHub page of the library, or reach out to <a href="../../../overview/preface/#who-are-the-paramonte-authors-and-developers" target="_blank">the ParaMonte library authors</a>.</div>
+
+<p><br /></p>
+
+
+    
+    
+        
+    <div style="margin-top:3rem">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'paramonte'; // required: replace example with your forum shortname
+    
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+</div>
+<hr class="shaded"/>
+<footer>
+    <div class="row">
+        <div class="social-icons">
+
+    
+    <span class="social-icon">
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+
+    
+    <span class="social-icon">
+        <a href="https://instagram.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://medium.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-medium fa-stack-xs"></i>
+                <!--
+                -->
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+</div>
+
+        <div class="col-lg-12 footer">
+            &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
+            Last updated on March 14, 2024<br/>
+            
+        <p>
+            <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/latest/images/logo.png" }}" alt="cdslab.org" /></a>
+            <!-- hitwebcounter Code START -->
+
+<div style="text-align:right; float: none; width: 100%; font-size:0.9em; margin-top: -15px">
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7807987&style=0007&nbdigits=8&type=page&initCount=155531" title="Free Counter" Alt="web counter"   border="0" />
+    <br>
+    <span style="color: #ffffff;">
+        <script type="text/javascript">
+            var sc_project=12178963;
+            var sc_invisible=0;
+            var sc_security="e0dfe0f9";
+            var sc_text=3;
+            var scJsHost = "https://";
+            document.write("<sc"+"ript type='text/javascript' src='" +
+            scJsHost+
+            "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+    </span>
+</div>
+        </p>
+        </div>
+    </div>
+    <!--Mathjax LaTeX engine-->
+    
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+        MathJax.Hub.Config({
+            config: ["MMLorHTML.js"],
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX"],
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: ".8em",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                autoNumber: "AMS",
+                },
+                unicode: {
+                fonts: "STIXGeneral,'Arial Unicode MS'" 
+                }
+            },
+            showProcessingMessages: false
+        });
+    </script>
+    <style TYPE="text/css">
+        code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+    </style>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+            }
+        });
+        MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</footer>
+
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /#main -->
+        </div>
+        
+    </body>
+    
+</html>

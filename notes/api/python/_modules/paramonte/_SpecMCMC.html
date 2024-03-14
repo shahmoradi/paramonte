@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>paramonte._SpecMCMC &mdash; ParaMonte :: Python  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> ParaMonte :: Python
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ParaMonte :: Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../paramonte.html">paramonte</a> &raquo;</li>
+        
+      <li>paramonte._SpecMCMC</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for paramonte._SpecMCMC</h1><div class="highlight"><pre>
+<span></span><span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####</span>
+<span class="c1">####   MIT License</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte: plain powerful parallel Monte Carlo library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Copyright (C) 2012-present, The Computational Data Science Lab</span>
+<span class="c1">####</span>
+<span class="c1">####   This file is part of the ParaMonte library.</span>
+<span class="c1">####</span>
+<span class="c1">####   Permission is hereby granted, free of charge, to any person obtaining a </span>
+<span class="c1">####   copy of this software and associated documentation files (the &quot;Software&quot;), </span>
+<span class="c1">####   to deal in the Software without restriction, including without limitation </span>
+<span class="c1">####   the rights to use, copy, modify, merge, publish, distribute, sublicense, </span>
+<span class="c1">####   and/or sell copies of the Software, and to permit persons to whom the </span>
+<span class="c1">####   Software is furnished to do so, subject to the following conditions:</span>
+<span class="c1">####</span>
+<span class="c1">####   The above copyright notice and this permission notice shall be </span>
+<span class="c1">####   included in all copies or substantial portions of the Software.</span>
+<span class="c1">####</span>
+<span class="c1">####   THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, </span>
+<span class="c1">####   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF </span>
+<span class="c1">####   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. </span>
+<span class="c1">####   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, </span>
+<span class="c1">####   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR </span>
+<span class="c1">####   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE </span>
+<span class="c1">####   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+<span class="c1">####</span>
+<span class="c1">####   ACKNOWLEDGMENT</span>
+<span class="c1">####</span>
+<span class="c1">####   ParaMonte is an honor-ware and its currency is acknowledgment and citations.</span>
+<span class="c1">####   As per the ParaMonte library license agreement terms, if you use any parts of </span>
+<span class="c1">####   this library for any purposes, kindly acknowledge the use of ParaMonte in your </span>
+<span class="c1">####   work (education/research/industry/development/...) by citing the ParaMonte </span>
+<span class="c1">####   library as described on this page:</span>
+<span class="c1">####</span>
+<span class="c1">####       https://github.com/cdslaborg/paramonte/blob/main/ACKNOWLEDGMENT.md</span>
+<span class="c1">####</span>
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">####################################################################################################################################</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">_SpecBase</span> <span class="kn">import</span> <span class="n">inputFileDelim</span>
+
+<span class="c1">####################################################################################################################################</span>
+<span class="c1">#### SpecMCMC specification type-checking class</span>
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="chainSize"><a class="viewcode-back" href="../../autoapi/paramonte/_SpecMCMC/index.html#paramonte._SpecMCMC.chainSize">[docs]</a><span class="k">def</span> <span class="nf">chainSize</span><span class="p">(</span><span class="n">chainSize</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">chainSize</span><span class="p">,</span><span class="nb">int</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;chainSize=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">chainSize</span><span class="p">)</span> <span class="o">+</span> <span class="n">inputFileDelim</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The input specification, chainSize, must be of type int.&quot;</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="scaleFactor"><a class="viewcode-back" href="../../autoapi/paramonte/_SpecMCMC/index.html#paramonte._SpecMCMC.scaleFactor">[docs]</a><span class="k">def</span> <span class="nf">scaleFactor</span><span class="p">(</span><span class="n">scaleFactor</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scaleFactor</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;scaleFactor=&quot;</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">scaleFactor</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span> <span class="o">+</span> <span class="n">inputFileDelim</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The input specification, scaleFactor, must be of type str.&quot;</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="startPointVec"><a class="viewcode-back" href="../../autoapi/paramonte/_SpecMCMC/index.html#paramonte._SpecMCMC.startPointVec">[docs]</a><span class="k">def</span> <span class="nf">startPointVec</span><span class="p">(</span><span class="n">startPointVec</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">startPointVec</span><span class="p">,(</span><span class="nb">list</span><span class="p">,</span><span class="nb">tuple</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="s2">&quot;startPointVec=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">startPointVec</span><span class="p">))</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;[]&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">inputFileDelim</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The input specification, startPointVec, must be a list, tuple, or numpy vector of ndim or less elements of type float.&quot;</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="proposalModel"><a class="viewcode-back" href="../../autoapi/paramonte/_SpecMCMC/index.html#paramonte._SpecMCMC.proposalModel">[docs]</a><span class="k">def</span> <span class="nf">proposalModel</span><span class="p">(</span><span class="n">proposalModel</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">proposalModel</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;proposalModel=&quot;</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">proposalModel</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span> <span class="o">+</span> <span class="n">inputFileDelim</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The input specification, proposalModel, must be of type str.&quot;</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="proposalStartCovMat"><a class="viewcode-back" href="../../autoapi/paramonte/_SpecMCMC/index.html#paramonte._SpecMCMC.proposalStartCovMat">[docs]</a><span class="k">def</span> <span class="nf">proposalStartCovMat</span><span class="p">(</span><span class="n">proposalStartCovMat</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">proposalStartCovMat</span><span class="p">,(</span><span class="nb">list</span><span class="p">,</span><span class="nb">tuple</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="s2">&quot;proposalStartCovMat=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">proposalStartCovMat</span><span class="p">))</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;[]&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">inputFileDelim</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The input specification, proposalStartCovMat, must be a symmetric 2-dimensional list, tuple, or numpy matrix of ndim-by-ndim or, &quot;</span>
+                        <span class="s2">&quot;a list, tuple, or numpy vector of ndim**2 or less elements of type float.&quot;</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="proposalStartCorMat"><a class="viewcode-back" href="../../autoapi/paramonte/_SpecMCMC/index.html#paramonte._SpecMCMC.proposalStartCorMat">[docs]</a><span class="k">def</span> <span class="nf">proposalStartCorMat</span><span class="p">(</span><span class="n">proposalStartCorMat</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">proposalStartCorMat</span><span class="p">,(</span><span class="nb">list</span><span class="p">,</span><span class="nb">tuple</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="s2">&quot;proposalStartCorMat=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">proposalStartCorMat</span><span class="p">))</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;[]&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">inputFileDelim</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The input specification, proposalStartCorMat, must be a symmetric 2-dimensional list, tuple, or numpy matrix of ndim-by-ndim or, &quot;</span>
+                        <span class="s2">&quot;a list, tuple, or numpy vector of ndim**2 or less elements of type float.&quot;</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="proposalStartStdVec"><a class="viewcode-back" href="../../autoapi/paramonte/_SpecMCMC/index.html#paramonte._SpecMCMC.proposalStartStdVec">[docs]</a><span class="k">def</span> <span class="nf">proposalStartStdVec</span><span class="p">(</span><span class="n">proposalStartStdVec</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">proposalStartStdVec</span><span class="p">,(</span><span class="nb">list</span><span class="p">,</span><span class="nb">tuple</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="s2">&quot;proposalStartStdVec=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">proposalStartStdVec</span><span class="p">))</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;[]&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">inputFileDelim</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The input specification, proposalStartStdVec, must be a list, tuple, or numpy vector of ndim or less elements of type float.&quot;</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="sampleRefinementCount"><a class="viewcode-back" href="../../autoapi/paramonte/_SpecMCMC/index.html#paramonte._SpecMCMC.sampleRefinementCount">[docs]</a><span class="k">def</span> <span class="nf">sampleRefinementCount</span><span class="p">(</span><span class="n">sampleRefinementCount</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sampleRefinementCount</span><span class="p">,</span><span class="nb">int</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;sampleRefinementCount=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sampleRefinementCount</span><span class="p">)</span> <span class="o">+</span> <span class="n">inputFileDelim</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The input specification, sampleRefinementCount, must be of type int.&quot;</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="sampleRefinementMethod"><a class="viewcode-back" href="../../autoapi/paramonte/_SpecMCMC/index.html#paramonte._SpecMCMC.sampleRefinementMethod">[docs]</a><span class="k">def</span> <span class="nf">sampleRefinementMethod</span><span class="p">(</span><span class="n">sampleRefinementMethod</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sampleRefinementMethod</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;sampleRefinementMethod=&quot;</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sampleRefinementMethod</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span> <span class="o">+</span> <span class="n">inputFileDelim</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The input specification, sampleRefinementMethod, must be of type str.&quot;</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="randomStartPointRequested"><a class="viewcode-back" href="../../autoapi/paramonte/_SpecMCMC/index.html#paramonte._SpecMCMC.randomStartPointRequested">[docs]</a><span class="k">def</span> <span class="nf">randomStartPointRequested</span><span class="p">(</span><span class="n">randomStartPointRequested</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">randomStartPointRequested</span><span class="p">,</span><span class="nb">bool</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;randomStartPointRequested=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">randomStartPointRequested</span><span class="p">)</span> <span class="o">+</span> <span class="n">inputFileDelim</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The input specification, randomStartPointRequested, must be of type bool (True or False).&quot;</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="randomStartPointDomainLowerLimitVec"><a class="viewcode-back" href="../../autoapi/paramonte/_SpecMCMC/index.html#paramonte._SpecMCMC.randomStartPointDomainLowerLimitVec">[docs]</a><span class="k">def</span> <span class="nf">randomStartPointDomainLowerLimitVec</span><span class="p">(</span><span class="n">randomStartPointDomainLowerLimitVec</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">randomStartPointDomainLowerLimitVec</span><span class="p">,(</span><span class="nb">list</span><span class="p">,</span><span class="nb">tuple</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="s2">&quot;randomStartPointDomainLowerLimitVec=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">randomStartPointDomainLowerLimitVec</span><span class="p">))</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;[]&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">inputFileDelim</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The input specification, randomStartPointDomainLowerLimitVec, must be a list, tuple, or numpy vector of ndim or less elements of type float.&quot;</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+
+<div class="viewcode-block" id="randomStartPointDomainUpperLimitVec"><a class="viewcode-back" href="../../autoapi/paramonte/_SpecMCMC/index.html#paramonte._SpecMCMC.randomStartPointDomainUpperLimitVec">[docs]</a><span class="k">def</span> <span class="nf">randomStartPointDomainUpperLimitVec</span><span class="p">(</span><span class="n">randomStartPointDomainUpperLimitVec</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">randomStartPointDomainUpperLimitVec</span><span class="p">,(</span><span class="nb">list</span><span class="p">,</span><span class="nb">tuple</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="s2">&quot;randomStartPointDomainUpperLimitVec=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">randomStartPointDomainUpperLimitVec</span><span class="p">))</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;[]&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">inputFileDelim</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The input specification, randomStartPointDomainUpperLimitVec, must be a list, tuple, or numpy vector of ndim or less elements of type float.&quot;</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################################################</span>
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+    <div>
+        <p>
+            <a href="https://www.cdslab.org/paramonte">ParaMonte: Plain Powerful Parallel Monte Carlo Library</a>.<br/>
+            &copy; Copyright 2020, <a href="https://www.cdslab.org" target="_blank">The Computational Data Science Lab</a>.<br/>
+        </p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </div>
+    <!-- Start of statc -->
+    <div style="color: #ffffff; float: none; width: 100%;">
+        <span style="font-size:0.8em">visitor count: 
+            <script type="text/javascript">
+                var sc_project=12178963; 
+                var sc_invisible=0; 
+                var sc_security="e0dfe0f9"; 
+                var sc_text=3; 
+                var scJsHost = "https://";
+                document.write("<sc"+"ript type='text/javascript' src='" +
+                scJsHost+
+                "statcounter.com/counter/counter.js'></"+"script>");
+            </script>
+        </span>
+    </div>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

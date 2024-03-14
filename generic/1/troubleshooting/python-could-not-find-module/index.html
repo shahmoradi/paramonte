@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" troubleshooting mpi intel python parallel dependency shared dylib impi dll so">
+<title>Python: Could not find module "libparamonte_python_*" (or one of its dependencies) | ParaMonte: Parallel Monte Carlo Library</title>
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/1/css/prismOkaidia.css">
+<script src="https://www.cdslab.org/paramonte/generic/1/js/prismOkaidia.js"></script>
+<!--
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/1/css/syntax.css">
+-->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://www.cdslab.org/paramonte/generic/1/css/bootstrap.min.css">
+
+
+
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/1/css/customstyles.css">
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/1/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/1/css/theme-cdslab.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://www.cdslab.org/paramonte/generic/1/js/jquery.navgoco.min.js"></script>
+<!-- make sidebar non-accordion -->
+<script src="https://www.cdslab.org/paramonte/generic/1/js/lockScrollBarPosition.js"></script>
+<!-- make sidebar non-accordion -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.sidenav').navgoco({
+              accordion: false,
+              caret: '<span class="caret"></span>',
+              openClass: 'open',
+              save: true,
+              cookie: {
+                  name: 'navgoco',
+                  expires: false,
+                  path: '/'
+              },
+              slide: {
+                  duration: 400,
+                  easing: 'swing'
+              }
+          });
+    });
+</script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<!--
+-->
+<script src="https://www.cdslab.org/paramonte/generic/1/js/toc.js"></script>
+<script src="https://www.cdslab.org/paramonte/generic/1/js/customscripts.js"></script>
+<link rel="shortcut icon" href="https://www.cdslab.org/paramonte/generic/1/images/favicon.ico">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="" href="https://www.cdslab.org/paramonte/generic/1/feed.xml">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6JB9XNG83"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J6JB9XNG83');
+</script>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+    </head>
+    <body>
+        <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div id="sticky" class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-book fa-lg navbar-brand" href="https://www.cdslab.org/paramonte/generic/1/index.html">&nbsp;<span class="projectTitle"> ParaMonte 1</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                    
+                        
+                            <li><a href="https://github.com/cdslaborg/paramonte" target="_blank" rel="noopener">GitHub</a></li>
+                        
+                    
+                        
+                            <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/78946-paramonte" target="_blank" rel="noopener">MathWorks</a></li>
+                        
+                    
+                        
+                            <li><a href="https://pypi.org/project/paramonte/" target="_blank" rel="noopener">PyPI</a></li>
+                        
+                    
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CDSLab<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/#about" target="_blank" rel="noopener">About</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/people" target="_blank" rel="noopener">People</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/research" target="_blank" rel="noopener">Research</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/matlab/" target="_blank" rel="noopener">MATLAB Programming</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/python/" target="_blank" rel="noopener">Python Programming</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">History<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/paramonte/generic/latest" target="_blank" rel="noopener">latest</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/paramonte/generic/1" target="_blank" rel="noopener">version 1</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="keyword search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="https://www.cdslab.org/paramonte/generic/1/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: "https://www.cdslab.org/paramonte/generic/1/search.json",
+                                searchResultTemplate: '<li><a href="https://www.cdslab.org/paramonte/generic/1{url}" title="Python: Could not find module &quot;libparamonte_python_*&quot; (or one of its dependencies)">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+        <!-- Page Content -->
+        <div class="container">
+            <div id="main">
+                <!-- Content Row -->
+                <div class="row">
+                    
+                    
+                        <!-- Sidebar Column -->
+                        <div class="col-md-3" id="tg-sb-sidebar">
+                            
+<ul id="mysidebar" class="sidenav">
+    <!--
+    -->
+    <li class="sidebarTitle"> </li>
+    
+        
+            
+                <li>
+                    <a title="Overview" href="#"><b>Overview</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Preface" href="https://www.cdslab.org/paramonte/generic/1/overview/preface/">Preface</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte kernel release notes" href="https://www.cdslab.org/paramonte/generic/1/overview/paramonte-kernel-release-notes/">ParaMonte kernel release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte MATLAB release notes" href="https://www.cdslab.org/paramonte/generic/1/overview/paramonte-matlab-release-notes/">ParaMonte MATLAB release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Python release notes" href="https://www.cdslab.org/paramonte/generic/1/overview/paramonte-python-release-notes/">ParaMonte Python release notes</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Installation" href="#"><b>Installation</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte pre-installation notes" href="https://www.cdslab.org/paramonte/generic/1/installation/readme/">ParaMonte pre-installation notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C/C++/Fortran - Windows" href="https://www.cdslab.org/paramonte/generic/1/installation/windows/">ParaMonte C/C++/Fortran - Windows</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C/C++/Fortran - macOS" href="https://www.cdslab.org/paramonte/generic/1/installation/macos/">ParaMonte C/C++/Fortran - macOS</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte C/C++/Fortran - Linux" href="https://www.cdslab.org/paramonte/generic/1/installation/linux/">ParaMonte C/C++/Fortran - Linux</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte MATLAB" href="https://www.cdslab.org/paramonte/generic/1/installation/matlab/">ParaMonte MATLAB</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Python" href="https://www.cdslab.org/paramonte/generic/1/installation/python/">ParaMonte Python</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="API documentation" href="#"><b>API documentation</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte Python API" href="https://www.cdslab.org/paramonte/generic/1/api/python/autoapi/paramonte/">ParaMonte Python API</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaMonte MATLAB API" href="https://www.cdslab.org/paramonte/generic/1/api/matlab/">ParaMonte MATLAB API</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Usage - ParaDRAM sampler" href="#"><b>Usage - ParaDRAM sampler</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM quick start" href="https://www.cdslab.org/paramonte/generic/1/usage/paradram/interface/">ParaDRAM quick start</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM optional input file" href="https://www.cdslab.org/paramonte/generic/1/usage/paradram/input/">ParaDRAM optional input file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation specifications" href="https://www.cdslab.org/paramonte/generic/1/usage/paradram/specifications/">ParaDRAM simulation specifications</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation output files" href="https://www.cdslab.org/paramonte/generic/1/usage/paradram/output/">ParaDRAM simulation output files</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM simulation restart" href="https://www.cdslab.org/paramonte/generic/1/usage/paradram/restart/">ParaDRAM simulation restart</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM parallelization tips" href="https://www.cdslab.org/paramonte/generic/1/usage/paradram/parallelization/">ParaDRAM parallelization tips</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Building ParaMonte application" href="#"><b>Building ParaMonte application</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Building ParaMonte C application" href="https://www.cdslab.org/paramonte/generic/1/build/c/">Building ParaMonte C application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Building ParaMonte C++ application" href="https://www.cdslab.org/paramonte/generic/1/build/cpp/">Building ParaMonte C++ application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Building ParaMonte Fortran application" href="https://www.cdslab.org/paramonte/generic/1/build/fortran/">Building ParaMonte Fortran application</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Running ParaMonte application" href="#"><b>Running ParaMonte application</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Running C/C++/Fortran application" href="https://www.cdslab.org/paramonte/generic/1/run/default/">Running C/C++/Fortran application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Running MATLAB application" href="https://www.cdslab.org/paramonte/generic/1/run/matlab/">Running MATLAB application</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Running Python application" href="https://www.cdslab.org/paramonte/generic/1/run/python/">Running Python application</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="C examples" href="#"><b>C examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Sampling a Multivariate Normal distribution" href="https://www.cdslab.org/paramonte/generic/1/examples/c/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="C++ examples" href="#"><b>C++ examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Sampling a Multivariate Normal distribution" href="https://www.cdslab.org/paramonte/generic/1/examples/cpp/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Fortran examples" href="#"><b>Fortran examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Sampling a Multivariate Normal distribution" href="https://www.cdslab.org/paramonte/generic/1/examples/fortran/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="MATLAB examples" href="#"><b>MATLAB examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="MATLAB Live Scripts" href="https://www.cdslab.org/paramonte/generic/1/examples/matlab/mlx/">MATLAB Live Scripts</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Post-processing existing simulations" href="https://www.cdslab.org/paramonte/generic/1/examples/matlab/postprocess/">Post-processing existing simulations</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Python examples" href="#"><b>Python examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Jupyter Notebooks" href="https://www.cdslab.org/paramonte/generic/1/examples/python/jupyter/">Jupyter Notebooks</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Post-processing existing simulations" href="https://www.cdslab.org/paramonte/generic/1/examples/python/postprocess/">Post-processing existing simulations</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Code Coverage Reports" href="#"><b>Code Coverage Reports</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Guidelines" href="https://www.cdslab.org/paramonte/generic/1/codecov/">Guidelines</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - Serial" href="" target="_blank" rel="noopener">Kernel - Serial</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - MPI Parallel" href="" target="_blank" rel="noopener">Kernel - MPI Parallel</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Kernel - Coarray Parallel" href="" target="_blank" rel="noopener">Kernel - Coarray Parallel</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Contributing to ParaMonte" href="#"><b>Contributing to ParaMonte</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Reporting defects" href="https://www.cdslab.org/paramonte/generic/1/contributing/defects">Reporting defects</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Requesting enhancements" href="https://www.cdslab.org/paramonte/generic/1/contributing/enhancements">Requesting enhancements</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Development guidelines - general" href="https://www.cdslab.org/paramonte/generic/1/contributing/development/general/">Development guidelines - general</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Development guidelines - kernel" href="https://www.cdslab.org/paramonte/generic/1/contributing/development/kernel/">Development guidelines - kernel</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="Troubleshooting" href="#"><b>Troubleshooting</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="Enhancement-requests and bug-reports" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/issues/">Enhancement-requests and bug-reports</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="-bash: Permission denied" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/bash-permission-denied/">-bash: Permission denied</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="bash: matlab: command not found" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/bash-matlab-command-not-found/">bash: matlab: command not found</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="catastrophic error: cannot open source file" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/catastrophic-error-cannot-open-source-file/">catastrophic error: cannot open source file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Catastrophic error: could not set locale" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/catastrophic-error-could-not-set-locale/">Catastrophic error: could not set locale</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="xcrun: error: unable to find utility "clang"" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/xcrun-error-unable-to-find-utility-clang/">xcrun: error: unable to find utility "clang"</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="changing directory on Windows CMD" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/windows-drive-change/">changing directory on Windows CMD</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="error while loading shared libraries" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/error-while-loading-shared-libraries/">error while loading shared libraries</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="finding the MPI libraries on Windows" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/finding-mpi-libraries-on-windows/">finding the MPI libraries on Windows</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Fortran runtime error: End of file" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/fortran-runtime-error-end-of-file/">Fortran runtime error: End of file</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="libgfortran not found" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/libgfortran-not-found/">libgfortran not found</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="macOS: developer cannot be verified" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/macos-developer-cannot-be-verified/">macOS: developer cannot be verified</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li class="active"><a title="Python: could not find module" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/python-could-not-find-module/">Python: could not find module</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: module object is not callable" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/python-module-object-is-not-callable/">Python: module object is not callable</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="Python: segmentation-fault error" href="https://www.cdslab.org/paramonte/generic/1/troubleshooting/python-segmentation-fault/">Python: segmentation-fault error</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+    
+    <!-- if you aren't using the accordion, uncomment this block:
+    -->
+    <p class="external">
+        <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+    </p>
+</ul>
+<!--
+This highlights the active parent class in the navgoco sidebar. 
+This is critical so that the parent expands when you're viewing a page.
+This must appear below the sidebar code above.
+Otherwise, if placed inside customscripts.js,
+the script runs before the sidebar code runs and the class never gets inserted.
+-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+                        </div>
+                        
+                    
+                    <!-- Content Column -->
+                    <div class="col-md-9" id="tg-sb-content">
+                        <div class="post-header">
+   <h1 class="post-title-main">Python: Could not find module "libparamonte_python_*" (or one of its dependencies)</h1>
+</div>
+
+<div class="post-content">
+    
+    
+    
+        <br>
+        
+<script>
+    $( document ).ready(function() {
+        // Handler for .ready() called.
+        $('#toc').toc({ minimumHeaders: 0 
+                      , listType: 'ol'
+                      , showSpeed: 0
+                      , headers: 'h2,h3,h4,h5,h6'
+        });
+        /* the following offset helps account for the space taken up by the floating toolbar. */
+        $('#toc').on('click', 'a', function() {
+            var target = $(this.getAttribute('href')), scroll_target = target.offset().top$(window).scrollTop(scroll_target - 10);
+            return false
+        })
+    });
+</script>
+
+<div id="toc"></div>
+
+    
+    
+    
+<p>One error that is frequently encountered by the ParaMonte users in parallel simulations is of the following nature,</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">module</span> <span class="sh">'</span><span class="s">libparamonte_python_windows_x64_intel_release_shared_heap_impi.dll</span><span class="sh">'</span> <span class="p">(</span><span class="ow">or</span> <span class="n">one</span> <span class="n">of</span> <span class="n">its</span> <span class="n">dependencies</span><span class="p">).</span> <span class="n">Try</span> <span class="n">using</span> <span class="n">the</span> <span class="n">full</span> <span class="n">path</span> <span class="k">with</span> <span class="n">constructor</span> <span class="n">syntax</span><span class="p">.</span>
+<span class="nc">Traceback </span><span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="sh">"</span><span class="s">C:\Users\cmbac\AppData\Roaming\Python\Python38\site-packages\paramonte\_ParaMonteSampler.py</span><span class="sh">"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">612</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_runSampler</span>
+    <span class="n">pmdll</span> <span class="o">=</span> <span class="n">ct</span><span class="p">.</span><span class="nc">CDLL</span><span class="p">(</span><span class="n">libPath</span><span class="p">)</span>
+  <span class="n">File</span> <span class="sh">"</span><span class="s">C:\ProgramData\Anaconda3\lib\ctypes\__init__.py</span><span class="sh">"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">373</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_init_</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">_handle</span> <span class="o">=</span> <span class="nf">_dlopen</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+<span class="nb">FileNotFoundError</span><span class="p">:</span> <span class="n">Could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">module</span> <span class="sh">'</span><span class="s">C:\Users\cmbac\AppData\Roaming\Python\Python38\site-packages\paramonte\libparamonte_python_windows_x64_intel_release_shared_heap_impi.dll</span><span class="sh">'</span> <span class="p">(</span><span class="ow">or</span> <span class="n">one</span> <span class="n">of</span> <span class="n">its</span> <span class="n">dependencies</span><span class="p">).</span> <span class="n">Try</span> <span class="n">using</span> <span class="n">the</span> <span class="n">full</span> <span class="n">path</span> <span class="k">with</span> <span class="n">constructor</span> <span class="n">syntax</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>The primary reason for getting such error messages is that the MPI runtime library variables and paths have not been defined in your Python, Bash, or Anaconda command-prompt session. To resolve this error, type the following commands in your Python session and carefully follow the instructions provided to (re)install the MPI library or define the MPI runtime variables prior to running your MPI simulations,</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">paramonte</span> <span class="k">as</span> <span class="n">pm</span>
+<span class="n">pm</span><span class="p">.</span><span class="nf">verify</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>If this does not resolve the error, please report this error on <a href="https://github.com/cdslaborg/paramonte/issues" target="_blank">the issues page of the ParaMonte repository on GitHub</a>.</p>
+
+<p><br /></p>
+
+<div class="bs-callout bs-callout-danger">If you have any questions about the topics discussed on this page, feel free to ask in the comment section below, or <a href="https://github.com/cdslaborg/paramonte/issues/new/choose" target="_blank">raise an issue</a> on the GitHub page of the library, or reach out to <a href="../../../overview/preface/#who-are-the-paramonte-authors-and-developers" target="_blank">the ParaMonte library authors</a>.</div>
+
+<p><br /></p>
+
+
+    
+    
+        
+    <div style="margin-top:3rem">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'paramonte'; // required: replace example with your forum shortname
+    
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+</div>
+<hr class="shaded"/>
+<footer>
+    <div class="row">
+        <div class="social-icons">
+
+    
+    <span class="social-icon">
+        <a href="https://facebook.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://github.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+
+    
+    <span class="social-icon">
+        <a href="https://instagram.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://medium.com/cdslab" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-medium fa-stack-xs"></i>
+                <!--
+                -->
+            </span>
+        </a>
+    </span>
+    
+
+    
+    <span class="social-icon">
+        <a href="https://twitter.com/cdslaborg" target="_blank">
+            <span class="fa-stack fa-lg">
+                
+<i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    
+
+</div>
+
+        <div class="col-lg-12 footer">
+            &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
+            Last updated on March 14, 2024<br/>
+            
+        <p>
+            <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/1/images/logo.png" }}" alt="cdslab.org" /></a>
+            <!-- hitwebcounter Code START -->
+
+<div style="text-align:right; float: none; width: 100%; font-size:0.9em; margin-top: -15px">
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7807987&style=0007&nbdigits=8&type=page&initCount=155531" title="Free Counter" Alt="web counter"   border="0" />
+    <br>
+    <span style="color: #ffffff;">
+        <script type="text/javascript">
+            var sc_project=12178963;
+            var sc_invisible=0;
+            var sc_security="e0dfe0f9";
+            var sc_text=3;
+            var scJsHost = "https://";
+            document.write("<sc"+"ript type='text/javascript' src='" +
+            scJsHost+
+            "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+    </span>
+</div>
+        </p>
+        </div>
+    </div>
+    <!--Mathjax LaTeX engine-->
+    
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+        MathJax.Hub.Config({
+            config: ["MMLorHTML.js"],
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX"],
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: ".8em",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                autoNumber: "AMS",
+                },
+                unicode: {
+                fonts: "STIXGeneral,'Arial Unicode MS'" 
+                }
+            },
+            showProcessingMessages: false
+        });
+    </script>
+    <style TYPE="text/css">
+        code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+    </style>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+            }
+        });
+        MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</footer>
+
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /#main -->
+        </div>
+        
+    </body>
+    
+</html>

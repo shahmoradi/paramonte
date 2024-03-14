@@ -1,0 +1,339 @@
+:mod:`paramonte.vis.HeatMapPlot`
+================================
+
+.. py:module:: paramonte.vis.HeatMapPlot
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   paramonte.vis.HeatMapPlot.HeatMapPlot
+
+
+
+.. data:: Struct
+   
+
+   
+
+.. data:: newline
+   
+
+   
+
+.. py:class:: HeatMapPlot(plotType, dataFrame=None, methodName='ParaMonte', reportEnabled=True, resetPlot=None)
+
+   Bases: :class:`paramonte.vis._BasePlot.BasePlot`
+
+   This is the HeatMapPlot class for generating instances of 
+   heatmap figures based on the seaborn library's ``heatmap()``.
+
+       **Usage**
+
+           First generate an object of this class by optionally
+           passing the following parameters described below. 
+           Then call the ``make()`` method.
+
+       **Parameters**
+
+           plotType
+
+               A string indicating the name of the plot to be constructed.
+
+           dataFrame (optional)
+
+               A Pandas dataFrame whose data will be plotted.
+
+           methodName (optional)
+
+               The name of the ParaMonte sample requesting the BasePlot.
+
+           reportEnabled (optional)
+
+               A boolean whose value indicates whether guidelines 
+               should be printed in the standard output.
+
+           resetPlot (optional)
+
+               A function that resets the properties of the plot as desired 
+               from outside. If provided, a pointer to this function will be
+               saved for future internal usage.
+
+       **Attributes**
+
+           columns
+
+               An attribute that determines the columns of dataFrame 
+               to be visualized. It can have three forms:
+
+                   1.  A list of column indices in dataFrame.
+                   2.  A list of column names in dataFrame.columns.
+                   3.  A ``range(start,stop,step)`` of column indices.
+
+               Examples:
+
+                   1.  ``xcolumns = [0,1,4,3]``
+                   2.  ``xcolumns = ["SampleLogFunc","SampleVariable1"]``
+                   3.  ``xcolumns = range(17,7,-2)``
+
+               The default behavior includes all columns of the dataFrame.
+
+           rows
+
+               An attribute that determines the rows of dataFrame to be 
+               visualized. It can be either:
+
+                   1.  A ``range(start,stop,step)``, or, 
+                   2.  A list of row indices in dataFrame.index.
+
+               Examples:
+
+                   1.  ``rows = range(17,7,-2)``
+                   2.  ``rows = [i for i in range(7,17)]``
+
+               The default behavior includes all rows of the dataFrame.
+
+           heatmap
+
+               A structure with one attribute:
+
+                   kws
+
+                       A structure whose components are directly passed as 
+                       keyword arguments to the ``heatmap()`` function of 
+                       the seaborn library.
+
+                       Example usage:
+
+                           .. code-block:: python
+
+                               heatmap.square = True
+
+                       **NOTE**
+
+                       If a desired property is missing among the ``kws`` 
+                       attributes, simply add the field and its value to 
+                       the component.
+
+           annotPrecision
+
+               optional integer which determines the precision with which 
+                the output numbers corresponding to each pixel are written 
+                to the heatmap when annotation is requested via 
+                ``heatmap.kws.annot = True``. The default is 2, meaning 
+                that only two digits after the decimal are considered.
+
+           xticklabels
+
+               A structure with one attribute:
+
+                   kws
+
+                       A structure whose components are directly passed as 
+                       keyword arguments to the ``set_xticklabels()`` 
+                       function of the matplotlib library.
+
+                       Example usage:
+
+                           .. code-block:: python
+
+                               xticklabels.verticalalignment = "right"
+
+                       **NOTE**
+
+                       If a desired property is missing among the ``kws`` 
+                       attributes, simply add the field and its value to 
+                       the component.
+
+           yticklabels
+
+               A structure with one attribute:
+
+                   kws
+
+                       A structure whose components are directly passed as 
+                       keyword arguments to the ``set_yticklabels()`` 
+                       function of the matplotlib library.
+
+                       Example usage:
+
+                           .. code-block:: python
+
+                               yticklabels.verticalalignment = "right"
+
+                       **NOTE**
+
+                       If a desired property is missing among the ``kws`` 
+                       attributes, simply add the field and its value to 
+                       the component.
+
+           set
+
+               A structure with two attributes:
+
+                   enabled
+
+                       A boolean indicating whether a call to the ``set()``
+                       function of the seaborn library should be made or not.
+
+                   kws
+
+                       A structure whose components are directly passed as 
+                       keyword arguments to the ``set()`` function.
+
+                       Example usage:
+
+                           .. code-block:: python
+
+                               set.kws.style = "darkgrid"
+
+                       **NOTE**
+
+                       If a desired property is missing among the ``kws`` 
+                       attributes, simply add the field and its value to 
+                       the component.
+
+           axes (available only in 1D and 2D plots)
+
+               A structure with one attribute:
+
+                   kws
+
+                       A structure whose components are directly passed as 
+                       keyword arguments to the ``gca()`` function of the 
+                       matplotlib library.
+
+                       Example usage:
+
+                           .. code-block:: python
+
+                               axes.kws.facecolor = "w"
+
+                       **NOTE**
+
+                       If a desired property is missing among the ``kws`` 
+                       attributes, simply add the field and its value to 
+                       the component.
+
+           figure
+
+               A structure with two attributes:
+
+                   enabled
+
+                       A boolean indicating whether a call to the ``figure()``
+                       function of the matplotlib library should be made or not.
+                       If a call is made, a new figure will be generated.
+                       Otherwise, the current active figure will be used.
+
+                   kws
+
+                       A structure whose components are directly passed as 
+                       keyword arguments to the ``figure()`` function.
+
+                       Example usage:
+
+                           .. code-block:: python
+
+                               figure.kws.facecolor = "w"
+
+                       **NOTE**
+
+                       If a desired property is missing among the ``kws`` 
+                       attributes, simply add the field and its value to 
+                       the component.
+
+           currentFig
+
+               A structure whose attributes are the outputs of various plotting 
+               tools used to make the current figure. These include the handle 
+               to the current figure, the handle to the current axes in the plot, 
+               the handle to the colorbar (if any exists), and other Python 
+               plotting tools used to make to generate the figure.
+
+       **Returns**
+
+               An object of class ``HeatMapPlot``.
+
+   ---------------------------------------------------------------------------
+
+   .. method:: _reset(self)
+
+
+
+   .. method:: __call__(self, reself: tp.Optional[bool] = False, **kwargs)
+
+
+      Call the ``make()`` method of the 
+      current instance of the class.
+
+          **Parameters**
+
+              Any arguments that can be passed to the 
+              ``make()`` method of the plot object.
+
+          **Returns**
+
+              Any return value from the ``make()`` method of the plot object.
+
+
+   .. method:: make(self, reself: tp.Optional[bool] = False, **kwargs)
+
+
+      Generate a heatmap plot from the selected 
+      columns of the object's dataframe.
+
+          **Parameters**
+
+              reself
+
+                  A logical variable. If ``True``, an instance of the 
+                  object will be returned upon exit to the calling 
+                  routine. The default value is ``False``.
+
+          **Returns**
+
+              the object self if ``reself = True`` otherwise, ``None``.
+              However, this method causes side-effects by manipulating
+              the existing attributes of the object.
+
+
+   .. method:: _getDocString(self)
+
+
+
+   .. method:: helpme(self, topic=None)
+
+
+      Print the documentation for the input string topic. 
+      If the topic does not exist, the documentation for
+      the object will be printed.
+
+          **Parameters**
+       
+              topic (optional)
+
+              A string containing the name of the object 
+              for which help is needed.
+
+          **Returns**
+       
+              None
+       
+          **Example**
+
+              .. code-block:: python
+                  :linenos:
+
+                  helpme()
+                  helpme("make")
+                  helpme("helpme")
+                  helpme("getLogLinSpace")
+
+
+

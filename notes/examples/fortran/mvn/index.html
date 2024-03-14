@@ -7,25 +7,25 @@
 <meta name="description" content="">
 <meta name="keywords" content=" multivariate Gaussian normal MVN example sampling ParaDRAM Fortran">
 <title>Sampling a Multivariate Normal (MVN) distribution | ParaMonte: Parallel Monte Carlo Library</title>
-<link rel="stylesheet" href="/paramonte/css/prismOkaidia.css">
-<script src="/paramonte/js/prismOkaidia.js"></script>
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/notes/css/prismOkaidia.css">
+<script src="https://www.cdslab.org/paramonte/notes/js/prismOkaidia.js"></script>
 <!--
-<link rel="stylesheet" href="/paramonte/css/syntax.css">
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/notes/css/syntax.css">
 -->
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/paramonte/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://www.cdslab.org/paramonte/notes/css/bootstrap.min.css">
 
 
 
-<link rel="stylesheet" href="/paramonte/css/customstyles.css">
-<link rel="stylesheet" href="/paramonte/css/boxshadowproperties.css">
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/notes/css/customstyles.css">
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/notes/css/boxshadowproperties.css">
 <!-- most color styles are extracted out to here -->
-<link rel="stylesheet" href="/paramonte/css/theme-cdslab.css">
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/notes/css/theme-cdslab.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<script src="/paramonte/js/jquery.navgoco.min.js"></script>
+<script src="https://www.cdslab.org/paramonte/notes/js/jquery.navgoco.min.js"></script>
 <!-- make sidebar non-accordion -->
-<script src="/paramonte/js/lockScrollbarPosition.js"></script>
+<script src="https://www.cdslab.org/paramonte/notes/js/lockScrollBarPosition.js"></script>
 <!-- make sidebar non-accordion -->
 <script type="text/javascript">
     $(document).ready(function() {
@@ -52,16 +52,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 <!--
 -->
-<script src="/paramonte/js/toc.js"></script>
-<script src="/paramonte/js/customscripts.js"></script>
-<link rel="shortcut icon" href="/paramonte/images/favicon.ico">
+<script src="https://www.cdslab.org/paramonte/notes/js/toc.js"></script>
+<script src="https://www.cdslab.org/paramonte/notes/js/customscripts.js"></script>
+<link rel="shortcut icon" href="https://www.cdslab.org/paramonte/notes/images/favicon.ico">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-<link rel="alternate" type="application/rss+xml" title="" href="/paramonte/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://www.cdslab.org/paramonte/notes/feed.xml">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6JB9XNG83"></script>
 <script>
@@ -129,7 +129,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-book fa-lg navbar-brand" href="/paramonte/index.html">&nbsp;<span class="projectTitle"> ParaMonte: Parallel Monte Carlo Library</span></a>
+            <a class="fa fa-book fa-lg navbar-brand" href="https://www.cdslab.org/paramonte/notes/index.html">&nbsp;<span class="projectTitle"> ParaMonte 1</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -191,6 +191,21 @@
                             </ul>
                         </li>
                     
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">History<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                
+                                <li><a href="https://www.cdslab.org/paramonte/generic/latest" target="_blank" rel="noopener">latest</a></li>
+                                
+                                
+                                
+                                <li><a href="https://www.cdslab.org/paramonte/generic/1" target="_blank" rel="noopener">version 1</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    
                 
                 
                 <!--comment out this block if you want to hide search-->
@@ -200,13 +215,13 @@
                         <input type="text" id="search-input" placeholder="keyword search...">
                         <ul id="results-container"></ul>
                     </div>
-                    <script src="/paramonte/js/jekyll-search.js" type="text/javascript"></script>
+                    <script src="https://www.cdslab.org/paramonte/notes/js/jekyll-search.js" type="text/javascript"></script>
                     <script type="text/javascript">
                             SimpleJekyllSearch.init({
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
-                                dataSource: "/paramonte/search.json",
-                                searchResultTemplate: '<li><a href="https://www.cdslab.org/paramonte{url}" title="Sampling a Multivariate Normal (MVN) distribution">{title}</a></li>',
+                                dataSource: "https://www.cdslab.org/paramonte/notes/search.json",
+                                searchResultTemplate: '<li><a href="https://www.cdslab.org/paramonte/notes{url}" title="Sampling a Multivariate Normal (MVN) distribution">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -233,7 +248,7 @@
 <ul id="mysidebar" class="sidenav">
     <!--
     -->
-    <li class="sidebarTitle">Table of Pages </li>
+    <li class="sidebarTitle"> </li>
     
         
             
@@ -243,28 +258,28 @@
                         
                                 
                                     
-                                        <li><a title="Preface" href="/paramonte/notes/overview/preface/">Preface</a></li>
+                                        <li><a title="Preface" href="https://www.cdslab.org/paramonte/notes/overview/preface/">Preface</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte kernel release notes" href="/paramonte/notes/overview/paramonte-kernel-release-notes/">ParaMonte kernel release notes</a></li>
+                                        <li><a title="ParaMonte kernel release notes" href="https://www.cdslab.org/paramonte/notes/overview/paramonte-kernel-release-notes/">ParaMonte kernel release notes</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte MATLAB release notes" href="/paramonte/notes/overview/paramonte-matlab-release-notes/">ParaMonte MATLAB release notes</a></li>
+                                        <li><a title="ParaMonte MATLAB release notes" href="https://www.cdslab.org/paramonte/notes/overview/paramonte-matlab-release-notes/">ParaMonte MATLAB release notes</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte Python release notes" href="/paramonte/notes/overview/paramonte-python-release-notes/">ParaMonte Python release notes</a></li>
+                                        <li><a title="ParaMonte Python release notes" href="https://www.cdslab.org/paramonte/notes/overview/paramonte-python-release-notes/">ParaMonte Python release notes</a></li>
                                     
                                     
                                 
@@ -280,42 +295,42 @@
                         
                                 
                                     
-                                        <li><a title="ParaMonte pre-installation notes" href="/paramonte/notes/installation/readme/">ParaMonte pre-installation notes</a></li>
+                                        <li><a title="ParaMonte pre-installation notes" href="https://www.cdslab.org/paramonte/notes/installation/readme/">ParaMonte pre-installation notes</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte C/C++/Fortran - Windows" href="/paramonte/notes/installation/windows/">ParaMonte C/C++/Fortran - Windows</a></li>
+                                        <li><a title="ParaMonte C/C++/Fortran - Windows" href="https://www.cdslab.org/paramonte/notes/installation/windows/">ParaMonte C/C++/Fortran - Windows</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte C/C++/Fortran - macOS" href="/paramonte/notes/installation/macos/">ParaMonte C/C++/Fortran - macOS</a></li>
+                                        <li><a title="ParaMonte C/C++/Fortran - macOS" href="https://www.cdslab.org/paramonte/notes/installation/macos/">ParaMonte C/C++/Fortran - macOS</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte C/C++/Fortran - Linux" href="/paramonte/notes/installation/linux/">ParaMonte C/C++/Fortran - Linux</a></li>
+                                        <li><a title="ParaMonte C/C++/Fortran - Linux" href="https://www.cdslab.org/paramonte/notes/installation/linux/">ParaMonte C/C++/Fortran - Linux</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte MATLAB" href="/paramonte/notes/installation/matlab/">ParaMonte MATLAB</a></li>
+                                        <li><a title="ParaMonte MATLAB" href="https://www.cdslab.org/paramonte/notes/installation/matlab/">ParaMonte MATLAB</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte Python" href="/paramonte/notes/installation/python/">ParaMonte Python</a></li>
+                                        <li><a title="ParaMonte Python" href="https://www.cdslab.org/paramonte/notes/installation/python/">ParaMonte Python</a></li>
                                     
                                     
                                 
@@ -331,21 +346,14 @@
                         
                                 
                                     
-                                        <li><a title="ParaMonte Kernel API" href="https://cdslaborg.github.io/paramonte-kernel-doc/html/" target="_blank" rel="noopener">ParaMonte Kernel API</a></li>
+                                        <li><a title="ParaMonte Python API" href="https://www.cdslab.org/paramonte/notes/api/python/autoapi/paramonte/">ParaMonte Python API</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte Python API" href="/paramonte/notes/api/python/autoapi/paramonte/">ParaMonte Python API</a></li>
-                                    
-                                    
-                                
-                        
-                                
-                                    
-                                        <li><a title="ParaMonte MATLAB API" href="/paramonte/notes/api/matlab/">ParaMonte MATLAB API</a></li>
+                                        <li><a title="ParaMonte MATLAB API" href="https://www.cdslab.org/paramonte/notes/api/matlab/">ParaMonte MATLAB API</a></li>
                                     
                                     
                                 
@@ -361,42 +369,42 @@
                         
                                 
                                     
-                                        <li><a title="ParaDRAM quick start" href="/paramonte/notes/usage/paradram/interface/">ParaDRAM quick start</a></li>
+                                        <li><a title="ParaDRAM quick start" href="https://www.cdslab.org/paramonte/notes/usage/paradram/interface/">ParaDRAM quick start</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaDRAM optional input file" href="/paramonte/notes/usage/paradram/input/">ParaDRAM optional input file</a></li>
+                                        <li><a title="ParaDRAM optional input file" href="https://www.cdslab.org/paramonte/notes/usage/paradram/input/">ParaDRAM optional input file</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaDRAM simulation specifications" href="/paramonte/notes/usage/paradram/specifications/">ParaDRAM simulation specifications</a></li>
+                                        <li><a title="ParaDRAM simulation specifications" href="https://www.cdslab.org/paramonte/notes/usage/paradram/specifications/">ParaDRAM simulation specifications</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaDRAM simulation output files" href="/paramonte/notes/usage/paradram/output/">ParaDRAM simulation output files</a></li>
+                                        <li><a title="ParaDRAM simulation output files" href="https://www.cdslab.org/paramonte/notes/usage/paradram/output/">ParaDRAM simulation output files</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaDRAM simulation restart" href="/paramonte/notes/usage/paradram/restart/">ParaDRAM simulation restart</a></li>
+                                        <li><a title="ParaDRAM simulation restart" href="https://www.cdslab.org/paramonte/notes/usage/paradram/restart/">ParaDRAM simulation restart</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaDRAM parallelization tips" href="/paramonte/notes/usage/paradram/parallelization/">ParaDRAM parallelization tips</a></li>
+                                        <li><a title="ParaDRAM parallelization tips" href="https://www.cdslab.org/paramonte/notes/usage/paradram/parallelization/">ParaDRAM parallelization tips</a></li>
                                     
                                     
                                 
@@ -412,21 +420,21 @@
                         
                                 
                                     
-                                        <li><a title="Building ParaMonte C application" href="/paramonte/notes/build/c/">Building ParaMonte C application</a></li>
+                                        <li><a title="Building ParaMonte C application" href="https://www.cdslab.org/paramonte/notes/build/c/">Building ParaMonte C application</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Building ParaMonte C++ application" href="/paramonte/notes/build/cpp/">Building ParaMonte C++ application</a></li>
+                                        <li><a title="Building ParaMonte C++ application" href="https://www.cdslab.org/paramonte/notes/build/cpp/">Building ParaMonte C++ application</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Building ParaMonte Fortran application" href="/paramonte/notes/build/fortran/">Building ParaMonte Fortran application</a></li>
+                                        <li><a title="Building ParaMonte Fortran application" href="https://www.cdslab.org/paramonte/notes/build/fortran/">Building ParaMonte Fortran application</a></li>
                                     
                                     
                                 
@@ -442,21 +450,21 @@
                         
                                 
                                     
-                                        <li><a title="Running C/C++/Fortran application" href="/paramonte/notes/run/default/">Running C/C++/Fortran application</a></li>
+                                        <li><a title="Running C/C++/Fortran application" href="https://www.cdslab.org/paramonte/notes/run/default/">Running C/C++/Fortran application</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Running MATLAB application" href="/paramonte/notes/run/matlab/">Running MATLAB application</a></li>
+                                        <li><a title="Running MATLAB application" href="https://www.cdslab.org/paramonte/notes/run/matlab/">Running MATLAB application</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Running Python application" href="/paramonte/notes/run/python/">Running Python application</a></li>
+                                        <li><a title="Running Python application" href="https://www.cdslab.org/paramonte/notes/run/python/">Running Python application</a></li>
                                     
                                     
                                 
@@ -472,7 +480,7 @@
                         
                                 
                                     
-                                        <li><a title="Sampling a Multivariate Normal distribution" href="/paramonte/notes/examples/c/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                        <li><a title="Sampling a Multivariate Normal distribution" href="https://www.cdslab.org/paramonte/notes/examples/c/mvn/">Sampling a Multivariate Normal distribution</a></li>
                                     
                                     
                                 
@@ -488,7 +496,7 @@
                         
                                 
                                     
-                                        <li><a title="Sampling a Multivariate Normal distribution" href="/paramonte/notes/examples/cpp/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                        <li><a title="Sampling a Multivariate Normal distribution" href="https://www.cdslab.org/paramonte/notes/examples/cpp/mvn/">Sampling a Multivariate Normal distribution</a></li>
                                     
                                     
                                 
@@ -504,7 +512,7 @@
                         
                                 
                                     
-                                        <li class="active"><a title="Sampling a Multivariate Normal distribution" href="/paramonte/notes/examples/fortran/mvn/">Sampling a Multivariate Normal distribution</a></li>
+                                        <li class="active"><a title="Sampling a Multivariate Normal distribution" href="https://www.cdslab.org/paramonte/notes/examples/fortran/mvn/">Sampling a Multivariate Normal distribution</a></li>
                                     
                                     
                                 
@@ -520,14 +528,14 @@
                         
                                 
                                     
-                                        <li><a title="MATLAB Live Scripts" href="/paramonte/notes/examples/matlab/mlx/">MATLAB Live Scripts</a></li>
+                                        <li><a title="MATLAB Live Scripts" href="https://www.cdslab.org/paramonte/notes/examples/matlab/mlx/">MATLAB Live Scripts</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Post-processing existing simulations" href="/paramonte/notes/examples/matlab/postprocess/">Post-processing existing simulations</a></li>
+                                        <li><a title="Post-processing existing simulations" href="https://www.cdslab.org/paramonte/notes/examples/matlab/postprocess/">Post-processing existing simulations</a></li>
                                     
                                     
                                 
@@ -543,14 +551,14 @@
                         
                                 
                                     
-                                        <li><a title="Jupyter Notebooks" href="/paramonte/notes/examples/python/jupyter/">Jupyter Notebooks</a></li>
+                                        <li><a title="Jupyter Notebooks" href="https://www.cdslab.org/paramonte/notes/examples/python/jupyter/">Jupyter Notebooks</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Post-processing existing simulations" href="/paramonte/notes/examples/python/postprocess/">Post-processing existing simulations</a></li>
+                                        <li><a title="Post-processing existing simulations" href="https://www.cdslab.org/paramonte/notes/examples/python/postprocess/">Post-processing existing simulations</a></li>
                                     
                                     
                                 
@@ -566,28 +574,28 @@
                         
                                 
                                     
-                                        <li><a title="Guidelines" href="/paramonte/notes/codecov/">Guidelines</a></li>
+                                        <li><a title="Guidelines" href="https://www.cdslab.org/paramonte/notes/codecov/">Guidelines</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Kernel - Serial" href="https://cdslaborg.github.io/paramonte-codecov/kernel/serial/" target="_blank" rel="noopener">Kernel - Serial</a></li>
+                                        <li><a title="Kernel - Serial" href="" target="_blank" rel="noopener">Kernel - Serial</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Kernel - MPI Parallel" href="https://cdslaborg.github.io/paramonte-codecov/kernel/mpi/" target="_blank" rel="noopener">Kernel - MPI Parallel</a></li>
+                                        <li><a title="Kernel - MPI Parallel" href="" target="_blank" rel="noopener">Kernel - MPI Parallel</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Kernel - Coarray Parallel" href="https://cdslaborg.github.io/paramonte-codecov/kernel/caf/" target="_blank" rel="noopener">Kernel - Coarray Parallel</a></li>
+                                        <li><a title="Kernel - Coarray Parallel" href="" target="_blank" rel="noopener">Kernel - Coarray Parallel</a></li>
                                     
                                     
                                 
@@ -603,28 +611,28 @@
                         
                                 
                                     
-                                        <li><a title="Reporting defects" href="/paramonte/notes/contributing/defects">Reporting defects</a></li>
+                                        <li><a title="Reporting defects" href="https://www.cdslab.org/paramonte/notes/contributing/defects">Reporting defects</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Requesting enhancements" href="/paramonte/notes/contributing/enhancements">Requesting enhancements</a></li>
+                                        <li><a title="Requesting enhancements" href="https://www.cdslab.org/paramonte/notes/contributing/enhancements">Requesting enhancements</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Development guidelines - general" href="/paramonte/notes/contributing/development/general/">Development guidelines - general</a></li>
+                                        <li><a title="Development guidelines - general" href="https://www.cdslab.org/paramonte/notes/contributing/development/general/">Development guidelines - general</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Development guidelines - kernel" href="/paramonte/notes/contributing/development/kernel/">Development guidelines - kernel</a></li>
+                                        <li><a title="Development guidelines - kernel" href="https://www.cdslab.org/paramonte/notes/contributing/development/kernel/">Development guidelines - kernel</a></li>
                                     
                                     
                                 
@@ -640,105 +648,105 @@
                         
                                 
                                     
-                                        <li><a title="Enhancement-requests and bug-reports" href="/paramonte/notes/troubleshooting/issues/">Enhancement-requests and bug-reports</a></li>
+                                        <li><a title="Enhancement-requests and bug-reports" href="https://www.cdslab.org/paramonte/notes/troubleshooting/issues/">Enhancement-requests and bug-reports</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="-bash: Permission denied" href="/paramonte/notes/troubleshooting/bash-permission-denied/">-bash: Permission denied</a></li>
+                                        <li><a title="-bash: Permission denied" href="https://www.cdslab.org/paramonte/notes/troubleshooting/bash-permission-denied/">-bash: Permission denied</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="bash: matlab: command not found" href="/paramonte/notes/troubleshooting/bash-matlab-command-not-found/">bash: matlab: command not found</a></li>
+                                        <li><a title="bash: matlab: command not found" href="https://www.cdslab.org/paramonte/notes/troubleshooting/bash-matlab-command-not-found/">bash: matlab: command not found</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="catastrophic error: cannot open source file" href="/paramonte/notes/troubleshooting/catastrophic-error-cannot-open-source-file/">catastrophic error: cannot open source file</a></li>
+                                        <li><a title="catastrophic error: cannot open source file" href="https://www.cdslab.org/paramonte/notes/troubleshooting/catastrophic-error-cannot-open-source-file/">catastrophic error: cannot open source file</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Catastrophic error: could not set locale" href="/paramonte/notes/troubleshooting/catastrophic-error-could-not-set-locale/">Catastrophic error: could not set locale</a></li>
+                                        <li><a title="Catastrophic error: could not set locale" href="https://www.cdslab.org/paramonte/notes/troubleshooting/catastrophic-error-could-not-set-locale/">Catastrophic error: could not set locale</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="xcrun: error: unable to find utility "clang"" href="/paramonte/notes/troubleshooting/xcrun-error-unable-to-find-utility-clang/">xcrun: error: unable to find utility "clang"</a></li>
+                                        <li><a title="xcrun: error: unable to find utility "clang"" href="https://www.cdslab.org/paramonte/notes/troubleshooting/xcrun-error-unable-to-find-utility-clang/">xcrun: error: unable to find utility "clang"</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="changing directory on Windows CMD" href="/paramonte/notes/troubleshooting/windows-drive-change/">changing directory on Windows CMD</a></li>
+                                        <li><a title="changing directory on Windows CMD" href="https://www.cdslab.org/paramonte/notes/troubleshooting/windows-drive-change/">changing directory on Windows CMD</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="error while loading shared libraries" href="/paramonte/notes/troubleshooting/error-while-loading-shared-libraries/">error while loading shared libraries</a></li>
+                                        <li><a title="error while loading shared libraries" href="https://www.cdslab.org/paramonte/notes/troubleshooting/error-while-loading-shared-libraries/">error while loading shared libraries</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="finding the MPI libraries on Windows" href="/paramonte/notes/troubleshooting/finding-mpi-libraries-on-windows/">finding the MPI libraries on Windows</a></li>
+                                        <li><a title="finding the MPI libraries on Windows" href="https://www.cdslab.org/paramonte/notes/troubleshooting/finding-mpi-libraries-on-windows/">finding the MPI libraries on Windows</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Fortran runtime error: End of file" href="/paramonte/notes/troubleshooting/fortran-runtime-error-end-of-file/">Fortran runtime error: End of file</a></li>
+                                        <li><a title="Fortran runtime error: End of file" href="https://www.cdslab.org/paramonte/notes/troubleshooting/fortran-runtime-error-end-of-file/">Fortran runtime error: End of file</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="libgfortran not found" href="/paramonte/notes/troubleshooting/libgfortran-not-found/">libgfortran not found</a></li>
+                                        <li><a title="libgfortran not found" href="https://www.cdslab.org/paramonte/notes/troubleshooting/libgfortran-not-found/">libgfortran not found</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="macOS: developer cannot be verified" href="/paramonte/notes/troubleshooting/macos-developer-cannot-be-verified/">macOS: developer cannot be verified</a></li>
+                                        <li><a title="macOS: developer cannot be verified" href="https://www.cdslab.org/paramonte/notes/troubleshooting/macos-developer-cannot-be-verified/">macOS: developer cannot be verified</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Python: could not find module" href="/paramonte/notes/troubleshooting/python-could-not-find-module/">Python: could not find module</a></li>
+                                        <li><a title="Python: could not find module" href="https://www.cdslab.org/paramonte/notes/troubleshooting/python-could-not-find-module/">Python: could not find module</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Python: module object is not callable" href="/paramonte/notes/troubleshooting/python-module-object-is-not-callable/">Python: module object is not callable</a></li>
+                                        <li><a title="Python: module object is not callable" href="https://www.cdslab.org/paramonte/notes/troubleshooting/python-module-object-is-not-callable/">Python: module object is not callable</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Python: segmentation-fault error" href="/paramonte/notes/troubleshooting/python-segmentation-fault/">Python: segmentation-fault error</a></li>
+                                        <li><a title="Python: segmentation-fault error" href="https://www.cdslab.org/paramonte/notes/troubleshooting/python-segmentation-fault/">Python: segmentation-fault error</a></li>
                                     
                                     
                                 
@@ -1203,7 +1211,7 @@ All ParaMonte routines assume that the user-provided objective functions return 
 
 <ol>
   <li>you have built the ParaMonte library from scratch on your system using a Fortran compiler installed on your system (ideally, the Intel <code>ifort</code> Fortran compiler), or,</li>
-  <li>you intend to use the prebuilt ParaMonte libraries which can be downloaded from the <a href="https://github.com/cdslaborg/paramonte/releases" target="_blank">ParaMonte release page on GitHub</a>, but you promise that you are using a compatible compiler to compile your example. Typically this means using the <a href="https://github.com/cdslaborg/paramonte/blob/main/CHANGES.md" target="_blank">same compiler/library suite and version</a> that has been used to build ParaMonte.</li>
+  <li>you intend to use the prebuilt ParaMonte libraries which can be downloaded from the <a href="https://github.com/cdslaborg/paramonte/releases/v1.5.1" target="_blank">ParaMonte release page on GitHub</a>, but you promise that you are using a compatible compiler to compile your example. Typically this means using the <a href="https://github.com/cdslaborg/paramonte/blob/main/CHANGES.md" target="_blank">same compiler/library suite and version</a> that has been used to build ParaMonte.</li>
 </ol>
 
 <p>If one of the above two scenarios describes your situation, then you can safely use the OOP-style interface (enclosed between the two preprocessor directives <code>#if defined IS_COMPATIBLE_COMPILER</code> and <code>#else</code>) in the above code.</p>
@@ -1226,7 +1234,7 @@ All ParaMonte routines assume that the user-provided objective functions return 
 
 <h3 id="calling-the-paramonte-samplers-the-input-file">Calling the ParaMonte samplers: The input file</h3>
 
-<p>We will store the simulation specifications in a separate external input file whose path <code>"./paramonte.in"</code> is given by the variable <code>inputFile</code> in the main code above. See <a href="../../../../notes/usage/paradram/interface" target="_blank">this page</a> for a detailed description of the structure and convention rules of the input files. Also, see <a href="../../../../notes/usage/paradram/specifications" target="_blank">this page</a> for detailed descriptions of the simulation specifications of the ParaDRAM sampler.</p>
+<p>We will store the simulation specifications in a separate external input file whose path <code>"./paramonte.in"</code> is given by the variable <code>inputFile</code> in the main code above. See <a href="../../../../usage/paradram/interface" target="_blank">this page</a> for a detailed description of the structure and convention rules of the input files. Also, see <a href="../../../../usage/paradram/specifications" target="_blank">this page</a> for detailed descriptions of the simulation specifications of the ParaDRAM sampler.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Note that the entire contents of the input file is optional. If not provided, all simulation variables will be assigned appropriate default values. Nevertheless, in some cases the user may need to provide further information about the simulation via the input simulation variables to help the ParaMonte routines yield better performance or more accurate results.</div>
 
@@ -1687,7 +1695,7 @@ Keep in mind that these predictions for the optimal number of processors are onl
 <p><strong>Mission accomplished</strong>. We have now used the adaptive Markov chain sampler routine of the ParaMonte library to generate random numbers from our objective function of interest. This simulation will generate five files in a folder named <code>./out/</code> in the current directory, each of which contains some specific information about the simulation. The purpose of each file is indicated by the suffix at the end of its name: <code>_chain</code>, <code>_sample</code>, <code>_report</code>, <code>_progress</code>, <code>_restart</code>. If <code>multichain</code> parallelism is requested via the input simulation specification variable <code>parallelizationModel = 'multiChain'</code>, then there will be five simulation output files generated for each processor separately and independently of each other. This is as if we have simulated several independent but simultaneous ParaDRAM simulations of our objective function. More details about the contents of each of the ParaDRAM simulation output files can be found on <a href="../../../usage/paradram/output/" target="_blank">this page</a>.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
-Self-contained examples with Multivariate Normal Distribution as the objective function are available on the <a href="https://github.com/cdslaborg/paramonte/releases" target="_blank">the release page of the ParaMonte library on GitHub</a>. These examples come with build-scripts for both Windows and Linux/macOS that can seamlessly build them for you by simply calling the scripts. Depending on the programming language of your choice and your system's architecture, these self-contained examples minimally require a C/C++/Fortran compiler (e.g., Intel Parallel Studio <b>&#8805; 2019.1.1</b> or Microsoft C/C++ compiler <b>&#8805; 2019</b> on Windows, or GNU C/C++/Fortran compilers <b>&#8805; 8.4</b> on Unix-like Operating Systems). If you follow the installation instructions of the ParaMonte library, then all of these build requirements will be automatically installed on your system.
+Self-contained examples with Multivariate Normal Distribution as the objective function are available on the <a href="https://github.com/cdslaborg/paramonte/releases/v1.5.1" target="_blank">the release page of the ParaMonte library on GitHub</a>. These examples come with build-scripts for both Windows and Linux/macOS that can seamlessly build them for you by simply calling the scripts. Depending on the programming language of your choice and your system's architecture, these self-contained examples minimally require a C/C++/Fortran compiler (e.g., Intel Parallel Studio <b>&#8805; 2019.1.1</b> or Microsoft C/C++ compiler <b>&#8805; 2019</b> on Windows, or GNU C/C++/Fortran compilers <b>&#8805; 8.4</b> on Unix-like Operating Systems). If you follow the installation instructions of the ParaMonte library, then all of these build requirements will be automatically installed on your system.
 </div>
 
 <h2 id="post-processing-the-paramonte-simulation-results">Post-processing the ParaMonte simulation results</h2>
@@ -1797,10 +1805,10 @@ Self-contained examples with Multivariate Normal Distribution as the objective f
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on March 13, 2024<br/>
+            Last updated on March 14, 2024<br/>
             
         <p>
-            <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="/paramonte/images/logo.png" }}" alt="cdslab.org" /></a>
+            <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/notes/images/logo.png" }}" alt="cdslab.org" /></a>
             <!-- hitwebcounter Code START -->
 
 <div style="text-align:right; float: none; width: 100%; font-size:0.9em; margin-top: -15px">

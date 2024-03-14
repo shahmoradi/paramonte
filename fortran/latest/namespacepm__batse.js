@@ -1,0 +1,25 @@
+var namespacepm__batse =
+[
+    [ "getCorrectionLogEffPPF", "interfacepm__batse_1_1getCorrectionLogEffPPF.html", null ],
+    [ "getLog10PF53", "interfacepm__batse_1_1getLog10PF53.html", null ],
+    [ "getLogEffPPF", "interfacepm__batse_1_1getLogEffPPF.html", null ],
+    [ "getLogPbol", "interfacepm__batse_1_1getLogPbol.html", null ],
+    [ "getLogPF53", "interfacepm__batse_1_1getLogPF53.html", null ],
+    [ "grb_type", "structpm__batse_1_1grb__type.html", "structpm__batse_1_1grb__type" ],
+    [ "DIF_LOGPH53_4_LOGPBOLZERO", "namespacepm__batse.html#a2ab54314b8e0ad6f208492661d024478", null ],
+    [ "LOG10PF53_MINUS_LOG10PBOL", "namespacepm__batse.html#adc64e33a661e025604eb836247e1b906", null ],
+    [ "LOG_TEN", "namespacepm__batse.html#a6b59ed9515f9e6b25e4a2398263d36d3", null ],
+    [ "LOGPF53_MINUS_LOGPBOL", "namespacepm__batse.html#ae6d039de6edf8d3c73a3db287f76b24c", null ],
+    [ "MAX_LOG10PH53_4_LOGPBOLZERO", "namespacepm__batse.html#a107b7a5f60b65a01494a14ee7dc40580", null ],
+    [ "MAX_LOGPH53_4_LOGPBOLZERO", "namespacepm__batse.html#acdbb3af54d8fab08da771b762562bc93", null ],
+    [ "MIN_LOG10PH53_4_LOGPBOLZERO", "namespacepm__batse.html#ad0949bf3f3dce9b59543664b08e212ac", null ],
+    [ "MIN_LOGPH53_4_LOGPBOLZERO", "namespacepm__batse.html#ad0a6bbf0d82a018d3aaef4f3e70e0ae5", null ],
+    [ "MODULE_NAME", "namespacepm__batse.html#af39423c22084283b93ab4fb211ea1191", null ],
+    [ "THRESH_ERFC_AMP", "namespacepm__batse.html#a39d7efb1c8e715d37b64003f9146679f", null ],
+    [ "THRESH_ERFC_AVG", "namespacepm__batse.html#a6129f08a5930044eb2d6f894f695a23b", null ],
+    [ "THRESH_ERFC_BASE", "namespacepm__batse.html#aed61ed8e3b0c116085308f4d48d07b3a", null ],
+    [ "THRESH_ERFC_HEIGHT", "namespacepm__batse.html#ae680baab6474432cf6e3aef6066000c7", null ],
+    [ "THRESH_ERFC_STD", "namespacepm__batse.html#a4e9af6772a0eae5507429575ab651cbd", null ],
+    [ "THRESH_ERFC_STD_INV", "namespacepm__batse.html#ae21129d377a78a684c36f51bbd25d1ad", null ],
+    [ "THRESH_LOGPBOL64_CORRECTION", "namespacepm__batse.html#a5a17b1ad7fabcbe5d96083807c651395", null ]
+];
