@@ -197,7 +197,7 @@ containing the set of abscissa in <b>strictly ascending order</b> through which 
 <div class="line"> </div>
 <div class="line">interp<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__polation_1_1getInterp.html">getInterp</a>(method, crdx(<span class="fortran_numeric_literal">1</span>:nsam), func(<span class="fortran_numeric_literal">1</span>:nsam), queryx)</div>
 <div class="line">interp(<span class="fortran_numeric_literal">1</span>:nque)<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__polation_1_1getInterp.html">getInterp</a>(method, crdx(<span class="fortran_numeric_literal">1</span>:nsam), func(<span class="fortran_numeric_literal">1</span>:nsam), queryx(<span class="fortran_numeric_literal">1</span>:nque))</div>
-<div class="ttc" id="ainterfacepm__polation_1_1getInterp_html"><div class="ttname"><a href="interfacepm__polation_1_1getInterp.html">pm_polation::getInterp</a></div><div class="ttdoc">Generate and return the approximate polynomial interpolation value of the input specified point x for...</div><div class="ttdef"><b>Definition:</b> <a href="pm__polation_8F90_source.html#l00479">pm_polation.F90:479</a></div></div>
+<div class="ttc" id="ainterfacepm__polation_1_1getInterp_html"><div class="ttname"><a href="interfacepm__polation_1_1getInterp.html">pm_polation::getInterp</a></div><div class="ttdoc">Generate and return the approximate polynomial interpolation value of the input specified point x for...</div><div class="ttdef"><b>Definition:</b> <a href="pm__polation_8F90_source.html#l00474">pm_polation.F90:474</a></div></div>
 <div class="ttc" id="anamespacepm__polation_html"><div class="ttname"><a href="namespacepm__polation.html">pm_polation</a></div><div class="ttdoc">This module contains procedures and data types for interpolation of finite samples of data.</div><div class="ttdef"><b>Definition:</b> <a href="pm__polation_8F90_source.html#l00142">pm_polation.F90:142</a></div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The condition <code>size(crdx) == size(func)</code> must hold for the corresponding input arguments.<br  />
@@ -530,16 +530,16 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        df = pd.read_csv(file, delimiter = <span class="stringliteral">&quot;,&quot;</span>)</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="comment"># start with a square Figure</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        fig = plt.figure(figsize=(8, 6))</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        fig = plt.figure(figsize = (8, 6))</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        ax = plt.subplot(1,1,1)</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        ax.scatter  ( df.values[:,0]</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        ax.scatter  ( df.values[:, 0]</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                    , df.values[:,1]</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                    , zorder = 1000</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                    , c = <span class="stringliteral">&quot;black&quot;</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                    , s = 8</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                    )</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        ax.scatter  ( crd.values[:,0]</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        ax.scatter  ( crd.values[:, 0]</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                    , crd.values[:,1]</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                    , zorder = 1000</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                    , c = <span class="stringliteral">&quot;red&quot;</span></div>
@@ -579,25 +579,25 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <img src="getInterp.rungeEffect.interp.png" alt="" width="700"/>
 </div>
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000671">Test:</a></b></dt><dd>test_pm_polation</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000685">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__polation.html">test_pm_polation</a></dd></dl>
 <p ><br  />
 <a class="anchor" id="finmain-getInterp"></a><b>Final Remarks</b> <a href="#finmain-getInterp">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_polation.F90#L472 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_polation.F90#L467 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001005">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001019">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__polation_8F90_source.html#l00479">479</a> of file <a class="el" href="pm__polation_8F90_source.html">pm_polation.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__polation_8F90_source.html#l00474">474</a> of file <a class="el" href="pm__polation_8F90_source.html">pm_polation.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
 <li>/home/amir/git/paramonte/src/fortran/main/<a class="el" href="pm__polation_8F90_source.html">pm_polation.F90</a></li>
 </ul>
@@ -607,7 +607,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__polation.html">pm_polation</a></li><li class="navelem"><a class="el" href="interfacepm__polation_1_1getInterp.html">getInterp</a></li>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:17 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:46:26 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

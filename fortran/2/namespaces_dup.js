@@ -78,6 +78,7 @@ var namespaces_dup =
     [ "pm_distNorm", "namespacepm__distNorm.html", "namespacepm__distNorm" ],
     [ "pm_distNormShell", "namespacepm__distNormShell.html", "namespacepm__distNormShell" ],
     [ "pm_distPareto", "namespacepm__distPareto.html", "namespacepm__distPareto" ],
+    [ "pm_distPiwiPoweto", "namespacepm__distPiwiPoweto.html", "namespacepm__distPiwiPoweto" ],
     [ "pm_distPois", "namespacepm__distPois.html", "namespacepm__distPois" ],
     [ "pm_distPower", "namespacepm__distPower.html", "namespacepm__distPower" ],
     [ "pm_distPoweto", "namespacepm__distPoweto.html", "namespacepm__distPoweto" ],
@@ -106,6 +107,7 @@ var namespaces_dup =
     [ "pm_mathExp", "namespacepm__mathExp.html", "namespacepm__mathExp" ],
     [ "pm_mathFactorial", "namespacepm__mathFactorial.html", "namespacepm__mathFactorial" ],
     [ "pm_mathFactoring", "namespacepm__mathFactoring.html", "namespacepm__mathFactoring" ],
+    [ "pm_mathFisher", "namespacepm__mathFisher.html", "namespacepm__mathFisher" ],
     [ "pm_mathGamma", "namespacepm__mathGamma.html", "namespacepm__mathGamma" ],
     [ "pm_mathLog1p", "namespacepm__mathLog1p.html", "namespacepm__mathLog1p" ],
     [ "pm_mathLogAddExp", "namespacepm__mathLogAddExp.html", "namespacepm__mathLogAddExp" ],
@@ -404,6 +406,11 @@ var namespaces_dup =
       [ "setTest", "namespacetest__pm__distGenExpGamma.html#a25156d33342b7c95d975b99239be34f5", null ],
       [ "test", "namespacetest__pm__distGenExpGamma.html#a7e9c826a3419e9d5ee11b29a51b73f26", null ]
     ] ],
+    [ "test_pm_distGeomCyclic", "namespacetest__pm__distGeomCyclic.html", [
+      [ "setTest", "namespacetest__pm__distGeomCyclic.html#a984434261a6819bc606a5a4b1eedc800", null ],
+      [ "test_fitGeoCyclicLogPDF_1", "namespacetest__pm__distGeomCyclic.html#a00ae4a3d1f2ff2d05fefa48e476f2e0d", null ],
+      [ "test", "namespacetest__pm__distGeomCyclic.html#adbdc0c6d4ffaad5c0fc195de82fd2a59", null ]
+    ] ],
     [ "test_pm_distMultiNorm", "namespacetest__pm__distMultiNorm.html", [
       [ "setTest", "namespacetest__pm__distMultiNorm.html#ac1eb94dadd7a308f0f8a419c0a68f123", null ],
       [ "test", "namespacetest__pm__distMultiNorm.html#ad360572a58cef11d66240cafc54bfd7e", null ]
@@ -416,13 +423,13 @@ var namespaces_dup =
       [ "setTest", "namespacetest__pm__distPareto.html#a9318a20213ab806a3f516df15d1565ae", null ],
       [ "test", "namespacetest__pm__distPareto.html#a2147b4b8a099697e1f29da9a9871f69d", null ]
     ] ],
+    [ "test_pm_distPiwiPoweto", "namespacetest__pm__distPiwiPoweto.html", [
+      [ "setTest", "namespacetest__pm__distPiwiPoweto.html#aad99dbc4b86d49a09103d09b7fb09863", null ],
+      [ "test", "namespacetest__pm__distPiwiPoweto.html#a5d23f0eb89c5715a2f99558bad9288f9", null ]
+    ] ],
     [ "test_pm_distPower", "namespacetest__pm__distPower.html", [
       [ "setTest", "namespacetest__pm__distPower.html#a74b7fed381098143173ad5cab2eccc82", null ],
       [ "test", "namespacetest__pm__distPower.html#ad20f9504ecee81fab41404128936c571", null ]
-    ] ],
-    [ "test_pm_distPoweto", "namespacetest__pm__distPoweto.html", [
-      [ "setTest", "namespacetest__pm__distPoweto.html#a5f1036df469035ab1e45b57999ca4a3d", null ],
-      [ "test", "namespacetest__pm__distPoweto.html#a202331cd9a16e51f7fe787be4cc0c884", null ]
     ] ],
     [ "test_pm_distUnif", "namespacetest__pm__distUnif.html", [
       [ "setTest", "namespacetest__pm__distUnif.html#ac937fde76d10acbb3995d32cc639f9df", null ],
@@ -459,18 +466,6 @@ var namespaces_dup =
     [ "test_pm_except", "namespacetest__pm__except.html", [
       [ "setTest", "namespacetest__pm__except.html#ac060278009ff1df136a4b3e039568398", null ],
       [ "test", "namespacetest__pm__except.html#ab27d7d85b8442acbeaf8d0321c989633", null ]
-    ] ],
-    [ "test_pm_fitGeoCyclic", "namespacetest__pm__fitGeoCyclic.html", [
-      [ "setTest", "namespacetest__pm__fitGeoCyclic.html#a60fbe6f658cc5f9b4f304b6d203ebc50", null ],
-      [ "test_fitGeoCyclicLogPDF_1", "namespacetest__pm__fitGeoCyclic.html#a0d17f4730cdeb01dfc52d71b1d6dec1d", null ],
-      [ "test", "namespacetest__pm__fitGeoCyclic.html#a91d6f1068092cd81e8437d804c5a57f5", null ]
-    ] ],
-    [ "test_pm_interpLinear", "namespacetest__pm__interpLinear.html", [
-      [ "setTest", "namespacetest__pm__interpLinear.html#af99faba4d268736b3437e3fe26ead664", null ],
-      [ "test_InterpLinear_type_1", "namespacetest__pm__interpLinear.html#a62291c3b0d5b118a4b948a48e11efecc", null ],
-      [ "SortedX", "namespacetest__pm__interpLinear.html#ad7359411b1adfce88d4737ca05efdef0", null ],
-      [ "SortedY", "namespacetest__pm__interpLinear.html#ade9dd2b6c66762ec777031fff041f133", null ],
-      [ "test", "namespacetest__pm__interpLinear.html#a90099ef1838a83fc2239287b9a040302", null ]
     ] ],
     [ "test_pm_io", "namespacetest__pm__io.html", [
       [ "setTest", "namespacetest__pm__io.html#aa60f6795b92df81292c2179ac548a3e2", null ],
@@ -675,10 +670,6 @@ var namespaces_dup =
       [ "setTest", "namespacetest__pm__matrixInit.html#a257396ba4bb80b890773b0fbbdbe9e03", null ],
       [ "test", "namespacetest__pm__matrixInit.html#a071fe6d27e76dcb6c5c34f3bd5c1b5f0", null ]
     ] ],
-    [ "test_pm_matrixInitDia", "namespacetest__pm__matrixInitDia.html", [
-      [ "setTest", "namespacetest__pm__matrixInitDia.html#ad43cc874f9e84e43fd31c6fb631b0969", null ],
-      [ "test", "namespacetest__pm__matrixInitDia.html#a6da736f0e201153296163648c8ceaca6", null ]
-    ] ],
     [ "test_pm_matrixInv", "namespacetest__pm__matrixInv.html", [
       [ "setTest", "namespacetest__pm__matrixInv.html#abb4dfc9e4a754316759276c8415d0272", null ],
       [ "test_genInvMat_1", "namespacetest__pm__matrixInv.html#a60deffd9486364f2b8153e61491a1a38", null ],
@@ -719,6 +710,13 @@ var namespaces_dup =
     ] ],
     [ "test_pm_paraNest_ChainFileContents", "namespacetest__pm__paraNest__ChainFileContents.html", null ],
     [ "test_pm_paraNest_RefinedChain", "namespacetest__pm__paraNest__RefinedChain.html", null ],
+    [ "test_pm_polation", "namespacetest__pm__polation.html", [
+      [ "setTest", "namespacetest__pm__polation.html#aa0a7735afa2e75d4c9304157ecc1ecc8", null ],
+      [ "test_InterpLinear_type_1", "namespacetest__pm__polation.html#a7b242db505bb92f665c099c57bc8df5e", null ],
+      [ "SortedX", "namespacetest__pm__polation.html#acc95c28986df21313d2df26897a5209a", null ],
+      [ "SortedY", "namespacetest__pm__polation.html#a616e2b222840038a56a4c46b82441139", null ],
+      [ "test", "namespacetest__pm__polation.html#a6e8a9306281345717510d6b6529dbd25", null ]
+    ] ],
     [ "test_pm_quadRomb", "namespacetest__pm__quadRomb.html", [
       [ "getTestFuncOpenInterval_1", "namespacetest__pm__quadRomb.html#aa77e99fca2d051305d1315df3e20e820", null ],
       [ "getTestFuncOpenIntervalMATLAB", "namespacetest__pm__quadRomb.html#a7e2a149f0fb9500553a8f22e33b5b561", null ],
@@ -729,18 +727,6 @@ var namespaces_dup =
       [ "test_doQuadRombOpen_4", "namespacetest__pm__quadRomb.html#a804503a2b7a7ffb5eb76016bc828f9cd", null ],
       [ "test_getQuadRomb_1", "namespacetest__pm__quadRomb.html#a23c1d50940ddfa8cbbf7a6ba7f46fbcf", null ],
       [ "test", "namespacetest__pm__quadRomb.html#a461af12910df8051ecb6ef8aa7dcd805", null ]
-    ] ],
-    [ "test_pm_quantile", "namespacetest__pm__quantile.html", [
-      [ "setTest", "namespacetest__pm__quantile.html#a7cf8640f0d657bef0e95b731008321b4", null ],
-      [ "test_getMedian_RK_1", "namespacetest__pm__quantile.html#a0bf776ba8fe0ca45a702beb646f4c3ff", null ],
-      [ "test_getMedian_RK_2", "namespacetest__pm__quantile.html#a1dca6ca7048c5edf0dc45e599fd68ee1", null ],
-      [ "test_getQuantile_1", "namespacetest__pm__quantile.html#ad5437f694de406b771753abe2b2a2636", null ],
-      [ "test_getQuantile_2", "namespacetest__pm__quantile.html#ad14f28e1890f01f6019047a0602bd09a", null ],
-      [ "DataUnsorted_RK", "namespacetest__pm__quantile.html#a9c33cde74572385c7deab03cb7934d37", null ],
-      [ "lenRnd", "namespacetest__pm__quantile.html#a4904d34697d6cb86e2665461e60f5ab1", null ],
-      [ "ndata", "namespacetest__pm__quantile.html#a8660e48262c2508d7bb47ee3f5e7ede4", null ],
-      [ "StdNormRnd1", "namespacetest__pm__quantile.html#a2a2acc433747ca8636225f37b7ac687a", null ],
-      [ "test", "namespacetest__pm__quantile.html#aeb60d6f2f925dbf029f32ea23f439c91", null ]
     ] ],
     [ "test_pm_sampleCCF", "namespacetest__pm__sampleCCF.html", [
       [ "setTest", "namespacetest__pm__sampleCCF.html#ae40f587d19e27c7b68ad9ee9305c9034", null ],
@@ -761,6 +747,18 @@ var namespaces_dup =
     [ "test_pm_sampleMean", "namespacetest__pm__sampleMean.html", [
       [ "setTest", "namespacetest__pm__sampleMean.html#a2939d227a0f495daa2e2a84dec7119e0", null ],
       [ "test", "namespacetest__pm__sampleMean.html#ab2d58702f31ff882528955097b99466b", null ]
+    ] ],
+    [ "test_pm_sampleQuan", "namespacetest__pm__sampleQuan.html", [
+      [ "setTest", "namespacetest__pm__sampleQuan.html#aeaa4fe56d98ce9707c04a5734012c9e9", null ],
+      [ "test_getMedian_RK_1", "namespacetest__pm__sampleQuan.html#a569c8169c5f50de922bc76fe1130fc11", null ],
+      [ "test_getMedian_RK_2", "namespacetest__pm__sampleQuan.html#a741dc01c9fdbbda78c0b5a981d617b54", null ],
+      [ "test_getQuantile_1", "namespacetest__pm__sampleQuan.html#adfaf59011a04e9421e39b740b73867e5", null ],
+      [ "test_getQuantile_2", "namespacetest__pm__sampleQuan.html#aeada598dfdcef8ca0c88ca4455d6b9db", null ],
+      [ "DataUnsorted_RK", "namespacetest__pm__sampleQuan.html#aa6415285ad1a1fc59be0dae63e2f3af0", null ],
+      [ "lenRnd", "namespacetest__pm__sampleQuan.html#ae27973f0b3b209a5995825e5a1731bc5", null ],
+      [ "ndata", "namespacetest__pm__sampleQuan.html#a83bd6bc2e23b5bd97c65bbbb3a649abb", null ],
+      [ "StdNormRnd1", "namespacetest__pm__sampleQuan.html#ab2d7e45835f1d5b5ae1a6d26f97a001d", null ],
+      [ "test", "namespacetest__pm__sampleQuan.html#a312752403ade81d9f9aa8190dc497baf", null ]
     ] ],
     [ "test_pm_sampleShift", "namespacetest__pm__sampleShift.html", [
       [ "setTest", "namespacetest__pm__sampleShift.html#af10646887186f6eab49d6db12d639afa", null ],

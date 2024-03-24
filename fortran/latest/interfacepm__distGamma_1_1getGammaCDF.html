@@ -163,10 +163,12 @@ $(document).ready(function(){initNavTree('interfacepm__distGamma_1_1getGammaCDF.
 <a class="anchor" id="interface-getGammaCDF"></a><b>Possible calling interfaces</b> <a href="#interface-getGammaCDF">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__distGamma.html">pm_distGamma</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__distGamma_1_1getGammaCDF.html">getGammaCDF</a></div>
 <div class="line"> </div>
 <div class="line">cdf<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__distGamma_1_1getGammaCDF.html">getGammaCDF</a>(x, kappa<span class="fortran_operator_symbols"> = </span>kappa, invSigma<span class="fortran_operator_symbols"> = </span>invSigma)</div>
-<div class="ttc" id="ainterfacepm__distGamma_1_1getGammaCDF_html"><div class="ttname"><a href="interfacepm__distGamma_1_1getGammaCDF.html">pm_distGamma::getGammaCDF</a></div><div class="ttdoc">Generate and return the Cumulative Distribution Function (CDF) of the Gamma distribution for an input...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distGamma_8F90_source.html#l00735">pm_distGamma.F90:735</a></div></div>
+<div class="ttc" id="ainterfacepm__distGamma_1_1getGammaCDF_html"><div class="ttname"><a href="interfacepm__distGamma_1_1getGammaCDF.html">pm_distGamma::getGammaCDF</a></div><div class="ttdoc">Generate and return the Cumulative Distribution Function (CDF) of the Gamma distribution for an input...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distGamma_8F90_source.html#l00743">pm_distGamma.F90:743</a></div></div>
 <div class="ttc" id="anamespacepm__distGamma_html"><div class="ttname"><a href="namespacepm__distGamma.html">pm_distGamma</a></div><div class="ttdoc">This module contains classes and procedures for computing various statistical quantities related to t...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distGamma_8F90_source.html#l00075">pm_distGamma.F90:75</a></div></div>
 </div><!-- fragment --></dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>The condition \(x \in (0,+\infty)\), <code>kappa &gt; 0</code>, and <code>invSigma &gt; 0</code> must hold for the triple input values <code>(x, kappa, invSigma)</code>.<br  />
+<dl class="section warning"><dt>Warning</dt><dd>The condition <code>0 &lt; x</code> must hold for the corresponding input arguments.<br  />
+ The condition <code>0 &lt; kappa</code> must hold for the corresponding input arguments.<br  />
+ The condition <code>0 &lt; invSigma</code> must hold for the corresponding input arguments.<br  />
  These conditions are verified only if the library is built with the preprocessor macro <code>CHECK_ENABLED=1</code>.</dd>
 <dd>
 The <code>pure</code> procedure(s) documented herein become <code>impure</code> when the ParaMonte library is compiled with preprocessor macro <code>CHECK_ENABLED=1</code>.<br  />
@@ -277,7 +279,7 @@ The choice of <code>invSigma</code> vs. <code>sigma</code> as the input argument
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="fortran_statement">    call</span> <a class="code hl_variable" href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">disp</a><span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__io_1_1skip.html">skip</a>()</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="fortran_comment">!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="fortran_comment">! Output an example CDF array for visualization.</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="fortran_comment">! Output an example array for visualization.</span></div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="fortran_comment">!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="fortran_keywordflow">block</span></div>
@@ -413,11 +415,11 @@ The choice of <code>invSigma</code> vs. <code>sigma</code> as the input argument
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        df = pd.read_csv(fileList[0], delimiter = <span class="stringliteral">&quot; &quot;</span>)</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        fig = plt.figure(figsize = 1.25*np.array([6.4,4.8]), dpi = 200)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        fig = plt.figure(figsize = 1.25 * np.array([6.4, 4.8]), dpi = 200)</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        ax = plt.subplot()</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">if</span> kind == <span class="stringliteral">&quot;CK&quot;</span>:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            plt.plot( df.values[:,0]</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            plt.plot( df.values[:, 0]</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                    , df.values[:,1:5]</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                    , marker[kind]</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                    , linewidth = linewidth</div>
@@ -430,7 +432,7 @@ The choice of <code>invSigma</code> vs. <code>sigma</code> as the input argument
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                   <span class="comment">#, color = &quot;blue&quot;</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                    )</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            plt.plot( df.values[:,0]</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            plt.plot( df.values[:, 0]</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    , df.values[:,1:5]</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                    , marker[kind]</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                    , linewidth = linewidth</div>
@@ -461,26 +463,26 @@ The choice of <code>invSigma</code> vs. <code>sigma</code> as the input argument
 </div>
 </dd></dl>
 <dl class="test"><dt><b><a class="el" href="test.html#_test000318">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__distGamma.html">test_pm_distGamma</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000175">Todo:</a></b></dt><dd><span class="plow">Low Priority</span>: This generic interface can be extended to <code>complex</code> arguments.<br  />
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000178">Todo:</a></b></dt><dd><span class="plow">Low Priority</span>: This generic interface can be extended to <code>complex</code> arguments.<br  />
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="finmain-getGammaCDF"></a><b>Final Remarks</b> <a href="#finmain-getGammaCDF">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_distGamma.F90#L731 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_distGamma.F90#L739 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
 <dl class="authors"><dt><b><a class="el" href="authors.html#_authors000430">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__distGamma_8F90_source.html#l00735">735</a> of file <a class="el" href="pm__distGamma_8F90_source.html">pm_distGamma.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__distGamma_8F90_source.html#l00743">743</a> of file <a class="el" href="pm__distGamma_8F90_source.html">pm_distGamma.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
 <li>/home/amir/git/paramonte/src/fortran/main/<a class="el" href="pm__distGamma_8F90_source.html">pm_distGamma.F90</a></li>
 </ul>
@@ -490,7 +492,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distGamma.html">pm_distGamma</a></li><li class="navelem"><a class="el" href="interfacepm__distGamma_1_1getGammaCDF.html">getGammaCDF</a></li>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:14 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:46:24 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

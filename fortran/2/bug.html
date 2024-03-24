@@ -342,7 +342,17 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
   </p>
 </dd>
 <dt>Type <a class="el" href="interfacepm__arrayResize_1_1setResized.html">pm_arrayResize::setResized</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_bug000028"></a> <br  />
+<dd><p class="startdd"><a class="anchor" id="_bug000029"></a> <br  />
+<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
+<b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021-2022 <br  />
+<b>Description:</b> There is an Intel compiler 2020-2022 bug in processing multiple <code>CHECK_ASSERTION</code> macros in individual routines of this module in <code>debug</code> compile mode.<br  />
+ The problem does not appear to exist in other compilation modes.<br  />
+ However, this bug does seem to be related to other similar instances where Intel Classic Fortran Compiler <code>ifort</code> cannot tolerate frequent appearance of <code>use</code> statements within a single <code>submodule</code>.<br  />
+ <br  />
+<b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the resolution was to remove and replace the checking macros with explicit merged <code>block</code> statements.<br  />
+ A similar problem also was present in the implementation of <a class="el" href="namespacepm__quadPack.html">pm_quadPack</a>.<br  />
+</p>
+<p class="enddd"><a class="anchor" id="_bug000028"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 10-12 <br  />
 <b>Description:</b> There is an annoying gfortran bug concerning allocation of allocatable arrays of strings with assumed length type parameter.<br  />
@@ -352,16 +362,6 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the <code>allocatable</code> arrays of type <code>character</code> are allocated with explicit shape in the allocation statement.<br  />
  This explicit allocation for <code>character</code> types must be removed and replaced with the generic allocation once the bug is resolved.<br  />
-</p>
-<p class="enddd"><a class="anchor" id="_bug000029"></a> <br  />
-<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
-<b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021-2022 <br  />
-<b>Description:</b> There is an Intel compiler 2020-2022 bug in processing multiple <code>CHECK_ASSERTION</code> macros in individual routines of this module in <code>debug</code> compile mode.<br  />
- The problem does not appear to exist in other compilation modes.<br  />
- However, this bug does seem to be related to other similar instances where Intel Classic Fortran Compiler <code>ifort</code> cannot tolerate frequent appearance of <code>use</code> statements within a single <code>submodule</code>.<br  />
- <br  />
-<b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the resolution was to remove and replace the checking macros with explicit merged <code>block</code> statements.<br  />
- A similar problem also was present in the implementation of <a class="el" href="namespacepm__quadPack.html">pm_quadPack</a>.<br  />
  </p>
 </dd>
 <dt>Type <a class="el" href="interfacepm__arraySort_1_1setSorted.html">pm_arraySort::setSorted</a>  </dt>
@@ -493,18 +493,18 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the custom constructor bypasses GNU Fortran Compiler <code>gfortran</code> bug.<br  />
  </dd>
 <dt>Type <a class="el" href="structpm__err_1_1note__type.html">pm_err::note_type</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_bug000048"></a> <br  />
+<dd><p class="startdd"><a class="anchor" id="_bug000049"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 11-13 <br  />
-<b>Description:</b> GNU Fortran Compiler <code>gfortran</code> cannot properly construct the <code>allocatable</code> scalar non-<code>character</code> components of objects of type <a class="el" href="structpm__err_1_1mark__type.html">mark_type</a> using the default constructor.<br  />
+<b>Description:</b> GNU Fortran Compiler <code>gfortran</code> cannot properly construct the <code>allocatable</code> scalar non-<code>character</code> components of objects of type <a class="el" href="structpm__err_1_1warn__type.html">warn_type</a> using the default constructor.<br  />
  For example, when <code>unit</code> is set via the default constructor, the program behaves as if the <code>unit</code> component of the object is allocated but unset, yielding a <code>segmentation fault</code> error.<br  />
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the custom constructor bypasses GNU Fortran Compiler <code>gfortran</code> bug.<br  />
 </p>
-<p class="enddd"><a class="anchor" id="_bug000049"></a> <br  />
+<p class="enddd"><a class="anchor" id="_bug000048"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 11-13 <br  />
-<b>Description:</b> GNU Fortran Compiler <code>gfortran</code> cannot properly construct the <code>allocatable</code> scalar non-<code>character</code> components of objects of type <a class="el" href="structpm__err_1_1warn__type.html">warn_type</a> using the default constructor.<br  />
+<b>Description:</b> GNU Fortran Compiler <code>gfortran</code> cannot properly construct the <code>allocatable</code> scalar non-<code>character</code> components of objects of type <a class="el" href="structpm__err_1_1mark__type.html">mark_type</a> using the default constructor.<br  />
  For example, when <code>unit</code> is set via the default constructor, the program behaves as if the <code>unit</code> component of the object is allocated but unset, yielding a <code>segmentation fault</code> error.<br  />
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the custom constructor bypasses GNU Fortran Compiler <code>gfortran</code> bug.<br  />
@@ -650,8 +650,8 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  Once the GNU Fortran Compiler <code>gfortran</code> PDT bugs are resolved, the <a class="el" href="interfacepm__sampleVar_1_1getVar.html">getVar</a> generic interface can be extended to serve as a high-level wrapper for the weight-specific generic interfaces in this module.<br  />
  </dd>
 <dt>Module <a class="el" href="namespacepm__strANSI.html">pm_strANSI</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_bug000067"></a> ESC should be ideally and portably defined as <code>achar(27, kind)</code>, once the gfortran 11 bug is resolved. </p>
-<p class="enddd"><a class="anchor" id="_bug000068"></a> <br  />
+<dd><p class="startdd"><a class="anchor" id="_bug000069"></a> ESC should be ideally and portably defined as <code>achar(27, kind)</code>, once the gfortran 11 bug is resolved. </p>
+<p class="enddd"><a class="anchor" id="_bug000070"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 10-12 <br  />
 <b>Description:</b> The character <code>ESC</code> should be ideally and portably defined as <code>achar(27, kind)</code>.<br  />
@@ -661,7 +661,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  </p>
 </dd>
 <dt>Type <a class="el" href="interfacepm__val2str_1_1getStr.html">pm_val2str::getStr</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_bug000069"></a> <br  />
+<dd><p class="startdd"><a class="anchor" id="_bug000071"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 10.3-11 <br  />
 <b>Description:</b> The GNU Fortran Compiler <code>gfortran</code> cannot handle IO of string arrays of zero-length of non-zero size in <code>getStr()</code> in assertion check blocks.<br  />
@@ -669,10 +669,10 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  The Intel Classic Fortran Compiler <code>ifort</code> can handle this properly.<br  />
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): Avoid deferred-length strings where GNU Fortran Compiler <code>gfortran</code> cannot compile.</p>
-<p class="enddd"><a class="anchor" id="_bug000070"></a> </p>
+<p class="enddd"><a class="anchor" id="_bug000072"></a> </p>
 </dd>
 <dt>Type <a class="el" href="interfacepm__val2str_1_1setStr.html">pm_val2str::setStr</a>  </dt>
-<dd><a class="anchor" id="_bug000071"></a> <br  />
+<dd><a class="anchor" id="_bug000073"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 10.3-11 <br  />
 <b>Description:</b> The GNU Fortran Compiler <code>gfortran</code> cannot handle IO of string arrays of zero-length of non-zero size in <code>getStr()</code> in assertion check blocks.<br  />
@@ -680,27 +680,21 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  The Intel Classic Fortran Compiler <code>ifort</code> can handle this properly.<br  />
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): Avoid deferred-length strings where GNU Fortran Compiler <code>gfortran</code> cannot compile. </dd>
+<dt>Module <a class="el" href="namespacepm__sampling.html#amgrp73c54a80faa8fa99f0f89890a016924c">runParaDRAM</a>  </dt>
+<dd><p class="startdd"><a class="anchor" id="_bug000068"></a> <br  />
+<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
+<b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021.11.0 20231010 <br  />
+<b>Description:</b> The <code>runParaDRAML</code> interface for <code>long double</code> yields a segmentation fault error. <br  />
+<b>Remedy</b> (as of ParaMonte Library version 2.0.0): None as of today.<br  />
+</p>
+<p class="enddd"><a class="anchor" id="_bug000067"></a> <br  />
+<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
+<b>Source:</b> Intel LLVM Fortran Compiler <code>ifx</code> version 2024.0.0 20231017 <br  />
+<b>Description:</b> Intel LLVM Fortran Compiler <code>ifx</code> This interface yields a segmentation fault error for all <code>real</code> types supported when linked with the ParaMonte library built with Intel LLVM Fortran Compiler <code>ifx</code>. <br  />
+<b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, only Intel Classic Fortran Compiler <code>ifort</code> will be used.<br  />
+ </p>
+</dd>
 <dt>Module <a class="el" href="namespacetest__pm__arrayInit.html">test_pm_arrayInit</a>  </dt>
-<dd><a class="anchor" id="_bug000072"></a> <br  />
-<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
-<b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2022 <br  />
-<b>Description:</b> There is a viscous Intel Classic Fortran Compiler <code>ifort</code> version 2022 bug where the appearance of the following <code>use</code> statements in the body of the implementation include file <code><a class="el" href="namespacetest__pm__arrayRebill.html" title="This module contains tests of the module pm_arrayRebill.">test_pm_arrayRebill</a>@routines.inc.F90</code> leads to various mistakes in parsing and preprocessing the contents of the include file.<br  />
- The threshold for the maximum number of <code>use</code> statements within the entire submodule appears to be about <code>55</code>, because activating more than 55 procedures of the submodule leads to compilation failures due syntax parsing mistakes by the Intel compiler.<br  />
- <br  />
-<b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, all <code>use</code> statements are moved to the declaration body of the submodules.<br  />
- This causes non-locality of the statements, but is the only solution as of today.<br  />
- </dd>
-<dt>Module <a class="el" href="namespacetest__pm__arrayRebill.html">test_pm_arrayRebill</a>  </dt>
-<dd><a class="anchor" id="_bug000073"></a> <br  />
-<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
-<b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2022 <br  />
-<b>Description:</b> There is a viscous Intel Classic Fortran Compiler <code>ifort</code> version 2022 bug where the appearance of the following <code>use</code> statements in the body of the implementation include file <code><a class="el" href="namespacetest__pm__arrayRebill.html" title="This module contains tests of the module pm_arrayRebill.">test_pm_arrayRebill</a>@routines.inc.F90</code> leads to various mistakes in parsing and preprocessing the contents of the include file.<br  />
- The threshold for the maximum number of <code>use</code> statements within the entire submodule appears to be about <code>55</code>, because activating more than 55 procedures of the submodule leads to compilation failures due syntax parsing mistakes by the Intel compiler.<br  />
- <br  />
-<b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, all <code>use</code> statements are moved to the declaration body of the submodules.<br  />
- This causes non-locality of the statements, but is the only solution as of today.<br  />
- </dd>
-<dt>Module <a class="el" href="namespacetest__pm__arrayRebind.html">test_pm_arrayRebind</a>  </dt>
 <dd><a class="anchor" id="_bug000074"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2022 <br  />
@@ -710,7 +704,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, all <code>use</code> statements are moved to the declaration body of the submodules.<br  />
  This causes non-locality of the statements, but is the only solution as of today.<br  />
  </dd>
-<dt>Module <a class="el" href="namespacetest__pm__arrayRefill.html">test_pm_arrayRefill</a>  </dt>
+<dt>Module <a class="el" href="namespacetest__pm__arrayRebill.html">test_pm_arrayRebill</a>  </dt>
 <dd><a class="anchor" id="_bug000075"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2022 <br  />
@@ -720,8 +714,28 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, all <code>use</code> statements are moved to the declaration body of the submodules.<br  />
  This causes non-locality of the statements, but is the only solution as of today.<br  />
  </dd>
-<dt>Module <a class="el" href="namespacetest__pm__arrayResize.html">test_pm_arrayResize</a>  </dt>
+<dt>Module <a class="el" href="namespacetest__pm__arrayRebind.html">test_pm_arrayRebind</a>  </dt>
 <dd><a class="anchor" id="_bug000076"></a> <br  />
+<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
+<b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2022 <br  />
+<b>Description:</b> There is a viscous Intel Classic Fortran Compiler <code>ifort</code> version 2022 bug where the appearance of the following <code>use</code> statements in the body of the implementation include file <code><a class="el" href="namespacetest__pm__arrayRebill.html" title="This module contains tests of the module pm_arrayRebill.">test_pm_arrayRebill</a>@routines.inc.F90</code> leads to various mistakes in parsing and preprocessing the contents of the include file.<br  />
+ The threshold for the maximum number of <code>use</code> statements within the entire submodule appears to be about <code>55</code>, because activating more than 55 procedures of the submodule leads to compilation failures due syntax parsing mistakes by the Intel compiler.<br  />
+ <br  />
+<b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, all <code>use</code> statements are moved to the declaration body of the submodules.<br  />
+ This causes non-locality of the statements, but is the only solution as of today.<br  />
+ </dd>
+<dt>Module <a class="el" href="namespacetest__pm__arrayRefill.html">test_pm_arrayRefill</a>  </dt>
+<dd><a class="anchor" id="_bug000077"></a> <br  />
+<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
+<b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2022 <br  />
+<b>Description:</b> There is a viscous Intel Classic Fortran Compiler <code>ifort</code> version 2022 bug where the appearance of the following <code>use</code> statements in the body of the implementation include file <code><a class="el" href="namespacetest__pm__arrayRebill.html" title="This module contains tests of the module pm_arrayRebill.">test_pm_arrayRebill</a>@routines.inc.F90</code> leads to various mistakes in parsing and preprocessing the contents of the include file.<br  />
+ The threshold for the maximum number of <code>use</code> statements within the entire submodule appears to be about <code>55</code>, because activating more than 55 procedures of the submodule leads to compilation failures due syntax parsing mistakes by the Intel compiler.<br  />
+ <br  />
+<b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, all <code>use</code> statements are moved to the declaration body of the submodules.<br  />
+ This causes non-locality of the statements, but is the only solution as of today.<br  />
+ </dd>
+<dt>Module <a class="el" href="namespacetest__pm__arrayResize.html">test_pm_arrayResize</a>  </dt>
+<dd><a class="anchor" id="_bug000078"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2022 <br  />
 <b>Description:</b> There is a viscous Intel Classic Fortran Compiler <code>ifort</code> version 2022 bug where the appearance of the following <code>use</code> statements in the body of the implementation include file <code><a class="el" href="namespacetest__pm__arrayRebill.html" title="This module contains tests of the module pm_arrayRebill.">test_pm_arrayRebill</a>@routines.inc.F90</code> leads to various mistakes in parsing and preprocessing the contents of the include file.<br  />
@@ -737,7 +751,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:11 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:46:22 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

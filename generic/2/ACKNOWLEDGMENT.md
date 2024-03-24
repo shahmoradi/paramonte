@@ -84,4 +84,4 @@ library's main publications as listed here:
         
     ```  
   
-For more information, visit [the ParaMonte library homepage](https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work).  
+For more information, visit [the ParaMonte library homepage](https://www.cdslab.org/paramonte/generic/2/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work).  

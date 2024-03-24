@@ -173,7 +173,7 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This module contains classes and procedures for computing properties related to the cross correlation of random samples. </p>
-<h1><a class="anchor" id="autotoc_md81"></a>
+<h1><a class="anchor" id="autotoc_md82"></a>
 Cross Correlation</h1>
 <p >Cross-correlation is a measure of similarity of two series as a function of the displacement of one relative to the other.<br  />
  This is also known as a <b>sliding dot product</b> or <b>sliding inner-product</b>.<br  />
@@ -185,12 +185,12 @@ Cross Correlation</h1>
 <p >The term cross-correlation also refers to the correlations between the entries of two random vectors \(\mathbf{X}\) and \(\mathbf {Y}\), while the correlations of a random vector \(\mathbf{X}\) are the correlations between the entries of \(\mathbf{X}\) itself, those forming the correlation matrix of \(\mathbf{X}\).<br  />
  If each of \(\mathbf{X}\) and \(\mathbf{Y}\) is a scalar random variable which is realized repeatedly in a time series, then the correlations of the various temporal instances of \(\mathbf{X}\) are known as <b>autocorrelations</b> of \(\mathbf{X}\), and the cross-correlations of \(\mathbf{X}\) with \(\mathbf{Y}\) across time are temporal cross-correlations.<br  />
  In probability and statistics, the definition of correlation always includes a standardizing factor in such a way that correlations have values between −1 and +1.</p>
-<h2><a class="anchor" id="autotoc_md82"></a>
+<h2><a class="anchor" id="autotoc_md83"></a>
 Interpretation</h2>
 <p >If \(X\) and \(Y\) are two independent random variables with probability density functions \(f\) and \(g\), respectively, then the probability density of the difference \(Y − X\) is formally given by the <b>cross-correlation</b> \(f\star g\).<br  />
  Equivalently, the convolution \(f * g\) (equivalent to the cross-correlation of \(f(t)\) and \(g(-t)\) gives the probability density function of the sum \(X + Y\).<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md83"></a>
+<h2><a class="anchor" id="autotoc_md84"></a>
 Definition</h2>
 <p >For continuous functions \(f\) and \(g\), the cross-correlation is defined as:<br  />
   </p><p class="formulaDsp">
@@ -206,7 +206,7 @@ Definition</h2>
 <p> where \(\overline{f(t)}\) denotes the complex conjugate of \(f(t)\), and \(\tau\) is called <b>displacement</b> or <b>lag</b>.<br  />
  For highly-correlated \(f\) and \(g\) which have a maximum cross-correlation at a particular \(\tau\), a feature in \(f\) at \(t\) also occurs later in \(g\) at \(t + \tau\), hence \(g\) <b>is said to lag</b> \(f\) by \(\tau\).<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md84"></a>
+<h2><a class="anchor" id="autotoc_md85"></a>
 Properties</h2>
 <ol>
 <li>
@@ -247,7 +247,7 @@ The cross-correlation of a convolution of \(f\) and \(h\) with a function \(g\) 
 </p>
  </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md85"></a>
+<h1><a class="anchor" id="autotoc_md86"></a>
 Computation</h1>
 <p >The fastest methods for computing for Cross-correlation of large sequences rely on the fast-fourier-transform and the correlation/convolution theorems.<br  />
  </p><ol>
@@ -268,7 +268,7 @@ Left-pad the input signals \(f\) and \(g\) with zeros such that the sequences be
 <p>The above steps can be summarized as <code>getFFTI(getFFTF(getPaddedl(f, size(f) + size(g) - 1, (0., 0.))) + conjg(getFFTF(getPaddedl(f, size(f) + size(g) - 1, (0., 0.)))))</code> assuming both <code>f</code> and <code>g</code> are already of type <code>complex</code>.<br  />
  The resulting slice <code>ccf(1 : size(f))</code> contains the CCF for lags <code>[(lag, lag = 0, size(f) - 1)]</code> and the slice <code>ccf(size(f) + 1 : size(f) + size(g) - 1)</code> contains the CCF for lags <code>[(lag, lag = -size(g), -1)]</code>.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md86"></a>
+<h2><a class="anchor" id="autotoc_md87"></a>
 The convolution theorem</h2>
 <p >The convolution theorem states that under suitable conditions the Fourier transform of a convolution of two functions (or signals) is the pointwise product of their Fourier transforms.<br  />
  More generally, convolution in one domain (e.g., time domain) equals point-wise multiplication in the other domain (e.g., frequency domain).<br  />
@@ -290,23 +290,23 @@ The convolution theorem</h2>
  <a class="el" href="namespacepm__sampleAffinity.html">pm_sampleAffinity</a><br  />
  <a href="https://en.wikipedia.org/wiki/Cross-correlation">Cross Correlation</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000777">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__sampleCCF.html">test_pm_sampleCCF</a></dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000791">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__sampleCCF.html">test_pm_sampleCCF</a></dd></dl>
 <p ><br  />
 <a class="anchor" id="finmain-pm_sampleCCF"></a><b>Final Remarks</b> <a href="#finmain-pm_sampleCCF">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_sampleCCF.F90#L133 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_sampleCCF.F90#L133 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001120">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Tuesday 01:45 AM, August 21, 2018, Dallas, TX </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001135">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Tuesday 01:45 AM, August 21, 2018, Dallas, TX </dd></dl>
 </div><h2 class="groupheader">Variable Documentation</h2>
 <a id="a891624786027bde14b2961e24891bca7" name="a891624786027bde14b2961e24891bca7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a891624786027bde14b2961e24891bca7">&#9670;&nbsp;</a></span>MODULE_NAME</h2>
@@ -330,7 +330,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__sampleCCF.html">pm_sampleCCF</a></li>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:18 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:46:27 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

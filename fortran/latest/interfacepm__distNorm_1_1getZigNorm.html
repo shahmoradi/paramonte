@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('interfacepm__distNorm_1_1getZigNorm.ht
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Generate and return the lower right edges of the rectangles of a Ziggurat partitioning of the Normal density function (and the corresponding density function values) to be used for Normal random number generation using the Ziggurat algorithm. </p>
 <p >See the documentation of <a class="el" href="namespacepm__ziggurat.html">pm_ziggurat</a> for information on the Ziggurat method.<br  />
- See the documentation of getZig::pm_ziggurat for the meaning of the elements of the output array.<br  />
+ See the documentation of <a class="el" href="interfacepm__ziggurat_1_1getZig.html">getZig</a> for the meaning of the elements of the output array.<br  />
 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('interfacepm__distNorm_1_1getZigNorm.ht
 <a class="anchor" id="interface-getZigNorm"></a><b>Possible calling interfaces</b> <a href="#interface-getZigNorm">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__distNorm.html">pm_distNorm</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__distNorm_1_1getZigNorm.html">getZigNorm</a></div>
 <div class="line"> </div>
 <div class="line">zig(<span class="fortran_numeric_literal">1</span> :<span class="fortran_numeric_literal"> 2</span>,<span class="fortran_numeric_literal"> 0</span> : nlay)<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__distNorm_1_1getZigNorm.html">getZigNorm</a>(nlay, abserr, abstol<span class="fortran_operator_symbols"> = </span>abstol)</div>
-<div class="ttc" id="ainterfacepm__distNorm_1_1getZigNorm_html"><div class="ttname"><a href="interfacepm__distNorm_1_1getZigNorm.html">pm_distNorm::getZigNorm</a></div><div class="ttdoc">Generate and return the lower right edges of the rectangles of a Ziggurat partitioning of the Normal ...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distNorm_8F90_source.html#l03258">pm_distNorm.F90:3258</a></div></div>
+<div class="ttc" id="ainterfacepm__distNorm_1_1getZigNorm_html"><div class="ttname"><a href="interfacepm__distNorm_1_1getZigNorm.html">pm_distNorm::getZigNorm</a></div><div class="ttdoc">Generate and return the lower right edges of the rectangles of a Ziggurat partitioning of the Normal ...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distNorm_8F90_source.html#l03256">pm_distNorm.F90:3256</a></div></div>
 <div class="ttc" id="anamespacepm__distNorm_html"><div class="ttname"><a href="namespacepm__distNorm.html">pm_distNorm</a></div><div class="ttdoc">This module contains classes and procedures for computing various statistical quantities related to t...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distNorm_8F90_source.html#l00179">pm_distNorm.F90:179</a></div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>All conditions that hold for <a class="el" href="interfacepm__ziggurat_1_1getZig.html">getZig</a> equally apply to the procedures of this generic interface.<br  />
@@ -190,7 +190,7 @@ $(document).ready(function(){initNavTree('interfacepm__distNorm_1_1getZigNorm.ht
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_variable" href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">disp</a><span class="fortran_operator_symbols"> = </span><a class="code hl_struct" href="structpm__io_1_1display__type.html">display_type</a>(file<span class="fortran_operator_symbols"> = </span><span class="fortran_string">&quot;main.out.F90&quot;</span>)</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="fortran_keywordflow">block</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: RKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#adf0fd3c248f14b733bc8cd7876f75bef">RK128</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: RKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#aeaf5b6852e183ca6b851c8b47c0e8301">RKH</a></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="fortran_statement">        real</span>(RKC),<span class="fortran_attribute"> allocatable</span> :: zig(:,:)</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="fortran_statement">integer</span>(IK) :: nlayer</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="fortran_statement">        real</span>(RKC) :: abserr</div>
@@ -236,7 +236,6 @@ $(document).ready(function(){initNavTree('interfacepm__distNorm_1_1getZigNorm.ht
 <div class="ttc" id="anamespacepm__kind_html"><div class="ttname"><a href="namespacepm__kind.html">pm_kind</a></div><div class="ttdoc">This module defines the relevant Fortran kind type-parameters frequently used in the ParaMonte librar...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00028">pm_kind.F90:28</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html_a2dc41eb9ccbb460b3b6af8f356d3e962"><div class="ttname"><a href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">pm_kind::RK</a></div><div class="ttdeci">integer, parameter RK</div><div class="ttdoc">The default real kind in the ParaMonte library: real64 in Fortran, c_double in C-Fortran Interoperati...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00283">pm_kind.F90:283</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html_aa8e76d653e681cfd34defa591f079f35"><div class="ttname"><a href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">pm_kind::IK</a></div><div class="ttdeci">integer, parameter IK</div><div class="ttdoc">The default integer kind in the ParaMonte library: int32 in Fortran, c_int32_t in C-Fortran Interoper...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00280">pm_kind.F90:280</a></div></div>
-<div class="ttc" id="anamespacepm__kind_html_adf0fd3c248f14b733bc8cd7876f75bef"><div class="ttname"><a href="namespacepm__kind.html#adf0fd3c248f14b733bc8cd7876f75bef">pm_kind::RK128</a></div><div class="ttdeci">integer, parameter RK128</div><div class="ttdoc">The real kind for a 128-bits container.</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00292">pm_kind.F90:292</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html_aea9356815e78a03d410e7490f8827700"><div class="ttname"><a href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">pm_kind::SK</a></div><div class="ttdeci">integer, parameter SK</div><div class="ttdoc">The default character kind in the ParaMonte library: kind(&quot;a&quot;) in Fortran, c_char in C-Fortran Intero...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00279">pm_kind.F90:279</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html_aeaf5b6852e183ca6b851c8b47c0e8301"><div class="ttname"><a href="namespacepm__kind.html#aeaf5b6852e183ca6b851c8b47c0e8301">pm_kind::RKH</a></div><div class="ttdeci">integer, parameter RKH</div><div class="ttdoc">The scalar integer constant of intrinsic default kind, representing the highest-precision real kind a...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00462">pm_kind.F90:462</a></div></div>
 <div class="ttc" id="astructpm__io_1_1display__type_html"><div class="ttname"><a href="structpm__io_1_1display__type.html">pm_io::display_type</a></div><div class="ttdoc">Generate and return an object of type display_type.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l10228">pm_io.F90:10228</a></div></div>
@@ -814,12 +813,12 @@ $(document).ready(function(){initNavTree('interfacepm__distNorm_1_1getZigNorm.ht
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        ax.tick_params(axis = <span class="stringliteral">&quot;x&quot;</span>, which = <span class="stringliteral">&quot;minor&quot;</span>)</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="comment"># the scatter plot:</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        ax.plot     ( df.values[:,0]</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        ax.plot     ( df.values[:, 0]</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                    , df.values[:,1]</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                    , linewidth = 2</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                    , color = <span class="stringliteral">&quot;black&quot;</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                    )</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        ax.scatter  ( df.values[:,0]</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        ax.scatter  ( df.values[:, 0]</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                    , df.values[:,1]</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                    , s = 8</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                    , zorder = 1000</div>
@@ -839,22 +838,22 @@ $(document).ready(function(){initNavTree('interfacepm__distNorm_1_1getZigNorm.ht
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="finmain-getZigNorm"></a><b>Final Remarks</b> <a href="#finmain-getZigNorm">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_distNorm.F90#L3254 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_distNorm.F90#L3252 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
 <dl class="authors"><dt><b><a class="el" href="authors.html#_authors000508">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, April 25, 2015, 2:21 PM, National Institute for Fusion Studies, The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__distNorm_8F90_source.html#l03258">3258</a> of file <a class="el" href="pm__distNorm_8F90_source.html">pm_distNorm.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__distNorm_8F90_source.html#l03256">3256</a> of file <a class="el" href="pm__distNorm_8F90_source.html">pm_distNorm.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
 <li>/home/amir/git/paramonte/src/fortran/main/<a class="el" href="pm__distNorm_8F90_source.html">pm_distNorm.F90</a></li>
 </ul>
@@ -864,7 +863,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distNorm.html">pm_distNorm</a></li><li class="navelem"><a class="el" href="interfacepm__distNorm_1_1getZigNorm.html">getZigNorm</a></li>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:14 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:46:24 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

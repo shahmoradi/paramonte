@@ -13,7 +13,7 @@ var searchData=
   ['pexp_5ftype_10',['pexp_type',['../structpm__quadRomb_1_1pexp__type.html',1,'pm_quadRomb']]],
   ['pinf_5ftype_11',['pinf_type',['../structpm__mathConst_1_1pinf__type.html',1,'pm_mathConst']]],
   ['piwilin_5ftype_12',['piwilin_type',['../structpm__polation_1_1piwilin__type.html',1,'pm_polation']]],
-  ['piwipoly_5ftype_13',['piwipoly_type',['../structpm__polation_1_1piwipoly__type.html',1,'pm_polation']]],
+  ['piwipol_5ftype_13',['piwipol_type',['../structpm__polation_1_1piwipol__type.html',1,'pm_polation']]],
   ['posdefmat_5ftype_14',['posdefmat_type',['../structpm__matrixClass_1_1posdefmat__type.html',1,'pm_matrixClass']]],
   ['pwrl_5ftype_15',['pwrl_type',['../structpm__quadRomb_1_1pwrl__type.html',1,'pm_quadRomb']]]
 ];

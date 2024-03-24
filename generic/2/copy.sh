@@ -113,3 +113,7 @@ for lang in ${paramonte_lang_list[@]}; do
     fi
 
 done
+
+echo >&2 ""
+echo >&2 "${pmnote} Mission Accomplished."
+echo >&2 ""

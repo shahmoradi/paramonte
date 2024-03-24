@@ -5,7 +5,7 @@ var searchData=
   ['napier_2',['NAPIER',['../namespacepm__physUnit.html#abe660929506aa5dcc3f6722e3df87254',1,'pm_physUnit::NAPIER()'],['../namespacepm__mathConst.html#ab18690622e342045543c7328110263f6',1,'pm_mathConst::NAPIER()']]],
   ['ncase_3',['ncase',['../structpm__bench_1_1benchMulti__type.html#a9cff483461be23e475e75dd4b9ade366',1,'pm_bench::benchMulti_type']]],
   ['nd_4',['nd',['../structtest__pm__clustering_1_1TestData__type.html#afbbdb51175fce2012361361909493302',1,'test_pm_clustering::TestData_type::nd()'],['../structtest__pm__knn_1_1TestData__type.html#a98af1564c04a32a466fb8e487f294665',1,'test_pm_knn::TestData_type::nd()']]],
-  ['ndata_5',['ndata',['../namespacetest__pm__quantile.html#a8660e48262c2508d7bb47ee3f5e7ede4',1,'test_pm_quantile']]],
+  ['ndata_5',['ndata',['../namespacetest__pm__sampleQuan.html#a83bd6bc2e23b5bd97c65bbbb3a649abb',1,'test_pm_sampleQuan']]],
   ['neimean_6',['neimean',['../namespacepm__polation.html#ab7b52dacb613366122a8927fc4ee5f9a',1,'pm_polation']]],
   ['neinear_7',['neinear',['../namespacepm__polation.html#aa0e750b5e3850674c975cff81f12681e',1,'pm_polation']]],
   ['neinext_8',['neinext',['../namespacepm__polation.html#a8542644b19fe985c7731d634709cafb4',1,'pm_polation']]],

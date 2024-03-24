@@ -162,15 +162,15 @@ $(document).ready(function(){initNavTree('interfacepm__distanceEuclid_1_1getDisE
     <tr><td class="paramdir">[in]</td><td class="paramname">method</td><td>: The input scalar that can be,<br  />
  <ol>
 <li>
-the constant euclid or an object of type <a class="el" href="structpm__distanceEuclid_1_1euclid__type.html">euclid_type</a>, implying that all distance calculations must be done without undue numerical overflow.<br  />
+the constant <a class="el" href="namespacepm__distanceEuclid.html#a529a315df721d87e6cbbac61163290b4">euclid</a> or an object of type <a class="el" href="structpm__distanceEuclid_1_1euclid__type.html">euclid_type</a>, implying that all distance calculations must be done without undue numerical overflow.<br  />
  This option is computationally the most expensive method.<br  />
  </li>
 <li>
-the constant euclidu or an object of type <a class="el" href="structpm__distanceEuclid_1_1euclidu__type.html">euclidu_type</a>, implying that all distance calculations must be <b>without</b> runtime checks for numerical overflow.<br  />
- This option is computationally faster than the euclid method.<br  />
+the constant <a class="el" href="namespacepm__distanceEuclid.html#a4336d38b6dc6e3fa99840a223f9abfb0">euclidu</a> or an object of type <a class="el" href="structpm__distanceEuclid_1_1euclidu__type.html">euclidu_type</a>, implying that all distance calculations must be <b>without</b> runtime checks for numerical overflow.<br  />
+ This option is computationally faster than the <a class="el" href="namespacepm__distanceEuclid.html#a529a315df721d87e6cbbac61163290b4">euclid</a> method.<br  />
  </li>
 <li>
-the constant euclidsq or an object of type <a class="el" href="structpm__distanceEuclid_1_1euclidsq__type.html">euclidsq_type</a> implying that the <b>squared</b> values of all distance calculations must be returned <b>without</b> runtime checks for numerical overflow.<br  />
+the constant <a class="el" href="namespacepm__distanceEuclid.html#aac5b4ee8fb697e67d295e78509a5a239">euclidsq</a> or an object of type <a class="el" href="structpm__distanceEuclid_1_1euclidsq__type.html">euclidsq_type</a> implying that the <b>squared</b> values of all distance calculations must be returned <b>without</b> runtime checks for numerical overflow.<br  />
  This option is computationally the fastest approach to computing the distances because it avoid costly <code>sqrt()</code> operations and runtime overflow checks.<br  />
  </li>
 </ol>
@@ -237,7 +237,7 @@ This generic interface intentionally does not have explicit procedures for 2D Eu
 <a class="anchor" id="example-getDisEuclid"></a><b>Example usage</b> <a href="#example-getDisEuclid">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="fortran_statement">program</span> example</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: <a class="code hl_variable" href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">SK</a>, <a class="code hl_variable" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, <a class="code hl_variable" href="namespacepm__kind.html#a3f17ea307d594843815ae49bcc6ffdac">LK</a>, <a class="code hl_variable" href="namespacepm__kind.html#aeaf5b6852e183ca6b851c8b47c0e8301">RKH</a></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: RKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#a609d23b0915ea97e6a89e9bef7c743bd">RK32</a> <span class="fortran_comment">! all processor kinds are supported.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: RKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#af439dade9a4d5714eeffd86953c1dd69">RKS</a> <span class="fortran_comment">! all processor kinds are supported.</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__io.html">pm_io</a>, <span class="fortran_statement">only</span>: <a class="code hl_struct" href="structpm__io_1_1display__type.html">display_type</a></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__distanceEuclid.html">pm_distanceEuclid</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__distanceEuclid_1_1getDisEuclid.html">getDisEuclid</a>, <a class="code hl_variable" href="namespacepm__distanceEuclid.html#a529a315df721d87e6cbbac61163290b4">euclid</a>, <a class="code hl_variable" href="namespacepm__distanceEuclid.html#a4336d38b6dc6e3fa99840a223f9abfb0">euclidu</a>, <a class="code hl_variable" href="namespacepm__distanceEuclid.html#aac5b4ee8fb697e67d295e78509a5a239">euclidsq</a></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
@@ -339,10 +339,10 @@ This generic interface intentionally does not have explicit procedures for 2D Eu
 <div class="ttc" id="anamespacepm__io_html_adbd5f19ab57266908f0e5000233840d3"><div class="ttname"><a href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">pm_io::disp</a></div><div class="ttdeci">type(display_type) disp</div><div class="ttdoc">This is a scalar module variable an object of type display_type for general display.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l10962">pm_io.F90:10962</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html"><div class="ttname"><a href="namespacepm__kind.html">pm_kind</a></div><div class="ttdoc">This module defines the relevant Fortran kind type-parameters frequently used in the ParaMonte librar...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00028">pm_kind.F90:28</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html_a3f17ea307d594843815ae49bcc6ffdac"><div class="ttname"><a href="namespacepm__kind.html#a3f17ea307d594843815ae49bcc6ffdac">pm_kind::LK</a></div><div class="ttdeci">integer, parameter LK</div><div class="ttdoc">The default logical kind in the ParaMonte library: kind(.true.) in Fortran, kind(....</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00281">pm_kind.F90:281</a></div></div>
-<div class="ttc" id="anamespacepm__kind_html_a609d23b0915ea97e6a89e9bef7c743bd"><div class="ttname"><a href="namespacepm__kind.html#a609d23b0915ea97e6a89e9bef7c743bd">pm_kind::RK32</a></div><div class="ttdeci">integer, parameter RK32</div><div class="ttdoc">The real kind for a 32-bits container.</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00294">pm_kind.F90:294</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html_aa8e76d653e681cfd34defa591f079f35"><div class="ttname"><a href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">pm_kind::IK</a></div><div class="ttdeci">integer, parameter IK</div><div class="ttdoc">The default integer kind in the ParaMonte library: int32 in Fortran, c_int32_t in C-Fortran Interoper...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00280">pm_kind.F90:280</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html_aea9356815e78a03d410e7490f8827700"><div class="ttname"><a href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">pm_kind::SK</a></div><div class="ttdeci">integer, parameter SK</div><div class="ttdoc">The default character kind in the ParaMonte library: kind(&quot;a&quot;) in Fortran, c_char in C-Fortran Intero...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00279">pm_kind.F90:279</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html_aeaf5b6852e183ca6b851c8b47c0e8301"><div class="ttname"><a href="namespacepm__kind.html#aeaf5b6852e183ca6b851c8b47c0e8301">pm_kind::RKH</a></div><div class="ttdeci">integer, parameter RKH</div><div class="ttdoc">The scalar integer constant of intrinsic default kind, representing the highest-precision real kind a...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00462">pm_kind.F90:462</a></div></div>
+<div class="ttc" id="anamespacepm__kind_html_af439dade9a4d5714eeffd86953c1dd69"><div class="ttname"><a href="namespacepm__kind.html#af439dade9a4d5714eeffd86953c1dd69">pm_kind::RKS</a></div><div class="ttdeci">integer, parameter RKS</div><div class="ttdoc">The single-precision real kind in Fortran mode. On most platforms, this is an 32-bit real kind.</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00307">pm_kind.F90:307</a></div></div>
 <div class="ttc" id="astructpm__io_1_1display__type_html"><div class="ttname"><a href="structpm__io_1_1display__type.html">pm_io::display_type</a></div><div class="ttdoc">Generate and return an object of type display_type.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l10228">pm_io.F90:10228</a></div></div>
 </div><!-- fragment --> <br  />
  <a class="anchor" id="compile-unix-intel-getDisEuclid"></a><b>Example Unix compile command via Intel <code>ifort</code> compiler</b> <a href="#compile-unix-intel-getDisEuclid">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
@@ -430,19 +430,19 @@ This generic interface intentionally does not have explicit procedures for 2D Eu
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 </div><!-- fragment --></dd></dl>
 <dl class="test"><dt><b><a class="el" href="test.html#_test000255">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__distanceEuclid.html">test_pm_distanceEuclid</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000143">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: A benchmark comparison with the equivalent compiler implementations would be informative.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000146">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: A benchmark comparison with the equivalent compiler implementations would be informative.</dd></dl>
 <p ><br  />
 <a class="anchor" id="finmain-getDisEuclid"></a><b>Final Remarks</b> <a href="#finmain-getDisEuclid">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_distanceEuclid.F90#L385 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_distanceEuclid.F90#L385 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
@@ -458,7 +458,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distanceEuclid.html">pm_distanceEuclid</a></li><li class="navelem"><a class="el" href="interfacepm__distanceEuclid_1_1getDisEuclid.html">getDisEuclid</a></li>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:13 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:46:23 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

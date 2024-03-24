@@ -579,6 +579,13 @@ var annotated_dup =
       [ "setParetoLogQuan", "interfacepm__distPareto_1_1setParetoLogQuan.html", null ],
       [ "setParetoLogRand", "interfacepm__distPareto_1_1setParetoLogRand.html", null ]
     ] ],
+    [ "pm_distPiwiPoweto", "namespacepm__distPiwiPoweto.html", [
+      [ "getPiwiPowetoCDF", "interfacepm__distPiwiPoweto_1_1getPiwiPowetoCDF.html", null ],
+      [ "getPiwiPowetoLogPDF", "interfacepm__distPiwiPoweto_1_1getPiwiPowetoLogPDF.html", null ],
+      [ "getPiwiPowetoLogPDFNF", "interfacepm__distPiwiPoweto_1_1getPiwiPowetoLogPDFNF.html", null ],
+      [ "setPiwiPowetoCDF", "interfacepm__distPiwiPoweto_1_1setPiwiPowetoCDF.html", null ],
+      [ "setPiwiPowetoLogPDF", "interfacepm__distPiwiPoweto_1_1setPiwiPowetoLogPDF.html", null ]
+    ] ],
     [ "pm_distPois", "namespacepm__distPois.html", [
       [ "getPoisCDF", "interfacepm__distPois_1_1getPoisCDF.html", null ],
       [ "getPoisLogPMF", "interfacepm__distPois_1_1getPoisLogPMF.html", null ],
@@ -600,11 +607,16 @@ var annotated_dup =
       [ "setPowerLogRand", "interfacepm__distPower_1_1setPowerLogRand.html", null ]
     ] ],
     [ "pm_distPoweto", "namespacepm__distPoweto.html", [
-      [ "getPowetoCDF", "interfacepm__distPoweto_1_1getPowetoCDF.html", null ],
+      [ "getPowetoLogCDF", "interfacepm__distPoweto_1_1getPowetoLogCDF.html", null ],
+      [ "getPowetoLogCDFNF", "interfacepm__distPoweto_1_1getPowetoLogCDFNF.html", null ],
       [ "getPowetoLogPDF", "interfacepm__distPoweto_1_1getPowetoLogPDF.html", null ],
       [ "getPowetoLogPDFNF", "interfacepm__distPoweto_1_1getPowetoLogPDFNF.html", null ],
-      [ "setPowetoCDF", "interfacepm__distPoweto_1_1setPowetoCDF.html", null ],
-      [ "setPowetoLogPDF", "interfacepm__distPoweto_1_1setPowetoLogPDF.html", null ]
+      [ "getPowetoLogQuan", "interfacepm__distPoweto_1_1getPowetoLogQuan.html", null ],
+      [ "getPowetoLogRand", "interfacepm__distPoweto_1_1getPowetoLogRand.html", null ],
+      [ "setPowetoLogCDF", "interfacepm__distPoweto_1_1setPowetoLogCDF.html", null ],
+      [ "setPowetoLogPDF", "interfacepm__distPoweto_1_1setPowetoLogPDF.html", null ],
+      [ "setPowetoLogQuan", "interfacepm__distPoweto_1_1setPowetoLogQuan.html", null ],
+      [ "setPowetoLogRand", "interfacepm__distPoweto_1_1setPowetoLogRand.html", null ]
     ] ],
     [ "pm_distUnif", "namespacepm__distUnif.html", [
       [ "constructFRNG", "interfacepm__distUnif_1_1constructFRNG.html", null ],
@@ -795,6 +807,10 @@ var annotated_dup =
     ] ],
     [ "pm_mathFactoring", "namespacepm__mathFactoring.html", [
       [ "getFactoring", "interfacepm__mathFactoring_1_1getFactoring.html", null ]
+    ] ],
+    [ "pm_mathFisher", "namespacepm__mathFisher.html", [
+      [ "getFisher", "interfacepm__mathFisher_1_1getFisher.html", null ],
+      [ "getFisherInv", "interfacepm__mathFisher_1_1getFisherInv.html", null ]
     ] ],
     [ "pm_mathGamma", "namespacepm__mathGamma.html", [
       [ "getGammaIncLow", "interfacepm__mathGamma_1_1getGammaIncLow.html", null ],
@@ -1006,7 +1022,7 @@ var annotated_dup =
       [ "neinext_type", "structpm__polation_1_1neinext__type.html", null ],
       [ "neiprev_type", "structpm__polation_1_1neiprev__type.html", null ],
       [ "piwilin_type", "structpm__polation_1_1piwilin__type.html", null ],
-      [ "piwipoly_type", "structpm__polation_1_1piwipoly__type.html", "structpm__polation_1_1piwipoly__type" ],
+      [ "piwipol_type", "structpm__polation_1_1piwipol__type.html", "structpm__polation_1_1piwipol__type" ],
       [ "setExtrap", "interfacepm__polation_1_1setExtrap.html", null ],
       [ "setInterp", "interfacepm__polation_1_1setInterp.html", null ]
     ] ],

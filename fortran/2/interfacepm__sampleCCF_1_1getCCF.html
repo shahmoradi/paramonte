@@ -252,7 +252,7 @@ the constant <a class="el" href="namespacepm__sampleNorm.html#a0bd6fe8512208d89c
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="fortran_statement">    call</span> <a class="code hl_variable" href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">disp</a><span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__io_1_1skip.html">skip</a>()</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="fortran_keywordflow">block</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: TKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#af439dade9a4d5714eeffd86953c1dd69">RKS</a> <span class="fortran_comment">! All other real types are also supported, e.g., RK32, RK64, RK128.</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: TKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#af439dade9a4d5714eeffd86953c1dd69">RKS</a> <span class="fortran_comment">! All other real types are also supported.</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="fortran_statement">integer</span>(IK),<span class="fortran_attribute"> allocatable</span> :: lag(:)</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="fortran_statement">        real</span>(TKC),<span class="fortran_attribute"> allocatable</span> :: f(:), g(:)</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="fortran_statement">        real</span>(TKC),<span class="fortran_attribute"> allocatable</span> ::<span class="fortran_function"> range</span>(:), ccf(:)</div>
@@ -291,7 +291,7 @@ the constant <a class="el" href="namespacepm__sampleNorm.html#a0bd6fe8512208d89c
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="fortran_keywordflow">    end block</span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="fortran_keywordflow">block</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: TKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#af439dade9a4d5714eeffd86953c1dd69">RKS</a> <span class="fortran_comment">! All other real types are also supported, e.g., RK32, RK64, RK128.</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: TKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#af439dade9a4d5714eeffd86953c1dd69">RKS</a> <span class="fortran_comment">! All other real types are also supported.</span></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="fortran_statement">complex</span>(TKC),<span class="fortran_attribute"> allocatable</span> :: f(:), g(:)</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="fortran_statement">complex</span>(TKC),<span class="fortran_attribute"> allocatable</span> ::<span class="fortran_function"> range</span>(:), ccf(:)</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="fortran_statement">        format</span><span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__io_1_1getFormat.html">getFormat</a>(deliml<span class="fortran_operator_symbols"> = </span><span class="fortran_string">&#39;&#39;</span>, subsep<span class="fortran_operator_symbols"> = </span>SK_<span class="fortran_string">&#39;&#39;</span>, delimr<span class="fortran_operator_symbols"> = </span><span class="fortran_string">&#39;i&#39;</span>, subcount<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">2_IK</span>, signed<span class="fortran_operator_symbols"> = </span><span class="fortran_named_const">.true.</span>_LK)</div>
@@ -427,9 +427,9 @@ the constant <a class="el" href="namespacepm__sampleNorm.html#a0bd6fe8512208d89c
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    df = pd.read_csv(file, delimiter = <span class="stringliteral">&quot;,&quot;</span>)</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">#print(df.values)</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    fig = plt.figure(figsize=(8, 6))</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    fig = plt.figure(figsize = (8, 6))</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    ax = plt.subplot(1,1,1)</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    ax.plot ( df.values[:,0]</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    ax.plot ( df.values[:, 0]</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            , df.values[:,1:]</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            , zorder = 1000</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            )</div>
@@ -445,9 +445,9 @@ the constant <a class="el" href="namespacepm__sampleNorm.html#a0bd6fe8512208d89c
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    file = glob.glob(<span class="stringliteral">&quot;*ccf*&quot;</span>+kind+<span class="stringliteral">&quot;.txt&quot;</span>)[0]</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    df = pd.read_csv(file, delimiter = <span class="stringliteral">&quot;,&quot;</span>)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    fig = plt.figure(figsize=(8, 6))</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    fig = plt.figure(figsize = (8, 6))</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    ax = plt.subplot(1,1,1)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    ax.plot ( df.values[:,0]</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    ax.plot ( df.values[:, 0]</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            , df.values[:,1]</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            , zorder = 1000</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            )</div>
@@ -467,7 +467,7 @@ the constant <a class="el" href="namespacepm__sampleNorm.html#a0bd6fe8512208d89c
 <img src="getCCF.ccf.sin.cos.RK.png" alt="" width="700"/>
 </div>
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000780">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__sampleCCF.html">test_pm_sampleCCF</a></dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000794">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__sampleCCF.html">test_pm_sampleCCF</a></dd></dl>
 <dl class="naming"><dt><b><a class="el" href="naming.html#_naming000016">Internal naming convention:</a></b></dt><dd>The following illustrates the internal naming convention used for the procedures within this generic interface.<br  />
  </dd></dl>
 <div class="fragment"><div class="line">setCCF_FG_CK5()</div>
@@ -477,20 +477,20 @@ the constant <a class="el" href="namespacepm__sampleNorm.html#a0bd6fe8512208d89c
 <div class="line">   CCF: Cross<span class="fortran_operator_symbols">-</span>Correlation Function.</div>
 </div><!-- fragment --><p ><br  />
 <a class="anchor" id="finmain-getCCF"></a><b>Final Remarks</b> <a href="#finmain-getCCF">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_sampleCCF.F90#L777 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_sampleCCF.F90#L777 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001123">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, Monday 02:15 AM, September 27, 2021, Dallas, TX<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001138">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, Monday 02:15 AM, September 27, 2021, Dallas, TX<br  />
  </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__sampleCCF_8F90_source.html#l00784">784</a> of file <a class="el" href="pm__sampleCCF_8F90_source.html">pm_sampleCCF.F90</a>.</p>
@@ -503,7 +503,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__sampleCCF.html">pm_sampleCCF</a></li><li class="navelem"><a class="el" href="interfacepm__sampleCCF_1_1getCCF.html">getCCF</a></li>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:18 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:46:27 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

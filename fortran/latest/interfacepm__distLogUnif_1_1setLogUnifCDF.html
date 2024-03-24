@@ -219,23 +219,23 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="fortran_keywordflow">block</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__arraySpace.html">pm_arraySpace</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__arraySpace_1_1setLinSpace.html">setLinSpace</a></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="fortran_statement">        real</span> :: LogMinX(<span class="fortran_numeric_literal">2</span>), LogMaxX(<span class="fortran_numeric_literal">2</span>), CDF(<span class="fortran_numeric_literal">2</span>), LogX(<span class="fortran_numeric_literal">2</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span>)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="fortran_statement">        real</span> :: logMinX(<span class="fortran_numeric_literal">2</span>), logMaxX(<span class="fortran_numeric_literal">2</span>), CDF(<span class="fortran_numeric_literal">2</span>), logx(<span class="fortran_numeric_literal">2</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span>)</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="fortran_statement">integer</span>(IK) :: fileUnit, i, j</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="fortran_statement">        call</span> <a class="code hl_interface" href="interfacepm__arraySpace_1_1setLinSpace.html">setLinSpace</a>(LogX, x1<span class="fortran_operator_symbols"> = </span><span class="fortran_function">log</span>(<span class="fortran_numeric_literal">1.</span>), x2<span class="fortran_operator_symbols"> = </span><span class="fortran_function">log</span>(<span class="fortran_numeric_literal">1</span><span class="fortran_numeric_literal">3.</span>))</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        LogMinX<span class="fortran_operator_symbols"> = </span><span class="fortran_function">log</span>([<span class="fortran_numeric_literal">3.</span>,<span class="fortran_numeric_literal"> 2.</span><span class="fortran_numeric_literal">0</span>])</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        LogMaxX<span class="fortran_operator_symbols"> = </span><span class="fortran_function">log</span>([<span class="fortran_numeric_literal">7.</span>,<span class="fortran_numeric_literal"> 1</span><span class="fortran_numeric_literal">0.</span>])</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="fortran_statement">        call</span> <a class="code hl_interface" href="interfacepm__arraySpace_1_1setLinSpace.html">setLinSpace</a>(logx, x1<span class="fortran_operator_symbols"> = </span><span class="fortran_function">log</span>(<span class="fortran_numeric_literal">1.</span>), x2<span class="fortran_operator_symbols"> = </span><span class="fortran_function">log</span>(<span class="fortran_numeric_literal">1</span><span class="fortran_numeric_literal">3.</span>))</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        logMinX<span class="fortran_operator_symbols"> = </span><span class="fortran_function">log</span>([<span class="fortran_numeric_literal">3.</span>,<span class="fortran_numeric_literal"> 2.</span><span class="fortran_numeric_literal">0</span>])</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        logMaxX<span class="fortran_operator_symbols"> = </span><span class="fortran_function">log</span>([<span class="fortran_numeric_literal">7.</span>,<span class="fortran_numeric_literal"> 1</span><span class="fortran_numeric_literal">0.</span>])</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="fortran_statement">        open</span>(newunit<span class="fortran_operator_symbols"> = </span>fileUnit, file<span class="fortran_operator_symbols"> = </span><span class="fortran_string">&quot;setLogUnifCDF.RK.txt&quot;</span>)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="fortran_keywordflow">do</span> i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>,<span class="fortran_function"> size</span>(LogX)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="fortran_keywordflow">do</span> i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>,<span class="fortran_function"> size</span>(logx)</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="fortran_keywordflow">do</span> j<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>,<span class="fortran_function"> size</span>(CDF)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <span class="fortran_keywordflow">if</span> (LogMaxX(j)<span class="fortran_operator_symbols"> &lt;</span><span class="fortran_operator_symbols">= </span>LogX(i)) <span class="fortran_keywordflow">then</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <span class="fortran_keywordflow">if</span> (logMaxX(j)<span class="fortran_operator_symbols"> &lt;</span><span class="fortran_operator_symbols">= </span>logx(i)) <span class="fortran_keywordflow">then</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    CDF(j)<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1.</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                <span class="fortran_keywordflow">elseif</span> (LogMinX(j)<span class="fortran_operator_symbols"> &lt;</span><span class="fortran_operator_symbols">= </span>LogX(i)) <span class="fortran_keywordflow">then</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="fortran_statement">                    call</span> <a class="code hl_interface" href="interfacepm__distLogUnif_1_1setLogUnifCDF.html">setLogUnifCDF</a>(CDF(j), LogX(i), LogMinX(j), <a class="code hl_interface" href="interfacepm__distLogUnif_1_1getLogUnifPDFNF.html">getLogUnifPDFNF</a>(LogMinX(j), LogMaxX(j)))</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                <span class="fortran_keywordflow">elseif</span> (logMinX(j)<span class="fortran_operator_symbols"> &lt;</span><span class="fortran_operator_symbols">= </span>logx(i)) <span class="fortran_keywordflow">then</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="fortran_statement">                    call</span> <a class="code hl_interface" href="interfacepm__distLogUnif_1_1setLogUnifCDF.html">setLogUnifCDF</a>(CDF(j), logx(i), logMinX(j), <a class="code hl_interface" href="interfacepm__distLogUnif_1_1getLogUnifPDFNF.html">getLogUnifPDFNF</a>(logMinX(j), logMaxX(j)))</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                <span class="fortran_keywordflow">else</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                    CDF(j)<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">0.</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="fortran_keywordflow">                end if</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="fortran_keywordflow">            end do</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="fortran_statement">            write</span>(fileUnit, <span class="fortran_string">&quot;(*(g0,:,&#39;, &#39;))&quot;</span>)<span class="fortran_function"> exp</span>(LogX(i)), CDF</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="fortran_statement">            write</span>(fileUnit, <span class="fortran_string">&quot;(*(g0,:,&#39;, &#39;))&quot;</span>)<span class="fortran_function"> exp</span>(logx(i)), CDF</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="fortran_keywordflow">        end do</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="fortran_statement">        close</span>(fileUnit)</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="fortran_keywordflow">    end block</span></div>
@@ -317,11 +317,11 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        df = pd.read_csv(fileList[0], delimiter = <span class="stringliteral">&quot;, &quot;</span>)</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        fig = plt.figure(figsize = 1.25*np.array([6.4,4.8]), dpi = 200)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        fig = plt.figure(figsize = 1.25 * np.array([6.4, 4.8]), dpi = 200)</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        ax = plt.subplot()</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">if</span> kind == <span class="stringliteral">&quot;CK&quot;</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            plt.plot( df.values[:,0]</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            plt.plot( df.values[:, 0]</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                    , df.values[:,1:5]</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                    , marker[kind]</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                    , linewidth = linewidth</div>
@@ -334,7 +334,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                   <span class="comment">#, color = &quot;blue&quot;</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                    )</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            plt.plot( df.values[:,0]</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            plt.plot( df.values[:, 0]</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    , df.values[:,1:]</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                    , marker[kind]</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    , linewidth = linewidth</div>
@@ -367,20 +367,20 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 </div>
 </dd></dl>
 <dl class="test"><dt><b><a class="el" href="test.html#_test000367">Test:</a></b></dt><dd>test_pm_distLogUnif</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000203">Todo:</a></b></dt><dd><span class="pvlow">Very Low Priority</span>: This generic interface can be extended to <code>complex</code> arguments.<br  />
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000206">Todo:</a></b></dt><dd><span class="pvlow">Very Low Priority</span>: This generic interface can be extended to <code>complex</code> arguments.<br  />
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="finmain"></a><b>Final Remarks</b> <a href="#finmain">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_distLogUnif.F90#L687 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_distLogUnif.F90#L687 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
@@ -396,7 +396,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distLogUnif.html">pm_distLogUnif</a></li><li class="navelem"><a class="el" href="interfacepm__distLogUnif_1_1setLogUnifCDF.html">setLogUnifCDF</a></li>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:14 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:46:24 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

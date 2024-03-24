@@ -23,6 +23,7 @@ var namespacepm__quadPack =
     [ "GK41", "namespacepm__quadPack.html#ae736fc47d344a2c23cfd6849835a2774", null ],
     [ "GK51", "namespacepm__quadPack.html#a7156bbe500cc9f7d12c8bbd6a46a3c9c", null ],
     [ "GK61", "namespacepm__quadPack.html#ad4d5d4d0a1028756191a51f723370205", null ],
+    [ "MAXLEN_EPSTAB", "namespacepm__quadPack.html#a12adf48e558fa71626d067e5fedc6435", null ],
     [ "MODULE_NAME", "namespacepm__quadPack.html#a451006ae059838d434c6aeb8646a5f49", null ],
     [ "nodeG10", "namespacepm__quadPack.html#ada5cec523a5e11b38177cd6f66f6f9eb", null ],
     [ "nodeG15", "namespacepm__quadPack.html#a3eaf6d5f6d7a6f74ca8a7f5b7ad470c2", null ],

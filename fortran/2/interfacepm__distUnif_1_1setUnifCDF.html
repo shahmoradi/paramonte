@@ -305,7 +305,7 @@ containing the CDF of the specified discrete or continuous Uniform distribution.
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="fortran_statement">    call</span> <a class="code hl_variable" href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">disp</a><span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__io_1_1skip.html">skip</a>()</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="fortran_comment">!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="fortran_comment">! Output an example CDF array for visualization.</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="fortran_comment">! Output an example array for visualization.</span></div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="fortran_comment">!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="fortran_statement">    call</span> <a class="code hl_interface" href="interfacepm__distUnif_1_1setUnifCDF.html">setUnifCDF</a>(CDF_IK, Point_IK, lower_IK, upper_IK)</div>
@@ -448,11 +448,11 @@ containing the CDF of the specified discrete or continuous Uniform distribution.
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    df = pd.read_csv(<span class="stringliteral">&quot;main.unif.cdf.&quot;</span>+kind+<span class="stringliteral">&quot;.txt&quot;</span>, delimiter = <span class="stringliteral">&quot; &quot;</span>)</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    fig = plt.figure(figsize = 1.25*np.array([6.4,4.8]), dpi = 200)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    fig = plt.figure(figsize = 1.25 * np.array([6.4, 4.8]), dpi = 200)</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    ax = plt.subplot()</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span> kind == <span class="stringliteral">&quot;CK&quot;</span>:</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        plt.plot( df.values[:,0]</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        plt.plot( df.values[:, 0]</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                , df.values[:,2]</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                , marker[kind]</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                , color = <span class="stringliteral">&quot;r&quot;</span></div>
@@ -466,7 +466,7 @@ containing the CDF of the specified discrete or continuous Uniform distribution.
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                    , fontsize = fontsize</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                    )</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">else</span>:</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        plt.plot( df.values[:,0]</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        plt.plot( df.values[:, 0]</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                , df.values[:,1]</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                , marker[kind]</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                , color = <span class="stringliteral">&quot;r&quot;</span></div>
@@ -491,25 +491,25 @@ containing the CDF of the specified discrete or continuous Uniform distribution.
 <img src="setUnifCDF.CK.png" alt="" width="700"/>
 </div>
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000440">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__distUnif.html">test_pm_distUnif</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000242">Todo:</a></b></dt><dd><span class="plow">Low Priority</span>: This generic interface can be extended to input arguments with ranks higher than <code>1</code>.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000243">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: This generic interface can be extended to input string arguments to make it compatible with <a class="el" href="interfacepm__distUnif_1_1setUnifRand.html">setUnifRand</a>.</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000451">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__distUnif.html">test_pm_distUnif</a></dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000256">Todo:</a></b></dt><dd><span class="plow">Low Priority</span>: This generic interface can be extended to input arguments with ranks higher than <code>1</code>.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000257">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: This generic interface can be extended to input string arguments to make it compatible with <a class="el" href="interfacepm__distUnif_1_1setUnifRand.html">setUnifRand</a>.</dd></dl>
 <p ><br  />
 <a class="anchor" id="finmain-setUnifCDF"></a><b>Final Remarks</b> <a href="#finmain-setUnifCDF">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_distUnif.F90#L790 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_distUnif.F90#L790 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000552">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000563">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__distUnif_8F90_source.html#l00797">797</a> of file <a class="el" href="pm__distUnif_8F90_source.html">pm_distUnif.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
@@ -521,7 +521,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distUnif.html">pm_distUnif</a></li><li class="navelem"><a class="el" href="interfacepm__distUnif_1_1setUnifCDF.html">setUnifCDF</a></li>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:14 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:46:24 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

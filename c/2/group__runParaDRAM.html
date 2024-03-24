@@ -166,16 +166,16 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >Generate and return a non-zero value (<code>1</code>) if the procedure fails to fully accomplish the task of generating a Monte Carlo sample of the specified input mathematical objective function, otherwise, return <code>0</code>. </p>
-<p >This interface group is the entry point to all ParaMonte Monte Carlo samplers of mathematical density functions.<br  />
+<p >This interface group is the entry point to all <b>C-style interfaces</b> to the ParaDRAM samplers of mathematical density functions.<br  />
  Although the procedures of this generic interface return a single scalar of type <code>int32_t</code>, the procedures generate massive amounts of information about each simulation which are stored in appropriate external hard drive files.<br  />
 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">getLogFunc</td><td>: The input user-specified procedure pointer to the natural logarithm of the target density function.<br  />
- On input, the function must an input vector <code>state</code> of size <code>ndim</code> of type floating-point of kind any supported by the processor (e.g., RK, RK32, RK64, or RK128) representing a state (point) from within the domain of the user-specified target density function whose function value must be returned.<br  />
+ On input, the function must take an input vector <code>state</code> of size <code>ndim</code> of type floating-point of kind <code>float</code>, <code>double</code>, or <code>long double</code> representing a state (point) from within the domain of the user-specified target density function whose function value must be returned.<br  />
  On output, the user-specified procedure <code>getLogFunc()</code> must return the function value corresponding to the input <code>state[ndim]</code>.<br  />
  The following illustrate the generic interface of input function pointer <code>getLogFunc(state, ndim)</code>, <div class="fragment"><div class="line"><span class="fortran_statement">REAL</span> getLogFunc(REAL[] state,<span class="fortran_named_const"> int32</span>_t ndim);</div>
-</div><!-- fragment --> where <code>REAL</code> can be a floating-point type of kind any supported by the processor (e.g., RK, RK32, RK64, or RK128) for the corresponding varying-precision sampler interfaces:<br  />
+</div><!-- fragment --> where <code>REAL</code> can be a floating-point type of kind <code>float</code>, <code>double</code>, or <code>long double</code> for the corresponding varying-precision sampler interfaces:<br  />
  <ol>
 <li>
 <a class="el" href="group__runParaDRAM.html#ga9e9c5cad9ad82d31c58cd1982cedf82e">runParaDRAMF</a>, </li>
@@ -188,7 +188,7 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ndim</td><td>: The input scalar constant of type <code>int32_t</code> representing the number of dimensions of the domain of the objective function. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>: The input scalar pointer of type <code>char</code> representing the null-terminated C string that contains either, <ol>
 <li>
-the path to an external input file containing the namelist group of ParaDRAM sampler specifications as outlined in the corresponding page of <a href="https://www.cdslab.org/paramonte/">ParaMonte library cross-language documentation website</a>.<br  />
+the path to an external input file containing the namelist group of ParaDRAM sampler specifications as outlined in the corresponding page of <a href="https://www.cdslab.org/paramonte/generic/2/usage/sampling/paradram/specifications/">ParaMonte library generic documentation website</a>.<br  />
  </li>
 <li>
 the namelist group of ParaDRAM sampler specifications as the can appear in an external input specification file.<br  />
@@ -320,7 +320,7 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">if</span> (failed != 0) exit(failed);</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
 </div><!-- fragment --> <br  />
- <a class="anchor" id="inputnml-mvn"></a><b>Example specifications input namelist file <code>input.nml</code>:</b> <a href="#inputnml-mvn">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>!   DESCRIPTION:</div>
+ <a class="anchor" id="inputfile-mvn"></a><b>The contents of example specifications namelist input file <code> input.nml</code></b> <a href="#inputfile-mvn">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>!   DESCRIPTION:</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>!</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>!       The external input file for sampling the 4-dimensional Multivariate Normal distribution function as implemented in the accompanying source files.</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>!       This file is common between all supported programming language environments.</div>
@@ -347,11 +347,11 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>!</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>!      For comprehensive guidelines on the input file organization and rules, visit:</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>!</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>!           https://www.cdslab.org/paramonte/notes/usage/paradram/input/</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>!           https://www.cdslab.org/paramonte/generic/latest/usage/sampling/paradram/input/</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>!</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>!      To see detailed descriptions of each of variables, visit:</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>!</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>!           https://www.cdslab.org/paramonte/notes/usage/paradram/specifications/</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>!           https://www.cdslab.org/paramonte/generic/latest/usage/sampling/paradram/specifications/</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>!</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>&amp;paradram</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
@@ -487,9 +487,9 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment"># traceplot</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">#print(df.values)</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    fig = plt.figure(figsize=(8, 6))</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    fig = plt.figure(figsize = (8, 6))</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    ax = plt.subplot(1,1,1)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    ax.plot ( range(len(df.values[:,0]))</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    ax.plot ( range(len(df.values[:, 0]))</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            , df.values[:, sindex:]</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            , zorder = 1000</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            )</div>
@@ -508,7 +508,7 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> len(df.values[1, sindex:]) &gt; 1:</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="comment">#print(df.values)</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        fig = plt.figure(figsize=(8, 6))</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        fig = plt.figure(figsize = (8, 6))</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        ax = plt.subplot(1,1,1)</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        ax.scatter  ( df.values[:, sindex]</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                    , df.values[:, sindex + 1]</div>
@@ -532,9 +532,9 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">#print(df.values)</span></div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> <span class="stringliteral">&quot;adaptationMeasure&quot;</span> <span class="keywordflow">in</span> df.columns.values:</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span> any(df[<span class="stringliteral">&quot;adaptationMeasure&quot;</span>].values != 0):</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            fig = plt.figure(figsize=(8, 6))</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            fig = plt.figure(figsize = (8, 6))</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            ax = plt.subplot(1,1,1)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            ax.scatter  ( range(len(df.values[:,0]))</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            ax.scatter  ( range(len(df.values[:, 0]))</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                        , df[<span class="stringliteral">&quot;adaptationMeasure&quot;</span>].values</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                        , zorder = 1000</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                        , alpha = 0.5</div>
@@ -636,9 +636,9 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">if</span> (failed != 0) exit(failed);</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
 </div><!-- fragment --> <br  />
- <a class="anchor" id="inputnml-mvn"></a><b>Example specifications input namelist file <code>input.nml</code>:</b> <a href="#inputnml-mvn">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>!   DESCRIPTION:</div>
+ <a class="anchor" id="inputfile-himmelblau"></a><b>The contents of example specifications namelist input file <code> input.nml</code></b> <a href="#inputfile-himmelblau">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>!   DESCRIPTION:</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>!</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>!       The external input file for sampling the 4-dimensional Multivariate Normal distribution function as implemented in the accompanying source files.</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>!       The external input file for sampling the 2-dimensional Himmelblau function as implemented in the accompanying source files.</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>!       This file is common between all supported programming language environments.</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>!</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>!   NOTE:</div>
@@ -663,11 +663,11 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>!</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>!      For comprehensive guidelines on the input file organization and rules, visit:</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>!</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>!           https://www.cdslab.org/paramonte/notes/usage/paradram/input/</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>!           https://www.cdslab.org/paramonte/generic/latest/usage/sampling/paradram/input/</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>!</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>!      To see detailed descriptions of each of variables, visit:</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>!</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>!           https://www.cdslab.org/paramonte/notes/usage/paradram/specifications/</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>!           https://www.cdslab.org/paramonte/generic/latest/usage/sampling/paradram/specifications/</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>!</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>&amp;paradram</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
@@ -682,74 +682,65 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    domain                                  = &quot;cube&quot;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    domainAxisName                          = &quot;variable1&quot;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                                              &quot;variable2&quot;           ! values can appear in multiple lines.</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    domainBallCenter                        = 0 0 0 0               ! values can be separated with blanks or commas.</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    domainBallCorMat                        = 1 0 0 0</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                                              0 1 0 0</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                                              0 0 1 0</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                                              0 0 0 1</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    domainBallCovMat                        = 1 0 0 0</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                                              0 1 0 0</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                                              0 0 1 0</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                                              0 0 0 1</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    domainBallStdVec                        = 1 1 1 1</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    domainCubeLimitLower                    = 4*-1.e10              ! repetition pattern rules apply here. 4 dimensions =&gt; 4-element vector of values.</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    domainCubeLimitUpper(1)                 = +1.e10                ! Elements of vectors can be set individually.</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    domainCubeLimitUpper(2:4)               = 3*+1.e10              ! Elements of vectors can be set individually.</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    domainErrCount                          = 100</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    domainErrCountMax                       = 1000</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    inputFileHasPriority                    = FALSE                 ! This is relevant only to simulations within the Fortran programming language.</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    outputChainFileFormat                   = &quot;compact&quot;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>   !outputColumnWidth                       = 25                    ! This is an example of a variable that is commented out.</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                                                                    ! Therefore, its value will not be read by the sampler routine.</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                                                                    ! To pass it to the routine, simply remove the `!` mark at the beginning of the line.</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    outputFileName                          = &quot;./out/mvn&quot;           ! A forward-slash character at the end of the string value would indicate the specified path</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                                                                    ! is to be interpreted as the name of the folder to contain the simulation output files.</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                                                                    ! The base name for the simulation output files will be generated from the current date and time.</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                                                                    ! Otherwise, the specified base name at the end of the string will be used in naming the simulation output files.</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    outputPrecision                         = 17</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    outputReportPeriod                      = 1000</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    outputRestartFileFormat                 = &quot;ascii&quot;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    outputSampleSize                        = -1</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    outputSeparator                         = &quot;,&quot;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    outputSplashMode                        = &quot;normal&quot;              ! or quiet or silent.</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    outputStatus                            = &quot;retry&quot;               ! or extend.</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    parallelism                             = &quot;multi chain&quot;         ! &quot;singleChain&quot; would also work. Similarly, &quot;multichain&quot;, &quot;multi chain&quot;, or &quot;multiChain&quot;.</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    parallelismMpiFinalizeEnabled           = false                 ! TRUE, true, .true., .t., and t would be also all valid logical values representing truth.</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    parallelismNumThread                    = 3                     ! number of threads to use in shared-memory parallelism.</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>   !randomSeed                              = 2136275,</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>   !targetAcceptanceRate                    = 0.23e0</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    ! MCMC specifications.</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    outputChainSize                         = 10000</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    outputSampleRefinementCount             = 10</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    outputSampleRefinementMethod            = &quot;BatchMeans&quot;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    proposal                                = &quot;normal&quot;              ! or &quot;uniform&quot; as you wish.</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    proposalCorMat(:, 1)                    = 1 0 0 0               ! first matrix column.</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    proposalCorMat(:, 2:4)                  = 0 1 0 0</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                                              0 0 1 0</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                                              0 0 0 1               ! other matrix columns.</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    proposalCovMat                          = 1 0 0 0</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                                              0 1 0 0</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                                              0 0 1 0</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                                              0 0 0 1               ! or specify all matrix elements in one statement.</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    proposalScaleFactor                     = &quot;2*0.5*Gelman&quot;        ! The asterisk here means multiplication since it is enclosed within quotation marks.</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>   !proposalStart                           = 4*1.e0                ! four values of 1.e0 are specified here by the repetition pattern symbol *</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    proposalStartDomainCubeLimitLower       = 4*-10.e0              ! repetition pattern rules apply again here. 4 dimensions =&gt; 4-element vector of values.</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    proposalStartDomainCubeLimitUpper       = 4*+10.e0              ! repetition pattern rules apply again here. 4 dimensions =&gt; 4-element vector of values.</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    proposalStartRandomized                 = false</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    proposalStdVec                          = 4*1.0                 ! repetition pattern rules apply again here. 4 dimensions =&gt; 4-element vector of values.</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    domainBallCenter                        = 0 0                   ! values can be separated with blanks or commas.</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    domainBallCorMat                        = 1 0</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                                              0 1</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    domainBallCovMat                        = 1, 0</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                                              0, 1</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    domainBallStdVec                        = 1, 1</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    domainCubeLimitLower                    = 2*-1.e30              ! repetition pattern rules apply here. 2 dimensions =&gt; 2-element vector of values.</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    domainCubeLimitUpper(1)                 = +1.e30                ! Elements of vectors can be set individually.</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    domainCubeLimitUpper(2)                 = +1.e30                ! Elements of vectors can be set individually.</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    domainErrCount                          = 100</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    domainErrCountMax                       = 1000</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    inputFileHasPriority                    = FALSE                 ! This is relevant only to simulations within the Fortran programming language.</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    outputChainFileFormat                   = &quot;compact&quot;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>   !outputColumnWidth                       = 25                    ! This is an example of a variable that is commented out.</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                                                                    ! Therefore, its value will not be read by the sampler routine.</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                                                                    ! To pass it to the routine, simply remove the `!` mark at the beginning of the line.</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    outputFileName                          = &quot;./out/himmelblau&quot;    ! A forward-slash character at the end of the string value would indicate the specified path</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                                                                    ! is to be interpreted as the name of the folder to contain the simulation output files.</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                                                                    ! The base name for the simulation output files will be generated from the current date and time.</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                                                                    ! Otherwise, the specified base name at the end of the string will be used in naming the simulation output files.</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    outputPrecision                         = 17</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    outputReportPeriod                      = 1000</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    outputRestartFileFormat                 = &quot;ascii&quot;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    outputSampleSize                        = -1</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    outputSeparator                         = &quot;,&quot;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    outputSplashMode                        = &quot;normal&quot;              ! or quiet or silent.</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    outputStatus                            = &quot;extend&quot;              ! or retry.</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    parallelism                             = &quot;multi chain&quot;         ! &quot;singleChain&quot; would also work. Similarly, &quot;multichain&quot;, &quot;multi chain&quot;, or &quot;multiChain&quot;.</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    parallelismMpiFinalizeEnabled           = false                 ! TRUE, true, .true., .t., and t would be also all valid logical values representing truth.</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    parallelismNumThread                    = 3                     ! number of threads to use in shared-memory parallelism.</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>   !randomSeed                              = 2136275,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>   !targetAcceptanceRate                    = 0.23e0</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    ! MCMC specifications.</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    outputChainSize                         = 10000</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    outputSampleRefinementCount             = 10</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    outputSampleRefinementMethod            = &quot;BatchMeans&quot;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    proposal                                = &quot;normal&quot;              ! or &quot;uniform&quot; as you wish.</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    proposalCorMat(:, 1)                    = 1 0                   ! first matrix column.</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    proposalCorMat(:, 2)                    = 0 1                   ! second matrix column.</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    proposalCovMat                          = 1 0 0 1               ! or specify all matrix elements in one statement.</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    proposalScaleFactor                     = &quot;2*0.5*Gelman&quot;        ! The asterisk here means multiplication since it is enclosed within quotation marks.</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    proposalStart                           = 2*1.e0                ! four values of 1.e0 are specified here by the repetition pattern symbol *</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    proposalStartDomainCubeLimitLower       = 2*-100.e0             ! repetition pattern rules apply again here. 2 dimensions =&gt; 2-element vector of values.</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    proposalStartDomainCubeLimitUpper       = 2*+100.e0             ! repetition pattern rules apply again here. 2 dimensions =&gt; 2-element vector of values.</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    proposalStartRandomized                 = false</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    proposalStdVec                          = 2*1.0                 ! repetition pattern rules apply again here. 2 dimensions =&gt; 2-element vector of values.</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    ! DRAM specifications.</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    burninAdaptationMeasure                 = 1.</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    proposalAdaptationCount                 = 10000000</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    proposalAdaptationCountGreedy           = 0</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    proposalAdaptationPeriod                = 35</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    proposalDelayedRejectionCount           = 5</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    proposalDelayedRejectionScaleFactor     = 4*1., 2.              ! The first four elements are 1, followed by 2.</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    ! DRAM specifications.</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    burninAdaptationMeasure                 = 1.</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    proposalAdaptationCount                 = 10000000</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    proposalAdaptationCountGreedy           = 0</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    proposalAdaptationPeriod                = 35</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    proposalDelayedRejectionCount           = 5</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    proposalDelayedRejectionScaleFactor     = 4*1., 2.              ! The first four elements are 1, followed by 2.</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>/</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>/</div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="cmakefile-himmelblau"></a><b>Example CMakeLists build generator file</b> <a href="#cmakefile-himmelblau">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cmake_minimum_required(VERSION 3.14)</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keywordflow">if</span> (NOT DEFINED CMAKE_BUILD_TYPE)</div>
@@ -803,9 +794,9 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment"># traceplot</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">#print(df.values)</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    fig = plt.figure(figsize=(8, 6))</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    fig = plt.figure(figsize = (8, 6))</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    ax = plt.subplot(1,1,1)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    ax.plot ( range(len(df.values[:,0]))</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    ax.plot ( range(len(df.values[:, 0]))</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            , df.values[:, sindex:]</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            , zorder = 1000</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            )</div>
@@ -824,7 +815,7 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> len(df.values[1, sindex:]) &gt; 1:</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="comment">#print(df.values)</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        fig = plt.figure(figsize=(8, 6))</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        fig = plt.figure(figsize = (8, 6))</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        ax = plt.subplot(1,1,1)</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        ax.scatter  ( df.values[:, sindex]</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                    , df.values[:, sindex + 1]</div>
@@ -848,9 +839,9 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">#print(df.values)</span></div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> <span class="stringliteral">&quot;adaptationMeasure&quot;</span> <span class="keywordflow">in</span> df.columns.values:</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span> any(df[<span class="stringliteral">&quot;adaptationMeasure&quot;</span>].values != 0):</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            fig = plt.figure(figsize=(8, 6))</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            fig = plt.figure(figsize = (8, 6))</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            ax = plt.subplot(1,1,1)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            ax.scatter  ( range(len(df.values[:,0]))</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            ax.scatter  ( range(len(df.values[:, 0]))</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                        , df[<span class="stringliteral">&quot;adaptationMeasure&quot;</span>].values</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                        , zorder = 1000</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                        , alpha = 0.5</div>
@@ -902,16 +893,16 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="finminc-runParaDRAM"></a><b>Final Remarks</b> <a href="#finminc-runParaDRAM">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/c/main/inc/pm_sampling.h#L151 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/c/main/inc/pm_sampling.h#L151 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
@@ -1024,7 +1015,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:33 for ParaMonte C 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:45:42 for ParaMonte C 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

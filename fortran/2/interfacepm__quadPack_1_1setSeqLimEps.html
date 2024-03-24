@@ -156,7 +156,7 @@ $(document).ready(function(){initNavTree('interfacepm__quadPack_1_1setSeqLimEps.
  </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">ical</td><td>: The input/output scalar of type <code>integer</code> of default kind <a class="el" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, containing the number of calls made to the procedure.<br  />
  On the first call <code>ical = 0</code> must hold. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">EpsTable</td><td>: The input/output vector of type <code>real</code> of kind any supported by the processor (e.g., <a class="el" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a>, <a class="el" href="namespacepm__kind.html#a609d23b0915ea97e6a89e9bef7c743bd">RK32</a>, <a class="el" href="namespacepm__kind.html#aa3a66a01e440da406e627e6e4e6e3908">RK64</a>, or <a class="el" href="namespacepm__kind.html#adf0fd3c248f14b733bc8cd7876f75bef">RK128</a>), of size (MAXLEN_EPSTAB + 2), containing the elements of the two lower diagonals of the triangular Epsilon table.<br  />
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">EpsTable</td><td>: The input/output vector of type <code>real</code> of kind any supported by the processor (e.g., <a class="el" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a>, <a class="el" href="namespacepm__kind.html#a609d23b0915ea97e6a89e9bef7c743bd">RK32</a>, <a class="el" href="namespacepm__kind.html#aa3a66a01e440da406e627e6e4e6e3908">RK64</a>, or <a class="el" href="namespacepm__kind.html#adf0fd3c248f14b733bc8cd7876f75bef">RK128</a>), of size (<a class="el" href="namespacepm__quadPack.html#a12adf48e558fa71626d067e5fedc6435">MAXLEN_EPSTAB</a> + 2), containing the elements of the two lower diagonals of the triangular Epsilon table.<br  />
  The elements are numbered starting at the right-hand corner of the triangle.<br  />
  </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">SeqLims</td><td>: The input/output vector of size <code>(3)</code> of the same type and kind as <code>EpsTable(:)</code>, containing the last three computed sequence limits.<br  />
@@ -172,31 +172,31 @@ $(document).ready(function(){initNavTree('interfacepm__quadPack_1_1setSeqLimEps.
 <a class="anchor" id="interface-setSeqLimEps"></a><b>Possible calling interfaces</b> <a href="#interface-setSeqLimEps">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__quadPack.html">pm_quadPack</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__quadPack_1_1setSeqLimEps.html">setSeqLimEps</a></div>
 <div class="line"> </div>
 <div class="line"><span class="fortran_statement">call</span> <a class="code hl_interface" href="interfacepm__quadPack_1_1setSeqLimEps.html">setSeqLimEps</a>(inew, ical, EpsTable, SeqLims, seqlim, error)</div>
-<div class="ttc" id="ainterfacepm__quadPack_1_1setSeqLimEps_html"><div class="ttname"><a href="interfacepm__quadPack_1_1setSeqLimEps.html">pm_quadPack::setSeqLimEps</a></div><div class="ttdoc">Return the limit of a given sequence of approximations via the Epsilon method of Wynn (1961).</div><div class="ttdef"><b>Definition:</b> <a href="pm__quadPack_8F90_source.html#l04531">pm_quadPack.F90:4531</a></div></div>
+<div class="ttc" id="ainterfacepm__quadPack_1_1setSeqLimEps_html"><div class="ttname"><a href="interfacepm__quadPack_1_1setSeqLimEps.html">pm_quadPack::setSeqLimEps</a></div><div class="ttdoc">Return the limit of a given sequence of approximations via the Epsilon method of Wynn (1961).</div><div class="ttdef"><b>Definition:</b> <a href="pm__quadPack_8F90_source.html#l04529">pm_quadPack.F90:4529</a></div></div>
 <div class="ttc" id="anamespacepm__quadPack_html"><div class="ttname"><a href="namespacepm__quadPack.html">pm_quadPack</a></div><div class="ttdoc">This module contains classes and procedures for non-adaptive and adaptive global numerical quadrature...</div><div class="ttdef"><b>Definition:</b> <a href="pm__quadPack_8F90_source.html#l00141">pm_quadPack.F90:141</a></div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The procedures under discussion are <code>pure</code>.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://www.ams.org/mcom/1961-15-074/S0025-5718-1961-0158513-X/S0025-5718-1961-0158513-X.pdf">P. Wynn, 1961, The Epsilon Algorithm and Operational Formulas</a>.<br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000737">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000751">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="finmain-setSeqLimEps"></a><b>Final Remarks</b> <a href="#finmain-setSeqLimEps">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_quadPack.F90#L4527 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_quadPack.F90#L4525 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001078">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001093">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l04531">4531</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l04529">4529</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
 <li>/home/amir/git/paramonte/src/fortran/main/<a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a></li>
 </ul>
@@ -206,7 +206,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__quadPack.html">pm_quadPack</a></li><li class="navelem"><a class="el" href="interfacepm__quadPack_1_1setSeqLimEps.html">setSeqLimEps</a></li>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:18 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:46:27 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

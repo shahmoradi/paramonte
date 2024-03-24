@@ -8,7 +8,7 @@ var namespacepm__polation =
     [ "neinext_type", "structpm__polation_1_1neinext__type.html", null ],
     [ "neiprev_type", "structpm__polation_1_1neiprev__type.html", null ],
     [ "piwilin_type", "structpm__polation_1_1piwilin__type.html", null ],
-    [ "piwipoly_type", "structpm__polation_1_1piwipoly__type.html", "structpm__polation_1_1piwipoly__type" ],
+    [ "piwipol_type", "structpm__polation_1_1piwipol__type.html", "structpm__polation_1_1piwipol__type" ],
     [ "setExtrap", "interfacepm__polation_1_1setExtrap.html", null ],
     [ "setInterp", "interfacepm__polation_1_1setInterp.html", null ],
     [ "MODULE_NAME", "namespacepm__polation.html#ac6d5623f429e1ecd037f4f14dce77518", null ],

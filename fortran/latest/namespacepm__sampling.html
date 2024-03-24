@@ -139,7 +139,6 @@ $(document).ready(function(){initNavTree('namespacepm__sampling.html',''); initR
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Types</a> &#124;
-<a href="#func-members">Functions/Subroutines</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">pm_sampling Module Reference</div></div>
 </div><!--header-->
@@ -176,12 +175,252 @@ Data Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
-<tr class="memitem:a671c8056b687c54e04aa8a2f8e5ebeaf"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepm__sampling.html#a671c8056b687c54e04aa8a2f8e5ebeaf">runParaDRAML</a> (getLogFuncPtr, ndim, input)</td></tr>
-<tr class="separator:a671c8056b687c54e04aa8a2f8e5ebeaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6440c0f638427ff6f66d09a0c8e22fd"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepm__sampling.html#aa6440c0f638427ff6f66d09a0c8e22fd">runParaDRAMD</a> (getLogFuncPtr, ndim, input)</td></tr>
-<tr class="separator:aa6440c0f638427ff6f66d09a0c8e22fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a201e5fc4b63c724989397f13973dc8bf"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepm__sampling.html#a201e5fc4b63c724989397f13973dc8bf">runParaDRAMF</a> (getLogFuncPtr, ndim, input)</td></tr>
-<tr class="separator:a201e5fc4b63c724989397f13973dc8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">runParaDRAM</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >C-Fortran Interoperation</p>
+<p >Generate and return a non-zero value (<code>1</code>) if the procedure fails to fully accomplish the task of generating a Monte Carlo sample of the specified input mathematical objective function, otherwise, return <code>0</code>.</p>
+<p >This interface group is the entry point to all <b>C-style interfaces</b> to the ParaDRAM samplers of mathematical density functions.<br  />
+ Although the procedures of this generic interface return a single scalar of type <code>int32_t</code>, the procedures generate massive amounts of information about each simulation which are stored in appropriate external hard drive files.<br  />
+</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">getLogFunc</td><td>: The input user-specified procedure pointer to the natural logarithm of the target density function.<br  />
+ On input, the function must take an input vector <code>state</code> of size <code>ndim</code> of floating-point type of kind <code>float</code>, <code>double</code>, or <code>long double</code> representing a state (point) from within the domain of the user-specified target density function whose function value must be returned.<br  />
+ On output, the user-specified procedure <code>getLogFunc()</code> must return the function value corresponding to the input <code>state[ndim]</code>.<br  />
+ The following illustrate the generic interface of input function pointer <code>getLogFunc(state, ndim)</code>, <div class="fragment"><div class="line"><span class="fortran_statement">REAL</span> getLogFunc(REAL[] state,<span class="fortran_named_const"> int32</span>_t ndim);</div>
+</div><!-- fragment --> where <code>REAL</code> can be a floating-point type of kind <code>float</code>, <code>double</code>, or <code>long double</code> for the corresponding varying-precision sampler interfaces:<br  />
+ <ol>
+<li>
+<a class="el" href="namespacepm__sampling.html#a58da2abb72e1484354b806200bda4816">runParaDRAMF</a>, </li>
+<li>
+<a class="el" href="namespacepm__sampling.html#ace901062cc3b1f73596a4decd0ed64f2">runParaDRAMD</a>, </li>
+<li>
+<a class="el" href="namespacepm__sampling.html#a467c4e5e118b23be51c8e2c0a245667f">runParaDRAML</a>. </li>
+</ol>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ndim</td><td>: The input scalar constant of type <code>int32_t</code> representing the number of dimensions of the domain of the objective function. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>: The input scalar pointer of type <code>char</code> representing the null-terminated C string that contains either, <ol>
+<li>
+the path to an external input file containing the namelist group of ParaDRAM sampler specifications as outlined in the corresponding page of <a href="https://www.cdslab.org/paramonte/generic/2/usage/sampling/paradram/specifications/">ParaMonte library generic documentation website</a>.<br  />
+ </li>
+<li>
+the namelist group of ParaDRAM sampler specifications as the can appear in an external input specification file.<br  />
+ </li>
+</ol>
+While all input simulation specifications are optional, it is highly recommended to pay attention to the default settings of the domain boundaries and sampler starting point.<br  />
+ (<b>optional</b>. It is considered as missing if set to <code>null()</code>.)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>stat</code> : The output scalar of type <code>int32_t</code> that is <code>0</code> <b>if and only if</b> the sampler succeeds in sampling the specified density function.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="interface-runParaDRAM"></a><b>Possible calling interfaces</b> <a href="#interface-runParaDRAM">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><span class="fortran_spcifier">stat</span><span class="fortran_operator_symbols"> = </span>runParaDRAMF(getLogFunc, ndim, input)</div>
+<div class="line"><span class="fortran_spcifier">stat</span><span class="fortran_operator_symbols"> = </span>runParaDRAMD(getLogFunc, ndim, input)</div>
+<div class="line"><span class="fortran_spcifier">stat</span><span class="fortran_operator_symbols"> = </span>runParaDRAML(getLogFunc, ndim, input)</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Beware that the definition of extended precision real type <code>long double</code> is compiler and platform dependent making the use of <code>long double</code> with precompiled ParaMonte libraries problematic and non-functional.<br  />
+</dd>
+<dd>
+The condition <code>0 &lt; ndim</code> must hold for the corresponding input arguments.<br  />
+ This condition is verified only if the library is built with the preprocessor macro <code>CHECK_ENABLED=1</code>.</dd></dl>
+<p><br  />
+<a class="anchor" id="example-runParaDRAM"></a><b>Example usage</b> <a href="#example-runParaDRAM">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="fortran_statement">module</span> logfunc</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>    <span class="fortran_statement">use </span><span class="fortran_inrinsic_module">iso_c_binding</span>, <span class="fortran_statement">only</span>: SK<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><span class="fortran_named_const">c_char</span>, IK<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><span class="fortran_named_const">c_int32_t</span>, RKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><span class="fortran_named_const">c_double </span><span class="fortran_comment">! All real kinds are supported.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    <span class="fortran_statement">implicit none</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="fortran_statement">integer</span>(IK) ,<span class="fortran_attribute"> parameter</span> :: NDIM<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">4_IK</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="fortran_statement">    real</span>(RKC)   ,<span class="fortran_attribute"> parameter</span> :: MEAN(NDIM)<span class="fortran_operator_symbols"> = </span>[<span class="fortran_operator_symbols">-</span><span class="fortran_numeric_literal">6</span>,<span class="fortran_operator_symbols"> -</span><span class="fortran_numeric_literal">2</span>,<span class="fortran_numeric_literal"> 2</span>,<span class="fortran_numeric_literal"> 6</span>] <span class="fortran_comment">! The mean vector of the MVN</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="fortran_statement">    real</span>(RKC)   ,<span class="fortran_attribute"> parameter</span> :: LOG_INVERSE_SQRT_TWO_PI<span class="fortran_operator_symbols"> = </span><span class="fortran_function">log</span>(<span class="fortran_numeric_literal">1.</span><span class="fortran_operator_symbols">/</span><span class="fortran_function">sqrt</span>(<span class="fortran_numeric_literal">2.</span><span class="fortran_operator_symbols">*</span><span class="fortran_function">acos</span>(<span class="fortran_operator_symbols">-</span><span class="fortran_numeric_literal">1.</span>))) <span class="fortran_comment">! MVN distribution coefficient: log(1/sqrt(2*Pi)^ndim).</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="fortran_statement">    real</span>(RKC)   ,<span class="fortran_attribute"> parameter</span> :: COVMAT(NDIM, NDIM)<span class="fortran_operator_symbols"> = </span><span class="fortran_function">reshape</span>([<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">1.</span><span class="fortran_numeric_literal">0</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">5</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">5</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">5</span><span class="fortran_operator_symbols"> &amp;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>                                                            ,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">5</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">1.</span><span class="fortran_numeric_literal">0</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">5</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">5</span><span class="fortran_operator_symbols"> &amp;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>                                                            ,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">5</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">5</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">1.</span><span class="fortran_numeric_literal">0</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">5</span><span class="fortran_operator_symbols"> &amp;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>                                                            ,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">5</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">5</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">5</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">1.</span><span class="fortran_numeric_literal">0</span> ],<span class="fortran_function"> shape</span>(COVMAT)) <span class="fortran_comment">! The covariance matrix of the MVN</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="fortran_statement">    real</span>(RKC)   ,<span class="fortran_attribute"> parameter</span> :: INVCOV(NDIM, NDIM)<span class="fortran_operator_symbols"> = </span><span class="fortran_function">reshape</span>([<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">1.</span><span class="fortran_numeric_literal">6</span>,<span class="fortran_operator_symbols"> -</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">4</span>,<span class="fortran_operator_symbols"> -</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">4</span>,<span class="fortran_operator_symbols"> -</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">4</span><span class="fortran_operator_symbols"> &amp;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>                                                            ,<span class="fortran_operator_symbols"> -</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">4</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">1.</span><span class="fortran_numeric_literal">6</span>,<span class="fortran_operator_symbols"> -</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">4</span>,<span class="fortran_operator_symbols"> -</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">4</span><span class="fortran_operator_symbols"> &amp;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                                                            ,<span class="fortran_operator_symbols"> -</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">4</span>,<span class="fortran_operator_symbols"> -</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">4</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">1.</span><span class="fortran_numeric_literal">6</span>,<span class="fortran_operator_symbols"> -</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">4</span><span class="fortran_operator_symbols"> &amp;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                                                            ,<span class="fortran_operator_symbols"> -</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">4</span>,<span class="fortran_operator_symbols"> -</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">4</span>,<span class="fortran_operator_symbols"> -</span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">4</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">1.</span><span class="fortran_numeric_literal">6</span> ],<span class="fortran_function"> shape</span>(INVCOV)) <span class="fortran_comment">! The inverse covariance matrix of the MVN</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="fortran_statement">    real</span>(RKC)   ,<span class="fortran_attribute"> parameter</span> :: MVN_COEF<span class="fortran_operator_symbols"> = </span>NDIM<span class="fortran_operator_symbols"> * </span>LOG_INVERSE_SQRT_TWO_PI<span class="fortran_operator_symbols"> + </span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">5</span><span class="fortran_numeric_literal">8</span><span class="fortran_numeric_literal">1</span><span class="fortran_numeric_literal">5</span><span class="fortran_numeric_literal">7</span><span class="fortran_numeric_literal">5</span><span class="fortran_numeric_literal">4</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">4</span><span class="fortran_numeric_literal">9</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">2</span><span class="fortran_numeric_literal">8</span><span class="fortran_numeric_literal">4</span><span class="fortran_numeric_literal">0</span> <span class="fortran_comment">! log(sqrt(det(INVCOV)))</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="fortran_statement">contains</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="fortran_prefix">function </span>getLogFunc(state, ndim) <span class="fortran_suffix">result</span>(logFunc) bind(C)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="fortran_comment">! Return the negative natural logarithm of MVN distribution</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="fortran_comment">! evaluated at the input vector `state` of length `ndim`.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="fortran_statement">integer</span>(IK),<span class="fortran_attribute"> value</span> :: ndim</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="fortran_statement">        real</span>(RKC),<span class="fortran_attribute"> intent(in)</span> :: state(ndim)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="fortran_statement">        real</span>(RKC) :: stateNormed(<span class="fortran_function">size</span>(state))</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="fortran_statement">        real</span>(RKC) :: logFunc</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        stateNormed<span class="fortran_operator_symbols"> = </span>state<span class="fortran_operator_symbols"> - </span>MEAN</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        logFunc<span class="fortran_operator_symbols"> = </span>MVN_COEF<span class="fortran_operator_symbols"> - </span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">5_RKC</span><span class="fortran_operator_symbols"> * </span>(<span class="fortran_function">dot_product</span>(stateNormed,<span class="fortran_function"> matmul</span>(INVCOV, stateNormed)))</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="fortran_statement">end function</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="fortran_statement">end module </span>logfunc</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="fortran_statement">program</span> example</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="fortran_statement">use </span>logfunc, <span class="fortran_statement">only</span>: SK, IK, RKC, NDIM, getLogFunc</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="fortran_statement">use </span><span class="fortran_inrinsic_module">iso_c_binding</span>, <span class="fortran_statement">only</span>: c_funloc, <span class="fortran_named_const">c_null_char</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__sampling.html">pm_sampling</a>, <span class="fortran_statement">only</span>: <a class="code hl_function" href="namespacepm__sampling.html#ace901062cc3b1f73596a4decd0ed64f2">runParaDRAMD</a></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="fortran_statement">integer</span>(IK) :: stat</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="fortran_spcifier">    stat</span><span class="fortran_operator_symbols"> = </span><a class="code hl_function" href="namespacepm__sampling.html#ace901062cc3b1f73596a4decd0ed64f2">runParaDRAMD</a>(<span class="fortran_function">c_funloc</span>(getLogFunc), NDIM, SK_<span class="fortran_string">&quot;&amp;paradram outputFileName = &#39;./out/runParaDRAM&#39;, outputStatus = &#39;retry&#39;, outputChainSize = 30000 /&quot;</span><span class="fortran_operator_symbols">/</span><span class="fortran_operator_symbols">/</span><span class="fortran_named_const">c_null_char</span>)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="fortran_keywordflow">if</span> (stat<span class="fortran_operator_symbols"> /</span><span class="fortran_operator_symbols">= </span><span class="fortran_numeric_literal">0</span>)<span class="fortran_statement"> error stop</span> <span class="fortran_string">&quot;sampler failed.&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="fortran_statement">end</span></div>
+<div class="ttc" id="anamespacepm__sampling_html"><div class="ttname"><a href="namespacepm__sampling.html">pm_sampling</a></div><div class="ttdoc">This module contains procedures and generic interfaces for the ParaMonte library sampler routines.</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampling_8F90_source.html#l00030">pm_sampling.F90:30</a></div></div>
+<div class="ttc" id="anamespacepm__sampling_html_ace901062cc3b1f73596a4decd0ed64f2"><div class="ttname"><a href="namespacepm__sampling.html#ace901062cc3b1f73596a4decd0ed64f2">pm_sampling::runParaDRAMD</a></div><div class="ttdeci">integer(IK) function runParaDRAMD(getLogFunc, ndim, input)</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampling_8F90_source.html#l00839">pm_sampling.F90:840</a></div></div>
+</div><!-- fragment --> <br  />
+ <a class="anchor" id="compile-unix-intel-runParaDRAM"></a><b>Example Unix compile command via Intel <code>ifort</code> compiler</b> <a href="#compile-unix-intel-runParaDRAM">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>rm main.exe</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>ifort -fpp -standard-semantics -O3 -Wl,-rpath,../../../lib -I../../../inc main.F90 ../../../lib/libparamonte_fortran_*_intel* -o main.exe</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>./main.exe</div>
+</div><!-- fragment --> <br  />
+ <a class="anchor" id="compile-batch-intel-runParaDRAM"></a><b>Example Windows Batch compile command via Intel <code>ifort</code> compiler</b> <a href="#compile-batch-intel-runParaDRAM">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>del main.exe</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>set PATH=..\..\..\lib;%PATH%</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>ifort /fpp /standard-semantics /O3 /I:..\..\..\include main.F90 ..\..\..\lib\libparamonte_fortran_*_intel*.lib /exe:main.exe</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>main.exe</div>
+</div><!-- fragment --> <br  />
+ <a class="anchor" id=" compile-unix-gnu-runParaDRAM"></a><b>Example Unix / MinGW compile command via GNU <code>gfortran</code> compiler</b> <a href="#compile-unix-gnu-runParaDRAM">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>rm main.exe</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>gfortran -cpp -ffree-line-length-none -O3 -Wl,-rpath,../../../lib -I../../../inc main.F90 ../../../lib/libparamonte_fortran_*_gnu* -o main.exe</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>./main.exe</div>
+</div><!-- fragment --> <br  />
+<a class="anchor" id="postproc-runParaDRAM"></a><b>Postprocessing of the example output</b> <a href="#postproc-runParaDRAM">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">#!/usr/bin/env python</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> paramonte <span class="keyword">as</span> pm</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> glob</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> sys</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> os</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>funcname = os.path.basename(os.getcwd())</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>linewidth = 2</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>fontsize = 17</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>files = glob.glob(<span class="stringliteral">&quot;./out/*_chain.txt&quot;</span>)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordflow">for</span> file <span class="keywordflow">in</span> files:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    df = pd.read_csv(file, delimiter = <span class="stringliteral">&quot;,&quot;</span>)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    sindex = list(df.columns).index(<span class="stringliteral">&quot;sampleLogFunc&quot;</span>) + 1 <span class="comment"># start column index.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment"># traceplot</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">#print(df.values)</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    fig = plt.figure(figsize = (8, 6))</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    ax = plt.subplot(1,1,1)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    ax.plot ( range(len(df.values[:, 0]))</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            , df.values[:, sindex:]</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            , zorder = 1000</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            )</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    plt.minorticks_on()</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    ax.set_xscale(<span class="stringliteral">&quot;log&quot;</span>)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    ax.set_xlabel(<span class="stringliteral">&quot;MCMC Count&quot;</span>, fontsize = 17)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    ax.set_ylabel(<span class="stringliteral">&quot;MCMC State&quot;</span>, fontsize = 17)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    ax.tick_params(axis = <span class="stringliteral">&quot;x&quot;</span>, which = <span class="stringliteral">&quot;minor&quot;</span>)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    ax.tick_params(axis = <span class="stringliteral">&quot;y&quot;</span>, which = <span class="stringliteral">&quot;minor&quot;</span>)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    plt.grid(visible = <span class="keyword">True</span>, which = <span class="stringliteral">&quot;both&quot;</span>, axis = <span class="stringliteral">&quot;both&quot;</span>, color = <span class="stringliteral">&quot;0.85&quot;</span>, linestyle = <span class="stringliteral">&quot;-&quot;</span>)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">#ax.legend(df.columns.values, fontsize = fontsize)</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    plt.tight_layout()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    plt.savefig(funcname + <span class="stringliteral">&quot;.traceplot.png&quot;</span>)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment"># scatterplot</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> len(df.values[1, sindex:]) &gt; 1:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="comment">#print(df.values)</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        fig = plt.figure(figsize = (8, 6))</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        ax = plt.subplot(1,1,1)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        ax.scatter  ( df.values[:, sindex]</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                    , df.values[:, sindex + 1]</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                    , zorder = 1000</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    , alpha = 0.5</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                    , s = 1</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    )</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        plt.minorticks_on()</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="comment">#ax.set_xscale(&quot;log&quot;)</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        ax.set_xlabel(df.columns.values[sindex], fontsize = 17)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        ax.set_ylabel(df.columns.values[sindex + 1], fontsize = 17)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        ax.tick_params(axis = <span class="stringliteral">&quot;x&quot;</span>, which = <span class="stringliteral">&quot;minor&quot;</span>)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        ax.tick_params(axis = <span class="stringliteral">&quot;y&quot;</span>, which = <span class="stringliteral">&quot;minor&quot;</span>)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        plt.grid(visible = <span class="keyword">True</span>, which = <span class="stringliteral">&quot;both&quot;</span>, axis = <span class="stringliteral">&quot;both&quot;</span>, color = <span class="stringliteral">&quot;0.85&quot;</span>, linestyle = <span class="stringliteral">&quot;-&quot;</span>)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="comment">#ax.legend(df.columns.values, fontsize = fontsize)</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        plt.tight_layout()</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        plt.savefig(funcname + <span class="stringliteral">&quot;.scatterplot.png&quot;</span>)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment"># adaptation measure.</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">#print(df.values)</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> <span class="stringliteral">&quot;adaptationMeasure&quot;</span> <span class="keywordflow">in</span> df.columns.values:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span> any(df[<span class="stringliteral">&quot;adaptationMeasure&quot;</span>].values != 0):</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            fig = plt.figure(figsize = (8, 6))</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            ax = plt.subplot(1,1,1)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            ax.scatter  ( range(len(df.values[:, 0]))</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                        , df[<span class="stringliteral">&quot;adaptationMeasure&quot;</span>].values</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                        , zorder = 1000</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                        , alpha = 0.5</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                        , c = <span class="stringliteral">&quot;red&quot;</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                        , s = 1</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                        )</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            plt.minorticks_on()</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="comment">#ax.set_xscale(&quot;log&quot;)</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            ax.set_yscale(<span class="stringliteral">&quot;log&quot;</span>)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            ax.set_xlabel(<span class="stringliteral">&quot;MCMC Count&quot;</span>, fontsize = 17)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            ax.set_ylabel(<span class="stringliteral">&quot;adaptationMeasure&quot;</span>, fontsize = 17)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            ax.tick_params(axis = <span class="stringliteral">&quot;x&quot;</span>, which = <span class="stringliteral">&quot;minor&quot;</span>)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            ax.tick_params(axis = <span class="stringliteral">&quot;y&quot;</span>, which = <span class="stringliteral">&quot;minor&quot;</span>)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            plt.grid(visible = <span class="keyword">True</span>, which = <span class="stringliteral">&quot;both&quot;</span>, axis = <span class="stringliteral">&quot;both&quot;</span>, color = <span class="stringliteral">&quot;0.85&quot;</span>, linestyle = <span class="stringliteral">&quot;-&quot;</span>)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="comment">#ax.legend(df.columns.values, fontsize = fontsize)</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            plt.tight_layout()</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            plt.savefig(funcname + <span class="stringliteral">&quot;.adaptationMeasure.png&quot;</span>)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">#sim = pm.ParaDRAM()</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">#sample = sim.readSample(&quot;./out/&quot;, renabled = True)</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">#sample[0].plot.grid()</span></div>
+</div><!-- fragment --> <br  />
+<a class="anchor" id="vis-runParaDRAM"></a><b>Visualization of the example output</b> <a href="#vis-runParaDRAM">⛓</a> <div class="image">
+<img src="runParaDRAM.traceplot.png" alt="" width="700"/>
+</div>
+ <div class="image">
+<img src="runParaDRAM.scatterplot.png" alt="" width="700"/>
+</div>
+ <div class="image">
+<img src="runParaDRAM.adaptationMeasure.png" alt="" width="700"/>
+</div>
+</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000842">Test:</a></b></dt><dd>test_pm_sampling</dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000067">Bug:</a></b></dt><dd><br  />
+<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
+<b>Source:</b> Intel LLVM Fortran Compiler <code>ifx</code> version 2024.0.0 20231017 <br  />
+<b>Description:</b> Intel LLVM Fortran Compiler <code>ifx</code> This interface yields a segmentation fault error for all <code>real</code> types supported when linked with the ParaMonte library built with Intel LLVM Fortran Compiler <code>ifx</code>. <br  />
+<b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, only Intel Classic Fortran Compiler <code>ifort</code> will be used.<br  />
+</dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000068">Bug:</a></b></dt><dd><br  />
+<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
+<b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021.11.0 20231010 <br  />
+<b>Description:</b> The <code>runParaDRAML</code> interface for <code>long double</code> yields a segmentation fault error. <br  />
+<b>Remedy</b> (as of ParaMonte Library version 2.0.0): None as of today.<br  />
+</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000370">Todo:</a></b></dt><dd><span class="pvhigh">Critical Priority</span>: The current tests for <code>long double</code> interface fail with Intel LLVM Fortran Compiler <code>ifx</code> and Intel LLVM C/C++ Compiler <code>icx</code> compilers.<br  />
+ Apparently, there is a mismatch between <code>long double</code> and <code>c_long_double</code> storage.<br  />
+ This issue does not exist with GNU compilers, although the GNU definition of <code>long double</code> appears to yield incorrect values in some calculations, e.g., in <code>isFailedGeomCyclicFit()</code> of the ParaMonte library.<br  />
+</dd></dl>
+<p ><br  />
+<a class="anchor" id="finminc-runParaDRAM"></a><b>Final Remarks</b> <a href="#finminc-runParaDRAM">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/inc/pm_sampling.F90#L820 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+</p><ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001210">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin </dd></dl>
+</div></td></tr>
+<tr class="memitem:a467c4e5e118b23be51c8e2c0a245667f"><td class="memItemLeft" align="right" valign="top">integer(IK) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepm__sampling.html#a467c4e5e118b23be51c8e2c0a245667f">runParaDRAML</a> (getLogFunc, ndim, input)</td></tr>
+<tr class="separator:a467c4e5e118b23be51c8e2c0a245667f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace901062cc3b1f73596a4decd0ed64f2"><td class="memItemLeft" align="right" valign="top">integer(IK) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepm__sampling.html#ace901062cc3b1f73596a4decd0ed64f2">runParaDRAMD</a> (getLogFunc, ndim, input)</td></tr>
+<tr class="separator:ace901062cc3b1f73596a4decd0ed64f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58da2abb72e1484354b806200bda4816"><td class="memItemLeft" align="right" valign="top">integer(IK) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepm__sampling.html#a58da2abb72e1484354b806200bda4816">runParaDRAMF</a> (getLogFunc, ndim, input)</td></tr>
+<tr class="separator:a58da2abb72e1484354b806200bda4816"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -190,47 +429,47 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This module contains procedures and generic interfaces for the ParaMonte library sampler routines. </p>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000826">Test:</a></b></dt><dd>test_pm_sampling<br  />
+<dl class="test"><dt><b><a class="el" href="test.html#_test000840">Test:</a></b></dt><dd>test_pm_sampling<br  />
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="finmain"></a><b>Final Remarks</b> <a href="#finmain">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_sampling.F90#L23 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_sampling.F90#L23 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001188">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Monday 00:01 AM, January 1, 2018, Institute for Computational Engineering and Sciences, University of Texas Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001203">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Monday 00:01 AM, January 1, 2018, Institute for Computational Engineering and Sciences, University of Texas Austin </dd></dl>
 </div><h2 class="groupheader">Function/Subroutine Documentation</h2>
-<a id="aa6440c0f638427ff6f66d09a0c8e22fd" name="aa6440c0f638427ff6f66d09a0c8e22fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6440c0f638427ff6f66d09a0c8e22fd">&#9670;&nbsp;</a></span>runParaDRAMD()</h2>
+<a id="ace901062cc3b1f73596a4decd0ed64f2" name="ace901062cc3b1f73596a4decd0ed64f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace901062cc3b1f73596a4decd0ed64f2">&#9670;&nbsp;</a></span>runParaDRAMD()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">function pm_sampling::runParaDRAMD </td>
+          <td class="memname">integer(IK) function pm_sampling::runParaDRAMD </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>getLogFuncPtr</em>, </td>
+          <td class="paramtype">type(c_funptr)&#160;</td>
+          <td class="paramname"><em>getLogFunc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
+          <td class="paramtype">integer(IK), intent(in), value&#160;</td>
           <td class="paramname"><em>ndim</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
+          <td class="paramtype">character(1, SK), dimension(*), intent(in), optional&#160;</td>
           <td class="paramname"><em>input</em>&#160;</td>
         </tr>
         <tr>
@@ -241,32 +480,32 @@ If you regenerate any parts/ideas from this library in a programming environment
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pm__sampling_8F90_source.html#l00717">717</a> of file <a class="el" href="pm__sampling_8F90_source.html">pm_sampling.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__sampling_8F90_source.html#l00839">839</a> of file <a class="el" href="pm__sampling_8F90_source.html">pm_sampling.F90</a>.</p>
 
 </div>
 </div>
-<a id="a201e5fc4b63c724989397f13973dc8bf" name="a201e5fc4b63c724989397f13973dc8bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a201e5fc4b63c724989397f13973dc8bf">&#9670;&nbsp;</a></span>runParaDRAMF()</h2>
+<a id="a58da2abb72e1484354b806200bda4816" name="a58da2abb72e1484354b806200bda4816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58da2abb72e1484354b806200bda4816">&#9670;&nbsp;</a></span>runParaDRAMF()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">function pm_sampling::runParaDRAMF </td>
+          <td class="memname">integer(IK) function pm_sampling::runParaDRAMF </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>getLogFuncPtr</em>, </td>
+          <td class="paramtype">type(c_funptr)&#160;</td>
+          <td class="paramname"><em>getLogFunc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
+          <td class="paramtype">integer(IK), intent(in), value&#160;</td>
           <td class="paramname"><em>ndim</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
+          <td class="paramtype">character(1, SK), dimension(*), intent(in), optional&#160;</td>
           <td class="paramname"><em>input</em>&#160;</td>
         </tr>
         <tr>
@@ -277,34 +516,34 @@ If you regenerate any parts/ideas from this library in a programming environment
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pm__sampling_8F90_source.html#l00730">730</a> of file <a class="el" href="pm__sampling_8F90_source.html">pm_sampling.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__sampling_8F90_source.html#l00854">854</a> of file <a class="el" href="pm__sampling_8F90_source.html">pm_sampling.F90</a>.</p>
 
 <p class="reference">References <a class="el" href="pm__kind_8F90_source.html#l00280">pm_kind::IK</a>, <a class="el" href="pm__kind_8F90_source.html#l00376">pm_kind::RKALL</a>, and <a class="el" href="pm__kind_8F90_source.html#l00279">pm_kind::SK</a>.</p>
 
 </div>
 </div>
-<a id="a671c8056b687c54e04aa8a2f8e5ebeaf" name="a671c8056b687c54e04aa8a2f8e5ebeaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a671c8056b687c54e04aa8a2f8e5ebeaf">&#9670;&nbsp;</a></span>runParaDRAML()</h2>
+<a id="a467c4e5e118b23be51c8e2c0a245667f" name="a467c4e5e118b23be51c8e2c0a245667f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a467c4e5e118b23be51c8e2c0a245667f">&#9670;&nbsp;</a></span>runParaDRAML()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">function pm_sampling::runParaDRAML </td>
+          <td class="memname">integer(IK) function pm_sampling::runParaDRAML </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>getLogFuncPtr</em>, </td>
+          <td class="paramtype">type(c_funptr)&#160;</td>
+          <td class="paramname"><em>getLogFunc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
+          <td class="paramtype">integer(IK), intent(in), value&#160;</td>
           <td class="paramname"><em>ndim</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
+          <td class="paramtype">character(1, SK), dimension(*), intent(in), optional&#160;</td>
           <td class="paramname"><em>input</em>&#160;</td>
         </tr>
         <tr>
@@ -315,7 +554,7 @@ If you regenerate any parts/ideas from this library in a programming environment
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pm__sampling_8F90_source.html#l00704">704</a> of file <a class="el" href="pm__sampling_8F90_source.html">pm_sampling.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__sampling_8F90_source.html#l00824">824</a> of file <a class="el" href="pm__sampling_8F90_source.html">pm_sampling.F90</a>.</p>
 
 </div>
 </div>
@@ -342,7 +581,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__sampling.html">pm_sampling</a></li>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:19 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:46:27 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

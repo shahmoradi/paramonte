@@ -6,7 +6,7 @@ var pm__polation_8F90 =
     [ "pm_polation::neiprev_type", "structpm__polation_1_1neiprev__type.html", null ],
     [ "pm_polation::piwilin_type", "structpm__polation_1_1piwilin__type.html", null ],
     [ "pm_polation::monopol_type", "structpm__polation_1_1monopol__type.html", null ],
-    [ "pm_polation::piwipoly_type", "structpm__polation_1_1piwipoly__type.html", "structpm__polation_1_1piwipoly__type" ],
+    [ "pm_polation::piwipol_type", "structpm__polation_1_1piwipol__type.html", "structpm__polation_1_1piwipol__type" ],
     [ "pm_polation::getInterp", "interfacepm__polation_1_1getInterp.html", null ],
     [ "pm_polation::setInterp", "interfacepm__polation_1_1setInterp.html", null ],
     [ "pm_polation::getExtrap", "interfacepm__polation_1_1getExtrap.html", null ],

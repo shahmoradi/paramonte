@@ -378,7 +378,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="fortran_statement">integer</span>(IK) :: fileUnit, i, info(<span class="fortran_function">size</span>(betaInc))</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="fortran_statement">        real</span>(RKC)   :: x(nx)</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="fortran_statement">        call</span> <a class="code hl_interface" href="interfacepm__arraySpace_1_1setLinSpace.html">setLinSpace</a>(x,<span class="fortran_numeric_literal"> 0._RKC</span>,<span class="fortran_numeric_literal"> 1._RKC</span>, fopen<span class="fortran_operator_symbols"> = </span><span class="fortran_named_const">.true.</span>_LK, lopen<span class="fortran_operator_symbols"> = </span><span class="fortran_named_const">.true.</span>_LK)</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="fortran_statement">        open</span>(newunit<span class="fortran_operator_symbols"> = </span>fileUnit, file<span class="fortran_operator_symbols"> = </span><span class="fortran_string">&quot;getBetaInc.RK.txt&quot;</span>)</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="fortran_statement">        open</span>(newunit<span class="fortran_operator_symbols"> = </span>fileUnit, file<span class="fortran_operator_symbols"> = </span><span class="fortran_string">&quot;setBetaInc.RK.txt&quot;</span>)</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="fortran_keywordflow">do</span> i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>, nx</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="fortran_statement">            call</span> <a class="code hl_interface" href="interfacepm__mathBeta_1_1setBetaInc.html">setBetaInc</a>(betaInc, x(i), alphas, betas, <a class="code hl_interface" href="interfacepm__mathBeta_1_1getLogBeta.html">getLogBeta</a>(alphas, betas), signed<span class="fortran_operator_symbols"> = </span><span class="fortran_named_const">.false.</span>_LK, info<span class="fortran_operator_symbols"> = </span>info)</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="fortran_keywordflow">if</span> (<span class="fortran_function">any</span>(info<span class="fortran_operator_symbols"> /</span><span class="fortran_operator_symbols">= </span><span class="fortran_numeric_literal">0</span>))<span class="fortran_statement"> error stop</span></div>
@@ -390,7 +390,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="fortran_statement">end program </span>example</div>
 <div class="ttc" id="ainterfacepm__arraySpace_1_1setLinSpace_html"><div class="ttname"><a href="interfacepm__arraySpace_1_1setLinSpace.html">pm_arraySpace::setLinSpace</a></div><div class="ttdoc">Return the linSpace output argument with size(linSpace) elements of evenly-spaced values over the int...</div><div class="ttdef"><b>Definition:</b> <a href="pm__arraySpace_8F90_source.html#l00327">pm_arraySpace.F90:327</a></div></div>
 <div class="ttc" id="ainterfacepm__err_1_1setAsserted_html"><div class="ttname"><a href="interfacepm__err_1_1setAsserted.html">pm_err::setAsserted</a></div><div class="ttdoc">Verify the input assertion holds and if it does not, print the (optional) input message on stdout and...</div><div class="ttdef"><b>Definition:</b> <a href="pm__err_8F90_source.html#l00735">pm_err.F90:735</a></div></div>
-<div class="ttc" id="ainterfacepm__err_1_1show_html"><div class="ttname"><a href="interfacepm__err_1_1show.html">pm_err::show</a></div><div class="ttdoc">Generate and return an object of type stop_type with the user-specified input attributes.</div><div class="ttdef"><b>Definition:</b> <a href="pm__err_8F90_source.html#l01617">pm_err.F90:1617</a></div></div>
+<div class="ttc" id="ainterfacepm__err_1_1show_html"><div class="ttname"><a href="interfacepm__err_1_1show.html">pm_err::show</a></div><div class="ttdoc">Generate and return an object of type stop_type with the user-specified input attributes.</div><div class="ttdef"><b>Definition:</b> <a href="pm__err_8F90_source.html#l01618">pm_err.F90:1618</a></div></div>
 <div class="ttc" id="ainterfacepm__io_1_1skip_html"><div class="ttname"><a href="interfacepm__io_1_1skip.html">pm_io::skip</a></div><div class="ttdoc">This is a generic method of the derived type display_type with pass attribute.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11074">pm_io.F90:11074</a></div></div>
 <div class="ttc" id="ainterfacepm__mathBeta_1_1getLogBeta_html"><div class="ttname"><a href="interfacepm__mathBeta_1_1getLogBeta.html">pm_mathBeta::getLogBeta</a></div><div class="ttdoc">Generate and return the natural logarithm of the Beta Function  as defined in the details section of ...</div><div class="ttdef"><b>Definition:</b> <a href="pm__mathBeta_8F90_source.html#l00144">pm_mathBeta.F90:144</a></div></div>
 <div class="ttc" id="anamespacepm__arraySpace_html"><div class="ttname"><a href="namespacepm__arraySpace.html">pm_arraySpace</a></div><div class="ttdoc">This module contains procedures and generic interfaces for generating arrays with linear or logarithm...</div><div class="ttdef"><b>Definition:</b> <a href="pm__arraySpace_8F90_source.html#l00033">pm_arraySpace.F90:33</a></div></div>
@@ -526,12 +526,12 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    df = pd.read_csv(fileList[0], delimiter = <span class="stringliteral">&quot;,&quot;</span>)</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    fig = plt.figure(figsize = 1.25*np.array([6.4,4.8]), dpi = 200)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    fig = plt.figure(figsize = 1.25 * np.array([6.4, 4.8]), dpi = 200)</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    ax = plt.subplot()</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(1,len(df.values[0,:]+1)):</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            plt.plot( df.values[:,0]</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            plt.plot( df.values[:, 0]</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                    , df.values[:,i]</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                    , linewidth = 2</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                    )</div>
@@ -560,26 +560,26 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    sys.exit(<span class="stringliteral">&quot;Ambiguous file list exists.&quot;</span>)</div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="vis-setBetaInc"></a><b>Visualization of the example output</b> <a href="#vis-setBetaInc">⛓</a> <div class="image">
-<img src="pm_mathBeta/setBetaInc/setBetaInc.RK.png" alt="" width="700"/>
+<img src="setBetaInc.RK.png" alt="" width="700"/>
 </div>
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000551">Test:</a></b></dt><dd>test_pm_mathBeta</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000562">Test:</a></b></dt><dd>test_pm_mathBeta</dd></dl>
 <p ><br  />
 <a class="anchor" id="finmain"></a><b>Final Remarks</b> <a href="#finmain">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_mathBeta.F90#L439 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_mathBeta.F90#L439 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000720">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000731">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__mathBeta_8F90_source.html#l00443">443</a> of file <a class="el" href="pm__mathBeta_8F90_source.html">pm_mathBeta.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
@@ -591,7 +591,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__mathBeta.html">pm_mathBeta</a></li><li class="navelem"><a class="el" href="interfacepm__mathBeta_1_1setBetaInc.html">setBetaInc</a></li>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:16 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:46:25 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

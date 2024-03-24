@@ -2641,39 +2641,39 @@ This generic interface combines, significantly extends, and modernizes the <code
 <div class="line"><a id="l02108" name="l02108"></a><span class="lineno"> 2108</span> </div>
 <div class="line"><a id="l02109" name="l02109"></a><span class="lineno"> 2109</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000688">Test:</a></b></dt><dd>test_pm_polynomial</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000332">Todo:</a></b></dt><dd><span class="pvhigh">Critical Priority</span>: The current implementation relies on several local allocations, the most important of which are called <code>workspace</code> in the current implementation.<br  />
+<dl class="test"><dt><b><a class="el" href="test.html#_test000702">Test:</a></b></dt><dd>test_pm_polynomial</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000346">Todo:</a></b></dt><dd><span class="pvhigh">Critical Priority</span>: The current implementation relies on several local allocations, the most important of which are called <code>workspace</code> in the current implementation.<br  />
  Although this generic interface used to accept a <code>workspace</code> argument, it was subsequently removed in favor of simplicity.<br  />
  A new set of interfaces can be added in the future to allow specification of scratch space arguments to avoid repeated local allocations.<br  />
  This could boost performance when this generic interface is called many times repeatedly.<br  />
 </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000333">Todo:</a></b></dt><dd><span class="pvhigh">Critical Priority</span>: The generic interface for the Eigenvalue method internally uses the eigenvalue computing routine of EISPACK for upper Hessenberg matrices to compute the roots of the polynomial.<br  />
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000347">Todo:</a></b></dt><dd><span class="pvhigh">Critical Priority</span>: The generic interface for the Eigenvalue method internally uses the eigenvalue computing routine of EISPACK for upper Hessenberg matrices to compute the roots of the polynomial.<br  />
  This internal implementation should be substituted with the corresponding external routine once it is implemented in the ParaMonte library.<br  />
 </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000334">Todo:</a></b></dt><dd><span class="plow">Low Priority</span>: The existing implementations of the algorithms for the Jenkins-Traub method contain relics of F77 coding style in the form of a few <code>goto</code> statements.<br  />
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000348">Todo:</a></b></dt><dd><span class="plow">Low Priority</span>: The existing implementations of the algorithms for the Jenkins-Traub method contain relics of F77 coding style in the form of a few <code>goto</code> statements.<br  />
  These remaining goto statements should be carefully removed in the future.<br  />
 </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000335">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: A benchmark comparing the runtime performances of the different polynomial root-finding algorithms of the ParaMonte library should be added here.<br  />
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000349">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: A benchmark comparing the runtime performances of the different polynomial root-finding algorithms of the ParaMonte library should be added here.<br  />
 </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000336">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: A benchmark comparing the runtime performances of the <code>complex</code> vs. <code>real</code> coefficient routines of this module should be added here.<br  />
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000350">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: A benchmark comparing the runtime performances of the <code>complex</code> vs. <code>real</code> coefficient routines of this module should be added here.<br  />
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="finmain-setPolyRoot"></a><b>Final Remarks</b> <a href="#finmain-setPolyRoot">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_polynomial.F90#L4248 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_polynomial.F90#L4248 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a> <br  />
  Copyright © 1996 California Institute of Technology, Pasadena, California. ALL RIGHTS RESERVED. Based on Government Sponsored Research NAS7-03001. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: Redistributions of source code must retain this copyright notice, this list of conditions and the following disclaimer. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. Neither the name of the California Institute of Technology (Caltech) nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. For those codes indicated with a Math a la Carte copyright, the same rules apply, except without the full force of the Caltech legal team. When citing this software we request that you also mention the names of the people who wrote the software you are using. Designed by C. L. Lawson, JPL, May 1986. Programmed by C. L. Lawson and S. Y. Chiu, JPL, May 1986, Feb. 1987.</dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001029">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001043">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__polynomial_8F90_source.html#l04273">4273</a> of file <a class="el" href="pm__polynomial_8F90_source.html">pm_polynomial.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
@@ -2685,7 +2685,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__polynomial.html">pm_polynomial</a></li><li class="navelem"><a class="el" href="interfacepm__polynomial_1_1setPolyRoot.html">setPolyRoot</a></li>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:17 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:46:26 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -267,7 +267,7 @@ Variables</h2></td></tr>
  They require one or more initial guesses of the root as starting values, then each iteration of the algorithm produces a successively more accurate approximation to the root.<br  />
  Since the iteration must be stopped at some point, these methods produce an approximation to the root, not an exact solution.<br  />
 </p>
-<h1><a class="anchor" id="autotoc_md27"></a>
+<h1><a class="anchor" id="autotoc_md28"></a>
 Bracketing methods</h1>
 <p >Bracketing methods determine successively smaller intervals (brackets) that contain a root.<br  />
  When the interval is small enough, then a root has been found.<br  />
@@ -275,7 +275,7 @@ Bracketing methods</h1>
  Therefore, they <em>require to start with an interval such that the function takes opposite signs at the end points of the interval</em>.<br  />
  There are <a href="https://en.wikipedia.org/wiki/Descartes%27_rule_of_signs">other methods</a> for getting information on the number of roots of polynomials in an interval.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md29"></a>
 Bisection method</h2>
 <p >The Bisection method consists of repeatedly bisecting a pre-specified interval known to contain at least one root.<br  />
  The method selects the subinterval in which the function changes sign, and therefore must contain a root.<br  />
@@ -309,7 +309,7 @@ Bisection method</h2>
  Additionally, the difference between the search interval limits cannot be less than the floating point precision of the computer.<br  />
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The Bisection method is also known as the <b>Interval-Halving method</b>, the <b>Binary Search method</b>, or the <b>Dichotomy method</b>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 False position (regula falsi) method</h2>
 <p >The False Position method is a root-finding algorithm is a very old method for solving an equation with one unknown.<br  />
  In simple terms, the method is the trial and error technique of using test (<em>false</em>) values for the variable and then adjusting the test value according to the outcome.<br  />
@@ -371,9 +371,9 @@ False position (regula falsi) method</h2>
  Although \(f\) is continuous, the finite precision of computer can preclude a function value ever being zero.<br  />
  Additionally, the difference between the search interval limits cannot be less than the floating point precision of the computer.<br  />
 </dd></dl>
-<h1><a class="anchor" id="autotoc_md30"></a>
+<h1><a class="anchor" id="autotoc_md31"></a>
 Iterative methods</h1>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
 The Secant method</h2>
 <p >The Secant method is a root-finding algorithm that uses a succession of roots of secant lines to better approximate a root of a function.<br  />
  The Secant method can be thought of as a finite-difference approximation of the <a class="el" href="namespacepm__mathRoot.html">Newton method</a>.<br  />
@@ -414,7 +414,7 @@ The Secant method</h2>
  Although \(f\) is continuous, the finite precision of computer can preclude a function value ever being zero.<br  />
  Additionally, the difference between the search interval limits cannot be less than the floating point precision of the computer.<br  />
 </dd></dl>
-<h2><a class="anchor" id="autotoc_md32"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 The Newton method</h2>
 <p >The Newton method, also known as the Newton–Raphson method, named after Isaac Newton and Joseph Raphson, is a root-finding algorithm which produces successively better approximations to the roots (or zeroes) of a real-valued function.<br  />
 </p>
@@ -483,7 +483,8 @@ an initial guess \(x_0\) for a root of \(f(x)\).<br  />
  </li>
 <li>
 <b>The Newton method can overshoot.</b><br  />
- If the first derivative is not well behaved in the neighborhood of a particular root, the method may overshoot, and diverge from that root. An example of a function with one root, for which the derivative is not well behaved in the neighborhood of the root, is  <p class="formulaDsp">
+ If the first derivative is not well behaved in the neighborhood of a particular root, the method may overshoot, and diverge from that root.<br  />
+ An example of a function with one root, for which the derivative is not well behaved in the neighborhood of the root, is  <p class="formulaDsp">
 \begin{equation}
                   \large
                   f(x) = |x|^{a} ~, \quad 0 &lt; a &lt; \frac{1}{2} ~,
@@ -515,7 +516,7 @@ The finite precision of computers can cause problems for convergence of the Newt
  Although \(f\) is continuous, the finite precision of computer can preclude a function value ever being zero.<br  />
  Additionally, the difference between the search interval limits cannot be less than the floating point precision of the computer.<br  />
 </dd></dl>
-<h2><a class="anchor" id="autotoc_md33"></a>
+<h2><a class="anchor" id="autotoc_md34"></a>
 The Halley method</h2>
 <p >In numerical analysis, the Halley method is a root-finding algorithm used for functions of one real variable <b>with a continuous second derivative</b>.<br  />
  It is named after its inventor <a href="https://en.wikipedia.org/wiki/Edmond_Halley">Edmond Halley</a>.<br  />
@@ -550,7 +551,7 @@ The Halley method</h2>
  he current implementation of the Halley method in this module resolves over-compensations by the second derivative (leading to wrong search directions) by reverting the search method to a Newton-Raphson step.<br  />
  If the method sends the search out of the initial user-specified bracket of the root, then the algorithm falls back to the bisection method to correct the search.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md34"></a>
+<h2><a class="anchor" id="autotoc_md35"></a>
 The Schroder method</h2>
 <p >Similar to the Halley method, the Schroder method solves the nonlinear equation \(f(x) = 0\) using the second derivative.<br  />
  However, unlike the Newton and the Halley methods, the Schroder method is known to work well in the presence of multiple roots.<br  />
@@ -563,9 +564,9 @@ The Schroder method</h2>
 <p> beginning with an initial guess \(x_0\).<br  />
  See <a href="http://drum.lib.umd.edu/handle/1903/577">Stewart, 1993, G. W. On Infinitely Many Algorithms for Solving Equations</a> for the English translation of the original paper of Schroder and the derivation of the above equation on page 13.<br  />
 </p>
-<h1><a class="anchor" id="autotoc_md35"></a>
+<h1><a class="anchor" id="autotoc_md36"></a>
 Hybrid methods</h1>
-<h2><a class="anchor" id="autotoc_md36"></a>
+<h2><a class="anchor" id="autotoc_md37"></a>
 The Brent method</h2>
 <p >The Brent method is a <b>hybrid</b> root-finding algorithm combining<br  />
  </p><ul>
@@ -599,7 +600,7 @@ the <b>inverse quadratic interpolation</b>.<br  />
  Although \(f\) is continuous, the finite precision of computer can preclude a function value ever being zero.<br  />
  Additionally, the difference between the search interval limits cannot be less than the floating point precision of the computer.<br  />
 </dd></dl>
-<h2><a class="anchor" id="autotoc_md37"></a>
+<h2><a class="anchor" id="autotoc_md38"></a>
 The Ridders method</h2>
 <p >The Ridders method is a root-finding algorithm based on the False-Position method and the use of an exponential function to successively approximate a root of a continuous function.<br  />
  The method is due to C. Ridders.<br  />
@@ -638,7 +639,7 @@ The Ridders method</h2>
  Although \(f\) is continuous, the finite precision of computer can preclude a function value ever being zero.<br  />
  Additionally, the difference between the search interval limits cannot be less than the floating point precision of the computer.<br  />
 </dd></dl>
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="autotoc_md39"></a>
 The TOMS748 method</h2>
 <p >The <a href="https://na.math.kit.edu/alefeld/download/1995_Algorithm_748_Enclosing_Zeros_of_Continuous_Functions.pdf">TOMS748 algorithm</a> is a hybrid root-finding algorithm introduced in,<br  />
  </p><ul>
@@ -648,7 +649,7 @@ Alefeld, G. E., Potra, F. A., Shi, Yixun (1995). "Algorithm 748: Enclosing Zeros
 <p>that uses a mixture of cubic, quadratic and linear (secant) interpolation to locate the root of a function.<br  />
  While there is widespread claims of the superior performance of this algorithm compared to the Brent method, there are <a href="https://www.nongnu.org/lmi/toms_748.html">counter arguments</a> for such benchmarks.<br  />
 </p>
-<h1><a class="anchor" id="autotoc_md39"></a>
+<h1><a class="anchor" id="autotoc_md40"></a>
 The optimal root-finding method</h1>
 <p >The best root-finding algorithm depends on the problem being solved:<br  />
  </p><ol>
@@ -677,25 +678,25 @@ The <a class="el" href="namespacepm__mathRoot.html">Newton-Raphson method</a> is
  <a href="https://netlib.org/slatec/src/">SLATEC cdzro.f</a><br  />
  <a href="https://www.boost.org/doc/libs/1_82_0/libs/math/doc/html/root_finding.html">Boost library</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000599">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__mathRoot.html">test_pm_mathRoot</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000292">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: The <a href="https://en.wikipedia.org/wiki/Muller%27s_method">Muller method</a> of root-finding should be implemented.<br  />
+<dl class="test"><dt><b><a class="el" href="test.html#_test000613">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__mathRoot.html">test_pm_mathRoot</a></dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000306">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: The <a href="https://en.wikipedia.org/wiki/Muller%27s_method">Muller method</a> of root-finding should be implemented.<br  />
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="finmain"></a><b>Final Remarks</b> <a href="#finmain">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_mathRoot.F90#L446 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_mathRoot.F90#L447 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000781">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000795">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 </div><h2 class="groupheader">Variable Documentation</h2>
 <a id="a5504dde0cb89575fd6f0882739a0d7b7" name="a5504dde0cb89575fd6f0882739a0d7b7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5504dde0cb89575fd6f0882739a0d7b7">&#9670;&nbsp;</a></span>bisection</h2>
@@ -739,22 +740,22 @@ If you regenerate any parts/ideas from this library in a programming environment
 </dd></dl>
 <p><br  />
 <a class="anchor" id="finmain-bisection"></a><b>Final Remarks</b> <a href="#finmain-bisection">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_mathRoot.F90#L1384 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_mathRoot.F90#L1385 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000803">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000817">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01388">1388</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01389">1389</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
 </div>
 </div>
@@ -800,22 +801,22 @@ If you regenerate any parts/ideas from this library in a programming environment
 </dd></dl>
 <p><br  />
 <a class="anchor" id="finmain-brent"></a><b>Final Remarks</b> <a href="#finmain-brent">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_mathRoot.F90#L704 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_mathRoot.F90#L705 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000787">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000801">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l00708">708</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l00709">709</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
 </div>
 </div>
@@ -861,22 +862,22 @@ If you regenerate any parts/ideas from this library in a programming environment
 </dd></dl>
 <p><br  />
 <a class="anchor" id="finmain-false"></a><b>Final Remarks</b> <a href="#finmain-false">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_mathRoot.F90#L874 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_mathRoot.F90#L875 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000791">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000805">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l00878">878</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l00879">879</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
 </div>
 </div>
@@ -922,22 +923,22 @@ If you regenerate any parts/ideas from this library in a programming environment
 </dd></dl>
 <p><br  />
 <a class="anchor" id="finmain-halley"></a><b>Final Remarks</b> <a href="#finmain-halley">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_mathRoot.F90#L1129 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_mathRoot.F90#L1130 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000797">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000811">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01133">1133</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01134">1134</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
 </div>
 </div>
@@ -953,7 +954,7 @@ If you regenerate any parts/ideas from this library in a programming environment
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l00459">459</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l00460">460</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
 </div>
 </div>
@@ -999,22 +1000,22 @@ If you regenerate any parts/ideas from this library in a programming environment
 </dd></dl>
 <p><br  />
 <a class="anchor" id="finmain-newton"></a><b>Final Remarks</b> <a href="#finmain-newton">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_mathRoot.F90#L1044 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_mathRoot.F90#L1045 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000795">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000809">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01048">1048</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01049">1049</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
 </div>
 </div>
@@ -1060,22 +1061,22 @@ If you regenerate any parts/ideas from this library in a programming environment
 </dd></dl>
 <p><br  />
 <a class="anchor" id="finmain-ridders"></a><b>Final Remarks</b> <a href="#finmain-ridders">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_mathRoot.F90#L1299 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_mathRoot.F90#L1300 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000801">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000815">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01303">1303</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01304">1304</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
 </div>
 </div>
@@ -1121,22 +1122,22 @@ If you regenerate any parts/ideas from this library in a programming environment
 </dd></dl>
 <p><br  />
 <a class="anchor" id="finmain-schroder"></a><b>Final Remarks</b> <a href="#finmain-schroder">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_mathRoot.F90#L1214 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_mathRoot.F90#L1215 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000799">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000813">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01218">1218</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01219">1219</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
 </div>
 </div>
@@ -1182,22 +1183,22 @@ If you regenerate any parts/ideas from this library in a programming environment
 </dd></dl>
 <p><br  />
 <a class="anchor" id="finmain-secant"></a><b>Final Remarks</b> <a href="#finmain-secant">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_mathRoot.F90#L959 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_mathRoot.F90#L960 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000793">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000807">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l00963">963</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l00964">964</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
 </div>
 </div>
@@ -1243,22 +1244,22 @@ If you regenerate any parts/ideas from this library in a programming environment
 </dd></dl>
 <p><br  />
 <a class="anchor" id="finmain-toms748"></a><b>Final Remarks</b> <a href="#finmain-toms748">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/pmdev/tree/master/src/fortran/main/pm_mathRoot.F90#L789 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
- For details on the naming abbreviations, see this page.<br  />
- For details on the naming conventions, see this page.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/master/src/fortran/main/pm_mathRoot.F90#L790 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000789">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000803">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l00793">793</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l00794">794</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
 </div>
 </div>
@@ -1268,7 +1269,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__mathRoot.html">pm_mathRoot</a></li>
-        <li class="footer">Generated on Thu Mar 14 2024 15:35:16 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Mar 23 2024 23:46:25 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
