@@ -30,6 +30,6 @@ var searchData=
   ['hubmindistedgeindex_27',['HubMinDistEdgeIndex',['../structtest__pm__knn_1_1TestData__type.html#ab2b277ccdaac7684ade3b2f84f6dcadd',1,'test_pm_knn::TestData_type']]],
   ['hubmindistedgelensq_28',['HubMinDistEdgeLenSq',['../structtest__pm__knn_1_1TestData__type.html#a20e723b85b25a643a8a3f2b8e602d3bd',1,'test_pm_knn::TestData_type']]],
   ['hubnodeindex_29',['HubNodeIndex',['../structtest__pm__knn_1_1TestData__type.html#a4670627b9942bc4b370f1772c8e50421',1,'test_pm_knn::TestData_type']]],
-  ['huge_30',['huge',['../structpm__kind_1_1modelr__type.html#a1a235a51fde21ca011f6d88e14a98d7d',1,'pm_kind::modelr_type::huge()'],['../structpm__kind_1_1modeli__type.html#a67e0fef02ebb000316206a5feadc408a',1,'pm_kind::modeli_type::huge()']]],
+  ['huge_30',['huge',['../structpm__kind_1_1modelr__type.html#a44bd2de95a892edb2e3b6f4f9605e6fe',1,'pm_kind::modelr_type::huge()'],['../structpm__kind_1_1modeli__type.html#a67e0fef02ebb000316206a5feadc408a',1,'pm_kind::modeli_type::huge()']]],
   ['hybrid_5ftype_31',['hybrid_type',['../structpm__mathRoot_1_1hybrid__type.html',1,'pm_mathRoot']]]
 ];

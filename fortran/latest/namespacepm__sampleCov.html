@@ -181,7 +181,7 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This module contains classes and procedures for computing the properties related to the covariance matrices of a random sample. </p>
-<h1><a class="anchor" id="autotoc_md95"></a>
+<h1><a class="anchor" id="autotoc_md110"></a>
 Covariance</h1>
 <p >The concept of <a class="el" href="namespacepm__sampleVar.html">variance</a> can be generalized to measure the covariation of any pair of data attributes.<br  />
  The <b>sample covariance matrix</b> is a \(K\)-by- \(K\) matrix \(\mathbf{Q} = \left[\tilde\Sigma_{jk}\right]\) with entries,  </p><p class="formulaDsp">
@@ -192,14 +192,14 @@ Covariance</h1>
 <p> where \(n\) is the number of observations in the sample, \(\hat\mu\) is the sample mean vector, and \(\Sigma_{jk}\) is an estimate of the covariance between the \(j\)th variable and the kth variable of the population underlying the data.<br  />
 </p>
 <p >The diagonal elements of the matrix \(\tilde\Sigma_{jj}\) are known as the <b>sample variance</b>.</p>
-<h2><a class="anchor" id="autotoc_md96"></a>
+<h2><a class="anchor" id="autotoc_md111"></a>
 Biased sample covariance</h2>
 <p >The above formula yields a biased estimate of the covariance matrix of the sample.<br  />
  Intuitively, the sample covariance relies on the difference between each observation and the sample mean, but the sample mean is slightly correlated with each observation since it is defined in terms of all observations.<br  />
  Therefore, unless the sample mean is known a priori, the above equation yields a biased estimate of the covariance with sample mean as a proxy for the true mean of the population.<br  />
  Note that the bias is noticeable only when the sample size is small (e.g., \(&lt;10\)).<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md97"></a>
+<h2><a class="anchor" id="autotoc_md112"></a>
 Unbiased sample covariance</h2>
 <p >A popular fix to the definition of sample covariance to remove its bias is to apply the <a href="https://en.wikipedia.org/wiki/Bessel%27s_correction">Bessel correction</a> to the equation above, yielding the unbiased covariance estimate as,  </p><p class="formulaDsp">
 \begin{eqnarray}
@@ -210,7 +210,7 @@ Unbiased sample covariance</h2>
 </p>
 <p> where \(\xi = \frac{n}{n - 1}\) is the <b>Bessel bias correction factor</b>.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md98"></a>
+<h2><a class="anchor" id="autotoc_md113"></a>
 Biased weighted sample covariance</h2>
 <p class="formulaDsp">
 \begin{equation}
@@ -254,7 +254,7 @@ Reliability weights are frequently (but not necessarily) normalized, meaning tha
 </ol>
 </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md99"></a>
+<h2><a class="anchor" id="autotoc_md114"></a>
 Covariance matrix vs. correlation matrix</h2>
 <p >The covariance matrix \(\Sigma\) is related to the <a class="el" href="namespacepm__sampleCor.html">correlation matrix</a> \(\rho\) by the following equation,  </p><p class="formulaDsp">
 \begin{equation}
@@ -386,11 +386,11 @@ Covariance matrix vs. correlation matrix</h2>
 <div class="ttc" id="ainterfacepm__sampleCov_1_1setCov_html"><div class="ttname"><a href="interfacepm__sampleCov_1_1setCov.html">pm_sampleCov::setCov</a></div><div class="ttdoc">Return the covariance matrix corresponding to the input (potentially weighted) correlation matrix or ...</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampleCov_8F90_source.html#l01694">pm_sampleCov.F90:1694</a></div></div>
 <div class="ttc" id="ainterfacepm__sampleMean_1_1setMean_html"><div class="ttname"><a href="interfacepm__sampleMean_1_1setMean.html">pm_sampleMean::setMean</a></div><div class="ttdoc">Return the (weighted) mean of a pair of time series or of an input sample of nsam observations with n...</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampleMean_8F90_source.html#l02008">pm_sampleMean.F90:2008</a></div></div>
 <div class="ttc" id="anamespacepm__bench_html"><div class="ttname"><a href="namespacepm__bench.html">pm_bench</a></div><div class="ttdoc">This module contains abstract interfaces and types that facilitate benchmarking of different procedur...</div><div class="ttdef"><b>Definition:</b> <a href="pm__bench_8F90_source.html#l00041">pm_bench.F90:41</a></div></div>
-<div class="ttc" id="anamespacepm__kind_html"><div class="ttname"><a href="namespacepm__kind.html">pm_kind</a></div><div class="ttdoc">This module defines the relevant Fortran kind type-parameters frequently used in the ParaMonte librar...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00028">pm_kind.F90:28</a></div></div>
-<div class="ttc" id="anamespacepm__kind_html_a3f17ea307d594843815ae49bcc6ffdac"><div class="ttname"><a href="namespacepm__kind.html#a3f17ea307d594843815ae49bcc6ffdac">pm_kind::LK</a></div><div class="ttdeci">integer, parameter LK</div><div class="ttdoc">The default logical kind in the ParaMonte library: kind(.true.) in Fortran, kind(....</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00281">pm_kind.F90:281</a></div></div>
-<div class="ttc" id="anamespacepm__kind_html_aa8e76d653e681cfd34defa591f079f35"><div class="ttname"><a href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">pm_kind::IK</a></div><div class="ttdeci">integer, parameter IK</div><div class="ttdoc">The default integer kind in the ParaMonte library: int32 in Fortran, c_int32_t in C-Fortran Interoper...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00280">pm_kind.F90:280</a></div></div>
-<div class="ttc" id="anamespacepm__kind_html_ac0a1a3a5068faea709591110db2efad4"><div class="ttname"><a href="namespacepm__kind.html#ac0a1a3a5068faea709591110db2efad4">pm_kind::RKD</a></div><div class="ttdeci">integer, parameter RKD</div><div class="ttdoc">The double precision real kind in Fortran mode. On most platforms, this is an 64-bit real kind.</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00308">pm_kind.F90:308</a></div></div>
-<div class="ttc" id="anamespacepm__kind_html_aea9356815e78a03d410e7490f8827700"><div class="ttname"><a href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">pm_kind::SK</a></div><div class="ttdeci">integer, parameter SK</div><div class="ttdoc">The default character kind in the ParaMonte library: kind(&quot;a&quot;) in Fortran, c_char in C-Fortran Intero...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00279">pm_kind.F90:279</a></div></div>
+<div class="ttc" id="anamespacepm__kind_html"><div class="ttname"><a href="namespacepm__kind.html">pm_kind</a></div><div class="ttdoc">This module defines the relevant Fortran kind type-parameters frequently used in the ParaMonte librar...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00268">pm_kind.F90:268</a></div></div>
+<div class="ttc" id="anamespacepm__kind_html_a3f17ea307d594843815ae49bcc6ffdac"><div class="ttname"><a href="namespacepm__kind.html#a3f17ea307d594843815ae49bcc6ffdac">pm_kind::LK</a></div><div class="ttdeci">integer, parameter LK</div><div class="ttdoc">The default logical kind in the ParaMonte library: kind(.true.) in Fortran, kind(....</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00541">pm_kind.F90:541</a></div></div>
+<div class="ttc" id="anamespacepm__kind_html_aa8e76d653e681cfd34defa591f079f35"><div class="ttname"><a href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">pm_kind::IK</a></div><div class="ttdeci">integer, parameter IK</div><div class="ttdoc">The default integer kind in the ParaMonte library: int32 in Fortran, c_int32_t in C-Fortran Interoper...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00540">pm_kind.F90:540</a></div></div>
+<div class="ttc" id="anamespacepm__kind_html_ac0a1a3a5068faea709591110db2efad4"><div class="ttname"><a href="namespacepm__kind.html#ac0a1a3a5068faea709591110db2efad4">pm_kind::RKD</a></div><div class="ttdeci">integer, parameter RKD</div><div class="ttdoc">The double precision real kind in Fortran mode. On most platforms, this is an 64-bit real kind.</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00568">pm_kind.F90:568</a></div></div>
+<div class="ttc" id="anamespacepm__kind_html_aea9356815e78a03d410e7490f8827700"><div class="ttname"><a href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">pm_kind::SK</a></div><div class="ttdeci">integer, parameter SK</div><div class="ttdoc">The default character kind in the ParaMonte library: kind(&quot;a&quot;) in Fortran, c_char in C-Fortran Intero...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00539">pm_kind.F90:539</a></div></div>
 <div class="ttc" id="anamespacepm__sampleCov_html"><div class="ttname"><a href="namespacepm__sampleCov.html">pm_sampleCov</a></div><div class="ttdoc">This module contains classes and procedures for computing the properties related to the covariance ma...</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampleCov_8F90_source.html#l00170">pm_sampleCov.F90:170</a></div></div>
 <div class="ttc" id="anamespacepm__sampleMean_html"><div class="ttname"><a href="namespacepm__sampleMean.html">pm_sampleMean</a></div><div class="ttdoc">This module contains classes and procedures for computing the first moment (i.e., the statistical mea...</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampleMean_8F90_source.html#l00104">pm_sampleMean.F90:104</a></div></div>
 <div class="ttc" id="astructpm__bench_1_1bench__type_html"><div class="ttname"><a href="structpm__bench_1_1bench__type.html">pm_bench::bench_type</a></div><div class="ttdoc">This is the class for creating benchmark and performance-profiling objects.</div><div class="ttdef"><b>Definition:</b> <a href="pm__bench_8F90_source.html#l00386">pm_bench.F90:386</a></div></div>
@@ -541,7 +541,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 </li>
 </ol>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001157">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Nov 24, 2020, 4:19 AM, Dallas, TX<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001175">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Nov 24, 2020, 4:19 AM, Dallas, TX<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, Thursday 12:45 AM, August 20, 2021, Dallas, TX<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Monday March 6, 2017, 2:48 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin.<br  />
  </dd></dl>
@@ -568,7 +568,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__sampleCov.html">pm_sampleCov</a></li>
-        <li class="footer">Generated on Sat Mar 23 2024 23:46:27 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Mon Apr 1 2024 23:20:38 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
