@@ -1,9 +1,5 @@
 var NAVTREEINDEX28 =
 {
-"test__pm__statistics_8F90.html#a3268873da0dc3b04665be5020981aa45":[24,0,0,0,1,105,0],
-"test__pm__statistics_8F90.html#a3a1928887d524fac91b56e4b1a998098":[24,0,0,0,1,105,2],
-"test__pm__statistics_8F90.html#a3f907e18c1250e5c80fcbfd34a9c5da1":[24,0,0,0,1,105,6],
-"test__pm__statistics_8F90.html#a4a762f3cf4677cc4fbd33911d44e7539":[24,0,0,0,1,105,15],
 "test__pm__statistics_8F90.html#a6530043e1fd07450a9dcba1b88bea930":[24,0,0,0,1,105,1],
 "test__pm__statistics_8F90.html#a7d5c14653d74320a89f7d0ff29d1263f":[24,0,0,0,1,105,26],
 "test__pm__statistics_8F90.html#a7f36d70cf0cd3fd9ce75eb31b07cbaff":[24,0,0,0,1,105,21],

@@ -1,7 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"namespacepm__sampleNorm.html#a3a1ad9727174aeda4746e31673271adc":[22,0,152,3],
-"namespacepm__sampleQuan.html":[22,0,153],
 "namespacepm__sampleQuan.html#ab13877c72accf6962487e95a5c606815":[22,0,153,1],
 "namespacepm__sampleScale.html":[22,0,154],
 "namespacepm__sampleScale.html#a7c63e13b43f5104f15ae951b0f6c1af5":[22,0,154,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX10 =
 "namespacetest__pm__arrayFind.html":[22,0,184],
 "namespacetest__pm__arrayFind.html#a560f03b749f3bdbb237b49ed1b9c4c7a":[22,0,184,1],
 "namespacetest__pm__arrayFind.html#ade8426a16cc09082e1194c5835dd8406":[22,0,184,0],
-"namespacetest__pm__arrayInit.html":[22,0,185]
+"namespacetest__pm__arrayInit.html":[22,0,185],
+"namespacetest__pm__arrayInit.html#adecfd4bce82384b1edf1ad0f324a0460":[22,0,185,1],
+"namespacetest__pm__arrayInit.html#afa318a2cfad1b4cf2a9769659f60d102":[22,0,185,0]
 };
