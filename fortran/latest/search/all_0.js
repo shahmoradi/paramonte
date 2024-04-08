@@ -1,7 +1,7 @@
 var searchData=
 [
   ['a_0',['a',['../structpm__quadTest_1_1IntSinCos__type.html#a8e71d70e637c7da389c63e4067c0f2be',1,'pm_quadTest::IntSinCos_type::a()'],['../structpm__quadTest_1_1Int2__type.html#a48136a4df330afa24ed807891dbd9ce2',1,'pm_quadTest::Int2_type::a()']]],
-  ['abbr_1',['Abbr',['../structpm__dateTime_1_1TimeZone__type.html#a7d394e6fe45bc4641e4d4fecc637464e',1,'pm_dateTime::TimeZone_type']]],
+  ['abbr_1',['Abbr',['../structpm__dateTime_1_1timeZone__type.html#a5f7a760fa520af47b23576885e387b7e',1,'pm_dateTime::timeZone_type']]],
   ['abs_2',['abs',['../interfacepm__complexAbs_1_1abs.html',1,'pm_complexAbs']]],
   ['access_3',['access',['../structpm__io_1_1openArg__type.html#a9fd5b6d8454af800f15c45c9f45a8b26',1,'pm_io::openArg_type']]],
   ['ack_4',['ACK',['../namespacepm__strASCII.html#aa8f4ebd6be84f20dfb5cb0b856ee35f7',1,'pm_strASCII']]],

@@ -241,9 +241,9 @@ $(document).ready(function(){initNavTree('interfacepm__dateTime_1_1getDateTime.h
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">\(\ms{%Y}\)   </td><td class="markdownTableBodyNone">2001   </td><td class="markdownTableBodyNone">Year    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">\(\ms{%z}\)   </td><td class="markdownTableBodyNone">+0100   </td><td class="markdownTableBodyNone">ISO 8601 offset from UTC in timezone in units of minutes (as returned by the Fortran intrinsic <code>date_and_time()</code>).    </td></tr>
+<td class="markdownTableBodyNone">\(\ms{%z}\)   </td><td class="markdownTableBodyNone">+0100   </td><td class="markdownTableBodyNone">ISO 8601 offset from UTC in time zone in units of minutes (as returned by the Fortran intrinsic <code>date_and_time()</code>).    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">\(\ms{%Z}\)   </td><td class="markdownTableBodyNone">CDT   </td><td class="markdownTableBodyNone">Timezone abbreviation (<b>daylight saving not implemented</b>; different from the C/C++ <code>strftime</code> behavior which uses system timezone name)    </td></tr>
+<td class="markdownTableBodyNone">\(\ms{%Z}\)   </td><td class="markdownTableBodyNone">CDT   </td><td class="markdownTableBodyNone">Time zone abbreviation (<b>daylight saving not implemented</b>; different from the C/C++ <code>strftime</code> behavior which uses system time zone name)    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">\(\ms{%%}\)   </td><td class="markdownTableBodyNone">%   </td><td class="markdownTableBodyNone">A <code>%</code> sign   </td></tr>
 </table>
@@ -258,7 +258,7 @@ $(document).ready(function(){initNavTree('interfacepm__dateTime_1_1getDateTime.h
  (<b>optional</b>, default = <code>1</code> or the current value if all arguments are missing or only <code>format</code> is present. It can be present only if <code>year</code> is present.) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">day</td><td>: The input scalar of type <code>integer</code> of default kind <a class="el" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, containing the day of the month of the year of the Gregorian calendar.<br  />
  (<b>optional</b>, default = <code>1</code> or the current value if all arguments are missing or only <code>format</code> is present. It can be present only if <code>month</code> is present.) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">zone</td><td>: The input scalar of type <code>integer</code> of default kind <a class="el" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, containing the <b>timezone</b> of the Gregorian calendar <b>in minutes</b>.<br  />
+    <tr><td class="paramdir">[in]</td><td class="paramname">zone</td><td>: The input scalar of type <code>integer</code> of default kind <a class="el" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, containing the <b>time zone</b> of the Gregorian calendar <b>in minutes</b>.<br  />
  (<b>optional</b>, default = <code>0</code> (UTC) or the current value if all arguments are missing or only <code>format</code> is present. It can be present only if either <code>day</code> or <code>julianDay</code> (but noth both) is present.) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">hour</td><td>: The input scalar of type <code>integer</code> of default kind <a class="el" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, containing the hour of the day of the Gregorian calendar.<br  />
  (<b>optional</b>, default = <code>0</code> or the current value if all arguments are missing or only <code>format</code> is present. It can be present only if <code>zone</code> is present.) </td></tr>
@@ -296,7 +296,7 @@ $(document).ready(function(){initNavTree('interfacepm__dateTime_1_1getDateTime.h
 <div class="line">string<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__dateTime_1_1getDateTime.html">getDateTime</a>(format, values(:)) <span class="fortran_comment">! return the current `values` date and time as a formatted string.</span></div>
 <div class="line">string<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__dateTime_1_1getDateTime.html">getDateTime</a>(format) <span class="fortran_comment">! impure : return the current local date and time with the requested format.</span></div>
 <div class="line">!</div>
-<div class="ttc" id="ainterfacepm__dateTime_1_1getDateTime_html"><div class="ttname"><a href="interfacepm__dateTime_1_1getDateTime.html">pm_dateTime::getDateTime</a></div><div class="ttdoc">Generate and return the current or the requested date and time as an integer-valued array of size 8 o...</div><div class="ttdef"><b>Definition:</b> <a href="pm__dateTime_8F90_source.html#l02303">pm_dateTime.F90:2303</a></div></div>
+<div class="ttc" id="ainterfacepm__dateTime_1_1getDateTime_html"><div class="ttname"><a href="interfacepm__dateTime_1_1getDateTime.html">pm_dateTime::getDateTime</a></div><div class="ttdoc">Generate and return the current or the requested date and time as an integer-valued array of size 8 o...</div><div class="ttdef"><b>Definition:</b> <a href="pm__dateTime_8F90_source.html#l02367">pm_dateTime.F90:2367</a></div></div>
 <div class="ttc" id="anamespacepm__dateTime_html"><div class="ttname"><a href="namespacepm__dateTime.html">pm_dateTime</a></div><div class="ttdoc">This module contains classes and procedures for computing, manipulating, and styling dates and times.</div><div class="ttdef"><b>Definition:</b> <a href="pm__dateTime_8F90_source.html#l00308">pm_dateTime.F90:308</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html"><div class="ttname"><a href="namespacepm__kind.html">pm_kind</a></div><div class="ttdoc">This module defines the relevant Fortran kind type-parameters frequently used in the ParaMonte librar...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00268">pm_kind.F90:268</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html_aa8e76d653e681cfd34defa591f079f35"><div class="ttname"><a href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">pm_kind::IK</a></div><div class="ttdeci">integer, parameter IK</div><div class="ttdoc">The default integer kind in the ParaMonte library: int32 in Fortran, c_int32_t in C-Fortran Interoper...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00540">pm_kind.F90:540</a></div></div>
@@ -310,7 +310,7 @@ $(document).ready(function(){initNavTree('interfacepm__dateTime_1_1getDateTime.h
  This is in accordance with the convention in astronomical year numbering and the international standard date system, <b>ISO 8601</b>.<br  />
  The input <code>month</code> must be a number between <code>1</code> and <code>12</code>.<br  />
  The input <code>day</code> must be a number between <code>1</code> and <code>31</code> and be consistent with the specified month and (leap) year.<br  />
- The input <code>zone</code> must be a valid timezone in units of minutes.<br  />
+ The input <code>zone</code> must be a valid time zone in units of minutes.<br  />
  The input <code>hour</code> must be a number between <code>0</code> and <code>23</code>.<br  />
  The input <code>minute</code> must be a number between <code>0</code> and <code>59</code>.<br  />
  The input <code>second</code> must be a number between <code>0</code> and <code>59</code>.<br  />
@@ -693,12 +693,12 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span><span class="fortran_statement">    call</span> <a class="code hl_variable" href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">disp</a><span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__io_1_1skip.html">skip</a>()</div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="fortran_statement">end program </span>example</div>
-<div class="ttc" id="ainterfacepm__io_1_1show_html"><div class="ttname"><a href="interfacepm__io_1_1show.html">pm_io::show</a></div><div class="ttdoc">This is a generic method of the derived type display_type with pass attribute.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11292">pm_io.F90:11292</a></div></div>
-<div class="ttc" id="ainterfacepm__io_1_1skip_html"><div class="ttname"><a href="interfacepm__io_1_1skip.html">pm_io::skip</a></div><div class="ttdoc">This is a generic method of the derived type display_type with pass attribute.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11074">pm_io.F90:11074</a></div></div>
+<div class="ttc" id="ainterfacepm__io_1_1show_html"><div class="ttname"><a href="interfacepm__io_1_1show.html">pm_io::show</a></div><div class="ttdoc">This is a generic method of the derived type display_type with pass attribute.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11349">pm_io.F90:11349</a></div></div>
+<div class="ttc" id="ainterfacepm__io_1_1skip_html"><div class="ttname"><a href="interfacepm__io_1_1skip.html">pm_io::skip</a></div><div class="ttdoc">This is a generic method of the derived type display_type with pass attribute.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11131">pm_io.F90:11131</a></div></div>
 <div class="ttc" id="anamespacepm__io_html"><div class="ttname"><a href="namespacepm__io.html">pm_io</a></div><div class="ttdoc">This module contains classes and procedures for input/output (IO) or generic display operations on st...</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l00252">pm_io.F90:252</a></div></div>
-<div class="ttc" id="anamespacepm__io_html_adbd5f19ab57266908f0e5000233840d3"><div class="ttname"><a href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">pm_io::disp</a></div><div class="ttdeci">type(display_type) disp</div><div class="ttdoc">This is a scalar module variable an object of type display_type for general display.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l10962">pm_io.F90:10962</a></div></div>
+<div class="ttc" id="anamespacepm__io_html_adbd5f19ab57266908f0e5000233840d3"><div class="ttname"><a href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">pm_io::disp</a></div><div class="ttdeci">type(display_type) disp</div><div class="ttdoc">This is a scalar module variable an object of type display_type for general display.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11016">pm_io.F90:11016</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html_a2dc41eb9ccbb460b3b6af8f356d3e962"><div class="ttname"><a href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">pm_kind::RK</a></div><div class="ttdeci">integer, parameter RK</div><div class="ttdoc">The default real kind in the ParaMonte library: real64 in Fortran, c_double in C-Fortran Interoperati...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00543">pm_kind.F90:543</a></div></div>
-<div class="ttc" id="astructpm__io_1_1display__type_html"><div class="ttname"><a href="structpm__io_1_1display__type.html">pm_io::display_type</a></div><div class="ttdoc">Generate and return an object of type display_type.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l10228">pm_io.F90:10228</a></div></div>
+<div class="ttc" id="astructpm__io_1_1display__type_html"><div class="ttname"><a href="structpm__io_1_1display__type.html">pm_io::display_type</a></div><div class="ttdoc">Generate and return an object of type display_type.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l10282">pm_io.F90:10282</a></div></div>
 </div><!-- fragment --> <br  />
  <a class="anchor" id="compile-unix-intel-getDateTime"></a><b>Example Unix compile command via Intel <code>ifort</code> compiler</b> <a href="#compile-unix-intel-getDateTime">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>rm main.exe</div>
@@ -1003,7 +1003,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="finmain-getDateTime"></a><b>Final Remarks</b> <a href="#finmain-getDateTime">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_dateTime.F90#L2299 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_dateTime.F90#L2363 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -1018,7 +1018,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
 <dl class="authors"><dt><b><a class="el" href="authors.html#_authors000330">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, March 22, 2012, 00:00 AM, National Institute for Fusion Studies, The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__dateTime_8F90_source.html#l02303">2303</a> of file <a class="el" href="pm__dateTime_8F90_source.html">pm_dateTime.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__dateTime_8F90_source.html#l02367">2367</a> of file <a class="el" href="pm__dateTime_8F90_source.html">pm_dateTime.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
 <li>/home/amir/git/paramonte/src/fortran/main/<a class="el" href="pm__dateTime_8F90_source.html">pm_dateTime.F90</a></li>
 </ul>
@@ -1028,7 +1028,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__dateTime.html">pm_dateTime</a></li><li class="navelem"><a class="el" href="interfacepm__dateTime_1_1getDateTime.html">getDateTime</a></li>
-        <li class="footer">Generated on Fri Apr 5 2024 00:24:36 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Mon Apr 8 2024 03:21:29 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -396,7 +396,7 @@ var annotated_dup =
       [ "isMorning", "interfacepm__dateTime_1_1isMorning.html", null ],
       [ "isValidDateTime", "interfacepm__dateTime_1_1isValidDateTime.html", null ],
       [ "isValidZone", "interfacepm__dateTime_1_1isValidZone.html", null ],
-      [ "TimeZone_type", "structpm__dateTime_1_1TimeZone__type.html", "structpm__dateTime_1_1TimeZone__type" ]
+      [ "timeZone_type", "structpm__dateTime_1_1timeZone__type.html", "structpm__dateTime_1_1timeZone__type" ]
     ] ],
     [ "pm_distanceEuclid", "namespacepm__distanceEuclid.html", [
       [ "euclid_type", "structpm__distanceEuclid_1_1euclid__type.html", null ],

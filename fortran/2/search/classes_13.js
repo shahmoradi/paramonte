@@ -12,7 +12,7 @@ var searchData=
   ['timermpi_5ftype_9',['timerMPI_type',['../structpm__timer_1_1timerMPI__type.html',1,'pm_timer']]],
   ['timeromp_5ftype_10',['timerOMP_type',['../structpm__timer_1_1timerOMP__type.html',1,'pm_timer']]],
   ['timersys_5ftype_11',['timerSYS_type',['../structpm__timer_1_1timerSYS__type.html',1,'pm_timer']]],
-  ['timezone_5ftype_12',['TimeZone_type',['../structpm__dateTime_1_1TimeZone__type.html',1,'pm_dateTime']]],
+  ['timezone_5ftype_12',['timeZone_type',['../structpm__dateTime_1_1timeZone__type.html',1,'pm_dateTime']]],
   ['timing_5ftype_13',['timing_type',['../structpm__bench_1_1timing__type.html',1,'pm_bench']]],
   ['toms748_5ftype_14',['toms748_type',['../structpm__mathRoot_1_1toms748__type.html',1,'pm_mathRoot']]],
   ['trans_5ftype_15',['trans_type',['../structpm__matrixTrans_1_1trans__type.html',1,'pm_matrixTrans']]],

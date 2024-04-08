@@ -60,7 +60,7 @@ var searchData=
   ['csharp_57',['csharp',['../structpm__io_1_1filext__type.html#a6b0d4f60976c5ddc0c58d2762f8f9e5d',1,'pm_io::filext_type::csharp()'],['../structpm__paramonte_1_1envis__type.html#a75d39f7b70b56cb99271a656fc619e86',1,'pm_paramonte::envis_type::csharp()']]],
   ['csnot_58',['csnot',['../structpm__quadTest_1_1IntCauchy2__type.html#a4254b6a13436df649e03d11b28ab512e',1,'pm_quadTest::IntCauchy2_type']]],
   ['csv_59',['csv',['../namespacepm__io.html#ab8a60cd6e22f74bec8e3303127d968c9',1,'pm_io']]],
-  ['cumsum_60',['cumSum',['../namespacepm__sampleACT.html#a7376b8d46228e3afcce82dfd05811912',1,'pm_sampleACT']]],
-  ['cumsummax_61',['cumSumMax',['../namespacepm__sampleACT.html#a09aab631b8e134756bbb2076f40d227f',1,'pm_sampleACT']]],
+  ['cumsum_60',['cumSum',['../namespacepm__sampleACT.html#ac0d5c0e0ab796c172e2ae9f367050b82',1,'pm_sampleACT']]],
+  ['cumsummax_61',['cumSumMax',['../namespacepm__sampleACT.html#aabe7f0356659c662ade3e154b4d0e8d2',1,'pm_sampleACT']]],
   ['cygwin_62',['cygwin',['../structpm__sysInfo_1_1kernelis__type.html#a780d4efe60c2e1aaa50ecebaab6174ed',1,'pm_sysInfo::kernelis_type']]]
 ];

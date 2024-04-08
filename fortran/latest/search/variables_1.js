@@ -7,7 +7,7 @@ var searchData=
   ['band_5fspec3_4',['BAND_SPEC3',['../namespacetest__pm__distBand.html#a80263513888988309a538859b403b861',1,'test_pm_distBand']]],
   ['band_5fspec4_5',['BAND_SPEC4',['../namespacetest__pm__distBand.html#a1f4820ee6df7435b3f2a4cade2bc17eb',1,'test_pm_distBand']]],
   ['bash_6',['bash',['../structpm__sysShell_1_1shellis__type.html#a73934958e86008c7e540bd5afdd7c58a',1,'pm_sysShell::shellis_type']]],
-  ['batchmeans_7',['batchMeans',['../namespacepm__sampleACT.html#a5afa47183b6185ff971c4aa541bb95bc',1,'pm_sampleACT']]],
+  ['batchmeans_7',['batchMeans',['../namespacepm__sampleACT.html#a959a1d47ca8bdcf4d0b0522e702a936c',1,'pm_sampleACT']]],
   ['batchmeansmax_8',['batchMeansMax',['../namespacepm__sampleACT.html#a2ee08b9813af7cdf8605c00f6d47dd40',1,'pm_sampleACT']]],
   ['bblack_9',['bblack',['../structpm__strANSI_1_1styleSeq__type.html#a77af8a3fa98dd40a13991d75b945a05d',1,'pm_strANSI::styleSeq_type::bblack()'],['../namespacepm__strANSI.html#a1b276cea7096c615514e68f525dcba22',1,'pm_strANSI::bblack()']]],
   ['bblue_10',['bblue',['../structpm__strANSI_1_1styleSeq__type.html#a1dac5b1eae2943b665ae996493be493c',1,'pm_strANSI::styleSeq_type::bblue()'],['../namespacepm__strANSI.html#aa36675d9d29815e88c702ce87fa31a6e',1,'pm_strANSI::bblue()']]],

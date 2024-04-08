@@ -9,7 +9,7 @@ var searchData=
   ['band_5fspec4_6',['BAND_SPEC4',['../namespacetest__pm__distBand.html#a1f4820ee6df7435b3f2a4cade2bc17eb',1,'test_pm_distBand']]],
   ['bandspec_5ftype_7',['BandSpec_type',['../structtest__pm__distBand_1_1BandSpec__type.html',1,'test_pm_distBand']]],
   ['bash_8',['bash',['../structpm__sysShell_1_1shellis__type.html#a73934958e86008c7e540bd5afdd7c58a',1,'pm_sysShell::shellis_type']]],
-  ['batchmeans_9',['batchMeans',['../namespacepm__sampleACT.html#a5afa47183b6185ff971c4aa541bb95bc',1,'pm_sampleACT']]],
+  ['batchmeans_9',['batchMeans',['../namespacepm__sampleACT.html#a959a1d47ca8bdcf4d0b0522e702a936c',1,'pm_sampleACT']]],
   ['batchmeans_5ftype_10',['batchMeans_type',['../structpm__sampleACT_1_1batchMeans__type.html',1,'pm_sampleACT']]],
   ['batchmeansmax_11',['batchMeansMax',['../namespacepm__sampleACT.html#a2ee08b9813af7cdf8605c00f6d47dd40',1,'pm_sampleACT']]],
   ['batchmeansmax_5ftype_12',['batchMeansMax_type',['../structpm__sampleACT_1_1batchMeansMax__type.html',1,'pm_sampleACT']]],

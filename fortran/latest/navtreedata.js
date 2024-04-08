@@ -83,15 +83,18 @@ var NAVTREE =
       [ "latest", "../../c/latest/index.html", null ],
       [ "2", "../../c/2/index.html", null ]
     ] ],
-    [ "C++", "usergroup1.html", [
+    [ "C", "usergroup1.html", [
+      [ "fortran", "../../codecov/fortran/index.html", null ]
+    ] ],
+    [ "C++", "usergroup2.html", [
       [ "latest", "../../cpp/latest/index.html", null ],
       [ "2", "../../cpp/2/index.html", null ]
     ] ],
-    [ "Fortran", "usergroup2.html", [
+    [ "Fortran", "usergroup3.html", [
       [ "latest", "../../fortran/latest/index.html", null ],
       [ "2", "../../fortran/2/index.html", null ]
     ] ],
-    [ "Generic", "usergroup3.html", [
+    [ "Generic", "usergroup4.html", [
       [ "latest", "../../generic/latest/index.html", null ],
       [ "2", "../../generic/2/index.html", null ],
       [ "1", "../../generic/1/index.html", null ]
@@ -102,34 +105,34 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "../../c/2/index.html",
-"interfacepm__arraySort_1_1isSorted.html",
-"interfacepm__container_1_1operator_07_4_0a_08.html",
-"interfacepm__distLogUnif_1_1setLogUnifLogRand.html",
-"interfacepm__fftnr_1_1setFFTF.html",
-"interfacepm__os_1_1isWindows.html",
-"interfacepm__sysInfo_1_1isKernelDarwin.html",
-"namespacepm__arrayCompareLex.html#abb24e334e814a5327b066ccca880d78a",
-"namespacepm__distPower.html",
-"namespacepm__mathConst.html#ad3bd0eaf4120cab03d8c5e2c64899b79",
-"namespacepm__sampleQuan.html#ab13877c72accf6962487e95a5c606815",
-"namespacetest__pm__arrayInsert.html",
-"namespacetest__pm__io.html",
-"namespacetest__pm__quadRomb.html#ab23d1127953cb3947c60e79e7fb3d46c",
-"pm__arrayRefine_8F90.html#adc9d2e2e96e48b5a6d132822d8827dab",
-"pm__distLogNorm_8F90.html",
-"pm__kind_8F90.html#afa80be656df106289ea0a29c2e661aff",
-"pm__paramonte_8F90.html#abd692b21116e0d2de861285e2245e58e",
-"pm__strASCII_8F90.html#add4a5290aa258a8c3197b73a2de6e35b",
-"structpm__container_1_1ccc__pdt.html",
-"structpm__dateTime_1_1dateTimeInt__type.html#aeb0c258922cf1fe3225e3e710eb02eab",
-"structpm__io_1_1wrap__type.html#a0903e08033d7632b8aa286bb678b2b73",
-"structpm__paramonte_1_1envis__type.html#a20ab304def770dc51c0abf54025ef87d",
-"structpm__sampleACT_1_1batchMeansMax__type.html#ac547c822540b513496b9717766aef776",
-"structpm__strANSI_1_1styleSeq__type.html#a9d61771c72dc497625301a905072a6bd",
-"structtest__pm__distBand_1_1BandSpec__type.html#ae81e6412eed9a6a3d515487240879a56",
-"test__pm__distBand_8F90.html#a319d8fb6f53e9e19c50738de062b2cd8",
-"test__pm__io_8F90.html#ad316470a0bd6d9025e701a476d6c6536",
-"test__pm__statistics_8F90.html#a6530043e1fd07450a9dcba1b88bea930"
+"interfacepm__arraySort_1_1isDescendingAll.html",
+"interfacepm__container_1_1operator_07_4_08.html",
+"interfacepm__distLogUnif_1_1setLogUnifLogQuan.html",
+"interfacepm__fftnr_1_1getFFTR.html",
+"interfacepm__os_1_1isLinux.html",
+"interfacepm__sysInfo_1_1getSysInfo.html",
+"namespacepm__arrayCompareLex.html",
+"namespacepm__distPois.html#ad4aac66225fd003b218fa1e0da1fc233",
+"namespacepm__mathConst.html#ab49306ead1192544f172fd49899d1ac5",
+"namespacepm__sampleQuan.html",
+"namespacetest__pm__arrayInit.html#afa318a2cfad1b4cf2a9769659f60d102",
+"namespacetest__pm__except.html#ac060278009ff1df136a4b3e039568398",
+"namespacetest__pm__quadRomb.html#aa77e99fca2d051305d1315df3e20e820",
+"pm__arrayRefine_8F90.html",
+"pm__distKolm_8F90_source.html",
+"pm__kind_8F90.html#af8fe1d8c68810bffb7be04e12a186b24",
+"pm__paramonte_8F90.html#a8c362877653fa50ce75849c2540ea8d4",
+"pm__strASCII_8F90.html#adaedd35e91c4d3872e84dfa11e431017",
+"structpm__bench_1_1timing__type.html#ab7cf7fb3bfcb465ea689b3d3f8b29a0e",
+"structpm__dateTime_1_1dateTimeStr__type.html",
+"structpm__io_1_1wrap__type.html",
+"structpm__paramonte_1_1envis__type.html#a093749e4ff5d51deb1604d30c5db98c0",
+"structpm__sampleACT_1_1batchMeansMax__type.html#a469e8030a994f05c7bea5d8d18100765",
+"structpm__strANSI_1_1styleSeq__type.html#a9826fbf34178044ab6bcc96d64f1c2b5",
+"structtest__pm__distBand_1_1BandSpec__type.html#ab64df853f648f7645fe8a783c7813f43",
+"test__pm__distBand_8F90.html#a1f4820ee6df7435b3f2a4cade2bc17eb",
+"test__pm__io_8F90.html#ad295270ff20ed7c24d12fa6b6bb8223d",
+"test__pm__statistics_8F90.html#a4a762f3cf4677cc4fbd33911d44e7539"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

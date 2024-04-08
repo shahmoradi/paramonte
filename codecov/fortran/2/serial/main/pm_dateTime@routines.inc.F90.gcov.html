@@ -1,0 +1,1043 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - ParaMonte 2.0.0 :: Serial Fortran - Code Coverage Report - main/pm_dateTime@routines.inc.F90</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title"><a href="https://www.cdslab.org/paramonte/fortran/2" target="_blank"><img alt="https://www.cdslab.org/paramonte/fortran/2" src="https://raw.githubusercontent.com/cdslaborg/paramonte/16e8fc2abd6a4263c9f6ee25f7a9f45435443688/img/banner.png"/></a></td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">main</a> - pm_dateTime@routines.inc.F90<span style="font-size: 80%;"> (source / <a href="pm_dateTime@routines.inc.F90.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">ParaMonte 2.0.0 :: Serial Fortran - Code Coverage Report</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">343</td>
+            <td class="headerCovTableEntry">345</td>
+            <td class="headerCovTableEntryHi">99.4 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2024-04-08 03:18:57</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntryHi">-</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+</td>
+            <td></td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</a>
+<a name="2"><span class="lineNum">       2 </span>            : !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</a>
+<a name="3"><span class="lineNum">       3 </span>            : !!!!                                                                                                                            !!!!</a>
+<a name="4"><span class="lineNum">       4 </span>            : !!!!    ParaMonte: Parallel Monte Carlo and Machine Learning Library.                                                           !!!!</a>
+<a name="5"><span class="lineNum">       5 </span>            : !!!!                                                                                                                            !!!!</a>
+<a name="6"><span class="lineNum">       6 </span>            : !!!!    Copyright (C) 2012-present, The Computational Data Science Lab                                                          !!!!</a>
+<a name="7"><span class="lineNum">       7 </span>            : !!!!                                                                                                                            !!!!</a>
+<a name="8"><span class="lineNum">       8 </span>            : !!!!    This file is part of the ParaMonte library.                                                                             !!!!</a>
+<a name="9"><span class="lineNum">       9 </span>            : !!!!                                                                                                                            !!!!</a>
+<a name="10"><span class="lineNum">      10 </span>            : !!!!    LICENSE                                                                                                                 !!!!</a>
+<a name="11"><span class="lineNum">      11 </span>            : !!!!                                                                                                                            !!!!</a>
+<a name="12"><span class="lineNum">      12 </span>            : !!!!       https://github.com/cdslaborg/paramonte/blob/main/LICENSE.md                                                          !!!!</a>
+<a name="13"><span class="lineNum">      13 </span>            : !!!!                                                                                                                            !!!!</a>
+<a name="14"><span class="lineNum">      14 </span>            : !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</a>
+<a name="15"><span class="lineNum">      15 </span>            : !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</a>
+<a name="16"><span class="lineNum">      16 </span>            : </a>
+<a name="17"><span class="lineNum">      17 </span>            : !&gt;  \brief</a>
+<a name="18"><span class="lineNum">      18 </span>            : !&gt;  This include file contains procedure implementations of [pm_dateTime](@ref pm_dateTime).</a>
+<a name="19"><span class="lineNum">      19 </span>            : !&gt;</a>
+<a name="20"><span class="lineNum">      20 </span>            : !&gt;  \finmain</a>
+<a name="21"><span class="lineNum">      21 </span>            : !&gt;</a>
+<a name="22"><span class="lineNum">      22 </span>            : !&gt;  \author</a>
+<a name="23"><span class="lineNum">      23 </span>            : !&gt;  \AmirShahmoradi, March 23, 2012, 5:33 PM, National Institute for Fusion Studies, The University of Texas at Austin</a>
+<a name="24"><span class="lineNum">      24 </span>            : </a>
+<a name="25"><span class="lineNum">      25 </span>            : !%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="26"><span class="lineNum">      26 </span>            : </a>
+<a name="27"><span class="lineNum">      27 </span>            :         !%%%%%%%%%%%%%%%%%%</a>
+<a name="28"><span class="lineNum">      28 </span>            : #if     isValidZone_ENABLED</a>
+<a name="29"><span class="lineNum">      29 </span>            :         !%%%%%%%%%%%%%%%%%%</a>
+<a name="30"><span class="lineNum">      30 </span>            : </a>
+<a name="31"><span class="lineNum">      31 </span><span class="lineCov">     295524 :         isValid = logical(int(ZONE_MIN, IKC) &lt;= zone .and. zone &lt;= int(ZONE_MAX, IKC), LK)</span></a>
+<a name="32"><span class="lineNum">      32 </span>            : </a>
+<a name="33"><span class="lineNum">      33 </span>            :         !%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="34"><span class="lineNum">      34 </span>            : #elif   getDateTimeDiff_ENABLED</a>
+<a name="35"><span class="lineNum">      35 </span>            :         !%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="36"><span class="lineNum">      36 </span>            : </a>
+<a name="37"><span class="lineNum">      37 </span>            :         CHECK_ASSERTION(__LINE__, size(Values1, kind = IK) == 8_IK, SK_&quot;@getDateTimeDiff(): The condition `size(Values1) == 8` must hold. size(Values1) = &quot;//getStr(size(Values1, kind = IK)))</a>
+<a name="38"><span class="lineNum">      38 </span>            :         CHECK_ASSERTION(__LINE__, size(Values2, kind = IK) == 8_IK, SK_&quot;@getDateTimeDiff(): The condition `size(Values2) == 8` must hold. size(Values2) = &quot;//getStr(size(Values2, kind = IK)))</a>
+<a name="39"><span class="lineNum">      39 </span>            :         if (Values1(4) == Values2(4)) then ! identical timezone.</a>
+<a name="40"><span class="lineNum">      40 </span>            :             dateTimeDiff= getJulianDay(Values1(1), Values1(2), Values1(3), 0_IK, Values1(5), Values1(6), Values1(7), Values1(8)) &amp; ! LCOV_EXCL_LINE</a>
+<a name="41"><span class="lineNum">      41 </span>            :                         - getJulianDay(Values2(1), Values2(2), Values2(3), 0_IK, Values2(5), Values2(6), Values2(7), Values2(8))</a>
+<a name="42"><span class="lineNum">      42 </span>            :         else ! different timezones.</a>
+<a name="43"><span class="lineNum">      43 </span>            :             dateTimeDiff= getJulianDay(Values1(1), Values1(2), Values1(3), Values1(4), Values1(5), Values1(6), Values1(7), Values1(8)) &amp; ! LCOV_EXCL_LINE</a>
+<a name="44"><span class="lineNum">      44 </span>            :                         - getJulianDay(Values2(1), Values2(2), Values2(3), Values2(4), Values2(5), Values2(6), Values2(7), Values2(8))</a>
+<a name="45"><span class="lineNum">      45 </span>            :         end if</a>
+<a name="46"><span class="lineNum">      46 </span>            : </a>
+<a name="47"><span class="lineNum">      47 </span>            :         !%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="48"><span class="lineNum">      48 </span>            : #elif   isValidDateTime_ENABLED</a>
+<a name="49"><span class="lineNum">      49 </span>            :         !%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="50"><span class="lineNum">      50 </span>            : </a>
+<a name="51"><span class="lineNum">      51 </span>            : #if     isValidDateTimeV_ENABLED</a>
+<a name="52"><span class="lineNum">      52 </span>            :         integer(IK) :: lenValues</a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">       2213 :         lenValues = size(values, 1, IK)</span></a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">       2213 :         if (lenValues == 8_IK) then</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">        201 :             isValid = isValidDateTime(values(1), values(2), values(3), values(4), values(5), values(6), values(7), values(8))</span></a>
+<a name="56"><span class="lineNum">      56 </span>            :         elseif (lenValues == 7_IK) then</a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">        201 :             isValid = isValidDateTime(values(1), values(2), values(3), values(4), values(5), values(6), values(7))</span></a>
+<a name="58"><span class="lineNum">      58 </span>            :         elseif (lenValues == 6_IK) then</a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">        201 :             isValid = isValidDateTime(values(1), values(2), values(3), values(4), values(5), values(6))</span></a>
+<a name="60"><span class="lineNum">      60 </span>            :         elseif (lenValues == 5_IK) then</a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">        201 :             isValid = isValidDateTime(values(1), values(2), values(3), values(4), values(5))</span></a>
+<a name="62"><span class="lineNum">      62 </span>            :         elseif (lenValues == 4_IK) then</a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">        201 :             isValid = isValidDateTime(values(1), values(2), values(3), values(4))</span></a>
+<a name="64"><span class="lineNum">      64 </span>            :         elseif (lenValues == 3_IK) then</a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">        201 :             isValid = isValidDateTime(values(1), values(2), values(3))</span></a>
+<a name="66"><span class="lineNum">      66 </span>            :         elseif (lenValues == 2_IK) then</a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">        201 :             isValid = isValidDateTime(values(1), values(2))</span></a>
+<a name="68"><span class="lineNum">      68 </span>            :         elseif (lenValues == 1_IK) then</a>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">        201 :             isValid = isValidDateTime(values(1))</span></a>
+<a name="70"><span class="lineNum">      70 </span>            :         else</a>
+<a name="71"><span class="lineNum">      71 </span>            :             isValid = .false._LK</a>
+<a name="72"><span class="lineNum">      72 </span>            :             !error stop MODULE_NAME//SK_&quot;@isValidDateTime(): The length of the input argument `values` must be less than 9 and non-zero. size(values) = &quot;//getStr(lenValues)</a>
+<a name="73"><span class="lineNum">      73 </span>            :         end if</a>
+<a name="74"><span class="lineNum">      74 </span>            : #elif   isValidDateTimeY_ENABLED</a>
+<a name="75"><span class="lineNum">      75 </span>            :         isValid = .true._LK ! year /= 0_IKC ! year zero is explicitly allowed in ISO 8601.</a>
+<a name="76"><span class="lineNum">      76 </span>            : #elif   isValidDateTimeYM_ENABLED</a>
+<a name="77"><span class="lineNum">      77 </span><span class="lineCov">     570043 :         isValid = isValidDateTime(year) .and. 0_IKC &lt; month .and. month &lt; 13_IKC</span></a>
+<a name="78"><span class="lineNum">      78 </span>            : #elif   isValidDateTimeYMD_ENABLED</a>
+<a name="79"><span class="lineNum">      79 </span><span class="lineCov">     567533 :         isValid = isValidDateTime(year, month) .and. day &gt; 0_IKC</span></a>
+<a name="80"><span class="lineNum">      80 </span>            :         if (isValid) then</a>
+<a name="81"><span class="lineNum">      81 </span><span class="lineCov">     567533 :             if (isLeapYear(year)) then</span></a>
+<a name="82"><span class="lineNum">      82 </span><span class="lineCov">     393870 :                 isValid = day &lt;= DAYS_OF_MONTH_LEAP(month)</span></a>
+<a name="83"><span class="lineNum">      83 </span>            :             else</a>
+<a name="84"><span class="lineNum">      84 </span><span class="lineCov">     173663 :                 isValid = day &lt;= DAYS_OF_MONTH(month)</span></a>
+<a name="85"><span class="lineNum">      85 </span>            :             end if</a>
+<a name="86"><span class="lineNum">      86 </span>            :         end if</a>
+<a name="87"><span class="lineNum">      87 </span>            : #elif   isValidDateTimeYMDZ_ENABLED</a>
+<a name="88"><span class="lineNum">      88 </span><span class="lineCov">     282565 :         isValid = isValidDateTime(year, month, day) .and. isValidZone(zone)</span></a>
+<a name="89"><span class="lineNum">      89 </span>            : #elif   isValidDateTimeYMDZH_ENABLED</a>
+<a name="90"><span class="lineNum">      90 </span><span class="lineCov">     282164 :         isValid = isValidDateTime(year, month, day, zone) .and. 0_IKC &lt;= hour .and. hour &lt; 24_IKC</span></a>
+<a name="91"><span class="lineNum">      91 </span>            : #elif   isValidDateTimeYMDZHM_ENABLED</a>
+<a name="92"><span class="lineNum">      92 </span><span class="lineCov">     281763 :         isValid = isValidDateTime(year, month, day, zone, hour) .and. 0_IKC &lt;= minute .and. minute &lt; 60_IKC</span></a>
+<a name="93"><span class="lineNum">      93 </span>            : #elif   isValidDateTimeYMDZHMS_ENABLED</a>
+<a name="94"><span class="lineNum">      94 </span><span class="lineCov">     281362 :         isValid = isValidDateTime(year, month, day, zone, hour, minute) .and. 0_IKC &lt;= second .and. second &lt; 60_IKC</span></a>
+<a name="95"><span class="lineNum">      95 </span>            : #elif   isValidDateTimeYMDZHMSM_ENABLED</a>
+<a name="96"><span class="lineNum">      96 </span><span class="lineCov">     280961 :         isValid = isValidDateTime(year, month, day, zone, hour, minute, second) .and. 0_IKC &lt;= millisecond .and. millisecond &lt; 1000_IKC</span></a>
+<a name="97"><span class="lineNum">      97 </span>            : #else</a>
+<a name="98"><span class="lineNum">      98 </span>            : #error  &quot;Unrecognized interface.&quot;</a>
+<a name="99"><span class="lineNum">      99 </span>            : #endif</a>
+<a name="100"><span class="lineNum">     100 </span>            : </a>
+<a name="101"><span class="lineNum">     101 </span>            :         !%%%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="102"><span class="lineNum">     102 </span>            : #elif   getDateTimeValues_ENABLED</a>
+<a name="103"><span class="lineNum">     103 </span>            :         !%%%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="104"><span class="lineNum">     104 </span>            : </a>
+<a name="105"><span class="lineNum">     105 </span>            : #if     getDateTimeValuesJ_ENABLED</a>
+<a name="106"><span class="lineNum">     106 </span>            :         real(RKC)   , parameter :: K1 = 0.25_RKC ! The condition `0.002929687499688476 &lt; K1 &lt;= 0.2521972656249999` must hold.</a>
+<a name="107"><span class="lineNum">     107 </span>            :         real(RKC)   , parameter :: K2 = 0.25_RKC ! The condition `0. &lt; K2 &lt;= 0.25` must hold.</a>
+<a name="108"><span class="lineNum">     108 </span>            :         real(RKC)   , parameter :: MEAN_YEAR = 365.25_RKC</a>
+<a name="109"><span class="lineNum">     109 </span>            :         real(RKC)   , parameter :: MEAN_YEAR_INVERSE = 1._RKC / MEAN_YEAR</a>
+<a name="110"><span class="lineNum">     110 </span>            :         real(RKC)   , parameter :: WHOLE_CENTURY_FACTOR = 1._RKC / 36524.25_RKC</a>
+<a name="111"><span class="lineNum">     111 </span>            :         integer(IKC), parameter :: DAYS_IN_PAST_MONTHS(3:14) = [0_IKC, 31_IKC, 61_IKC, 92_IKC, 122_IKC, 153_IKC, 184_IKC, 214_IKC, 245_IKC, 275_IKC, 306_IKC, 337_IKC] ! last two correspond to jan, feb.</a>
+<a name="112"><span class="lineNum">     112 </span>            :         integer(IKC)    :: julianDayOffset_IK ! Z</a>
+<a name="113"><span class="lineNum">     113 </span>            :         integer(IKC)    :: fullCenturyCount</a>
+<a name="114"><span class="lineNum">     114 </span>            :         integer(IKC)    :: dayOfYearTerm</a>
+<a name="115"><span class="lineNum">     115 </span>            :         real(RKC)       :: hours_RK</a>
+<a name="116"><span class="lineNum">     116 </span>            :         real(RKC)       :: minutes_RK</a>
+<a name="117"><span class="lineNum">     117 </span>            :         real(RKC)       :: seconds_RK</a>
+<a name="118"><span class="lineNum">     118 </span>            :         real(RKC)       :: julianDayOffset_RK</a>
+<a name="119"><span class="lineNum">     119 </span>            :         real(RKC)       :: julianDayOffsetResidual ! R</a>
+<a name="120"><span class="lineNum">     120 </span>            :         real(RKC)       :: daysInWholeCenturyMinusConst ! B</a>
+<a name="121"><span class="lineNum">     121 </span><span class="lineCov">     119016 :         julianDayOffset_RK = julianDay - 1721118.5_RKC</span></a>
+<a name="122"><span class="lineNum">     122 </span><span class="lineCov">     119016 :         julianDayOffset_IK = floor(julianDayOffset_RK, IKC) ! Z</span></a>
+<a name="123"><span class="lineNum">     123 </span><span class="lineCov">     119016 :         julianDayOffsetResidual = julianDayOffset_RK - real(julianDayOffset_IK, RKC) ! R : always positive</span></a>
+<a name="124"><span class="lineNum">     124 </span><span class="lineCov">     119016 :         fullCenturyCount = floor((real(julianDayOffset_IK, RKC) - K1) * WHOLE_CENTURY_FACTOR, IKC) ! A</span></a>
+<a name="125"><span class="lineNum">     125 </span><span class="lineCov">     119016 :         dayOfYearTerm = julianDayOffset_IK + fullCenturyCount - floor(fullCenturyCount * 0.25_RKC, IKC) ! Z + A - floor(A/4)</span></a>
+<a name="126"><span class="lineNum">     126 </span><span class="lineCov">     119016 :         daysInWholeCenturyMinusConst = dayOfYearTerm - K2 ! B</span></a>
+<a name="127"><span class="lineNum">     127 </span><span class="lineCov">     119016 :         values(1) = floor(daysInWholeCenturyMinusConst * MEAN_YEAR_INVERSE, IKC) ! Y : Calendar Year Starting March.</span></a>
+<a name="128"><span class="lineNum">     128 </span><span class="lineCov">     119016 :         values(3) = dayOfYearTerm - floor(values(1) * MEAN_YEAR, IKC) ! C : Day Of Year.</span></a>
+<a name="129"><span class="lineNum">     129 </span><span class="lineCov">     119016 :         values(2) = (5_IKC * values(3) + 456_IKC) / 153_IKC ! M : Month Of Year in the range 3:14.</span></a>
+<a name="130"><span class="lineNum">     130 </span><span class="lineCov">     119016 :         values(3) = values(3) - DAYS_IN_PAST_MONTHS(values(2)) !+ int(julianDayOffsetResidual, IKC)</span></a>
+<a name="131"><span class="lineNum">     131 </span>            :         !if (julianDayOffsetResidual &gt; 1._RKC) error stop getStr(julianDayOffsetResidual)</a>
+<a name="132"><span class="lineNum">     132 </span><span class="lineCov">     119016 :         if (values(2) &gt; 12_IKC) then</span></a>
+<a name="133"><span class="lineNum">     133 </span><span class="lineCov">      10958 :             values(1) = values(1) + 1_IKC</span></a>
+<a name="134"><span class="lineNum">     134 </span><span class="lineCov">      10958 :             values(2) = values(2) - 12_IKC</span></a>
+<a name="135"><span class="lineNum">     135 </span>            :         end if</a>
+<a name="136"><span class="lineNum">     136 </span><span class="lineCov">     119016 :         values(4) = 0_IKC</span></a>
+<a name="137"><span class="lineNum">     137 </span><span class="lineCov">     119016 :         hours_RK = julianDayOffsetResidual * 24._RKC</span></a>
+<a name="138"><span class="lineNum">     138 </span><span class="lineCov">     119016 :         values(5) = int(hours_RK, IKC)</span></a>
+<a name="139"><span class="lineNum">     139 </span>            :         !if (values(5) &lt; 0_IKC) then</a>
+<a name="140"><span class="lineNum">     140 </span>            :         !    values(1:3) = getDateBefore(values(1), values(2), values(3))</a>
+<a name="141"><span class="lineNum">     141 </span>            :         !    values(5) = 24_IKC - values(5)</a>
+<a name="142"><span class="lineNum">     142 </span>            :         !end if</a>
+<a name="143"><span class="lineNum">     143 </span><span class="lineCov">     119016 :         minutes_RK = (hours_RK - values(5)) * 60._RKC</span></a>
+<a name="144"><span class="lineNum">     144 </span><span class="lineCov">     119016 :         values(6) = int(minutes_RK, IKC)</span></a>
+<a name="145"><span class="lineNum">     145 </span><span class="lineCov">     119016 :         seconds_RK = (minutes_RK - values(6)) * 60._RKC</span></a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineCov">     119016 :         values(7) = int(seconds_RK, IKC)</span></a>
+<a name="147"><span class="lineNum">     147 </span><span class="lineCov">     119016 :         values(8) = nint((seconds_RK - values(7)) * 1000._RKC, IKC)</span></a>
+<a name="148"><span class="lineNum">     148 </span><span class="lineCov">     119016 :         if (values(8) == 1000_IKC) then</span></a>
+<a name="149"><span class="lineNum">     149 </span><span class="lineCov">      24734 :             values(8) = 0_IKC</span></a>
+<a name="150"><span class="lineNum">     150 </span><span class="lineCov">      24734 :             values(7) = values(7) + 1_IKC</span></a>
+<a name="151"><span class="lineNum">     151 </span><span class="lineCov">      24734 :             if (values(7) == 60_IKC) then</span></a>
+<a name="152"><span class="lineNum">     152 </span><span class="lineCov">      18175 :                 values(7) = 0_IKC</span></a>
+<a name="153"><span class="lineNum">     153 </span><span class="lineCov">      18175 :                 values(6) = values(6) + 1_IKC</span></a>
+<a name="154"><span class="lineNum">     154 </span><span class="lineCov">      18175 :                 if (values(6) == 60_IKC) then</span></a>
+<a name="155"><span class="lineNum">     155 </span><span class="lineCov">        225 :                     values(6) = 0_IKC</span></a>
+<a name="156"><span class="lineNum">     156 </span><span class="lineCov">        225 :                     values(5) = values(5) + 1_IKC</span></a>
+<a name="157"><span class="lineNum">     157 </span>            :                 end if</a>
+<a name="158"><span class="lineNum">     158 </span><span class="lineCov">      18175 :                 if (values(5) == 24_IKC) then</span></a>
+<a name="159"><span class="lineNum">     159 </span><span class="lineNoCov">          0 :                     values(5) = 0_IKC</span></a>
+<a name="160"><span class="lineNum">     160 </span><span class="lineNoCov">          0 :                     values(1:3) = getDateAfter(values(1), values(2), values(3))</span></a>
+<a name="161"><span class="lineNum">     161 </span>            :                 end if</a>
+<a name="162"><span class="lineNum">     162 </span>            :             end if</a>
+<a name="163"><span class="lineNum">     163 </span>            :         end if</a>
+<a name="164"><span class="lineNum">     164 </span>            : #elif   getDateTimeValuesJZ_ENABLED</a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineCov">       1500 :         values(1:8) = getDateTimeNewZone(zone, getDateTime(julianDay))</span></a>
+<a name="166"><span class="lineNum">     166 </span>            : #elif   getDateTimeValuesC_ENABLED</a>
+<a name="167"><span class="lineNum">     167 </span><span class="lineCov">      15550 :         call date_and_time(values = values)</span></a>
+<a name="168"><span class="lineNum">     168 </span>            :         !integer(IK)     :: lenValues</a>
+<a name="169"><span class="lineNum">     169 </span>            :         !integer(IKC)    :: Values_(8)</a>
+<a name="170"><span class="lineNum">     170 </span>            :         !lenValues = size(values, 1, IK)</a>
+<a name="171"><span class="lineNum">     171 </span>            :         !CHECK_ASSERTION(__LINE__, 0_IK &lt; lenValues .and. lenValues &lt; 9_IK, SK_&quot;@getDateTime(): The input argument `values` must have a non-zero size that is less than 9. size(values) = &quot;//getStr(lenValues)) ! fpp</a>
+<a name="172"><span class="lineNum">     172 </span>            :         !if (lenValues &gt; 7_IK) then</a>
+<a name="173"><span class="lineNum">     173 </span>            :         !    call date_and_time(values = values)</a>
+<a name="174"><span class="lineNum">     174 </span>            :         !else</a>
+<a name="175"><span class="lineNum">     175 </span>            :         !    call date_and_time(values = Values_)</a>
+<a name="176"><span class="lineNum">     176 </span>            :         !    values(1:lenValues) = Values_(1:lenValues)</a>
+<a name="177"><span class="lineNum">     177 </span>            :         !end if</a>
+<a name="178"><span class="lineNum">     178 </span>            :         !CHECK_ASSERTION(__LINE__, all(values(1:lenValues) /= -huge(0_IKC)), SK_&quot;@getDateTime(): The processor does not have a clock.&quot;) ! fpp</a>
+<a name="179"><span class="lineNum">     179 </span>            : #elif   getDateTimeValuesY_ENABLED</a>
+<a name="180"><span class="lineNum">     180 </span><span class="lineCov">      10509 :         values(1) = year</span></a>
+<a name="181"><span class="lineNum">     181 </span><span class="lineCov">      10509 :         values(2) = 1_IKC</span></a>
+<a name="182"><span class="lineNum">     182 </span><span class="lineCov">      10509 :         values(3) = 1_IKC</span></a>
+<a name="183"><span class="lineNum">     183 </span><span class="lineCov">      63054 :         values(4:8) = 0_IKC</span></a>
+<a name="184"><span class="lineNum">     184 </span>            : #elif   getDateTimeValuesYM_ENABLED</a>
+<a name="185"><span class="lineNum">     185 </span><span class="lineCov">        501 :         values(1) = year</span></a>
+<a name="186"><span class="lineNum">     186 </span><span class="lineCov">        501 :         values(2) = month</span></a>
+<a name="187"><span class="lineNum">     187 </span><span class="lineCov">        501 :         values(3) = 1_IKC</span></a>
+<a name="188"><span class="lineNum">     188 </span><span class="lineCov">       3006 :         values(4:8) = 0_IKC</span></a>
+<a name="189"><span class="lineNum">     189 </span>            : #elif   getDateTimeValuesYMD_ENABLED</a>
+<a name="190"><span class="lineNum">     190 </span><span class="lineCov">        536 :         values(1) = year</span></a>
+<a name="191"><span class="lineNum">     191 </span><span class="lineCov">        536 :         values(2) = month</span></a>
+<a name="192"><span class="lineNum">     192 </span><span class="lineCov">        536 :         values(3) = day</span></a>
+<a name="193"><span class="lineNum">     193 </span><span class="lineCov">       3216 :         values(4:8) = 0_IKC</span></a>
+<a name="194"><span class="lineNum">     194 </span>            : #elif   getDateTimeValuesYMDZ_ENABLED</a>
+<a name="195"><span class="lineNum">     195 </span><span class="lineCov">        521 :         values(1) = year</span></a>
+<a name="196"><span class="lineNum">     196 </span><span class="lineCov">        521 :         values(2) = month</span></a>
+<a name="197"><span class="lineNum">     197 </span><span class="lineCov">        521 :         values(3) = day</span></a>
+<a name="198"><span class="lineNum">     198 </span><span class="lineCov">        521 :         values(4) = zone</span></a>
+<a name="199"><span class="lineNum">     199 </span><span class="lineCov">       2605 :         values(5:8) = 0_IKC</span></a>
+<a name="200"><span class="lineNum">     200 </span>            : #elif   getDateTimeValuesYMDZH_ENABLED</a>
+<a name="201"><span class="lineNum">     201 </span><span class="lineCov">        504 :         values(1) = year</span></a>
+<a name="202"><span class="lineNum">     202 </span><span class="lineCov">        504 :         values(2) = month</span></a>
+<a name="203"><span class="lineNum">     203 </span><span class="lineCov">        504 :         values(3) = day</span></a>
+<a name="204"><span class="lineNum">     204 </span><span class="lineCov">        504 :         values(4) = zone</span></a>
+<a name="205"><span class="lineNum">     205 </span><span class="lineCov">        504 :         values(5) = hour</span></a>
+<a name="206"><span class="lineNum">     206 </span><span class="lineCov">       2016 :         values(6:8) = 0_IKC</span></a>
+<a name="207"><span class="lineNum">     207 </span>            : #elif   getDateTimeValuesYMDZHM_ENABLED</a>
+<a name="208"><span class="lineNum">     208 </span><span class="lineCov">        502 :         values(1) = year</span></a>
+<a name="209"><span class="lineNum">     209 </span><span class="lineCov">        502 :         values(2) = month</span></a>
+<a name="210"><span class="lineNum">     210 </span><span class="lineCov">        502 :         values(3) = day</span></a>
+<a name="211"><span class="lineNum">     211 </span><span class="lineCov">        502 :         values(4) = zone</span></a>
+<a name="212"><span class="lineNum">     212 </span><span class="lineCov">        502 :         values(5) = hour</span></a>
+<a name="213"><span class="lineNum">     213 </span><span class="lineCov">        502 :         values(6) = minute</span></a>
+<a name="214"><span class="lineNum">     214 </span><span class="lineCov">       1506 :         values(7:8) = 0_IKC</span></a>
+<a name="215"><span class="lineNum">     215 </span>            : #elif   getDateTimeValuesYMDZHMS_ENABLED</a>
+<a name="216"><span class="lineNum">     216 </span><span class="lineCov">        501 :         values(1) = year</span></a>
+<a name="217"><span class="lineNum">     217 </span><span class="lineCov">        501 :         values(2) = month</span></a>
+<a name="218"><span class="lineNum">     218 </span><span class="lineCov">        501 :         values(3) = day</span></a>
+<a name="219"><span class="lineNum">     219 </span><span class="lineCov">        501 :         values(4) = zone</span></a>
+<a name="220"><span class="lineNum">     220 </span><span class="lineCov">        501 :         values(5) = hour</span></a>
+<a name="221"><span class="lineNum">     221 </span><span class="lineCov">        501 :         values(6) = minute</span></a>
+<a name="222"><span class="lineNum">     222 </span><span class="lineCov">        501 :         values(7) = second</span></a>
+<a name="223"><span class="lineNum">     223 </span><span class="lineCov">        501 :         values(8) = 0_IKC</span></a>
+<a name="224"><span class="lineNum">     224 </span>            : #elif   getDateTimeValuesYMDZHMSM_ENABLED</a>
+<a name="225"><span class="lineNum">     225 </span><span class="lineCov">        502 :         values(1) = year</span></a>
+<a name="226"><span class="lineNum">     226 </span><span class="lineCov">        502 :         values(2) = month</span></a>
+<a name="227"><span class="lineNum">     227 </span><span class="lineCov">        502 :         values(3) = day</span></a>
+<a name="228"><span class="lineNum">     228 </span><span class="lineCov">        502 :         values(4) = zone</span></a>
+<a name="229"><span class="lineNum">     229 </span><span class="lineCov">        502 :         values(5) = hour</span></a>
+<a name="230"><span class="lineNum">     230 </span><span class="lineCov">        502 :         values(6) = minute</span></a>
+<a name="231"><span class="lineNum">     231 </span><span class="lineCov">        502 :         values(7) = second</span></a>
+<a name="232"><span class="lineNum">     232 </span><span class="lineCov">        502 :         values(8) = millisecond</span></a>
+<a name="233"><span class="lineNum">     233 </span>            : #else</a>
+<a name="234"><span class="lineNum">     234 </span>            : #error  &quot;Unrecognized interface.&quot;</a>
+<a name="235"><span class="lineNum">     235 </span>            : #endif</a>
+<a name="236"><span class="lineNum">     236 </span>            : </a>
+<a name="237"><span class="lineNum">     237 </span>            :         !%%%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="238"><span class="lineNum">     238 </span>            : #elif   getDateTimeString_ENABLED</a>
+<a name="239"><span class="lineNum">     239 </span>            :         !%%%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="240"><span class="lineNum">     240 </span>            : </a>
+<a name="241"><span class="lineNum">     241 </span>            : #define RESIZE_STRING(LENSEG) \</a>
+<a name="242"><span class="lineNum">     242 </span>            : eposnew = epos + LENSEG; \</a>
+<a name="243"><span class="lineNum">     243 </span>            : if (eposnew &gt; lenString) then; \</a>
+<a name="244"><span class="lineNum">     244 </span>            : if (allocated(tempstr)) deallocate(tempstr); \</a>
+<a name="245"><span class="lineNum">     245 </span>            : allocate(character(eposnew,SKC) :: tempstr); \</a>
+<a name="246"><span class="lineNum">     246 </span>            : tempstr(1:lenString) = string; \</a>
+<a name="247"><span class="lineNum">     247 </span>            : call move_alloc(tempstr, string); \</a>
+<a name="248"><span class="lineNum">     248 </span>            : lenString = eposnew; \</a>
+<a name="249"><span class="lineNum">     249 </span>            : end if;</a>
+<a name="250"><span class="lineNum">     250 </span>            : </a>
+<a name="251"><span class="lineNum">     251 </span>            : #if     getDateTimeStringC_ENABLED</a>
+<a name="252"><span class="lineNum">     252 </span>            :         integer(IKC)    :: values(8)</a>
+<a name="253"><span class="lineNum">     253 </span><span class="lineCov">        113 :         call date_and_time(values = values)</span></a>
+<a name="254"><span class="lineNum">     254 </span><span class="lineCov">        113 :         string = getDateTime(format, values)</span></a>
+<a name="255"><span class="lineNum">     255 </span>            : #elif   getDateTimeStringV_ENABLED</a>
+<a name="256"><span class="lineNum">     256 </span>            :         !&gt;  \warning</a>
+<a name="257"><span class="lineNum">     257 </span>            :         !&gt;  The output of getStr() in this procedure is of kind \SK which is incompatible with any value of SKC /= SK.</a>
+<a name="258"><span class="lineNum">     258 </span>            :         !&gt;  For now, this is not an issue since both kinds point to the default character kind.</a>
+<a name="259"><span class="lineNum">     259 </span>            :         !&gt;  This will however become an issue once Fortran standard and compilers support non-default date and time characters.</a>
+<a name="260"><span class="lineNum">     260 </span>            :         use pm_val2str, only: getStr</a>
+<a name="261"><span class="lineNum">     261 </span>            :         character(:,SKC), allocatable   :: tempstr, abbr</a>
+<a name="262"><span class="lineNum">     262 </span>            :        !character(1,SKC)                :: sep</a>
+<a name="263"><span class="lineNum">     263 </span>            :        !character(28,SKC)               :: workspace</a>
+<a name="264"><span class="lineNum">     264 </span>            :         character(9,SKC)                :: workspace9</a>
+<a name="265"><span class="lineNum">     265 </span>            :         integer(IK)                     :: lenString, lenFormat, i, epos, eposnew, lenSeg</a>
+<a name="266"><span class="lineNum">     266 </span>            :         integer(IKC)                    :: century!, WeekDate(3)</a>
+<a name="267"><span class="lineNum">     267 </span><span class="lineCov">      20138 :         allocate(character(127,SKC)     :: string)</span></a>
+<a name="268"><span class="lineNum">     268 </span><span class="lineCov">      20138 :         lenFormat = len(format, IK)</span></a>
+<a name="269"><span class="lineNum">     269 </span>            :         lenString = 127_IK</a>
+<a name="270"><span class="lineNum">     270 </span>            :         eposnew = 0_IK ! the last touched (end) position in the string</a>
+<a name="271"><span class="lineNum">     271 </span>            :         i = 0_IK</a>
+<a name="272"><span class="lineNum">     272 </span><span class="lineCov">      20138 :         CHECK_ASSERTION(__LINE__, 0 &lt; size(values) .and. size(values) &lt; 9, SK_&quot;@getDateTime(): The condition `0 &lt; size(values) .and. size(values) &lt; 9` must hold. size(values) = &quot;//getStr(size(values))) ! fpp</span></a>
+<a name="273"><span class="lineNum">     273 </span><span class="lineCov">      20138 :         CHECK_ASSERTION(__LINE__, merge(size(values) &gt; 1, .true., \</span></a>
+<a name="274"><span class="lineNum">     274 </span>            :         index(format, &quot;%b&quot;) &gt; 0 .or. \</a>
+<a name="275"><span class="lineNum">     275 </span>            :         index(format, &quot;%B&quot;) &gt; 0 .or. \</a>
+<a name="276"><span class="lineNum">     276 </span>            :         index(format, &quot;%h&quot;) &gt; 0 .or. \</a>
+<a name="277"><span class="lineNum">     277 </span>            :         index(format, &quot;%m&quot;) &gt; 0 .or. \</a>
+<a name="278"><span class="lineNum">     278 </span>            :         index(format, &quot;%y&quot;) &gt; 0 \</a>
+<a name="279"><span class="lineNum">     279 </span>            :         ), SK_&quot;@getDateTime(): The condition `size(values) &gt; 1` must hold. size(values) = &quot;//getStr(size(values))) ! fpp</a>
+<a name="280"><span class="lineNum">     280 </span><span class="lineCov">      20138 :         CHECK_ASSERTION(__LINE__, merge(size(values) &gt; 2, .true., \</span></a>
+<a name="281"><span class="lineNum">     281 </span>            :         index(format, &quot;%a&quot;) &gt; 0 .or. \</a>
+<a name="282"><span class="lineNum">     282 </span>            :         index(format, &quot;%A&quot;) &gt; 0 .or. \</a>
+<a name="283"><span class="lineNum">     283 </span>            :         index(format, &quot;%d&quot;) &gt; 0 .or. \</a>
+<a name="284"><span class="lineNum">     284 </span>            :         index(format, &quot;%D&quot;) &gt; 0 .or. \</a>
+<a name="285"><span class="lineNum">     285 </span>            :         index(format, &quot;%e&quot;) &gt; 0 .or. \</a>
+<a name="286"><span class="lineNum">     286 </span>            :         index(format, &quot;%g&quot;) &gt; 0 .or. \</a>
+<a name="287"><span class="lineNum">     287 </span>            :         index(format, &quot;%G&quot;) &gt; 0 .or. \</a>
+<a name="288"><span class="lineNum">     288 </span>            :         index(format, &quot;%j&quot;) &gt; 0 .or. \</a>
+<a name="289"><span class="lineNum">     289 </span>            :         index(format, &quot;%u&quot;) &gt; 0 .or. \</a>
+<a name="290"><span class="lineNum">     290 </span>            :         index(format, &quot;%U&quot;) &gt; 0 .or. \</a>
+<a name="291"><span class="lineNum">     291 </span>            :         index(format, &quot;%V&quot;) &gt; 0 .or. \</a>
+<a name="292"><span class="lineNum">     292 </span>            :         index(format, &quot;%w&quot;) &gt; 0 .or. \</a>
+<a name="293"><span class="lineNum">     293 </span>            :         index(format, &quot;%W&quot;) &gt; 0 .or. \</a>
+<a name="294"><span class="lineNum">     294 </span>            :         index(format, &quot;%x&quot;) &gt; 0 \</a>
+<a name="295"><span class="lineNum">     295 </span>            :         ), SK_&quot;@getDateTime(): The condition `size(values) &gt; 2` must hold. size(values) = &quot;//getStr(size(values))) ! fpp</a>
+<a name="296"><span class="lineNum">     296 </span><span class="lineCov">      20138 :         CHECK_ASSERTION(__LINE__, merge(size(values) &gt; 3, .true., \</span></a>
+<a name="297"><span class="lineNum">     297 </span>            :         index(format, &quot;%z&quot;) &gt; 0 .or. \</a>
+<a name="298"><span class="lineNum">     298 </span>            :         index(format, &quot;%Z&quot;) &gt; 0 \</a>
+<a name="299"><span class="lineNum">     299 </span>            :         ), SK_&quot;@getDateTime(): The condition `size(values) &gt; 4` must hold. size(values) = &quot;//getStr(size(values))) ! fpp</a>
+<a name="300"><span class="lineNum">     300 </span><span class="lineCov">      20138 :         CHECK_ASSERTION(__LINE__, merge(size(values) &gt; 4, .true., \</span></a>
+<a name="301"><span class="lineNum">     301 </span>            :         index(format, &quot;%H&quot;) &gt; 0 .or. \</a>
+<a name="302"><span class="lineNum">     302 </span>            :         index(format, &quot;%I&quot;) &gt; 0 .or. \</a>
+<a name="303"><span class="lineNum">     303 </span>            :         index(format, &quot;%p&quot;) &gt; 0 \</a>
+<a name="304"><span class="lineNum">     304 </span>            :         ), SK_&quot;@getDateTime(): The condition `size(values) &gt; 4` must hold. size(values) = &quot;//getStr(size(values))) ! fpp</a>
+<a name="305"><span class="lineNum">     305 </span><span class="lineCov">      20138 :         CHECK_ASSERTION(__LINE__, merge(size(values) &gt; 5, .true., \</span></a>
+<a name="306"><span class="lineNum">     306 </span>            :         index(format, &quot;%M&quot;) &gt; 0 .or. \</a>
+<a name="307"><span class="lineNum">     307 </span>            :         index(format, &quot;%R&quot;) &gt; 0 \</a>
+<a name="308"><span class="lineNum">     308 </span>            :         ), SK_&quot;@getDateTime(): The condition `size(values) &gt; 5` must hold. size(values) = &quot;//getStr(size(values))) ! fpp</a>
+<a name="309"><span class="lineNum">     309 </span><span class="lineCov">      20138 :         CHECK_ASSERTION(__LINE__, merge(size(values) &gt; 6, .true., \</span></a>
+<a name="310"><span class="lineNum">     310 </span>            :         index(format, &quot;%c&quot;) &gt; 0 .or. \</a>
+<a name="311"><span class="lineNum">     311 </span>            :         index(format, &quot;%r&quot;) &gt; 0 .or. \</a>
+<a name="312"><span class="lineNum">     312 </span>            :         index(format, &quot;%S&quot;) &gt; 0 .or. \</a>
+<a name="313"><span class="lineNum">     313 </span>            :         index(format, &quot;%T&quot;) &gt; 0 .or. \</a>
+<a name="314"><span class="lineNum">     314 </span>            :         index(format, &quot;%X&quot;) &gt; 0 \</a>
+<a name="315"><span class="lineNum">     315 </span>            :         ), SK_&quot;@getDateTime(): The condition `size(values) &gt; 6` must hold. size(values) = &quot;//getStr(size(values))) ! fpp</a>
+<a name="316"><span class="lineNum">     316 </span><span class="lineCov">      20138 :         CHECK_ASSERTION(__LINE__, merge(size(values) &gt; 7, .true., index(format, &quot;%f&quot;) &gt; 0), SK_&quot;@getDateTime(): The condition `size(values) &gt; 7` must hold. size(values) = &quot;//getStr(size(values))) ! fpp</span></a>
+<a name="317"><span class="lineNum">     317 </span>            :         do</a>
+<a name="318"><span class="lineNum">     318 </span><span class="lineCov">      56676 :             i = i + 1_IK</span></a>
+<a name="319"><span class="lineNum">     319 </span><span class="lineCov">      56676 :             if (i &gt; lenFormat) exit</span></a>
+<a name="320"><span class="lineNum">     320 </span>            :             epos = eposnew</a>
+<a name="321"><span class="lineNum">     321 </span><span class="lineCov">      56676 :             if (format(i:i) == SKC_&quot;%&quot;) then</span></a>
+<a name="322"><span class="lineNum">     322 </span><span class="lineCov">      24558 :                 if (i == lenFormat) exit</span></a>
+<a name="323"><span class="lineNum">     323 </span><span class="lineCov">      24558 :                 i = i + 1_IK</span></a>
+<a name="324"><span class="lineNum">     324 </span><span class="lineCov">      24558 :                 if (format(i:i) == SKC_&quot;a&quot;) then ! Abbreviated weekday name *</span></a>
+<a name="325"><span class="lineNum">     325 </span>            :                     lenSeg = 3_IK</a>
+<a name="326"><span class="lineNum">     326 </span><span class="lineCov">        508 :                     RESIZE_STRING(lenSeg) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="327"><span class="lineNum">     327 </span><span class="lineCov">        508 :                     string(epos + 1 : eposnew) = WEEKDAY_NAME_ISO(getWeekDayISO(values(1), values(2), values(3)))(1:lenSeg)</span></a>
+<a name="328"><span class="lineNum">     328 </span>            :                 elseif (format(i:i) == SKC_&quot;A&quot;) then ! Full weekday name *</a>
+<a name="329"><span class="lineNum">     329 </span><span class="lineCov">        516 :                     workspace9 = WEEKDAY_NAME_ISO(getWeekDayISO(values(1), values(2), values(3)))</span></a>
+<a name="330"><span class="lineNum">     330 </span><span class="lineCov">        516 :                     lenSeg = len_trim(workspace9, IKC)</span></a>
+<a name="331"><span class="lineNum">     331 </span><span class="lineCov">        516 :                     RESIZE_STRING(lenSeg) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="332"><span class="lineNum">     332 </span><span class="lineCov">        516 :                     string(epos + 1 : eposnew) = workspace9(1:lenSeg)</span></a>
+<a name="333"><span class="lineNum">     333 </span>            :                 elseif (format(i:i) == SKC_&quot;b&quot; .or. format(i:i) == SKC_&quot;h&quot;) then ! Abbreviated month name * .or. Abbreviated month name * (same as %b)</a>
+<a name="334"><span class="lineNum">     334 </span>            :                     lenSeg = 3_IK</a>
+<a name="335"><span class="lineNum">     335 </span><span class="lineCov">       1155 :                     RESIZE_STRING(lenSeg) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="336"><span class="lineNum">     336 </span><span class="lineCov">       1155 :                     string(epos + 1 : eposnew) = MONTH_NAME(values(2))(1:lenSeg)</span></a>
+<a name="337"><span class="lineNum">     337 </span>            :                 elseif (format(i:i) == SKC_&quot;B&quot;) then ! Full month name *</a>
+<a name="338"><span class="lineNum">     338 </span><span class="lineCov">        537 :                     lenSeg = len_trim(MONTH_NAME(values(2)), IKC)</span></a>
+<a name="339"><span class="lineNum">     339 </span><span class="lineCov">        537 :                     RESIZE_STRING(lenSeg) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="340"><span class="lineNum">     340 </span><span class="lineCov">        537 :                     string(epos + 1 : eposnew) = MONTH_NAME(values(2))(1:lenSeg)</span></a>
+<a name="341"><span class="lineNum">     341 </span>            :                 elseif (format(i:i) == SKC_&quot;c&quot;) then ! Date and time representation *</a>
+<a name="342"><span class="lineNum">     342 </span><span class="lineCov">        570 :                     if (values(1) &gt; 0_IKC) then</span></a>
+<a name="343"><span class="lineNum">     343 </span><span class="lineCov">         28 :                         RESIZE_STRING(24_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="344"><span class="lineNum">     344 </span>            :                     else</a>
+<a name="345"><span class="lineNum">     345 </span><span class="lineCov">        542 :                         RESIZE_STRING(25_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="346"><span class="lineNum">     346 </span>            :                     end if</a>
+<a name="347"><span class="lineNum">     347 </span>            :                     string(epos + 1 : eposnew) =    WEEKDAY_NAME_ISO(getWeekDayISO(values(1), values(2), values(3)))(1:3)//SKC_&quot; &quot;// &amp; ! LCOV_EXCL_LINE</a>
+<a name="348"><span class="lineNum">     348 </span>            :                                                     MONTH_NAME(values(2))(1:3)//SKC_&quot; &quot;// &amp; ! LCOV_EXCL_LINE</a>
+<a name="349"><span class="lineNum">     349 </span>            :                                                     getStr(values(3), length = 2_IK, format = &quot;(1I0.2)&quot;)//SKC_&quot; &quot;// &amp; ! LCOV_EXCL_LINE</a>
+<a name="350"><span class="lineNum">     350 </span>            :                                                     getStr(values(5), length = 2_IK, format = &quot;(1I0.2)&quot;)//SKC_&quot;:&quot;// &amp; ! LCOV_EXCL_LINE</a>
+<a name="351"><span class="lineNum">     351 </span>            :                                                     getStr(values(6), length = 2_IK, format = &quot;(1I0.2)&quot;)//SKC_&quot;:&quot;// &amp; ! LCOV_EXCL_LINE</a>
+<a name="352"><span class="lineNum">     352 </span>            :                                                     getStr(values(7), length = 2_IK, format = &quot;(1I0.2)&quot;)//SKC_&quot; &quot;// &amp; ! LCOV_EXCL_LINE</a>
+<a name="353"><span class="lineNum">     353 </span>            :                                                    !getStr(values(7), length = 2_IK, format = &quot;(1I0.2)&quot;)//SKC_&quot;.&quot;// &amp; ! LCOV_EXCL_LINE</a>
+<a name="354"><span class="lineNum">     354 </span>            :                                                    !getStr(values(8), length = 3_IK, format = &quot;(1I0.3)&quot;)//SKC_&quot; &quot;// &amp; ! LCOV_EXCL_LINE</a>
+<a name="355"><span class="lineNum">     355 </span><span class="lineCov">        570 :                                                     getStr(values(1))</span></a>
+<a name="356"><span class="lineNum">     356 </span>            :                 elseif (format(i:i) == SKC_&quot;C&quot;) then ! Year divided by 100 and truncated to integer (00-99). \warning it works for years up to 9 digits.</a>
+<a name="357"><span class="lineNum">     357 </span><span class="lineCov">       1054 :                     century = floor(values(1) / 100., IKC)</span></a>
+<a name="358"><span class="lineNum">     358 </span><span class="lineCov">       1054 :                     if (abs(century) &lt; 100_IKC) then</span></a>
+<a name="359"><span class="lineNum">     359 </span>            :                         !write(workspace9(1:3), &quot;(sp,I0.2)&quot;) century</a>
+<a name="360"><span class="lineNum">     360 </span><span class="lineCov">        553 :                         RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="361"><span class="lineNum">     361 </span><span class="lineCov">        553 :                         write(string(epos + 1 : eposnew), &quot;(sp,I0.2)&quot;) century</span></a>
+<a name="362"><span class="lineNum">     362 </span>            :                     else</a>
+<a name="363"><span class="lineNum">     363 </span><span class="lineCov">        501 :                         workspace9 = getStr(century)</span></a>
+<a name="364"><span class="lineNum">     364 </span><span class="lineCov">        501 :                         lenSeg = len_trim(workspace9, IKC)</span></a>
+<a name="365"><span class="lineNum">     365 </span><span class="lineCov">        501 :                         RESIZE_STRING(lenSeg) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="366"><span class="lineNum">     366 </span><span class="lineCov">        501 :                         string(epos + 1 : eposnew) = workspace9(1:lenSeg)</span></a>
+<a name="367"><span class="lineNum">     367 </span>            :                     end if</a>
+<a name="368"><span class="lineNum">     368 </span>            :                 elseif (format(i:i) == SKC_&quot;d&quot;) then ! Day of the month, zero-padded (01-31).</a>
+<a name="369"><span class="lineNum">     369 </span><span class="lineCov">        567 :                     RESIZE_STRING(2_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="370"><span class="lineNum">     370 </span><span class="lineCov">        567 :                     write(string(epos + 1 : eposnew), &quot;(I0.2)&quot;) values(3)</span></a>
+<a name="371"><span class="lineNum">     371 </span>            :                 elseif (format(i:i) == SKC_&quot;D&quot;) then ! Short MM/DD/YY date, equivalent to %m/%d/%y</a>
+<a name="372"><span class="lineNum">     372 </span><span class="lineCov">        577 :                     RESIZE_STRING(8_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="373"><span class="lineNum">     373 </span>            :                     !write(workspace9(1:2), &quot;(I0.2)&quot;) values(2) ! month.</a>
+<a name="374"><span class="lineNum">     374 </span>            :                     !write(workspace9(3:4), &quot;(I0.2)&quot;) values(3) ! day.</a>
+<a name="375"><span class="lineNum">     375 </span>            :                     !write(workspace9(5:6), &quot;(I0.2)&quot;) mod(abs(values(1)), 100_IKC) ! last two digits of year.</a>
+<a name="376"><span class="lineNum">     376 </span>            :                     !string(epos + 1 : eposnew) =    workspace9(1:2)//sep// &amp; ! LCOV_EXCL_LINE</a>
+<a name="377"><span class="lineNum">     377 </span>            :                     !                                workspace9(3:4)//sep// &amp; ! LCOV_EXCL_LINE</a>
+<a name="378"><span class="lineNum">     378 </span>            :                     !                                workspace9(5:6)</a>
+<a name="379"><span class="lineNum">     379 </span><span class="lineCov">        577 :                     write(string(epos + 1 : eposnew), &quot;(I0.2,'/',I0.2,'/',I0.2)&quot;) values(2:3), mod(abs(values(1)), 100_IKC) ! last two digits of year.</span></a>
+<a name="380"><span class="lineNum">     380 </span>            :                 elseif (format(i:i) == SKC_&quot;e&quot;) then ! Day of the month, zero-padded (01-31).</a>
+<a name="381"><span class="lineNum">     381 </span><span class="lineCov">        591 :                     RESIZE_STRING(2_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="382"><span class="lineNum">     382 </span><span class="lineCov">        591 :                     write(string(epos + 1 : eposnew), &quot;(I2)&quot;) values(3)</span></a>
+<a name="383"><span class="lineNum">     383 </span>            :                 elseif (format(i:i) == SKC_&quot;f&quot;) then ! millisecond padded with leading zeros</a>
+<a name="384"><span class="lineNum">     384 </span><span class="lineCov">        609 :                     RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="385"><span class="lineNum">     385 </span><span class="lineCov">        609 :                     write(string(epos + 1 : eposnew), &quot;(I0.3)&quot;) values(8)</span></a>
+<a name="386"><span class="lineNum">     386 </span>            :                 elseif (format(i:i) == SKC_&quot;F&quot;) then ! Short YYYY-MM-DD date, equivalent to %Y-%m-%d</a>
+<a name="387"><span class="lineNum">     387 </span><span class="lineCov">        606 :                     if (values(1) &gt; 0_IKC) then</span></a>
+<a name="388"><span class="lineNum">     388 </span><span class="lineCov">          1 :                         RESIZE_STRING(10_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="389"><span class="lineNum">     389 </span>            :                     else</a>
+<a name="390"><span class="lineNum">     390 </span><span class="lineCov">        605 :                         RESIZE_STRING(11_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="391"><span class="lineNum">     391 </span>            :                     end if</a>
+<a name="392"><span class="lineNum">     392 </span><span class="lineCov">        606 :                     write(string(epos + 1 : eposnew), &quot;(I0.2,'-',I0.2,'-',I0.2)&quot;) values(1:3)</span></a>
+<a name="393"><span class="lineNum">     393 </span>            :                 elseif (format(i:i) == SKC_&quot;g&quot;) then ! Week-based year, last two digits (00-99).</a>
+<a name="394"><span class="lineNum">     394 </span>            :                     !WeekDate(1:3) = getWeekDate(values(1:3))</a>
+<a name="395"><span class="lineNum">     395 </span><span class="lineCov">        619 :                     RESIZE_STRING(2_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="396"><span class="lineNum">     396 </span><span class="lineCov">        619 :                     write(string(epos + 1 : eposnew), &quot;(I0.2)&quot;) mod(abs(getWeekYear(values(1:3))), 100_IKC) ! last two digits of the week year.</span></a>
+<a name="397"><span class="lineNum">     397 </span>            :                 elseif (format(i:i) == SKC_&quot;G&quot;) then ! Week-based year, full week year, possibly negative.</a>
+<a name="398"><span class="lineNum">     398 </span>            :                     !WeekDate(1:3) = getWeekDate(values(1:3))</a>
+<a name="399"><span class="lineNum">     399 </span><span class="lineCov">        624 :                     workspace9 = getStr(getWeekYear(values(1:3))) ! WeekDate(1)) ! full week year, possibly negative.</span></a>
+<a name="400"><span class="lineNum">     400 </span><span class="lineCov">        624 :                     lenSeg = len_trim(workspace9, IKC)</span></a>
+<a name="401"><span class="lineNum">     401 </span><span class="lineCov">        624 :                     RESIZE_STRING(lenSeg) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="402"><span class="lineNum">     402 </span><span class="lineCov">        624 :                     string(epos + 1 : eposnew) = workspace9(1:lenSeg)</span></a>
+<a name="403"><span class="lineNum">     403 </span>            :                 elseif (format(i:i) == SKC_&quot;H&quot;) then ! Hour in 24h format (00-23)</a>
+<a name="404"><span class="lineNum">     404 </span><span class="lineCov">        642 :                     RESIZE_STRING(2_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="405"><span class="lineNum">     405 </span><span class="lineCov">        642 :                     write(string(epos + 1 : eposnew), &quot;(I0.2)&quot;) values(5)</span></a>
+<a name="406"><span class="lineNum">     406 </span>            :                 elseif (format(i:i) == SKC_&quot;I&quot;) then ! Hour in 12h format (01-12)</a>
+<a name="407"><span class="lineNum">     407 </span><span class="lineCov">        649 :                     RESIZE_STRING(2_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="408"><span class="lineNum">     408 </span><span class="lineCov">        649 :                     write(string(epos + 1 : eposnew), &quot;(I0.2)&quot;) getHour12(values(5))</span></a>
+<a name="409"><span class="lineNum">     409 </span>            :                     !if (values(5) &lt; 12_IKC) then</a>
+<a name="410"><span class="lineNum">     410 </span>            :                     !    write(string(epos + 1 : eposnew), &quot;(I0.2)&quot;) values(5)</a>
+<a name="411"><span class="lineNum">     411 </span>            :                     !else</a>
+<a name="412"><span class="lineNum">     412 </span>            :                     !    write(string(epos + 1 : eposnew), &quot;(I0.2)&quot;) values(5) - 12_IKC</a>
+<a name="413"><span class="lineNum">     413 </span>            :                     !end if</a>
+<a name="414"><span class="lineNum">     414 </span>            :                 elseif (format(i:i) == SKC_&quot;j&quot;) then ! Day of the year (001-366)</a>
+<a name="415"><span class="lineNum">     415 </span><span class="lineCov">        662 :                     RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="416"><span class="lineNum">     416 </span><span class="lineCov">        662 :                     write(string(epos + 1 : eposnew), &quot;(I0.3)&quot;) getOrdinalDay(values(1:3))</span></a>
+<a name="417"><span class="lineNum">     417 </span>            :                 elseif (format(i:i) == SKC_&quot;m&quot;) then ! Month as a decimal number (01-12)</a>
+<a name="418"><span class="lineNum">     418 </span><span class="lineCov">        681 :                     RESIZE_STRING(2_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="419"><span class="lineNum">     419 </span><span class="lineCov">        681 :                     write(string(epos + 1 : eposnew), &quot;(I0.2)&quot;) values(2)</span></a>
+<a name="420"><span class="lineNum">     420 </span>            :                 elseif (format(i:i) == SKC_&quot;M&quot;) then ! Minute (00-59)</a>
+<a name="421"><span class="lineNum">     421 </span><span class="lineCov">        670 :                     RESIZE_STRING(2_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="422"><span class="lineNum">     422 </span><span class="lineCov">        670 :                     write(string(epos + 1 : eposnew), &quot;(I0.2)&quot;) values(6)</span></a>
+<a name="423"><span class="lineNum">     423 </span>            :                 elseif (format(i:i) == SKC_&quot;n&quot;) then ! New-line character ('\n')</a>
+<a name="424"><span class="lineNum">     424 </span><span class="lineCov">        674 :                     RESIZE_STRING(1_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="425"><span class="lineNum">     425 </span><span class="lineCov">        674 :                     string(epos + 1 : eposnew) = achar(10, SKC) ! new_line(SKC_&quot;a&quot;)</span></a>
+<a name="426"><span class="lineNum">     426 </span>            :                 elseif (format(i:i) == SKC_&quot;p&quot;) then ! AM or PM designation</a>
+<a name="427"><span class="lineNum">     427 </span><span class="lineCov">        677 :                     RESIZE_STRING(2_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="428"><span class="lineNum">     428 </span><span class="lineCov">        677 :                     if (values(5) &lt; 12_IKC) then</span></a>
+<a name="429"><span class="lineNum">     429 </span><span class="lineCov">        339 :                         string(epos + 1 : eposnew) = SKC_&quot;AM&quot;</span></a>
+<a name="430"><span class="lineNum">     430 </span>            :                     else</a>
+<a name="431"><span class="lineNum">     431 </span><span class="lineCov">        338 :                         string(epos + 1 : eposnew) = SKC_&quot;PM&quot;</span></a>
+<a name="432"><span class="lineNum">     432 </span>            :                     end if</a>
+<a name="433"><span class="lineNum">     433 </span>            :                 elseif (format(i:i) == SKC_&quot;r&quot;) then ! 12-hour clock time *</a>
+<a name="434"><span class="lineNum">     434 </span><span class="lineCov">        690 :                     RESIZE_STRING(11_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="435"><span class="lineNum">     435 </span><span class="lineCov">        690 :                     if (values(5) &lt; 12_IKC) then</span></a>
+<a name="436"><span class="lineNum">     436 </span><span class="lineCov">        335 :                         write(string(epos + 1 : eposnew), &quot;(I0.2,':',I0.2,':',I0.2,' am')&quot;) getHour12(values(5)), values(6:7)</span></a>
+<a name="437"><span class="lineNum">     437 </span>            :                     else</a>
+<a name="438"><span class="lineNum">     438 </span><span class="lineCov">        355 :                         write(string(epos + 1 : eposnew), &quot;(I0.2,':',I0.2,':',I0.2,' pm')&quot;) getHour12(values(5)), values(6:7)</span></a>
+<a name="439"><span class="lineNum">     439 </span>            :                     end if</a>
+<a name="440"><span class="lineNum">     440 </span>            :                 elseif (format(i:i) == SKC_&quot;R&quot;) then ! 24-hour HH:MM time, equivalent to %H:%M</a>
+<a name="441"><span class="lineNum">     441 </span><span class="lineCov">        687 :                     RESIZE_STRING(5_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="442"><span class="lineNum">     442 </span><span class="lineCov">        687 :                     write(string(epos + 1 : eposnew), &quot;(I0.2,':',I0.2)&quot;) values(5:6)</span></a>
+<a name="443"><span class="lineNum">     443 </span>            :                 elseif (format(i:i) == SKC_&quot;S&quot;) then ! Second (00-59)</a>
+<a name="444"><span class="lineNum">     444 </span><span class="lineCov">        692 :                     RESIZE_STRING(2_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="445"><span class="lineNum">     445 </span><span class="lineCov">        692 :                     write(string(epos + 1 : eposnew), &quot;(I0.2)&quot;) values(7)</span></a>
+<a name="446"><span class="lineNum">     446 </span>            :                 elseif (format(i:i) == SKC_&quot;t&quot;) then ! Horizontal-tab character ('\t')</a>
+<a name="447"><span class="lineNum">     447 </span><span class="lineCov">        686 :                     RESIZE_STRING(1_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="448"><span class="lineNum">     448 </span><span class="lineCov">        686 :                     string(epos + 1 : eposnew) = achar(9, SKC)</span></a>
+<a name="449"><span class="lineNum">     449 </span>            :                 elseif (format(i:i) == SKC_&quot;T&quot;) then ! ISO 8601 time format (HH:MM:SS), equivalent to %H:%M:%S</a>
+<a name="450"><span class="lineNum">     450 </span><span class="lineCov">        695 :                     RESIZE_STRING(8_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="451"><span class="lineNum">     451 </span><span class="lineCov">        695 :                     write(string(epos + 1 : eposnew), &quot;(I0.2,':',I0.2,':',I0.2)&quot;) values(5:7)</span></a>
+<a name="452"><span class="lineNum">     452 </span>            :                 elseif (format(i:i) == SKC_&quot;u&quot;) then ! ISO 8601 weekday as number with Monday as 1 (1-7)</a>
+<a name="453"><span class="lineNum">     453 </span><span class="lineCov">        692 :                     RESIZE_STRING(1_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="454"><span class="lineNum">     454 </span><span class="lineCov">        692 :                     write(string(epos + 1 : eposnew), &quot;(I1)&quot;) getWeekDayISO(values(1), values(2), values(3))</span></a>
+<a name="455"><span class="lineNum">     455 </span>            :                 elseif (format(i:i) == SKC_&quot;V&quot;) then ! ISO 8601 week number (01-53)</a>
+<a name="456"><span class="lineNum">     456 </span><span class="lineCov">        692 :                     RESIZE_STRING(2_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="457"><span class="lineNum">     457 </span><span class="lineCov">        692 :                     write(string(epos + 1 : eposnew), &quot;(I0.2)&quot;) getWeekNumber(values(1), values(2), values(3))</span></a>
+<a name="458"><span class="lineNum">     458 </span>            :                 elseif (format(i:i) == SKC_&quot;w&quot;) then ! Weekday as a decimal number with Sunday as 0 (0-6)</a>
+<a name="459"><span class="lineNum">     459 </span><span class="lineCov">        689 :                     RESIZE_STRING(1_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="460"><span class="lineNum">     460 </span><span class="lineCov">        689 :                     write(string(epos + 1 : eposnew), &quot;(I1)&quot;) getWeekDay(values(1), values(2), values(3))</span></a>
+<a name="461"><span class="lineNum">     461 </span>            :                 elseif (format(i:i) == SKC_&quot;x&quot;) then ! Date representation *</a>
+<a name="462"><span class="lineNum">     462 </span><span class="lineCov">        681 :                     RESIZE_STRING(8_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="463"><span class="lineNum">     463 </span><span class="lineCov">        681 :                     write(string(epos + 1 : eposnew), &quot;(I0.2,'/',I0.2,'/',I0.2)&quot;) values(2), values(3), mod(abs(values(1)), 100_IKC) ! last two digits of year.</span></a>
+<a name="464"><span class="lineNum">     464 </span>            :                 elseif (format(i:i) == SKC_&quot;X&quot;) then ! Time representation *</a>
+<a name="465"><span class="lineNum">     465 </span><span class="lineCov">        669 :                     RESIZE_STRING(8_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="466"><span class="lineNum">     466 </span><span class="lineCov">        669 :                     write(string(epos + 1 : eposnew), &quot;(I0.2,':',I0.2,':',I0.2)&quot;) values(5:7)</span></a>
+<a name="467"><span class="lineNum">     467 </span>            :                 elseif (format(i:i) == SKC_&quot;y&quot;) then ! Year, last two digits (00-99)</a>
+<a name="468"><span class="lineNum">     468 </span><span class="lineCov">        646 :                     RESIZE_STRING(2_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="469"><span class="lineNum">     469 </span><span class="lineCov">        646 :                     write(string(epos + 1 : eposnew), &quot;(I0.2)&quot;) mod(abs(values(1)), 100_IKC) ! last two digits of year.</span></a>
+<a name="470"><span class="lineNum">     470 </span>            :                 elseif (format(i:i) == SKC_&quot;Y&quot;) then ! Year, last two digits (00-99)</a>
+<a name="471"><span class="lineNum">     471 </span><span class="lineCov">        656 :                     workspace9 = getStr(values(1))</span></a>
+<a name="472"><span class="lineNum">     472 </span><span class="lineCov">        656 :                     lenSeg = len_trim(workspace9, IKC)</span></a>
+<a name="473"><span class="lineNum">     473 </span><span class="lineCov">        656 :                     RESIZE_STRING(lenSeg) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="474"><span class="lineNum">     474 </span><span class="lineCov">        656 :                     string(epos + 1 : eposnew) = workspace9(1:lenSeg)</span></a>
+<a name="475"><span class="lineNum">     475 </span>            :                 elseif (format(i:i) == SKC_&quot;z&quot;) then ! ISO 8601 offset from UTC in timezone in units of minutes</a>
+<a name="476"><span class="lineNum">     476 </span><span class="lineCov">        648 :                     RESIZE_STRING(5_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="477"><span class="lineNum">     477 </span><span class="lineCov">        648 :                     write(string(epos + 1 : eposnew), &quot;(sp,I0.4)&quot;) values(4)</span></a>
+<a name="478"><span class="lineNum">     478 </span>            :                 elseif (format(i:i) == SKC_&quot;Z&quot;) then ! Timezone name or abbreviation.</a>
+<a name="479"><span class="lineNum">     479 </span><span class="lineCov">        611 :                     abbr = getZoneAbbr(values(4))</span></a>
+<a name="480"><span class="lineNum">     480 </span><span class="lineCov">        611 :                     RESIZE_STRING(len(abbr, IK))</span></a>
+<a name="481"><span class="lineNum">     481 </span><span class="lineCov">        611 :                     string(epos + 1 : eposnew) = abbr</span></a>
+<a name="482"><span class="lineNum">     482 </span>            :                     !if (values(4) == -60_IKC * 12_IKC) then ! International Day Line West time zone</a>
+<a name="483"><span class="lineNum">     483 </span>            :                     !    RESIZE_STRING(4_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="484"><span class="lineNum">     484 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;IDLW&quot;</a>
+<a name="485"><span class="lineNum">     485 </span>            :                     !elseif (values(4) == -60_IKC * 11_IKC) then ! Samoa Standard Time</a>
+<a name="486"><span class="lineNum">     486 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="487"><span class="lineNum">     487 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;SST&quot;</a>
+<a name="488"><span class="lineNum">     488 </span>            :                     !elseif (values(4) == -60_IKC * 10_IKC) then ! Hawaii–Aleutian Standard Time</a>
+<a name="489"><span class="lineNum">     489 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="490"><span class="lineNum">     490 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;HST&quot;</a>
+<a name="491"><span class="lineNum">     491 </span>            :                     !elseif (values(4) == -60_IKC * 9_IKC - 30_IKC) then ! Marquesas Islands Time</a>
+<a name="492"><span class="lineNum">     492 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="493"><span class="lineNum">     493 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;MIT&quot;</a>
+<a name="494"><span class="lineNum">     494 </span>            :                     !elseif (values(4) == -60_IKC * 9_IKC) then ! Alaska Standard Time</a>
+<a name="495"><span class="lineNum">     495 </span>            :                     !    RESIZE_STRING(4_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="496"><span class="lineNum">     496 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;AKST&quot;</a>
+<a name="497"><span class="lineNum">     497 </span>            :                     !elseif (values(4) == -60_IKC * 8_IKC) then ! Pacific Standard Time (North America)</a>
+<a name="498"><span class="lineNum">     498 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="499"><span class="lineNum">     499 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;PST&quot;</a>
+<a name="500"><span class="lineNum">     500 </span>            :                     !elseif (values(4) == -60_IKC * 7_IKC) then ! Mountain Standard Time (North America)</a>
+<a name="501"><span class="lineNum">     501 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="502"><span class="lineNum">     502 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;MST&quot;</a>
+<a name="503"><span class="lineNum">     503 </span>            :                     !elseif (values(4) == -60_IKC * 6_IKC) then ! Central Standard Time (North America)</a>
+<a name="504"><span class="lineNum">     504 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="505"><span class="lineNum">     505 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;CST&quot;</a>
+<a name="506"><span class="lineNum">     506 </span>            :                     !elseif (values(4) == -60_IKC * 5_IKC) then ! Eastern Standard Time (North America)</a>
+<a name="507"><span class="lineNum">     507 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="508"><span class="lineNum">     508 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;EST&quot;</a>
+<a name="509"><span class="lineNum">     509 </span>            :                     !elseif (values(4) == -60_IKC * 3_IKC - 30_IKC) then ! Newfoundland Standard Time</a>
+<a name="510"><span class="lineNum">     510 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="511"><span class="lineNum">     511 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;NST&quot;</a>
+<a name="512"><span class="lineNum">     512 </span>            :                     !elseif (values(4) == -60_IKC * 3_IKC) then ! Uruguay Standard Time</a>
+<a name="513"><span class="lineNum">     513 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="514"><span class="lineNum">     514 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;UYT&quot;</a>
+<a name="515"><span class="lineNum">     515 </span>            :                     !elseif (values(4) == -60_IKC * 2_IKC - 30_IKC) then ! Newfoundland Daylight Time</a>
+<a name="516"><span class="lineNum">     516 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="517"><span class="lineNum">     517 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;NDT&quot;</a>
+<a name="518"><span class="lineNum">     518 </span>            :                     !elseif (values(4) == -60_IKC * 2_IKC) then ! Uruguay Summer Time</a>
+<a name="519"><span class="lineNum">     519 </span>            :                     !    RESIZE_STRING(4_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="520"><span class="lineNum">     520 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;UYST&quot;</a>
+<a name="521"><span class="lineNum">     521 </span>            :                     !elseif (values(4) == -60_IKC * 1_IKC) then ! Eastern Greenland Time</a>
+<a name="522"><span class="lineNum">     522 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="523"><span class="lineNum">     523 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;EGT&quot;</a>
+<a name="524"><span class="lineNum">     524 </span>            :                     !elseif (values(4) == 0_IKC) then ! Coordinated Universal Time</a>
+<a name="525"><span class="lineNum">     525 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="526"><span class="lineNum">     526 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;UTC&quot;</a>
+<a name="527"><span class="lineNum">     527 </span>            :                     !elseif (values(4) == +60_IKC * 1_IKC) then ! Central European Time</a>
+<a name="528"><span class="lineNum">     528 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="529"><span class="lineNum">     529 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;CET&quot;</a>
+<a name="530"><span class="lineNum">     530 </span>            :                     !elseif (values(4) == +60_IKC * 2_IKC) then ! Eastern European Time</a>
+<a name="531"><span class="lineNum">     531 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="532"><span class="lineNum">     532 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;EET&quot;</a>
+<a name="533"><span class="lineNum">     533 </span>            :                     !elseif (values(4) == +60_IKC * 3_IKC) then ! Arabia Standard Time</a>
+<a name="534"><span class="lineNum">     534 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="535"><span class="lineNum">     535 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;AST&quot;</a>
+<a name="536"><span class="lineNum">     536 </span>            :                     !elseif (values(4) == +60_IKC * 3_IKC + 30_IKC) then ! Iran Standard Time</a>
+<a name="537"><span class="lineNum">     537 </span>            :                     !    RESIZE_STRING(4_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="538"><span class="lineNum">     538 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;IRST&quot;</a>
+<a name="539"><span class="lineNum">     539 </span>            :                     !elseif (values(4) == +60_IKC * 4_IKC) then ! Georgia Standard Time</a>
+<a name="540"><span class="lineNum">     540 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="541"><span class="lineNum">     541 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;GET&quot;</a>
+<a name="542"><span class="lineNum">     542 </span>            :                     !elseif (values(4) == +60_IKC * 4_IKC + 30_IKC) then ! Afghanistan Time</a>
+<a name="543"><span class="lineNum">     543 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="544"><span class="lineNum">     544 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;AFT&quot;</a>
+<a name="545"><span class="lineNum">     545 </span>            :                     !elseif (values(4) == +60_IKC * 5_IKC) then ! Pakistan Standard Time</a>
+<a name="546"><span class="lineNum">     546 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="547"><span class="lineNum">     547 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;PKT&quot;</a>
+<a name="548"><span class="lineNum">     548 </span>            :                     !elseif (values(4) == +60_IKC * 5_IKC + 30_IKC) then ! Indian Standard Time</a>
+<a name="549"><span class="lineNum">     549 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="550"><span class="lineNum">     550 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;IST&quot;</a>
+<a name="551"><span class="lineNum">     551 </span>            :                     !elseif (values(4) == +60_IKC * 5_IKC + 45_IKC) then ! Nepal Time</a>
+<a name="552"><span class="lineNum">     552 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="553"><span class="lineNum">     553 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;NPT&quot;</a>
+<a name="554"><span class="lineNum">     554 </span>            :                     !elseif (values(4) == +60_IKC * 6_IKC) then ! Bangladesh Standard Time</a>
+<a name="555"><span class="lineNum">     555 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="556"><span class="lineNum">     556 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;BST&quot;</a>
+<a name="557"><span class="lineNum">     557 </span>            :                     !elseif (values(4) == +60_IKC * 6_IKC + 30_IKC) then ! Myanmar Standard Time</a>
+<a name="558"><span class="lineNum">     558 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="559"><span class="lineNum">     559 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;MMT&quot;</a>
+<a name="560"><span class="lineNum">     560 </span>            :                     !elseif (values(4) == +60_IKC * 7_IKC) then ! Thailand Standard Time</a>
+<a name="561"><span class="lineNum">     561 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="562"><span class="lineNum">     562 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;THA&quot;</a>
+<a name="563"><span class="lineNum">     563 </span>            :                     !elseif (values(4) == +60_IKC * 8_IKC) then ! Singapore Standard Time</a>
+<a name="564"><span class="lineNum">     564 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="565"><span class="lineNum">     565 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;SST&quot;</a>
+<a name="566"><span class="lineNum">     566 </span>            :                     !elseif (values(4) == +60_IKC * 8_IKC + 45_IKC) then ! Central Western Standard Time (Australia)</a>
+<a name="567"><span class="lineNum">     567 </span>            :                     !    RESIZE_STRING(4_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="568"><span class="lineNum">     568 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;CWST&quot;</a>
+<a name="569"><span class="lineNum">     569 </span>            :                     !elseif (values(4) == +60_IKC * 9_IKC) then ! Japan Standard Time</a>
+<a name="570"><span class="lineNum">     570 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="571"><span class="lineNum">     571 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;JST&quot;</a>
+<a name="572"><span class="lineNum">     572 </span>            :                     !elseif (values(4) == +60_IKC * 9_IKC + 30_IKC) then ! Australian Central Standard Time</a>
+<a name="573"><span class="lineNum">     573 </span>            :                     !    RESIZE_STRING(4_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="574"><span class="lineNum">     574 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;ACST&quot;</a>
+<a name="575"><span class="lineNum">     575 </span>            :                     !elseif (values(4) == +60_IKC * 10_IKC) then ! Australian Eastern Standard Time</a>
+<a name="576"><span class="lineNum">     576 </span>            :                     !    RESIZE_STRING(4_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="577"><span class="lineNum">     577 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;AEST&quot;</a>
+<a name="578"><span class="lineNum">     578 </span>            :                     !elseif (values(4) == +60_IKC * 10_IKC + 30_IKC) then ! Lord Howe Standard Time</a>
+<a name="579"><span class="lineNum">     579 </span>            :                     !    RESIZE_STRING(4_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="580"><span class="lineNum">     580 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;LHST&quot;</a>
+<a name="581"><span class="lineNum">     581 </span>            :                     !elseif (values(4) == +60_IKC * 11_IKC) then ! Pohnpei Standard Time</a>
+<a name="582"><span class="lineNum">     582 </span>            :                     !    RESIZE_STRING(4_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="583"><span class="lineNum">     583 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;PONT&quot;</a>
+<a name="584"><span class="lineNum">     584 </span>            :                     !elseif (values(4) == +60_IKC * 12_IKC) then ! New Zealand Standard Time</a>
+<a name="585"><span class="lineNum">     585 </span>            :                     !    RESIZE_STRING(4_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="586"><span class="lineNum">     586 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;NZST&quot;</a>
+<a name="587"><span class="lineNum">     587 </span>            :                     !elseif (values(4) == +60_IKC * 12_IKC + 45_IKC) then ! Chatham Standard Time</a>
+<a name="588"><span class="lineNum">     588 </span>            :                     !    RESIZE_STRING(5_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="589"><span class="lineNum">     589 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;CHAST&quot;</a>
+<a name="590"><span class="lineNum">     590 </span>            :                     !elseif (values(4) == +60_IKC * 13_IKC) then ! Tonga Time</a>
+<a name="591"><span class="lineNum">     591 </span>            :                     !    RESIZE_STRING(3_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="592"><span class="lineNum">     592 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;TOT&quot;</a>
+<a name="593"><span class="lineNum">     593 </span>            :                     !elseif (values(4) == +60_IKC * 13_IKC + 45_IKC) then ! Chatham Daylight Time</a>
+<a name="594"><span class="lineNum">     594 </span>            :                     !    RESIZE_STRING(5_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="595"><span class="lineNum">     595 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;CHADT&quot;</a>
+<a name="596"><span class="lineNum">     596 </span>            :                     !elseif (values(4) == +60_IKC * 14_IKC) then ! Line Islands Time</a>
+<a name="597"><span class="lineNum">     597 </span>            :                     !    RESIZE_STRING(4_IK) ! fpp sets eposnew, and resizes string.</a>
+<a name="598"><span class="lineNum">     598 </span>            :                     !    string(epos + 1 : eposnew) = SKC_&quot;LINT&quot;</a>
+<a name="599"><span class="lineNum">     599 </span>            :                     !end if</a>
+<a name="600"><span class="lineNum">     600 </span>            :                 elseif (format(i:i) == SKC_&quot;%&quot;) then ! add percentage.</a>
+<a name="601"><span class="lineNum">     601 </span><span class="lineCov">        556 :                     RESIZE_STRING(1_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="602"><span class="lineNum">     602 </span><span class="lineCov">        556 :                     string(epos + 1 : eposnew) = SKC_&quot;%&quot;</span></a>
+<a name="603"><span class="lineNum">     603 </span>            :                 else ! Unrecognized format.</a>
+<a name="604"><span class="lineNum">     604 </span><span class="lineCov">       1380 :                     RESIZE_STRING(2_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="605"><span class="lineNum">     605 </span><span class="lineCov">       1380 :                     string(epos + 1 : eposnew) = format(i - 1 : i)</span></a>
+<a name="606"><span class="lineNum">     606 </span>            :                 end if</a>
+<a name="607"><span class="lineNum">     607 </span>            :             else ! normal characters.</a>
+<a name="608"><span class="lineNum">     608 </span><span class="lineCov">      11980 :                 RESIZE_STRING(1_IK) ! fpp sets eposnew, and resizes string.</span></a>
+<a name="609"><span class="lineNum">     609 </span><span class="lineCov">      11980 :                 string(epos + 1 : eposnew) = format(i : i)</span></a>
+<a name="610"><span class="lineNum">     610 </span>            :             end if</a>
+<a name="611"><span class="lineNum">     611 </span>            :         end do</a>
+<a name="612"><span class="lineNum">     612 </span><span class="lineCov">      20138 :         if (lenString &gt; eposnew) then</span></a>
+<a name="613"><span class="lineNum">     613 </span><span class="lineCov">      20089 :             tempstr = string(1:eposnew)</span></a>
+<a name="614"><span class="lineNum">     614 </span><span class="lineCov">      20089 :             call move_alloc(tempstr, string)</span></a>
+<a name="615"><span class="lineNum">     615 </span>            :         end if</a>
+<a name="616"><span class="lineNum">     616 </span>            : #else</a>
+<a name="617"><span class="lineNum">     617 </span>            : #error  &quot;Unrecognized interface.&quot;</a>
+<a name="618"><span class="lineNum">     618 </span>            : #endif</a>
+<a name="619"><span class="lineNum">     619 </span>            : </a>
+<a name="620"><span class="lineNum">     620 </span>            : #undef  RESIZE_STRING</a>
+<a name="621"><span class="lineNum">     621 </span>            : </a>
+<a name="622"><span class="lineNum">     622 </span>            :         !%%%%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="623"><span class="lineNum">     623 </span>            : #elif   getDateTimeNewZone_ENABLED</a>
+<a name="624"><span class="lineNum">     624 </span>            :         !%%%%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="625"><span class="lineNum">     625 </span>            : </a>
+<a name="626"><span class="lineNum">     626 </span>            :         ! The case for no input (current) date and time.</a>
+<a name="627"><span class="lineNum">     627 </span>            : #if     getDateTimeNewZoneC_ENABLED</a>
+<a name="628"><span class="lineNum">     628 </span>            :         integer(IKC) :: values(8)</a>
+<a name="629"><span class="lineNum">     629 </span><span class="lineCov">       5588 :         call date_and_time(values = values)</span></a>
+<a name="630"><span class="lineNum">     630 </span><span class="lineCov">      50292 :         CHECK_ASSERTION(__LINE__, all(values /= -huge(0_IKC)), SK_&quot;@getDateTimeNewZone(): The processor does not have a clock.&quot;) ! fpp</span></a>
+<a name="631"><span class="lineNum">     631 </span><span class="lineCov">       5588 :         DateTimeNewZone(1:8) = getDateTimeNewZone(newzone, values(1), values(2), values(3), values(4), values(5), values(6), values(7), values(8))</span></a>
+<a name="632"><span class="lineNum">     632 </span>            :         ! The case for vector of date and time.</a>
+<a name="633"><span class="lineNum">     633 </span>            : #elif   getDateTimeNewZoneV_ENABLED</a>
+<a name="634"><span class="lineNum">     634 </span>            :         integer(IK) :: lenValues</a>
+<a name="635"><span class="lineNum">     635 </span><span class="lineCov">      27012 :         lenValues = size(values, 1, IK)</span></a>
+<a name="636"><span class="lineNum">     636 </span><span class="lineCov">      27012 :         CHECK_ASSERTION(__LINE__, 3_IK &lt; lenValues .and. lenValues &lt; 9_IK, SK_&quot;@getDateTimeNewZone(): The condition `3 &lt; size(values) &lt; 9` must hold. size(values) = &quot;//getStr(size(values))) ! fpp</span></a>
+<a name="637"><span class="lineNum">     637 </span><span class="lineCov">      27012 :         if (lenValues == 8_IK) then</span></a>
+<a name="638"><span class="lineNum">     638 </span><span class="lineCov">       7006 :             DateTimeNewZone(1:8) = getDateTimeNewZone(newzone, values(1), values(2), values(3), values(4), values(5), values(6), values(7), values(8))</span></a>
+<a name="639"><span class="lineNum">     639 </span><span class="lineCov">      20006 :         elseif (lenValues == 7_IK) then</span></a>
+<a name="640"><span class="lineNum">     640 </span><span class="lineCov">       5001 :             DateTimeNewZone(1:8) = getDateTimeNewZone(newzone, values(1), values(2), values(3), values(4), values(5), values(6), values(7))</span></a>
+<a name="641"><span class="lineNum">     641 </span><span class="lineCov">      15005 :         elseif (lenValues == 6_IK) then</span></a>
+<a name="642"><span class="lineNum">     642 </span><span class="lineCov">       5002 :             DateTimeNewZone(1:8) = getDateTimeNewZone(newzone, values(1), values(2), values(3), values(4), values(5), values(6))</span></a>
+<a name="643"><span class="lineNum">     643 </span><span class="lineCov">      10003 :         elseif (lenValues == 5_IK) then</span></a>
+<a name="644"><span class="lineNum">     644 </span><span class="lineCov">       5003 :             DateTimeNewZone(1:8) = getDateTimeNewZone(newzone, values(1), values(2), values(3), values(4), values(5))</span></a>
+<a name="645"><span class="lineNum">     645 </span><span class="lineCov">       5000 :         elseif (lenValues == 4_IK) then</span></a>
+<a name="646"><span class="lineNum">     646 </span><span class="lineCov">       5000 :             DateTimeNewZone(1:8) = getDateTimeNewZone(newzone, values(1), values(2), values(3), values(4))</span></a>
+<a name="647"><span class="lineNum">     647 </span>            :         !elseif (lenValues == 3_IK) then</a>
+<a name="648"><span class="lineNum">     648 </span>            :         !    DateTimeNewZone(1:8) = getDateTimeNewZone(newzone, values(1), values(2), values(3))</a>
+<a name="649"><span class="lineNum">     649 </span>            :         !elseif (lenValues == 2_IK) then</a>
+<a name="650"><span class="lineNum">     650 </span>            :         !    DateTimeNewZone(1:8) = getDateTimeNewZone(newzone, values(1), values(2))</a>
+<a name="651"><span class="lineNum">     651 </span>            :         !elseif (lenValues == 1_IK) then</a>
+<a name="652"><span class="lineNum">     652 </span>            :         !    DateTimeNewZone(1:8) = getDateTimeNewZone(newzone, values(1))</a>
+<a name="653"><span class="lineNum">     653 </span>            :         else</a>
+<a name="654"><span class="lineNum">     654 </span>            :             error stop MODULE_NAME//SK_&quot;@getDateTimeNewZone(): The length of the input argument `values` must be less than 9 and larger than 3. size(values) = &quot;//getStr(lenValues) ! LCOV_EXCL_LINE</a>
+<a name="655"><span class="lineNum">     655 </span>            :         end if</a>
+<a name="656"><span class="lineNum">     656 </span>            :         ! The case for keyword date and time.</a>
+<a name="657"><span class="lineNum">     657 </span>            : #else</a>
+<a name="658"><span class="lineNum">     658 </span>            : #if     !getDateTimeNewZoneYMDZHMSM_ENABLED</a>
+<a name="659"><span class="lineNum">     659 </span>            :         integer(IKC), parameter :: millisecond = 0_IK</a>
+<a name="660"><span class="lineNum">     660 </span>            : #if     !getDateTimeNewZoneYMDZHMS_ENABLED</a>
+<a name="661"><span class="lineNum">     661 </span>            :         integer(IKC), parameter :: second = 0_IK</a>
+<a name="662"><span class="lineNum">     662 </span>            : #if     !getDateTimeNewZoneYMDZHM_ENABLED</a>
+<a name="663"><span class="lineNum">     663 </span>            :         integer(IKC), parameter :: minute = 0_IK</a>
+<a name="664"><span class="lineNum">     664 </span>            : #if     !getDateTimeNewZoneYMDZH_ENABLED</a>
+<a name="665"><span class="lineNum">     665 </span>            :         integer(IKC), parameter :: hour = 0_IK</a>
+<a name="666"><span class="lineNum">     666 </span>            : #if     !getDateTimeNewZoneYMDZ_ENABLED</a>
+<a name="667"><span class="lineNum">     667 </span>            : #error  &quot;Unrecognized interface.&quot;</a>
+<a name="668"><span class="lineNum">     668 </span>            : #endif</a>
+<a name="669"><span class="lineNum">     669 </span>            : #endif</a>
+<a name="670"><span class="lineNum">     670 </span>            : #endif</a>
+<a name="671"><span class="lineNum">     671 </span>            : #endif</a>
+<a name="672"><span class="lineNum">     672 </span>            : #endif</a>
+<a name="673"><span class="lineNum">     673 </span><span class="lineCov">      57615 :         if (zone /= 0_IK .and. newzone /= 0_IK .and. zone /= newzone) then</span></a>
+<a name="674"><span class="lineNum">     674 </span><span class="lineCov">      55514 :             DateTimeNewZone(1:8) = getDateTimeUTC(year, month, day, zone, hour, minute, second, millisecond)</span></a>
+<a name="675"><span class="lineNum">     675 </span><span class="lineCov">     499626 :             DateTimeNewZone(1:8) = getDateTimeUTC(DateTimeNewZone(1), DateTimeNewZone(2), DateTimeNewZone(3), -newzone, DateTimeNewZone(5), DateTimeNewZone(6), DateTimeNewZone(7), DateTimeNewZone(8))</span></a>
+<a name="676"><span class="lineNum">     676 </span><span class="lineCov">      55514 :             DateTimeNewZone(4) = newzone</span></a>
+<a name="677"><span class="lineNum">     677 </span><span class="lineCov">       2101 :         elseif (zone /= 0_IK .and. newzone == 0_IK) then</span></a>
+<a name="678"><span class="lineNum">     678 </span><span class="lineCov">         24 :             DateTimeNewZone(1:8) = getDateTimeUTC(year, month, day, zone, hour, minute, second, millisecond)</span></a>
+<a name="679"><span class="lineNum">     679 </span><span class="lineCov">       2077 :         elseif (zone == 0_IK .and. newzone /= 0_IK) then</span></a>
+<a name="680"><span class="lineNum">     680 </span><span class="lineCov">       2010 :             DateTimeNewZone(1:8) = getDateTimeUTC(year, month, day, -newzone, hour, minute, second, millisecond)</span></a>
+<a name="681"><span class="lineNum">     681 </span><span class="lineCov">       2010 :             DateTimeNewZone(4) = newzone</span></a>
+<a name="682"><span class="lineNum">     682 </span>            :         else</a>
+<a name="683"><span class="lineNum">     683 </span><span class="lineCov">         67 :             DateTimeNewZone(1) = year</span></a>
+<a name="684"><span class="lineNum">     684 </span><span class="lineCov">         67 :             DateTimeNewZone(2) = month</span></a>
+<a name="685"><span class="lineNum">     685 </span><span class="lineCov">         67 :             DateTimeNewZone(3) = day</span></a>
+<a name="686"><span class="lineNum">     686 </span><span class="lineCov">         67 :             DateTimeNewZone(4) = zone</span></a>
+<a name="687"><span class="lineNum">     687 </span><span class="lineCov">         67 :             DateTimeNewZone(5) = hour</span></a>
+<a name="688"><span class="lineNum">     688 </span><span class="lineCov">         67 :             DateTimeNewZone(6) = minute</span></a>
+<a name="689"><span class="lineNum">     689 </span><span class="lineCov">         67 :             DateTimeNewZone(7) = second</span></a>
+<a name="690"><span class="lineNum">     690 </span><span class="lineCov">         67 :             DateTimeNewZone(8) = millisecond</span></a>
+<a name="691"><span class="lineNum">     691 </span>            :         end if</a>
+<a name="692"><span class="lineNum">     692 </span>            : #endif</a>
+<a name="693"><span class="lineNum">     693 </span>            : </a>
+<a name="694"><span class="lineNum">     694 </span>            :         !%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="695"><span class="lineNum">     695 </span>            : #elif   getDateTimeUTC_ENABLED</a>
+<a name="696"><span class="lineNum">     696 </span>            :         !%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="697"><span class="lineNum">     697 </span>            : </a>
+<a name="698"><span class="lineNum">     698 </span>            :         ! The case for no input (current) date and time.</a>
+<a name="699"><span class="lineNum">     699 </span>            : #if     getDateTimeUTCC_ENABLED</a>
+<a name="700"><span class="lineNum">     700 </span>            :         integer(IKC) :: values(8)</a>
+<a name="701"><span class="lineNum">     701 </span><span class="lineCov">          5 :         call date_and_time(values = values)</span></a>
+<a name="702"><span class="lineNum">     702 </span><span class="lineCov">         45 :         CHECK_ASSERTION(__LINE__, all(values /= -huge(0_IKC)), SK_&quot;@getDateTimeUTC(): The processor does not have a clock.&quot;) ! fpp</span></a>
+<a name="703"><span class="lineNum">     703 </span><span class="lineCov">          5 :         DateTimeUTC(1:8) = getDateTimeUTC(values(1), values(2), values(3), values(4), values(5), values(6), values(7), values(8))</span></a>
+<a name="704"><span class="lineNum">     704 </span>            :         ! The case for vector of date and time.</a>
+<a name="705"><span class="lineNum">     705 </span>            : #elif   getDateTimeUTCV_ENABLED</a>
+<a name="706"><span class="lineNum">     706 </span>            :         integer(IK) :: lenValues</a>
+<a name="707"><span class="lineNum">     707 </span><span class="lineCov">      25000 :         lenValues = size(values, 1, IK)</span></a>
+<a name="708"><span class="lineNum">     708 </span><span class="lineCov">      25000 :         CHECK_ASSERTION(__LINE__, 3_IK &lt; lenValues .and. lenValues &lt; 9_IK, SK_&quot;@getDateTimeUTC(): The condition `3 &lt; size(values) &lt; 9` must hold. size(values) = &quot;//getStr(size(values))) ! fpp</span></a>
+<a name="709"><span class="lineNum">     709 </span><span class="lineCov">      25000 :         if (lenValues == 8_IK) then</span></a>
+<a name="710"><span class="lineNum">     710 </span><span class="lineCov">       5000 :             DateTimeUTC(1:8) = getDateTimeUTC(values(1), values(2), values(3), values(4), values(5), values(6), values(7), values(8))</span></a>
+<a name="711"><span class="lineNum">     711 </span><span class="lineCov">      20000 :         elseif (lenValues == 7_IK) then</span></a>
+<a name="712"><span class="lineNum">     712 </span><span class="lineCov">       5000 :             DateTimeUTC(1:8) = getDateTimeUTC(values(1), values(2), values(3), values(4), values(5), values(6), values(7))</span></a>
+<a name="713"><span class="lineNum">     713 </span><span class="lineCov">      15000 :         elseif (lenValues == 6_IK) then</span></a>
+<a name="714"><span class="lineNum">     714 </span><span class="lineCov">       5000 :             DateTimeUTC(1:8) = getDateTimeUTC(values(1), values(2), values(3), values(4), values(5), values(6))</span></a>
+<a name="715"><span class="lineNum">     715 </span><span class="lineCov">      10000 :         elseif (lenValues == 5_IK) then</span></a>
+<a name="716"><span class="lineNum">     716 </span><span class="lineCov">       5000 :             DateTimeUTC(1:8) = getDateTimeUTC(values(1), values(2), values(3), values(4), values(5))</span></a>
+<a name="717"><span class="lineNum">     717 </span><span class="lineCov">       5000 :         elseif (lenValues == 4_IK) then</span></a>
+<a name="718"><span class="lineNum">     718 </span><span class="lineCov">       5000 :             DateTimeUTC(1:8) = getDateTimeUTC(values(1), values(2), values(3), values(4))</span></a>
+<a name="719"><span class="lineNum">     719 </span>            :         !elseif (lenValues == 3_IK) then</a>
+<a name="720"><span class="lineNum">     720 </span>            :         !    DateTimeUTC(1:8) = getDateTimeUTC(values(1), values(2), values(3))</a>
+<a name="721"><span class="lineNum">     721 </span>            :         !elseif (lenValues == 2_IK) then</a>
+<a name="722"><span class="lineNum">     722 </span>            :         !    DateTimeUTC(1:8) = getDateTimeUTC(values(1), values(2))</a>
+<a name="723"><span class="lineNum">     723 </span>            :         !elseif (lenValues == 1_IK) then</a>
+<a name="724"><span class="lineNum">     724 </span>            :         !    DateTimeUTC(1:8) = getDateTimeUTC(values(1))</a>
+<a name="725"><span class="lineNum">     725 </span>            :         else</a>
+<a name="726"><span class="lineNum">     726 </span>            :             error stop MODULE_NAME//SK_&quot;@getDateTimeUTC(): The length of the input argument `values` must be less than 9 and larger than 3. size(values) = &quot;//getStr(lenValues) ! LCOV_EXCL_LINE</a>
+<a name="727"><span class="lineNum">     727 </span>            :         end if</a>
+<a name="728"><span class="lineNum">     728 </span>            :         ! The case for keyword date and time.</a>
+<a name="729"><span class="lineNum">     729 </span>            : #else</a>
+<a name="730"><span class="lineNum">     730 </span>            : #if     !getDateTimeUTCYMDZHMSM_ENABLED</a>
+<a name="731"><span class="lineNum">     731 </span>            :         integer(IKC), parameter :: millisecond = 0_IK</a>
+<a name="732"><span class="lineNum">     732 </span>            : #if     !getDateTimeUTCYMDZHMS_ENABLED</a>
+<a name="733"><span class="lineNum">     733 </span>            :         integer(IKC), parameter :: second = 0_IK</a>
+<a name="734"><span class="lineNum">     734 </span>            : #if     !getDateTimeUTCYMDZHM_ENABLED</a>
+<a name="735"><span class="lineNum">     735 </span>            :         integer(IKC), parameter :: minute = 0_IK</a>
+<a name="736"><span class="lineNum">     736 </span>            : #if     !getDateTimeUTCYMDZH_ENABLED</a>
+<a name="737"><span class="lineNum">     737 </span>            :         integer(IKC), parameter :: hour = 0_IK</a>
+<a name="738"><span class="lineNum">     738 </span>            : #if     !getDateTimeUTCYMDZ_ENABLED</a>
+<a name="739"><span class="lineNum">     739 </span>            : #error  &quot;Unrecognized interface.&quot;</a>
+<a name="740"><span class="lineNum">     740 </span>            : #endif</a>
+<a name="741"><span class="lineNum">     741 </span>            : #endif</a>
+<a name="742"><span class="lineNum">     742 </span>            : #endif</a>
+<a name="743"><span class="lineNum">     743 </span>            : #endif</a>
+<a name="744"><span class="lineNum">     744 </span>            : #endif</a>
+<a name="745"><span class="lineNum">     745 </span>            :         integer(IKC) :: offsetDays</a>
+<a name="746"><span class="lineNum">     746 </span>            :         integer(IKC) :: totalHours</a>
+<a name="747"><span class="lineNum">     747 </span>            :         integer(IKC) :: offsetHours</a>
+<a name="748"><span class="lineNum">     748 </span>            :         integer(IKC) :: totalMinutes</a>
+<a name="749"><span class="lineNum">     749 </span><span class="lineCov">     282961 :         DateTimeUTC(8) = millisecond</span></a>
+<a name="750"><span class="lineNum">     750 </span><span class="lineCov">     282961 :         DateTimeUTC(7) = second</span></a>
+<a name="751"><span class="lineNum">     751 </span><span class="lineCov">     282961 :         if (zone /= 0_IKC) then</span></a>
+<a name="752"><span class="lineNum">     752 </span><span class="lineCov">     282911 :             totalMinutes = minute - zone</span></a>
+<a name="753"><span class="lineNum">     753 </span><span class="lineCov">     282911 :             offsetHours = totalMinutes / 60_IKC</span></a>
+<a name="754"><span class="lineNum">     754 </span><span class="lineCov">     282911 :             DateTimeUTC(6) = totalMinutes - offsetHours * 60_IKC</span></a>
+<a name="755"><span class="lineNum">     755 </span><span class="lineCov">     282911 :             if (DateTimeUTC(6) &lt; 0_IKC) then</span></a>
+<a name="756"><span class="lineNum">     756 </span><span class="lineCov">      79431 :                 DateTimeUTC(6) = DateTimeUTC(6) + 60_IKC</span></a>
+<a name="757"><span class="lineNum">     757 </span><span class="lineCov">      79431 :                 offsetHours = offsetHours - 1_IKC</span></a>
+<a name="758"><span class="lineNum">     758 </span>            :             end if</a>
+<a name="759"><span class="lineNum">     759 </span><span class="lineCov">     272919 :             totalHours = hour + offsetHours</span></a>
+<a name="760"><span class="lineNum">     760 </span><span class="lineCov">     282911 :             offsetDays = totalHours / 24_IKC</span></a>
+<a name="761"><span class="lineNum">     761 </span><span class="lineCov">     282911 :             DateTimeUTC(5) = totalHours - offsetDays * 24_IKC</span></a>
+<a name="762"><span class="lineNum">     762 </span><span class="lineCov">     282911 :             if (DateTimeUTC(5) &lt; 0_IKC) then</span></a>
+<a name="763"><span class="lineNum">     763 </span><span class="lineCov">      20182 :                 DateTimeUTC(5) = DateTimeUTC(5) + 24_IKC</span></a>
+<a name="764"><span class="lineNum">     764 </span><span class="lineCov">      20182 :                 offsetDays = offsetDays - 1_IKC</span></a>
+<a name="765"><span class="lineNum">     765 </span>            :             end if</a>
+<a name="766"><span class="lineNum">     766 </span><span class="lineCov">     282911 :             DateTimeUTC(4) = 0_IKC ! UTC zone</span></a>
+<a name="767"><span class="lineNum">     767 </span><span class="lineCov">     282911 :             CHECK_ASSERTION(__LINE__, offsetDays &gt; -2_IKC .and. offsetDays &lt; 2_IKC, SK_&quot;@getDateTimeUTC(): Internal library error: The condition `offsetDays &gt; -2_IKC .and. offsetDays &lt; 2_IKC` must hold. Please report this error to the ParaMonte library developers.&quot;)</span></a>
+<a name="768"><span class="lineNum">     768 </span><span class="lineCov">     282911 :             if (offsetDays == -1_IKC) then</span></a>
+<a name="769"><span class="lineNum">     769 </span><span class="lineCov">      20182 :                 DateTimeUTC(1:3) = getDateBefore(year, month, day)</span></a>
+<a name="770"><span class="lineNum">     770 </span><span class="lineCov">     262729 :             elseif (offsetDays == +1_IKC) then</span></a>
+<a name="771"><span class="lineNum">     771 </span><span class="lineCov">      41799 :                 DateTimeUTC(1:3) = getDateAfter(year, month, day)</span></a>
+<a name="772"><span class="lineNum">     772 </span>            :             else</a>
+<a name="773"><span class="lineNum">     773 </span><span class="lineCov">     220930 :                 DateTimeUTC(3) = day</span></a>
+<a name="774"><span class="lineNum">     774 </span><span class="lineCov">     220930 :                 DateTimeUTC(2) = month</span></a>
+<a name="775"><span class="lineNum">     775 </span><span class="lineCov">     220930 :                 DateTimeUTC(1) = year</span></a>
+<a name="776"><span class="lineNum">     776 </span>            :             end if</a>
+<a name="777"><span class="lineNum">     777 </span>            :         else</a>
+<a name="778"><span class="lineNum">     778 </span><span class="lineCov">         50 :             DateTimeUTC(1) = year</span></a>
+<a name="779"><span class="lineNum">     779 </span><span class="lineCov">         50 :             DateTimeUTC(2) = month</span></a>
+<a name="780"><span class="lineNum">     780 </span><span class="lineCov">         50 :             DateTimeUTC(3) = day</span></a>
+<a name="781"><span class="lineNum">     781 </span><span class="lineCov">         50 :             DateTimeUTC(4) = zone</span></a>
+<a name="782"><span class="lineNum">     782 </span><span class="lineCov">         50 :             DateTimeUTC(5) = hour</span></a>
+<a name="783"><span class="lineNum">     783 </span><span class="lineCov">         50 :             DateTimeUTC(6) = minute</span></a>
+<a name="784"><span class="lineNum">     784 </span><span class="lineCov">         50 :             DateTimeUTC(7) = second</span></a>
+<a name="785"><span class="lineNum">     785 </span><span class="lineCov">         50 :             DateTimeUTC(8) = millisecond</span></a>
+<a name="786"><span class="lineNum">     786 </span>            :         end if</a>
+<a name="787"><span class="lineNum">     787 </span>            : #endif</a>
+<a name="788"><span class="lineNum">     788 </span>            : </a>
+<a name="789"><span class="lineNum">     789 </span>            :         !%%%%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="790"><span class="lineNum">     790 </span>            : #elif   getDateTimeShifted_ENABLED</a>
+<a name="791"><span class="lineNum">     791 </span>            :         !%%%%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="792"><span class="lineNum">     792 </span>            : </a>
+<a name="793"><span class="lineNum">     793 </span>            :         ! The case for no input (current) date and time.</a>
+<a name="794"><span class="lineNum">     794 </span>            : #if     getDateTimeShiftedC_ENABLED</a>
+<a name="795"><span class="lineNum">     795 </span>            :         integer(IKC)    :: values(8)</a>
+<a name="796"><span class="lineNum">     796 </span><span class="lineCov">          3 :         call date_and_time(values = values)</span></a>
+<a name="797"><span class="lineNum">     797 </span><span class="lineCov">         27 :         CHECK_ASSERTION(__LINE__, all(values /= -huge(0_IKC)), SK_&quot;@getDateTimeShifted(): The processor does not have a clock.&quot;) ! fpp</span></a>
+<a name="798"><span class="lineNum">     798 </span><span class="lineCov">          3 :         dateTimeShifted(1:8) = getDateTimeShifted(amount, values(1), values(2), values(3), values(4), values(5), values(6), values(7), values(8))</span></a>
+<a name="799"><span class="lineNum">     799 </span>            :         ! The case for vector of date and time.</a>
+<a name="800"><span class="lineNum">     800 </span>            : #elif   getDateTimeShiftedV_ENABLED</a>
+<a name="801"><span class="lineNum">     801 </span>            :         integer(IK) :: lenValues</a>
+<a name="802"><span class="lineNum">     802 </span><span class="lineCov">      55041 :         lenValues = size(values, 1, IK)</span></a>
+<a name="803"><span class="lineNum">     803 </span><span class="lineCov">      55041 :         CHECK_ASSERTION(__LINE__, 0_IK &lt; lenValues .and. lenValues &lt; 9_IK, SK_&quot;@getDateTimeShifted(): The condition `0 &lt; size(values) &lt; 9` must hold. size(values) = &quot;//getStr(size(values))) ! fpp</span></a>
+<a name="804"><span class="lineNum">     804 </span><span class="lineCov">      55041 :         if (lenValues == 8_IK) then</span></a>
+<a name="805"><span class="lineNum">     805 </span><span class="lineCov">      15018 :             dateTimeShifted(1:8) = getDateTimeShifted(amount, values(1), values(2), values(3), values(4), values(5), values(6), values(7), values(8))</span></a>
+<a name="806"><span class="lineNum">     806 </span>            :         elseif (lenValues == 7_IK) then</a>
+<a name="807"><span class="lineNum">     807 </span><span class="lineCov">      10005 :             dateTimeShifted(1:8) = getDateTimeShifted(amount, values(1), values(2), values(3), values(4), values(5), values(6), values(7))</span></a>
+<a name="808"><span class="lineNum">     808 </span>            :         elseif (lenValues == 6_IK) then</a>
+<a name="809"><span class="lineNum">     809 </span><span class="lineCov">      10005 :             dateTimeShifted(1:8) = getDateTimeShifted(amount, values(1), values(2), values(3), values(4), values(5), values(6))</span></a>
+<a name="810"><span class="lineNum">     810 </span>            :         elseif (lenValues == 5_IK) then</a>
+<a name="811"><span class="lineNum">     811 </span><span class="lineCov">      10005 :             dateTimeShifted(1:8) = getDateTimeShifted(amount, values(1), values(2), values(3), values(4), values(5))</span></a>
+<a name="812"><span class="lineNum">     812 </span>            :         elseif (lenValues == 4_IK) then</a>
+<a name="813"><span class="lineNum">     813 </span><span class="lineCov">      10004 :             dateTimeShifted(1:8) = getDateTimeShifted(amount, values(1), values(2), values(3), values(4))</span></a>
+<a name="814"><span class="lineNum">     814 </span>            :         elseif (lenValues == 3_IK) then</a>
+<a name="815"><span class="lineNum">     815 </span><span class="lineCov">          2 :             dateTimeShifted(1:8) = getDateTimeShifted(amount, values(1), values(2), values(3))</span></a>
+<a name="816"><span class="lineNum">     816 </span>            :         elseif (lenValues == 2_IK) then</a>
+<a name="817"><span class="lineNum">     817 </span><span class="lineCov">          1 :             dateTimeShifted(1:8) = getDateTimeShifted(amount, values(1), values(2))</span></a>
+<a name="818"><span class="lineNum">     818 </span>            :         elseif (lenValues == 1_IK) then</a>
+<a name="819"><span class="lineNum">     819 </span><span class="lineCov">          1 :             dateTimeShifted(1:8) = getDateTimeShifted(amount, values(1))</span></a>
+<a name="820"><span class="lineNum">     820 </span>            :         else</a>
+<a name="821"><span class="lineNum">     821 </span>            :             error stop MODULE_NAME//SK_&quot;@getDateTimeShifted(): The length of the input argument `values` must be less than 9 and non-zero. size(values) = &quot;//getStr(lenValues) ! LCOV_EXCL_LINE</a>
+<a name="822"><span class="lineNum">     822 </span>            :         end if</a>
+<a name="823"><span class="lineNum">     823 </span>            :         ! The case for keyword date and time.</a>
+<a name="824"><span class="lineNum">     824 </span>            : #else</a>
+<a name="825"><span class="lineNum">     825 </span>            : #if     !getDateTimeShiftedYMDZHMSM_ENABLED</a>
+<a name="826"><span class="lineNum">     826 </span>            :         integer(IKC), parameter :: millisecond = 0_IK</a>
+<a name="827"><span class="lineNum">     827 </span>            : #if     !getDateTimeShiftedYMDZHMS_ENABLED</a>
+<a name="828"><span class="lineNum">     828 </span>            :         integer(IKC), parameter :: second = 0_IK</a>
+<a name="829"><span class="lineNum">     829 </span>            : #if     !getDateTimeShiftedYMDZHM_ENABLED</a>
+<a name="830"><span class="lineNum">     830 </span>            :         integer(IKC), parameter :: minute = 0_IK</a>
+<a name="831"><span class="lineNum">     831 </span>            : #if     !getDateTimeShiftedYMDZH_ENABLED</a>
+<a name="832"><span class="lineNum">     832 </span>            :         integer(IKC), parameter :: hour = 0_IK</a>
+<a name="833"><span class="lineNum">     833 </span>            : #if     !getDateTimeShiftedYMDZ_ENABLED</a>
+<a name="834"><span class="lineNum">     834 </span>            :         integer(IKC), parameter :: zone = 0_IK</a>
+<a name="835"><span class="lineNum">     835 </span>            : #if     !getDateTimeShiftedYMD_ENABLED</a>
+<a name="836"><span class="lineNum">     836 </span>            :         integer(IKC), parameter :: day = 1_IK</a>
+<a name="837"><span class="lineNum">     837 </span>            : #if     !getDateTimeShiftedYM_ENABLED</a>
+<a name="838"><span class="lineNum">     838 </span>            :         integer(IKC), parameter :: month = 1_IK</a>
+<a name="839"><span class="lineNum">     839 </span>            : #if     !getDateTimeShiftedY_ENABLED</a>
+<a name="840"><span class="lineNum">     840 </span>            : #error  &quot;Unrecognized interface.&quot;</a>
+<a name="841"><span class="lineNum">     841 </span>            : #endif</a>
+<a name="842"><span class="lineNum">     842 </span>            : #endif</a>
+<a name="843"><span class="lineNum">     843 </span>            : #endif</a>
+<a name="844"><span class="lineNum">     844 </span>            : #endif</a>
+<a name="845"><span class="lineNum">     845 </span>            : #endif</a>
+<a name="846"><span class="lineNum">     846 </span>            : #endif</a>
+<a name="847"><span class="lineNum">     847 </span>            : #endif</a>
+<a name="848"><span class="lineNum">     848 </span>            : #endif</a>
+<a name="849"><span class="lineNum">     849 </span>            :         real(RKC) :: julianDay</a>
+<a name="850"><span class="lineNum">     850 </span><span class="lineCov">     495954 :         CHECK_ASSERTION(__LINE__, isValidDateTime(year, month, day, zone, hour, minute, second, millisecond), \</span></a>
+<a name="851"><span class="lineNum">     851 </span>            :         SK_&quot;@getDateTimeShifted(): The specified Gregorian date and time must be valid and consistent. [year, month, day, zone, hour, minute, second, millisecond] = &quot;// \</a>
+<a name="852"><span class="lineNum">     852 </span>            :         getStr([year, month, day, zone, hour, minute, second, millisecond])) ! fpp</a>
+<a name="853"><span class="lineNum">     853 </span><span class="lineCov">      55106 :         julianDay = getJulianDay(year, month, day, 0_IK, hour, minute, second, millisecond)</span></a>
+<a name="854"><span class="lineNum">     854 </span>            :         !dateTimeShifted(1:8) = getDateTime(julianDay + amount, zone)</a>
+<a name="855"><span class="lineNum">     855 </span><span class="lineCov">      55106 :         dateTimeShifted(1:8) = getDateTime(julianDay + amount)</span></a>
+<a name="856"><span class="lineNum">     856 </span><span class="lineCov">      55106 :         dateTimeShifted(4) = zone</span></a>
+<a name="857"><span class="lineNum">     857 </span>            : #endif</a>
+<a name="858"><span class="lineNum">     858 </span>            : </a>
+<a name="859"><span class="lineNum">     859 </span>            :         !%%%%%%%%%%%%%%%%%%%</a>
+<a name="860"><span class="lineNum">     860 </span>            : #elif   getJulianDay_ENABLED</a>
+<a name="861"><span class="lineNum">     861 </span>            :         !%%%%%%%%%%%%%%%%%%%</a>
+<a name="862"><span class="lineNum">     862 </span>            : </a>
+<a name="863"><span class="lineNum">     863 </span>            :         ! The case for no input (current) date and time.</a>
+<a name="864"><span class="lineNum">     864 </span>            : #if     getJulianDayC_ENABLED</a>
+<a name="865"><span class="lineNum">     865 </span>            :         integer(IKC) :: values(8)</a>
+<a name="866"><span class="lineNum">     866 </span><span class="lineCov">          3 :         call date_and_time(values = values)</span></a>
+<a name="867"><span class="lineNum">     867 </span><span class="lineCov">         27 :         CHECK_ASSERTION(__LINE__, all(values /= -huge(0_IKC)), SK_&quot;@getJulianDay(): The processor does not have a clock.&quot;) ! fpp</span></a>
+<a name="868"><span class="lineNum">     868 </span><span class="lineCov">          3 :         julianDay = getJulianDay(values(1), values(2), values(3), values(4), values(5), values(6), values(7), values(8))</span></a>
+<a name="869"><span class="lineNum">     869 </span>            :         ! The case for vector of date and time.</a>
+<a name="870"><span class="lineNum">     870 </span>            : #elif   getJulianDayV_ENABLED</a>
+<a name="871"><span class="lineNum">     871 </span>            :         integer(IK) :: lenValues</a>
+<a name="872"><span class="lineNum">     872 </span><span class="lineCov">     119934 :         lenValues = size(values, 1, IK)</span></a>
+<a name="873"><span class="lineNum">     873 </span><span class="lineCov">     119934 :         CHECK_ASSERTION(__LINE__, 0_IK &lt; lenValues .and. lenValues &lt; 9_IK, SK_&quot;@getJulianDay(): The condition `0 &lt; size(values) &lt; 9` must hold. size(values) = &quot;//getStr(size(values))) ! fpp</span></a>
+<a name="874"><span class="lineNum">     874 </span><span class="lineCov">     119934 :         if (lenValues == 8_IK) then</span></a>
+<a name="875"><span class="lineNum">     875 </span><span class="lineCov">     119865 :             julianDay = getJulianDay(values(1), values(2), values(3), values(4), values(5), values(6), values(7), values(8))</span></a>
+<a name="876"><span class="lineNum">     876 </span>            :         elseif (lenValues == 7_IK) then</a>
+<a name="877"><span class="lineNum">     877 </span><span class="lineCov">         14 :             julianDay = getJulianDay(values(1), values(2), values(3), values(4), values(5), values(6), values(7))</span></a>
+<a name="878"><span class="lineNum">     878 </span>            :         elseif (lenValues == 6_IK) then</a>
+<a name="879"><span class="lineNum">     879 </span><span class="lineCov">         14 :             julianDay = getJulianDay(values(1), values(2), values(3), values(4), values(5), values(6))</span></a>
+<a name="880"><span class="lineNum">     880 </span>            :         elseif (lenValues == 5_IK) then</a>
+<a name="881"><span class="lineNum">     881 </span><span class="lineCov">         14 :             julianDay = getJulianDay(values(1), values(2), values(3), values(4), values(5))</span></a>
+<a name="882"><span class="lineNum">     882 </span>            :         elseif (lenValues == 4_IK) then</a>
+<a name="883"><span class="lineNum">     883 </span><span class="lineCov">          9 :             julianDay = getJulianDay(values(1), values(2), values(3), values(4))</span></a>
+<a name="884"><span class="lineNum">     884 </span>            :         elseif (lenValues == 3_IK) then</a>
+<a name="885"><span class="lineNum">     885 </span><span class="lineCov">          9 :             julianDay = getJulianDay(values(1), values(2), values(3))</span></a>
+<a name="886"><span class="lineNum">     886 </span>            :         elseif (lenValues == 2_IK) then</a>
+<a name="887"><span class="lineNum">     887 </span><span class="lineCov">          5 :             julianDay = getJulianDay(values(1), values(2))</span></a>
+<a name="888"><span class="lineNum">     888 </span>            :         elseif (lenValues == 1_IK) then</a>
+<a name="889"><span class="lineNum">     889 </span><span class="lineCov">          4 :             julianDay = getJulianDay(values(1))</span></a>
+<a name="890"><span class="lineNum">     890 </span>            :         else</a>
+<a name="891"><span class="lineNum">     891 </span>            :             error stop MODULE_NAME//SK_&quot;@getJulianDay(): The length of the input argument `values` must be less than 9 and non-zero. size(values) = &quot;//getStr(lenValues) ! LCOV_EXCL_LINE</a>
+<a name="892"><span class="lineNum">     892 </span>            :         end if</a>
+<a name="893"><span class="lineNum">     893 </span>            :         ! The case for keyword date and time.</a>
+<a name="894"><span class="lineNum">     894 </span>            : #else</a>
+<a name="895"><span class="lineNum">     895 </span>            : #if     !getJulianDayYMDZHMSM_ENABLED</a>
+<a name="896"><span class="lineNum">     896 </span>            :         integer(IKC), parameter :: millisecond = 0_IK</a>
+<a name="897"><span class="lineNum">     897 </span>            : #if     !getJulianDayYMDZHMS_ENABLED</a>
+<a name="898"><span class="lineNum">     898 </span>            :         integer(IKC), parameter :: second = 0_IK</a>
+<a name="899"><span class="lineNum">     899 </span>            : #if     !getJulianDayYMDZHM_ENABLED</a>
+<a name="900"><span class="lineNum">     900 </span>            :         integer(IKC), parameter :: minute = 0_IK</a>
+<a name="901"><span class="lineNum">     901 </span>            : #if     !getJulianDayYMDZH_ENABLED</a>
+<a name="902"><span class="lineNum">     902 </span>            :         integer(IKC), parameter :: hour = 0_IK</a>
+<a name="903"><span class="lineNum">     903 </span>            : #if     !getJulianDayYMDZ_ENABLED</a>
+<a name="904"><span class="lineNum">     904 </span>            :         integer(IKC), parameter :: zone = 0_IK</a>
+<a name="905"><span class="lineNum">     905 </span>            : #if     !getJulianDayYMD_ENABLED</a>
+<a name="906"><span class="lineNum">     906 </span>            :         integer(IKC), parameter :: day = 1_IK</a>
+<a name="907"><span class="lineNum">     907 </span>            : #if     !getJulianDayYM_ENABLED</a>
+<a name="908"><span class="lineNum">     908 </span>            :         integer(IKC), parameter :: month = 1_IK</a>
+<a name="909"><span class="lineNum">     909 </span>            : #if     !getJulianDayY_ENABLED</a>
+<a name="910"><span class="lineNum">     910 </span>            : #error  &quot;Unrecognized interface.&quot;</a>
+<a name="911"><span class="lineNum">     911 </span>            : #endif</a>
+<a name="912"><span class="lineNum">     912 </span>            : #endif</a>
+<a name="913"><span class="lineNum">     913 </span>            : #endif</a>
+<a name="914"><span class="lineNum">     914 </span>            : #endif</a>
+<a name="915"><span class="lineNum">     915 </span>            : #endif</a>
+<a name="916"><span class="lineNum">     916 </span>            : #endif</a>
+<a name="917"><span class="lineNum">     917 </span>            : #endif</a>
+<a name="918"><span class="lineNum">     918 </span>            : #endif</a>
+<a name="919"><span class="lineNum">     919 </span>            :         real(RKC)   , parameter :: DAY_PER_HOUR = 1._RKC / 24._RKC</a>
+<a name="920"><span class="lineNum">     920 </span>            :         real(RKC)   , parameter :: DAY_PER_MIN = 1._RKC / 1440._RKC</a>
+<a name="921"><span class="lineNum">     921 </span>            :         real(RKC)   , parameter :: DAY_PER_SEC = 1._RKC / 86400._RKC</a>
+<a name="922"><span class="lineNum">     922 </span>            :         integer(IKC), parameter :: VECTOR(12) = [306_IKC, 337_IKC, 0_IKC, 31_IKC, 61_IKC, 92_IKC, 122_IKC, 153_IKC, 184_IKC, 214_IKC, 245_IKC, 275_IKC]</a>
+<a name="923"><span class="lineNum">     923 </span>            :         integer(IKC) :: yearCorrected, DateTimeUTC(8)</a>
+<a name="924"><span class="lineNum">     924 </span>            : </a>
+<a name="925"><span class="lineNum">     925 </span><span class="lineCov">    2029086 :         CHECK_ASSERTION(__LINE__, isValidDateTime(year, month, day, zone, hour, minute, second, millisecond), \</span></a>
+<a name="926"><span class="lineNum">     926 </span>            :         SK_&quot;@getJulianDay(): The specified Gregorian date and time must be valid and consistent. [year, month, day, zone, hour, minute, second, millisecond] = &quot;// \</a>
+<a name="927"><span class="lineNum">     927 </span>            :         getStr([year, month, day, zone, hour, minute, second, millisecond])) ! fpp</a>
+<a name="928"><span class="lineNum">     928 </span>            : </a>
+<a name="929"><span class="lineNum">     929 </span><span class="lineCov">     205120 :         if (zone /= 0_IK) then</span></a>
+<a name="930"><span class="lineNum">     930 </span><span class="lineCov">     119884 :             DateTimeUTC(1:8) = getDateTimeUTC(year, month, day, zone, hour, minute, second, millisecond)</span></a>
+<a name="931"><span class="lineNum">     931 </span>            :         else</a>
+<a name="932"><span class="lineNum">     932 </span><span class="lineCov">     105570 :             DateTimeUTC(1) = year</span></a>
+<a name="933"><span class="lineNum">     933 </span><span class="lineCov">     105570 :             DateTimeUTC(2) = month</span></a>
+<a name="934"><span class="lineNum">     934 </span><span class="lineCov">     105570 :             DateTimeUTC(3) = day</span></a>
+<a name="935"><span class="lineNum">     935 </span><span class="lineCov">     105570 :             DateTimeUTC(4) = zone</span></a>
+<a name="936"><span class="lineNum">     936 </span><span class="lineCov">     105570 :             DateTimeUTC(5) = hour</span></a>
+<a name="937"><span class="lineNum">     937 </span><span class="lineCov">     105570 :             DateTimeUTC(6) = minute</span></a>
+<a name="938"><span class="lineNum">     938 </span><span class="lineCov">     105570 :             DateTimeUTC(7) = second</span></a>
+<a name="939"><span class="lineNum">     939 </span><span class="lineCov">      85236 :             DateTimeUTC(8) = millisecond</span></a>
+<a name="940"><span class="lineNum">     940 </span>            :         end if</a>
+<a name="941"><span class="lineNum">     941 </span>            : </a>
+<a name="942"><span class="lineNum">     942 </span><span class="lineCov">     225445 :         if (DateTimeUTC(2) == 1_IKC .or. DateTimeUTC(2) == 2_IKC) then</span></a>
+<a name="943"><span class="lineNum">     943 </span><span class="lineCov">      14278 :             yearCorrected = DateTimeUTC(1) - 1_IKC</span></a>
+<a name="944"><span class="lineNum">     944 </span>            :         else</a>
+<a name="945"><span class="lineNum">     945 </span><span class="lineCov">     192637 :             yearCorrected = DateTimeUTC(1)</span></a>
+<a name="946"><span class="lineNum">     946 </span>            :         end if</a>
+<a name="947"><span class="lineNum">     947 </span>            :         julianDay   = 1721118.5_RKC &amp; ! LCOV_EXCL_LINE</a>
+<a name="948"><span class="lineNum">     948 </span>            :                     + real(DateTimeUTC(3), RKC) &amp; ! LCOV_EXCL_LINE</a>
+<a name="949"><span class="lineNum">     949 </span>            :                     + real(VECTOR(DateTimeUTC(2)), RKC) &amp; ! LCOV_EXCL_LINE</a>
+<a name="950"><span class="lineNum">     950 </span>            :                     + 365._RKC * real(yearCorrected, RKC) &amp; ! LCOV_EXCL_LINE</a>
+<a name="951"><span class="lineNum">     951 </span>            :                     + real(floor(yearCorrected * 0.25_RKC, IKC) - floor(yearCorrected * 0.01_RKC, IKC) + floor(yearCorrected * 0.0025_RKC, IKC), RKC) &amp; ! LCOV_EXCL_LINE</a>
+<a name="952"><span class="lineNum">     952 </span><span class="lineCov">     225454 :                     + DateTimeUTC(5) * DAY_PER_HOUR + DateTimeUTC(6) * DAY_PER_MIN + (real(DateTimeUTC(7),RKC) + 0.001_RKC * DateTimeUTC(8)) * DAY_PER_SEC</span></a>
+<a name="953"><span class="lineNum">     953 </span>            : #endif</a>
+<a name="954"><span class="lineNum">     954 </span>            : </a>
+<a name="955"><span class="lineNum">     955 </span>            :         !%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="956"><span class="lineNum">     956 </span>            : #else</a>
+<a name="957"><span class="lineNum">     957 </span>            : #error  &quot;Unrecognized interface.&quot;</a>
+<a name="958"><span class="lineNum">     958 </span>            : #endif</a>
+<a name="959"><span class="lineNum">     959 </span>            :         !%%%%%%%%%%%%%%%%%%%%%%</a>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+<tr><td class="versionInfo"><a href="https://www.cdslab.org/paramonte"><b>ParaMonte: Parallel Monte Carlo and Machine Learning Library</b></a>&nbsp;<br><a href="https://www.cdslab.org" target="_blank"><b>The Computational Data Science Lab</b></a><br>&copy; Copyright 2012 - 2024</td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

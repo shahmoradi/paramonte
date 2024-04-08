@@ -19,7 +19,7 @@
 # automatically loaded into markdown files upon building the website.
 
 CURRENT_DIR=$(pwd)
-doc_dir="$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)"
+doc_dir="$(cd "$(dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)"
 caller_name="generic include"; source ../../../../auxil/install.init.sh
 if ! [ -f "${paramonte_dir}/install.sh" ]; then
     echo >&2 "${pmfatal} The ParaMonte root directory is compromised: ${paramonte_dir}"
@@ -69,6 +69,14 @@ done
 ####
 
 fname="shields.html"
+cd "${paramonte_auxil_dir}"
+python getShield.py || python3 getShield.py || {
+    echo >&2 "${pmwarn} Failed to execute the Python script: ${paramonte_auxil_dir}/getShield.py"
+    echo >&2 "${pmwarn} Python3 executable path: $(which python3)"
+    echo >&2 "${pmwarn} Python executable path: $(which python)"
+    echo >&2 "${pmwarn} skipping..."
+}
+cd "${doc_dir}"
 echo >&2 "${pmnote} Copying ${fname} file..."
 origin="${paramonte_auxil_dir}/${fname}"
 destin="${doc_include_paramonte_auxil_dir}/${fname}"

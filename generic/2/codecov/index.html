@@ -459,21 +459,7 @@
                         
                                 
                                     
-                                        <li><a title="kernel :: serial" href="https://cdslaborg.github.io/paramonte-codecov/kernel/serial/" target="_blank" rel="noopener">kernel :: serial</a></li>
-                                    
-                                    
-                                
-                        
-                                
-                                    
-                                        <li><a title="kernel :: parallel :: MPI" href="https://cdslaborg.github.io/paramonte-codecov/kernel/mpi/" target="_blank" rel="noopener">kernel :: parallel :: MPI</a></li>
-                                    
-                                    
-                                
-                        
-                                
-                                    
-                                        <li><a title="kernel :: parallel :: Coarray" href="https://cdslaborg.github.io/paramonte-codecov/kernel/caf/" target="_blank" rel="noopener">kernel :: parallel :: Coarray</a></li>
+                                        <li><a title="code coverage :: Fortran" href="https://www.cdslab.org/paramonte/generic/2/codecov/fortran/">code coverage :: Fortran</a></li>
                                     
                                     
                                 
@@ -689,47 +675,19 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
 <h2 id="the-paramonte-code-coverage-report">The ParaMonte code coverage report</h2>
 
-<p>The code coverage reports of the ParaMonte library can be generated for a wide variety of input build configurations. For example, corresponding to each programming language (<code>C</code>, <code>C++</code>, <code>Fortran</code>, <code>MATLAB</code>, <code>Python</code>, <code>R</code>, …), a separate code coverage report for the routines can be generated. Similarly, different library builds (<code>debug</code>, <code>testing</code>, <code>release</code>), types (<code>static</code>, <code>shared</code>), and memory allocation (stack or heap) can lead to different code coverage reports.</p>
+<p>The code coverage reports of the ParaMonte library can be generated for a wide variety of input build configurations and programming languages. 
+For example, corresponding to each programming language (<code>C</code>, <code>C++</code>, <code>Fortran</code>, <code>MATLAB</code>, <code>Python</code>, <code>R</code>, …), a separate code coverage report for the routines can be generated. 
+Similarly, different library builds (<code>debug</code>, <code>testing</code>, <code>release</code>), types (<code>static</code>, <code>shared</code>), and memory allocation (stack or heap) can lead to different code coverage reports.</p>
 
-<p>Among all build configurations, however, the most critical specification that yields the largest differences in code coverage reports is the parallelism paradigm (<code>none</code>, <code>mpi</code>, <code>cafsingle</code>, <code>cafshared</code>, <code>cafdist</code>). The the three Coarray (CAF) parallelism subtypes yield the same code coverage reports. However, the code coverage reports for the serial, MPI, and Coarray modes are remarkably different since each parallelism type activates a different set of codes in the ParaMonte routines.<br />
-As such, the code coverage reports are only generated separately for the three library parallelism builds. The corresponding latest code coverage reports are permanently available at,</p>
+<p>Among all build configurations, however, the most critical specification that yields the largest differences in code coverage reports is the parallelism paradigm (<code>none</code>, <code>mpi</code>, <code>cafsingle</code>, <code>cafshared</code>, <code>cafdist</code>). 
+The the three Coarray (CAF) parallelism subtypes yield the same code coverage reports. 
+However, the code coverage reports for the serial, MPI, and Coarray modes are remarkably different since each parallelism type activates a different set of codes in the ParaMonte routines.<br />
+As such, the code coverage reports are only generated separately for the three library parallelism builds. 
+For more information on the language-specific code coverage reports see,</p>
 
-<h2 id="the-paramonte-fortran-code-coverage-report-generation">The ParaMonte Fortran code coverage report generation</h2>
-
-<ol>
-  <li>As of March 2024, roughly $2.5$ unit tests verify the functionalities of the ParaMonte Fortran library alone for each parallelism build.</li>
-  <li>The code coverage report is currently activated only for the ParaMonte Fortran library under the Linux / macOS environment.</li>
-  <li>The most recent code coverage reports generated for the ParaMonte Fortran library are the following:
-    <ul>
-      <li><a href="https://cdslaborg.github.io/paramonte-codecov//kernel/serial" target="_blank">ParaMonte Fortran serial</a></li>
-      <li><a href="https://cdslaborg.github.io/paramonte-codecov//kernel/mpi" target="_blank">ParaMonte Fortran parallel MPI</a></li>
-      <li><a href="https://cdslaborg.github.io/paramonte-codecov//kernel/caf" target="_blank">ParaMonte Fortran parallel Coarray</a></li>
-    </ul>
-  </li>
-  <li>Two open-source software <code>gcov</code> and <code>lcov</code> are required for code instrumentation and HTML generation.
-    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The code coverage report generation currently requires a <a href="../overview/paramonte-fortran-release-notes/" target="_blank">ParaMonte-compatible</a> GNU Fortran compiler.</div>
-  </li>
-  <li>The <code>install.sh</code> build script in the repository’s root directory automates the code coverage report.</li>
-  <li>Specifically, the GNU GCOV instrumentation files and the subsequent LCOV code coverage analysis reports can be readily generated via the following install script command on a Linux or macOS machine or a <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux" target="_blank">Microsoft Windows Subsystem for Linux</a>,
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh <span class="nt">--codecov</span> all
-</code></pre></div>    </div>
-  </li>
-  <li>By default, the above command will build the <strong>serial</strong> library for the Fortran programming language.</li>
-  <li>To generate code coverage for the MPI parallelism, simply add the following install script flag,
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh <span class="nt">--codecov</span> <span class="nt">--par</span> mpi
-</code></pre></div>    </div>
-    <p>or for the serial and all possible parallelism modes,</p>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh <span class="nt">--codecov</span> <span class="nt">--par</span> <span class="s2">"none;mpi;omp;cafshared"</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>For more information on possible installation configuration flags and their implications see <a href="../installation/install.config.md" target="_blank">installation configuration page</a>.</p>
-  </li>
-  <li>To get help about the installation process and configuration, one can always try,
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh <span class="nt">--help</span>
-</code></pre></div>    </div>
-  </li>
-</ol>
+<ul>
+  <li><a href="./fortran/" target="_blank">The ParaMonte Fortran code coverage report</a></li>
+</ul>
 
 <p><br /></p>
 
@@ -834,7 +792,7 @@ As such, the code coverage reports are only generated separately for the three l
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on March 23, 2024<br/>
+            Last updated on April 8, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/2/images/logo.png" }}" alt="cdslab.org" /></a>

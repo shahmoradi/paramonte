@@ -1055,7 +1055,7 @@ var hierarchy =
       [ "pm_timer::timerOMP_type", "structpm__timer_1_1timerOMP__type.html", null ],
       [ "pm_timer::timerSYS_type", "structpm__timer_1_1timerSYS__type.html", null ]
     ] ],
-    [ "pm_dateTime::TimeZone_type", "structpm__dateTime_1_1TimeZone__type.html", null ],
+    [ "pm_dateTime::timeZone_type", "structpm__dateTime_1_1timeZone__type.html", null ],
     [ "pm_bench::timing_type", "structpm__bench_1_1timing__type.html", null ],
     [ "pm_matrixTrans::trans_type", "structpm__matrixTrans_1_1trans__type.html", [
       [ "pm_matrixTrans::transHermSkew_type", "structpm__matrixTrans_1_1transHermSkew__type.html", null ],

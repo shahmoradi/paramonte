@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - ParaMonte 2.0.0 :: Serial Fortran - Code Coverage Report - main/pm_mathNumSys@routines.inc.F90</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title"><a href="https://www.cdslab.org/paramonte/fortran/2" target="_blank"><img alt="https://www.cdslab.org/paramonte/fortran/2" src="https://raw.githubusercontent.com/cdslaborg/paramonte/16e8fc2abd6a4263c9f6ee25f7a9f45435443688/img/banner.png"/></a></td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">main</a> - pm_mathNumSys@routines.inc.F90<span style="font-size: 80%;"> (source / <a href="pm_mathNumSys@routines.inc.F90.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">ParaMonte 2.0.0 :: Serial Fortran - Code Coverage Report</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">27</td>
+            <td class="headerCovTableEntry">29</td>
+            <td class="headerCovTableEntryHi">93.1 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2024-04-08 03:18:57</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntryHi">-</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+</td>
+            <td></td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</a>
+<a name="2"><span class="lineNum">       2 </span>            : !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</a>
+<a name="3"><span class="lineNum">       3 </span>            : !!!!                                                                                                                            !!!!</a>
+<a name="4"><span class="lineNum">       4 </span>            : !!!!    ParaMonte: Parallel Monte Carlo and Machine Learning Library.                                                           !!!!</a>
+<a name="5"><span class="lineNum">       5 </span>            : !!!!                                                                                                                            !!!!</a>
+<a name="6"><span class="lineNum">       6 </span>            : !!!!    Copyright (C) 2012-present, The Computational Data Science Lab                                                          !!!!</a>
+<a name="7"><span class="lineNum">       7 </span>            : !!!!                                                                                                                            !!!!</a>
+<a name="8"><span class="lineNum">       8 </span>            : !!!!    This file is part of the ParaMonte library.                                                                             !!!!</a>
+<a name="9"><span class="lineNum">       9 </span>            : !!!!                                                                                                                            !!!!</a>
+<a name="10"><span class="lineNum">      10 </span>            : !!!!    LICENSE                                                                                                                 !!!!</a>
+<a name="11"><span class="lineNum">      11 </span>            : !!!!                                                                                                                            !!!!</a>
+<a name="12"><span class="lineNum">      12 </span>            : !!!!       https://github.com/cdslaborg/paramonte/blob/main/LICENSE.md                                                          !!!!</a>
+<a name="13"><span class="lineNum">      13 </span>            : !!!!                                                                                                                            !!!!</a>
+<a name="14"><span class="lineNum">      14 </span>            : !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</a>
+<a name="15"><span class="lineNum">      15 </span>            : !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</a>
+<a name="16"><span class="lineNum">      16 </span>            : </a>
+<a name="17"><span class="lineNum">      17 </span>            : !&gt;  \brief</a>
+<a name="18"><span class="lineNum">      18 </span>            : !&gt;  This include file contains procedure implementation of [pm_mathNumSys](@ref pm_mathNumSys).</a>
+<a name="19"><span class="lineNum">      19 </span>            : !&gt;</a>
+<a name="20"><span class="lineNum">      20 </span>            : !&gt;  \finmain</a>
+<a name="21"><span class="lineNum">      21 </span>            : !&gt;</a>
+<a name="22"><span class="lineNum">      22 </span>            : !&gt;  \author</a>
+<a name="23"><span class="lineNum">      23 </span>            : !&gt;  \AmirShahmoradi, Sunday 3:33 AM, September 19, 2021, Dallas, TX</a>
+<a name="24"><span class="lineNum">      24 </span>            : </a>
+<a name="25"><span class="lineNum">      25 </span>            : !%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</a>
+<a name="26"><span class="lineNum">      26 </span>            : </a>
+<a name="27"><span class="lineNum">      27 </span>            : #if     getDecimal_ENABLED || getNumeral_ENABLED</a>
+<a name="28"><span class="lineNum">      28 </span>            :         character(*,SKC), parameter :: NUM_ALPHA = SKC_&quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</a>
+<a name="29"><span class="lineNum">      29 </span>            : #endif</a>
+<a name="30"><span class="lineNum">      30 </span>            : </a>
+<a name="31"><span class="lineNum">      31 </span>            :         !%%%%%%%%%%%%%%%%%</a>
+<a name="32"><span class="lineNum">      32 </span>            : #if     getDecimal_ENABLED</a>
+<a name="33"><span class="lineNum">      33 </span>            :         !%%%%%%%%%%%%%%%%%</a>
+<a name="34"><span class="lineNum">      34 </span>            : </a>
+<a name="35"><span class="lineNum">      35 </span>            :         integer(IKC) :: i, numlen</a>
+<a name="36"><span class="lineNum">      36 </span><span class="lineCov">         42 :         numlen = len(numeral, IKC)</span></a>
+<a name="37"><span class="lineNum">      37 </span><span class="lineCov">         42 :         CHECK_ASSERTION(__LINE__, base &gt; 0_IKC, SK_&quot;@getDecimal(): The input `base` must be positive integer. base = &quot;//getStr(base))</span></a>
+<a name="38"><span class="lineNum">      38 </span><span class="lineCov">         42 :         CHECK_ASSERTION(__LINE__, numlen &gt; 0_IKC, SK_&quot;@getDecimal(): The input `numeral` must be non-empty. len(numeral) = &quot;//getStr(numlen))</span></a>
+<a name="39"><span class="lineNum">      39 </span>            :         !   \todo</a>
+<a name="40"><span class="lineNum">      40 </span>            :         !   \pvhigh</a>
+<a name="41"><span class="lineNum">      41 </span>            :         !   \warning</a>
+<a name="42"><span class="lineNum">      42 </span>            :         !   The presence of `getStr()` in the followng statement `getStr(numeral), getStr(NUM_ALPHA(1:base))` is because of GNU gfortran bug as of version 11,</a>
+<a name="43"><span class="lineNum">      43 </span>            :         !   which mistakenly converts the kind of a slices string to the default kind. It MUST be removed as soon as the gfortran bug is resolved.</a>
+<a name="44"><span class="lineNum">      44 </span><span class="lineCov">         42 :         CHECK_ASSERTION(__LINE__, verify(getStr(numeral), getStr(NUM_ALPHA(1:base)), kind = IKC) == 0_IKC, \</span></a>
+<a name="45"><span class="lineNum">      45 </span>            :         SK_&quot;@getDecimal(): The input `numeral` must be only ASCII digits and the first `base` upper-case English alphabets. base, numeral, NUM_ALPHA(1:base) = &quot; \</a>
+<a name="46"><span class="lineNum">      46 </span>            :         //getStr(base)//SK_&quot;, &quot;//getStr(numeral)//SK_&quot;, &quot;//getStr(NUM_ALPHA(1:base)))</a>
+<a name="47"><span class="lineNum">      47 </span><span class="lineNoCov">          0 :         decimal = 0_IKC</span></a>
+<a name="48"><span class="lineNum">      48 </span><span class="lineCov">        222 :         do i = 1_IKC, numlen</span></a>
+<a name="49"><span class="lineNum">      49 </span>            :             !   \todo</a>
+<a name="50"><span class="lineNum">      50 </span>            :             !   \pvhigh</a>
+<a name="51"><span class="lineNum">      51 </span>            :             !   \warning</a>
+<a name="52"><span class="lineNum">      52 </span>            :             !   The following fence bypasses gfortran bug as of Version 11. It MUST be removed as soon as GFortran bug is resolved.</a>
+<a name="53"><span class="lineNum">      53 </span>            : #if         __GFORTRAN__</a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">         42 :             block</span></a>
+<a name="55"><span class="lineNum">      55 </span>            :                 character(1,SKC) :: numeral_char</a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">        180 :                 numeral_char = numeral(i:i)</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">        180 :             decimal = decimal + (index(NUM_ALPHA, numeral_char, kind = IKC) - 1_IKC) * base**(numlen - i)</span></a>
+<a name="58"><span class="lineNum">      58 </span>            :             end block</a>
+<a name="59"><span class="lineNum">      59 </span>            : #else</a>
+<a name="60"><span class="lineNum">      60 </span>            :             decimal = decimal + (index(NUM_ALPHA, numeral(i:i), kind = IKC) - 1_IKC) * base**(numlen - i)</a>
+<a name="61"><span class="lineNum">      61 </span>            : #endif</a>
+<a name="62"><span class="lineNum">      62 </span>            :         end do</a>
+<a name="63"><span class="lineNum">      63 </span>            : </a>
+<a name="64"><span class="lineNum">      64 </span>            :         !%%%%%%%%%%%%%%%%%</a>
+<a name="65"><span class="lineNum">      65 </span>            : #elif   getNumeral_ENABLED</a>
+<a name="66"><span class="lineNum">      66 </span>            :         !%%%%%%%%%%%%%%%%%</a>
+<a name="67"><span class="lineNum">      67 </span>            : </a>
+<a name="68"><span class="lineNum">      68 </span>            :         !   \todo</a>
+<a name="69"><span class="lineNum">      69 </span>            :         !   \warning</a>
+<a name="70"><span class="lineNum">      70 </span>            :         !   `RK64` is good for handling integers as big as `huge(1_int1024)` that has 306 digits:</a>
+<a name="71"><span class="lineNum">      71 </span>            :         !   7022238808055921514567598401519627865695222573993385049743362545223932648652381372371</a>
+<a name="72"><span class="lineNum">      72 </span>            :         !   4248954065443758250044484324763030335464753443131493161268527593544579835065583369088</a>
+<a name="73"><span class="lineNum">      73 </span>            :         !   0801860555545317367555154113605281582053784524026102900245630757473088050106395169337</a>
+<a name="74"><span class="lineNum">      74 </span>            :         !   932361665227499793929447186391815763110662594625536</a>
+<a name="75"><span class="lineNum">      75 </span>            :         !   As of 2022, the largest integer kind is made available by GNU Fortran compiler as `int128` whose huge has only 39 digits: 170141183460469231731687303715884105728</a>
+<a name="76"><span class="lineNum">      76 </span>            :         integer, parameter :: RK64 = selected_real_kind(15)</a>
+<a name="77"><span class="lineNum">      77 </span>            :         integer(IKC) :: remainderPlusOne, lamiced</a>
+<a name="78"><span class="lineNum">      78 </span>            :         integer(IK) :: i, numlen</a>
+<a name="79"><span class="lineNum">      79 </span><span class="lineCov">          8 :         CHECK_ASSERTION(__LINE__, range(0_IKC) &lt; precision(0._RK64), \</span></a>
+<a name="80"><span class="lineNum">      80 </span>            :         SK_&quot;@getNumeral(): Hello, the distant future user. The condition `range(0_IKC) &lt; precision(0._RK64)` must hold. This is an internal library limitation. Please report this to the developers if they are still alive.&quot;)</a>
+<a name="81"><span class="lineNum">      81 </span><span class="lineCov">          8 :         CHECK_ASSERTION(__LINE__, base &gt; 0_IKC, SK_&quot;@getNumeral(): The input `base` must be a positive number. base = &quot;//getStr(base))</span></a>
+<a name="82"><span class="lineNum">      82 </span><span class="lineCov">          8 :         CHECK_ASSERTION(__LINE__, decimal &gt; 0_IKC, SK_&quot;@getNumeral(): The input `decimal` must be a positive number. decimal = &quot;//getStr(decimal))</span></a>
+<a name="83"><span class="lineNum">      83 </span><span class="lineCov">          8 :         numlen = int(log10(real(huge(1_IKC),RK64)) / log10(real(base,RK64)), IK) + 1_IK</span></a>
+<a name="84"><span class="lineNum">      84 </span><span class="lineCov">          8 :         allocate(character(numlen,SKC) :: numeral)</span></a>
+<a name="85"><span class="lineNum">      85 </span><span class="lineNoCov">          0 :         lamiced = decimal</span></a>
+<a name="86"><span class="lineNum">      86 </span><span class="lineCov">         56 :         do i = numlen, 1_IK, -1_IK</span></a>
+<a name="87"><span class="lineNum">      87 </span><span class="lineCov">         56 :             if(lamiced &lt; base) then</span></a>
+<a name="88"><span class="lineNum">      88 </span><span class="lineCov">          8 :                 numeral(i:i) = NUM_ALPHA(lamiced + 1_IK : lamiced + 1_IK)</span></a>
+<a name="89"><span class="lineNum">      89 </span><span class="lineCov">          8 :                 exit</span></a>
+<a name="90"><span class="lineNum">      90 </span>            :             end if</a>
+<a name="91"><span class="lineNum">      91 </span><span class="lineCov">         48 :             remainderPlusOne = mod(lamiced, base) + 1_IKC</span></a>
+<a name="92"><span class="lineNum">      92 </span><span class="lineCov">         48 :             numeral(i:i) = NUM_ALPHA(remainderPlusOne : remainderPlusOne)</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">         48 :             lamiced = lamiced / base</span></a>
+<a name="94"><span class="lineNum">      94 </span>            :         end do</a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineCov">          8 :         CHECK_ASSERTION(__LINE__, i &gt; 0_IK, SK_&quot;@getNumeral(): Internal library error occured: i &lt; 1. i = &quot;//getStr(i))</span></a>
+<a name="96"><span class="lineNum">      96 </span><span class="lineCov">          8 :         numeral = numeral(i:numlen)</span></a>
+<a name="97"><span class="lineNum">      97 </span>            : </a>
+<a name="98"><span class="lineNum">      98 </span>            :         !%%%%%%%%%%%%%%%%%%%%</a>
+<a name="99"><span class="lineNum">      99 </span>            : #elif   getCountDigit_ENABLED</a>
+<a name="100"><span class="lineNum">     100 </span>            :         !%%%%%%%%%%%%%%%%%%%%</a>
+<a name="101"><span class="lineNum">     101 </span>            : </a>
+<a name="102"><span class="lineNum">     102 </span>            : #if     1</a>
+<a name="103"><span class="lineNum">     103 </span>            :         integer(IKC) :: lav</a>
+<a name="104"><span class="lineNum">     104 </span><span class="lineCov">        181 :         lav = val / 10_IKC</span></a>
+<a name="105"><span class="lineNum">     105 </span>            :         count = 1_IK</a>
+<a name="106"><span class="lineNum">     106 </span><span class="lineCov">        574 :         do</span></a>
+<a name="107"><span class="lineNum">     107 </span><span class="lineCov">        755 :             if (lav == 0_IKC) exit</span></a>
+<a name="108"><span class="lineNum">     108 </span><span class="lineCov">        574 :             count = count + 1_IK</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">        574 :             lav = lav / 10_IKC</span></a>
+<a name="110"><span class="lineNum">     110 </span>            :         end do</a>
+<a name="111"><span class="lineNum">     111 </span>            : #else</a>
+<a name="112"><span class="lineNum">     112 </span>            :         !   \todo</a>
+<a name="113"><span class="lineNum">     113 </span>            :         !   \warning</a>
+<a name="114"><span class="lineNum">     114 </span>            :         !   `RK64` is good for handling integers as big as `huge(1_int1024)` that has 306 digits:</a>
+<a name="115"><span class="lineNum">     115 </span>            :         !   7022238808055921514567598401519627865695222573993385049743362545223932648652381372371</a>
+<a name="116"><span class="lineNum">     116 </span>            :         !   4248954065443758250044484324763030335464753443131493161268527593544579835065583369088</a>
+<a name="117"><span class="lineNum">     117 </span>            :         !   0801860555545317367555154113605281582053784524026102900245630757473088050106395169337</a>
+<a name="118"><span class="lineNum">     118 </span>            :         !   932361665227499793929447186391815763110662594625536</a>
+<a name="119"><span class="lineNum">     119 </span>            :         !   As of 2022, the largest integer kind is made available by GNU Fortran compiler as `int128` whose huge has only 39 digits: 170141183460469231731687303715884105728</a>
+<a name="120"><span class="lineNum">     120 </span>            :         !   \todo</a>
+<a name="121"><span class="lineNum">     121 </span>            :         !   The performance of this algorithm can be improved by converting the integer values to appropriate reals with lower precision than RK64.</a>
+<a name="122"><span class="lineNum">     122 </span>            :         integer, parameter :: RK64 = selected_real_kind(15)</a>
+<a name="123"><span class="lineNum">     123 </span>            :         count = int(log10(real(abs(lav), RK64))) + 1_IK</a>
+<a name="124"><span class="lineNum">     124 </span>            : #endif</a>
+<a name="125"><span class="lineNum">     125 </span>            : </a>
+<a name="126"><span class="lineNum">     126 </span>            :         !%%%%%%%%%%%%%%%%%</a>
+<a name="127"><span class="lineNum">     127 </span>            : #else</a>
+<a name="128"><span class="lineNum">     128 </span>            : #error  &quot;Unrecognized interface.&quot;</a>
+<a name="129"><span class="lineNum">     129 </span>            : #endif</a>
+<a name="130"><span class="lineNum">     130 </span>            :         !%%%%%%%%%%%%%%%%%</a>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+<tr><td class="versionInfo"><a href="https://www.cdslab.org/paramonte"><b>ParaMonte: Parallel Monte Carlo and Machine Learning Library</b></a>&nbsp;<br><a href="https://www.cdslab.org" target="_blank"><b>The Computational Data Science Lab</b></a><br>&copy; Copyright 2012 - 2024</td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
