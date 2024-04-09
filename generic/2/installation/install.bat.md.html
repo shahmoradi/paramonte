@@ -677,6 +677,21 @@ the script runs before the sidebar code runs and the class never gets inserted.
   <p>See <a href="./install.md">install.md</a> for general installation guidelines.</p>
 </blockquote>
 
+<blockquote>
+  <p>On Windows platforms, the length of the default library build path 
+is near the maximum value (<code>250</code> characters) allowed by CMake software.
+This can lead to build failures, particularly for library examples and benchmarks.
+There are two solutions to this limitation on the Windows OS,</p>
+  <ol>
+    <li>Place the ParaMonte library repository near the root Drive on the system,
+for example, in the <code>C:\</code>, <code>D:\</code> or any other system drive available.
+Placing the library in the drive root directory will shorten the length 
+of the full build path and will likely resolve the build failures.</li>
+    <li>Specify a custom short path for the build directory via the 
+installation configuration flag <a href="./install.config.md#bdir">–bdir</a>.</li>
+  </ol>
+</blockquote>
+
 <h2 id="building-via-installbat-script-in-windows-cmd-terminal">Building via <code>install.bat</code> script in Windows CMD terminal</h2>
 
 <ul>
