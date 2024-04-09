@@ -1092,19 +1092,56 @@ Relative paths currently result in library build failure.</p>
   <li><code>${bld}</code>    is replaced with the specified value for the <code>build</code> configuration flag (<code>debug</code>, <code>release</code>, …),</li>
   <li><code>${lib}</code>    is replaced with the specified value for the <code>lib</code> configuration flag (<code>static</code>, <code>shared</code>, …),</li>
   <li><code>${mem}</code>    is replaced with the specified value for the <code>mem</code> configuration flag (<code>stack</code>, <code>heap</code>, …),</li>
-  <li><code>${par}</code>    is replaced with a value determined from the <code>mem</code> configuration flag:<br />
-<br />
-Value               | Scenario
-——————–|———
-<code>cafsingle</code>         | If the library is built for Coarray single-image parallelism.
-<code>cafshared</code>         | If the library is built for Coarray shared-memory parallelism
-<code>cafdist</code>           | If the library is built for Coarray distributed-memory parallelism.
-<code>mpi</code>               | If the library is built for MPI parallelism using an unknown MPI distribution.
-<code>impi</code>              | If the library is built for MPI parallelism using an Intel MPI distribution.
-<code>mpich</code>             | If the library is built for MPI parallelism using an MPICH MPI distribution.
-<code>openmpi</code>           | If the library is built for MPI parallelism using an OpenMPI distribution.
-<code>openmp</code>            | If the library is built for OpenMP parallelism.
-<code>serial</code>            | If the library is built for serial applications.</li>
+  <li>
+    <p><code>${par}</code>    is replaced with a value determined from the <code>mem</code> configuration flag:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Value</th>
+          <th>Scenario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>cafsingle</code></td>
+          <td>If the library is built for Coarray single-image parallelism.</td>
+        </tr>
+        <tr>
+          <td><code>cafshared</code></td>
+          <td>If the library is built for Coarray shared-memory parallelism.</td>
+        </tr>
+        <tr>
+          <td><code>cafdist</code></td>
+          <td>If the library is built for Coarray distributed-memory parallelism.</td>
+        </tr>
+        <tr>
+          <td><code>mpi</code></td>
+          <td>If the library is built for MPI parallelism using an unknown MPI distribution.</td>
+        </tr>
+        <tr>
+          <td><code>impi</code></td>
+          <td>If the library is built for MPI parallelism using an Intel MPI distribution.</td>
+        </tr>
+        <tr>
+          <td><code>mpich</code></td>
+          <td>If the library is built for MPI parallelism using an MPICH MPI distribution.</td>
+        </tr>
+        <tr>
+          <td><code>openmpi</code></td>
+          <td>If the library is built for MPI parallelism using an OpenMPI distribution.</td>
+        </tr>
+        <tr>
+          <td><code>openmp</code></td>
+          <td>If the library is built for OpenMP parallelism.</td>
+        </tr>
+        <tr>
+          <td><code>serial</code></td>
+          <td>If the library is built for serial applications.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
 </ul>
 
 <h3 id="bench"><code>bench</code></h3>
