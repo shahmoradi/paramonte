@@ -168,7 +168,7 @@ containing the string whose end must be checked for equivalence with the input <
 <a class="anchor" id="interface-isEndedWith"></a><b>Possible calling interfaces</b> <a href="#interface-isEndedWith">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__str.html">pm_str</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__str_1_1isEndedWith.html">isEndedWith</a></div>
 <div class="line"> </div>
 <div class="line">endedWith<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__str_1_1isEndedWith.html">isEndedWith</a>(str, suffix)</div>
-<div class="ttc" id="ainterfacepm__str_1_1isEndedWith_html"><div class="ttname"><a href="interfacepm__str_1_1isEndedWith.html">pm_str::isEndedWith</a></div><div class="ttdoc">Generate and return the location of the first occurrence of the minimum of the input string(s).</div><div class="ttdef"><b>Definition:</b> <a href="pm__str_8F90_source.html#l00273">pm_str.F90:273</a></div></div>
+<div class="ttc" id="ainterfacepm__str_1_1isEndedWith_html"><div class="ttname"><a href="interfacepm__str_1_1isEndedWith.html">pm_str::isEndedWith</a></div><div class="ttdoc">Generate and return the location of the first occurrence of the minimum of the input string(s).</div><div class="ttdef"><b>Definition:</b> <a href="pm__str_8F90_source.html#l00291">pm_str.F90:291</a></div></div>
 <div class="ttc" id="anamespacepm__str_html"><div class="ttname"><a href="namespacepm__str.html">pm_str</a></div><div class="ttdoc">This module contains classes and procedures for various string manipulations and inquiries.</div><div class="ttdef"><b>Definition:</b> <a href="pm__str_8F90_source.html#l00049">pm_str.F90:49</a></div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>This generic interface always yields <code>.true.</code> for an input empty <code>suffix</code>.<br  />
@@ -301,9 +301,20 @@ The procedures under discussion are <code>pure</code>.</dd></dl>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 </div><!-- fragment --></dd></dl>
 <dl class="test"><dt><b><a class="el" href="test.html#_test000848">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__str.html">test_pm_str</a></dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000069">Bug:</a></b></dt><dd><br  />
+<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
+<b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021.11.1 Build 20231117_000000 <br  />
+<b>Description:</b> The following example fails on Windows with Intel Classic Fortran Compiler <code>ifort</code> version 2021.11.1 Build 20231117_000000. </dd></dl>
+<div class="fragment"><div class="line"><span class="fortran_statement">call</span> <a class="code hl_variable" href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">disp</a><span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__io_1_1show.html">show</a>(<span class="fortran_string">&quot;isEndedWith(css_type(&#39;ParaMonte&#39;), [css_type(&#39;ParaMonte&#39;), css_type(&#39;Monte  &#39;), css_type(&#39;Monte  &#39;, trimmed = .true._LK), css_type(&#39;monte&#39;)])&quot;</span>)</div>
+<div class="line"><span class="fortran_statement">call</span> <a class="code hl_variable" href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">disp</a><span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__io_1_1show.html">show</a>( <a class="code hl_interface" href="interfacepm__str_1_1isEndedWith.html">isEndedWith</a>(css_type(<span class="fortran_string">&#39;ParaMonte&#39;</span>), [css_type(<span class="fortran_string">&#39;ParaMonte&#39;</span>), css_type(<span class="fortran_string">&#39;Monte  &#39;</span>), css_type(<span class="fortran_string">&#39;Monte  &#39;</span>, trimmed<span class="fortran_operator_symbols"> = </span><span class="fortran_named_const">.true.</span>_LK), css_type(<span class="fortran_string">&#39;monte&#39;</span>)]) )</div>
+</div><!-- fragment --><p> with the following message: </p><div class="fragment"><div class="line">forrtl: severe (408): fort: (8): Attempt to fetch from allocatable variable VAL when it is not allocated.</div>
+</div><!-- fragment --><p> Attempts to reproduce this error in an isolated simple case were unsuccessful.<br  />
+ The code successfully copiles and runs on Linux platforms with both GNU Fortran Compiler <code>gfortran</code> and Intel Classic Fortran Compiler <code>ifort</code>. <br  />
+<b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the above example is commented out in the example script.<br  />
+</p>
 <p ><br  />
 <a class="anchor" id="finmain-isEndedWith"></a><b>Final Remarks</b> <a href="#finmain-isEndedWith">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_str.F90#L269 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_str.F90#L287 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -318,7 +329,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
 <dl class="authors"><dt><b><a class="el" href="authors.html#_authors001249">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__str_8F90_source.html#l00273">273</a> of file <a class="el" href="pm__str_8F90_source.html">pm_str.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__str_8F90_source.html#l00291">291</a> of file <a class="el" href="pm__str_8F90_source.html">pm_str.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
 <li>/home/amir/git/paramonte/src/fortran/main/<a class="el" href="pm__str_8F90_source.html">pm_str.F90</a></li>
 </ul>
@@ -328,7 +339,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__str.html">pm_str</a></li><li class="navelem"><a class="el" href="interfacepm__str_1_1isEndedWith.html">isEndedWith</a></li>
-        <li class="footer">Generated on Mon Apr 8 2024 03:21:34 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Wed Apr 10 2024 14:40:11 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
