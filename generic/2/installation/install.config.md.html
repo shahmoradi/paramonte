@@ -2542,6 +2542,50 @@ that is supported by the compiler but not fully implemented and not functional.
 As such, the type kind parameter corresponding to uniccode is dropped in the library build.</p>
 </blockquote>
 
+<blockquote>
+  <p><strong>WARNING</strong>
+If you specify any of the optional kind-type-parameter-selection command arguments,
+always ensure to minimally specify the default supported kind type parameters by the processor.
+For example, the Fortran standard requires support for at least two <code>real</code> kind type parameters.
+Additionally, the standard requires minimal support for at least two <code>integer</code> kind type parameters.
+Additionally, the standard requires minimal support for at least one <code>logical</code> kind type parameters.</p>
+</blockquote>
+
+<h3 id="ski"><code>ski</code></h3>
+
+<p>Specifies a list of <code>character</code> kind indices
+for which the ParaMonte library must be built.</p>
+
+<ul>
+  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--ski</span> <span class="s2">"character_kinds_indices"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage (with <code>cmake</code> binary executable)
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dski=<span class="s2">"character_kinds_indices"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>character_kinds_indices</code> is a semicolon-separated list of
+indices of the <code>character_kinds(:)</code> constant vector of <code>iso_fortran_env</code>
+intrinsic module of Fortran.</p>
+
+<p>For example, setting <code>character_kinds_indices</code> to <code>1;3;6</code> will
+build the library for the kinds in <code>character_kinds([1, 3, 6])</code>.</p>
+
+<blockquote>
+  <p>No more than fives indices can be simultaneously specified in every single build, because
+the ParaMonte library is currently configured for builds with up to fives kinds for each type.</p>
+</blockquote>
+
+<blockquote>
+  <p>The minimally-required <code>character</code> type kind parameter indices for the Intel and GNU compilers are <code>1</code>.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>character_kinds_indices</code>
+is all kind numbers fully supported by the compiler.</p>
+
 <h3 id="cki"><code>cki</code></h3>
 
 <p>Specifies a list of <code>complex</code> kind indices
@@ -2584,7 +2628,7 @@ This can lead to noticeable savings in library size and build time.</p>
 </blockquote>
 
 <blockquote>
-  <p>Beware some ParaMonte algorithms require compatible <code>complex</code> and <code>real</code> kind,
+  <p><strong>WARNING</strong> Beware some ParaMonte algorithms require compatible <code>complex</code> and <code>real</code> kind,
 necessitating the use of the same kind type parameters for both data types.</p>
 </blockquote>
 
@@ -2719,7 +2763,7 @@ This can lead to noticeable savings in library size and build time.</p>
 </blockquote>
 
 <blockquote>
-  <p>Beware some ParaMonte algorithms require compatible <code>complex</code> and <code>real</code> kind,
+  <p><strong>WARNING</strong> Beware some ParaMonte algorithms require compatible <code>complex</code> and <code>real</code> kind,
 necessitating the use of the same kind type parameters for both data types.</p>
 </blockquote>
 
@@ -2727,41 +2771,6 @@ necessitating the use of the same kind type parameters for both data types.</p>
 supported by the compiler for the C/C++/Fortran programming languages
 and only the minimally-required kind type parameters for
 all other programming languages.</p>
-
-<h3 id="ski"><code>ski</code></h3>
-
-<p>Specifies a list of <code>character</code> kind indices
-for which the ParaMonte library must be built.</p>
-
-<ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--ski</span> <span class="s2">"character_kinds_indices"</span>
-</code></pre></div>    </div>
-  </li>
-  <li>Usage (with <code>cmake</code> binary executable)
-    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dski=<span class="s2">"character_kinds_indices"</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<p>where <code>character_kinds_indices</code> is a semicolon-separated list of
-indices of the <code>character_kinds(:)</code> constant vector of <code>iso_fortran_env</code>
-intrinsic module of Fortran.</p>
-
-<p>For example, setting <code>character_kinds_indices</code> to <code>1;3;6</code> will
-build the library for the kinds in <code>character_kinds([1, 3, 6])</code>.</p>
-
-<blockquote>
-  <p>No more than fives indices can be simultaneously specified in every single build, because
-the ParaMonte library is currently configured for builds with up to fives kinds for each type.</p>
-</blockquote>
-
-<blockquote>
-  <p>The minimally-required <code>character</code> type kind parameter indices for the Intel and GNU compilers are <code>1</code>.</p>
-</blockquote>
-
-<p><strong>optional</strong>. The default value for <code>character_kinds_indices</code>
-is all kind numbers fully supported by the compiler.</p>
 
 <p><br /></p>
 
@@ -2866,7 +2875,7 @@ is all kind numbers fully supported by the compiler.</p>
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on April 9, 2024<br/>
+            Last updated on April 10, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/2/images/logo.png" }}" alt="cdslab.org" /></a>
