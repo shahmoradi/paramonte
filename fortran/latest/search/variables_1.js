@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['b_0',['b',['../structpm__quadTest_1_1IntSinCos__type.html#a16c94f2e8545b6ec69ceb0cc920cf7f4',1,'pm_quadTest::IntSinCos_type::b()'],['../structpm__quadTest_1_1Int2__type.html#a7b9e783b7d05f66d4e7a6bbe19442691',1,'pm_quadTest::Int2_type::b()']]],
+  ['b_0',['b',['../structpm__quadTest_1_1intSinCos__type.html#a119385f5325a2c1a7136f9226ca39a25',1,'pm_quadTest::intSinCos_type::b()'],['../structpm__quadTest_1_1int2__type.html#a161e81233a78b4524b02e9f62000c2e5',1,'pm_quadTest::int2_type::b()']]],
   ['backward_1',['backward',['../namespacepm__array.html#ae3f0ede04443e54e8d9be8efcf8c9671',1,'pm_array']]],
   ['band_5fspec1_2',['BAND_SPEC1',['../namespacetest__pm__distBand.html#aacfb49acd52386de62a3c8c27c5ba608',1,'test_pm_distBand']]],
   ['band_5fspec2_3',['BAND_SPEC2',['../namespacetest__pm__distBand.html#aa88a08a32f1ff9c5c40753a43bceb3e2',1,'test_pm_distBand']]],
@@ -14,7 +14,7 @@ var searchData=
   ['bcyan_11',['bcyan',['../structpm__strANSI_1_1styleSeq__type.html#a9826fbf34178044ab6bcc96d64f1c2b5',1,'pm_strANSI::styleSeq_type::bcyan()'],['../namespacepm__strANSI.html#af61e84869da88f787ec40bed700aba06',1,'pm_strANSI::bcyan()']]],
   ['bdefault_12',['bdefault',['../structpm__strANSI_1_1styleSeq__type.html#a1634ed7547017e52e74591c5c4370574',1,'pm_strANSI::styleSeq_type::bdefault()'],['../namespacepm__strANSI.html#a00de8ddb20d88ceedc2f3ee3b28b839e',1,'pm_strANSI::bdefault()']]],
   ['bel_13',['BEL',['../namespacepm__strASCII.html#a6ae3433fdd709512eb0c9da7a961c56c',1,'pm_strASCII']]],
-  ['beta_14',['beta',['../structtest__pm__distBand_1_1BandSpec__type.html#a23b079ff6a45188b516e0d505149dd9a',1,'test_pm_distBand::BandSpec_type::beta()'],['../structpm__quadTest_1_1IntGamUpp__type.html#a03bedfb398698ee7f2503683d0f4056e',1,'pm_quadTest::IntGamUpp_type::beta()']]],
+  ['beta_14',['beta',['../structtest__pm__distBand_1_1BandSpec__type.html#a23b079ff6a45188b516e0d505149dd9a',1,'test_pm_distBand::BandSpec_type::beta()'],['../structpm__quadTest_1_1intGamUpp__type.html#a385da0311fb00b6195c884cc23769e80',1,'pm_quadTest::intGamUpp_type::beta()']]],
   ['bgreen_15',['bgreen',['../namespacepm__strANSI.html#a8d34f929ef5abb0027a1f99e04e3bddf',1,'pm_strANSI::bgreen()'],['../structpm__strANSI_1_1styleSeq__type.html#a86dc0b85e92f784001aa81bbb9d463e1',1,'pm_strANSI::styleSeq_type::bgreen()']]],
   ['binary_16',['binary',['../namespacepm__search.html#ad9f1c01f301c889b3f82538c9b303e02',1,'pm_search::binary()'],['../structpm__io_1_1filext__type.html#a3ff05ae5bc7e6a81b779ad1e09a155d2',1,'pm_io::filext_type::binary()']]],
   ['bisection_17',['bisection',['../namespacepm__mathRoot.html#a5504dde0cb89575fd6f0882739a0d7b7',1,'pm_mathRoot']]],

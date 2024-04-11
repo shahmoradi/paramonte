@@ -288,9 +288,9 @@ $(document).ready(function(){initNavTree('pm__io_8F90_source.html',''); initResi
 <div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>    <span class="fortran_statement">end type</span></div>
 <div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span> </div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>    <span class="fortran_statement">interface</span> <a class="code hl_struct" href="structpm__io_1_1field__type.html">field_type</a></div>
-<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span><span class="fortran_attribute">    pure elemental </span><span class="fortran_prefix">module function </span>constructField(string, integer, logical, complex, real) <span class="fortran_suffix">result</span>(field)</div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span><span class="fortran_attribute">    pure elemental </span><span class="fortran_prefix">module function </span>field_typer(string, integer, logical, complex, real) <span class="fortran_suffix">result</span>(field)</div>
 <div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span><span class="preprocessor">#if __INTEL_COMPILER &amp;&amp; DLL_ENABLED &amp;&amp; (_WIN32 || _WIN64)</span></div>
-<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span><span class="preprocessor"></span><span class="fortran_directive_intel">        !DEC$ ATTRIBUTES DLLEXPORT </span>:: constructField</div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span><span class="preprocessor"></span><span class="fortran_directive_intel">        !DEC$ ATTRIBUTES DLLEXPORT </span>:: field_typer</div>
 <div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span><span class="preprocessor"></span>        <span class="fortran_statement">character</span>(<span class="fortran_operator_symbols">*</span>, <a class="code hl_variable" href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">SK</a>),<span class="fortran_attribute"> intent(in)</span>,<span class="fortran_attribute"> optional</span> :: string, <span class="fortran_statement">integer</span>, logical, <span class="fortran_statement">complex</span>, real</div>
 <div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>        <span class="fortran_statement">type</span>(<a class="code hl_struct" href="structpm__io_1_1field__type.html">field_type</a>) :: field</div>
@@ -461,27 +461,27 @@ $(document).ready(function(){initNavTree('pm__io_8F90_source.html',''); initResi
 <div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span> </div>
 <div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span> </div>
 <div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span>    <span class="fortran_statement">interface</span> <a class="code hl_interface" href="structpm__io_1_1openArg__type.html">openArg_type</a></div>
-<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span><span class="fortran_attribute">    impure elemental </span><span class="fortran_prefix">module function </span>constructOpenArg   ( access        &amp;</div>
-<div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>                                                        , action        &amp;</div>
-<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>                                                        , asynchronous  &amp;</div>
-<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>                                                        , blank         &amp;</div>
-<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>                                                        , decimal       &amp;</div>
-<div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span>                                                        , delim         &amp;</div>
-<div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>                                                        , encoding      &amp;</div>
-<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>                                                        , form          &amp;</div>
-<div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span>                                                        , pad           &amp;</div>
-<div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>                                                        , position      &amp;</div>
-<div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>                                                        , recl          &amp;</div>
-<div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span>                                                        , round         &amp;</div>
-<div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span>                                                        , sign          &amp;</div>
-<div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span>                                                        , status        &amp;</div>
-<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>                                                        , unit          &amp;</div>
-<div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>                                                        , file          &amp;</div>
-<div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span>                                                        , iostat        &amp;</div>
-<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>                                                        , iomsg         &amp;</div>
-<div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>                                                        ) <span class="fortran_suffix">result</span>(openArg)</div>
+<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span><span class="fortran_attribute">    impure elemental </span><span class="fortran_prefix">module function </span>openArg_typer  ( access        &amp;</div>
+<div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>                                                    , action        &amp;</div>
+<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>                                                    , asynchronous  &amp;</div>
+<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>                                                    , blank         &amp;</div>
+<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>                                                    , decimal       &amp;</div>
+<div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span>                                                    , delim         &amp;</div>
+<div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>                                                    , encoding      &amp;</div>
+<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>                                                    , form          &amp;</div>
+<div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span>                                                    , pad           &amp;</div>
+<div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>                                                    , position      &amp;</div>
+<div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>                                                    , recl          &amp;</div>
+<div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span>                                                    , round         &amp;</div>
+<div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span>                                                    , sign          &amp;</div>
+<div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span>                                                    , status        &amp;</div>
+<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>                                                    , unit          &amp;</div>
+<div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>                                                    , file          &amp;</div>
+<div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span>                                                    , iostat        &amp;</div>
+<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>                                                    , iomsg         &amp;</div>
+<div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>                                                    ) <span class="fortran_suffix">result</span>(openArg)</div>
 <div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span><span class="preprocessor">#if __INTEL_COMPILER &amp;&amp; DLL_ENABLED &amp;&amp; (_WIN32 || _WIN64)</span></div>
-<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span><span class="preprocessor"></span><span class="fortran_directive_intel">        !DEC$ ATTRIBUTES DLLEXPORT </span>:: constructOpenArg</div>
+<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span><span class="preprocessor"></span><span class="fortran_directive_intel">        !DEC$ ATTRIBUTES DLLEXPORT </span>:: openArg_typer</div>
 <div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span><span class="preprocessor"></span>        <span class="fortran_statement">character</span>(<span class="fortran_operator_symbols">*</span>, <a class="code hl_variable" href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">SK</a>),<span class="fortran_attribute"> intent(in)</span>    ,<span class="fortran_attribute"> optional</span>  :: access</div>
 <div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>        <span class="fortran_statement">character</span>(<span class="fortran_operator_symbols">*</span>, <a class="code hl_variable" href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">SK</a>),<span class="fortran_attribute"> intent(in)</span>    ,<span class="fortran_attribute"> optional</span>  :: action</div>
@@ -8781,9 +8781,9 @@ $(document).ready(function(){initNavTree('pm__io_8F90_source.html',''); initResi
 <div class="line"><a id="l11022" name="l11022"></a><span class="lineno">11022</span> </div>
 <div class="line"><a id="l11024" name="l11024"></a><span class="lineno">11024</span>    <span class="fortran_statement">interface</span> <a class="code hl_struct" href="structpm__io_1_1display__type.html">display_type</a></div>
 <div class="line"><a id="l11025" name="l11025"></a><span class="lineno">11025</span> </div>
-<div class="line"><a id="l11026" name="l11026"></a><span class="lineno">11026</span>    <span class="fortran_prefix">module function </span>constructDisplayFile(file, status, position, advance, format, deliml, delimr, tmsize, bmsize, count, sticky, text, mark, note, warn, stop) <span class="fortran_suffix">result</span>(disp)</div>
+<div class="line"><a id="l11026" name="l11026"></a><span class="lineno">11026</span>    <span class="fortran_prefix">module function </span>display_typer_file(file, status, position, advance, format, deliml, delimr, tmsize, bmsize, count, sticky, text, mark, note, warn, stop) <span class="fortran_suffix">result</span>(disp)</div>
 <div class="line"><a id="l11027" name="l11027"></a><span class="lineno">11027</span><span class="preprocessor">#if __INTEL_COMPILER &amp;&amp; DLL_ENABLED &amp;&amp; (_WIN32 || _WIN64)</span></div>
-<div class="line"><a id="l11028" name="l11028"></a><span class="lineno">11028</span><span class="preprocessor"></span><span class="fortran_directive_intel">        !DEC$ ATTRIBUTES DLLEXPORT </span>:: constructDisplayFile</div>
+<div class="line"><a id="l11028" name="l11028"></a><span class="lineno">11028</span><span class="preprocessor"></span><span class="fortran_directive_intel">        !DEC$ ATTRIBUTES DLLEXPORT </span>:: display_typer_file</div>
 <div class="line"><a id="l11029" name="l11029"></a><span class="lineno">11029</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l11030" name="l11030"></a><span class="lineno">11030</span><span class="preprocessor"></span>        <span class="fortran_statement">character</span>(<span class="fortran_operator_symbols">*</span>, SK),<span class="fortran_attribute"> intent(in)</span>            :: file</div>
 <div class="line"><a id="l11031" name="l11031"></a><span class="lineno">11031</span><span class="fortran_statement">        logical</span>(LK)     ,<span class="fortran_attribute"> intent(in)</span>,<span class="fortran_attribute"> optional</span>  :: sticky</div>
@@ -8803,9 +8803,9 @@ $(document).ready(function(){initNavTree('pm__io_8F90_source.html',''); initResi
 <div class="line"><a id="l11045" name="l11045"></a><span class="lineno">11045</span>        <span class="fortran_statement">type</span>(<a class="code hl_struct" href="structpm__io_1_1display__type.html">display_type</a>) :: <a class="code hl_variable" href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">disp</a></div>
 <div class="line"><a id="l11046" name="l11046"></a><span class="lineno">11046</span>    <span class="fortran_statement">end function</span></div>
 <div class="line"><a id="l11047" name="l11047"></a><span class="lineno">11047</span> </div>
-<div class="line"><a id="l11048" name="l11048"></a><span class="lineno">11048</span>    <span class="fortran_prefix">module function </span>constructDisplayUnit(unit, advance, format, deliml, delimr, tmsize, bmsize, count, sticky, text, mark, note, warn, stop) <span class="fortran_suffix">result</span>(disp)</div>
+<div class="line"><a id="l11048" name="l11048"></a><span class="lineno">11048</span>    <span class="fortran_prefix">module function </span>display_typer_unit(unit, advance, format, deliml, delimr, tmsize, bmsize, count, sticky, text, mark, note, warn, stop) <span class="fortran_suffix">result</span>(disp)</div>
 <div class="line"><a id="l11049" name="l11049"></a><span class="lineno">11049</span><span class="preprocessor">#if __INTEL_COMPILER &amp;&amp; DLL_ENABLED &amp;&amp; (_WIN32 || _WIN64)</span></div>
-<div class="line"><a id="l11050" name="l11050"></a><span class="lineno">11050</span><span class="preprocessor"></span><span class="fortran_directive_intel">        !DEC$ ATTRIBUTES DLLEXPORT </span>:: constructDisplayUnit</div>
+<div class="line"><a id="l11050" name="l11050"></a><span class="lineno">11050</span><span class="preprocessor"></span><span class="fortran_directive_intel">        !DEC$ ATTRIBUTES DLLEXPORT </span>:: display_typer_unit</div>
 <div class="line"><a id="l11051" name="l11051"></a><span class="lineno">11051</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l11052" name="l11052"></a><span class="lineno">11052</span><span class="preprocessor"></span>        <span class="fortran_statement">integer</span>(IK)     ,<span class="fortran_attribute"> intent(in)</span>,<span class="fortran_attribute"> optional</span>  :: unit</div>
 <div class="line"><a id="l11053" name="l11053"></a><span class="lineno">11053</span><span class="fortran_statement">        logical</span>(LK)     ,<span class="fortran_attribute"> intent(in)</span>,<span class="fortran_attribute"> optional</span>  :: sticky</div>
@@ -16427,7 +16427,7 @@ $(document).ready(function(){initNavTree('pm__io_8F90_source.html',''); initResi
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_23395307b1b7d12df5db6f58c451dcdf.html">fortran</a></li><li class="navelem"><a class="el" href="dir_acc2146ae7e18e9f4b01d04597c074ce.html">main</a></li><li class="navelem"><a class="el" href="pm__io_8F90.html">pm_io.F90</a></li>
-        <li class="footer">Generated on Wed Apr 10 2024 14:39:51 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Wed Apr 10 2024 22:59:09 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

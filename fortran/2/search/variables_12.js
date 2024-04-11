@@ -12,7 +12,7 @@ var searchData=
   ['sh_9',['sh',['../structpm__sysShell_1_1shellis__type.html#ad57888d4545d53bede9e18c0b1a4418c',1,'pm_sysShell::shellis_type']]],
   ['shell_10',['shell',['../namespacepm__arraySort.html#a0bbae7da40132ed80bf4cd168877bc85',1,'pm_arraySort']]],
   ['si_11',['SI',['../namespacepm__strASCII.html#aac581d55f5c9574ca6854b9345dd1313',1,'pm_strASCII']]],
-  ['sigma_12',['sigma',['../structpm__quadTest_1_1IntLogNormPDF__type.html#aed1f05c15e7002c40a6a5d99cc50bb88',1,'pm_quadTest::IntLogNormPDF_type::sigma()'],['../structpm__quadTest_1_1IntNormPDF__type.html#a699875f4ab90af03dd314cd64f4a868c',1,'pm_quadTest::IntNormPDF_type::sigma()']]],
+  ['sigma_12',['sigma',['../structpm__quadTest_1_1intLogNormPDF__type.html#a33f91d9e9168e45429256a09df4b84fe',1,'pm_quadTest::intLogNormPDF_type::sigma()'],['../structpm__quadTest_1_1intNormPDF__type.html#a9d9b7babae1ba6a88373a0f2c155b3c0',1,'pm_quadTest::intNormPDF_type::sigma()']]],
   ['sign_13',['sign',['../structpm__io_1_1openArg__type.html#a60bd65b469562ef399b1e5fcf45da441',1,'pm_io::openArg_type']]],
   ['signif_14',['signif',['../structpm__sampleACT_1_1cumSum__type.html#aba21f2b2b6f26677add8014dff0faecf',1,'pm_sampleACT::cumSum_type']]],
   ['silver_5fratio_15',['SILVER_RATIO',['../namespacepm__mathConst.html#a70231ff1acc9c62ea06d14c637f26c60',1,'pm_mathConst']]],

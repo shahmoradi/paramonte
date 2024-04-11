@@ -446,7 +446,7 @@ $(document).ready(function(){initNavTree('pm__sysPath_8F90_source.html',''); ini
 <div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span><span class="fortran_comment">!</span></div>
 <div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span><span class="fortran_comment">!</span></div>
 <div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span><span class="fortran_comment">!</span></div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span><span class="fortran_comment">!    type :: PathList_type</span></div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span><span class="fortran_comment">!    type :: pathList_type</span></div>
 <div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span><span class="fortran_comment">!        character(:, SK), allocatable   :: parent   !&lt;  \public     The public `allocatable` scalar `character` of default kind \SK containing the directory path whose contents is being returned.&lt;br&gt;</span></div>
 <div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span><span class="fortran_comment">!        integer(IK)     , private       :: unit     !&lt;  \private    The private scalar `integer` of default kind \IK containing the `unit` connected to the file containing the directory listing results.&lt;br&gt;</span></div>
 <div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span><span class="fortran_comment">!        logical(LK)     , private       :: done     !&lt;  \private    The private scalar `logical` of default kind \LK. It is `.true.` &lt;b&gt;if and only if&lt;/b&gt; the contents of the directory listing is fully exhausted.&lt;br&gt;</span></div>
@@ -458,10 +458,10 @@ $(document).ready(function(){initNavTree('pm__sysPath_8F90_source.html',''); ini
 <div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span><span class="fortran_comment">!    end type</span></div>
 <div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span><span class="fortran_comment">!</span></div>
 <div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span><span class="fortran_comment">!    !&gt;  \cond excluded</span></div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span><span class="fortran_comment">!    interface PathList_type</span></div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span><span class="fortran_comment">!    module function constructPathList(path, sort, showdir, showfile, showhidden, failed, errmsg) result(PathList)</span></div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span><span class="fortran_comment">!    interface pathList_type</span></div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span><span class="fortran_comment">!    module function pathList_typer(path, sort, showdir, showfile, showhidden, failed, errmsg) result(PathList)</span></div>
 <div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span><span class="fortran_comment">!#if __INTEL_COMPILER &amp;&amp; DLL_ENABLED &amp;&amp; (_WIN32 || _WIN64)</span></div>
-<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span><span class="fortran_comment">!        !DEC$ ATTRIBUTES DLLEXPORT :: constructPathList</span></div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span><span class="fortran_comment">!        !DEC$ ATTRIBUTES DLLEXPORT :: pathList_typer</span></div>
 <div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span><span class="fortran_comment">!#endif</span></div>
 <div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span><span class="fortran_comment">!        use pm_kind, only: SKC =&gt; SK</span></div>
 <div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span><span class="fortran_comment">!        character(*,SKC)    , intent(in)    , optional  :: path</span></div>
@@ -482,7 +482,7 @@ $(document).ready(function(){initNavTree('pm__sysPath_8F90_source.html',''); ini
 <div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span><span class="fortran_comment">!        !DEC$ ATTRIBUTES DLLEXPORT :: isFailedGetNextPathList</span></div>
 <div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span><span class="fortran_comment">!#endif</span></div>
 <div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span><span class="fortran_comment">!        use pm_kind, only: SKC =&gt; SK</span></div>
-<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span><span class="fortran_comment">!        class(PathList_type), intent(inout)                 :: PathList</span></div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span><span class="fortran_comment">!        class(pathList_type), intent(inout)                 :: PathList</span></div>
 <div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span><span class="fortran_comment">!        character(*,SKC)    , intent(out)   , allocatable   :: path</span></div>
 <div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span><span class="fortran_comment">!        character(*, SK)    , intent(inout) , optional      :: errmsg</span></div>
 <div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span><span class="fortran_comment">!        logical(LK)                                         :: failed</span></div>
@@ -493,7 +493,7 @@ $(document).ready(function(){initNavTree('pm__sysPath_8F90_source.html',''); ini
 <div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span><span class="fortran_comment">!        !DEC$ ATTRIBUTES DLLEXPORT :: isFailedGetNextPathListLen</span></div>
 <div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span><span class="fortran_comment">!#endif</span></div>
 <div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span><span class="fortran_comment">!        use pm_kind, only: SKC =&gt; SK</span></div>
-<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span><span class="fortran_comment">!        class(PathList_type), intent(inout)                 :: PathList</span></div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span><span class="fortran_comment">!        class(pathList_type), intent(inout)                 :: PathList</span></div>
 <div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span><span class="fortran_comment">!        character(*,SKC)    , intent(out)                   :: path</span></div>
 <div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span><span class="fortran_comment">!        integer(IK)         , intent(out)                   :: pathlen</span></div>
 <div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span><span class="fortran_comment">!        character(*, SK)    , intent(inout) , optional      :: errmsg</span></div>
@@ -511,7 +511,7 @@ $(document).ready(function(){initNavTree('pm__sysPath_8F90_source.html',''); ini
 <div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span><span class="fortran_comment">!        !DEC$ ATTRIBUTES DLLEXPORT :: isFailedGetNextPathListLen</span></div>
 <div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span><span class="fortran_comment">!#endif</span></div>
 <div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span><span class="fortran_comment">!        use pm_kind, only: SKC =&gt; SK</span></div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span><span class="fortran_comment">!        type(PathList_type) , intent(inout)                 :: PathList</span></div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span><span class="fortran_comment">!        type(pathList_type) , intent(inout)                 :: PathList</span></div>
 <div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span><span class="fortran_comment">!    end subroutine</span></div>
 <div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span><span class="fortran_comment">!    end interface</span></div>
 <div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span><span class="fortran_comment">!    !&gt;  \endcond excluded</span></div>
@@ -2488,7 +2488,7 @@ $(document).ready(function(){initNavTree('pm__sysPath_8F90_source.html',''); ini
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_23395307b1b7d12df5db6f58c451dcdf.html">fortran</a></li><li class="navelem"><a class="el" href="dir_acc2146ae7e18e9f4b01d04597c074ce.html">main</a></li><li class="navelem"><a class="el" href="pm__sysPath_8F90.html">pm_sysPath.F90</a></li>
-        <li class="footer">Generated on Wed Apr 10 2024 14:39:54 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Wed Apr 10 2024 22:59:11 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

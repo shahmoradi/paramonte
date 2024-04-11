@@ -1117,7 +1117,7 @@ $(document).ready(function(){initNavTree('pm__ellipsoid_8F90_source.html',''); i
 <div class="line"><a id="l01411" name="l01411"></a><span class="lineno"> 1411</span><span class="fortran_comment">!    !&gt;  \param[out] failed      :   A logical output value that is `.true.` only if the Cholesky factorization fails.</span></div>
 <div class="line"><a id="l01412" name="l01412"></a><span class="lineno"> 1412</span><span class="fortran_comment">!    !&gt;</span></div>
 <div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span><span class="fortran_comment">!    !&gt;  \return</span></div>
-<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span><span class="fortran_comment">!    !&gt;  `ellipsoid` : An object of type [Ellipsoid_type](@ref Ellipsoid_type).</span></div>
+<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span><span class="fortran_comment">!    !&gt;  `ellipsoid` : An object of type [ellipsoid_type](@ref ellipsoid_type).</span></div>
 <div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span><span class="fortran_comment">!    !&gt;</span></div>
 <div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span><span class="fortran_comment">!    !&gt;  \warning</span></div>
 <div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span><span class="fortran_comment">!    !&gt;  If any error occurs during the ellipsoid construction, the first element of the `choDia`</span></div>
@@ -1133,9 +1133,9 @@ $(document).ready(function(){initNavTree('pm__ellipsoid_8F90_source.html',''); i
 <div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span><span class="fortran_comment">!    !&gt;  \phigh The `isBounding = .false.` scenario still needs work. Perhaps this argument should be changed to `boundingStatus` with three</span></div>
 <div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span><span class="fortran_comment">!    !&gt;  possible values, corresponding to three different degrees of computations: 1) no bounding, 2) computing scalefactor and logVolNormed,</span></div>
 <div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span><span class="fortran_comment">!    !&gt;  3) computing (2) as well as scaling the properties.</span></div>
-<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span><span class="fortran_comment">!    function constructEllipsoid(ndim, np, Point, isBounding, failed) result(ellipsoid)</span></div>
+<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span><span class="fortran_comment">!    function ellipsoid_typer(ndim, np, Point, isBounding, failed) result(ellipsoid)</span></div>
 <div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span><span class="fortran_comment">!#if __INTEL_COMPILER &amp;&amp; DLL_ENABLED &amp;&amp; (_WIN32 || _WIN64)</span></div>
-<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span><span class="fortran_comment">!        !DEC$ ATTRIBUTES DLLEXPORT :: constructEllipsoid</span></div>
+<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span><span class="fortran_comment">!        !DEC$ ATTRIBUTES DLLEXPORT :: ellipsoid_typer</span></div>
 <div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span><span class="fortran_comment">!#endif</span></div>
 <div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span><span class="fortran_comment">!        use pm_kind, only: IK, LK, RK ! LCOV_EXCL_LINE</span></div>
 <div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span><span class="fortran_comment">!        use pm_matrixInv, only: getMatInvFromChoLow</span></div>
@@ -1145,7 +1145,7 @@ $(document).ready(function(){initNavTree('pm__ellipsoid_8F90_source.html',''); i
 <div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span><span class="fortran_comment">!        real(RKC)   , intent(in)            :: Point(ndim,np)</span></div>
 <div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span><span class="fortran_comment">!        logical(LK) , intent(in)            :: isBounding</span></div>
 <div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span><span class="fortran_comment">!        logical(LK) , intent(out)           :: failed</span></div>
-<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span><span class="fortran_comment">!        type(Ellipsoid_type)                :: ellipsoid</span></div>
+<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span><span class="fortran_comment">!        type(ellipsoid_type)                :: ellipsoid</span></div>
 <div class="line"><a id="l01443" name="l01443"></a><span class="lineno"> 1443</span><span class="fortran_comment">!</span></div>
 <div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span><span class="fortran_comment">!        real(RKC)                           :: scaleFactorSqInverse</span></div>
 <div class="line"><a id="l01445" name="l01445"></a><span class="lineno"> 1445</span><span class="fortran_comment">!        real(RKC)                           :: NormedPoint(ndim,np)</span></div>
@@ -1214,7 +1214,7 @@ $(document).ready(function(){initNavTree('pm__ellipsoid_8F90_source.html',''); i
 <div class="line"><a id="l01508" name="l01508"></a><span class="lineno"> 1508</span><span class="fortran_comment">!</span></div>
 <div class="line"><a id="l01509" name="l01509"></a><span class="lineno"> 1509</span><span class="fortran_comment">!        ellipsoid%logVolNormed = sum(log(ellipsoid%choDia(1:ndim)))</span></div>
 <div class="line"><a id="l01510" name="l01510"></a><span class="lineno"> 1510</span><span class="fortran_comment">!</span></div>
-<div class="line"><a id="l01511" name="l01511"></a><span class="lineno"> 1511</span><span class="fortran_comment">!    end function constructEllipsoid</span></div>
+<div class="line"><a id="l01511" name="l01511"></a><span class="lineno"> 1511</span><span class="fortran_comment">!    end function ellipsoid_typer</span></div>
 <div class="line"><a id="l01512" name="l01512"></a><span class="lineno"> 1512</span> </div>
 <div class="line"><a id="l01513" name="l01513"></a><span class="lineno"> 1513</span><span class="fortran_comment">!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></div>
 <div class="line"><a id="l01514" name="l01514"></a><span class="lineno"> 1514</span><span class="fortran_comment">!</span></div>
@@ -1255,7 +1255,7 @@ $(document).ready(function(){initNavTree('pm__ellipsoid_8F90_source.html',''); i
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_23395307b1b7d12df5db6f58c451dcdf.html">fortran</a></li><li class="navelem"><a class="el" href="dir_acc2146ae7e18e9f4b01d04597c074ce.html">main</a></li><li class="navelem"><a class="el" href="pm__ellipsoid_8F90.html">pm_ellipsoid.F90</a></li>
-        <li class="footer">Generated on Wed Apr 10 2024 14:39:50 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Wed Apr 10 2024 22:59:09 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

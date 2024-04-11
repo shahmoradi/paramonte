@@ -234,13 +234,14 @@ var searchData=
   ['sorted_5ftype_231',['sorted_type',['../structpm__array_1_1sorted__type.html',1,'pm_array']]],
   ['spearman_5ftype_232',['spearman_type',['../structpm__sampleCor_1_1spearman__type.html',1,'pm_sampleCor']]],
   ['splitmix64_5ftype_233',['splitmix64_type',['../structpm__distUnif_1_1splitmix64__type.html',1,'pm_distUnif']]],
-  ['square_5ftype_234',['square_type',['../structpm__matrixClass_1_1square__type.html',1,'pm_matrixClass']]],
-  ['standard_5ftype_235',['standard_type',['../structpm__arrayRank_1_1standard__type.html',1,'pm_arrayRank']]],
-  ['stdscale_5ftype_236',['stdscale_type',['../structpm__sampleScale_1_1stdscale__type.html',1,'pm_sampleScale']]],
-  ['sticky_5ftype_237',['sticky_type',['../structpm__memory_1_1sticky__type.html',1,'pm_memory']]],
-  ['stop_5ftype_238',['stop_type',['../structpm__err_1_1stop__type.html',1,'pm_err']]],
-  ['strong_5ftype_239',['strong_type',['../structpm__mathCompare_1_1strong__type.html',1,'pm_mathCompare']]],
-  ['styleseq_5ftype_240',['styleSeq_type',['../structpm__strANSI_1_1styleSeq__type.html',1,'pm_strANSI']]],
-  ['subset_5ftype_241',['subset_type',['../structpm__matrixSubset_1_1subset__type.html',1,'pm_matrixSubset']]],
-  ['symmetric_5ftype_242',['symmetric_type',['../structpm__matrixClass_1_1symmetric__type.html',1,'pm_matrixClass']]]
+  ['splitmix64_5ftyper_234',['splitmix64_typer',['../interfacepm__distUnif_1_1splitmix64__typer.html',1,'pm_distUnif']]],
+  ['square_5ftype_235',['square_type',['../structpm__matrixClass_1_1square__type.html',1,'pm_matrixClass']]],
+  ['standard_5ftype_236',['standard_type',['../structpm__arrayRank_1_1standard__type.html',1,'pm_arrayRank']]],
+  ['stdscale_5ftype_237',['stdscale_type',['../structpm__sampleScale_1_1stdscale__type.html',1,'pm_sampleScale']]],
+  ['sticky_5ftype_238',['sticky_type',['../structpm__memory_1_1sticky__type.html',1,'pm_memory']]],
+  ['stop_5ftype_239',['stop_type',['../structpm__err_1_1stop__type.html',1,'pm_err']]],
+  ['strong_5ftype_240',['strong_type',['../structpm__mathCompare_1_1strong__type.html',1,'pm_mathCompare']]],
+  ['styleseq_5ftype_241',['styleSeq_type',['../structpm__strANSI_1_1styleSeq__type.html',1,'pm_strANSI']]],
+  ['subset_5ftype_242',['subset_type',['../structpm__matrixSubset_1_1subset__type.html',1,'pm_matrixSubset']]],
+  ['symmetric_5ftype_243',['symmetric_type',['../structpm__matrixClass_1_1symmetric__type.html',1,'pm_matrixClass']]]
 ];

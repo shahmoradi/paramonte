@@ -208,7 +208,7 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p >This is the <a class="el" href="structpm__io_1_1openArg__type.html">openArg_type</a> class containing arguments that can be passed to the <code>open()</code> intrinsic Fortran statement. </p>
 <p >Generate and return an object of class <a class="el" href="structpm__io_1_1openArg__type.html">openArg_type</a> containing arguments that can be passed to the <code>open()</code> intrinsic Fortran statement.</p>
 <p >This type is merely meant to provide a convenient storage for file attributes that might be needed at the time of opening files for IO.<br  />
- This type is overloaded with <code>constructOpenArg()</code> to verify the consistency of the structure components values.<br  />
+ This type is overloaded with <code>openArg_typer()</code> to verify the consistency of the structure components values.<br  />
  The following optional arguments of the <code>open()</code> statement are deliberately excluded from this derived type:<br  />
  </p><ol>
 <li>
@@ -428,7 +428,7 @@ If missing and an error occurs, then the program halts by calling <code>error st
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>openArg</code> : The output scalar object of type <a class="el" href="structpm__io_1_1openArg__type.html">openArg_type</a> whose components are set to the corresponding input values or otherwise set to an appropriate default value.</dd></dl>
 <p><br  />
-<a class="anchor" id="interface-constructOpenArg"></a><b>Possible calling interfaces</b> <a href="#interface-constructOpenArg">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__io.html">pm_io</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="structpm__io_1_1openArg__type.html">openArg_type</a></div>
+<a class="anchor" id="interface-openArg_typer"></a><b>Possible calling interfaces</b> <a href="#interface-openArg_typer">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__io.html">pm_io</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="structpm__io_1_1openArg__type.html">openArg_type</a></div>
 <div class="line"><span class="fortran_statement">type</span>(openArg_type) :: openArg</div>
 <div class="line"> </div>
 <div class="line">openArg<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="structpm__io_1_1openArg__type.html">openArg_type</a>(<span class="fortran_spcifier"> access</span><span class="fortran_operator_symbols">        = </span>access<span class="fortran_operator_symbols">        &amp;</span></div>
@@ -475,7 +475,7 @@ The procedures under discussion are <code>elemental</code>.</dd></dl>
  <a class="el" href="namespacepm__io.html#a02ac0259bc762153815ac7a97db2668d">isPreconnected</a><br  />
 </dd></dl>
 <p><br  />
-<a class="anchor" id="example-constructOpenArg"></a><b>Example usage</b> <a href="#example-constructOpenArg">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="fortran_statement">program</span> example</div>
+<a class="anchor" id="example-openArg_typer"></a><b>Example usage</b> <a href="#example-openArg_typer">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="fortran_statement">program</span> example</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: <a class="code hl_variable" href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">SK</a>, <a class="code hl_variable" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, <a class="code hl_variable" href="namespacepm__kind.html#a3f17ea307d594843815ae49bcc6ffdac">LK</a></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__io.html">pm_io</a>, <span class="fortran_statement">only</span>: <a class="code hl_struct" href="structpm__io_1_1display__type.html">display_type</a></div>
@@ -506,22 +506,22 @@ The procedures under discussion are <code>elemental</code>.</dd></dl>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="fortran_statement">end program </span>example</div>
 </div><!-- fragment --> <br  />
- <a class="anchor" id="compile-unix-intel-constructOpenArg"></a><b>Example Unix compile command via Intel <code>ifort</code> compiler</b> <a href="#compile-unix-intel-constructOpenArg">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
+ <a class="anchor" id="compile-unix-intel-openArg_typer"></a><b>Example Unix compile command via Intel <code>ifort</code> compiler</b> <a href="#compile-unix-intel-openArg_typer">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>rm main.exe</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>ifort -fpp -standard-semantics -O3 -Wl,-rpath,../../../lib -I../../../inc main.F90 ../../../lib/libparamonte_fortran_*_intel* -o main.exe</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>./main.exe</div>
 </div><!-- fragment --> <br  />
- <a class="anchor" id="compile-batch-intel-constructOpenArg"></a><b>Example Windows Batch compile command via Intel <code>ifort</code> compiler</b> <a href="#compile-batch-intel-constructOpenArg">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>del main.exe</div>
+ <a class="anchor" id="compile-batch-intel-openArg_typer"></a><b>Example Windows Batch compile command via Intel <code>ifort</code> compiler</b> <a href="#compile-batch-intel-openArg_typer">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>del main.exe</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>set PATH=..\..\..\lib;%PATH%</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>ifort /fpp /standard-semantics /O3 /I:..\..\..\include main.F90 ..\..\..\lib\libparamonte_fortran_*_intel*.lib /exe:main.exe</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>main.exe</div>
 </div><!-- fragment --> <br  />
- <a class="anchor" id=" compile-unix-gnu-constructOpenArg"></a><b>Example Unix / MinGW compile command via GNU <code>gfortran</code> compiler</b> <a href="#compile-unix-gnu-constructOpenArg">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
+ <a class="anchor" id=" compile-unix-gnu-openArg_typer"></a><b>Example Unix / MinGW compile command via GNU <code>gfortran</code> compiler</b> <a href="#compile-unix-gnu-openArg_typer">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>rm main.exe</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>gfortran -cpp -ffree-line-length-none -O3 -Wl,-rpath,../../../lib -I../../../inc main.F90 ../../../lib/libparamonte_fortran_*_gnu* -o main.exe</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>./main.exe</div>
 </div><!-- fragment --> <br  />
-<a class="anchor" id="output-constructOpenArg"></a><b>Example output</b> <a href="#output-constructOpenArg">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<a class="anchor" id="output-openArg_typer"></a><b>Example output</b> <a href="#output-openArg_typer">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>openArg<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="structpm__io_1_1openArg__type.html">openArg_type</a>(file<span class="fortran_operator_symbols"> = </span><span class="fortran_string">&#39;foo.bar&#39;</span>, status<span class="fortran_operator_symbols"> = </span><span class="fortran_string">&#39;new&#39;</span>)</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
@@ -535,7 +535,7 @@ The procedures under discussion are <code>elemental</code>.</dd></dl>
 </div><!-- fragment --></dd></dl>
 <dl class="test"><dt><b><a class="el" href="test.html#_test000525">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__io.html">test_pm_io</a></dd></dl>
 <p ><br  />
-<a class="anchor" id="finmain-constructOpenArg"></a><b>Final Remarks</b> <a href="#finmain-constructOpenArg">⛓</a> </p><hr  />
+<a class="anchor" id="finmain-openArg_typer"></a><b>Final Remarks</b> <a href="#finmain-openArg_typer">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_io.F90#L1186 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
@@ -886,7 +886,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__io.html">pm_io</a></li><li class="navelem"><a class="el" href="structpm__io_1_1openArg__type.html">openArg_type</a></li>
-        <li class="footer">Generated on Wed Apr 10 2024 14:40:05 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Wed Apr 10 2024 22:59:18 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

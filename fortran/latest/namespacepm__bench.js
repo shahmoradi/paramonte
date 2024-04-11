@@ -1,11 +1,11 @@
 var namespacepm__bench =
 [
     [ "bench_type", "structpm__bench_1_1bench__type.html", "structpm__bench_1_1bench__type" ],
+    [ "bench_typer", "interfacepm__bench_1_1bench__typer.html", null ],
     [ "benchBase_type", "structpm__bench_1_1benchBase__type.html", "structpm__bench_1_1benchBase__type" ],
+    [ "benchBase_typer", "interfacepm__bench_1_1benchBase__typer.html", null ],
     [ "benchMulti_type", "structpm__bench_1_1benchMulti__type.html", "structpm__bench_1_1benchMulti__type" ],
-    [ "constructBench", "interfacepm__bench_1_1constructBench.html", null ],
-    [ "constructBenchBase", "interfacepm__bench_1_1constructBenchBase.html", null ],
-    [ "constructBenchMulti", "interfacepm__bench_1_1constructBenchMulti.html", null ],
+    [ "benchMulti_typer", "interfacepm__bench_1_1benchMulti__typer.html", null ],
     [ "exec_proc", "interfacepm__bench_1_1exec__proc.html", "interfacepm__bench_1_1exec__proc" ],
     [ "getTiming", "interfacepm__bench_1_1getTiming.html", null ],
     [ "setTiming", "interfacepm__bench_1_1setTiming.html", null ],

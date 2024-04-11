@@ -397,7 +397,7 @@ var searchData=
   ['pm_5fziggurat_394',['pm_ziggurat',['../namespacepm__ziggurat.html',1,'']]],
   ['pm_5fziggurat_2ef90_395',['pm_ziggurat.F90',['../pm__ziggurat_8F90.html',1,'']]],
   ['point_396',['Point',['../structtest__pm__clustering_1_1TestData__type.html#a9f588e6d7ec775c3c0914ed6372d7315',1,'test_pm_clustering::TestData_type::Point()'],['../structtest__pm__knn_1_1TestData__type.html#af5df022ad3cfa90d0eb0a055d8e1efe7',1,'test_pm_knn::TestData_type::Point()']]],
-  ['pole_397',['Pole',['../structpm__quadTest_1_1IntCauchy2__type.html#a33d0189b76407d4dfd5251ce323ba37d',1,'pm_quadTest::IntCauchy2_type']]],
+  ['pole_397',['Pole',['../structpm__quadTest_1_1intCauchy2__type.html#ab599cd38b8e4abce18fa3c77fbe3d8ac',1,'pm_quadTest::intCauchy2_type']]],
   ['pos_398',['pos',['../structpm__distUnif_1_1xoshiro256ssg__type.html#a59e76638f4bed45e089e56b69221fc50',1,'pm_distUnif::xoshiro256ssg_type']]],
   ['posdefmat_399',['posdefmat',['../namespacepm__matrixClass.html#a3871e75b0a0578b302ad561ff0fdcbf4',1,'pm_matrixClass']]],
   ['posdefmat_5ftype_400',['posdefmat_type',['../structpm__matrixClass_1_1posdefmat__type.html',1,'pm_matrixClass']]],

@@ -1,9 +1,9 @@
 var structpm__test_1_1test__type =
 [
     [ "assert", "structpm__test_1_1test__type.html#addcf02d6e365921230550c6b58a01224", null ],
-    [ "constructTest", "structpm__test_1_1test__type.html#afcaba405096cc841c4891dd64c533428", null ],
     [ "run", "structpm__test_1_1test__type.html#a77955939fef417b575034cae0beaa73f", null ],
     [ "summarize", "structpm__test_1_1test__type.html#a520b3c526bc1e5fd51ffb2a84b3b372e", null ],
+    [ "test_typer", "structpm__test_1_1test__type.html#acf282fe79380f0a878838b06bc21008f", null ],
     [ "dir", "structpm__test_1_1test__type.html#a0d165432c9b7566668fab3f3435e768c", null ],
     [ "disp", "structpm__test_1_1test__type.html#ab877d6ea71511cb795b4af63e5fe0e1a", null ],
     [ "file", "structpm__test_1_1test__type.html#aec76aba300c21bae3ad5476fd291044c", null ],

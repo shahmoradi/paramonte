@@ -30,7 +30,7 @@ var searchData=
   ['pipc2m_27',['PIPC2M',['../namespacepm__cosmology.html#aa3a765cf137f4cd48d385f2f01a79232',1,'pm_cosmology']]],
   ['piwilin_28',['piwilin',['../namespacepm__polation.html#a3e2da3e5dff72147d9f27f8c9f2f97de',1,'pm_polation']]],
   ['point_29',['Point',['../structtest__pm__knn_1_1TestData__type.html#af5df022ad3cfa90d0eb0a055d8e1efe7',1,'test_pm_knn::TestData_type::Point()'],['../structtest__pm__clustering_1_1TestData__type.html#a9f588e6d7ec775c3c0914ed6372d7315',1,'test_pm_clustering::TestData_type::Point()']]],
-  ['pole_30',['Pole',['../structpm__quadTest_1_1IntCauchy2__type.html#a33d0189b76407d4dfd5251ce323ba37d',1,'pm_quadTest::IntCauchy2_type']]],
+  ['pole_30',['Pole',['../structpm__quadTest_1_1intCauchy2__type.html#ab599cd38b8e4abce18fa3c77fbe3d8ac',1,'pm_quadTest::intCauchy2_type']]],
   ['pos_31',['pos',['../structpm__distUnif_1_1xoshiro256ssg__type.html#a59e76638f4bed45e089e56b69221fc50',1,'pm_distUnif::xoshiro256ssg_type']]],
   ['posdefmat_32',['posdefmat',['../namespacepm__matrixClass.html#a3871e75b0a0578b302ad561ff0fdcbf4',1,'pm_matrixClass']]],
   ['position_33',['position',['../structpm__io_1_1openArg__type.html#abb7642da9474403e7f2383bb3889045f',1,'pm_io::openArg_type']]],

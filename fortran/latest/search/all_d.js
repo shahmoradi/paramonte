@@ -36,7 +36,7 @@ var searchData=
   ['nodek61_33',['nodeK61',['../namespacepm__quadPack.html#a57da53407d6f9760e34831ec880b2888',1,'pm_quadPack']]],
   ['nonintset_34',['NonIntSet',['../namespacetest__pm__strASCII.html#aeb9998271a50ce93515f4515c7e3d77b',1,'test_pm_strASCII']]],
   ['nonrealset_35',['NonRealSet',['../namespacetest__pm__strASCII.html#a10e474a5f27bfcb2a5f68ae9c4fd1ccd',1,'test_pm_strASCII']]],
-  ['normfac_36',['normfac',['../structpm__quadTest_1_1IntGamUpp__type.html#a66e4f4ceb9c351fdb54b10e1c55e70d2',1,'pm_quadTest::IntGamUpp_type']]],
+  ['normfac_36',['normfac',['../structpm__quadTest_1_1intGamUpp__type.html#ac2432fcf7ae74652f3b3f4dca116e383',1,'pm_quadTest::intGamUpp_type']]],
   ['note_37',['note',['../structpm__io_1_1display__type.html#ae0ce3289321f14824f5dd8946178e6af',1,'pm_io::display_type']]],
   ['note_5ftype_38',['note_type',['../structpm__err_1_1note__type.html',1,'pm_err']]],
   ['nothing_39',['nothing',['../namespacepm__array.html#a92812493e3931b63648b3b5822b0c784',1,'pm_array']]],

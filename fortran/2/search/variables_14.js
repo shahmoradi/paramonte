@@ -1,7 +1,7 @@
 var searchData=
 [
   ['ub_0',['ub',['../structpm__quadTest_1_1integrand__type.html#a6eef47653e45ac9e64b9718e386c4f85',1,'pm_quadTest::integrand_type::ub()'],['../structpm__mathRootTest_1_1func__type.html#ac0be48208a2342769921e0b6caa944fe',1,'pm_mathRootTest::func_type::ub()']]],
-  ['uf_1',['uf',['../structpm__quadTest_1_1IntSinCos__type.html#af7c67d758dc2d8602a28fb0df93ec85d',1,'pm_quadTest::IntSinCos_type']]],
+  ['uf_1',['uf',['../structpm__quadTest_1_1intSinCos__type.html#a9698e9687b0fdebb67b633cd5c3c3c3f',1,'pm_quadTest::intSinCos_type']]],
   ['undefined_2',['UNDEFINED',['../namespacepm__str.html#a1f4b0b7581d2b1ef5cd27b304a51efc4',1,'pm_str']]],
   ['underlined_3',['underlined',['../structpm__strANSI_1_1styleSeq__type.html#aadb3fda7bcc4098f3f5b514ce7f647c1',1,'pm_strANSI::styleSeq_type::underlined()'],['../namespacepm__strANSI.html#a9db514509c15319dbdab47768937c8ed',1,'pm_strANSI::underlined()']]],
   ['unformatted_4',['unformatted',['../namespacepm__io.html#a376a538b076b0a9569fffe99c80472ab',1,'pm_io']]],

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['kappa_0',['kappa',['../structpm__quadTest_1_1IntGenExpGammaPDF__type.html#a15355539f31f3c2f2ecfc14e05d1657e',1,'pm_quadTest::IntGenExpGammaPDF_type']]],
+  ['kappa_0',['kappa',['../structpm__quadTest_1_1intGenExpGammaPDF__type.html#a1ba30658da988b381148091f9b114760',1,'pm_quadTest::intGenExpGammaPDF_type']]],
   ['kendall_1',['kendall',['../namespacepm__sampleCor.html#a287df31b769e9eed28a821bf0bc60ed3',1,'pm_sampleCor']]],
   ['kendalla_2',['kendallA',['../namespacepm__sampleCor.html#ad05b7e49e523130e94e9f98edd0b3cec',1,'pm_sampleCor']]],
   ['kendallb_3',['kendallB',['../namespacepm__sampleCor.html#a55bad34c0b6557a94fa8445f0e31c8be',1,'pm_sampleCor']]],

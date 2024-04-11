@@ -10,6 +10,7 @@ var searchData=
   ['ridders_5ftype_7',['ridders_type',['../structpm__mathRoot_1_1ridders__type.html',1,'pm_mathRoot']]],
   ['right_5ftype_8',['right_type',['../structpm__array_1_1right__type.html',1,'pm_array']]],
   ['rngf_5ftype_9',['rngf_type',['../structpm__distUnif_1_1rngf__type.html',1,'pm_distUnif']]],
-  ['rngu_5ftype_10',['rngu_type',['../structpm__distUnif_1_1rngu__type.html',1,'pm_distUnif']]],
-  ['rweight_5ftype_11',['rweight_type',['../structpm__sampleWeight_1_1rweight__type.html',1,'pm_sampleWeight']]]
+  ['rngf_5ftyper_10',['rngf_typer',['../interfacepm__distUnif_1_1rngf__typer.html',1,'pm_distUnif']]],
+  ['rngu_5ftype_11',['rngu_type',['../structpm__distUnif_1_1rngu__type.html',1,'pm_distUnif']]],
+  ['rweight_5ftype_12',['rweight_type',['../structpm__sampleWeight_1_1rweight__type.html',1,'pm_sampleWeight']]]
 ];

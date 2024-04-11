@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a_0',['a',['../structpm__quadTest_1_1IntSinCos__type.html#a8e71d70e637c7da389c63e4067c0f2be',1,'pm_quadTest::IntSinCos_type::a()'],['../structpm__quadTest_1_1Int2__type.html#a48136a4df330afa24ed807891dbd9ce2',1,'pm_quadTest::Int2_type::a()']]],
+  ['a_0',['a',['../structpm__quadTest_1_1intSinCos__type.html#abe774eb1314d7941b2a29eef6ba1aa50',1,'pm_quadTest::intSinCos_type::a()'],['../structpm__quadTest_1_1int2__type.html#a6bcde409a2c2d14e55202a1c915ffa31',1,'pm_quadTest::int2_type::a()']]],
   ['abbr_1',['Abbr',['../structpm__dateTime_1_1timeZone__type.html#a5f7a760fa520af47b23576885e387b7e',1,'pm_dateTime::timeZone_type']]],
   ['abs_2',['abs',['../interfacepm__complexAbs_1_1abs.html',1,'pm_complexAbs']]],
   ['access_3',['access',['../structpm__io_1_1openArg__type.html#a9fd5b6d8454af800f15c45c9f45a8b26',1,'pm_io::openArg_type']]],
@@ -13,7 +13,7 @@ var searchData=
   ['advance_10',['advance',['../structpm__io_1_1display__type.html#a68fa47d975beb7aefcd67be6b693f11c',1,'pm_io::display_type']]],
   ['allocatable_11',['allocatable',['../namespacepm__array.html#adb2de8fa3040c81a495534461d613a75',1,'pm_array']]],
   ['allocatable_5ftype_12',['allocatable_type',['../structpm__array_1_1allocatable__type.html',1,'pm_array']]],
-  ['alpha_13',['alpha',['../structpm__quadTest_1_1IntGamUpp__type.html#afbca1822af9db29a849799b27db187c9',1,'pm_quadTest::IntGamUpp_type::alpha()'],['../structtest__pm__distBand_1_1BandSpec__type.html#ab64df853f648f7645fe8a783c7813f43',1,'test_pm_distBand::BandSpec_type::alpha()']]],
+  ['alpha_13',['alpha',['../structpm__quadTest_1_1intGamUpp__type.html#af2fbe861774b17ad535aa47abd70f28f',1,'pm_quadTest::intGamUpp_type::alpha()'],['../structtest__pm__distBand_1_1BandSpec__type.html#ab64df853f648f7645fe8a783c7813f43',1,'test_pm_distBand::BandSpec_type::alpha()']]],
   ['alpha_5flower_5fstr_5fsk_14',['ALPHA_LOWER_STR_SK',['../namespacepm__strASCII.html#a964bab3dc6faedb563cafe415785f499',1,'pm_strASCII']]],
   ['alpha_5flower_5fvec_5fsk_15',['ALPHA_LOWER_VEC_SK',['../namespacepm__strASCII.html#a7757230c7a77158fbae677e98d0d97f4',1,'pm_strASCII']]],
   ['alpha_5fstr_5fsk_16',['ALPHA_STR_SK',['../namespacepm__strASCII.html#a3d6f3c8c95189ed44a9cc9001ad15354',1,'pm_strASCII']]],

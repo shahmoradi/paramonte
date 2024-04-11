@@ -75,5 +75,5 @@ var searchData=
   ['mpc2ly_72',['MPC2LY',['../namespacepm__cosmology.html#a21d9d5923d10c0f4a383dcc661fa107b',1,'pm_cosmology']]],
   ['msg_73',['msg',['../structpm__err_1_1err__type.html#a9344d1f7ede3449a13d18c44a15c9a93',1,'pm_err::err_type']]],
   ['msys_74',['msys',['../structpm__sysInfo_1_1kernelis__type.html#a64b2fe9791639349421b29500e1b18eb',1,'pm_sysInfo::kernelis_type']]],
-  ['mu_75',['mu',['../structpm__quadTest_1_1IntNormPDF__type.html#ab720b365628afb4bf0012c1d1b5c3dfc',1,'pm_quadTest::IntNormPDF_type::mu()'],['../structpm__quadTest_1_1IntLogNormPDF__type.html#afc366064f3ca53d6c9db76caf717826d',1,'pm_quadTest::IntLogNormPDF_type::mu()']]]
+  ['mu_75',['mu',['../structpm__quadTest_1_1intNormPDF__type.html#ab0e6baa69a1aae1b6568364f7540b70d',1,'pm_quadTest::intNormPDF_type::mu()'],['../structpm__quadTest_1_1intLogNormPDF__type.html#a24170fd46fc64d65309a4a6f999fb479',1,'pm_quadTest::intLogNormPDF_type::mu()']]]
 ];
