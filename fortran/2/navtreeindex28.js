@@ -1,6 +1,5 @@
 var NAVTREEINDEX28 =
 {
-"test__pm__statistics_8F90.html#a4a762f3cf4677cc4fbd33911d44e7539":[24,0,0,0,1,105,15],
 "test__pm__statistics_8F90.html#a6530043e1fd07450a9dcba1b88bea930":[24,0,0,0,1,105,1],
 "test__pm__statistics_8F90.html#a7d5c14653d74320a89f7d0ff29d1263f":[24,0,0,0,1,105,26],
 "test__pm__statistics_8F90.html#a7f36d70cf0cd3fd9ce75eb31b07cbaff":[24,0,0,0,1,105,21],
@@ -127,6 +126,5 @@ var NAVTREEINDEX28 =
 "usergroup0.html":[26],
 "usergroup1.html":[27],
 "usergroup2.html":[28],
-"usergroup3.html":[29],
-"usergroup4.html":[30]
+"usergroup3.html":[29]
 };

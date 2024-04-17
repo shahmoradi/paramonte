@@ -1,6 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"namespacepm__arrayCompareLex.html":[22,0,5],
 "namespacepm__arrayCompareLex.html#abb24e334e814a5327b066ccca880d78a":[22,0,5,4],
 "namespacepm__arrayComplement.html":[22,0,6],
 "namespacepm__arrayComplement.html#a04a3289b7379c1b8443c10530bcc23c6":[22,0,6,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX7 =
 "namespacepm__distPiwiPoweto.html":[22,0,76],
 "namespacepm__distPiwiPoweto.html#aff344709b985e26e054159dc6e1b51b6":[22,0,76,5],
 "namespacepm__distPois.html":[22,0,77],
-"namespacepm__distPois.html#a718a3fbea53469c1db1e6a76bf2c04a6":[22,0,77,6]
+"namespacepm__distPois.html#a718a3fbea53469c1db1e6a76bf2c04a6":[22,0,77,6],
+"namespacepm__distPois.html#ad4aac66225fd003b218fa1e0da1fc233":[22,0,77,7]
 };

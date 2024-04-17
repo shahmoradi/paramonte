@@ -1,6 +1,5 @@
 var NAVTREEINDEX8 =
 {
-"namespacepm__distPois.html#ad4aac66225fd003b218fa1e0da1fc233":[22,0,77,7],
 "namespacepm__distPower.html":[22,0,78],
 "namespacepm__distPower.html#afaf05ae8e6e816d03632d833e64eb8e8":[22,0,78,10],
 "namespacepm__distPoweto.html":[22,0,79],
@@ -249,5 +248,6 @@ var NAVTREEINDEX8 =
 "namespacepm__mathConst.html#aaf0a3c5c88ea31e26338054de0d9fe16":[22,0,97,21],
 "namespacepm__mathConst.html#ab0cf347918a783085746cc8171b36142":[22,0,97,10],
 "namespacepm__mathConst.html#ab12dc020895eae6964a15d6079a15630":[22,0,97,3],
-"namespacepm__mathConst.html#ab18690622e342045543c7328110263f6":[22,0,97,20]
+"namespacepm__mathConst.html#ab18690622e342045543c7328110263f6":[22,0,97,20],
+"namespacepm__mathConst.html#ab49306ead1192544f172fd49899d1ac5":[22,0,97,17]
 };
