@@ -357,103 +357,104 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    ! Base specifications.</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    description                             = &quot;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    description                         = &quot;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>This\n</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    is a\n</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        multi-line\n</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            description.\\n&quot;                                        ! strings must be enclosed with &quot;&quot; or &#39;&#39; and can be continued on multiple lines.</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                                                                    ! No comments within strings are allowed.</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    domain                                  = &quot;cube&quot;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    domainAxisName                          = &quot;variable1&quot;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                                              &quot;variable2&quot;           ! values can appear in multiple lines.</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    domainBallCenter                        = 0 0 0 0               ! values can be separated with blanks or commas.</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    domainBallCorMat                        = 1 0 0 0</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                                              0 1 0 0</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                                              0 0 1 0</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                                              0 0 0 1</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    domainBallCovMat                        = 1 0 0 0</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                                              0 1 0 0</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                                              0 0 1 0</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                                              0 0 0 1</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    domainBallStdVec                        = 1 1 1 1</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    domainCubeLimitLower                    = 4*-1.e10              ! repetition pattern rules apply here. 4 dimensions =&gt; 4-element vector of values.</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    domainCubeLimitUpper(1)                 = +1.e10                ! Elements of vectors can be set individually.</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    domainCubeLimitUpper(2:4)               = 3*+1.e10              ! Elements of vectors can be set individually.</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    domainErrCount                          = 100</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    domainErrCountMax                       = 1000</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    inputFileHasPriority                    = FALSE                 ! This is relevant only to simulations within the Fortran programming language.</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    outputChainFileFormat                   = &quot;compact&quot;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>   !outputColumnWidth                       = 25                    ! This is an example of a variable that is commented out.</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                                                                    ! Therefore, its value will not be read by the sampler routine.</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                                                                    ! To pass it to the routine, simply remove the `!` mark at the beginning of the line.</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    outputFileName                          = &quot;./out/mvn&quot;           ! A forward-slash character at the end of the string value would indicate the specified path</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                                                                    ! is to be interpreted as the name of the folder to contain the simulation output files.</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                                                                    ! The base name for the simulation output files will be generated from the current date and time.</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                                                                    ! Otherwise, the specified base name at the end of the string will be used in naming the simulation output files.</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    outputPrecision                         = 17</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    outputReportPeriod                      = 1000</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    outputRestartFileFormat                 = &quot;ascii&quot;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    outputSampleSize                        = -1</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    outputSeparator                         = &quot;,&quot;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    outputSplashMode                        = &quot;normal&quot;              ! or quiet or silent.</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    outputStatus                            = &quot;retry&quot;               ! or extend.</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    parallelism                             = &quot;multi chain&quot;         ! &quot;singleChain&quot; would also work. Similarly, &quot;multichain&quot;, &quot;multi chain&quot;, or &quot;multiChain&quot;.</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    parallelismMpiFinalizeEnabled           = false                 ! TRUE, true, .true., .t., and t would be also all valid logical values representing truth.</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    parallelismNumThread                    = 3                     ! number of threads to use in shared-memory parallelism.</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>   !randomSeed                              = 2136275,</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>   !targetAcceptanceRate                    = 0.23e0</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            description.\\n&quot;                                    ! strings must be enclosed with &quot;&quot; or &#39;&#39; and can be continued on multiple lines.</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                                                                ! No comments within strings are allowed.</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    domain                              = &quot;cube&quot;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    domainAxisName                      = &quot;variable1&quot;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                                          &quot;variable2&quot;           ! values can appear in multiple lines.</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    domainBallAvg                       = 0 0 0 0               ! values can be separated with blanks or commas.</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    domainBallCor                       = 1 0 0 0</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                                          0 1 0 0</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                                          0 0 1 0</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                                          0 0 0 1</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    domainBallCov                       = 1 0 0 0</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                                          0 1 0 0</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                                          0 0 1 0</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                                          0 0 0 1</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    domainBallStd                       = 1 1 1 1</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    domainCubeLimitLower                = 4*-1.e10              ! repetition pattern rules apply here. 4 dimensions =&gt; 4-element vector of values.</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    domainCubeLimitUpper(1)             = +1.e10                ! Elements of vectors can be set individually.</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    domainCubeLimitUpper(2:4)           = 3*+1.e10              ! Elements of vectors can be set individually.</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    domainErrCount                      = 100</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    domainErrCountMax                   = 1000</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    inputFileHasPriority                = FALSE                 ! This is relevant only to simulations within the Fortran programming language.</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    outputChainFileFormat               = &quot;compact&quot;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>   !outputColumnWidth                   = 25                    ! This is an example of a variable that is commented out.</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                                                                ! Therefore, its value will not be read by the sampler routine.</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                                                                ! To pass it to the routine, simply remove the `!` mark at the beginning of the line.</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    outputFileName                      = &quot;./out/mvn&quot;           ! A forward-slash character at the end of the string value would indicate the specified path</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                                                                ! is to be interpreted as the name of the folder to contain the simulation output files.</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                                                                ! The base name for the simulation output files will be generated from the current date and time.</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                                                                ! Otherwise, the specified base name at the end of the string will be used in naming the simulation output files.</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    outputPrecision                     = 17</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    outputReportPeriod                  = 1000</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    outputRestartFileFormat             = &quot;ascii&quot;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    outputSampleSize                    = -1</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    outputSeparator                     = &quot;,&quot;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    outputSplashMode                    = &quot;normal&quot;              ! or quiet or silent.</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    outputStatus                        = &quot;retry&quot;               ! or extend.</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    parallelism                         = &quot;multi chain&quot;         ! &quot;singleChain&quot; would also work. Similarly, &quot;multichain&quot;, &quot;multi chain&quot;, or &quot;multiChain&quot;.</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    parallelismMpiFinalizeEnabled       = false                 ! TRUE, true, .true., .t., and t would be also all valid logical values representing truth.</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    parallelismNumThread                = 3                     ! number of threads to use in shared-memory parallelism.</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>   !randomSeed                          = 2136275,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>   !targetAcceptanceRate                = 0.23e0</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    ! MCMC specifications.</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    outputChainSize                         = 10000</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    outputSampleRefinementCount             = 10</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    outputSampleRefinementMethod            = &quot;BatchMeans&quot;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    proposal                                = &quot;normal&quot;              ! or &quot;uniform&quot; as you wish.</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    proposalCorMat(:, 1)                    = 1 0 0 0               ! first matrix column.</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    proposalCorMat(:, 2:4)                  = 0 1 0 0</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                                              0 0 1 0</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                                              0 0 0 1               ! other matrix columns.</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    proposalCovMat                          = 1 0 0 0</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                                              0 1 0 0</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                                              0 0 1 0</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                                              0 0 0 1               ! or specify all matrix elements in one statement.</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    proposalScaleFactor                     = &quot;2*0.5*Gelman&quot;        ! The asterisk here means multiplication since it is enclosed within quotation marks.</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>   !proposalStart                           = 4*1.e0                ! four values of 1.e0 are specified here by the repetition pattern symbol *</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    proposalStartDomainCubeLimitLower       = 4*-10.e0              ! repetition pattern rules apply again here. 4 dimensions =&gt; 4-element vector of values.</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    proposalStartDomainCubeLimitUpper       = 4*+10.e0              ! repetition pattern rules apply again here. 4 dimensions =&gt; 4-element vector of values.</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    proposalStartRandomized                 = false</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    proposalStdVec                          = 4*1.0                 ! repetition pattern rules apply again here. 4 dimensions =&gt; 4-element vector of values.</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    outputChainSize                     = 10000</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    outputSampleRefinementCount         = 10</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    outputSampleRefinementMethod        = &quot;BatchMeans&quot;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    proposal                            = &quot;normal&quot;              ! or &quot;uniform&quot; as you wish.</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    proposalCor(:, 1)                   = 1 0 0 0               ! first matrix column.</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    proposalCor(:, 2:4)                 = 0 1 0 0</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                                          0 0 1 0</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                                          0 0 0 1               ! other matrix columns.</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    proposalCov                         = 1 0 0 0</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                                          0 1 0 0</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                                          0 0 1 0</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                                          0 0 0 1               ! or specify all matrix elements in one statement.</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    proposalScale                       = &quot;2*0.5*Gelman&quot;        ! The asterisk here means multiplication since it is enclosed within quotation marks.</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>   !proposalStart                       = 4*1.e0                ! four values of 1.e0 are specified here by the repetition pattern symbol *</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    proposalStartDomainCubeLimitLower   = 4*-10.e0              ! repetition pattern rules apply again here. 4 dimensions =&gt; 4-element vector of values.</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    proposalStartDomainCubeLimitUpper   = 4*+10.e0              ! repetition pattern rules apply again here. 4 dimensions =&gt; 4-element vector of values.</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    proposalStartRandomized             = false</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    proposalStd                         = 4*1.0                 ! repetition pattern rules apply again here. 4 dimensions =&gt; 4-element vector of values.</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    ! DRAM specifications.</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    burninAdaptationMeasure                 = 1.</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    proposalAdaptationCount                 = 10000000</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    proposalAdaptationCountGreedy           = 0</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    proposalAdaptationPeriod                = 35</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    proposalDelayedRejectionCount           = 5</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    proposalDelayedRejectionScaleFactor     = 4*1., 2.              ! The first four elements are 1, followed by 2.</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    burninAdaptationMeasure             = 1.</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    proposalAdaptationCount             = 10000000</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    proposalAdaptationCountGreedy       = 0</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    proposalAdaptationPeriod            = 35</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    proposalDelayedRejectionCount       = 5</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    proposalDelayedRejectionScale       = 4*1., 2.              ! The first four elements are 1, followed by 2.</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>/</div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="cmakefile-mvn"></a><b>Example CMakeLists build generator file</b> <a href="#cmakefile-mvn">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cmake_minimum_required(VERSION 3.14)</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keywordflow">if</span> (NOT DEFINED CMAKE_BUILD_TYPE)</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    set(CMAKE_BUILD_TYPE Release)</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>endif()</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>if (NOT DEFINED CMAKE_Fortran_COMPILER)</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    set(CMAKE_Fortran_COMPILER &quot;/usr/bin/cc&quot;)</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>endif()</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>project(main LANGUAGES C)</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>set(CMAKE_MACOSX_RPATH ON)</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>set(CMAKE_INSTALL_RPATH_USE_LINK_PATH ON)</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>add_executable(binary main.c)</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>set_target_properties(binary PROPERTIES OUTPUT_NAME &quot;main&quot; SUFFIX &quot;.exe&quot;)</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>target_include_directories(binary PUBLIC &quot;${CMAKE_CURRENT_SOURCE_DIR}/../../../inc<span class="stringliteral">&quot;)</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral">find_library(pmlib NAMES libparamonte libparamonte.a libparamonte.dll libparamonte.dylib libparamonte.lib libparamonte.so PATHS &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}/../../../lib<span class="stringliteral">&quot;)</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="stringliteral">target_link_libraries(binary PUBLIC &quot;</span>${pmlib}<span class="stringliteral">&quot;)</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="stringliteral">if (&quot;</span>${CMAKE_C_COMPILER_ID}<span class="stringliteral">&quot; STREQUAL &quot;</span>GNU<span class="stringliteral">&quot;)</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">    target_link_libraries(binary PUBLIC m)</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">endif()</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">add_custom_target(run COMMAND &quot;</span>./main.exe<span class="stringliteral">&quot; DEPENDS binary WORKING_DIRECTORY &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>set(CMAKE_BUILD_TYPE Release)</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keywordflow">if</span> (<span class="stringliteral">&quot;${CMAKE_Fortran_COMPILER}&quot;</span> STREQUAL <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    set(CMAKE_Fortran_COMPILER <span class="stringliteral">&quot;/usr/bin/cc&quot;</span>)</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>endif()</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>project(main LANGUAGES C)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>set(CMAKE_MACOSX_RPATH ON)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>set(CMAKE_INSTALL_RPATH_USE_LINK_PATH ON)</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>add_executable(binary main.c)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>set_target_properties(binary PROPERTIES OUTPUT_NAME &quot;main&quot; SUFFIX &quot;.exe&quot;)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>target_include_directories(binary PUBLIC &quot;${CMAKE_CURRENT_SOURCE_DIR}/../../../inc<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="stringliteral">find_library(pmlib NAMES libparamonte libparamonte.a libparamonte.dll libparamonte.dylib libparamonte.lib libparamonte.so PATHS</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="stringliteral">            &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}/../../../../lib<span class="stringliteral">&quot; # library directory for code coverage.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral">            &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}/../../../lib<span class="stringliteral">&quot; # library directory for examples/benchmarks.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="stringliteral">            )</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="stringliteral">target_link_libraries(binary PUBLIC &quot;</span>${pmlib}<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">if (&quot;</span>${CMAKE_C_COMPILER_ID}<span class="stringliteral">&quot; STREQUAL &quot;</span>GNU<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">    target_link_libraries(binary PUBLIC m)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">endif()</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="stringliteral">add_custom_target(run COMMAND &quot;</span>./main.exe<span class="stringliteral">&quot; DEPENDS binary WORKING_DIRECTORY &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}<span class="stringliteral">&quot;)</span></div>
 </div><!-- fragment --> <br  />
  <a class="anchor" id="cmakerun-unix-bash-mvn"></a><b>Example Unix Bash build command via CMake build generator</b> <a href="#cmakerun-unix-bash-mvn">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/bin/bash</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>cmake . -G &quot;Unix Makefiles&quot; &amp;&amp; make &amp;&amp; make run</div>
@@ -673,94 +674,95 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    ! Base specifications.</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    description                             = &quot;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    description                         = &quot;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>This\n</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    is a\n</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        multi-line\n</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            description.\\n&quot;                                        ! strings must be enclosed with &quot;&quot; or &#39;&#39; and can be continued on multiple lines.</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                                                                    ! No comments within strings are allowed.</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    domain                                  = &quot;cube&quot;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    domainAxisName                          = &quot;variable1&quot;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                                              &quot;variable2&quot;           ! values can appear in multiple lines.</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    domainBallCenter                        = 0 0                   ! values can be separated with blanks or commas.</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    domainBallCorMat                        = 1 0</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                                              0 1</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    domainBallCovMat                        = 1, 0</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                                              0, 1</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    domainBallStdVec                        = 1, 1</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    domainCubeLimitLower                    = 2*-1.e30              ! repetition pattern rules apply here. 2 dimensions =&gt; 2-element vector of values.</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    domainCubeLimitUpper(1)                 = +1.e30                ! Elements of vectors can be set individually.</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    domainCubeLimitUpper(2)                 = +1.e30                ! Elements of vectors can be set individually.</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    domainErrCount                          = 100</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    domainErrCountMax                       = 1000</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    inputFileHasPriority                    = FALSE                 ! This is relevant only to simulations within the Fortran programming language.</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    outputChainFileFormat                   = &quot;compact&quot;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>   !outputColumnWidth                       = 25                    ! This is an example of a variable that is commented out.</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                                                                    ! Therefore, its value will not be read by the sampler routine.</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                                                                    ! To pass it to the routine, simply remove the `!` mark at the beginning of the line.</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    outputFileName                          = &quot;./out/himmelblau&quot;    ! A forward-slash character at the end of the string value would indicate the specified path</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                                                                    ! is to be interpreted as the name of the folder to contain the simulation output files.</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                                                                    ! The base name for the simulation output files will be generated from the current date and time.</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                                                                    ! Otherwise, the specified base name at the end of the string will be used in naming the simulation output files.</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    outputPrecision                         = 17</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    outputReportPeriod                      = 1000</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    outputRestartFileFormat                 = &quot;ascii&quot;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    outputSampleSize                        = -1</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    outputSeparator                         = &quot;,&quot;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    outputSplashMode                        = &quot;normal&quot;              ! or quiet or silent.</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    outputStatus                            = &quot;extend&quot;              ! or retry.</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    parallelism                             = &quot;multi chain&quot;         ! &quot;singleChain&quot; would also work. Similarly, &quot;multichain&quot;, &quot;multi chain&quot;, or &quot;multiChain&quot;.</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    parallelismMpiFinalizeEnabled           = false                 ! TRUE, true, .true., .t., and t would be also all valid logical values representing truth.</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    parallelismNumThread                    = 3                     ! number of threads to use in shared-memory parallelism.</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>   !randomSeed                              = 2136275,</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>   !targetAcceptanceRate                    = 0.23e0</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            description.\\n&quot;                                    ! strings must be enclosed with &quot;&quot; or &#39;&#39; and can be continued on multiple lines.</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                                                                ! No comments within strings are allowed.</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    domain                              = &quot;cube&quot;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    domainAxisName                      = &quot;variable1&quot;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                                          &quot;variable2&quot;           ! values can appear in multiple lines.</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    domainBallAvg                       = 0 0                   ! values can be separated with blanks or commas.</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    domainBallCor                       = 1 0</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                                            0 1</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    domainBallCov                       = 1, 0</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                                            0, 1</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    domainBallStd                       = 1, 1</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    domainCubeLimitLower                = 2*-1.e30              ! repetition pattern rules apply here. 2 dimensions =&gt; 2-element vector of values.</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    domainCubeLimitUpper(1)             = +1.e30                ! Elements of vectors can be set individually.</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    domainCubeLimitUpper(2)             = +1.e30                ! Elements of vectors can be set individually.</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    domainErrCount                      = 100</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    domainErrCountMax                   = 1000</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    inputFileHasPriority                = FALSE                 ! This is relevant only to simulations within the Fortran programming language.</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    outputChainFileFormat               = &quot;compact&quot;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>   !outputColumnWidth                   = 25                    ! This is an example of a variable that is commented out.</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                                                                ! Therefore, its value will not be read by the sampler routine.</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                                                                ! To pass it to the routine, simply remove the `!` mark at the beginning of the line.</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    outputFileName                      = &quot;./out/himmelblau&quot;    ! A forward-slash character at the end of the string value would indicate the specified path</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                                                                ! is to be interpreted as the name of the folder to contain the simulation output files.</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                                                                ! The base name for the simulation output files will be generated from the current date and time.</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                                                                ! Otherwise, the specified base name at the end of the string will be used in naming the simulation output files.</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    outputPrecision                     = 17</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    outputReportPeriod                  = 1000</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    outputRestartFileFormat             = &quot;ascii&quot;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    outputSampleSize                    = -1</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    outputSeparator                     = &quot;,&quot;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    outputSplashMode                    = &quot;normal&quot;              ! or quiet or silent.</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    outputStatus                        = &quot;extend&quot;              ! or retry.</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    parallelism                         = &quot;multi chain&quot;         ! &quot;singleChain&quot; would also work. Similarly, &quot;multichain&quot;, &quot;multi chain&quot;, or &quot;multiChain&quot;.</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    parallelismMpiFinalizeEnabled       = false                 ! TRUE, true, .true., .t., and t would be also all valid logical values representing truth.</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    parallelismNumThread                = 3                     ! number of threads to use in shared-memory parallelism.</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>   !randomSeed                          = 2136275,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>   !targetAcceptanceRate                = 0.23e0</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    ! MCMC specifications.</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    outputChainSize                         = 10000</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    outputSampleRefinementCount             = 10</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    outputSampleRefinementMethod            = &quot;BatchMeans&quot;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    proposal                                = &quot;normal&quot;              ! or &quot;uniform&quot; as you wish.</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    proposalCorMat(:, 1)                    = 1 0                   ! first matrix column.</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    proposalCorMat(:, 2)                    = 0 1                   ! second matrix column.</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    proposalCovMat                          = 1 0 0 1               ! or specify all matrix elements in one statement.</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    proposalScaleFactor                     = &quot;2*0.5*Gelman&quot;        ! The asterisk here means multiplication since it is enclosed within quotation marks.</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    proposalStart                           = 2*1.e0                ! four values of 1.e0 are specified here by the repetition pattern symbol *</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    proposalStartDomainCubeLimitLower       = 2*-100.e0             ! repetition pattern rules apply again here. 2 dimensions =&gt; 2-element vector of values.</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    proposalStartDomainCubeLimitUpper       = 2*+100.e0             ! repetition pattern rules apply again here. 2 dimensions =&gt; 2-element vector of values.</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    proposalStartRandomized                 = false</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    proposalStdVec                          = 2*1.0                 ! repetition pattern rules apply again here. 2 dimensions =&gt; 2-element vector of values.</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    outputChainSize                     = 10000</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    outputSampleRefinementCount         = 10</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    outputSampleRefinementMethod        = &quot;BatchMeans&quot;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    proposal                            = &quot;normal&quot;              ! or &quot;uniform&quot; as you wish.</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    proposalCor(:, 1)                   = 1 0                   ! first matrix column.</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    proposalCor(:, 2)                   = 0 1                   ! second matrix column.</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    proposalCov                         = 1 0 0 1               ! or specify all matrix elements in one statement.</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    proposalScale                       = &quot;2*0.5*Gelman&quot;        ! The asterisk here means multiplication since it is enclosed within quotation marks.</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    proposalStart                       = 2*1.e0                ! four values of 1.e0 are specified here by the repetition pattern symbol *</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    proposalStartDomainCubeLimitLower   = 2*-100.e0             ! repetition pattern rules apply again here. 2 dimensions =&gt; 2-element vector of values.</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    proposalStartDomainCubeLimitUpper   = 2*+100.e0             ! repetition pattern rules apply again here. 2 dimensions =&gt; 2-element vector of values.</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    proposalStartRandomized             = false</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    proposalStd                         = 2*1.0                 ! repetition pattern rules apply again here. 2 dimensions =&gt; 2-element vector of values.</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    ! DRAM specifications.</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    burninAdaptationMeasure                 = 1.</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    proposalAdaptationCount                 = 10000000</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    proposalAdaptationCountGreedy           = 0</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    proposalAdaptationPeriod                = 35</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    proposalDelayedRejectionCount           = 5</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    proposalDelayedRejectionScaleFactor     = 4*1., 2.              ! The first four elements are 1, followed by 2.</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    burninAdaptationMeasure             = 1.</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    proposalAdaptationCount             = 10000000</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    proposalAdaptationCountGreedy       = 0</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    proposalAdaptationPeriod            = 35</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    proposalDelayedRejectionCount       = 5</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    proposalDelayedRejectionScale       = 4*1., 2.              ! The first four elements are 1, followed by 2.</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>/</div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="cmakefile-himmelblau"></a><b>Example CMakeLists build generator file</b> <a href="#cmakefile-himmelblau">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cmake_minimum_required(VERSION 3.14)</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keywordflow">if</span> (NOT DEFINED CMAKE_BUILD_TYPE)</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    set(CMAKE_BUILD_TYPE Release)</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>endif()</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>if (NOT DEFINED CMAKE_Fortran_COMPILER)</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    set(CMAKE_Fortran_COMPILER &quot;/usr/bin/cc&quot;)</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>endif()</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>project(main LANGUAGES C)</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>set(CMAKE_MACOSX_RPATH ON)</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>set(CMAKE_INSTALL_RPATH_USE_LINK_PATH ON)</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>add_executable(binary main.c)</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>set_target_properties(binary PROPERTIES OUTPUT_NAME &quot;main&quot; SUFFIX &quot;.exe&quot;)</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>target_include_directories(binary PUBLIC &quot;${CMAKE_CURRENT_SOURCE_DIR}/../../../inc<span class="stringliteral">&quot;)</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral">find_library(pmlib NAMES libparamonte libparamonte.a libparamonte.dll libparamonte.dylib libparamonte.lib libparamonte.so PATHS &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}/../../../lib<span class="stringliteral">&quot;)</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="stringliteral">target_link_libraries(binary PUBLIC &quot;</span>${pmlib}<span class="stringliteral">&quot;)</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="stringliteral">if (&quot;</span>${CMAKE_C_COMPILER_ID}<span class="stringliteral">&quot; STREQUAL &quot;</span>GNU<span class="stringliteral">&quot;)</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">    target_link_libraries(binary PUBLIC m)</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">endif()</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">add_custom_target(run COMMAND &quot;</span>./main.exe<span class="stringliteral">&quot; DEPENDS binary WORKING_DIRECTORY &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>set(CMAKE_BUILD_TYPE Release)</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keywordflow">if</span> (<span class="stringliteral">&quot;${CMAKE_Fortran_COMPILER}&quot;</span> STREQUAL <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    set(CMAKE_Fortran_COMPILER <span class="stringliteral">&quot;/usr/bin/cc&quot;</span>)</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>endif()</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>project(main LANGUAGES C)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>set(CMAKE_MACOSX_RPATH ON)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>set(CMAKE_INSTALL_RPATH_USE_LINK_PATH ON)</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>add_executable(binary main.c)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>set_target_properties(binary PROPERTIES OUTPUT_NAME &quot;main&quot; SUFFIX &quot;.exe&quot;)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>target_include_directories(binary PUBLIC &quot;${CMAKE_CURRENT_SOURCE_DIR}/../../../inc<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="stringliteral">find_library(pmlib NAMES libparamonte libparamonte.a libparamonte.dll libparamonte.dylib libparamonte.lib libparamonte.so PATHS</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="stringliteral">            &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}/../../../../lib<span class="stringliteral">&quot; # library directory for code coverage.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral">            &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}/../../../lib<span class="stringliteral">&quot; # library directory for examples/benchmarks.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="stringliteral">            )</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="stringliteral">target_link_libraries(binary PUBLIC &quot;</span>${pmlib}<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">if (&quot;</span>${CMAKE_C_COMPILER_ID}<span class="stringliteral">&quot; STREQUAL &quot;</span>GNU<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">    target_link_libraries(binary PUBLIC m)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">endif()</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="stringliteral">add_custom_target(run COMMAND &quot;</span>./main.exe<span class="stringliteral">&quot; DEPENDS binary WORKING_DIRECTORY &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}<span class="stringliteral">&quot;)</span></div>
 </div><!-- fragment --> <br  />
  <a class="anchor" id="cmakerun-unix-bash-himmelblau"></a><b>Example Unix Bash build command via CMake build generator</b> <a href="#cmakerun-unix-bash-himmelblau">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/bin/bash</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>cmake . -G &quot;Unix Makefiles&quot; &amp;&amp; make &amp;&amp; make run</div>
@@ -1015,7 +1017,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="footer">Generated on Wed Apr 17 2024 10:48:23 for ParaMonte C 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Apr 20 2024 20:28:16 for ParaMonte C 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
