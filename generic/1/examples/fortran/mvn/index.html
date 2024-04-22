@@ -827,7 +827,7 @@ All ParaMonte routines assume that the user-provided objective functions return 
 
 <h2 id="implementing-the-objective-function-in-fortran">Implementing the objective function in Fortran</h2>
 
-<p>Here is a minimalistic implementation of the 4-D multivariate normal distribution objective function in Fortran, which can also be downloaded as <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/Fortran/logfunc.f90" target="_blank">logfunc.f90</a>.</p>
+<p>Here is a minimalistic implementation of the 4-D multivariate normal distribution objective function in Fortran, which can also be downloaded as <a href="https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/example/mvn/Fortran/logfunc.f90" target="_blank">logfunc.f90</a>.</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span><span class="w">
 </span><span class="c1">!%  </span><span class="w">
@@ -913,7 +913,7 @@ All ParaMonte routines assume that the user-provided objective functions return 
 
 <p>Suppose we want to randomly sample the above objective function via the <strong>D</strong>elayed-<strong>R</strong>ejection <strong>A</strong>daptive <strong>M</strong>etropolis-Hastings <strong>M</strong>arkov Chain Monte Carlo sampler of ParaMonte (the <strong>ParaDRAM</strong> sampler).</p>
 
-<p>Depending on whether you have already built the ParaMonte library from scratch on your system or you intend to use the prebuilt ParaMonte libraries, as well as the compiler you are using to build your application, there are two interfaces to the ParaDRAM sampler. These two interfaces are separated via the compiler preprocessor flag <code>IS_COMPATIBLE_COMPILER</code> in the <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main.f90" target="_blank">main.f90</a> code below,</p>
+<p>Depending on whether you have already built the ParaMonte library from scratch on your system or you intend to use the prebuilt ParaMonte libraries, as well as the compiler you are using to build your application, there are two interfaces to the ParaDRAM sampler. These two interfaces are separated via the compiler preprocessor flag <code>IS_COMPATIBLE_COMPILER</code> in the <a href="https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/example/main.f90" target="_blank">main.f90</a> code below,</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span><span class="w">
 </span><span class="c1">!%  </span><span class="w">
@@ -988,7 +988,7 @@ All ParaMonte routines assume that the user-provided objective functions return 
 
 <h3 id="calling-the-paramonte-samplers-the-signature-module-file">Calling the ParaMonte samplers: The signature module file</h3>
 
-<p>Here is the contents of the Fortran <code>paramonte.90</code> <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/src/interface/Fortran/paramonte.f90" target="_blank">signature module file</a> for the ParaMonte library routines,</p>
+<p>Here is the contents of the Fortran <code>paramonte.90</code> <a href="https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/src/interface/Fortran/paramonte.f90" target="_blank">signature module file</a> for the ParaMonte library routines,</p>
 
 <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span><span class="w">
 </span><span class="c1">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span><span class="w">
@@ -1027,7 +1027,7 @@ All ParaMonte routines assume that the user-provided objective functions return 
 </span><span class="c1">!!!!   work (education/research/industry/development/...) by citing the ParaMonte </span><span class="w">
 </span><span class="c1">!!!!   library as described on this page:</span><span class="w">
 </span><span class="c1">!!!!</span><span class="w">
-</span><span class="c1">!!!!       https://github.com/cdslaborg/paramonte/blob/main/ACKNOWLEDGMENT.md</span><span class="w">
+</span><span class="c1">!!!!       https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/ACKNOWLEDGMENT.md</span><span class="w">
 </span><span class="c1">!!!!</span><span class="w">
 </span><span class="c1">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span><span class="w">
 </span><span class="c1">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span><span class="w">
@@ -1190,18 +1190,18 @@ All ParaMonte routines assume that the user-provided objective functions return 
 
 <ol>
   <li>you have built the ParaMonte library from scratch on your system using a Fortran compiler installed on your system (ideally, the Intel <code>ifort</code> Fortran compiler), or,</li>
-  <li>you intend to use the prebuilt ParaMonte libraries which can be downloaded from the <a href="https://github.com/cdslaborg/paramonte/releases/v1.5.1" target="_blank">ParaMonte release page on GitHub</a>, but you promise that you are using a compatible compiler to compile your example. Typically this means using the <a href="https://github.com/cdslaborg/paramonte/blob/main/CHANGES.md" target="_blank">same compiler/library suite and version</a> that has been used to build ParaMonte.</li>
+  <li>you intend to use the prebuilt ParaMonte libraries which can be downloaded from the <a href="https://github.com/cdslaborg/paramonte/releases/v1.5.1" target="_blank">ParaMonte release page on GitHub</a>, but you promise that you are using a compatible compiler to compile your example. Typically this means using the <a href="https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/CHANGES.md" target="_blank">same compiler/library suite and version</a> that has been used to build ParaMonte.</li>
 </ol>
 
 <p>If one of the above two scenarios describes your situation, then you can safely use the OOP-style interface (enclosed between the two preprocessor directives <code>#if defined IS_COMPATIBLE_COMPILER</code> and <code>#else</code>) in the above code.</p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> As you may have noticed in the above main code, one advantage of the object-oriented style is that upon finishing the simulation, all simulation properties and results are stored in a single object (e.g., <strong><code>pmpd</code></strong> in the above program) which belongs to the <a href="https://github.com/cdslaborg/paramonte/blob/main/src/kernel/ParaXXXX_mod.inc.f90" target="_blank">ParaDRAM_type</a> class. This information can be then readily used and processed for other purposes within your simulation at runtime.</div>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> As you may have noticed in the above main code, one advantage of the object-oriented style is that upon finishing the simulation, all simulation properties and results are stored in a single object (e.g., <strong><code>pmpd</code></strong> in the above program) which belongs to the <a href="https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/src/kernel/ParaXXXX_mod.inc.f90" target="_blank">ParaDRAM_type</a> class. This information can be then readily used and processed for other purposes within your simulation at runtime.</div>
 
-<p>Using this modern Fortran style, you can also provide optional arguments at the time of calling the ParaMonte routines. For example, the variables <code>chainSize</code>, <code>adaptiveUpdateCount</code>, …, specified in the OOP-style interface of the <code>runSampler()</code> method in the above code would overwrite any values for the corresponding variables specified taken from the <a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/input/paramonte.in" target="_blank">input file</a>: <code>./paramonte.in</code> (unless you set the input specification variable <a href="../../../usage/paradram/specifications/#inputfilehaspriority" target="_blank">inputFileHasPriority</a> to <code>true</code> from within the input file).</p>
+<p>Using this modern Fortran style, you can also provide optional arguments at the time of calling the ParaMonte routines. For example, the variables <code>chainSize</code>, <code>adaptiveUpdateCount</code>, …, specified in the OOP-style interface of the <code>runSampler()</code> method in the above code would overwrite any values for the corresponding variables specified taken from the <a href="https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/example/mvn/input/paramonte.in" target="_blank">input file</a>: <code>./paramonte.in</code> (unless you set the input specification variable <a href="../../../usage/paradram/specifications/#inputfilehaspriority" target="_blank">inputFileHasPriority</a> to <code>true</code> from within the input file).</p>
 
 <p>In addition to being able to assign simulation specifications from within an input file, the current major release the ParaMonte library also enables the assignment of all simulation specifications from the Fortran Object-Oriented interface to the ParaMonte sampler routines (except the input specification variable <a href="../../../usage/paradram/specifications/#inputfilehaspriority" target="_blank">inputFileHasPriority</a> which is always available only from within the input file).</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> You can view the full object-oriented interface of the <strong><code>runSampler()</code></strong> method of the <strong><code>ParaDRAM_type</code></strong> sampler class in <a href="https://github.com/cdslaborg/paramonte/blob/main/src/kernel/ParaXXXX_mod.inc.f90" target="_blank">ParaDRAM_mod.inc.f90</a>.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> You can view the full object-oriented interface of the <strong><code>runSampler()</code></strong> method of the <strong><code>ParaDRAM_type</code></strong> sampler class in <a href="https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/src/kernel/ParaXXXX_mod.inc.f90" target="_blank">ParaDRAM_mod.inc.f90</a>.</div>
 
 <h3 id="calling-the-paramonte-samplers-the-old-less-flexible-but-more-portable-style">Calling the ParaMonte samplers: The old, less flexible, but more portable style</h3>
 
@@ -1784,7 +1784,7 @@ Self-contained examples with Multivariate Normal Distribution as the objective f
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on April 20, 2024<br/>
+            Last updated on April 21, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/1/images/logo.png" }}" alt="cdslab.org" /></a>
