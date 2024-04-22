@@ -746,7 +746,7 @@ Logical values are all <strong>case-insensitive</strong> and can be either <code
   </li>
   <li>Vectors (and arrays) of strings, integers, or real numbers can be specified as comma-separated or space-separated values. For example,
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>! real-valued vector of length 4, specified as the starting point of an MCMC simulation
-proposalStartPoint = 1.0, -100 3, 5.6e7 8.d1
+proposalStart = 1.0, -100 3, 5.6e7 8.d1
 </code></pre></div>    </div>
     <p>You may have noticed above that some values are comma-separated while others are space-separated. This is valid.</p>
   </li>
@@ -760,11 +760,11 @@ domainAxisName(3:4) = "ThirdVariable", "FourthVariable"
   </li>
   <li>Vector values may be selectively provided in the input file and some values may be missing. For example,
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>! a vector of length 4 specifying the random walker's step sizes along different dimensions of the objective function in a ParaDRAM simulation.
-proposalStdVec(3) = 3.0
-proposalStdVec(1:2) = 1.0, 2.0
+proposalStd(3) = 3.0
+proposalStd(1:2) = 1.0, 2.0
 </code></pre></div>    </div>
     <p>or,</p>
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proposalStdVec = 1.0, 2.0, 3.0     ! this is identical to the above representation
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proposalStd = 1.0, 2.0, 3.0     ! this is identical to the above representation
 </code></pre></div>    </div>
     <p>Notice that the missing fourth variable will not be read from the input file. Instead, the ParaMonte routines will assign it a default value.</p>
   </li>
@@ -790,19 +790,19 @@ domainCubeLimitLower = -3.d100, 2*-20.0, -100
 <ul>
   <li>The Array representation rules are identical to the vectors described in the previous section. For example, the following array value assignments are all equivalent,
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>! a symmetric matrix of size 4-by-4 of 64-bit real numbers representing the initial covariance matrix of the ParaDRAM sampler
-proposalCovMat =   1.0, 0.0, 0.0, 0.0,
+proposalCov =   1.0, 0.0, 0.0, 0.0,
                         0.0, 1.0, 0.0, 0.0,
                         0.0, 0.0, 1.0, 0.0,
                         0.0, 0.0, 0.0, 1.0,
 </code></pre></div>    </div>
     <p>or,</p>
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proposalCovMat(:,1) = 1.0, 0.0, 0.0, 0.0,
-proposalCovMat(:,2) = 0.0, 1.0, 0.0, 0.0,
-proposalCovMat(:,3) = 0.0, 0.0, 1.0, 0.0,
-proposalCovMat(:,4) = 0.0, 0.0, 0.0, 1.0,
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proposalCov(:,1) = 1.0, 0.0, 0.0, 0.0,
+proposalCov(:,2) = 0.0, 1.0, 0.0, 0.0,
+proposalCov(:,3) = 0.0, 0.0, 1.0, 0.0,
+proposalCov(:,4) = 0.0, 0.0, 0.0, 1.0,
 </code></pre></div>    </div>
     <p>or,</p>
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proposalCovMat(1:4,1:4) = 1.0, 4*0.0, 1.0, 4*0.0, 1.0, 4*0.0, 1.0
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proposalCov(1:4,1:4) = 1.0, 4*0.0, 1.0, 4*0.0, 1.0, 4*0.0, 1.0
 </code></pre></div>    </div>
     <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> When dealing with multidimensional arrays, keep in mind that the ParaMonte routines read and store array elements in a <a href="https://en.wikipedia.org/wiki/Row-_and_column-major_order" target="_blank">column-major order</a> from the input file. This is why the columns are represented by <code>:</code> in the second matrix representation in the example above (instead of rows). Matrix rows are NOT stored sequentially in the computer memory. <strong>For symmetric positive-definite matrices (like covariance or correlation matrices), this convention is irrelevant and unimportant</strong> and does not have any effects (as is the case in the example above).</div>
   </li>

@@ -699,7 +699,7 @@ ParaDRAM_run_20240312_060333_408_process_1_chain.txt
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The processor ID in all ParaMonte simulations starts with number 1 (as opposed to 0).</div>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important: </b>
-When the simulation is performed in the multi-chain parallelism mode, specified by the input variable, <b><pre>parallelizationModel = "multiChain"</pre></b> <b>each</b> leader process (that is, all processes in the <b><code>multiChain</code></b> parallel simulation) will generate 5 <b>separate</b> output files in the simulation. Each set of five files contains information about the <b>unique simulation</b> that has been <b>performed by the corresponding process</b>.
+When the simulation is performed in the multi-chain parallelism mode, specified by the input variable, <b><pre>parallelism = "multiChain"</pre></b> <b>each</b> leader process (that is, all processes in the <b><code>multiChain</code></b> parallel simulation) will generate 5 <b>separate</b> output files in the simulation. Each set of five files contains information about the <b>unique simulation</b> that has been <b>performed by the corresponding process</b>.
 </div>
 
 <h3 id="the-output-report-file">The output report file</h3>
@@ -745,9 +745,9 @@ The user can set the number of <b>i.i.d.</b> randomly-sampled states by the Para
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 You can control the number of significant digits of the real numbers in this file and the choice of the delimiter via the two input specification variables 
-<a href="../../paradram/specifications/#outputrealprecision" target="_blank">outputRealPrecision</a> 
+<a href="../../paradram/specifications/#outputrealprecision" target="_blank">outputPrecision</a> 
 and 
-<a href="../../paradram/specifications/#outputdelimiter" target="_blank">outputDelimiter</a>, respectively.
+<a href="../../paradram/specifications/#outputdelimiter" target="_blank">outputSeparator</a>, respectively.
 </div>
 
 <h3 id="the-output-progress-file">The output progress file</h3>
@@ -757,7 +757,7 @@ and
 <ul>
   <li>information about the number of calls the ParaDRAM sampler makes to the user-provided mathematical objective function,</li>
   <li>information about the overall efficiency of the ParaDRAM sampler,</li>
-  <li>information about the dynamic efficiency of the sampler over the past <a href="../../paradram/specifications/#progressreportperiod" target="_blank">progressReportPeriod</a> number of calls to the mathematical objective function,</li>
+  <li>information about the dynamic efficiency of the sampler over the past <a href="../../paradram/specifications/#progressreportperiod" target="_blank">outputReportPeriod</a> number of calls to the mathematical objective function,</li>
   <li>information about the timing of the simulation including,
     <ul>
       <li>the time spent since the start of the simulation,</li>
@@ -781,9 +781,9 @@ and
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 You can control the number of significant digits of the real numbers in this file and the choice of the delimiter via the two input specification variables 
-<a href="../../paradram/specifications/#outputrealprecision" target="_blank">outputRealPrecision</a> 
+<a href="../../paradram/specifications/#outputrealprecision" target="_blank">outputPrecision</a> 
 and 
-<a href="../../paradram/specifications/#outputdelimiter" target="_blank">outputDelimiter</a>, respectively.
+<a href="../../paradram/specifications/#outputdelimiter" target="_blank">outputSeparator</a>, respectively.
 </div>
 
 <h3 id="the-output-restart-file">The output restart file</h3>
@@ -839,9 +839,9 @@ When the user requests the restart file to be written in ASCII format, the ParaD
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
 You can control the number of significant digits of the real numbers in this file and the choice of the delimiter via the two input specification variables 
-<a href="../../paradram/specifications/#outputrealprecision" target="_blank">outputRealPrecision</a> 
+<a href="../../paradram/specifications/#outputrealprecision" target="_blank">outputPrecision</a> 
 and 
-<a href="../../paradram/specifications/#outputdelimiter" target="_blank">outputDelimiter</a>, respectively.
+<a href="../../paradram/specifications/#outputdelimiter" target="_blank">outputSeparator</a>, respectively.
 </div>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> <strong>Each row</strong> in the output chain file represents information about a <strong>uniquely-sampled point</strong> during the simulation. <strong>Each column</strong> in the chain file represents information about <strong>one attribute of the sampled point</strong>.</div>
