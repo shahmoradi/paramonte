@@ -329,17 +329,17 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 </div><!-- fragment --> <br  />
  <a class="anchor" id="compile-unix-intel-setGammaCDF"></a><b>Example Unix compile command via Intel <code>ifort</code> compiler</b> <a href="#compile-unix-intel-setGammaCDF">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>rm main.exe</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>ifort -fpp -standard-semantics -O3 -Wl,-rpath,../../../lib -I../../../inc main.F90 ../../../lib/libparamonte_fortran_*_intel* -o main.exe</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>ifort -fpp -standard-semantics -O3 -Wl,-rpath,../../../lib -I../../../inc main.F90 ../../../lib/libparamonte* -o main.exe</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>./main.exe</div>
 </div><!-- fragment --> <br  />
  <a class="anchor" id="compile-batch-intel-setGammaCDF"></a><b>Example Windows Batch compile command via Intel <code>ifort</code> compiler</b> <a href="#compile-batch-intel-setGammaCDF">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>del main.exe</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>set PATH=..\..\..\lib;%PATH%</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>ifort /fpp /standard-semantics /O3 /I:..\..\..\include main.F90 ..\..\..\lib\libparamonte_fortran_*_intel*.lib /exe:main.exe</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>ifort /fpp /standard-semantics /O3 /I:..\..\..\include main.F90 ..\..\..\lib\libparamonte*.lib /exe:main.exe</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>main.exe</div>
 </div><!-- fragment --> <br  />
  <a class="anchor" id=" compile-unix-gnu-setGammaCDF"></a><b>Example Unix / MinGW compile command via GNU <code>gfortran</code> compiler</b> <a href="#compile-unix-gnu-setGammaCDF">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>rm main.exe</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>gfortran -cpp -ffree-line-length-none -O3 -Wl,-rpath,../../../lib -I../../../inc main.F90 ../../../lib/libparamonte_fortran_*_gnu* -o main.exe</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>gfortran -cpp -ffree-line-length-none -O3 -Wl,-rpath,../../../lib -I../../../inc main.F90 ../../../lib/libparamonte* -o main.exe</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>./main.exe</div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="output-setGammaCDF"></a><b>Example output</b> <a href="#output-setGammaCDF">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
@@ -502,13 +502,15 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
-<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<p>This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
 <dl class="authors"><dt><b><a class="el" href="authors.html#_authors000431">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__distGamma_8F90_source.html#l00888">888</a> of file <a class="el" href="pm__distGamma_8F90_source.html">pm_distGamma.F90</a>.</p>
@@ -521,7 +523,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distGamma.html">pm_distGamma</a></li><li class="navelem"><a class="el" href="interfacepm__distGamma_1_1setGammaCDF.html">setGammaCDF</a></li>
-        <li class="footer">Generated on Sat Apr 20 2024 20:31:43 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Fri Apr 26 2024 15:46:54 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

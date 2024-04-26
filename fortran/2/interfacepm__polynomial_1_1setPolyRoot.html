@@ -518,17 +518,17 @@ This generic interface combines, significantly extends, and modernizes the <code
 </div><!-- fragment --> <br  />
  <a class="anchor" id="compile-unix-intel-setPolyRoot"></a><b>Example Unix compile command via Intel <code>ifort</code> compiler</b> <a href="#compile-unix-intel-setPolyRoot">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>rm main.exe</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>ifort -fpp -standard-semantics -O3 -Wl,-rpath,../../../lib -I../../../inc main.F90 ../../../lib/libparamonte_fortran_*_intel* -o main.exe</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>ifort -fpp -standard-semantics -O3 -Wl,-rpath,../../../lib -I../../../inc main.F90 ../../../lib/libparamonte* -o main.exe</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>./main.exe</div>
 </div><!-- fragment --> <br  />
  <a class="anchor" id="compile-batch-intel-setPolyRoot"></a><b>Example Windows Batch compile command via Intel <code>ifort</code> compiler</b> <a href="#compile-batch-intel-setPolyRoot">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>del main.exe</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>set PATH=..\..\..\lib;%PATH%</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>ifort /fpp /standard-semantics /O3 /I:..\..\..\include main.F90 ..\..\..\lib\libparamonte_fortran_*_intel*.lib /exe:main.exe</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>ifort /fpp /standard-semantics /O3 /I:..\..\..\include main.F90 ..\..\..\lib\libparamonte*.lib /exe:main.exe</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>main.exe</div>
 </div><!-- fragment --> <br  />
  <a class="anchor" id=" compile-unix-gnu-setPolyRoot"></a><b>Example Unix / MinGW compile command via GNU <code>gfortran</code> compiler</b> <a href="#compile-unix-gnu-setPolyRoot">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>rm main.exe</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>gfortran -cpp -ffree-line-length-none -O3 -Wl,-rpath,../../../lib -I../../../inc main.F90 ../../../lib/libparamonte_fortran_*_gnu* -o main.exe</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>gfortran -cpp -ffree-line-length-none -O3 -Wl,-rpath,../../../lib -I../../../inc main.F90 ../../../lib/libparamonte* -o main.exe</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>./main.exe</div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="output-setPolyRoot"></a><b>Example output</b> <a href="#output-setPolyRoot">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
@@ -2665,13 +2665,15 @@ This generic interface combines, significantly extends, and modernizes the <code
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
 </p><ol>
 <li>
-If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
 <li>
-If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>you must also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
-<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a> <br  />
+<p>This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a> <br  />
  Copyright © 1996 California Institute of Technology, Pasadena, California. ALL RIGHTS RESERVED. Based on Government Sponsored Research NAS7-03001. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: Redistributions of source code must retain this copyright notice, this list of conditions and the following disclaimer. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. Neither the name of the California Institute of Technology (Caltech) nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. For those codes indicated with a Math a la Carte copyright, the same rules apply, except without the full force of the Caltech legal team. When citing this software we request that you also mention the names of the people who wrote the software you are using. Designed by C. L. Lawson, JPL, May 1986. Programmed by C. L. Lawson and S. Y. Chiu, JPL, May 1986, Feb. 1987.</dd></dl>
 <dl class="authors"><dt><b><a class="el" href="authors.html#_authors001070">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 
@@ -2685,7 +2687,7 @@ If you regenerate any parts/ideas from this library in a programming environment
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__polynomial.html">pm_polynomial</a></li><li class="navelem"><a class="el" href="interfacepm__polynomial_1_1setPolyRoot.html">setPolyRoot</a></li>
-        <li class="footer">Generated on Sat Apr 20 2024 20:31:46 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Fri Apr 26 2024 15:46:57 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
