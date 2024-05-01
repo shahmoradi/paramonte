@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" python ParaDRAM Fortran C C++ output sample chain report restart progress">
+<meta name="keywords" content=" Python ParaDRAM Fortran C C++ output sample chain report restart progress">
 <title>The ParaDRAM simulation parallelization tips | ParaMonte: Parallel Monte Carlo and Machine Learning Library</title>
 <link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/prismOkaidia.css">
 <script src="https://www.cdslab.org/paramonte/generic/2/js/prismOkaidia.js"></script>
@@ -685,7 +685,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
 <h2 id="paradram-parallelization-tips">ParaDRAM parallelization tips</h2>
 
-<p>By default, the ParaDRAM sampler utilizes a Fork-Join parallelism paradigm where multiple proposals are generated and inspected for acceptance at each MCMC iteration. This is in addition to and different from the <strong>perfect-parallelism</strong> paradigm whereby multiple MCMC chains are simulated simultaneously in parallel independently of each other. The choice of parallelism paradigm can be changed from the default Fork-Join via the input simulation specification <a href="../specifications/#parallelizationmodel" target="_blank">parallelism</a>.</p>
+<p>By default, the ParaDRAM sampler utilizes a Fork-Join parallelism paradigm where multiple proposals are generated and inspected for acceptance at each MCMC iteration. This is in addition to and different from the <strong>perfect-parallelism</strong> paradigm whereby multiple MCMC chains are simulated simultaneously in parallel independently of each other. The choice of parallelism paradigm can be changed from the default Fork-Join via the input simulation specification <a href="../specifications/#parallelism" target="_blank">parallelism</a>.</p>
 
 <h3 id="running-in-parallel-to-check-for-mcmc-convergence">Running in parallel to check for MCMC convergence</h3>
 
@@ -702,7 +702,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
 <p>The efficiency of a parallel ParaDRAM simulation depends heavily on two factors:</p>
 <ol>
   <li>The time cost of the objective function call (as compared to the inter-process communication cost).</li>
-  <li>The efficiency of the MCMC sampler (i.e., the average acceptance rate). <strong>As a rule of thumb for maximum efficiency</strong>, the number of processors should be set to a number roughly equal to or less than the inverse of the mean efficiency (i.e., the mean acceptance rate) of the MCMC sampler. This holds true only if a single objective function call costs significantly more than the inter-process communication cost. In other words, this is the ideal scenario.
+  <li>The efficiency of the MCMC sampler (i.e., the average acceptance rate). <strong>As a rule of thumb for maximum efficiency</strong>, the number of processors should be set to a number roughly equal to or less than the inverse of the mean efficiency (i.e., the mean acceptance rate) of the MCMC sampler. This holds only if a single objective function call costs significantly more than the inter-process communication cost. In other words, this is the ideal scenario.
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Although the optimal average MCMC acceptance rate is generally around $0.234$, lowering the efficiency to increase the number of parallel cores – and therefore, the parallelization efficiency – is often a reasonably good strategy. The average MCMC acceptance rate of a given ParaDRAM simulation can be controlled via the input simulation specification <a href="../specifications/#targetacceptancerate" target="_blank">targetAcceptanceRate</a> or more appropriately, adjusted by varying the value of <a href="../specifications/#proposalscale" target="_blank">proposalScale</a> property of the simulation.</div>
   </li>
 </ol>
@@ -810,7 +810,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on April 22, 2024<br/>
+            Last updated on April 30, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/2/images/logo.png" }}" alt="cdslab.org" /></a>

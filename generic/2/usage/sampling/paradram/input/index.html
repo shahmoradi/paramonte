@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" C C++ Fortran python input file ParaDRAM API usage interface">
+<meta name="keywords" content=" C C++ Fortran Python input file ParaDRAM API usage interface">
 <title>The structure of the optional input file | ParaMonte: Parallel Monte Carlo and Machine Learning Library</title>
 <link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/prismOkaidia.css">
 <script src="https://www.cdslab.org/paramonte/generic/2/js/prismOkaidia.js"></script>
@@ -675,24 +675,24 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
 <h2 id="when-is-the-input-file-needed">When is the input file needed?</h2>
 
-<p>The input files to the ParaMonte library sampler routines are <strong>optional</strong>. If not provided, all simulation specifications will be set to appropriate default values or the ParaMonte routine’s best guess for the proper values. However, if the user wants to fine-tune the specifics of a ParaMonte simulation, then depending on the programming language interface to the ParaMonte library, the input file may or may not be the sole method of setting up the simulation specifications,</p>
+<p>The input files to the ParaMonte library sampler routines are <strong>optional</strong>. If not provided, all simulation specifications will be set to appropriate default values or the ParaMonte samplers’ best guess for the proper values. However, if the user wants to fine-tune the specifics of a sampling simulation, then depending on the programming language interface to the ParaMonte library, the input file may or may not be the sole method of setting up the simulation specifications,</p>
 
 <ul>
   <li>The <strong>C/C++</strong> programming language: Providing the path to an <strong>input external file</strong> is <strong>the sole method of simulation setup</strong> by the user.</li>
-  <li>The <strong>Fortran</strong> programming language: Providing the path to an <strong>input external file</strong> is <strong>the preferred method of simulation setup</strong> by the user. However, the input file is not the sole method of specifying the simulation setup. See <a href="https://www.cdslab.org/paramonte/generic/2/../../fortran/2/interfacepm__sampling_1_1getErrSampling.html">the ParaMonte Fortran documentation</a> for more information about the alternative, less flexible method.</li>
+  <li>The <strong>Fortran</strong> programming language: Providing the path to an <strong>input external file</strong> is <strong>the preferred method of simulation setup</strong> by the user. However, the input file is not the sole method of specifying the simulation setup. See <a href="https://www.cdslab.org/paramonte/generic/2/../../fortran/2/interfacepm__sampling_1_1getErrSampling.html">the ParaMonte Fortran documentation</a> of the generic interface <code>getErrSampling</code> for more information about the alternative, less flexible method.</li>
   <li>The <strong>MATLAB</strong> programming language: Providing the path to an <strong>input external file</strong> is <strong>NOT the preferred method</strong> of simulation setup by the user. This is because <a href="https://www.mathworks.com/matlabcentral/fileexchange/78946-paramonte">the ParaMonte MATLAB library</a> already has a much more flexible dynamic method of simulation specifications setup from within the MATLAB programming language. Nevertheless, it is equally possible to specify everything from within an input simulation specifications file.
-    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> When you provide the path to an input file, all other simulation specifications made from the MATLAB programming environment will be ignored in favor of the corresponding values that may or may not be present in the specified external input file.</div>
+    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> When you provide the path to an input file, all other simulation specifications made within the MATLAB programming environment will be ignored in favor of the corresponding values in the specified external input file, which may or may not be present.</div>
   </li>
   <li>The <strong>Python</strong> programming language: Providing the path to an <strong>input external file</strong> is <strong>NOT the preferred method</strong> of simulation setup by the user. This is because <a href="https://pypi.org/project/paramonte/">the ParaMonte Python library</a> already has a much more flexible dynamic method of simulation specifications setup from within the Python programming language. Nevertheless, it is equally possible to specify everything from within an input simulation specifications file.
-    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> When you provide the path to an input file, all other simulation specifications made from within the Python programming environment will be ignored in favor of the corresponding values that may or may not be present in the specified external input file.</div>
+    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> When you provide the path to an input file, all other simulation specifications made within the Python programming environment will be ignored in favor of the corresponding values in the specified external input file, which may or may not be present.</div>
   </li>
 </ul>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> If an external input file whose path is given to the ParaMonte sampler routine does not exist (or if the path fails to point to the file properly), then the ParaMonte sampler will continue with the simulation; however, with default values assigned to all simulation specification variables. In this case, the ParaMonte routines will print a WARNING message on the screen, highlighting this failure to locate and read the external input file.</div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> If an external input file whose path is given to a ParaMonte sampler routine does not exist (or if the path fails to point to the file properly), then the sampler will continue with the simulation; however, with default values assigned to all simulation specification variables. In this case, the ParaMonte routines will print a WARNING message on the screen, highlighting this failure to locate and read the external input file.</div>
 
 <h2 id="the-structure-of-the-optional-input-file">The structure of the optional input file</h2>
 
-<p>Here is a summary of useful guidelines and rules for writing ParaMonte input files.</p>
+<p>Here is a summary of useful guidelines and rules for writing ParaMonte sampler input files.</p>
 
 <h3 id="organization"><strong>Organization</strong></h3>
 
@@ -718,7 +718,7 @@ Variables within a namelist group can be separated from each other by colon or w
 
 <h3 id="values"><strong>Values</strong></h3>
 
-<p>Like variables, values within a namelist group can be separated from each other by either a colon or whitespace characters.</p>
+<p>Like variables, values within a namelist group can be separated by either a colon or whitespace characters.</p>
 
 <ul>
   <li><strong>Strings</strong>
@@ -731,8 +731,8 @@ String values can be continued on multiple lines; however, any additional whites
 Logical values are all <strong>case-insensitive</strong> and can be either <code>.true.</code>, <code>true</code>, or <code>t</code> for a <code>TRUE</code> value or <code>.false.</code>, <code>false</code>, or <code>f</code> for a <code>FALSE</code> value.</li>
   <li><strong>Real (Float)</strong>
     <ul>
-      <li>Real values are by default double-precision in MATLAB and Python programming languages, but can be <code>single</code>, <code>double</code>, or <code>quad</code> precision within the C and C++ programming languages and any precision supported by the processor within the Fortran programming language.</li>
-      <li>The double precision is capable of holding up to <code>16</code> digits of precision and representing numbers as large as $\approx 10^{307}$ and as tiny as $\approx 10^{-307}$.</li>
+      <li>Real values are, by default, double-precision in MATLAB and Python programming languages. But they can be <code>single</code>, <code>double</code>, or <code>quad</code> precision within the C and C++ programming languages and any precision supported by the processor within the Fortran programming language.</li>
+      <li>The double precision can hold up to <code>16</code> digits of precision and represent numbers as large as $\approx 10^{307}$ and as tiny as $\approx 10^{-307}$.</li>
     </ul>
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> To keep the representation of numbers accurate up to 16 digits, consider using the letter <strong><code>d</code></strong> instead of <strong><code>e</code></strong> for the scientific representation of numbers. The letter <strong><code>d</code></strong> stands for <strong>double precision</strong> (<strong><code>64-bit</code></strong> real/float). For example, the value <strong><code>1.d0</code> is guaranteed to be <code>1.0000000000000000</code></strong> in the simulation, whereas <code>1.e0</code> is only guaranteed to have single-precision accuracy. However, most compilers will represent this as <code>1.0000000000000000</code> upon conversion to a full-precision value. But in general, it won’t hurt to use <strong><code>d</code></strong> in place of <strong><code>e</code></strong> for the scientific representation of double-precision values <strong>only</strong> within the input files (Outside the input files, the number-representation rules of the specific programming language of your choice, in which you are coding your objective function, must be followed).</div>
   </li>
@@ -748,7 +748,7 @@ Logical values are all <strong>case-insensitive</strong> and can be either <code
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>! real-valued vector of length 4, specified as the starting point of an MCMC simulation
 proposalStart = 1.0, -100 3, 5.6e7 8.d1
 </code></pre></div>    </div>
-    <p>You may have noticed above that some values are comma-separated while others are space-separated. This is valid.</p>
+    <p>You may have noticed above that some values are comma-separated while others are space-separated, which is a valid syntax.</p>
   </li>
   <li>Vector (an array) values may be specified separately on multiple lines and in random order like the following,
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>! a vector of strings specifying the names of the variables that are going to be sampled in the simulation, 
@@ -758,13 +758,13 @@ domainAxisName(1) = "FirstVariable"
 domainAxisName(3:4) = "ThirdVariable", "FourthVariable"
 </code></pre></div>    </div>
   </li>
-  <li>Vector values may be selectively provided in the input file and some values may be missing. For example,
+  <li>Vector values may be selectively provided in the input file, and some values may be missing. For example,
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>! a vector of length 4 specifying the random walker's step sizes along different dimensions of the objective function in a ParaDRAM simulation.
 proposalStd(3) = 3.0
 proposalStd(1:2) = 1.0, 2.0
 </code></pre></div>    </div>
     <p>or,</p>
-    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proposalStd = 1.0, 2.0, 3.0     ! this is identical to the above representation
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proposalStd = 1.0, 2.0, 3.0     ! This is identical to the above representation
 </code></pre></div>    </div>
     <p>Notice that the missing fourth variable will not be read from the input file. Instead, the ParaMonte routines will assign it a default value.</p>
   </li>
@@ -808,7 +808,7 @@ proposalCov(:,4) = 0.0, 0.0, 0.0, 1.0,
   </li>
 </ul>
 
-<h3 id="example-contents-of-a-paramonte-simulation-input-file">Example contents of a ParaMonte simulation input file</h3>
+<h3 id="example-contents-of-a-paradram-simulation-input-file">Example contents of a ParaDRAM simulation input file</h3>
 
 <p>The following box shows an example input specifications file for a ParaDRAM simulation of an objective function defined on a 4-dimensional domain (Notice the group name <code>&amp;ParaDRAM</code> at the beginning and <code>/</code> at the end). Notice the ample usage of the comment symbol wherever the user deems it appropriate,</p>
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!   DESCRIPTION:
@@ -950,7 +950,7 @@ The following rules and conventions are held for all ParaMonte sampler routines:
 <ul>
   <li>Specifying the simulation properties in an external input file ensures your simulation’s highest level of flexibility and portability by avoiding the hardcoding of simulation specifications into your compiled code. Imagine you specify a simulation property inside your code, compile and run it, and then realize that you want to change that property value to something else. <strong>Without an external input file, you would have to recompile your code every time for every property change.</strong></li>
   <li>Also, the same specification input file can be used to set up the same simulation settings from any programming language without a single line of change in the input file. <strong>The contents of the input files are programming-language-agnostic</strong>.</li>
-  <li>When specified from the input file, all variable names are case-insensitive across all programming languages.</li>
+  <li>All variable names are case-insensitive across all programming languages when specified from the input file.</li>
   <li>The order by which the simulation specification variables appear in the input file is irrelevant.</li>
   <li>Multiple simulation namelist groups, each corresponding to an independent call to a different ParaMonte routine, can be placed within a single input file, resulting in a cleaner, more portable organization of the input data for the given simulation problem.</li>
 </ul>
@@ -1058,7 +1058,7 @@ The following rules and conventions are held for all ParaMonte sampler routines:
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on April 22, 2024<br/>
+            Last updated on April 30, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/2/images/logo.png" }}" alt="cdslab.org" /></a>

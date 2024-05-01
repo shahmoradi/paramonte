@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" restart ParaDRAM C C++ Fortran python">
+<meta name="keywords" content=" restart ParaDRAM C C++ Fortran Python">
 <title>The ParaDRAM simulation restart functionality | ParaMonte: Parallel Monte Carlo and Machine Learning Library</title>
 <link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/latest/css/prismOkaidia.css">
 <script src="https://www.cdslab.org/paramonte/generic/latest/js/prismOkaidia.js"></script>
@@ -673,27 +673,27 @@ the script runs before the sidebar code runs and the class never gets inserted.
     
 <p><br /></p>
 
-<p>Every ParaDRAM simulation generates an output restart file whose name ends with either <code>_restart.bin</code> (the default suffix) or <code>_restart.txt</code>. When the file extension is <code>.bin</code>, the contents of the file are written in binary format. Although the binary format is NOT human-readable, it has several advantages to the human-readable ASCII-formatted file suffixed by <code>_restart.txt</code>. The format of the output restart file can be specified via the input specification variable <code>outputRestartFileFormat</code> described <a href="../../paradram/specifications/#outputrestartfileformat" target="_blank">here</a>.</p>
+<p>Every ParaDRAM simulation generates an output restart file whose name ends with either <code>_restart.bin</code> (the default suffix) or <code>_restart.txt</code>. When the file extension is <code>.bin</code>, the file’s contents are written in binary format. Although the binary format is NOT human-readable, it has several advantages to the human-readable ASCII-formatted file suffixed by <code>_restart.txt</code>. The format of the output restart file can be specified via the input specification variable <code>outputRestartFileFormat</code> described <a href="../../paradram/specifications/#outputrestartfileformat" target="_blank">here</a>.</p>
 
-<p>The output restart file contains all information that is needed to restart a simulation should runtime interruptions happen.</p>
+<p>The output restart file contains all the information needed to restart a simulation should runtime interruptions happen.</p>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important: </b>
 
-The restart functionality of the ParaDRAM routine is one of the most powerful and unique features of this sampler. If any runtime interruptions happen at any stage during a ParaDRAM simulation, whether in <b>serial or parallel</b> mode, the sampler will be able to restart from where it left off and <b>produce the same results, up to 16 digits of precision</b> that it was supposed to produce in the previous run if it remained uninterrupted. In other words, <b>the restart mode is fully-deterministic into the future and accurate up to 16 digits of real/float precision, despite the inherently stochastic nature of the Monte Carlo simulations.</b>.
+The restart functionality of the ParaDRAM routine is one of this sampler's most powerful and unique features. If any runtime interruptions happen at any stage during a ParaDRAM simulation, whether in <b>serial or parallel</b> mode, the sampler will be able to restart from where it left off and <b>produce the same results, up to 16 digits of precision</b> that it was supposed to produce in the previous run if it remained uninterrupted. In other words, <b>the restart mode is fully deterministic into the future and accurate up to the last decimal digit of real/float precision requested, despite the inherently stochastic nature of the Monte Carlo simulations.</b>.
 <br />
 For this to happen, make sure to set the random seed of the ParaMonte sampler's random number generator (<a href="../specifications/#randomseed" target="_blank"><b><code>randomSeed</code></b></a>) before the simulation, and fix the prefix of the output file names via the simulation specification <a href="../specifications/#outputfilename" target="_blank"><b><code>outputFileName</code></b></a>.
 
 </div>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b>
-When the user requests the restart file to be written in ASCII format, the ParaDRAM sampler will write additional redundant data to the restart file. Although this data is not required for the simulation restart, it can be useful information for the users who are interested in exploring the dynamic evolution of the adaptation of the properties of the proposal distribution of the ParaDRAM sampler.
+When the user requests the restart file to be written in ASCII format, the ParaDRAM sampler will write additional redundant data to the restart file. Although this data is not required for the simulation restart, it can be useful information for users interested in exploring the dynamic evolution of the adaptation of the properties of the proposal distribution of the ParaDRAM sampler.
 </div>
 
 <h2 id="how-to-restart-an-interrupted-paradram-simulation">How to restart an interrupted ParaDRAM simulation?</h2>
 
 <h3 id="short-answer"><strong>Short answer</strong></h3>
 
-<p>Simply <strong>rerun the simulation with the same configuration</strong> (i.e., the same input specifications). Most importantly, ensure the value of the input variable <code>outputFileName</code>, is set to <strong>the same output filename’s prefix</strong> by which the simulation output files are generated.</p>
+<p>Simply <strong>rerun the simulation with the same configuration</strong> (i.e., the same input specifications). Most importantly, ensure the value of the input variable <code>outputFileName</code> is set to <strong>the same output filename’s prefix</strong> by which the simulation output files are generated.</p>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> We recommend that you always set a value for the input specification variable <strong><code>outputFileName</code></strong>. If you do so and the simulation gets interrupted for any reason, <strong>all you need to do to restart your simulation is to rerun it</strong>.</div>
 
@@ -701,10 +701,10 @@ When the user requests the restart file to be written in ASCII format, the ParaD
 
 <h3 id="long-answer"><strong>Long answer</strong></h3>
 
-<p>To understand the mechanism behind the restart functionality of the ParaDRAM sampler, you need to know the following facts about the inner-workings of it:</p>
+<p>To understand the mechanism behind the restart functionality of the ParaDRAM sampler, you need to know the following facts about its inner workings:</p>
 
 <ul>
-  <li>Every time a ParaDRAM simulation begins, the sampler checks for the value of the simulation specification variable <a href="../../paradram/specifications/#outputfilename" target="_blank">outputFileName</a> which is provided by the user. This serves as <strong>the common prefix in the names of all files</strong> that are output by the ParaDRAM sampler.
+  <li>Every time a ParaDRAM simulation begins, the sampler checks for the value of the simulation specification variable <a href="../../paradram/specifications/#outputfilename" target="_blank">outputFileName</a> provided by the user. This serves as <strong>the common prefix in the names of all files</strong> that are output by the ParaDRAM sampler.
     <ul>
       <li>For example, a user-input value of <code>outputFileName=./out/temp</code> will lead to the generation of a set of ParaDRAM output files with the following names (by the first processor in the simulation),
         <pre><code>temp_run1_pid1_progress.txt
@@ -715,17 +715,17 @@ temp_run1_pid1_chain.txt
 </code></pre>
         <p>which are all stored in the folder <code>./out/</code> relative to the current working directory from which you called the  sampler.</p>
       </li>
-      <li>If the value of <code>outputFileName</code> ends with a forward- (<code>/</code>) or backward- (<code>\</code>) slash on Windows OS, or with a forward-slash (<code>/</code>) on Linux and Darwin (Mac) OS, then the user-provided value will be treated as the folder name in which the output files will have to be stored. In this case, the ParaDRAM sampler will assign a common random filename-prefix to all of the generated output files (which always starts with <code>ParaDRAM_run_</code>), for example, <code>ParaDRAM_run_20240312_060333_408</code> in the following filenames,
-        <pre><code>ParaDRAM_run_20240312_060333_408_run1_pid1_progress.txt
-ParaDRAM_run_20240312_060333_408_run1_pid1_restart.txt
-ParaDRAM_run_20240312_060333_408_run1_pid1_report.txt
-ParaDRAM_run_20240312_060333_408_run1_pid1_sample.txt
-ParaDRAM_run_20240312_060333_408_run1_pid1_chain.txt
+      <li>If the value of <code>outputFileName</code> ends with a forward- (<code>/</code>) or backward- (<code>\</code>) slash on Windows OS or with a forward-slash (<code>/</code>) on Linux and Darwin (Mac) OS, then the user-provided value will be treated as the folder name in which the output files will have to be stored. In this case, the ParaDRAM sampler will assign a common random filename-prefix to all of the generated output files (which always starts with <code>ParaDRAM_</code>), for example, <code>ParaDRAM_20240312_060333_408</code> in the following filenames,
+        <pre><code>ParaDRAM_20240312_060333_408_run1_pid1_progress.txt
+ParaDRAM_20240312_060333_408_run1_pid1_restart.txt
+ParaDRAM_20240312_060333_408_run1_pid1_report.txt
+ParaDRAM_20240312_060333_408_run1_pid1_sample.txt
+ParaDRAM_20240312_060333_408_run1_pid1_chain.txt
 </code></pre>
       </li>
     </ul>
   </li>
-  <li>Every time a ParaDRAM simulation begins, the sampler either gets the output files’ prefix from the user or generates a fresh new prefix as described above. Then it checks for the existence of any collection of output files with this prefix in the working directory of the simulation. Then,
+  <li>Every time a ParaDRAM simulation begins, the sampler either gets the output files’ prefix from the user or generates a fresh new prefix as described above. Then, it checks for the existence of any collection of output files with this prefix in the simulation’s working directory. Then,
     <ul>
       <li><strong>Fresh simulation</strong> – If <strong>none of the output files already exist</strong>, the simulation begins as a fresh new simulation.</li>
       <li><strong>Simulation crash</strong> – If <strong>all</strong> of the <strong>output files</strong> with the given prefix <strong>already exist</strong> in the output path, the simulation will abruptly stop with an error message stating that it cannot overwrite an already existing simulation.</li>
@@ -734,23 +734,23 @@ ParaDRAM_run_20240312_060333_408_run1_pid1_chain.txt
 When a ParaDRAM simulation ends prematurely, the interruption virtually always happens before the ParaDRAM sampler reaches the final stage of generating the <a href="../../paradram/output/#the-output-sample-file" target="_blank">output sample file</a>.
 </div>
         <p><br />
-<strong>Scenario 1</strong> – Suppose you set the specification variable <code>outputFileName = "./output/MyRestartSimulation"</code>. Upon starting the simulation, the sampler will generate the following output files ( there will be more than one group of files if <a href="../../paradram/specifications/#parallelizationmodel" target="_blank">parallelism</a> = <code>"multiChain"</code> ),</p>
+<strong>Scenario 1</strong> – Suppose you set the specification variable <code>outputFileName = "./output/MyRestartSimulation"</code>. Upon starting the simulation, the sampler will generate the following output files ( there will be more than one group of files if <a href="../../paradram/specifications/#parallelism" target="_blank">parallelism</a> = <code>"multiChain"</code> ),</p>
         <pre><code>MyRestartSimulation_run1_pid1_progress.txt
 MyRestartSimulation_run1_pid1_restart.txt
 MyRestartSimulation_run1_pid1_report.txt
 MyRestartSimulation_run1_pid1_sample.txt
 MyRestartSimulation_run1_pid1_chain.txt
 </code></pre>
-        <p>Then, the simulation gets interrupted and ends prematurely for some reason. <strong>To restart this simulation, just rerun the simulation as done in the first time</strong>. <br />
+        <p>Then, the simulation gets interrupted and ends prematurely for some reason. <strong>To restart this simulation, just rerun the simulation as done the first time</strong>. <br />
 <br />
 <strong>Scenario 2</strong> – Suppose you do not provide an input value for the specification variable <code>outputFileName</code>, in which case, the sampler will assign a random prefix to the output files, like the following,</p>
-        <pre><code>ParaDRAM_run_20240312_060333_408_run1_pid1_progress.txt
-ParaDRAM_run_20240312_060333_408_run1_pid1_restart.txt
-ParaDRAM_run_20240312_060333_408_run1_pid1_report.txt
-ParaDRAM_run_20240312_060333_408_run1_pid1_sample.txt
-ParaDRAM_run_20240312_060333_408_run1_pid1_chain.txt
+        <pre><code>ParaDRAM_20240312_060333_408_run1_pid1_progress.txt
+ParaDRAM_20240312_060333_408_run1_pid1_restart.txt
+ParaDRAM_20240312_060333_408_run1_pid1_report.txt
+ParaDRAM_20240312_060333_408_run1_pid1_sample.txt
+ParaDRAM_20240312_060333_408_run1_pid1_chain.txt
 </code></pre>
-        <p>You run the simulation which is then interrupted and ends prematurely. In these filenames, anything that appears before <code>_run</code> is part of the common prefix that the sampler randomly generates: <code>ParaDRAM_run_20240312_060333_408</code>. Thus, to restart the simulation you will have to set <code>outputFileName = "./ParaDRAM_run_20240312_060333_408"</code> in your restart-simulation-specifications so that the old output files can be found by the sampler upon the simulation restart.</p>
+        <p>You run the simulation which is then interrupted and ends prematurely. In these filenames, anything that appears before <code>_run</code> is part of the common prefix that the sampler randomly generates: <code>ParaDRAM_20240312_060333_408</code>. Thus, to restart the simulation you will have to set <code>outputFileName = "./ParaDRAM_20240312_060333_408"</code> in your restart-simulation-specifications so that the old output files can be found by the sampler upon the simulation restart.</p>
       </li>
     </ul>
   </li>
@@ -859,7 +859,7 @@ ParaDRAM_run_20240312_060333_408_run1_pid1_chain.txt
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on April 22, 2024<br/>
+            Last updated on April 30, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/latest/images/logo.png" }}" alt="cdslab.org" /></a>
