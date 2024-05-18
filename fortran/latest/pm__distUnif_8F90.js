@@ -1,5 +1,6 @@
 var pm__distUnif_8F90 =
 [
+    [ "pm_distUnif::distUnif_type", "structpm__distUnif_1_1distUnif__type.html", null ],
     [ "pm_distUnif::getUnifCDF", "interfacepm__distUnif_1_1getUnifCDF.html", null ],
     [ "pm_distUnif::setUnifCDF", "interfacepm__distUnif_1_1setUnifCDF.html", null ],
     [ "pm_distUnif::rngu_type", "structpm__distUnif_1_1rngu__type.html", null ],

@@ -1,5 +1,6 @@
 var pm__distLogUnif_8F90 =
 [
+    [ "pm_distLogUnif::distLogUnif_type", "structpm__distLogUnif_1_1distLogUnif__type.html", null ],
     [ "pm_distLogUnif::getLogUnifPDFNF", "interfacepm__distLogUnif_1_1getLogUnifPDFNF.html", null ],
     [ "pm_distLogUnif::getLogUnifPDF", "interfacepm__distLogUnif_1_1getLogUnifPDF.html", null ],
     [ "pm_distLogUnif::setLogUnifPDF", "interfacepm__distLogUnif_1_1setLogUnifPDF.html", null ],

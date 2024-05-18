@@ -1,5 +1,6 @@
 var namespacepm__distMultiNorm =
 [
+    [ "distMultiNorm_type", "structpm__distMultiNorm_1_1distMultiNorm__type.html", null ],
     [ "getMultiNormLogPDF", "interfacepm__distMultiNorm_1_1getMultiNormLogPDF.html", null ],
     [ "getMultiNormLogPDFNF", "interfacepm__distMultiNorm_1_1getMultiNormLogPDFNF.html", null ],
     [ "getMultiNormRand", "interfacepm__distMultiNorm_1_1getMultiNormRand.html", null ],

@@ -1,5 +1,6 @@
 var pm__distGamma_8F90 =
 [
+    [ "pm_distGamma::distGamma_type", "structpm__distGamma_1_1distGamma__type.html", null ],
     [ "pm_distGamma::getGammaLogPDFNF", "interfacepm__distGamma_1_1getGammaLogPDFNF.html", null ],
     [ "pm_distGamma::getGammaLogPDF", "interfacepm__distGamma_1_1getGammaLogPDF.html", null ],
     [ "pm_distGamma::setGammaLogPDF", "interfacepm__distGamma_1_1setGammaLogPDF.html", null ],

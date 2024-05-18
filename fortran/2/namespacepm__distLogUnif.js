@@ -1,5 +1,6 @@
 var namespacepm__distLogUnif =
 [
+    [ "distLogUnif_type", "structpm__distLogUnif_1_1distLogUnif__type.html", null ],
     [ "getLogUnifCDF", "interfacepm__distLogUnif_1_1getLogUnifCDF.html", null ],
     [ "getLogUnifLogQuan", "interfacepm__distLogUnif_1_1getLogUnifLogQuan.html", null ],
     [ "getLogUnifPDF", "interfacepm__distLogUnif_1_1getLogUnifPDF.html", null ],

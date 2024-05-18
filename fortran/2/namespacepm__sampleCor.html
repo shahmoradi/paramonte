@@ -221,7 +221,7 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This module contains classes and procedures for computing properties related to the correlation matrices of random samples. </p>
-<h1><a class="anchor" id="autotoc_md103"></a>
+<h1><a class="anchor" id="autotoc_md113"></a>
 Correlation matrix</h1>
 <p >The correlation matrix of \(N\) random variables \(X_{1}, \ldots, X_{N}\) is the \(N\times N\) matrix \(\rho\) whose \((i, j)\) entry is,  </p><p class="formulaDsp">
 \begin{equation}
@@ -246,7 +246,7 @@ Correlation matrix</h1>
 <dd>
 The vector of standard deviations can be readily extracted from the covariance matrix via <a class="el" href="interfacepm__matrixCopy_1_1getMatCopy.html">getMatCopy</a>.<br  />
 </dd></dl>
-<h1><a class="anchor" id="autotoc_md104"></a>
+<h1><a class="anchor" id="autotoc_md114"></a>
 Sample Cordance</h1>
 <p >Let \(\{(X_{1}, Y_{1}), \ldots, (X_{N}, Y_{N})\}\) be a set of \(N\) observations of the joint random variables \(X\) and \(Y\).<br  />
  A concordant pair is a pair of observations, each on two variables, \((X_i, Y_i)\) and \((X_j, Y2_j)\), having the property that  </p><p class="formulaDsp">
@@ -291,19 +291,19 @@ Sample Cordance</h1>
 </ol>
 <p >The generic interface <a class="el" href="interfacepm__sampleCor_1_1setCordance.html">setCordance</a> of this module returns the <b>sample cordance tuple/vector</b> comprised of the number of x-ties, y-ties, concordant pairs, and discordant pairs.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md105"></a>
+<h2><a class="anchor" id="autotoc_md115"></a>
 Sample Cordance Algorithm</h2>
 <p >The naive method of computing sample concordance quickly becomes expensive for large \(N\), because there are \({N \choose 2} = \frac{N (N - 1)}{2}\) (the binomial coefficient) number of ways to choose two items from \(N\) items.<br  />
  This makes the naive algorithm of complexity \(\mathcal{O}(N^{2})\).<br  />
 </p>
-<h1><a class="anchor" id="autotoc_md106"></a>
+<h1><a class="anchor" id="autotoc_md116"></a>
 Correlation coefficient</h1>
 <p >A correlation coefficient is a numerical measure of some type of correlation, meaning a statistical relationship between two variables.<br  />
  The variables may be two columns of a given data set of observations, often called a sample, or two components of a multivariate random variable with a known distribution.<br  />
 </p>
 <p >This module contains generic algorithms for computing the following popular sample correlation coefficients.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md107"></a>
+<h2><a class="anchor" id="autotoc_md117"></a>
 Pearson correlation coefficient</h2>
 <p >The Pearson product-moment correlation coefficient, also known as \(r\), \(R\), or the Pearson \(r\), is a measure of the strength and direction of the linear relationship between two variables that is defined as the covariance of the variables divided by the product of their standard deviations.<br  />
  This is the best-known and most commonly used type of <b>correlation coefficient</b>.<br  />
@@ -362,7 +362,7 @@ Pearson correlation coefficient</h2>
 <li>
 \(\textstyle {\bar{x}} = {\frac{1}{n}} \sum_{i=1}^{n}x_{i}\) (the sample mean); and analogously for \(\bar{y}\). </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md108"></a>
+<h2><a class="anchor" id="autotoc_md118"></a>
 Spearman rank correlation coefficient</h2>
 <p >The Spearman correlation coefficient is defined as the Pearson correlation coefficient between the <b>rank variables</b>.<br  />
  For a sample of size \(n\), the \(n\) raw scores \(X_{i}, Y_{i}\) are converted to ranks \(\up{R}({X_{i}}), \up{R}({Y_{i}})\), and \(r_{s}\) is computed as  </p><p class="formulaDsp">
@@ -390,7 +390,7 @@ Spearman rank correlation coefficient</h2>
 <li>
 \(n\) is the number of observations. </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md109"></a>
+<h2><a class="anchor" id="autotoc_md119"></a>
 Kendall rank correlation coefficient</h2>
 <p >The Kendall rank correlation coefficient, commonly referred to as the Kendall \(\tau\) coefficient, is a statistic used to measure the ordinal association between two measured quantities.<br  />
  It is a measure of <b>rank correlation</b>: the similarity of the orderings of the data when ranked by each of the quantities.<br  />
@@ -452,7 +452,7 @@ Kendall rank correlation coefficient</h2>
 </p>
 <p >There are also other definitions of Kendall \(\tau\) which are not considered in the current version of the ParaMonte library.<br  />
 </p>
-<dl class="section see"><dt>See also</dt><dd>[<a class="el" href="namespacepm__sampling.html" title="This module contains procedures and generic interfaces for the ParaMonte library sampler routines.">pm_sampling</a>](<a class="el" href="namespacepm__sampling.html" title="This module contains procedures and generic interfaces for the ParaMonte library sampler routines.">pm_sampling</a>)<br  />
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacepm__sampling.html">pm_sampling</a><br  />
  <a class="el" href="namespacepm__sampleACT.html">pm_sampleACT</a><br  />
  <a class="el" href="namespacepm__sampleCCF.html">pm_sampleCCF</a><br  />
  <a class="el" href="namespacepm__sampleCor.html">pm_sampleCor</a><br  />
@@ -469,11 +469,11 @@ Kendall rank correlation coefficient</h2>
  <a class="el" href="namespacepm__sampleVar.html">pm_sampleVar</a><br  />
  <a href="https://en.wikipedia.org/wiki/Correlation_coefficient">Correlation coefficient</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000796">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__sampleCor.html">test_pm_sampleCor</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000355">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: The procedures of this module should be extended to support samples of type <code>complex</code> of arbitrary kind type parameter, similar to procedures of <a class="el" href="namespacepm__sampleVar.html">pm_sampleVar</a>.<br  />
+<dl class="test"><dt><b><a class="el" href="test.html#_test000825">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__sampleCor.html">test_pm_sampleCor</a></dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000382">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: The procedures of this module should be extended to support samples of type <code>complex</code> of arbitrary kind type parameter, similar to procedures of <a class="el" href="namespacepm__sampleVar.html">pm_sampleVar</a>.<br  />
 </dd></dl>
 <p ><br  />
-<a class="anchor" id="finmain-pm_sampleCor"></a><b>Final Remarks</b> <a href="#finmain-pm_sampleCor">⛓</a> </p><hr  />
+<a class="anchor" id="final-pm_sampleCor"></a><b>Final Remarks</b> <a href="#final-pm_sampleCor">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampleCor.F90#L271 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
@@ -489,7 +489,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001167">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Tuesday 01:45 AM, August 21, 2018, Dallas, TX </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001196">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Tuesday 01:45 AM, August 21, 2018, Dallas, TX </dd></dl>
 </div><h2 class="groupheader">Variable Documentation</h2>
 <a id="a287df31b769e9eed28a821bf0bc60ed3" name="a287df31b769e9eed28a821bf0bc60ed3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a287df31b769e9eed28a821bf0bc60ed3">&#9670;&nbsp;</a></span>kendall</h2>
@@ -516,8 +516,8 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="structpm__sampleCor_1_1spearman__type.html">spearman_type</a><br  />
 </dd></dl>
 <p><br  />
-<a class="anchor" id="finmain-kendall"></a><b>Final Remarks</b> <a href="#finmain-kendall">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampleCor.F90#L365 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<a class="anchor" id="final-kendall"></a><b>Final Remarks</b> <a href="#final-kendall">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampleCor.F90#L368 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -532,9 +532,9 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001170">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001199">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00369">369</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00372">372</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
 
 </div>
 </div>
@@ -567,8 +567,8 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="structpm__sampleCor_1_1spearman__type.html">spearman_type</a><br  />
 </dd></dl>
 <p><br  />
-<a class="anchor" id="finmain-kendallA"></a><b>Final Remarks</b> <a href="#finmain-kendallA">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampleCor.F90#L430 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<a class="anchor" id="final-kendallA"></a><b>Final Remarks</b> <a href="#final-kendallA">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampleCor.F90#L433 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -583,9 +583,9 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001172">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001201">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00434">434</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00437">437</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
 
 </div>
 </div>
@@ -618,8 +618,8 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="structpm__sampleCor_1_1spearman__type.html">spearman_type</a><br  />
 </dd></dl>
 <p><br  />
-<a class="anchor" id="finmain-kendallB"></a><b>Final Remarks</b> <a href="#finmain-kendallB">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampleCor.F90#L495 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<a class="anchor" id="final-kendallB"></a><b>Final Remarks</b> <a href="#final-kendallB">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampleCor.F90#L498 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -634,9 +634,9 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001174">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001203">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00499">499</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00502">502</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
 
 </div>
 </div>
@@ -652,7 +652,7 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00289">289</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00292">292</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
 
 </div>
 </div>
@@ -681,8 +681,8 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="structpm__sampleCor_1_1spearman__type.html">spearman_type</a><br  />
 </dd></dl>
 <p><br  />
-<a class="anchor" id="finmain-pearson"></a><b>Final Remarks</b> <a href="#finmain-pearson">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampleCor.F90#L553 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<a class="anchor" id="final-pearson"></a><b>Final Remarks</b> <a href="#final-pearson">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampleCor.F90#L556 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -697,9 +697,9 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001176">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001205">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00557">557</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00560">560</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
 
 </div>
 </div>
@@ -728,8 +728,8 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="structpm__sampleCor_1_1spearman__type.html">spearman_type</a><br  />
 </dd></dl>
 <p><br  />
-<a class="anchor" id="finmain-spearman"></a><b>Final Remarks</b> <a href="#finmain-spearman">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampleCor.F90#L610 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<a class="anchor" id="final-spearman"></a><b>Final Remarks</b> <a href="#final-spearman">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampleCor.F90#L613 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -744,9 +744,9 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001178">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001207">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00614">614</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00617">617</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
 
 </div>
 </div>
@@ -756,7 +756,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__sampleCor.html">pm_sampleCor</a></li>
-        <li class="footer">Generated on Sat May 11 2024 15:59:39 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 01:45:26 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

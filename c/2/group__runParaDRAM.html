@@ -169,6 +169,10 @@ Functions</h2></td></tr>
 <p >This interface group is the entry point to all <b>C-style interfaces</b> to the ParaDRAM samplers of mathematical density functions.<br  />
  Although the procedures of this generic interface return a single scalar of type <code>int32_t</code>, the procedures generate massive amounts of information about each simulation which are stored in appropriate external hard drive files.<br  />
 </p>
+<p >See, </p><ol>
+<li>
+<a href="https://www.cdslab.org/paramonte/generic/2/usage/sampling/paradram/output/">this generic documentation page</a> for more information on the generated output files for samplings performed using the ParaDRAM sampler. </li>
+</ol>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">getLogFunc</td><td>: The input user-specified procedure pointer to the natural logarithm of the target density function.<br  />
@@ -255,7 +259,7 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>REAL getLogFunc(REAL state[], int32_t ndim){</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">//</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">//  Return the natural logarithm of an ndim-dimensional Multivariate Normal (MVN)</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">//  Return the natural logarithm of a `ndim`-dimensional Multivariate Normal (MVN)</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">//  probability density function (PDF) with the Mean and Covariance Matrix as defined below.</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">//  See also: https://en.wikipedia.org/wiki/Multivariate_normal_distribution</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">//</span></div>
@@ -426,7 +430,7 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    ! DRAM specifications.</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    burninAdaptationMeasure             = 1.</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    proposalAdaptationBurnin            = 1.</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    proposalAdaptationCount             = 10000000</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    proposalAdaptationCountGreedy       = 0</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    proposalAdaptationPeriod            = 35</div>
@@ -451,10 +455,17 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral">            &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}/../../../lib<span class="stringliteral">&quot; # library directory for examples/benchmarks.</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="stringliteral">            )</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="stringliteral">target_link_libraries(binary PUBLIC &quot;</span>${pmlib}<span class="stringliteral">&quot;)</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">if (&quot;</span>${CMAKE_C_COMPILER_ID}<span class="stringliteral">&quot; STREQUAL &quot;</span>GNU<span class="stringliteral">&quot;)</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">    target_link_libraries(binary PUBLIC m)</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">endif()</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="stringliteral">add_custom_target(run COMMAND &quot;</span>./main.exe<span class="stringliteral">&quot; DEPENDS binary WORKING_DIRECTORY &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">target_link_libraries(binary PUBLIC &quot;</span>${pmlib}<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">if (APPLE)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">    set(rpath_prop &quot;</span>@loader_path<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="stringliteral">elseif(UNIX)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="stringliteral">    set(rpath_prop &quot;</span>$ORIGIN<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="stringliteral">endif()</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="stringliteral">set_target_properties(binary PROPERTIES INSTALL_RPATH &quot;</span><span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="stringliteral">if (&quot;</span>${CMAKE_C_COMPILER_ID}<span class="stringliteral">&quot; STREQUAL &quot;</span>GNU<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="stringliteral">    target_link_libraries(binary PUBLIC m)</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="stringliteral">endif()</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="stringliteral">add_custom_target(run COMMAND ./main.exe DEPENDS binary WORKING_DIRECTORY &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}<span class="stringliteral">&quot;)</span></div>
 </div><!-- fragment --> <br  />
  <a class="anchor" id="cmakerun-unix-bash-mvn"></a><b>Example Unix Bash build command via CMake build generator</b> <a href="#cmakerun-unix-bash-mvn">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/bin/bash</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>cmake . -G &quot;Unix Makefiles&quot; &amp;&amp; make &amp;&amp; make run</div>
@@ -531,12 +542,12 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment"># adaptation measure.</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">#print(df.values)</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> <span class="stringliteral">&quot;adaptationMeasure&quot;</span> <span class="keywordflow">in</span> df.columns.values:</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span> any(df[<span class="stringliteral">&quot;adaptationMeasure&quot;</span>].values != 0):</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> <span class="stringliteral">&quot;proposalAdaptation&quot;</span> <span class="keywordflow">in</span> df.columns.values:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span> any(df[<span class="stringliteral">&quot;proposalAdaptation&quot;</span>].values != 0):</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            fig = plt.figure(figsize = (8, 6))</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            ax = plt.subplot(1,1,1)</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            ax.scatter  ( range(len(df.values[:, 0]))</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                        , df[<span class="stringliteral">&quot;adaptationMeasure&quot;</span>].values</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                        , df[<span class="stringliteral">&quot;proposalAdaptation&quot;</span>].values</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                        , zorder = 1000</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                        , alpha = 0.5</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                        , c = <span class="stringliteral">&quot;red&quot;</span></div>
@@ -546,13 +557,13 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="comment">#ax.set_xscale(&quot;log&quot;)</span></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            ax.set_yscale(<span class="stringliteral">&quot;log&quot;</span>)</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            ax.set_xlabel(<span class="stringliteral">&quot;MCMC Count&quot;</span>, fontsize = 17)</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            ax.set_ylabel(<span class="stringliteral">&quot;adaptationMeasure&quot;</span>, fontsize = 17)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            ax.set_ylabel(<span class="stringliteral">&quot;proposalAdaptation&quot;</span>, fontsize = 17)</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            ax.tick_params(axis = <span class="stringliteral">&quot;x&quot;</span>, which = <span class="stringliteral">&quot;minor&quot;</span>)</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            ax.tick_params(axis = <span class="stringliteral">&quot;y&quot;</span>, which = <span class="stringliteral">&quot;minor&quot;</span>)</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            plt.grid(visible = <span class="keyword">True</span>, which = <span class="stringliteral">&quot;both&quot;</span>, axis = <span class="stringliteral">&quot;both&quot;</span>, color = <span class="stringliteral">&quot;0.85&quot;</span>, linestyle = <span class="stringliteral">&quot;-&quot;</span>)</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="comment">#ax.legend(df.columns.values, fontsize = fontsize)</span></div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            plt.tight_layout()</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            plt.savefig(funcname + <span class="stringliteral">&quot;.adaptationMeasure.png&quot;</span>)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            plt.savefig(funcname + <span class="stringliteral">&quot;.proposalAdaptation.png&quot;</span>)</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">#sim = pm.ParaDRAM()</span></div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">#sample = sim.readSample(&quot;./out/&quot;, renabled = True)</span></div>
@@ -565,7 +576,7 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <img src="mvn.scatterplot.png" alt="" width="700"/>
 </div>
  <div class="image">
-<img src="mvn.adaptationMeasure.png" alt="" width="700"/>
+<img src="mvn.proposalAdaptation.png" alt="" width="700"/>
 </div>
 </dd></dl>
 <p><br  />
@@ -734,7 +745,7 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    ! DRAM specifications.</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    burninAdaptationMeasure             = 1.</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    proposalAdaptationBurnin            = 1.</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    proposalAdaptationCount             = 10000000</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    proposalAdaptationCountGreedy       = 0</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    proposalAdaptationPeriod            = 35</div>
@@ -759,10 +770,17 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral">            &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}/../../../lib<span class="stringliteral">&quot; # library directory for examples/benchmarks.</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="stringliteral">            )</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="stringliteral">target_link_libraries(binary PUBLIC &quot;</span>${pmlib}<span class="stringliteral">&quot;)</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">if (&quot;</span>${CMAKE_C_COMPILER_ID}<span class="stringliteral">&quot; STREQUAL &quot;</span>GNU<span class="stringliteral">&quot;)</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">    target_link_libraries(binary PUBLIC m)</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">endif()</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="stringliteral">add_custom_target(run COMMAND &quot;</span>./main.exe<span class="stringliteral">&quot; DEPENDS binary WORKING_DIRECTORY &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">target_link_libraries(binary PUBLIC &quot;</span>${pmlib}<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">if (APPLE)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">    set(rpath_prop &quot;</span>@loader_path<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="stringliteral">elseif(UNIX)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="stringliteral">    set(rpath_prop &quot;</span>$ORIGIN<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="stringliteral">endif()</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="stringliteral">set_target_properties(binary PROPERTIES INSTALL_RPATH &quot;</span><span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="stringliteral">if (&quot;</span>${CMAKE_C_COMPILER_ID}<span class="stringliteral">&quot; STREQUAL &quot;</span>GNU<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="stringliteral">    target_link_libraries(binary PUBLIC m)</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="stringliteral">endif()</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="stringliteral">add_custom_target(run COMMAND ./main.exe DEPENDS binary WORKING_DIRECTORY &quot;</span>${CMAKE_CURRENT_SOURCE_DIR}<span class="stringliteral">&quot;)</span></div>
 </div><!-- fragment --> <br  />
  <a class="anchor" id="cmakerun-unix-bash-himmelblau"></a><b>Example Unix Bash build command via CMake build generator</b> <a href="#cmakerun-unix-bash-himmelblau">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/bin/bash</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>cmake . -G &quot;Unix Makefiles&quot; &amp;&amp; make &amp;&amp; make run</div>
@@ -839,12 +857,12 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment"># adaptation measure.</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">#print(df.values)</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> <span class="stringliteral">&quot;adaptationMeasure&quot;</span> <span class="keywordflow">in</span> df.columns.values:</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span> any(df[<span class="stringliteral">&quot;adaptationMeasure&quot;</span>].values != 0):</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> <span class="stringliteral">&quot;proposalAdaptation&quot;</span> <span class="keywordflow">in</span> df.columns.values:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span> any(df[<span class="stringliteral">&quot;proposalAdaptation&quot;</span>].values != 0):</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            fig = plt.figure(figsize = (8, 6))</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            ax = plt.subplot(1,1,1)</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            ax.scatter  ( range(len(df.values[:, 0]))</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                        , df[<span class="stringliteral">&quot;adaptationMeasure&quot;</span>].values</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                        , df[<span class="stringliteral">&quot;proposalAdaptation&quot;</span>].values</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                        , zorder = 1000</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                        , alpha = 0.5</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                        , c = <span class="stringliteral">&quot;red&quot;</span></div>
@@ -854,13 +872,13 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="comment">#ax.set_xscale(&quot;log&quot;)</span></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            ax.set_yscale(<span class="stringliteral">&quot;log&quot;</span>)</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            ax.set_xlabel(<span class="stringliteral">&quot;MCMC Count&quot;</span>, fontsize = 17)</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            ax.set_ylabel(<span class="stringliteral">&quot;adaptationMeasure&quot;</span>, fontsize = 17)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            ax.set_ylabel(<span class="stringliteral">&quot;proposalAdaptation&quot;</span>, fontsize = 17)</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            ax.tick_params(axis = <span class="stringliteral">&quot;x&quot;</span>, which = <span class="stringliteral">&quot;minor&quot;</span>)</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            ax.tick_params(axis = <span class="stringliteral">&quot;y&quot;</span>, which = <span class="stringliteral">&quot;minor&quot;</span>)</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            plt.grid(visible = <span class="keyword">True</span>, which = <span class="stringliteral">&quot;both&quot;</span>, axis = <span class="stringliteral">&quot;both&quot;</span>, color = <span class="stringliteral">&quot;0.85&quot;</span>, linestyle = <span class="stringliteral">&quot;-&quot;</span>)</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="comment">#ax.legend(df.columns.values, fontsize = fontsize)</span></div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            plt.tight_layout()</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            plt.savefig(funcname + <span class="stringliteral">&quot;.adaptationMeasure.png&quot;</span>)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            plt.savefig(funcname + <span class="stringliteral">&quot;.proposalAdaptation.png&quot;</span>)</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">#sim = pm.ParaDRAM()</span></div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">#sample = sim.readSample(&quot;./out/&quot;, renabled = True)</span></div>
@@ -873,7 +891,7 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <img src="himmelblau.scatterplot.png" alt="" width="700"/>
 </div>
  <div class="image">
-<img src="himmelblau.adaptationMeasure.png" alt="" width="700"/>
+<img src="himmelblau.proposalAdaptation.png" alt="" width="700"/>
 </div>
 </dd></dl>
 <dl class="test"><dt><b><a class="el" href="test.html#_test000001">Test:</a></b></dt><dd>test_pm_sampling</dd></dl>
@@ -894,8 +912,8 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
  This issue does not exist with GNU compilers, although the GNU definition of <code>long double</code> appears to yield incorrect values in some calculations, e.g., in <code>isFailedGeomCyclicFit()</code> of the ParaMonte library.<br  />
 </dd></dl>
 <p ><br  />
-<a class="anchor" id="finminc-runParaDRAM"></a><b>Final Remarks</b> <a href="#finminc-runParaDRAM">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/c/main/inc/pm_sampling.h#L151 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<a class="anchor" id="final-runParaDRAM"></a><b>Final Remarks</b> <a href="#final-runParaDRAM">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/c/main/inc/pm_sampling.h#L157 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -908,7 +926,8 @@ If you regenerate any parts/ideas from this library in a programming environment
 </li>
 </ol>
 <p>This software is available to the public under a highly permissive license.<br  />
-Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it. </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
 <dl class="authors"><dt><b><a class="el" href="authors.html#_authors000002">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gaf1325f8cdf49fd1e998be2e3c5aaf57b" name="gaf1325f8cdf49fd1e998be2e3c5aaf57b"></a>
@@ -1018,7 +1037,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="footer">Generated on Fri Apr 26 2024 15:32:27 for ParaMonte C 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 01:46:06 for ParaMonte C 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

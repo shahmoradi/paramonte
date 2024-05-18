@@ -1,5 +1,6 @@
 var namespacepm__distNegExp =
 [
+    [ "distNegExp_type", "structpm__distNegExp_1_1distNegExp__type.html", null ],
     [ "getNegExpCDF", "interfacepm__distNegExp_1_1getNegExpCDF.html", null ],
     [ "getNegExpLogPDF", "interfacepm__distNegExp_1_1getNegExpLogPDF.html", null ],
     [ "getNegExpRand", "interfacepm__distNegExp_1_1getNegExpRand.html", null ],

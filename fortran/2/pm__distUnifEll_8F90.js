@@ -1,5 +1,6 @@
 var pm__distUnifEll_8F90 =
 [
+    [ "pm_distUnifEll::distUnifEll_type", "structpm__distUnifEll_1_1distUnifEll__type.html", null ],
     [ "pm_distUnifEll::getUnifEllLogPDF", "interfacepm__distUnifEll_1_1getUnifEllLogPDF.html", null ],
     [ "pm_distUnifEll::getUnifEllRand", "interfacepm__distUnifEll_1_1getUnifEllRand.html", null ],
     [ "pm_distUnifEll::setUnifEllRand", "interfacepm__distUnifEll_1_1setUnifEllRand.html", null ],

@@ -1,5 +1,6 @@
 var namespacepm__distKolm =
 [
+    [ "distKolm_type", "structpm__distKolm_1_1distKolm__type.html", null ],
     [ "getKolmCDF", "interfacepm__distKolm_1_1getKolmCDF.html", null ],
     [ "getKolmPDF", "interfacepm__distKolm_1_1getKolmPDF.html", null ],
     [ "getKolmQuan", "interfacepm__distKolm_1_1getKolmQuan.html", null ],

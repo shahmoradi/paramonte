@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['description_0',['description',['../classSpecBase.html#a036165261abe521af6fdf410d369b852',1,'SpecBase']]],
+  ['df_1',['df',['../classFileContentsTabular.html#af1c8b4db015d79352e9953826c0f3910',1,'FileContentsTabular::df()'],['../classSubplot.html#a362e88405084d1b1fe0711554f2009ca',1,'Subplot::df()']]],
+  ['dfref_2',['dfref',['../classDataRef.html#a1d6948665a35f6a3ff963831d35858a3',1,'DataRef']]],
+  ['diag_3',['diag',['../classCorner.html#a32f29c98815f0bacc9c272ab67134c86',1,'Corner']]],
+  ['dims_4',['dims',['../classEllipse3.html#a21db06d5ef05f1eddb7abb0ceabf4706',1,'Ellipse3']]],
+  ['domain_5',['domain',['../classSpecBase.html#af7c7e770df4031408b38332a5a844526',1,'SpecBase']]],
+  ['domainaxisname_6',['domainAxisName',['../classFileContentsRestart.html#a08921888a8aafb43b35dba919568e672',1,'FileContentsRestart::domainAxisName()'],['../classSpecBase.html#ab860f26c7473f8f8a1ef7de1cca7579b',1,'SpecBase::domainAxisName()']]],
+  ['domainballavg_7',['domainBallAvg',['../classSpecBase.html#a84196f2d6d8f47cd0b547472ae5a61f1',1,'SpecBase']]],
+  ['domainballcor_8',['domainBallCor',['../classSpecBase.html#a26f5ccae9b0dad02b32ca3e57171d219',1,'SpecBase']]],
+  ['domainballcov_9',['domainBallCov',['../classSpecBase.html#a63790db567fa9d76e2f6bc8bc803d088',1,'SpecBase']]],
+  ['domainballstd_10',['domainBallStd',['../classSpecBase.html#ab5c58d76ad602a99e4a51a3ee79f4f2d',1,'SpecBase']]],
+  ['domaincubelimitlower_11',['domainCubeLimitLower',['../classSpecBase.html#a727db8e9a514401acfc83a13a93e3b34',1,'SpecBase']]],
+  ['domaincubelimitupper_12',['domainCubeLimitUpper',['../classSpecBase.html#aa65cc299508c59b2acd2d9d4f6ecb461',1,'SpecBase']]],
+  ['domainerrcount_13',['domainErrCount',['../classSpecBase.html#a58b3b2a9bafb1b5cf8dc8eb1f354157f',1,'SpecBase']]],
+  ['domainerrcountmax_14',['domainErrCountMax',['../classSpecBase.html#aeb8cc9b7971e152dac08004944322233',1,'SpecBase']]],
+  ['dsym_15',['dsym',['../classFileContentsReport.html#a8a8fd36506529cd89b3073202491b1e8',1,'FileContentsReport']]],
+  ['dsymlen_16',['dsymLen',['../classFileContentsReport.html#a86043b97bc189dbf31778c34ce71b49c',1,'FileContentsReport']]]
+];

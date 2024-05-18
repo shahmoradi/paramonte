@@ -1,5 +1,6 @@
 var namespacepm__distPareto =
 [
+    [ "distPareto_type", "structpm__distPareto_1_1distPareto__type.html", null ],
     [ "getParetoLogCDF", "interfacepm__distPareto_1_1getParetoLogCDF.html", null ],
     [ "getParetoLogCDFNF", "interfacepm__distPareto_1_1getParetoLogCDFNF.html", null ],
     [ "getParetoLogPDF", "interfacepm__distPareto_1_1getParetoLogPDF.html", null ],

@@ -1,5 +1,6 @@
 var namespacepm__distLogNorm =
 [
+    [ "distLogNorm_type", "structpm__distLogNorm_1_1distLogNorm__type.html", null ],
     [ "getLogNormCDF", "interfacepm__distLogNorm_1_1getLogNormCDF.html", null ],
     [ "getLogNormLogPDF", "interfacepm__distLogNorm_1_1getLogNormLogPDF.html", null ],
     [ "setLogNormCDF", "interfacepm__distLogNorm_1_1setLogNormCDF.html", null ],

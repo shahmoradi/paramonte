@@ -1,5 +1,6 @@
 var namespacepm__distNorm =
 [
+    [ "distNorm_type", "structpm__distNorm_1_1distNorm__type.html", null ],
     [ "getNormCDF", "interfacepm__distNorm_1_1getNormCDF.html", null ],
     [ "getNormEntropy", "interfacepm__distNorm_1_1getNormEntropy.html", null ],
     [ "getNormFisher", "interfacepm__distNorm_1_1getNormFisher.html", null ],

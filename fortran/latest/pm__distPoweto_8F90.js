@@ -1,5 +1,6 @@
 var pm__distPoweto_8F90 =
 [
+    [ "pm_distPoweto::distPoweto_type", "structpm__distPoweto_1_1distPoweto__type.html", null ],
     [ "pm_distPoweto::getPowetoLogPDFNF", "interfacepm__distPoweto_1_1getPowetoLogPDFNF.html", null ],
     [ "pm_distPoweto::getPowetoLogPDF", "interfacepm__distPoweto_1_1getPowetoLogPDF.html", null ],
     [ "pm_distPoweto::setPowetoLogPDF", "interfacepm__distPoweto_1_1setPowetoLogPDF.html", null ],

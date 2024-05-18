@@ -1,5 +1,6 @@
 var namespacepm__distUnif =
 [
+    [ "distUnif_type", "structpm__distUnif_1_1distUnif__type.html", null ],
     [ "getUnifCDF", "interfacepm__distUnif_1_1getUnifCDF.html", null ],
     [ "getUnifRand", "interfacepm__distUnif_1_1getUnifRand.html", null ],
     [ "getUnifRandState", "interfacepm__distUnif_1_1getUnifRandState.html", null ],

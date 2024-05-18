@@ -1,5 +1,6 @@
 var namespacepm__distExp =
 [
+    [ "distExp_type", "structpm__distExp_1_1distExp__type.html", null ],
     [ "getExpCDF", "interfacepm__distExp_1_1getExpCDF.html", null ],
     [ "getExpLogPDF", "interfacepm__distExp_1_1getExpLogPDF.html", null ],
     [ "getExpRand", "interfacepm__distExp_1_1getExpRand.html", null ],

@@ -1,5 +1,6 @@
 var namespacepm__distGeomCyclic =
 [
+    [ "distGeomCyclic_type", "structpm__distGeomCyclic_1_1distGeomCyclic__type.html", null ],
     [ "getGeomCyclicLogCDF", "interfacepm__distGeomCyclic_1_1getGeomCyclicLogCDF.html", null ],
     [ "getGeomCyclicLogPMF", "interfacepm__distGeomCyclic_1_1getGeomCyclicLogPMF.html", null ],
     [ "getGeomCyclicRand", "interfacepm__distGeomCyclic_1_1getGeomCyclicRand.html", null ],

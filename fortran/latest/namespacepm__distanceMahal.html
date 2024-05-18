@@ -149,11 +149,11 @@ $(document).ready(function(){initNavTree('namespacepm__distanceMahal.html',''); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Types</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacepm__distanceMahal_1_1getMahalSq.html">getMahalSq</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate and return the square of the Mahalanobis distance of a (set of <code>npnt</code>) point(s) from a single (or a set of <code>nsam</code> independent) sample(s) characterized by a (set of) Multivariate Normal (<b>MVN</b>) distribution(s) in <code>ndim</code> dimensions.  <a href="interfacepm__distanceMahal_1_1getMahalSq.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacepm__distanceMahal_1_1getDisMahalSq.html">getDisMahalSq</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate and return the square of the Mahalanobis distance of a (set of <code>npnt</code>) point(s) from a single (or a set of <code>nsam</code> independent) sample(s) characterized by a (set of) Multivariate Normal (<b>MVN</b>) distribution(s) in <code>ndim</code> dimensions.  <a href="interfacepm__distanceMahal_1_1getDisMahalSq.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacepm__distanceMahal_1_1setMahalSq.html">setMahalSq</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the square of the Mahalanobis distance of a (set of <code>npnt</code>) point(s) from a single (or a set of <code>nsam</code> independent) sample(s) characterized by a (set of) Multivariate Normal (<b>MVN</b>) distribution(s) in <code>ndim</code> dimensions.  <a href="interfacepm__distanceMahal_1_1setMahalSq.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacepm__distanceMahal_1_1setDisMahalSq.html">setDisMahalSq</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the square of the Mahalanobis distance of a (set of <code>npnt</code>) point(s) from a single (or a set of <code>nsam</code> independent) sample(s) characterized by a (set of) Multivariate Normal (<b>MVN</b>) distribution(s) in <code>ndim</code> dimensions.  <a href="interfacepm__distanceMahal_1_1setDisMahalSq.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -176,7 +176,7 @@ Variables</h2></td></tr>
  When the Covariance of the MVN distribution is the Identity matrix, the Mahalanobis distance simply becomes the Euclidean norm.</p>
 <dl class="benchmarks"><dt><b><a class="el" href="benchmarks.html#_benchmarks000014">Benchmarks:</a></b></dt><dd></dd></dl>
 <p ><br  />
-<a class="anchor" id="benchmark-row_vs_col_major"></a><b>Benchmark :: The runtime performance of <a class="el" href="interfacepm__distanceMahal_1_1getMahalSq.html">getMahalSq</a> vs. <a class="el" href="interfacepm__distanceMahal_1_1setMahalSq.html">setMahalSq</a></b> <a href="#benchmark-row_vs_col_major">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="fortran_comment">! Test the performance of `row-major()` vs. `column-major()` matrix multiplication.</span></div>
+<a class="anchor" id="benchmark-row_vs_col_major"></a><b>Benchmark :: The runtime performance of <a class="el" href="interfacepm__distanceMahal_1_1getDisMahalSq.html">getDisMahalSq</a> vs. <a class="el" href="interfacepm__distanceMahal_1_1setDisMahalSq.html">setDisMahalSq</a></b> <a href="#benchmark-row_vs_col_major">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="fortran_comment">! Test the performance of `row-major()` vs. `column-major()` matrix multiplication.</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="fortran_statement">program</span> benchmark</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__bench.html">pm_bench</a>, <span class="fortran_statement">only</span>: <a class="code hl_struct" href="structpm__bench_1_1bench__type.html">bench_type</a></div>
@@ -250,7 +250,7 @@ Variables</h2></td></tr>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="fortran_statement">end program </span>benchmark</div>
 <div class="ttc" id="ainterfacepm__bench_1_1getTiming_html"><div class="ttname"><a href="interfacepm__bench_1_1getTiming.html">pm_bench::getTiming</a></div><div class="ttdoc">Generate and return an object of type timing_type containing the benchmark timing information and sta...</div><div class="ttdef"><b>Definition:</b> <a href="pm__bench_8F90_source.html#l00574">pm_bench.F90:574</a></div></div>
-<div class="ttc" id="ainterfacepm__distUnif_1_1getUnifRand_html"><div class="ttname"><a href="interfacepm__distUnif_1_1getUnifRand.html">pm_distUnif::getUnifRand</a></div><div class="ttdoc">Generate and return a scalar or a contiguous array of rank 1 of length s1 of randomly uniformly distr...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distUnif_8F90_source.html#l04112">pm_distUnif.F90:4112</a></div></div>
+<div class="ttc" id="ainterfacepm__distUnif_1_1getUnifRand_html"><div class="ttname"><a href="interfacepm__distUnif_1_1getUnifRand.html">pm_distUnif::getUnifRand</a></div><div class="ttdoc">Generate and return a scalar or a contiguous array of rank 1 of length s1 of randomly uniformly distr...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distUnif_8F90_source.html#l04150">pm_distUnif.F90:4150</a></div></div>
 <div class="ttc" id="anamespacepm__bench_html"><div class="ttname"><a href="namespacepm__bench.html">pm_bench</a></div><div class="ttdoc">This module contains abstract interfaces and types that facilitate benchmarking of different procedur...</div><div class="ttdef"><b>Definition:</b> <a href="pm__bench_8F90_source.html#l00041">pm_bench.F90:41</a></div></div>
 <div class="ttc" id="anamespacepm__distUnif_html"><div class="ttname"><a href="namespacepm__distUnif.html">pm_distUnif</a></div><div class="ttdoc">This module contains classes and procedures for computing various statistical quantities related to t...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distUnif_8F90_source.html#l00274">pm_distUnif.F90:274</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html"><div class="ttname"><a href="namespacepm__kind.html">pm_kind</a></div><div class="ttdoc">This module defines the relevant Fortran kind type-parameters frequently used in the ParaMonte librar...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00268">pm_kind.F90:268</a></div></div>
@@ -369,12 +369,12 @@ Variables</h2></td></tr>
 </li>
 <li>As such, matrix multiplication format that respects column-major order of Fortran, is significantly faster than the row-major matrix multiplication.<br  />
 </li>
-<li>This is particularly relevant when one matrix is symmetric square and the other is a vector, which is case with the procedures of the generic interface <a class="el" href="interfacepm__distanceMahal_1_1getMahalSq.html">getMahalSq</a>.<br  />
+<li>This is particularly relevant when one matrix is symmetric square and the other is a vector, which is case with the procedures of the generic interface <a class="el" href="interfacepm__distanceMahal_1_1getDisMahalSq.html">getDisMahalSq</a>.<br  />
 </li>
 </ol>
 </dd></dl>
 <p><br  />
-<a class="anchor" id="benchmark-looping_vs_intrinsic"></a><b>Benchmark :: The runtime performance of <a class="el" href="interfacepm__distanceMahal_1_1getMahalSq.html">getMahalSq</a> vs. <a class="el" href="interfacepm__distanceMahal_1_1setMahalSq.html">setMahalSq</a></b> <a href="#benchmark-looping_vs_intrinsic">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="fortran_statement">program</span> benchmark</div>
+<a class="anchor" id="benchmark-looping_vs_intrinsic"></a><b>Benchmark :: The runtime performance of <a class="el" href="interfacepm__distanceMahal_1_1getDisMahalSq.html">getDisMahalSq</a> vs. <a class="el" href="interfacepm__distanceMahal_1_1setDisMahalSq.html">setDisMahalSq</a></b> <a href="#benchmark-looping_vs_intrinsic">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="fortran_statement">program</span> benchmark</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__bench.html">pm_bench</a>, <span class="fortran_statement">only</span>: <a class="code hl_struct" href="structpm__bench_1_1bench__type.html">bench_type</a></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="fortran_statement">use </span><span class="fortran_inrinsic_module">iso_fortran_env</span>, <span class="fortran_statement">only</span>:<span class="fortran_named_const"> error_unit</span></div>
@@ -580,9 +580,9 @@ The procedure named <code>dotp_matmul</code> uses the all-intrinsic expression <
 </li>
 </ol>
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000262">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__distanceMahal.html">test_pm_distanceMahal</a></dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000266">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__distanceMahal.html">test_pm_distanceMahal</a></dd></dl>
 <p ><br  />
-<a class="anchor" id="finmain"></a><b>Final Remarks</b> <a href="#finmain">⛓</a> </p><hr  />
+<a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distanceMahal.F90#L75 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
@@ -598,7 +598,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000372">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, March 22, 2012, 2:21 PM, National Institute for Fusion Studies, The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000376">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, March 22, 2012, 2:21 PM, National Institute for Fusion Studies, The University of Texas at Austin </dd></dl>
 </div><h2 class="groupheader">Variable Documentation</h2>
 <a id="a8a3377de6119675305d36238837f3c98" name="a8a3377de6119675305d36238837f3c98"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8a3377de6119675305d36238837f3c98">&#9670;&nbsp;</a></span>MODULE_NAME</h2>
@@ -622,7 +622,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distanceMahal.html">pm_distanceMahal</a></li>
-        <li class="footer">Generated on Sat May 11 2024 15:59:35 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 01:45:21 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

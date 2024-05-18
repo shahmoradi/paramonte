@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['sampler_0',['Sampler',['../classSampler.html#a203ff4b56b6248910944a745de505e82',1,'Sampler']]],
+  ['savefig_1',['savefig',['../classFigure.html#afc956d36d6beeeaf9b7b358b916f1939',1,'Figure::savefig()'],['../savefig_8m.html#ab0f7c7e07bc0a440eee76153cda628f8',1,'savefig():&#160;savefig.m']]],
+  ['savefigs_2',['savefigs',['../classCascade.html#a46bb17000b9ba3d60f598aa898143a52',1,'Cascade']]],
+  ['scatter_3',['Scatter',['../classScatter.html#aabd25e54267f0d13c30bde6c5dba4715',1,'Scatter::Scatter(in dfref, in varargin)'],['../classScatter.html#aabd25e54267f0d13c30bde6c5dba4715',1,'Scatter::Scatter(in dfref, in varargin)'],['../classScatter.html#aabd25e54267f0d13c30bde6c5dba4715',1,'Scatter::Scatter(in dfref, in varargin)'],['../classScatter.html#aabd25e54267f0d13c30bde6c5dba4715',1,'Scatter::Scatter(in dfref, in varargin)']]],
+  ['scatter3_4',['Scatter3',['../classScatter3.html#a240a1db111f4b3a4c8d1f2574771d1ca',1,'Scatter3::Scatter3(in dfref, in varargin)'],['../classScatter3.html#a240a1db111f4b3a4c8d1f2574771d1ca',1,'Scatter3::Scatter3(in dfref, in varargin)'],['../classScatter3.html#a240a1db111f4b3a4c8d1f2574771d1ca',1,'Scatter3::Scatter3(in dfref, in varargin)'],['../classScatter3.html#a240a1db111f4b3a4c8d1f2574771d1ca',1,'Scatter3::Scatter3(in dfref, in varargin)']]],
+  ['selectutilitypath_5',['selectUtilityPath',['../savefig_8m.html#af623c58bd5aa7da70665672824728272',1,'savefig.m']]],
+  ['set_5fmanual_5faxes_5fmodes_6',['set_manual_axes_modes',['../savefig_8m.html#a0f20bab341fdabbfd85e97e00fe7cdb8',1,'savefig.m']]],
+  ['setcl_7',['setcl',['../classHeatmap.html#aafe6d0d6fa989852622036b24d5b49fd',1,'Heatmap']]],
+  ['setkeyval_8',['setKeyVal',['../classHandle.html#ad00db1b8e25e4ea7dbb4458bb9dc1690',1,'Handle']]],
+  ['setoptionsformat_9',['setOptionsFormat',['../savefig_8m.html#a4d9dee385f67285127b26d14ac068a89',1,'savefig.m']]],
+  ['simbio_10',['simbio',['../simbio_8m.html#a3735d44df1e7dafd4a22309f307794d2',1,'simbio.m']]],
+  ['skipfull_11',['skipFull',['../classFileContentsReport.html#a72f0e3a815218d16ef7e841878c08dec',1,'FileContentsReport']]],
+  ['skipnull_12',['skipNull',['../classFileContentsReport.html#a462ddc2e32114e80ed8adcfc069fe549',1,'FileContentsReport']]],
+  ['specbase_13',['SpecBase',['../classSpecBase.html#a5168a35cd23c6401024d4cacaf59838c',1,'SpecBase']]],
+  ['specdram_14',['SpecDRAM',['../classSpecDRAM.html#ac6836b538d05677a8029caa55a01a64d',1,'SpecDRAM']]],
+  ['specmcmc_15',['SpecMCMC',['../classSpecMCMC.html#a269b6de621d439d51e00d896da2b8e40',1,'SpecMCMC']]],
+  ['spin_16',['spin',['../classSpinner.html#a4ec28dd71135d25e88a1febc1a139284',1,'Spinner']]],
+  ['spinner_17',['Spinner',['../classSpinner.html#adce64a1087dfd2fa8739c657c7794450',1,'Spinner']]],
+  ['split2real_18',['split2real',['../split2real_8m.html#a0ead684d81a66df92d6aef561475d062',1,'split2real.m']]],
+  ['statistics_19',['statistics',['../statistics_8m.html#adfdc30479d2baa9a189e1138bdbeaa08',1,'statistics.m']]],
+  ['str2char_20',['str2char',['../append__pdfs_8m.html#ad624c3176f1932132d50b44b04dd286a',1,'str2char(in value):&#160;append_pdfs.m'],['../savefig_8m.html#ad624c3176f1932132d50b44b04dd286a',1,'str2char(in value):&#160;savefig.m']]],
+  ['struct2hash_21',['struct2hash',['../struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01',1,'struct2hash.m']]],
+  ['subplot_22',['Subplot',['../classSubplot.html#a594af158cec2dbcde06e8f86e08b02e9',1,'Subplot']]]
+];

@@ -695,13 +695,14 @@ ParaMonte Abbreviation Guidelines</h1>
 <li>The abbreviation <code>dist</code> stands for <b>distance</b> or <b>distribution</b> depending on the context. Example: <code>DistMulti_type</code>.</li>
 <li>The abbreviation <code>eff</code> stands for <b>effective</b>. Example: <code>effSamSize</code>.</li>
 <li>The abbreviation <code>exp</code> stands for <b>exponential</b> or <b>exponentiated</b>. Example: <code>setDisSortedExpDiff()</code>.</li>
+<li>The abbreviation <code>hell</code> stands for <b>Hellinger</b> in statistical distance computations. Example: <code>getDisHellSq()</code>.</li>
 <li>The abbreviation <code>herm</code> stands for <b>hermitian</b> in matrix algebra.</li>
 <li>The abbreviation <code>ICE</code> stands for <b>Internal Compiler Error</b>. It typically appears in the bug descriptions tagged via Doxygen command <code>\bug</code>.</li>
 <li>The abbreviation <code>inv</code> stands for <b>inverse</b>. Example: <code>getMatInv()</code>.</li>
 <li>The abbreviation <code>ks</code> stands for <b>Kolmogorov-Smirnov</b> test. Example: <code>getProbKS()</code>.</li>
 <li>The abbreviation <code>lin</code> stands for <b>linear</b>. Example: <code>getLinSpace()</code>.</li>
 <li>The abbreviation <code>low</code> stands for <b>lower triangle of a matrix</b> or <b>lower limits</b>. Example: <code>setChoLow()</code>.</li>
-<li>The abbreviation <code>mahal</code> stands for <b>Mahalanobis</b> distance. Example: <code>getMahalSq()</code>.</li>
+<li>The abbreviation <code>mahal</code> stands for <b>Mahalanobis</b> distance. Example: <code>getDisMahalSq()</code>.</li>
 <li>The abbreviation <code>mat</code> stands for <b>matrix</b>. Example: <code>getMatInv()</code>.</li>
 <li>The abbreviation <code>multi</code> stands for <b>multivariate</b> mostly used in the context of statistical distributions. Example: <code>getMultiNormRand()</code>.</li>
 <li>The abbreviation <code>msn</code> stands for <b>Multivariate Skew-Normal</b> mostly used in the context of the statistical MultiVariate Skew-Normal distribution.</li>
@@ -723,7 +724,7 @@ ParaMonte Abbreviation Guidelines</h1>
 <li>The abbreviation <code>rand</code> stands for <b>random</b>, mostly in the context of statistics. Example: <code>getUnifRand()</code>.</li>
 <li>The abbreviation <code>ref</code> stands for <b>reference</b>, mostly in the context of testings to represent the reference values for comparison. Example: <code>mean_ref</code>.</li>
 <li>The abbreviation <code>sam</code> stands for <b>sample</b>, mostly in the context of statistics. Example: <code>effSamSize</code>.</li>
-<li>The abbreviation <code>sq</code> stands for <b>squared</b>. Example: <code>getMahalSq()</code>.</li>
+<li>The abbreviation <code>sq</code> stands for <b>squared</b>. Example: <code>getDisMahalSq()</code>.</li>
 <li>The abbreviation <code>stat</code> stands for <b>statistics</b>. Example: <code>StatDRAM_type</code>.</li>
 <li>The abbreviation <code>std</code> stands for <b>standard deviation</b>. Example: <code>StdVec</code>.</li>
 <li>The abbreviation <code>sym</code> stands for <b>symmetric</b>.</li>
@@ -784,7 +785,7 @@ ParaMonte Fortran Documentation Guidelines</h1>
 </li>
 <li>The Doxygen <code>\bug</code> tag, if any exists, must appear immediately after the <code>\todo</code> tag or any other tag immediately preceding it.<br  />
 </li>
-<li>The closing command of each documentation section must be the ParaMonte custom command <code>\finmain</code> separated from the tags before and after by an empty line.<br  />
+<li>The closing command of each documentation section must be the ParaMonte custom command <code>\final</code> separated from the tags before and after by an empty line.<br  />
 </li>
 <li>The Doxygen <code>\xrefitem authors "Author" "Authors"</code> tag is the last command to appear in any documentation section, and it must preferably have the format exemplified in the example below.<br  />
  <br  />
@@ -809,7 +810,7 @@ ParaMonte Fortran Documentation Guidelines</h1>
 <li><code>\abbr</code> Inserts a <code>\remark</code> tag about the naming abbreviations used in the library.</li>
 <li><code>\naming</code> Inserts a <code>\remark</code> tag about the naming conventions used in the library.</li>
 <li><code>\license</code> Inserts a <code>\remark</code> tag about the generic licensing of the library.</li>
-<li><code>\finmain</code> Inserts the set of final generic remarks that should appear at the end of each documentation section.</li>
+<li><code>\final</code> Inserts the set of final generic remarks that should appear at the end of each documentation section.</li>
 <li><code>\RK</code> Inserts a hyper-link reference <a class="el" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a> to the default <code>real</code> kind used in the library.</li>
 <li><code>\RK32</code> Inserts a hyper-link reference <a class="el" href="namespacepm__kind.html#a609d23b0915ea97e6a89e9bef7c743bd">RK32</a> to the <code>real32</code> real kind used in the library.</li>
 <li><code>\RK64</code> Inserts a hyper-link reference <a class="el" href="namespacepm__kind.html#aa3a66a01e440da406e627e6e4e6e3908">RK64</a> to the <code>real64</code> real kind used in the library.</li>
@@ -911,7 +912,7 @@ ParaMonte Fortran Documentation Guidelines</h1>
       !&gt;  \bug
       !&gt;  This code used to have a well-known bug in version 1.1, but is now resolved.
       !&gt;
-      !&gt;  \finmain
+      !&gt;  \final
       !&gt;
       !&gt;  \author
       !&gt;  \FatemehBagheri, Monday 02:15 AM, September 27, 2021, Dallas, TX&lt;br&gt;</pre> <br  />
@@ -960,7 +961,7 @@ ParaMonte Fortran ToDO List</h1>
 <p >For the full listing of all tasks to do see the dedicated <a href="./todo.html">ToDo listing page</a>.<br  />
  The following are the library tasks that need to be accomplished.<br  />
 </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><span class="pvhigh">Critical Priority</span>: The module <code>pm_distanceHellinger</code> for computing the Hellinger metric distance must be added to the library.<br  />
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><span class="pvhigh">Critical Priority</span>: The module <code><a class="el" href="namespacepm__distanceHellinger.html" title="This module contains classes and procedures for computing the Hellinger statistical distance between ...">pm_distanceHellinger</a></code> for computing the Hellinger metric distance must be added to the library.<br  />
  The module <code>pm_distanceManhattan</code> for computing the Manhattan metric distance must be added to the library.<br  />
  The module <code>pm_distanceMinkowski</code> for computing the Minkowski metric distance must be added to the library.<br  />
 </dd></dl>
@@ -976,7 +977,7 @@ ParaMonte Fortran ToDO List</h1>
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="footer">Generated on Sat May 11 2024 15:59:41 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 01:45:27 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

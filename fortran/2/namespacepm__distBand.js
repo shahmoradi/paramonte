@@ -1,5 +1,6 @@
 var namespacepm__distBand =
 [
+    [ "distBand_type", "structpm__distBand_1_1distBand__type.html", null ],
     [ "getBandEbreak", "interfacepm__distBand_1_1getBandEbreak.html", null ],
     [ "getBandEpeak", "interfacepm__distBand_1_1getBandEpeak.html", null ],
     [ "getBandUDF", "interfacepm__distBand_1_1getBandUDF.html", null ],

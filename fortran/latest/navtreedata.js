@@ -95,6 +95,10 @@ var NAVTREE =
       [ "latest", "../../generic/latest/index.html", null ],
       [ "2", "../../generic/2/index.html", null ],
       [ "1", "../../generic/1/index.html", null ]
+    ] ],
+    [ "MATLAB", "usergroup4.html", [
+      [ "latest", "../../matlab/latest/index.html", null ],
+      [ "3", "../../matlab/3/index.html", null ]
     ] ]
   ] ]
 ];
@@ -102,34 +106,34 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "../../c/2/index.html",
-"interfacepm__arraySort_1_1isSorted.html",
-"interfacepm__container_1_1operator_07_4_0a_08.html",
-"interfacepm__distLogUnif_1_1setLogUnifLogRand.html",
-"interfacepm__fftnr_1_1setFFTF.html",
-"interfacepm__os_1_1isWindows.html",
-"interfacepm__sysInfo_1_1isKernelDarwin.html",
-"namespacepm__arrayCompareLex.html#abb24e334e814a5327b066ccca880d78a",
-"namespacepm__distPower.html",
-"namespacepm__mathConst.html#ad3bd0eaf4120cab03d8c5e2c64899b79",
-"namespacepm__sampleQuan.html#ab13877c72accf6962487e95a5c606815",
-"namespacetest__pm__arrayInsert.html",
-"namespacetest__pm__io.html",
-"namespacetest__pm__quadRomb.html#ab23d1127953cb3947c60e79e7fb3d46c",
-"pm__arrayRefine_8F90.html#adc9d2e2e96e48b5a6d132822d8827dab",
-"pm__distLogNorm_8F90.html",
-"pm__kind_8F90.html#afa80be656df106289ea0a29c2e661aff",
-"pm__paramonte_8F90.html#abd692b21116e0d2de861285e2245e58e",
-"pm__strASCII_8F90.html#add4a5290aa258a8c3197b73a2de6e35b",
-"structpm__container_1_1ccc__pdt.html",
-"structpm__dateTime_1_1dateTimeStr__type.html#a023d3017a47652b66412507fd652f975",
-"structpm__io_1_1wrap__type.html#a0903e08033d7632b8aa286bb678b2b73",
-"structpm__paramonte_1_1envis__type.html#a20ab304def770dc51c0abf54025ef87d",
-"structpm__sampleACT_1_1batchMeansMax__type.html#ac547c822540b513496b9717766aef776",
-"structpm__strANSI_1_1styleSeq__type.html#a9d61771c72dc497625301a905072a6bd",
-"structtest__pm__distBand_1_1BandSpec__type.html#ae81e6412eed9a6a3d515487240879a56",
-"test__pm__distBand_8F90.html#a319d8fb6f53e9e19c50738de062b2cd8",
-"test__pm__io_8F90.html#ad316470a0bd6d9025e701a476d6c6536",
-"test__pm__statistics_8F90.html#a6530043e1fd07450a9dcba1b88bea930"
+"interfacepm__arraySort_1_1isDescendingAll.html",
+"interfacepm__container_1_1operator_07_4_08.html",
+"interfacepm__distLogUnif_1_1setLogUnifLogQuan.html",
+"interfacepm__fftnr_1_1getFFTF.html",
+"interfacepm__option_1_1getOption.html",
+"interfacepm__str_1_1getTrimmedTZ.html",
+"namespacepm__array.html#ae3f0ede04443e54e8d9be8efcf8c9671",
+"namespacepm__distNorm.html#af9b6c84284ca6c41219f745905eeb305",
+"namespacepm__mathConst.html#a5d7820e4028b4187c50d8205da292ed3",
+"namespacepm__sampleCor.html#a55bad34c0b6557a94fa8445f0e31c8be",
+"namespacetest__pm__arrayComplement.html#a615ed9962a62bb0601bc4688715e0a98",
+"namespacetest__pm__err.html",
+"namespacetest__pm__paraNest__RefinedChain.html",
+"pm__arrayRank_8F90.html#ab391edae031c507f56ace9354a14eba6",
+"pm__distGenExpGamma_8F90.html#ae38ceecfdcc856439a1bbf745aeba65c",
+"pm__kind_8F90.html#ad15a51080f53546dd64c25bc0ba56481",
+"pm__parallelism_8F90.html#a2b452a17c32b52d1142bf20bfa992035",
+"pm__strASCII_8F90.html#a7b9cf3ba98edf0abc11e953e1d7c849d",
+"structpm__bench_1_1bench__type.html#a2afd906852a128412c0d182693e63189",
+"structpm__dateTime_1_1dateTimeInt__type.html#a1d6b70453c081da0d266f93ffd881d4f",
+"structpm__io_1_1filext__type.html#a62d5171d16e79683896d38f49a249978",
+"structpm__matrixPack_1_1package__type.html",
+"structpm__quadTest_1_1intGenExpGammaPDF__type.html#a6bcb00bd8f3995d2e35f59e8f6f3312a",
+"structpm__sampling_1_1sampler__type.html#ada89ec39c5b09394fd44bc2d8e360c56",
+"structpm__timer_1_1timerDAT__type.html#a9f3646926c4fe08ff1d9779ec6e18438",
+"test__pm__batse_8F90.html#a19bcd7b9041c253c44f51ab9680b11bc",
+"test__pm__io_8F90.html#a37a3e029f34278e4ecd630ca0c199ddb",
+"test__pm__polation_8F90.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

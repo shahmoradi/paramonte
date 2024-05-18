@@ -1,5 +1,6 @@
 var pm__distGeomCyclic_8F90 =
 [
+    [ "pm_distGeomCyclic::distGeomCyclic_type", "structpm__distGeomCyclic_1_1distGeomCyclic__type.html", null ],
     [ "pm_distGeomCyclic::getGeomCyclicLogPMF", "interfacepm__distGeomCyclic_1_1getGeomCyclicLogPMF.html", null ],
     [ "pm_distGeomCyclic::setGeomCyclicLogPMF", "interfacepm__distGeomCyclic_1_1setGeomCyclicLogPMF.html", null ],
     [ "pm_distGeomCyclic::getGeomCyclicLogCDF", "interfacepm__distGeomCyclic_1_1getGeomCyclicLogCDF.html", null ],

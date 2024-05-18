@@ -70,6 +70,10 @@ var NAVTREE =
       [ "latest", "../../generic/latest/index.html", null ],
       [ "2", "../../generic/2/index.html", null ],
       [ "1", "../../generic/1/index.html", null ]
+    ] ],
+    [ "MATLAB", "usergroup4.html", [
+      [ "latest", "../../matlab/latest/index.html", null ],
+      [ "3", "../../matlab/3/index.html", null ]
     ] ]
   ] ]
 ];

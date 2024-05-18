@@ -183,4 +183,7 @@ var menudata={children:[
 {text:"Generic",url:"usergroup3.html",children:[
 {text:"latest",url:"../../generic/latest/index.html"},
 {text:"2",url:"../../generic/2/index.html"},
-{text:"1",url:"../../generic/1/index.html"}]}]}
+{text:"1",url:"../../generic/1/index.html"}]},
+{text:"MATLAB",url:"usergroup4.html",children:[
+{text:"latest",url:"../../matlab/latest/index.html"},
+{text:"3",url:"../../matlab/3/index.html"}]}]}

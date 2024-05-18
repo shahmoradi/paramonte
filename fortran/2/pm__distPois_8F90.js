@@ -1,5 +1,6 @@
 var pm__distPois_8F90 =
 [
+    [ "pm_distPois::distPois_type", "structpm__distPois_1_1distPois__type.html", null ],
     [ "pm_distPois::getPoisLogPMF", "interfacepm__distPois_1_1getPoisLogPMF.html", null ],
     [ "pm_distPois::setPoisLogPMF", "interfacepm__distPois_1_1setPoisLogPMF.html", null ],
     [ "pm_distPois::getPoisCDF", "interfacepm__distPois_1_1getPoisCDF.html", null ],

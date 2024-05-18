@@ -1,5 +1,6 @@
 var pm__distKolm_8F90 =
 [
+    [ "pm_distKolm::distKolm_type", "structpm__distKolm_1_1distKolm__type.html", null ],
     [ "pm_distKolm::getKolmPDF", "interfacepm__distKolm_1_1getKolmPDF.html", null ],
     [ "pm_distKolm::setKolmPDF", "interfacepm__distKolm_1_1setKolmPDF.html", null ],
     [ "pm_distKolm::getKolmCDF", "interfacepm__distKolm_1_1getKolmCDF.html", null ],

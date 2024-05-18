@@ -203,7 +203,7 @@ whose elements <b>are already sorted</b> in ascending order.<br  />
 <div class="line"><span class="fortran_statement">complex</span>(CK)     ,<span class="fortran_attribute"> intent(in)</span> :: lhs, rhs</div>
 <div class="line"><span class="fortran_statement">real</span>(RK)        ,<span class="fortran_attribute"> intent(in)</span> :: lhs, rhs</div>
 <div class="ttc" id="anamespacepm__container_html"><div class="ttname"><a href="namespacepm__container.html">pm_container</a></div><div class="ttdoc">This module contains the derived types for generating allocatable containers of scalar,...</div><div class="ttdef"><b>Definition:</b> <a href="pm__container_8F90_source.html#l00113">pm_container.F90:113</a></div></div>
-<div class="ttc" id="astructpm__container_1_1css__pdt_html"><div class="ttname"><a href="structpm__container_1_1css__pdt.html">pm_container::css_pdt</a></div><div class="ttdoc">This is the css_pdt parameterized type for generating instances of container of scalar of string obje...</div><div class="ttdef"><b>Definition:</b> <a href="pm__container_8F90_source.html#l00781">pm_container.F90:781</a></div></div>
+<div class="ttc" id="astructpm__container_1_1css__pdt_html"><div class="ttname"><a href="structpm__container_1_1css__pdt.html">pm_container::css_pdt</a></div><div class="ttdoc">This is the css_pdt parameterized type for generating instances of container of scalar of string obje...</div><div class="ttdef"><b>Definition:</b> <a href="pm__container_8F90_source.html#l00783">pm_container.F90:783</a></div></div>
 <div class="ttc" id="astructpm__container_1_1css__type_html"><div class="ttname"><a href="structpm__container_1_1css__type.html">pm_container::css_type</a></div><div class="ttdoc">This is the css_type type for generating instances of container of scalar of string objects.</div><div class="ttdef"><b>Definition:</b> <a href="pm__container_8F90_source.html#l00191">pm_container.F90:191</a></div></div>
 </div><!-- fragment --> where the specified kind type parameters (<code>SK</code>, <code>IK</code>, <code>LK</code>, <code>CK</code>, <code>RK</code>) can refer to any of the supported kinds by the processor.<br  />
  This user-defined equivalence check is extremely useful where a user-defined sorting criterion other than simple ascending order is needed, for example, when the case-sensitivity of an input string or array of strings is irrelevant or when sorting of the absolute values matters excluding the signs of the numbers, or when descending order is desired.<br  />
@@ -218,7 +218,7 @@ whose elements <b>are already sorted</b> in ascending order.<br  />
 <div class="line"> </div>
 <div class="line">mergedSortedArray(<span class="fortran_numeric_literal">1</span> :<span class="fortran_function"> size</span>(sortedArray1)<span class="fortran_operator_symbols"> + </span><span class="fortran_function">size</span>(sortedArray2))<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__arrayMerge_1_1getMerged.html">getMerged</a>(sortedArray1, sortedArray2)</div>
 <div class="line">mergedSortedArray(<span class="fortran_numeric_literal">1</span> :<span class="fortran_function"> size</span>(sortedArray1)<span class="fortran_operator_symbols"> + </span><span class="fortran_function">size</span>(sortedArray2))<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__arrayMerge_1_1getMerged.html">getMerged</a>(sortedArray1, sortedArray2, isSorted)</div>
-<div class="ttc" id="ainterfacepm__arrayMerge_1_1getMerged_html"><div class="ttname"><a href="interfacepm__arrayMerge_1_1getMerged.html">pm_arrayMerge::getMerged</a></div><div class="ttdoc">Generate an ascending-sorted merger of the two ascending-sorted input arrays.</div><div class="ttdef"><b>Definition:</b> <a href="pm__arrayMerge_8F90_source.html#l00138">pm_arrayMerge.F90:138</a></div></div>
+<div class="ttc" id="ainterfacepm__arrayMerge_1_1getMerged_html"><div class="ttname"><a href="interfacepm__arrayMerge_1_1getMerged.html">pm_arrayMerge::getMerged</a></div><div class="ttdoc">Generate an ascending-sorted merger of the two ascending-sorted input arrays.</div><div class="ttdef"><b>Definition:</b> <a href="pm__arrayMerge_8F90_source.html#l00141">pm_arrayMerge.F90:141</a></div></div>
 <div class="ttc" id="anamespacepm__arrayMerge_html"><div class="ttname"><a href="namespacepm__arrayMerge.html">pm_arrayMerge</a></div><div class="ttdoc">This module contains procedures and generic interfaces for sorting and merging two previously-sorted ...</div><div class="ttdef"><b>Definition:</b> <a href="pm__arrayMerge_8F90_source.html#l00034">pm_arrayMerge.F90:34</a></div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The input arguments <code>sortedArray1</code> and <code>sortedArray2</code> must be sorted in ascending order when <code>isSorted()</code> is missing, or properly sorted when <code>isSorted()</code> is present.<br  />
@@ -408,7 +408,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 </div><!-- fragment --></dd></dl>
 <dl class="test"><dt><b><a class="el" href="test.html#_test000042">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__arrayMerge.html">test_pm_arrayMerge</a></dd></dl>
 <p ><br  />
-<a class="anchor" id="finmain-getMerged"></a><b>Final Remarks</b> <a href="#finmain-getMerged">⛓</a> </p><hr  />
+<a class="anchor" id="final-getMerged"></a><b>Final Remarks</b> <a href="#final-getMerged">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_arrayMerge.F90#L134 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
@@ -426,9 +426,9 @@ Help us justify its continued development and maintenance by acknowledging its b
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
 <dl class="authors"><dt><b><a class="el" href="authors.html#_authors000080">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, April 21, 2017, 1:54 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__arrayMerge_8F90_source.html#l00138">138</a> of file <a class="el" href="pm__arrayMerge_8F90_source.html">pm_arrayMerge.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__arrayMerge_8F90_source.html#l00141">141</a> of file <a class="el" href="pm__arrayMerge_8F90_source.html">pm_arrayMerge.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/home/amir/git/paramonte/src/fortran/main/<a class="el" href="pm__arrayMerge_8F90_source.html">pm_arrayMerge.F90</a></li>
+<li>src/fortran/main/<a class="el" href="pm__arrayMerge_8F90_source.html">pm_arrayMerge.F90</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -436,7 +436,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__arrayMerge.html">pm_arrayMerge</a></li><li class="navelem"><a class="el" href="interfacepm__arrayMerge_1_1getMerged.html">getMerged</a></li>
-        <li class="footer">Generated on Sat May 11 2024 15:59:33 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 01:45:20 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

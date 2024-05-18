@@ -233,7 +233,7 @@ ParaMonte C Naming Conventions: Variables</h2>
 <ul>
 <li>All variables and procedure names except compile-time constants begin with an lowercase letter.</li>
 <li>All constants and parameters should generally be typed in uppercase.</li>
-<li>The names of variables that <b>always</b> represent vectors of values <b>may</b> suffixed with <code>Vec</code> or <code>Vector</code>.</li>
+<li>The names of variables that <b>always</b> represent vectors of values <b>may</b> be suffixed with <code>Vec</code> or <code>Vector</code>.</li>
 <li>The names of variables that <b>always</b> represent matrices of values <b>may</b> be suffixed with <code>Mat</code> or <code>Matrix</code>.</li>
 <li>A significant attempt has been made to end all Boolean variables with a passive verb.<br  />
  This is to ensure that the full variable name virtually forms a proposition.<br  />
@@ -264,10 +264,10 @@ ParaMonte C Naming Conventions: Procedures</h2>
 </li>
 <li>The names of functions with return values should preferably begin with <b><code>get</code></b>.<br  />
  The reasoning is simple: Functions in mathematics <em>generate and obtain</em> a <b>new</b> object instead of changing (resetting) the state of an existing object.<br  />
- For example, the function <code>getMatSym(mat) result(matsym)</code> generates a symmetric version of the input matrix and returns it as the function result.<br  />
+ For example, the function <code>getMatSym(mat)</code> generates a symmetric version of the input matrix and returns it as the function result.<br  />
  <b>Exceptions</b> to this naming convention are allowed, for example, when the <code>get</code> prefix is inconvenient or when the function returns a <code>_Bool</code> result.<br  />
 </li>
-<li>Functions that return objects of type <code>_Bool</code> should be preferably prefixed with <code>is</code> or be named such that the name begins with a verb and reads as a proposition, evaluating to either <code>.true.</code> or <code>.false.</code>.</li>
+<li>Functions that return objects of type <code>_Bool</code> should be preferably prefixed with <code>is</code> or be named such that the name begins with a verb and reads as a proposition, evaluating to either true or false.</li>
 <li>The keyword <b><code>get</code></b> should be avoided as a prefix for <code>void</code> function names since <code>void</code> functions do not generate and <em>get</em> a new object as their results, rather they <b>(re)set</b> the state of existing objects passed to them.<br  />
 </li>
 <li>A more appropriate prefix for <code>void</code> functions is <code>set</code>, i.e., <code>setReplaced()</code>.</li>
@@ -296,13 +296,14 @@ ParaMonte C Abbreviation Guidelines</h1>
 <li>The abbreviation <code>dist</code> stands for <b>distance</b> or <b>distribution</b> depending on the context. Example: <code>DistMulti_type</code>.</li>
 <li>The abbreviation <code>eff</code> stands for <b>effective</b>. Example: <code>effSamSize</code>.</li>
 <li>The abbreviation <code>exp</code> stands for <b>exponential</b> or <b>exponentiated</b>. Example: <code>setDisSortedExpDiff()</code>.</li>
+<li>The abbreviation <code>hell</code> stands for <b>Hellinger</b> in statistical distance computations. Example: <code>getDisHellSq()</code>.</li>
 <li>The abbreviation <code>herm</code> stands for <b>hermitian</b> in matrix algebra.</li>
-<li>The abbreviation <code>ICE</code> stands for <b>Internal Compiler Error</b>. It typically appears in the bug descriptions tagged via Doxygen command <code>\bug</code>.</li>
+<li>The abbreviation <code>ice</code> stands for <b>Internal Compiler Error</b>. It typically appears in the bug descriptions tagged via Doxygen command <code>\bug</code>.</li>
 <li>The abbreviation <code>inv</code> stands for <b>inverse</b>. Example: <code>getMatInv()</code>.</li>
 <li>The abbreviation <code>ks</code> stands for <b>Kolmogorov-Smirnov</b> test. Example: <code>getProbKS()</code>.</li>
 <li>The abbreviation <code>lin</code> stands for <b>linear</b>. Example: <code>getLinSpace()</code>.</li>
 <li>The abbreviation <code>low</code> stands for <b>lower triangle of a matrix</b> or <b>lower limits</b>. Example: <code>setChoLow()</code>.</li>
-<li>The abbreviation <code>mahal</code> stands for <b>Mahalanobis</b> distance. Example: <code>getMahalSq()</code>.</li>
+<li>The abbreviation <code>mahal</code> stands for <b>Mahalanobis</b> distance. Example: <code>getDisMahalSq()</code>.</li>
 <li>The abbreviation <code>mat</code> stands for <b>matrix</b>. Example: <code>getMatInv()</code>.</li>
 <li>The abbreviation <code>multi</code> stands for <b>multivariate</b> mostly used in the context of statistical distributions. Example: <code>getMultiNormRand()</code>.</li>
 <li>The abbreviation <code>msn</code> stands for <b>Multivariate Skew-Normal</b> mostly used in the context of the statistical MultiVariate Skew-Normal distribution.</li>
@@ -318,7 +319,7 @@ ParaMonte C Abbreviation Guidelines</h1>
 <li>The abbreviation <code>rand</code> stands for <b>random</b>, mostly in the context of statistics. Example: <code>getUnifRand()</code>.</li>
 <li>The abbreviation <code>ref</code> stands for <b>reference</b>, mostly in the context of testings to represent the reference values for comparison. Example: <code>mean_ref</code>.</li>
 <li>The abbreviation <code>sam</code> stands for <b>sample</b>, mostly in the context of statistics. Example: <code>effSamSize</code>.</li>
-<li>The abbreviation <code>sq</code> stands for <b>squared</b>. Example: <code>getMahalSq()</code>.</li>
+<li>The abbreviation <code>sq</code> stands for <b>squared</b>. Example: <code>getDisMahalSq()</code>.</li>
 <li>The abbreviation <code>stat</code> stands for <b>statistics</b>. Example: <code>StatDRAM_type</code>.</li>
 <li>The abbreviation <code>std</code> stands for <b>standard deviation</b>. Example: <code>StdVec</code>.</li>
 <li>The abbreviation <code>sym</code> stands for <b>symmetric</b>.</li>
@@ -379,7 +380,7 @@ ParaMonte C Documentation Guidelines</h1>
 </li>
 <li>The Doxygen <code>\bug</code> tag, if any exists, must appear immediately after the <code>\todo</code> tag or any other tag immediately preceding it.<br  />
 </li>
-<li>The closing command of each documentation section must be the ParaMonte custom command <code>\finmain</code> separated from the tags before and after by an empty line.<br  />
+<li>The closing command of each documentation section must be the ParaMonte custom command <code>\final</code> separated from the tags before and after by an empty line.<br  />
 </li>
 <li>The Doxygen <code>\xrefitem authors "Author" "Authors"</code> tag is the last command to appear in any documentation section, and it must preferably have the format exemplified in the example below.<br  />
  <br  />
@@ -404,7 +405,7 @@ ParaMonte C Documentation Guidelines</h1>
 <li><code>\abbr</code> Inserts a <code>\remark</code> tag about the naming abbreviations used in the library.</li>
 <li><code>\naming</code> Inserts a <code>\remark</code> tag about the naming conventions used in the library.</li>
 <li><code>\license</code> Inserts a <code>\remark</code> tag about the generic licensing of the library.</li>
-<li><code>\finmain</code> Inserts the set of final generic remarks that should appear at the end of each documentation section.</li>
+<li><code>\final</code> Inserts the set of final generic remarks that should appear at the end of each documentation section.</li>
 <li><code>\RK</code> Inserts a hyper-link reference RK to the default <code>real</code> kind used in the library.</li>
 <li><code>\RK32</code> Inserts a hyper-link reference RK32 to the <code>real32</code> real kind used in the library.</li>
 <li><code>\RK64</code> Inserts a hyper-link reference RK64 to the <code>real64</code> real kind used in the library.</li>
@@ -457,6 +458,12 @@ ParaMonte C Documentation Guidelines</h1>
 /// This interface group is the entry point to all **C-style interfaces** to the ParaDRAM samplers of mathematical density functions.&lt;br&gt;
 /// Although the procedures of this generic interface return a single scalar of type `int32_t`, the procedures generate
 /// massive amounts of information about each simulation which are stored in appropriate external hard drive files.&lt;br&gt;
+///
+/// See,
+/// &lt;ol&gt;
+///     &lt;li&gt;    [this generic documentation page](\pmdoc_usage_sampling/paradram/output/)
+///             for more information on the generated output files for samplings performed using the [ParaDRAM](@ref pm_sampling::paradram_type) sampler.
+/// &lt;/ol&gt;
 ///
 /// \param[in]  getLogFunc  :   The input user-specified procedure pointer to the natural logarithm of the target density function.&lt;br&gt;
 ///                             On input, the function must take an input vector `state` of size `ndim` of type floating-point of kind \C_RKALL
@@ -519,7 +526,7 @@ ParaMonte C Documentation Guidelines</h1>
 /// \vis{mvn}
 /// \image html example/pm_sampling/mvn/mvn.traceplot.png width=700
 /// \image html example/pm_sampling/mvn/mvn.scatterplot.png width=700
-/// \image html example/pm_sampling/mvn/mvn.adaptationMeasure.png width=700
+/// \image html example/pm_sampling/mvn/mvn.proposalAdaptation.png width=700
 ///
 /// \example{himmelblau}
 /// \include{lineno} example/pm_sampling/himmelblau/main.c
@@ -533,7 +540,7 @@ ParaMonte C Documentation Guidelines</h1>
 /// \vis{himmelblau}
 /// \image html example/pm_sampling/himmelblau/himmelblau.traceplot.png width=700
 /// \image html example/pm_sampling/himmelblau/himmelblau.scatterplot.png width=700
-/// \image html example/pm_sampling/himmelblau/himmelblau.adaptationMeasure.png width=700
+/// \image html example/pm_sampling/himmelblau/himmelblau.proposalAdaptation.png width=700
 ///
 /// \test
 /// [test_pm_sampling](@ref test_pm_sampling)
@@ -561,7 +568,7 @@ ParaMonte C Documentation Guidelines</h1>
 /// This issue does not exist with GNU compilers, although the GNU definition of `long double`
 /// appears to yield incorrect values in some calculations, e.g., in `isFailedGeomCyclicFit()` of the ParaMonte library.&lt;br&gt;
 ///
-/// \finminc{runParaDRAM}
+/// \final{runParaDRAM}
 ///
 /// \author
 /// \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin
@@ -602,7 +609,7 @@ ParaMonte C Documentation Troubleshooting</h1>
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="footer">Generated on Fri Apr 26 2024 15:32:27 for ParaMonte C 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 01:46:06 for ParaMonte C 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

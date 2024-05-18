@@ -398,6 +398,9 @@ var annotated_dup =
       [ "isValidZone", "interfacepm__dateTime_1_1isValidZone.html", null ],
       [ "timeZone_type", "structpm__dateTime_1_1timeZone__type.html", "structpm__dateTime_1_1timeZone__type" ]
     ] ],
+    [ "pm_distanceBhat", "namespacepm__distanceBhat.html", [
+      [ "getDisBhat", "interfacepm__distanceBhat_1_1getDisBhat.html", null ]
+    ] ],
     [ "pm_distanceEuclid", "namespacepm__distanceEuclid.html", [
       [ "euclid_type", "structpm__distanceEuclid_1_1euclid__type.html", null ],
       [ "euclidsq_type", "structpm__distanceEuclid_1_1euclidsq__type.html", null ],
@@ -407,15 +410,19 @@ var annotated_dup =
       [ "setDisEuclid", "interfacepm__distanceEuclid_1_1setDisEuclid.html", null ],
       [ "setDisMatEuclid", "interfacepm__distanceEuclid_1_1setDisMatEuclid.html", null ]
     ] ],
+    [ "pm_distanceHellinger", "namespacepm__distanceHellinger.html", [
+      [ "getDisHellSq", "interfacepm__distanceHellinger_1_1getDisHellSq.html", null ]
+    ] ],
     [ "pm_distanceKolm", "namespacepm__distanceKolm.html", [
       [ "getDisKolm", "interfacepm__distanceKolm_1_1getDisKolm.html", null ],
       [ "setDisKolm", "interfacepm__distanceKolm_1_1setDisKolm.html", null ]
     ] ],
     [ "pm_distanceMahal", "namespacepm__distanceMahal.html", [
-      [ "getMahalSq", "interfacepm__distanceMahal_1_1getMahalSq.html", null ],
-      [ "setMahalSq", "interfacepm__distanceMahal_1_1setMahalSq.html", null ]
+      [ "getDisMahalSq", "interfacepm__distanceMahal_1_1getDisMahalSq.html", null ],
+      [ "setDisMahalSq", "interfacepm__distanceMahal_1_1setDisMahalSq.html", null ]
     ] ],
     [ "pm_distBand", "namespacepm__distBand.html", [
+      [ "distBand_type", "structpm__distBand_1_1distBand__type.html", null ],
       [ "getBandEbreak", "interfacepm__distBand_1_1getBandEbreak.html", null ],
       [ "getBandEpeak", "interfacepm__distBand_1_1getBandEpeak.html", null ],
       [ "getBandUDF", "interfacepm__distBand_1_1getBandUDF.html", null ],
@@ -426,11 +433,13 @@ var annotated_dup =
       [ "setBandUCDF", "interfacepm__distBand_1_1setBandUCDF.html", null ]
     ] ],
     [ "pm_distBern", "namespacepm__distBern.html", [
+      [ "distBern_type", "structpm__distBern_1_1distBern__type.html", null ],
       [ "getBernRand", "interfacepm__distBern_1_1getBernRand.html", null ],
       [ "isHead", "interfacepm__distBern_1_1isHead.html", null ],
       [ "setBernRand", "interfacepm__distBern_1_1setBernRand.html", null ]
     ] ],
     [ "pm_distBeta", "namespacepm__distBeta.html", [
+      [ "distBeta_type", "structpm__distBeta_1_1distBeta__type.html", null ],
       [ "getBetaCDF", "interfacepm__distBeta_1_1getBetaCDF.html", null ],
       [ "getBetaLogPDF", "interfacepm__distBeta_1_1getBetaLogPDF.html", null ],
       [ "getBetaPDF", "interfacepm__distBeta_1_1getBetaPDF.html", null ],
@@ -439,6 +448,7 @@ var annotated_dup =
       [ "setBetaRand", "interfacepm__distBeta_1_1setBetaRand.html", null ]
     ] ],
     [ "pm_distCosRaised", "namespacepm__distCosRaised.html", [
+      [ "distCosRaised_type", "structpm__distCosRaised_1_1distCosRaised__type.html", null ],
       [ "getCosRaisedCDF", "interfacepm__distCosRaised_1_1getCosRaisedCDF.html", null ],
       [ "getCosRaisedPDF", "interfacepm__distCosRaised_1_1getCosRaisedPDF.html", null ],
       [ "setCosRaisedCDF", "interfacepm__distCosRaised_1_1setCosRaisedCDF.html", null ],
@@ -455,6 +465,7 @@ var annotated_dup =
       [ "getEggBoxLogUDF", "interfacepm__distEggBox_1_1getEggBoxLogUDF.html", null ]
     ] ],
     [ "pm_distExp", "namespacepm__distExp.html", [
+      [ "distExp_type", "structpm__distExp_1_1distExp__type.html", null ],
       [ "getExpCDF", "interfacepm__distExp_1_1getExpCDF.html", null ],
       [ "getExpLogPDF", "interfacepm__distExp_1_1getExpLogPDF.html", null ],
       [ "getExpRand", "interfacepm__distExp_1_1getExpRand.html", null ],
@@ -463,6 +474,7 @@ var annotated_dup =
       [ "setExpRand", "interfacepm__distExp_1_1setExpRand.html", null ]
     ] ],
     [ "pm_distExpGamma", "namespacepm__distExpGamma.html", [
+      [ "distExpGamma_type", "structpm__distExpGamma_1_1distExpGamma__type.html", null ],
       [ "getExpGammaCDF", "interfacepm__distExpGamma_1_1getExpGammaCDF.html", null ],
       [ "getExpGammaLogPDF", "interfacepm__distExpGamma_1_1getExpGammaLogPDF.html", null ],
       [ "getExpGammaLogPDFNF", "interfacepm__distExpGamma_1_1getExpGammaLogPDFNF.html", null ],
@@ -470,6 +482,7 @@ var annotated_dup =
       [ "setExpGammaLogPDF", "interfacepm__distExpGamma_1_1setExpGammaLogPDF.html", null ]
     ] ],
     [ "pm_distGamma", "namespacepm__distGamma.html", [
+      [ "distGamma_type", "structpm__distGamma_1_1distGamma__type.html", null ],
       [ "getGammaCDF", "interfacepm__distGamma_1_1getGammaCDF.html", null ],
       [ "getGammaLogPDF", "interfacepm__distGamma_1_1getGammaLogPDF.html", null ],
       [ "getGammaLogPDFNF", "interfacepm__distGamma_1_1getGammaLogPDFNF.html", null ],
@@ -478,6 +491,7 @@ var annotated_dup =
       [ "setGammaRand", "interfacepm__distGamma_1_1setGammaRand.html", null ]
     ] ],
     [ "pm_distGenExpGamma", "namespacepm__distGenExpGamma.html", [
+      [ "distGenExpGamma_type", "structpm__distGenExpGamma_1_1distGenExpGamma__type.html", null ],
       [ "getGenExpGammaCDF", "interfacepm__distGenExpGamma_1_1getGenExpGammaCDF.html", null ],
       [ "getGenExpGammaLogPDF", "interfacepm__distGenExpGamma_1_1getGenExpGammaLogPDF.html", null ],
       [ "getGenExpGammaLogPDFNF", "interfacepm__distGenExpGamma_1_1getGenExpGammaLogPDFNF.html", null ],
@@ -485,6 +499,7 @@ var annotated_dup =
       [ "setGenExpGammaLogPDF", "interfacepm__distGenExpGamma_1_1setGenExpGammaLogPDF.html", null ]
     ] ],
     [ "pm_distGenGamma", "namespacepm__distGenGamma.html", [
+      [ "distGenGamma_type", "structpm__distGenGamma_1_1distGenGamma__type.html", null ],
       [ "getGenGammaCDF", "interfacepm__distGenGamma_1_1getGenGammaCDF.html", null ],
       [ "getGenGammaLogPDF", "interfacepm__distGenGamma_1_1getGenGammaLogPDF.html", null ],
       [ "getGenGammaLogPDFNF", "interfacepm__distGenGamma_1_1getGenGammaLogPDFNF.html", null ],
@@ -492,6 +507,7 @@ var annotated_dup =
       [ "setGenGammaLogPDF", "interfacepm__distGenGamma_1_1setGenGammaLogPDF.html", null ]
     ] ],
     [ "pm_distGeom", "namespacepm__distGeom.html", [
+      [ "distGeom_type", "structpm__distGeom_1_1distGeom__type.html", null ],
       [ "getGeomCDF", "interfacepm__distGeom_1_1getGeomCDF.html", null ],
       [ "getGeomLogPMF", "interfacepm__distGeom_1_1getGeomLogPMF.html", null ],
       [ "getGeomRand", "interfacepm__distGeom_1_1getGeomRand.html", null ],
@@ -500,6 +516,7 @@ var annotated_dup =
       [ "setGeomRand", "interfacepm__distGeom_1_1setGeomRand.html", null ]
     ] ],
     [ "pm_distGeomCyclic", "namespacepm__distGeomCyclic.html", [
+      [ "distGeomCyclic_type", "structpm__distGeomCyclic_1_1distGeomCyclic__type.html", null ],
       [ "getGeomCyclicLogCDF", "interfacepm__distGeomCyclic_1_1getGeomCyclicLogCDF.html", null ],
       [ "getGeomCyclicLogPMF", "interfacepm__distGeomCyclic_1_1getGeomCyclicLogPMF.html", null ],
       [ "getGeomCyclicRand", "interfacepm__distGeomCyclic_1_1getGeomCyclicRand.html", null ],
@@ -509,6 +526,7 @@ var annotated_dup =
       [ "setGeomCyclicRand", "interfacepm__distGeomCyclic_1_1setGeomCyclicRand.html", null ]
     ] ],
     [ "pm_distKolm", "namespacepm__distKolm.html", [
+      [ "distKolm_type", "structpm__distKolm_1_1distKolm__type.html", null ],
       [ "getKolmCDF", "interfacepm__distKolm_1_1getKolmCDF.html", null ],
       [ "getKolmPDF", "interfacepm__distKolm_1_1getKolmPDF.html", null ],
       [ "getKolmQuan", "interfacepm__distKolm_1_1getKolmQuan.html", null ],
@@ -519,12 +537,14 @@ var annotated_dup =
       [ "setKolmRand", "interfacepm__distKolm_1_1setKolmRand.html", null ]
     ] ],
     [ "pm_distLogNorm", "namespacepm__distLogNorm.html", [
+      [ "distLogNorm_type", "structpm__distLogNorm_1_1distLogNorm__type.html", null ],
       [ "getLogNormCDF", "interfacepm__distLogNorm_1_1getLogNormCDF.html", null ],
       [ "getLogNormLogPDF", "interfacepm__distLogNorm_1_1getLogNormLogPDF.html", null ],
       [ "setLogNormCDF", "interfacepm__distLogNorm_1_1setLogNormCDF.html", null ],
       [ "setLogNormLogPDF", "interfacepm__distLogNorm_1_1setLogNormLogPDF.html", null ]
     ] ],
     [ "pm_distLogUnif", "namespacepm__distLogUnif.html", [
+      [ "distLogUnif_type", "structpm__distLogUnif_1_1distLogUnif__type.html", null ],
       [ "getLogUnifCDF", "interfacepm__distLogUnif_1_1getLogUnifCDF.html", null ],
       [ "getLogUnifLogQuan", "interfacepm__distLogUnif_1_1getLogUnifLogQuan.html", null ],
       [ "getLogUnifPDF", "interfacepm__distLogUnif_1_1getLogUnifPDF.html", null ],
@@ -536,12 +556,14 @@ var annotated_dup =
       [ "setLogUnifPDF", "interfacepm__distLogUnif_1_1setLogUnifPDF.html", null ]
     ] ],
     [ "pm_distMultiNorm", "namespacepm__distMultiNorm.html", [
+      [ "distMultiNorm_type", "structpm__distMultiNorm_1_1distMultiNorm__type.html", null ],
       [ "getMultiNormLogPDF", "interfacepm__distMultiNorm_1_1getMultiNormLogPDF.html", null ],
       [ "getMultiNormLogPDFNF", "interfacepm__distMultiNorm_1_1getMultiNormLogPDFNF.html", null ],
       [ "getMultiNormRand", "interfacepm__distMultiNorm_1_1getMultiNormRand.html", null ],
       [ "setMultiNormRand", "interfacepm__distMultiNorm_1_1setMultiNormRand.html", null ]
     ] ],
     [ "pm_distNegExp", "namespacepm__distNegExp.html", [
+      [ "distNegExp_type", "structpm__distNegExp_1_1distNegExp__type.html", null ],
       [ "getNegExpCDF", "interfacepm__distNegExp_1_1getNegExpCDF.html", null ],
       [ "getNegExpLogPDF", "interfacepm__distNegExp_1_1getNegExpLogPDF.html", null ],
       [ "getNegExpRand", "interfacepm__distNegExp_1_1getNegExpRand.html", null ],
@@ -550,6 +572,7 @@ var annotated_dup =
       [ "setNegExpRand", "interfacepm__distNegExp_1_1setNegExpRand.html", null ]
     ] ],
     [ "pm_distNorm", "namespacepm__distNorm.html", [
+      [ "distNorm_type", "structpm__distNorm_1_1distNorm__type.html", null ],
       [ "getNormCDF", "interfacepm__distNorm_1_1getNormCDF.html", null ],
       [ "getNormEntropy", "interfacepm__distNorm_1_1getNormEntropy.html", null ],
       [ "getNormFisher", "interfacepm__distNorm_1_1getNormFisher.html", null ],
@@ -568,6 +591,7 @@ var annotated_dup =
       [ "getNormShellLogUDF", "interfacepm__distNormShell_1_1getNormShellLogUDF.html", null ]
     ] ],
     [ "pm_distPareto", "namespacepm__distPareto.html", [
+      [ "distPareto_type", "structpm__distPareto_1_1distPareto__type.html", null ],
       [ "getParetoLogCDF", "interfacepm__distPareto_1_1getParetoLogCDF.html", null ],
       [ "getParetoLogCDFNF", "interfacepm__distPareto_1_1getParetoLogCDFNF.html", null ],
       [ "getParetoLogPDF", "interfacepm__distPareto_1_1getParetoLogPDF.html", null ],
@@ -587,6 +611,7 @@ var annotated_dup =
       [ "setPiwiPowetoLogPDF", "interfacepm__distPiwiPoweto_1_1setPiwiPowetoLogPDF.html", null ]
     ] ],
     [ "pm_distPois", "namespacepm__distPois.html", [
+      [ "distPois_type", "structpm__distPois_1_1distPois__type.html", null ],
       [ "getPoisCDF", "interfacepm__distPois_1_1getPoisCDF.html", null ],
       [ "getPoisLogPMF", "interfacepm__distPois_1_1getPoisLogPMF.html", null ],
       [ "getPoisRand", "interfacepm__distPois_1_1getPoisRand.html", null ],
@@ -595,6 +620,7 @@ var annotated_dup =
       [ "setPoisRand", "interfacepm__distPois_1_1setPoisRand.html", null ]
     ] ],
     [ "pm_distPower", "namespacepm__distPower.html", [
+      [ "distPower_type", "structpm__distPower_1_1distPower__type.html", null ],
       [ "getPowerLogCDF", "interfacepm__distPower_1_1getPowerLogCDF.html", null ],
       [ "getPowerLogCDFNF", "interfacepm__distPower_1_1getPowerLogCDFNF.html", null ],
       [ "getPowerLogPDF", "interfacepm__distPower_1_1getPowerLogPDF.html", null ],
@@ -607,6 +633,7 @@ var annotated_dup =
       [ "setPowerLogRand", "interfacepm__distPower_1_1setPowerLogRand.html", null ]
     ] ],
     [ "pm_distPoweto", "namespacepm__distPoweto.html", [
+      [ "distPoweto_type", "structpm__distPoweto_1_1distPoweto__type.html", null ],
       [ "getPowetoLogCDF", "interfacepm__distPoweto_1_1getPowetoLogCDF.html", null ],
       [ "getPowetoLogCDFNF", "interfacepm__distPoweto_1_1getPowetoLogCDFNF.html", null ],
       [ "getPowetoLogPDF", "interfacepm__distPoweto_1_1getPowetoLogPDF.html", null ],
@@ -619,6 +646,7 @@ var annotated_dup =
       [ "setPowetoLogRand", "interfacepm__distPoweto_1_1setPowetoLogRand.html", null ]
     ] ],
     [ "pm_distUnif", "namespacepm__distUnif.html", [
+      [ "distUnif_type", "structpm__distUnif_1_1distUnif__type.html", null ],
       [ "getUnifCDF", "interfacepm__distUnif_1_1getUnifCDF.html", null ],
       [ "getUnifRand", "interfacepm__distUnif_1_1getUnifRand.html", null ],
       [ "getUnifRandState", "interfacepm__distUnif_1_1getUnifRandState.html", null ],
@@ -638,16 +666,19 @@ var annotated_dup =
       [ "xoshiro256ssw_typer", "interfacepm__distUnif_1_1xoshiro256ssw__typer.html", null ]
     ] ],
     [ "pm_distUnifEll", "namespacepm__distUnifEll.html", [
+      [ "distUnifEll_type", "structpm__distUnifEll_1_1distUnifEll__type.html", null ],
       [ "getUnifEllLogPDF", "interfacepm__distUnifEll_1_1getUnifEllLogPDF.html", null ],
       [ "getUnifEllRand", "interfacepm__distUnifEll_1_1getUnifEllRand.html", null ],
       [ "setUnifEllRand", "interfacepm__distUnifEll_1_1setUnifEllRand.html", null ]
     ] ],
     [ "pm_distUnifPar", "namespacepm__distUnifPar.html", [
+      [ "distUnifPar_type", "structpm__distUnifPar_1_1distUnifPar__type.html", null ],
       [ "getUnifParLogPDF", "interfacepm__distUnifPar_1_1getUnifParLogPDF.html", null ],
       [ "getUnifParRand", "interfacepm__distUnifPar_1_1getUnifParRand.html", null ],
       [ "setUnifParRand", "interfacepm__distUnifPar_1_1setUnifParRand.html", null ]
     ] ],
     [ "pm_distUnifSphere", "namespacepm__distUnifSphere.html", [
+      [ "distUnifSphere_type", "structpm__distUnifSphere_1_1distUnifSphere__type.html", null ],
       [ "getUnifSphereLogPDF", "interfacepm__distUnifSphere_1_1getUnifSphereLogPDF.html", null ],
       [ "getUnifSphereRand", "interfacepm__distUnifSphere_1_1getUnifSphereRand.html", null ],
       [ "setUnifSphereRand", "interfacepm__distUnifSphere_1_1setUnifSphereRand.html", null ]
@@ -1136,7 +1167,9 @@ var annotated_dup =
       [ "setCov", "interfacepm__sampleCov_1_1setCov.html", null ],
       [ "setCovMean", "interfacepm__sampleCov_1_1setCovMean.html", null ],
       [ "setCovMeanMerged", "interfacepm__sampleCov_1_1setCovMeanMerged.html", null ],
-      [ "setCovMerged", "interfacepm__sampleCov_1_1setCovMerged.html", null ]
+      [ "setCovMeanUpdated", "interfacepm__sampleCov_1_1setCovMeanUpdated.html", null ],
+      [ "setCovMerged", "interfacepm__sampleCov_1_1setCovMerged.html", null ],
+      [ "setCovUpdated", "interfacepm__sampleCov_1_1setCovUpdated.html", null ]
     ] ],
     [ "pm_sampleECDF", "namespacepm__sampleECDF.html", [
       [ "setECDF", "interfacepm__sampleECDF_1_1setECDF.html", null ]

@@ -1,5 +1,6 @@
 var namespacepm__distPoweto =
 [
+    [ "distPoweto_type", "structpm__distPoweto_1_1distPoweto__type.html", null ],
     [ "getPowetoLogCDF", "interfacepm__distPoweto_1_1getPowetoLogCDF.html", null ],
     [ "getPowetoLogCDFNF", "interfacepm__distPoweto_1_1getPowetoLogCDFNF.html", null ],
     [ "getPowetoLogPDF", "interfacepm__distPoweto_1_1getPowetoLogPDF.html", null ],

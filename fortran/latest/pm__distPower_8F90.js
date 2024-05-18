@@ -1,5 +1,6 @@
 var pm__distPower_8F90 =
 [
+    [ "pm_distPower::distPower_type", "structpm__distPower_1_1distPower__type.html", null ],
     [ "pm_distPower::getPowerLogPDFNF", "interfacepm__distPower_1_1getPowerLogPDFNF.html", null ],
     [ "pm_distPower::getPowerLogPDF", "interfacepm__distPower_1_1getPowerLogPDF.html", null ],
     [ "pm_distPower::setPowerLogPDF", "interfacepm__distPower_1_1setPowerLogPDF.html", null ],

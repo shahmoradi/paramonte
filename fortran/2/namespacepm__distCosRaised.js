@@ -1,5 +1,6 @@
 var namespacepm__distCosRaised =
 [
+    [ "distCosRaised_type", "structpm__distCosRaised_1_1distCosRaised__type.html", null ],
     [ "getCosRaisedCDF", "interfacepm__distCosRaised_1_1getCosRaisedCDF.html", null ],
     [ "getCosRaisedPDF", "interfacepm__distCosRaised_1_1getCosRaisedPDF.html", null ],
     [ "setCosRaisedCDF", "interfacepm__distCosRaised_1_1setCosRaisedCDF.html", null ],

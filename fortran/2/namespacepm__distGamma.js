@@ -1,5 +1,6 @@
 var namespacepm__distGamma =
 [
+    [ "distGamma_type", "structpm__distGamma_1_1distGamma__type.html", null ],
     [ "getGammaCDF", "interfacepm__distGamma_1_1getGammaCDF.html", null ],
     [ "getGammaLogPDF", "interfacepm__distGamma_1_1getGammaLogPDF.html", null ],
     [ "getGammaLogPDFNF", "interfacepm__distGamma_1_1getGammaLogPDFNF.html", null ],

@@ -1,5 +1,6 @@
 var pm__distGeom_8F90 =
 [
+    [ "pm_distGeom::distGeom_type", "structpm__distGeom_1_1distGeom__type.html", null ],
     [ "pm_distGeom::getGeomLogPMF", "interfacepm__distGeom_1_1getGeomLogPMF.html", null ],
     [ "pm_distGeom::setGeomLogPMF", "interfacepm__distGeom_1_1setGeomLogPMF.html", null ],
     [ "pm_distGeom::getGeomCDF", "interfacepm__distGeom_1_1getGeomCDF.html", null ],

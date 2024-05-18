@@ -1,5 +1,6 @@
 var pm__distBeta_8F90 =
 [
+    [ "pm_distBeta::distBeta_type", "structpm__distBeta_1_1distBeta__type.html", null ],
     [ "pm_distBeta::getBetaPDF", "interfacepm__distBeta_1_1getBetaPDF.html", null ],
     [ "pm_distBeta::getBetaLogPDF", "interfacepm__distBeta_1_1getBetaLogPDF.html", null ],
     [ "pm_distBeta::setBetaLogPDF", "interfacepm__distBeta_1_1setBetaLogPDF.html", null ],

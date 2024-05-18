@@ -1,5 +1,6 @@
 var pm__distExp_8F90 =
 [
+    [ "pm_distExp::distExp_type", "structpm__distExp_1_1distExp__type.html", null ],
     [ "pm_distExp::getExpLogPDF", "interfacepm__distExp_1_1getExpLogPDF.html", null ],
     [ "pm_distExp::setExpLogPDF", "interfacepm__distExp_1_1setExpLogPDF.html", null ],
     [ "pm_distExp::getExpCDF", "interfacepm__distExp_1_1getExpCDF.html", null ],

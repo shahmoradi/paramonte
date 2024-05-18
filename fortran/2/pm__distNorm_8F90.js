@@ -1,5 +1,6 @@
 var pm__distNorm_8F90 =
 [
+    [ "pm_distNorm::distNorm_type", "structpm__distNorm_1_1distNorm__type.html", null ],
     [ "pm_distNorm::getNormLogPDF", "interfacepm__distNorm_1_1getNormLogPDF.html", null ],
     [ "pm_distNorm::setNormLogPDF", "interfacepm__distNorm_1_1setNormLogPDF.html", null ],
     [ "pm_distNorm::getNormCDF", "interfacepm__distNorm_1_1getNormCDF.html", null ],

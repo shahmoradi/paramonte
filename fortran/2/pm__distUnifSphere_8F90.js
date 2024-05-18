@@ -1,5 +1,6 @@
 var pm__distUnifSphere_8F90 =
 [
+    [ "pm_distUnifSphere::distUnifSphere_type", "structpm__distUnifSphere_1_1distUnifSphere__type.html", null ],
     [ "pm_distUnifSphere::getUnifSphereLogPDF", "interfacepm__distUnifSphere_1_1getUnifSphereLogPDF.html", null ],
     [ "pm_distUnifSphere::getUnifSphereRand", "interfacepm__distUnifSphere_1_1getUnifSphereRand.html", null ],
     [ "pm_distUnifSphere::setUnifSphereRand", "interfacepm__distUnifSphere_1_1setUnifSphereRand.html", null ],

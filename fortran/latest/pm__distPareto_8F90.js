@@ -1,5 +1,6 @@
 var pm__distPareto_8F90 =
 [
+    [ "pm_distPareto::distPareto_type", "structpm__distPareto_1_1distPareto__type.html", null ],
     [ "pm_distPareto::getParetoLogPDFNF", "interfacepm__distPareto_1_1getParetoLogPDFNF.html", null ],
     [ "pm_distPareto::getParetoLogPDF", "interfacepm__distPareto_1_1getParetoLogPDF.html", null ],
     [ "pm_distPareto::setParetoLogPDF", "interfacepm__distPareto_1_1setParetoLogPDF.html", null ],

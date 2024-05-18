@@ -1,5 +1,6 @@
 var pm__distBand_8F90 =
 [
+    [ "pm_distBand::distBand_type", "structpm__distBand_1_1distBand__type.html", null ],
     [ "pm_distBand::getBandEpeak", "interfacepm__distBand_1_1getBandEpeak.html", null ],
     [ "pm_distBand::getBandEbreak", "interfacepm__distBand_1_1getBandEbreak.html", null ],
     [ "pm_distBand::getBandZeta", "interfacepm__distBand_1_1getBandZeta.html", null ],

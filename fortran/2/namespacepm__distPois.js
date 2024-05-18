@@ -1,5 +1,6 @@
 var namespacepm__distPois =
 [
+    [ "distPois_type", "structpm__distPois_1_1distPois__type.html", null ],
     [ "getPoisCDF", "interfacepm__distPois_1_1getPoisCDF.html", null ],
     [ "getPoisLogPMF", "interfacepm__distPois_1_1getPoisLogPMF.html", null ],
     [ "getPoisRand", "interfacepm__distPois_1_1getPoisRand.html", null ],

@@ -1,5 +1,6 @@
 var pm__distNegExp_8F90 =
 [
+    [ "pm_distNegExp::distNegExp_type", "structpm__distNegExp_1_1distNegExp__type.html", null ],
     [ "pm_distNegExp::getNegExpLogPDF", "interfacepm__distNegExp_1_1getNegExpLogPDF.html", null ],
     [ "pm_distNegExp::setNegExpLogPDF", "interfacepm__distNegExp_1_1setNegExpLogPDF.html", null ],
     [ "pm_distNegExp::getNegExpCDF", "interfacepm__distNegExp_1_1getNegExpCDF.html", null ],

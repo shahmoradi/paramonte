@@ -1,5 +1,6 @@
 var namespacepm__distPower =
 [
+    [ "distPower_type", "structpm__distPower_1_1distPower__type.html", null ],
     [ "getPowerLogCDF", "interfacepm__distPower_1_1getPowerLogCDF.html", null ],
     [ "getPowerLogCDFNF", "interfacepm__distPower_1_1getPowerLogCDFNF.html", null ],
     [ "getPowerLogPDF", "interfacepm__distPower_1_1getPowerLogPDF.html", null ],

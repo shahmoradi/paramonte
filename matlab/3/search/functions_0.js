@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['abs_0',['abs',['../abs_8m.html#aa5a18068d39642deefb2f500d14403db',1,'abs.m']]],
+  ['add_5fbookmark_1',['add_bookmark',['../savefig_8m.html#a940912fc2d01e641a2d6bb275cf06385',1,'savefig.m']]],
+  ['addcontextmenu_2',['addContextMenu',['../savefig_8m.html#a3131706f4de0f1a6c5d8ae4915d1f21e',1,'savefig.m']]],
+  ['addkeyval_3',['addKeyVal',['../addKeyVal_8m.html#aec02755d4a8ea4db012c89b7066ed477',1,'addKeyVal.m']]],
+  ['addlistener_4',['addlistener',['../classHandle.html#a6515bf625efbc465dce19bc5554bbabd',1,'Handle']]],
+  ['addmenubarmenu_5',['addMenubarMenu',['../savefig_8m.html#af9ae2a95d32ee8c77fa9d658b9b2dace',1,'savefig.m']]],
+  ['addmenuitems_6',['addMenuItems',['../savefig_8m.html#af9699ab9adbc0612a7e1f085c28e9c04',1,'savefig.m']]],
+  ['addtoolbarbutton_7',['addToolbarButton',['../savefig_8m.html#a327a73ea5204faf2d00fcc20d087924e',1,'savefig.m']]],
+  ['alertforexportorcopygraphics_8',['alertForExportOrCopygraphics',['../savefig_8m.html#adccf6310156e281a362f3469268b3730',1,'savefig.m']]],
+  ['allancestors_9',['allancestors',['../isolate__axes_8m.html#a4548e914f978367101428d268e5fe988',1,'isolate_axes.m']]],
+  ['allchildren_10',['allchildren',['../isolate__axes_8m.html#ac2aa3deac5d574ce1f74717c8e3f9040',1,'isolate_axes.m']]],
+  ['append_5fpdfs_11',['append_pdfs',['../append__pdfs_8m.html#aea8f7f5d624cc6dfca7e2680f8699841',1,'append_pdfs.m']]],
+  ['arch_12',['arch',['../arch_8m.html#a6bb561de6d23e1ae02ae4e7378fd7581',1,'arch.m']]],
+  ['authors_13',['authors',['../credits_8m.html#ad5933f73f67bbfe38c80ad2ac8cc9ddf',1,'authors():&#160;credits.m'],['../authors_8m.html#ad5933f73f67bbfe38c80ad2ac8cc9ddf',1,'authors():&#160;authors.m']]],
+  ['autocorr_14',['AutoCorr',['../classAutoCorr.html#af64664dd2c4895e2aef1313044b8a33b',1,'AutoCorr']]],
+  ['auxil_15',['auxil',['../auxil_8m.html#a984acc59f890ee8926535f953f913eea',1,'auxil.m']]],
+  ['axes_16',['Axes',['../classAxes.html#adc3e38949422b27b0fcd944956a76286',1,'Axes']]]
+];

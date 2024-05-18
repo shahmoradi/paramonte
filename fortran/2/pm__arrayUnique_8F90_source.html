@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte Fortran 2.0.0: /home/amir/git/paramonte/src/fortran/main/pm_arrayUnique.F90 Source File</title>
+    <title>ParaMonte Fortran 2.0.0: src/fortran/main/pm_arrayUnique.F90 Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -5035,7 +5035,7 @@ $(document).ready(function(){initNavTree('pm__arrayUnique_8F90_source.html','');
 <div class="line"><a id="l05492" name="l05492"></a><span class="lineno"> 5492</span><span class="fortran_comment">!        character(*, SK), parameter     :: PROCEDURE_NAME = MODULE_NAME//SK_&quot;@findUniqueValueCount_IK()&quot;</span></div>
 <div class="line"><a id="l05493" name="l05493"></a><span class="lineno"> 5493</span><span class="fortran_comment">!</span></div>
 <div class="line"><a id="l05494" name="l05494"></a><span class="lineno"> 5494</span><span class="fortran_comment">!        integer(IK)                     :: lenVector</span></div>
-<div class="line"><a id="l05495" name="l05495"></a><span class="lineno"> 5495</span><span class="fortran_comment">!        integer(IK)     , allocatable   :: Indx(:)</span></div>
+<div class="line"><a id="l05495" name="l05495"></a><span class="lineno"> 5495</span><span class="fortran_comment">!        integer(IK)     , allocatable   :: indx(:)</span></div>
 <div class="line"><a id="l05496" name="l05496"></a><span class="lineno"> 5496</span><span class="fortran_comment">!        integer(IK)                     :: ivec, iuniq, counter</span></div>
 <div class="line"><a id="l05497" name="l05497"></a><span class="lineno"> 5497</span><span class="fortran_comment">!        integer(IK)                     :: sorting_def</span></div>
 <div class="line"><a id="l05498" name="l05498"></a><span class="lineno"> 5498</span><span class="fortran_comment">!        logical(LK)                         :: isUnique</span></div>
@@ -5070,16 +5070,16 @@ $(document).ready(function(){initNavTree('pm__arrayUnique_8F90_source.html','');
 <div class="line"><a id="l05527" name="l05527"></a><span class="lineno"> 5527</span><span class="fortran_comment">!        end do</span></div>
 <div class="line"><a id="l05528" name="l05528"></a><span class="lineno"> 5528</span><span class="fortran_comment">!</span></div>
 <div class="line"><a id="l05529" name="l05529"></a><span class="lineno"> 5529</span><span class="fortran_comment">!        if (sorting_def /= 0_IK) then</span></div>
-<div class="line"><a id="l05530" name="l05530"></a><span class="lineno"> 5530</span><span class="fortran_comment">!            allocate(Indx(lenUnique))</span></div>
-<div class="line"><a id="l05531" name="l05531"></a><span class="lineno"> 5531</span><span class="fortran_comment">!            call setSorted(uniqueCount(1:lenUnique), Indx)</span></div>
+<div class="line"><a id="l05530" name="l05530"></a><span class="lineno"> 5530</span><span class="fortran_comment">!            allocate(indx(lenUnique))</span></div>
+<div class="line"><a id="l05531" name="l05531"></a><span class="lineno"> 5531</span><span class="fortran_comment">!            call setSorted(uniqueCount(1:lenUnique), indx)</span></div>
 <div class="line"><a id="l05532" name="l05532"></a><span class="lineno"> 5532</span><span class="fortran_comment">!            if (sorting_def &lt; 0_IK) then</span></div>
-<div class="line"><a id="l05533" name="l05533"></a><span class="lineno"> 5533</span><span class="fortran_comment">!                uniqueCount = uniqueCount(Indx(lenUnique:1:-1))</span></div>
-<div class="line"><a id="l05534" name="l05534"></a><span class="lineno"> 5534</span><span class="fortran_comment">!                UniqueValue = UniqueValue(Indx(lenUnique:1:-1))</span></div>
+<div class="line"><a id="l05533" name="l05533"></a><span class="lineno"> 5533</span><span class="fortran_comment">!                uniqueCount = uniqueCount(indx(lenUnique:1:-1))</span></div>
+<div class="line"><a id="l05534" name="l05534"></a><span class="lineno"> 5534</span><span class="fortran_comment">!                UniqueValue = UniqueValue(indx(lenUnique:1:-1))</span></div>
 <div class="line"><a id="l05535" name="l05535"></a><span class="lineno"> 5535</span><span class="fortran_comment">!            else</span></div>
-<div class="line"><a id="l05536" name="l05536"></a><span class="lineno"> 5536</span><span class="fortran_comment">!                uniqueCount = uniqueCount(Indx)</span></div>
-<div class="line"><a id="l05537" name="l05537"></a><span class="lineno"> 5537</span><span class="fortran_comment">!                UniqueValue = UniqueValue(Indx)</span></div>
+<div class="line"><a id="l05536" name="l05536"></a><span class="lineno"> 5536</span><span class="fortran_comment">!                uniqueCount = uniqueCount(indx)</span></div>
+<div class="line"><a id="l05537" name="l05537"></a><span class="lineno"> 5537</span><span class="fortran_comment">!                UniqueValue = UniqueValue(indx)</span></div>
 <div class="line"><a id="l05538" name="l05538"></a><span class="lineno"> 5538</span><span class="fortran_comment">!            end if</span></div>
-<div class="line"><a id="l05539" name="l05539"></a><span class="lineno"> 5539</span><span class="fortran_comment">!            deallocate(Indx)</span></div>
+<div class="line"><a id="l05539" name="l05539"></a><span class="lineno"> 5539</span><span class="fortran_comment">!            deallocate(indx)</span></div>
 <div class="line"><a id="l05540" name="l05540"></a><span class="lineno"> 5540</span><span class="fortran_comment">!        end if</span></div>
 <div class="line"><a id="l05541" name="l05541"></a><span class="lineno"> 5541</span><span class="fortran_comment">!</span></div>
 <div class="line"><a id="l05542" name="l05542"></a><span class="lineno"> 5542</span><span class="fortran_comment">!        if (present(UniqueIndex)) then</span></div>
@@ -5146,7 +5146,7 @@ $(document).ready(function(){initNavTree('pm__arrayUnique_8F90_source.html','');
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_23395307b1b7d12df5db6f58c451dcdf.html">fortran</a></li><li class="navelem"><a class="el" href="dir_acc2146ae7e18e9f4b01d04597c074ce.html">main</a></li><li class="navelem"><a class="el" href="pm__arrayUnique_8F90.html">pm_arrayUnique.F90</a></li>
-        <li class="footer">Generated on Sat May 11 2024 15:59:28 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 01:45:15 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
