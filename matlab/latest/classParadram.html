@@ -168,8 +168,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab6e5aae9d1d85b5277bb0f43cdf5c21d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the ParaDRAM class for generating instances of serial and parallel Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo sampler of the ParaMonte MATLAB library.  <a href="classParadram.html#ab6e5aae9d1d85b5277bb0f43cdf5c21d">More...</a><br /></td></tr>
 <tr class="separator:ab6e5aae9d1d85b5277bb0f43cdf5c21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc579eeadd6bc0d96adbeb5f03595219"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParadram.html#acc579eeadd6bc0d96adbeb5f03595219">readChainMarkov</a> (in self, in pattern, in sep)</td></tr>
+<tr class="memdesc:acc579eeadd6bc0d96adbeb5f03595219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a list of objects of class <a class="el" href="classFileContentsChain.html">pm.sampling.FileContentsChain</a> containing the content(s) of the ParaMonte simulation output chain file(s) whose path(s) match the specified input <code>pattern</code> or the simulation specification <code>sampler.spec.outputFileName</code>.  <a href="classParadram.html#acc579eeadd6bc0d96adbeb5f03595219">More...</a><br /></td></tr>
 <tr class="separator:acc579eeadd6bc0d96adbeb5f03595219"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa386416992b6113574a6d1ad0034fb13"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParadram.html#aa386416992b6113574a6d1ad0034fb13">run</a> (in self, in <a class="el" href="testParaMonte__testing__mpi_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b">getLogFunc</a>, in ndim)</td></tr>
+<tr class="memdesc:aa386416992b6113574a6d1ad0034fb13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the ParaDRAM sampler and return nothing.  <a href="classParadram.html#aa386416992b6113574a6d1ad0034fb13">More...</a><br /></td></tr>
 <tr class="separator:aa386416992b6113574a6d1ad0034fb13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -192,7 +194,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This is the ParaDRAM class for generating instances of serial and parallel Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo sampler of the ParaMonte MATLAB library. </p>
-<p >Once you assign the desired simulation specifications to the corresponding attributes within the component <code>spec</code> of an object of class <code>pm.sampling.Paradram</code>, call the ParaDRAM sampler via the object method <code>pm.sampling.Paradram.run()</code>.</p>
+<p >Once you assign the desired simulation specifications to the corresponding attributes within the component <code>spec</code> of an object of class <code>pm.sampling.Paradram</code>, call the ParaDRAM sampler via the object method <a class="el" href="classParadram.html#aa386416992b6113574a6d1ad0034fb13">pm.sampling.Paradram.run()</a>.<br  />
+</p>
 <p >While the constructor of this class does not take any input arguments, all ParaDRAM simulation specifications can be set after creating the object.</p>
 <dl class="section return"><dt>Returns</dt><dd><code>sampler</code> : The output scalar object of class <a class="el" href="classParadram.html">pm.sampling.Paradram</a>.</dd></dl>
 <p><br  />
@@ -351,7 +354,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000004">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000006">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin </dd></dl>
 
 </div>
 </div>
@@ -388,6 +391,57 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
+<p>Return a list of objects of class <a class="el" href="classFileContentsChain.html">pm.sampling.FileContentsChain</a> containing the content(s) of the ParaMonte simulation output chain file(s) whose path(s) match the specified input <code>pattern</code> or the simulation specification <code>sampler.spec.outputFileName</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pattern</td><td>: See the documentation of the corresponding argument of the constructor of the method <code>pm.sampling.Sampler.readChain</code>.<br  />
+ (<b>optional</b>, The default is set by <code>pm.sampling.Sampler.readChain</code>) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sep</td><td>: See the documentation of the corresponding argument of the constructor of the method <code>pm.sampling.Sampler.readChain</code>. (<b>optional</b>, The default is set by <code>pm.sampling.Sampler.readChain</code>)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>chainMarkovList</code> : The output cell array of objects of class <a class="el" href="classFileContentsChain.html">pm.sampling.FileContentsChain</a>, each of which corresponds to the contents of a unique chain file.<br  />
+ Try <code>doc pm.sampling.FileContentsChain</code> to see the documentation of the contents of the objects of the output list.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="interface-Paradram"></a><b>Possible calling interfaces</b> <a href="#interface-Paradram">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">sampler = pm.sampling.Paradram();</div>
+<div class="line">chainMarkovList = sampler.readChainMarkov();</div>
+<div class="line">chainMarkovList = sampler.readChainMarkov([]);</div>
+<div class="line">chainMarkovList = sampler.readChainMarkov(file);</div>
+<div class="line">chainMarkovList = sampler.readChainMarkov([], []);</div>
+<div class="line">chainMarkovList = sampler.readChainMarkov(file, []);</div>
+<div class="line">chainMarkovList = sampler.readChainMarkov(file, sep);</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Avoid using this routine for very large compact chains. Reading the full Markov chain of large-scale simulation problems can be extremely memory-intensive without any potential benefits.</dd>
+<dd>
+This method is to be only used for post-processing of the output chain file(s) of an already finished simulation. It is NOT meant to be called by all processes in parallel mode, although it is possible.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This routine is identical to <code>readChain()</code> method, except for the fact that upon reading the output chain files, it will also convert the chain contents from the default efficient compact format stored in the file to the full verbose Markov chain format.</dd></dl>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Example</h2>
+<pre class="fragment">sampler = pm.sampling.Paradram()
+
+sampler.readChainMarkov();
+
+sim.readChainMarkov("./out/test_run_");
+
+sim.spec.outputFileName = "./out/test_run_";
+sim.readChainMarkov();
+
+pmpd.readChainMarkov("./out/test_run_", ",");
+
+pmpd.spec.outputSeparator = ",";
+pmpd.readChainMarkov("./out/test_run_");
+
+pmpd.spec.outputFileName = "./out/test_run_";
+pmpd.spec.outputSeparator = ",";
+pmpd.readChainMarkov();
+
+Except the first ``readChainMarkov()`` example,
+all other examples are functionally equivalent.
+</pre> <h2><a class="anchor" id="autotoc_md5"></a>
+LICENSE</h2>
+<pre class="fragment">https://github.com/cdslaborg/paramonte/blob/main/LICENSE.md
+</pre> 
 </div>
 </div>
 <a id="aa386416992b6113574a6d1ad0034fb13" name="aa386416992b6113574a6d1ad0034fb13"></a>
@@ -422,6 +476,50 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
+<p>Run the ParaDRAM sampler and return nothing. </p>
+<p >For example usage, see the documentation of the parent class of this method <a class="el" href="classParadram.html">pm.sampler.Paradram</a>.<br  />
+</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="getLogFunc_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b">getLogFunc()</a></td><td>: The input MATLAB function handle or anonymous (lambda) function containing the implementation of the objective function to be sampled.<br  />
+ This user-specified function must have the following interface, <div class="fragment"><div class="line">function logFunc = <a class="code hl_function" href="getLogFunc_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b">getLogFunc</a>(state)</div>
+<div class="line">end</div>
+</div><!-- fragment --> where, <ol>
+<li>
+the input argument <code>state</code> is a vector of type MATLAB <code>double</code> of size <code>ndim</code> representing a single point from within the <code>ndim</code> dimensional domain of the mathematical object function to be explored.<br  />
+ </li>
+<li>
+the output argument <code>logFunc</code> is a scalar of the same type as the input <code>state</code> containing the natural logarithm of the objective function at the specified input <code>state</code> within its domain.<br  />
+ </li>
+</ol>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ndim</td><td>: The input scalar positive-valued whole-number representing the number of dimensions of the domain of the user-specified objective function in the input <code><a class="el" href="getLogFunc_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b">getLogFunc()</a></code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+<a class="anchor" id="interface-run"></a><b>Possible calling interfaces</b> <a href="#interface-run">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">sampler = pm.sampling.Paradram();</div>
+<div class="line">sampler.run(<a class="code hl_function" href="getLogFunc_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b">getLogFunc</a>, ndim);</div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
+<a class="anchor" id="final-run"></a><b>Final Remarks</b> <a href="#final-run">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L363 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+</p><ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+<p>This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000007">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2012, 12:00 AM, National Institute for Fusion Studies, The University of Texas at Austin%&gt; </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -433,7 +531,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classParadram.html">Paradram</a></li>
-        <li class="footer">Generated on Sat May 18 2024 01:56:49 for 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 13:56:56 for 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

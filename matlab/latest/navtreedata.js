@@ -88,11 +88,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "../../c/2/index.html",
-"_09tile_2Histogram2_8m_source.html",
-"classHandle.html#af380c6c0b3996c3940f9ab0705ddabd6",
-"copyfig_8m.html",
-"iscmd_8m.html",
-"user__string_8m_source.html"
+"_09tile_2Heatmap_8m_source.html",
+"classHandle.html#aa4b150a29453303a9902dd8e4120e7a9",
+"compiler_8m_source.html",
+"index.html#ParaMonteUsage",
+"touch_8m.html#a478e3168a07b178b461fc45b566085db"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

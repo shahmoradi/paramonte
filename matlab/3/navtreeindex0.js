@@ -111,6 +111,10 @@ var NAVTREEINDEX0 =
 "_09cascade_2Scatter3_8m_source.html":[16,0,0,0,0,0,16,1,15],
 "_09cascade_2Scatter_8m.html":[16,0,0,0,0,0,16,1,14],
 "_09cascade_2Scatter_8m_source.html":[16,0,0,0,0,0,16,1,14],
+"_09geom_2Contents_8m.html":[16,0,0,0,0,0,3,1],
+"_09geom_2Contents_8m_source.html":[16,0,0,0,0,0,3,1],
+"_09geom_2_09ell2_2Contents_8m.html":[16,0,0,0,0,0,3,0,0],
+"_09geom_2_09ell2_2Contents_8m_source.html":[16,0,0,0,0,0,3,0,0],
 "_09introspection_2Contents_8m.html":[16,0,0,0,0,0,4,0],
 "_09introspection_2Contents_8m_source.html":[16,0,0,0,0,0,4,0],
 "_09introspection_2verify_8m.html":[16,0,0,0,0,0,4,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX0 =
 "_09tile_2Ellipse3_8m_source.html":[16,0,0,0,0,0,16,8,4],
 "_09tile_2Ellipse_8m.html":[16,0,0,0,0,0,16,8,3],
 "_09tile_2Ellipse_8m_source.html":[16,0,0,0,0,0,16,8,3],
-"_09tile_2Heatmap_8m.html":[16,0,0,0,0,0,16,8,5],
-"_09tile_2Heatmap_8m_source.html":[16,0,0,0,0,0,16,8,5],
-"_09tile_2Histfit_8m.html":[16,0,0,0,0,0,16,8,6],
-"_09tile_2Histfit_8m_source.html":[16,0,0,0,0,0,16,8,6],
-"_09tile_2Histogram2_8m.html":[16,0,0,0,0,0,16,8,8]
+"_09tile_2Heatmap_8m.html":[16,0,0,0,0,0,16,8,5]
 };
