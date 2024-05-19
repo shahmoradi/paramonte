@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "3.0.0", "index.html", [
+  [ "ParaMonte MATLAB 3.0.0", "index.html", [
     [ "What is ParaMonte?", "index.html#ParaMonte", null ],
     [ "ParaMonte Project Repository", "index.html#ParaMonteRepository", null ],
     [ "ParaMonte Prebuilt Releases", "index.html#ParaMonteReleases", null ],
@@ -43,11 +43,11 @@ var NAVTREE =
     [ "ParaMonte MATLAB Language Benchmarks", "index.html#ParaMonteLangBenchmarks", null ],
     [ "ParaMonte MATLAB Documentation Troubleshooting", "index.html#ParaMonteLangDocumentationTroubleshooting", null ],
     [ "Authors", "authors.html", null ],
-    [ "Classes", "annotated.html", [
-      [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ],
+    [ "Data Structures", "annotated.html", [
+      [ "Data Structures", "annotated.html", "annotated_dup" ],
+      [ "Data Structure Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
-      [ "Class Members", "functions.html", [
+      [ "Data Fields", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ]
@@ -55,7 +55,7 @@ var NAVTREE =
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
+      [ "Globals", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", "globals_func" ]
       ] ]
