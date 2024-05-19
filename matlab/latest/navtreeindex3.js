@@ -1,7 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"compiler_8m_source.html":[16,0,0,0,0,0,8,0,1],
-"copy_8m.html":[16,0,0,0,0,0,8,2,1],
 "copy_8m.html#a3718abda67edd88f029c9887fa20489a":[16,0,0,0,0,0,8,2,1,0],
 "copy_8m_source.html":[16,0,0,0,0,0,8,2,1],
 "copyfig_8m.html":[16,0,0,0,0,0,16,5,0,1],
@@ -249,5 +247,7 @@ var NAVTREEINDEX3 =
 "index.html#ParaMonteLangNamingConventionsProcedures":[7,1],
 "index.html#ParaMonteLangNamingConventionsVariables":[7,0],
 "index.html#ParaMonteReleases":[2],
-"index.html#ParaMonteRepository":[1]
+"index.html#ParaMonteRepository":[1],
+"index.html#ParaMonteUsage":[5],
+"info_8m.html":[16,0,0,0,0,0,14,5]
 };

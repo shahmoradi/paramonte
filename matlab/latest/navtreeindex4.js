@@ -1,7 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"index.html#ParaMonteUsage":[5],
-"info_8m.html":[16,0,0,0,0,0,14,5],
 "info_8m.html#a87faef413694ac4a58dd4890b2b59f8c":[16,0,0,0,0,0,14,5,0],
 "info_8m_source.html":[16,0,0,0,0,0,14,5],
 "iscmd_8m.html":[16,0,0,0,0,0,8,5],
@@ -249,5 +247,7 @@ var NAVTREEINDEX4 =
 "textanal_8m.html":[16,0,0,0,0,0,8,0,21],
 "textanal_8m.html#a7aa528396b241be3256aed075923320e":[16,0,0,0,0,0,8,0,21,0],
 "textanal_8m_source.html":[16,0,0,0,0,0,8,0,21],
-"touch_8m.html":[16,0,0,0,0,0,14,0,1]
+"touch_8m.html":[16,0,0,0,0,0,14,0,1],
+"touch_8m.html#a478e3168a07b178b461fc45b566085db":[16,0,0,0,0,0,14,0,1,0],
+"touch_8m_source.html":[16,0,0,0,0,0,14,0,1]
 };

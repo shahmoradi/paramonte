@@ -17,10 +17,8 @@ var NAVTREEINDEX0 =
 "Axes_8m_source.html":[16,0,0,0,0,0,16,0,0],
 "Cascade_8m.html":[16,0,0,0,0,0,16,1,0],
 "Cascade_8m_source.html":[16,0,0,0,0,0,16,1,0],
-"Contents_01-_01Copy_8m.html":[16,0,0,0,0,0,18],
-"Contents_01-_01Copy_8m_source.html":[16,0,0,0,0,0,18],
-"Contents_8m.html":[16,0,0,0,0,0,19],
-"Contents_8m_source.html":[16,0,0,0,0,0,19],
+"Contents_8m.html":[16,0,0,0,0,0,18],
+"Contents_8m_source.html":[16,0,0,0,0,0,18],
 "Cor_8m.html":[16,0,0,0,0,0,12,3],
 "Cor_8m_source.html":[16,0,0,0,0,0,12,3],
 "Corner_8m.html":[16,0,0,0,0,0,16,4,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX0 =
 "_09tile_2Ellipse3_8m_source.html":[16,0,0,0,0,0,16,8,4],
 "_09tile_2Ellipse_8m.html":[16,0,0,0,0,0,16,8,3],
 "_09tile_2Ellipse_8m_source.html":[16,0,0,0,0,0,16,8,3],
-"_09tile_2Heatmap_8m.html":[16,0,0,0,0,0,16,8,5]
+"_09tile_2Heatmap_8m.html":[16,0,0,0,0,0,16,8,5],
+"_09tile_2Heatmap_8m_source.html":[16,0,0,0,0,0,16,8,5],
+"_09tile_2Histfit_8m.html":[16,0,0,0,0,0,16,8,6]
 };

@@ -18,6 +18,5 @@ var dir_5f2ea114d2e8401892a7eda9e51589e0 =
     [ "+timing", "dir_a59dbe8f507c4b2cb7cede60b4058539.html", "dir_a59dbe8f507c4b2cb7cede60b4058539" ],
     [ "+vis", "dir_77a461de7b91f32df8032085d9a00b9a.html", "dir_77a461de7b91f32df8032085d9a00b9a" ],
     [ "+web", "dir_667b5b308de53997d257e87853d75194.html", "dir_667b5b308de53997d257e87853d75194" ],
-    [ "Contents - Copy.m", "Contents_01-_01Copy_8m.html", null ],
     [ "Contents.m", "Contents_8m.html", null ]
 ];
