@@ -70,5 +70,5 @@ var searchData=
   ['swift_67',['swift',['../structpm__paramonte_1_1envis__type.html#a86b4ca5e2686fa9f68da7fa0d037d939',1,'pm_paramonte::envis_type::swift()'],['../structpm__io_1_1filext__type.html#a3fab983df64117a4dd7fc69ad05acd9f',1,'pm_io::filext_type::swift()']]],
   ['symmetric_68',['symmetric',['../namespacepm__matrixClass.html#a06f8f50698e075a86ce6ea5f499478b0',1,'pm_matrixClass']]],
   ['syn_69',['SYN',['../namespacepm__strASCII.html#acff991a549cc86db18055250e821d056',1,'pm_strASCII']]],
-  ['sysinfofilepath_70',['sysInfoFilePath',['../structpm__sampling_1_1sampler__type.html#ac8d2de46bcd1bf832d878f319d514962',1,'pm_sampling::sampler_type']]]
+  ['sysinfofilepath_70',['sysInfoFilePath',['../structpm__sampling_1_1sampler__type.html#addbde0876a48084570e04d323e4a1b9a',1,'pm_sampling::sampler_type']]]
 ];

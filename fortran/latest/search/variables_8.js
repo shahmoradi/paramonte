@@ -25,7 +25,7 @@ var searchData=
   ['indent_22',['indent',['../structpm__err_1_1message__type.html#a817fe7e2f440e26410a97fa109842876',1,'pm_err::message_type']]],
   ['info_23',['info',['../structpm__distCov_1_1onion__type.html#a1ea2eb8d997ce748eef9f1adf662304c',1,'pm_distCov::onion_type']]],
   ['inp_24',['inp',['../structpm__test_1_1dir__type.html#a2c79bf6153222716cf9d2cd64422d68f',1,'pm_test::dir_type']]],
-  ['inputfile_25',['inputFile',['../structpm__sampling_1_1sampler__type.html#a1541f170139779422733d20df19855d7',1,'pm_sampling::sampler_type']]],
+  ['inputfile_25',['inputFile',['../structpm__sampling_1_1sampler__type.html#a072775822ec89e8bdb848d6ae613f210',1,'pm_sampling::sampler_type']]],
   ['insertionb_26',['insertionb',['../namespacepm__arraySort.html#af2c6b4edede9a44f1879886ed0ab1439',1,'pm_arraySort']]],
   ['insertionl_27',['insertionl',['../namespacepm__arraySort.html#a84040fcd601e62fab071ec2e8f255294',1,'pm_arraySort']]],
   ['integer_28',['integer',['../structpm__io_1_1field__type.html#a11132c87d515135dca7b25f2ba4e1b94',1,'pm_io::field_type']]],

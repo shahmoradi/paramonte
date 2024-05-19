@@ -495,7 +495,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__bench.html">pm_bench</a>, <span class="fortran_statement">only</span>: <a class="code hl_struct" href="structpm__bench_1_1bench__type.html">bench_type</a></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__arraySpace.html">pm_arraySpace</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__arraySpace_1_1getLinSpace.html">getLinSpace</a></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: <a class="code hl_variable" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, <a class="code hl_variable" href="namespacepm__kind.html#a3f17ea307d594843815ae49bcc6ffdac">LK</a>, RKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#ac0a1a3a5068faea709591110db2efad4">RKD</a>, <a class="code hl_variable" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a>, <a class="code hl_variable" href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">SK</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: <a class="code hl_variable" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, <a class="code hl_variable" href="namespacepm__kind.html#a3f17ea307d594843815ae49bcc6ffdac">LK</a>, RKG<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#ac0a1a3a5068faea709591110db2efad4">RKD</a>, <a class="code hl_variable" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a>, <a class="code hl_variable" href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">SK</a></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="fortran_statement">use </span><span class="fortran_inrinsic_module">iso_fortran_env</span>, <span class="fortran_statement">only</span>:<span class="fortran_named_const"> error_unit</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="fortran_statement">implicit none</span></div>
@@ -504,9 +504,9 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="fortran_statement">integer</span>(IK)                         :: iarr</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="fortran_statement">integer</span>(IK)                         :: fileUnit</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="fortran_statement">integer</span>(IK) ,<span class="fortran_attribute"> parameter</span>             :: NBENCH<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">2_IK</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="fortran_statement">    real</span>(RKC)                           :: dummySum<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">0._RKC</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="fortran_statement">    real</span>(RKC)   ,<span class="fortran_attribute"> allocatable</span>           :: X(:)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="fortran_statement">    real</span>(RKC)                           :: onemexp</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="fortran_statement">    real</span>(RKG)                           :: dummySum<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">0._RKG</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="fortran_statement">    real</span>(RKG)   ,<span class="fortran_attribute"> allocatable</span>           :: X(:)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="fortran_statement">    real</span>(RKG)                           :: onemexp</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="fortran_statement">type</span>(bench_type)                    :: bench(NBENCH)</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="fortran_statement">    logical</span>(LK)                         :: underflowEnabled</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
@@ -669,10 +669,10 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>plt.savefig(<span class="stringliteral">&quot;benchmark.&quot;</span> + dirname + <span class="stringliteral">&quot;.runtime.ratio.png&quot;</span>)</div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="visb-get1mexp"></a><b>Visualization of the benchmark output</b> <a href="#visb-get1mexp">⛓</a> <div class="image">
-<img src="benchmark.get1mexp.runtime.png" alt="" width="1000"/>
+<img src="benchmark/pm_math1mexp/get1mexp/benchmark.get1mexp.runtime.png" alt="" width="1000"/>
 </div>
  <div class="image">
-<img src="benchmark.get1mexp.runtime.ratio.png" alt="" width="1000"/>
+<img src="benchmark/pm_math1mexp/get1mexp/benchmark.get1mexp.runtime.ratio.png" alt="" width="1000"/>
 </div>
  <br  />
 <a class="anchor" id="moralb-get1mexp"></a><b>Benchmark moral</b> <a href="#moralb-get1mexp">⛓</a><ol type="1">
@@ -710,7 +710,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__math1mexp.html">pm_math1mexp</a></li><li class="navelem"><a class="el" href="interfacepm__math1mexp_1_1get1mexp.html">get1mexp</a></li>
-        <li class="footer">Generated on Sat May 18 2024 01:45:23 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 20:01:17 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

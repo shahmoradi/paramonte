@@ -174,58 +174,60 @@ History</h2>
 Definition using Probability Theory</h2>
 <p >For probability distributions \(P\) and \(Q\) on the same domain \(\mathcal{X}\), the Bhattacharyya distance is defined as,  </p><p class="formulaDsp">
 \begin{equation}
-      D_{B}(P, Q) = -\ln\left(BC(P,Q)\right) ~,
+      D_{B}(P, Q) = -\ln\left(\up{BC}(P,Q)\right) ~,
   \end{equation}
 </p>
 <p >where  </p><p class="formulaDsp">
 \begin{equation}
-      BC(P, Q) = \sum_{x \in {\mathcal{X}}}{\sqrt {P(x)Q(x)}} ~,
+      \up{BC}(P, Q) = \sum_{x \in {\mathcal{X}}}{\sqrt {P(x)Q(x)}} ~,
   \end{equation}
 </p>
 <p >is the Bhattacharyya coefficient for discrete probability distributions.<br  />
  For continuous probability distributions, \(P(dx) = p(x)dx\) and \(Q(dx) = q(x)dx\) where \(p(x)\) and \(q(x)\) are the probability density functions, the Bhattacharyya coefficient is defined as,  </p><p class="formulaDsp">
 \begin{equation}
-      BC(P, Q) = \int_{\mathcal{X}}{\sqrt{p(x)q(x)}}\,dx ~.
+      \up{BC}(P, Q) = \int_{\mathcal{X}}{\sqrt{p(x)q(x)}}\,dx ~.
   \end{equation}
 </p>
 <h2><a class="anchor" id="autotoc_md12"></a>
 Definition using Measure Theory</h2>
-<p >More generally, given two probability measures \(P, Q\) on a measurable space \(\mathcal{X}}, {\mathcal {B}})\), let \(\lambda\) be a sigma finite measure such that \(P\) and \(Q\) are absolutely continuous with respect to \(\lambda\), that is, such that \(P(dx) = p(x) \lambda(dx)\), and \(Q(dx) = q(x)\lambda(dx)\) for probability density functions \(p, q\) with respect to \(\lambda\) defined \(\lambda\)-almost everywhere.<br  />
- Such a measure, even such a probability measure, always exists, for example, \(\lambda = {\tfrac {1}{2}}(P + Q)\).<br  />
+<p >More generally, given two probability measures \(P, Q\) on a measurable space \((\mathcal{X}, \mathcal{B})\), let \(\lambda\) be a sigma finite measure such that \(P\) and \(Q\) are absolutely continuous with respect to \(\lambda\), that is, such that \(P(dx) = p(x) \lambda(dx)\), and \(Q(dx) = q(x)\lambda(dx)\) for probability density functions \(p, q\) with respect to \(\lambda\) defined \(\lambda\)-almost everywhere.<br  />
+ Such a measure, even such a probability measure, always exists, for example, \(\lambda = \frac{1}{2}(P + Q)\).<br  />
  Then the Bhattacharyya measure on \(({\mathcal {X}},{\mathcal {B}})\) is defined by,  </p><p class="formulaDsp">
 \begin{equation}
-      bc(dx|P,Q)={\sqrt {p(x)q(x)}}\,\lambda (dx)={\sqrt {{\frac {P(dx)}{\lambda (dx)}}(x){\frac {Q(dx)}{\lambda (dx)}}(x)}}\lambda (dx) ~.
+      \up{bc}(dx|P,Q)={\sqrt {p(x)q(x)}}\,\lambda (dx)={\sqrt {{\frac {P(dx)}{\lambda (dx)}}(x){\frac {Q(dx)}{\lambda (dx)}}(x)}}\lambda (dx) ~.
   \end{equation}
 </p>
-<p >The definition does not depend on the measure \(\lambda\), for if we choose a measure \(\mu\) such that \(\lambda\) and another measure choice \(\lambda&#39;\) are absolutely continuous, i.e., \(\lambda =l(x)\mu\) and \(\lambda &#39;=l&#39;(x)\mu\), then,  </p><p class="formulaDsp">
+<p >The definition does not depend on the measure \(\lambda\), for if we choose a measure \(\mu\) such that \(\lambda\) and another measure choice \(\lambda&#39;\) are absolutely continuous, i.e., \(\lambda = l(x)\mu\) and \(\lambda &#39;=l&#39;(x)\mu\), then,  </p><p class="formulaDsp">
 \begin{equation}
-      P(dx) = p(x)\lambda (dx) = p&#39;(x)\lambda &#39;(dx)=p(x)l(x)\mu (dx)=p&#39;(x)l&#39;(x)\mu (dx)} ~,
+      P(dx) = p(x)\lambda (dx) = p&#39;(x)\lambda &#39;(dx)=p(x)l(x)\mu (dx)=p&#39;(x)l&#39;(x)\mu (dx) ~,
   \end{equation}
 </p>
 <p >and similarly for \(Q\).<br  />
  We then have,  </p><p class="formulaDsp">
 \begin{equation}
-      bc(dx | P, Q) = {\sqrt{p(x)q(x)}}\,\lambda (dx)={\sqrt {p(x)q(x)}}\,l(x)\mu (x)={\sqrt {p(x)l(x)q(x)\,l(x)}}\mu (dx)={\sqrt {p&#39;(x)l&#39;(x)q&#39;(x)l&#39;(x)}}\,\mu (dx)={\sqrt {p&#39;(x)q&#39;(x)}}\,\lambda &#39;(dx)} ~.
+      \up{bc}(dx | P, Q) = {\sqrt{p(x)q(x)}} \, \lambda (dx) = {\sqrt {p(x)q(x)}} \, l(x) \mu(x) =
+      {\sqrt{p(x)l(x)q(x) \, l(x)}} \mu(dx) = {\sqrt{p&#39;(x)l&#39;(x)q&#39;(x)l&#39;(x)}} \, \mu(dx) =
+      {\sqrt{p&#39;(x)q&#39;(x)}} \, \lambda&#39;(dx) ~.
   \end{equation}
 </p>
 <p >Then define the Bhattacharyya coefficient as,  </p><p class="formulaDsp">
 \begin{equation}
-      BC(P,Q)=\int _{\mathcal {X}}bc(dx|P,Q)=\int _{\mathcal {X}}{\sqrt {p(x)q(x)}}\,\lambda (dx)} ~.
+      \up{BC}(P,Q) = \int_{\mathcal{X}} \up{bc}(dx|P, Q) = \int_{\mathcal{X}}{\sqrt {p(x)q(x)}}\,\lambda (dx) ~.
   \end{equation}
 </p>
-<p >By the above, the quantity \(BC(P,Q)\) does not depend on \(\lambda\), and by the Cauchy inequality \(0\leq BC(P,Q)\leq 1\).<br  />
- In particular if \(P(dx)=p(x)Q(dx)\) is absolutely continuous w.r.t. to \(Q\) with Radon Nikodym derivative \(p(x) = {\frac {P(dx)}{Q(dx)}}(x)\), then,  </p><p class="formulaDsp">
+<p >By the above, the quantity \(\up{BC}(P,Q)\) does not depend on \(\lambda\), and by the Cauchy inequality \(0\leq \up{BC}(P,Q)\leq 1\).<br  />
+ In particular if \(P(dx) = p(x)Q(dx)\) is absolutely continuous w.r.t. to \(Q\) with Radon Nikodym derivative \(p(x) = {\frac {P(dx)}{Q(dx)}}(x)\), then,  </p><p class="formulaDsp">
 \begin{equation}
-      BC(P,Q) = \int _{\mathcal {X}}{\sqrt {p(x)}}Q(dx)=\int _{\mathcal {X}}{\sqrt {\frac {P(dx)}{Q(dx)}}}Q(dx)=E_{Q}\left[{\sqrt {\frac {P(dx)}{Q(dx)}}}\right] ~.
+      \up{BC}(P,Q) = \int_{\mathcal{X}}{\sqrt {p(x)}}Q(dx) = \int_{\mathcal{X}} {\sqrt {\frac{P(dx)}{Q(dx)}}} Q(dx) = E_{Q} \left[{\sqrt{\frac{P(dx)}{Q(dx)}}}\right] ~.
   \end{equation}
 </p>
 <h2><a class="anchor" id="autotoc_md13"></a>
 Properties of the Bhattacharyya Distance</h2>
 <ol>
 <li>
-The conditions \(0\leq BC\leq 1\) and \(0\leq D_{B}\leq \infty\) hold for the Bhattacharyya coefficient and distance, respectively. </li>
+The conditions \(0\leq \up{BC}\leq 1\) and \(0\leq D_{B}\leq \infty\) hold for the Bhattacharyya coefficient and distance, respectively. </li>
 <li>
-The Bhattacharyya distance \(D_{B}\) does not obey the triangle inequality, though the <a class="el" href="namespacepm__distanceHellinger.html">Hellinger distance</a> \(\sqrt{1 - BC(p,q)}\) does.<br  />
+The Bhattacharyya distance \(D_{B}\) does not obey the triangle inequality, though the <a class="el" href="namespacepm__distanceHellinger.html">Hellinger distance</a> \(\sqrt{1 - \up{BC}(p,q)}\) does.<br  />
  </li>
 </ol>
 <h2><a class="anchor" id="autotoc_md14"></a>
@@ -245,7 +247,7 @@ Connection with Total Variation Distance (TVD)</h2>
 <dl class="test"><dt><b><a class="el" href="test.html#_test000254">Test:</a></b></dt><dd>test_pm_distanceBhat</dd></dl>
 <p ><br  />
 <a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distanceBhat.F90#L118 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distanceBhat.F90#L120 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -274,7 +276,7 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pm__distanceBhat_8F90_source.html#l00135">135</a> of file <a class="el" href="pm__distanceBhat_8F90_source.html">pm_distanceBhat.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__distanceBhat_8F90_source.html#l00137">137</a> of file <a class="el" href="pm__distanceBhat_8F90_source.html">pm_distanceBhat.F90</a>.</p>
 
 </div>
 </div>
@@ -284,7 +286,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distanceBhat.html">pm_distanceBhat</a></li>
-        <li class="footer">Generated on Sat May 18 2024 01:45:21 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 20:01:15 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

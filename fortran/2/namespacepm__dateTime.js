@@ -30,7 +30,7 @@ var namespacepm__dateTime =
     [ "dateTimeStr_typer", "namespacepm__dateTime.html#a3002171485f32b169796050c5565052f", null ],
     [ "getDateTimeIntValues", "namespacepm__dateTime.html#a4b966cc89201604a890d3b093b8786d7", null ],
     [ "getDay", "namespacepm__dateTime.html#af3d4f556500982fd65c75aa74c8f1207", null ],
-    [ "getHour", "namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796", null ],
+    [ "getHour", "namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c", null ],
     [ "getMillisecond", "namespacepm__dateTime.html#a9b29ae3f39bead39d8d3554be5267a5f", null ],
     [ "getMinute", "namespacepm__dateTime.html#a6c040d283681a1056fc2a0786ecfc5c9", null ],
     [ "getMonth", "namespacepm__dateTime.html#aac70702e207e678c176a475c9afc1710", null ],

@@ -346,10 +346,10 @@ the Inverse Cumulative Distribution Function (<b>ICDF</b>) or the <b>Quantile Fu
 <a class="anchor" id="benchmark-ziggurat_vs_boxbasic"></a><b>Benchmark :: The runtime performance of <a class="el" href="interfacepm__distNorm_1_1setNormRand.html">setNormRand</a> and <a class="el" href="interfacepm__distNorm_1_1setNormRandBox.html">setNormRandBox</a>.</b> <a href="#benchmark-ziggurat_vs_boxbasic">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="fortran_statement">module</span> zig_mod</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__distNorm.html">pm_distNorm</a>, <span class="fortran_statement">only</span>: xoshiro256ssw_type</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__distNorm.html">pm_distNorm</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__distNorm_1_1getZigNorm.html">getZigNorm</a></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: RKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: RKG<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="fortran_statement">implicit none</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="fortran_statement">    real</span>(RKC) :: abserr</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="fortran_statement">    real</span>(RKC),<span class="fortran_attribute"> allocatable</span> :: zig(:,:)</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="fortran_statement">    real</span>(RKG) :: abserr</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="fortran_statement">    real</span>(RKG),<span class="fortran_attribute"> allocatable</span> :: zig(:,:)</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="fortran_statement">end module </span>zig_mod</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="fortran_comment">! Test the performance of `setNormRandZiggurat()` vs. `setNormRandBoxBasic()`.</span></div>
@@ -367,8 +367,8 @@ the Inverse Cumulative Distribution Function (<b>ICDF</b>) or the <b>Quantile Fu
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="fortran_statement">integer</span>(IK)                         :: itime</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="fortran_statement">integer</span>(IK)                         :: ibench</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="fortran_statement">integer</span>(IK)         ,<span class="fortran_attribute"> parameter</span>     :: NSIM<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0_IK</span> <span class="fortran_comment">! must be even number.</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="fortran_statement">    real</span>(RKC)                           :: rand(NSIM)<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">0._RKC</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="fortran_statement">    real</span>(RKC)                           :: dummy<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">0._RKC</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="fortran_statement">    real</span>(RKG)                           :: rand(NSIM)<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">0._RKG</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="fortran_statement">    real</span>(RKG)                           :: dummy<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">0._RKG</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="fortran_statement">type</span>(benchMulti_type)               :: bench</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="fortran_statement">type</span>(display_type)                  :: disp</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="fortran_statement">integer</span>(IK)                         :: miniter<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span><span class="fortran_numeric_literal">0_IK</span></div>
@@ -541,10 +541,10 @@ the Inverse Cumulative Distribution Function (<b>ICDF</b>) or the <b>Quantile Fu
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>plt.savefig(<span class="stringliteral">&quot;benchmark.&quot;</span> + dirname + <span class="stringliteral">&quot;.runtime.ratio.png&quot;</span>)</div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="visb-ziggurat_vs_boxbasic"></a><b>Visualization of the benchmark output</b> <a href="#visb-ziggurat_vs_boxbasic">⛓</a> <div class="image">
-<img src="benchmark.ziggurat_vs_boxbasic.runtime.png" alt="" width="1000"/>
+<img src="benchmark/pm_distNorm/ziggurat_vs_boxbasic/benchmark.ziggurat_vs_boxbasic.runtime.png" alt="" width="1000"/>
 </div>
  <div class="image">
-<img src="benchmark.ziggurat_vs_boxbasic.runtime.ratio.png" alt="" width="1000"/>
+<img src="benchmark/pm_distNorm/ziggurat_vs_boxbasic/benchmark.ziggurat_vs_boxbasic.runtime.ratio.png" alt="" width="1000"/>
 </div>
  <br  />
 <a class="anchor" id="moralb-ziggurat_vs_boxbasic"></a><b>Benchmark moral</b> <a href="#moralb-ziggurat_vs_boxbasic">⛓</a><ol type="1">
@@ -723,7 +723,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distNorm.html">pm_distNorm</a></li>
-        <li class="footer">Generated on Sat May 18 2024 01:45:22 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 20:01:15 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -14,13 +14,13 @@ var structpm__sampling_1_1paranest__type =
     [ "domainPartitionKmeansNumTry", "structpm__sampling_1_1paranest__type.html#a312c5d9b7aae4e067fde6ef9b035954f", null ],
     [ "domainPartitionKvolumeNumRecursionMax", "structpm__sampling_1_1paranest__type.html#a4ae816d6f1f4e063a72891c5c269f0a3", null ],
     [ "domainPartitionKvolumeWeightExponent", "structpm__sampling_1_1paranest__type.html#af8f60a034018327e2912d4e45bd635ac", null ],
-    [ "domainPartitionMethod", "structpm__sampling_1_1paranest__type.html#af281a63e7aab535d0827b8aab3f802bb", null ],
-    [ "domainPartitionObject", "structpm__sampling_1_1paranest__type.html#a97b838ca5d3a1c703ae21a0585f5902a", null ],
+    [ "domainPartitionMethod", "structpm__sampling_1_1paranest__type.html#a62264aaec545b81281b5decddca5f99e", null ],
+    [ "domainPartitionObject", "structpm__sampling_1_1paranest__type.html#a1ac7bfb3e10c1b003d8d337a95ffa333", null ],
     [ "domainPartitionOptimizationScaleEnabled", "structpm__sampling_1_1paranest__type.html#a2aceedcd9ae7c3577e7c86dd8a03ee4c", null ],
     [ "domainPartitionOptimizationShapeEnabled", "structpm__sampling_1_1paranest__type.html#ad1081ad21fa8636cc070e00c0792087c", null ],
     [ "domainPartitionOptimizationShapeScaleEnabled", "structpm__sampling_1_1paranest__type.html#aef0358b44d351509c25da3ed42fb06c6", null ],
     [ "domainPartitionScaleFactor", "structpm__sampling_1_1paranest__type.html#a48434daffa1c9a4e449a70c5b8b21263", null ],
-    [ "domainSampler", "structpm__sampling_1_1paranest__type.html#a6cce4ca9e116be1aefe25cf84ddb696d", null ],
+    [ "domainSampler", "structpm__sampling_1_1paranest__type.html#a0d2fe38b8bc21a468e603a07d99a35dd", null ],
     [ "liveSampleSize", "structpm__sampling_1_1paranest__type.html#a05d2ba3010d94c4730080c1485051f6d", null ],
     [ "tolerance", "structpm__sampling_1_1paranest__type.html#aa62a7e481fca818f5bd678023c12aa1a", null ]
 ];

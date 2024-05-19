@@ -479,9 +479,9 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
 <dd><a class="anchor" id="_bug000046"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 10.3 <br  />
-<b>Description:</b> GNU Fortran Compiler <code>gfortran</code> yields an internal compiler error with the expression <code>rand = nint(temp, kind = IKC)</code> in <code><a class="el" href="namespacepm__distUnif.html" title="This module contains classes and procedures for computing various statistical quantities related to t...">pm_distUnif</a>@routines[IK](@ref <a class="el" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35" title="The default integer kind in the ParaMonte library: int32 in Fortran, c_int32_t in C-Fortran Interoper...">pm_kind::IK</a>).inc.F90</code> file when <code>IKC =&gt; integer_kinds(5)</code> on WSL OS.<br  />
+<b>Description:</b> GNU Fortran Compiler <code>gfortran</code> yields an internal compiler error with the expression <code>rand = nint(temp, kind = IKG)</code> in <code><a class="el" href="namespacepm__distUnif.html" title="This module contains classes and procedures for computing various statistical quantities related to t...">pm_distUnif</a>@routines[IK](@ref <a class="el" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35" title="The default integer kind in the ParaMonte library: int32 in Fortran, c_int32_t in C-Fortran Interoper...">pm_kind::IK</a>).inc.F90</code> file when <code>IKG =&gt; integer_kinds(5)</code> on WSL OS.<br  />
  <br  />
-<b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the expression is replaced with <code>rand = int(0.5d0 + temp, kind = IKC)</code>.<br  />
+<b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the expression is replaced with <code>rand = int(0.5d0 + temp, kind = IKG)</code>.<br  />
  </dd>
 <dt>Type <a class="el" href="structpm__err_1_1mark__type.html">pm_err::mark_type</a>  </dt>
 <dd><a class="anchor" id="_bug000047"></a> <br  />
@@ -670,7 +670,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 10.3-11 <br  />
 <b>Description:</b> The GNU Fortran Compiler <code>gfortran</code> cannot handle IO of string arrays of zero-length of non-zero size in <code>getStr()</code> in assertion check blocks.<br  />
- The issue happens to be with deferred-length strings <code>character(:,SKC), allocatable :: Array(:)</code>.<br  />
+ The issue happens to be with deferred-length strings <code>character(:,SKG), allocatable :: Array(:)</code>.<br  />
  The Intel Classic Fortran Compiler <code>ifort</code> can handle this properly.<br  />
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): Avoid deferred-length strings where GNU Fortran Compiler <code>gfortran</code> cannot compile.</p>
@@ -681,7 +681,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 10.3-11 <br  />
 <b>Description:</b> The GNU Fortran Compiler <code>gfortran</code> cannot handle IO of string arrays of zero-length of non-zero size in <code>getStr()</code> in assertion check blocks.<br  />
- The issue happens to be with deferred-length strings <code>character(:,SKC), allocatable :: Array(:)</code>.<br  />
+ The issue happens to be with deferred-length strings <code>character(:,SKG), allocatable :: Array(:)</code>.<br  />
  The Intel Classic Fortran Compiler <code>ifort</code> can handle this properly.<br  />
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): Avoid deferred-length strings where GNU Fortran Compiler <code>gfortran</code> cannot compile. </dd>
@@ -757,7 +757,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="footer">Generated on Sat May 18 2024 01:45:20 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 20:01:13 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

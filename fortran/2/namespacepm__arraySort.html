@@ -552,19 +552,19 @@ order.<br  />
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>plt.savefig(<span class="stringliteral">&quot;benchmark.sorting.random.sorted.ratio.png&quot;</span>)</div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="visb-sorting"></a><b>Visualization of the benchmark output</b> <a href="#visb-sorting">⛓</a> <div class="image">
-<img src="benchmark.sorting.random.png" alt="" width="1000"/>
+<img src="benchmark/pm_arraySort/sorting/benchmark.sorting.random.png" alt="" width="1000"/>
 </div>
  <div class="image">
-<img src="benchmark.sorting.sorted.png" alt="" width="1000"/>
+<img src="benchmark/pm_arraySort/sorting/benchmark.sorting.sorted.png" alt="" width="1000"/>
 </div>
  <div class="image">
-<img src="benchmark.sorting.random.sorted.ratio.png" alt="" width="1000"/>
+<img src="benchmark/pm_arraySort/sorting/benchmark.sorting.random.sorted.ratio.png" alt="" width="1000"/>
 </div>
 </dd></dl>
 <p><br  />
 <a class="anchor" id="benchmark-sorting_vs_indexing"></a><b>Benchmark :: sorting vs. indexing</b> <a href="#benchmark-sorting_vs_indexing">⛓</a> </p><dl class="section user"><dt></dt><dd>The following program generates a performance comparison of the <a class="el" href="interfacepm__arraySort_1_1setSorted.html">setSorted</a> algorithm for various sorting methods. <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="fortran_statement">program</span> benchmark</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: <a class="code hl_variable" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, <a class="code hl_variable" href="namespacepm__kind.html#a3f17ea307d594843815ae49bcc6ffdac">LK</a>, RKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: <a class="code hl_variable" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, <a class="code hl_variable" href="namespacepm__kind.html#a3f17ea307d594843815ae49bcc6ffdac">LK</a>, RKG<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__arrayResize.html">pm_arrayResize</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__arrayResize_1_1setResized.html">setResized</a></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__distUnif.html">pm_distUnif</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__distUnif_1_1getUnifRand.html">getUnifRand</a></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__arraySort.html">pm_arraySort</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__arraySort_1_1setSorted.html">setSorted</a></div>
@@ -578,7 +578,7 @@ order.<br  />
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="fortran_statement">integer</span>(IK) ,<span class="fortran_attribute"> parameter</span>             :: NARR<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span><span class="fortran_numeric_literal">2_IK</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="fortran_statement">integer</span>(IK) ,<span class="fortran_attribute"> parameter</span>             :: NBENCH<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">3_IK</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="fortran_statement">integer</span>(IK)                         :: arraySize(NARR)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="fortran_statement">    real</span>(RKC)   ,<span class="fortran_attribute"> allocatable</span>           :: array(:)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="fortran_statement">    real</span>(RKG)   ,<span class="fortran_attribute"> allocatable</span>           :: array(:)</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="fortran_statement">integer</span>(IK) ,<span class="fortran_attribute"> allocatable</span>           ::<span class="fortran_function"> index</span>(:)</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="fortran_statement">    logical</span>(LK)                         :: issorted</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="fortran_statement">type</span>(bench_type)                    :: bench(<span class="fortran_numeric_literal">2</span>,NBENCH)</div>
@@ -606,7 +606,7 @@ order.<br  />
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="fortran_statement">        write</span>(<span class="fortran_operator_symbols">*</span>,<span class="fortran_string">&quot;(*(g0,:,&#39; &#39;))&quot;</span>) <span class="fortran_string">&quot;Benchmarking with array size&quot;</span>, arraySize(iarr)</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        array<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__distUnif_1_1getUnifRand.html">getUnifRand</a>(<span class="fortran_numeric_literal">1._RKC</span>,<span class="fortran_numeric_literal"> 2._RKC</span>, arraySize(iarr))</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        array<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__distUnif_1_1getUnifRand.html">getUnifRand</a>(<span class="fortran_numeric_literal">1._RKG</span>,<span class="fortran_numeric_literal"> 2._RKG</span>, arraySize(iarr))</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="fortran_statement">        call</span> <a class="code hl_interface" href="interfacepm__arrayResize_1_1setResized.html">setResized</a>(index, arraySize(iarr))</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        issorted<span class="fortran_operator_symbols"> = </span><span class="fortran_named_const">.false.</span>_LK</div>
@@ -633,7 +633,7 @@ order.<br  />
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="fortran_prefix">subroutine </span>setarray()</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__arraySpace.html">pm_arraySpace</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__arraySpace_1_1getLinSpace.html">getLinSpace</a></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="fortran_keywordflow">if</span> (issorted) <span class="fortran_keywordflow">then</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            array(:)<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__arraySpace_1_1getLinSpace.html">getLinSpace</a>(<span class="fortran_numeric_literal">0._RKC</span>,<span class="fortran_numeric_literal"> 1._RKC</span>, count<span class="fortran_operator_symbols"> = </span><span class="fortran_function">size</span>(array,<span class="fortran_spcifier"> kind</span><span class="fortran_operator_symbols"> = </span><a class="code hl_variable" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>))</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            array(:)<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__arraySpace_1_1getLinSpace.html">getLinSpace</a>(<span class="fortran_numeric_literal">0._RKG</span>,<span class="fortran_numeric_literal"> 1._RKG</span>, count<span class="fortran_operator_symbols"> = </span><span class="fortran_function">size</span>(array,<span class="fortran_spcifier"> kind</span><span class="fortran_operator_symbols"> = </span><a class="code hl_variable" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>))</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="fortran_keywordflow">else</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="fortran_statement">            call</span><span class="fortran_subroutine"> random_number</span>(array)</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="fortran_keywordflow">        end if</span></div>
@@ -766,16 +766,16 @@ order.<br  />
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="visb-sorting_vs_indexing"></a><b>Visualization of the benchmark output</b> <a href="#visb-sorting_vs_indexing">⛓</a> <div class="image">
-<img src="benchmark.sorting_vs_indexing.random.png" alt="" width="1000"/>
+<img src="benchmark/pm_arraySort/sorting_vs_indexing/benchmark.sorting_vs_indexing.random.png" alt="" width="1000"/>
 </div>
  <div class="image">
-<img src="benchmark.sorting_vs_indexing.random.ratio.png" alt="" width="1000"/>
+<img src="benchmark/pm_arraySort/sorting_vs_indexing/benchmark.sorting_vs_indexing.random.ratio.png" alt="" width="1000"/>
 </div>
  <div class="image">
-<img src="benchmark.sorting_vs_indexing.sorted.png" alt="" width="1000"/>
+<img src="benchmark/pm_arraySort/sorting_vs_indexing/benchmark.sorting_vs_indexing.sorted.png" alt="" width="1000"/>
 </div>
  <div class="image">
-<img src="benchmark.sorting_vs_indexing.sorted.ratio.png" alt="" width="1000"/>
+<img src="benchmark/pm_arraySort/sorting_vs_indexing/benchmark.sorting_vs_indexing.sorted.ratio.png" alt="" width="1000"/>
 </div>
 </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000099">Todo:</a></b></dt><dd><span class="pvlow">Very Low Priority</span>: An equivalent functional versions of <a class="el" href="interfacepm__arraySort_1_1setSorted.html">setSorted</a> and <a class="el" href="interfacepm__arraySort_1_1setSorted.html">setSorted</a> could be added along with the relevant benchmarks.<br  />
@@ -1018,7 +1018,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__arraySort.html">pm_arraySort</a></li>
-        <li class="footer">Generated on Sat May 18 2024 01:45:20 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 20:01:14 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -347,5 +347,5 @@ var searchData=
   ['symmetric_5ftype_344',['symmetric_type',['../structpm__matrixClass_1_1symmetric__type.html',1,'pm_matrixClass']]],
   ['syn_345',['SYN',['../namespacepm__strASCII.html#acff991a549cc86db18055250e821d056',1,'pm_strASCII']]],
   ['sync_346',['sync',['../structpm__parallelism_1_1image__type.html#a294503399055c8ad4163f1e0d730cc29',1,'pm_parallelism::image_type']]],
-  ['sysinfofilepath_347',['sysInfoFilePath',['../structpm__sampling_1_1sampler__type.html#ac8d2de46bcd1bf832d878f319d514962',1,'pm_sampling::sampler_type']]]
+  ['sysinfofilepath_347',['sysInfoFilePath',['../structpm__sampling_1_1sampler__type.html#addbde0876a48084570e04d323e4a1b9a',1,'pm_sampling::sampler_type']]]
 ];

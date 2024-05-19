@@ -259,9 +259,9 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:a6c040d283681a1056fc2a0786ecfc5c9"><td class="memItemLeft" align="right" valign="top">integer(IK) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepm__dateTime.html#a6c040d283681a1056fc2a0786ecfc5c9">getMinute</a> ()</td></tr>
 <tr class="memdesc:a6c040d283681a1056fc2a0786ecfc5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate and return the current minute of the local hour of the current day of the Gregorian calendar.  <a href="namespacepm__dateTime.html#a6c040d283681a1056fc2a0786ecfc5c9">More...</a><br /></td></tr>
 <tr class="separator:a6c040d283681a1056fc2a0786ecfc5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a177ddaa82d04cc644706ace6938a1796"><td class="memItemLeft" align="right" valign="top">impure elemental integer(IKC) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a> (zone)</td></tr>
-<tr class="memdesc:a177ddaa82d04cc644706ace6938a1796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate and return the current local hour of the current day of the Gregorian calendar, or the hour at the specified time zone <code>zone</code> in <b>minutes</b>.  <a href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">More...</a><br /></td></tr>
-<tr class="separator:a177ddaa82d04cc644706ace6938a1796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0f24daeb8b8013176e22cada0d44e3c"><td class="memItemLeft" align="right" valign="top">impure elemental integer(IKG) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a> (zone)</td></tr>
+<tr class="memdesc:aa0f24daeb8b8013176e22cada0d44e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate and return the current local hour of the current day of the Gregorian calendar, or the hour at the specified time zone <code>zone</code> in <b>minutes</b>.  <a href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">More...</a><br /></td></tr>
+<tr class="separator:aa0f24daeb8b8013176e22cada0d44e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a935e7c276ce7252d164ab3e7ee8c65"><td class="memItemLeft" align="right" valign="top">integer(IK) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepm__dateTime.html#a2a935e7c276ce7252d164ab3e7ee8c65">getZone</a> ()</td></tr>
 <tr class="memdesc:a2a935e7c276ce7252d164ab3e7ee8c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate and return the local time difference <b>in minutes</b> with respect to the Coordinated Universal Time (UTC).  <a href="namespacepm__dateTime.html#a2a935e7c276ce7252d164ab3e7ee8c65">More...</a><br /></td></tr>
 <tr class="separator:a2a935e7c276ce7252d164ab3e7ee8c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -631,9 +631,9 @@ Should the uniformly randomly generated Gregorian Calendar date be local to a sp
 </li>
 </ol>
 Here is an example:<br  />
- <div class="fragment"><div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: RKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a>, IKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a></div>
-<div class="line"><span class="fortran_statement">integer</span>(IKC) :: DateRand(<span class="fortran_numeric_literal">8</span>)</div>
-<div class="line">DateRand<span class="fortran_operator_symbols"> = </span>getDateTime(julianDay<span class="fortran_operator_symbols"> = </span>getUnifRand(<span class="fortran_operator_symbols">-</span><span class="fortran_numeric_literal">3</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0._RKC</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">3</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0._RKC</span>))</div>
+ <div class="fragment"><div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: RKG<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a>, IKG<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a></div>
+<div class="line"><span class="fortran_statement">integer</span>(IKG) :: DateRand(<span class="fortran_numeric_literal">8</span>)</div>
+<div class="line">DateRand<span class="fortran_operator_symbols"> = </span>getDateTime(julianDay<span class="fortran_operator_symbols"> = </span>getUnifRand(<span class="fortran_operator_symbols">-</span><span class="fortran_numeric_literal">3</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0._RKG</span>,<span class="fortran_operator_symbols"> +</span><span class="fortran_numeric_literal">3</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0._RKG</span>))</div>
 <div class="line">DateRand<span class="fortran_operator_symbols"> = </span>getDateTime(julianDay<span class="fortran_operator_symbols"> = </span>getUnifRand(getJulianDay(<span class="fortran_numeric_literal">1_IK</span>), getJulianDay())) <span class="fortran_comment">! uniform random date from the birth of Jesus until present.</span></div>
 <div class="line">!</div>
 <div class="ttc" id="anamespacepm__kind_html"><div class="ttname"><a href="namespacepm__kind.html">pm_kind</a></div><div class="ttdoc">This module defines the relevant Fortran kind type-parameters frequently used in the ParaMonte librar...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00268">pm_kind.F90:268</a></div></div>
@@ -847,7 +847,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="namespacepm__dateTime.html#aa9bca357decd2f3f1d8a207f19944fe8">getSecond</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a6c040d283681a1056fc2a0786ecfc5c9">getMinute</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getHour12.html">getHour12</a><br  />
- <a class="el" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a><br  />
+ <a class="el" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a2a935e7c276ce7252d164ab3e7ee8c65">getZone</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getZoneAbbr.html">getZoneAbbr</a><br  />
  <a class="el" href="namespacepm__dateTime.html#af3d4f556500982fd65c75aa74c8f1207">getDay</a><br  />
@@ -925,16 +925,16 @@ Help us justify its continued development and maintenance by acknowledging its b
 
 </div>
 </div>
-<a id="a177ddaa82d04cc644706ace6938a1796" name="a177ddaa82d04cc644706ace6938a1796"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a177ddaa82d04cc644706ace6938a1796">&#9670;&nbsp;</a></span>getHour()</h2>
+<a id="aa0f24daeb8b8013176e22cada0d44e3c" name="aa0f24daeb8b8013176e22cada0d44e3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0f24daeb8b8013176e22cada0d44e3c">&#9670;&nbsp;</a></span>getHour()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">impure elemental integer(IKC) function pm_dateTime::getHour </td>
+          <td class="memname">impure elemental integer(IKG) function pm_dateTime::getHour </td>
           <td>(</td>
-          <td class="paramtype">integer(IKC), intent(in), optional&#160;</td>
+          <td class="paramtype">integer(IKG), intent(in), optional&#160;</td>
           <td class="paramname"><em>zone</em></td><td>)</td>
           <td></td>
         </tr>
@@ -951,13 +951,13 @@ Help us justify its continued development and maintenance by acknowledging its b
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>hour</code> : The output scalar of type <code>integer</code> of default kind <a class="el" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a> containing the current local hour of the current day of the Gregorian calendar.</dd></dl>
 <p><br  />
-<a class="anchor" id="interface-getHour"></a><b>Possible calling interfaces</b> <a href="#interface-getHour">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__dateTime.html">pm_dateTime</a>, <span class="fortran_statement">only</span>: <a class="code hl_function" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a></div>
+<a class="anchor" id="interface-getHour"></a><b>Possible calling interfaces</b> <a href="#interface-getHour">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__dateTime.html">pm_dateTime</a>, <span class="fortran_statement">only</span>: <a class="code hl_function" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a></div>
 <div class="line"><span class="fortran_statement">integer</span>(IK) :: hour</div>
 <div class="line"> </div>
-<div class="line">hour<span class="fortran_operator_symbols"> = </span><a class="code hl_function" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a>() <span class="fortran_comment">! current hour at local time zone</span></div>
-<div class="line">hour<span class="fortran_operator_symbols"> = </span><a class="code hl_function" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a>(zone) <span class="fortran_comment">! current hour at the specified time zone in minutes</span></div>
+<div class="line">hour<span class="fortran_operator_symbols"> = </span><a class="code hl_function" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a>() <span class="fortran_comment">! current hour at local time zone</span></div>
+<div class="line">hour<span class="fortran_operator_symbols"> = </span><a class="code hl_function" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a>(zone) <span class="fortran_comment">! current hour at the specified time zone in minutes</span></div>
 <div class="line">!</div>
-<div class="ttc" id="anamespacepm__dateTime_html_a177ddaa82d04cc644706ace6938a1796"><div class="ttname"><a href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">pm_dateTime::getHour</a></div><div class="ttdeci">impure elemental integer(IKC) function getHour(zone)</div><div class="ttdoc">Generate and return the current local hour of the current day of the Gregorian calendar,...</div><div class="ttdef"><b>Definition:</b> <a href="pm__dateTime_8F90_source.html#l04529">pm_dateTime.F90:4530</a></div></div>
+<div class="ttc" id="anamespacepm__dateTime_html_aa0f24daeb8b8013176e22cada0d44e3c"><div class="ttname"><a href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">pm_dateTime::getHour</a></div><div class="ttdeci">impure elemental integer(IKG) function getHour(zone)</div><div class="ttdoc">Generate and return the current local hour of the current day of the Gregorian calendar,...</div><div class="ttdef"><b>Definition:</b> <a href="pm__dateTime_8F90_source.html#l04529">pm_dateTime.F90:4530</a></div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The output value is set to <code>-huge(0_K)</code> if the processor does not provide date and time.<br  />
  This condition is verified only if the library is built with the preprocessor macro <code>CHECK_ENABLED=1</code>.</dd></dl>
@@ -965,7 +965,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="namespacepm__dateTime.html#aa9bca357decd2f3f1d8a207f19944fe8">getSecond</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a6c040d283681a1056fc2a0786ecfc5c9">getMinute</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getHour12.html">getHour12</a><br  />
- <a class="el" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a><br  />
+ <a class="el" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a2a935e7c276ce7252d164ab3e7ee8c65">getZone</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getZoneAbbr.html">getZoneAbbr</a><br  />
  <a class="el" href="namespacepm__dateTime.html#af3d4f556500982fd65c75aa74c8f1207">getDay</a><br  />
@@ -978,7 +978,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: <a class="code hl_variable" href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">SK</a>, <a class="code hl_variable" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__io.html">pm_io</a>, <span class="fortran_statement">only</span>: <a class="code hl_struct" href="structpm__io_1_1display__type.html">display_type</a></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__dateTime.html">pm_dateTime</a>, <span class="fortran_statement">only</span>: <a class="code hl_function" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__dateTime.html">pm_dateTime</a>, <span class="fortran_statement">only</span>: <a class="code hl_function" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="fortran_statement">implicit none</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
@@ -987,7 +987,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="fortran_statement">    call</span> <a class="code hl_variable" href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">disp</a><span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__io_1_1skip.html">skip</a>()</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="fortran_statement">    call</span> <a class="code hl_variable" href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">disp</a><span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__io_1_1show.html">show</a>(<span class="fortran_string">&quot;getHour()&quot;</span>)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="fortran_statement">    call</span> <a class="code hl_variable" href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">disp</a><span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__io_1_1show.html">show</a>( <a class="code hl_function" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a>() )</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="fortran_statement">    call</span> <a class="code hl_variable" href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">disp</a><span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__io_1_1show.html">show</a>( <a class="code hl_function" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a>() )</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="fortran_statement">    call</span> <a class="code hl_variable" href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">disp</a><span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__io_1_1skip.html">skip</a>()</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="fortran_statement">end program </span>example</div>
@@ -1008,8 +1008,8 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>./main.exe</div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="output-getHour"></a><b>Example output</b> <a href="#output-getHour">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><a class="code hl_function" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a>()</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="fortran_operator_symbols">+</span><span class="fortran_numeric_literal">0</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><a class="code hl_function" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a>()</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="fortran_operator_symbols">+</span><span class="fortran_numeric_literal">1</span><span class="fortran_numeric_literal">9</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 </div><!-- fragment --></dd></dl>
@@ -1067,7 +1067,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="namespacepm__dateTime.html#aa9bca357decd2f3f1d8a207f19944fe8">getSecond</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a6c040d283681a1056fc2a0786ecfc5c9">getMinute</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getHour12.html">getHour12</a><br  />
- <a class="el" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a><br  />
+ <a class="el" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a2a935e7c276ce7252d164ab3e7ee8c65">getZone</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getZoneAbbr.html">getZoneAbbr</a><br  />
  <a class="el" href="namespacepm__dateTime.html#af3d4f556500982fd65c75aa74c8f1207">getDay</a><br  />
@@ -1111,7 +1111,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 </div><!-- fragment --> <br  />
 <a class="anchor" id="output-getMillisecond"></a><b>Example output</b> <a href="#output-getMillisecond">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>getMilliSecond()</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="fortran_operator_symbols">+</span><span class="fortran_numeric_literal">2</span><span class="fortran_numeric_literal">1</span><span class="fortran_numeric_literal">0</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="fortran_operator_symbols">+</span><span class="fortran_numeric_literal">8</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">9</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 </div><!-- fragment --></dd></dl>
@@ -1166,7 +1166,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="namespacepm__dateTime.html#aa9bca357decd2f3f1d8a207f19944fe8">getSecond</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a6c040d283681a1056fc2a0786ecfc5c9">getMinute</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getHour12.html">getHour12</a><br  />
- <a class="el" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a><br  />
+ <a class="el" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a2a935e7c276ce7252d164ab3e7ee8c65">getZone</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getZoneAbbr.html">getZoneAbbr</a><br  />
  <a class="el" href="namespacepm__dateTime.html#af3d4f556500982fd65c75aa74c8f1207">getDay</a><br  />
@@ -1210,7 +1210,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 </div><!-- fragment --> <br  />
 <a class="anchor" id="output-getMinute"></a><b>Example output</b> <a href="#output-getMinute">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><a class="code hl_function" href="namespacepm__dateTime.html#a6c040d283681a1056fc2a0786ecfc5c9">getMinute</a>()</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="fortran_operator_symbols">+</span><span class="fortran_numeric_literal">4</span><span class="fortran_numeric_literal">6</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="fortran_operator_symbols">+</span><span class="fortran_numeric_literal">3</span><span class="fortran_numeric_literal">1</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 </div><!-- fragment --></dd></dl>
@@ -1265,7 +1265,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="namespacepm__dateTime.html#aa9bca357decd2f3f1d8a207f19944fe8">getSecond</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a6c040d283681a1056fc2a0786ecfc5c9">getMinute</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getHour12.html">getHour12</a><br  />
- <a class="el" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a><br  />
+ <a class="el" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a2a935e7c276ce7252d164ab3e7ee8c65">getZone</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getZoneAbbr.html">getZoneAbbr</a><br  />
  <a class="el" href="namespacepm__dateTime.html#af3d4f556500982fd65c75aa74c8f1207">getDay</a><br  />
@@ -1363,7 +1363,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="namespacepm__dateTime.html#aa9bca357decd2f3f1d8a207f19944fe8">getSecond</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a6c040d283681a1056fc2a0786ecfc5c9">getMinute</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getHour12.html">getHour12</a><br  />
- <a class="el" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a><br  />
+ <a class="el" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a2a935e7c276ce7252d164ab3e7ee8c65">getZone</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getZoneAbbr.html">getZoneAbbr</a><br  />
  <a class="el" href="namespacepm__dateTime.html#af3d4f556500982fd65c75aa74c8f1207">getDay</a><br  />
@@ -1407,7 +1407,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 </div><!-- fragment --> <br  />
 <a class="anchor" id="output-getSecond"></a><b>Example output</b> <a href="#output-getSecond">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><a class="code hl_function" href="namespacepm__dateTime.html#aa9bca357decd2f3f1d8a207f19944fe8">getSecond</a>()</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="fortran_operator_symbols">+</span><span class="fortran_numeric_literal">2</span><span class="fortran_numeric_literal">8</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="fortran_operator_symbols">+</span><span class="fortran_numeric_literal">2</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 </div><!-- fragment --></dd></dl>
@@ -1462,7 +1462,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="namespacepm__dateTime.html#aa9bca357decd2f3f1d8a207f19944fe8">getSecond</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a6c040d283681a1056fc2a0786ecfc5c9">getMinute</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getHour12.html">getHour12</a><br  />
- <a class="el" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a><br  />
+ <a class="el" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a2a935e7c276ce7252d164ab3e7ee8c65">getZone</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getZoneAbbr.html">getZoneAbbr</a><br  />
  <a class="el" href="namespacepm__dateTime.html#af3d4f556500982fd65c75aa74c8f1207">getDay</a><br  />
@@ -1561,7 +1561,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="namespacepm__dateTime.html#aa9bca357decd2f3f1d8a207f19944fe8">getSecond</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a6c040d283681a1056fc2a0786ecfc5c9">getMinute</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getHour12.html">getHour12</a><br  />
- <a class="el" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a><br  />
+ <a class="el" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a2a935e7c276ce7252d164ab3e7ee8c65">getZone</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getZoneAbbr.html">getZoneAbbr</a><br  />
  <a class="el" href="namespacepm__dateTime.html#af3d4f556500982fd65c75aa74c8f1207">getDay</a><br  />
@@ -1682,7 +1682,7 @@ The procedures under discussion are <code>elemental</code>.</dd></dl>
  <a class="el" href="namespacepm__dateTime.html#aa9bca357decd2f3f1d8a207f19944fe8">getSecond</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a6c040d283681a1056fc2a0786ecfc5c9">getMinute</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getHour12.html">getHour12</a><br  />
- <a class="el" href="namespacepm__dateTime.html#a177ddaa82d04cc644706ace6938a1796">getHour</a><br  />
+ <a class="el" href="namespacepm__dateTime.html#aa0f24daeb8b8013176e22cada0d44e3c">getHour</a><br  />
  <a class="el" href="namespacepm__dateTime.html#a2a935e7c276ce7252d164ab3e7ee8c65">getZone</a><br  />
  <a class="el" href="interfacepm__dateTime_1_1getZoneAbbr.html">getZoneAbbr</a><br  />
  <a class="el" href="namespacepm__dateTime.html#af3d4f556500982fd65c75aa74c8f1207">getDay</a><br  />
@@ -3036,7 +3036,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__dateTime.html">pm_dateTime</a></li>
-        <li class="footer">Generated on Sat May 18 2024 01:45:21 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 20:01:15 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

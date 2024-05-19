@@ -153,13 +153,13 @@ $(document).ready(function(){initNavTree('interfacepm__quadRomb_1_1getQuadRomb.h
 </li>
 <li>On exit, it must generate an input scalar of the same type and kind as <code>quadRomb</code>, representing the corresponding function value.<br  />
  The following illustrates the general interface of <code>getFunc</code>: <div class="fragment"><div class="line"><span class="fortran_prefix">function </span>getFunc(x) <span class="fortran_suffix">result</span>(func)</div>
-<div class="line">    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: <a class="code hl_variable" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a><span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span>RKC</div>
+<div class="line">    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: <a class="code hl_variable" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a><span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span>RKG</div>
 <div class="line"><span class="fortran_statement">    real</span>(RK)    ,<span class="fortran_attribute"> intent(in)</span>    :: x</div>
 <div class="line"><span class="fortran_statement">    real</span>(RK)                    :: func</div>
 <div class="line"><span class="fortran_statement">end function</span></div>
 <div class="ttc" id="anamespacepm__kind_html"><div class="ttname"><a href="namespacepm__kind.html">pm_kind</a></div><div class="ttdoc">This module defines the relevant Fortran kind type-parameters frequently used in the ParaMonte librar...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00268">pm_kind.F90:268</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html_a2dc41eb9ccbb460b3b6af8f356d3e962"><div class="ttname"><a href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">pm_kind::RK</a></div><div class="ttdeci">integer, parameter RK</div><div class="ttdoc">The default real kind in the ParaMonte library: real64 in Fortran, c_double in C-Fortran Interoperati...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00543">pm_kind.F90:543</a></div></div>
-</div><!-- fragment --> where <code>RKC</code> refers to any desired <code>real</code> kind supported by the processor.<br  />
+</div><!-- fragment --> where <code>RKG</code> refers to any desired <code>real</code> kind supported by the processor.<br  />
  </li>
 </ol>
 </td></tr>
@@ -167,8 +167,8 @@ $(document).ready(function(){initNavTree('interfacepm__quadRomb_1_1getQuadRomb.h
     <tr><td class="paramdir">[in]</td><td class="paramname">ub</td><td>: The input scalar of the same type and kind as the output <code>quadRomb</code>, containing the upper bound of the integration. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">tol</td><td>: The input scalar of the same type and kind as the output <code>quadRomb</code>, containing the <em>relative</em> error the integration.<br  />
  The algorithm converges if \(\ms{relerr} ~(~\equiv |\Delta\ms{quadRomb}|~) ~\leq~ \ms{tol} \times | \ms{quadRomb} |\).<br  />
- Note that <code>tol &gt; epsilon(0._RKC)</code> must hold at all times for integration to converge. Here <code>RKC</code> is the desired <code>real</code> kind of the output.<br  />
- Ideally, set <code>tol</code> to a value such that <code>tol &lt; epsilon(0._RKC) * 100</code> holds to ensure convergence.<br  />
+ Note that <code>tol &gt; epsilon(0._RKG)</code> must hold at all times for integration to converge. Here <code>RKG</code> is the desired <code>real</code> kind of the output.<br  />
+ Ideally, set <code>tol</code> to a value such that <code>tol &lt; epsilon(0._RKG) * 100</code> holds to ensure convergence.<br  />
  </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">nref</td><td>: The input scalar <code>integer</code> of default kind <a class="el" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, representing the number of refinements to be used in the Romberg method.<br  />
  Think of <code>nref</code> as the maximum possible degree of the polynomial extrapolation used for approximating the integral at any stage. <ul>
@@ -178,7 +178,7 @@ The smaller values of <code>nref</code> can delay an accurate estimation of the 
 The larger values of <code>nref</code> can delay the first estimation of the integral by requiring more function evaluations. </li>
 <li>
 The computational precision of the <code>real</code> kind used in this procedure imposes an upper limit on the value of <code>nref</code>.<br  />
- The maximum value for <code>nref</code> is roughly equal to <code>int(log(epsilon(1._RKC)) / log(0.25))</code> with <code>RKC</code> representing the <code>real</code> kind used for the integration. </li>
+ The maximum value for <code>nref</code> is roughly equal to <code>int(log(epsilon(1._RKG)) / log(0.25))</code> with <code>RKG</code> representing the <code>real</code> kind used for the integration. </li>
 <li>
 The maximum <code>nref</code> for <code>real32</code>, <code>real64</code>, <code>real128</code> are respectively <code>12</code>, <code>26</code>, <code>56</code>.<br  />
  </li>
@@ -486,7 +486,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__quadRomb.html">pm_quadRomb</a></li><li class="navelem"><a class="el" href="interfacepm__quadRomb_1_1getQuadRomb.html">getQuadRomb</a></li>
-        <li class="footer">Generated on Sat May 18 2024 01:45:25 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 20:01:18 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -165,10 +165,10 @@ On output, it must return a scalar of the same type and kind as the output argum
  </li>
 </ol>
 The following demonstrates the interface of <code>getFunc</code>, <div class="fragment"><div class="line"><span class="fortran_prefix">function </span>getFunc(x) <span class="fortran_suffix">result</span>(func)</div>
-<div class="line"><span class="fortran_statement">    real</span>(RKC),<span class="fortran_attribute"> intent(in)</span> :: x</div>
-<div class="line"><span class="fortran_statement">    real</span>(RKC) :: func</div>
+<div class="line"><span class="fortran_statement">    real</span>(RKG),<span class="fortran_attribute"> intent(in)</span> :: x</div>
+<div class="line"><span class="fortran_statement">    real</span>(RKG) :: func</div>
 <div class="line"><span class="fortran_statement">end function</span></div>
-</div><!-- fragment --> where <code>RKC</code> can refer to any <code>real</code> type kind parameter any supported by the processor (e.g., <a class="el" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a>, <a class="el" href="namespacepm__kind.html#a609d23b0915ea97e6a89e9bef7c743bd">RK32</a>, <a class="el" href="namespacepm__kind.html#aa3a66a01e440da406e627e6e4e6e3908">RK64</a>, or <a class="el" href="namespacepm__kind.html#adf0fd3c248f14b733bc8cd7876f75bef">RK128</a>) supported by the library.<br  />
+</div><!-- fragment --> where <code>RKG</code> can refer to any <code>real</code> type kind parameter any supported by the processor (e.g., <a class="el" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a>, <a class="el" href="namespacepm__kind.html#a609d23b0915ea97e6a89e9bef7c743bd">RK32</a>, <a class="el" href="namespacepm__kind.html#aa3a66a01e440da406e627e6e4e6e3908">RK64</a>, or <a class="el" href="namespacepm__kind.html#adf0fd3c248f14b733bc8cd7876f75bef">RK128</a>) supported by the library.<br  />
  </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">niter</td><td>: The input/output positive scalar of type <code>integer</code> of default kind <a class="el" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a> containing the <b>maximum</b> number of allowed iterations in the algorithm in search of the bracket.<br  />
  On output, <ol>
@@ -220,7 +220,7 @@ The procedures under discussion are <code>recursive</code>.</dd></dl>
 <a class="anchor" id="example-setBracketMin"></a><b>Example usage</b> <a href="#example-setBracketMin">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="fortran_statement">program</span> example</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: <a class="code hl_variable" href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">SK</a>, <a class="code hl_variable" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, <a class="code hl_variable" href="namespacepm__kind.html#a3f17ea307d594843815ae49bcc6ffdac">LK</a></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: RKC<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#aeaf5b6852e183ca6b851c8b47c0e8301">RKH</a> <span class="fortran_comment">! all processor kinds are supported.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__kind.html">pm_kind</a>, <span class="fortran_statement">only</span>: RKG<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span><a class="code hl_variable" href="namespacepm__kind.html#aeaf5b6852e183ca6b851c8b47c0e8301">RKH</a> <span class="fortran_comment">! all processor kinds are supported.</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__io.html">pm_io</a>, <span class="fortran_statement">only</span>: <a class="code hl_struct" href="structpm__io_1_1display__type.html">display_type</a></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__optimization.html">pm_optimization</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__optimization_1_1setBracketMin.html">setBracketMin</a>, <a class="code hl_interface" href="interfacepm__optimization_1_1isBracketMin.html">isBracketMin</a></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__err.html">pm_err</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__err_1_1setAsserted.html">setAsserted</a></div>
@@ -229,7 +229,7 @@ The procedures under discussion are <code>recursive</code>.</dd></dl>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="fortran_statement">implicit none</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="fortran_statement">integer</span>(IK) :: niter, maxniter<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="fortran_statement">    real</span>(RKC) :: xlow, xmin, xupp, flow, fmin, fupp</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="fortran_statement">    real</span>(RKG) :: xlow, xmin, xupp, flow, fmin, fupp</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="fortran_statement">type</span>(display_type) :: disp</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_variable" href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">disp</a><span class="fortran_operator_symbols"> = </span><a class="code hl_struct" href="structpm__io_1_1display__type.html">display_type</a>(file<span class="fortran_operator_symbols"> = </span><span class="fortran_string">&quot;main.out.F90&quot;</span>)</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
@@ -300,8 +300,8 @@ The procedures under discussion are <code>recursive</code>.</dd></dl>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="fortran_statement">contains</span></div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="fortran_prefix">function </span>getSqPos(x) <span class="fortran_suffix">result</span>(func)</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="fortran_statement">        real</span>(RKC),<span class="fortran_attribute"> intent(in)</span> :: x</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="fortran_statement">        real</span>(RKC) :: func</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="fortran_statement">        real</span>(RKG),<span class="fortran_attribute"> intent(in)</span> :: x</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="fortran_statement">        real</span>(RKG) :: func</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        func<span class="fortran_operator_symbols"> = </span>(x<span class="fortran_operator_symbols"> - </span><span class="fortran_numeric_literal">1</span>)<span class="fortran_operator_symbols">*</span><span class="fortran_operator_symbols">*</span><span class="fortran_numeric_literal">2</span></div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="fortran_statement">end function</span></div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
@@ -413,7 +413,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__optimization.html">pm_optimization</a></li><li class="navelem"><a class="el" href="interfacepm__optimization_1_1setBracketMin.html">setBracketMin</a></li>
-        <li class="footer">Generated on Sat May 18 2024 01:45:25 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat May 18 2024 20:01:18 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

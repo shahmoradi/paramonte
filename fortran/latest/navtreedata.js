@@ -129,7 +129,7 @@ var NAVTREEINDEX =
 "structpm__io_1_1filext__type.html#a62d5171d16e79683896d38f49a249978",
 "structpm__matrixPack_1_1package__type.html",
 "structpm__quadTest_1_1intGenExpGammaPDF__type.html#a6bcb00bd8f3995d2e35f59e8f6f3312a",
-"structpm__sampling_1_1sampler__type.html#ada89ec39c5b09394fd44bc2d8e360c56",
+"structpm__sampling_1_1sampler__type.html#adab84ca40277f065e1c16ea2f42e1300",
 "structpm__timer_1_1timerDAT__type.html#a9f3646926c4fe08ff1d9779ec6e18438",
 "test__pm__batse_8F90.html#a19bcd7b9041c253c44f51ab9680b11bc",
 "test__pm__io_8F90.html#a37a3e029f34278e4ecd630ca0c199ddb",
