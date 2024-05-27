@@ -147,8 +147,9 @@ $(document).ready(function(){initNavTree('kde2d_8m.html',''); initResizable(); }
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa714dd95b499d1590a33b46518e2db67"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kde2d_8m.html#aa714dd95b499d1590a33b46518e2db67">kde2d</a> (in data, in n, in MIN_XY, in MAX_XY)</td></tr>
-<tr class="separator:aa714dd95b499d1590a33b46518e2db67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3954bb5681cb9fd19f4acf85f39447c"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kde2d_8m.html#ac3954bb5681cb9fd19f4acf85f39447c">kde2d</a> (in data, in resol, in xymin, in xymax)</td></tr>
+<tr class="memdesc:ac3954bb5681cb9fd19f4acf85f39447c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the Gaussian kernel density estimate of the input bivariate data.  <a href="kde2d_8m.html#ac3954bb5681cb9fd19f4acf85f39447c">More...</a><br /></td></tr>
+<tr class="separator:ac3954bb5681cb9fd19f4acf85f39447c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0c7b1c0bdebfed7621160e7aa9f3a0b"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kde2d_8m.html#ac0c7b1c0bdebfed7621160e7aa9f3a0b">evolve</a> (in t)</td></tr>
 <tr class="separator:ac0c7b1c0bdebfed7621160e7aa9f3a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c836f5e58b0d3c04aef604706f25a0b"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kde2d_8m.html#a1c836f5e58b0d3c04aef604706f25a0b">func</a> (in s, in t)</td></tr>
@@ -307,8 +308,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa714dd95b499d1590a33b46518e2db67" name="aa714dd95b499d1590a33b46518e2db67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa714dd95b499d1590a33b46518e2db67">&#9670;&nbsp;</a></span>kde2d()</h2>
+<a id="ac3954bb5681cb9fd19f4acf85f39447c" name="ac3954bb5681cb9fd19f4acf85f39447c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3954bb5681cb9fd19f4acf85f39447c">&#9670;&nbsp;</a></span>kde2d()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -323,19 +324,19 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
+          <td class="paramname"><em>resol</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>MIN_XY</em>, </td>
+          <td class="paramname"><em>xymin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>MAX_XY</em>&#160;</td>
+          <td class="paramname"><em>xymax</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -344,6 +345,109 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Compute the Gaussian kernel density estimate of the input bivariate data. </p>
+<p >This function offers a fast and accurate bivariate kernel density estimator with diagonal bandwidth matrix.<br  />
+ The kernel is assumed to be Gaussian.<br  />
+ The two bandwidth parameters are chosen optimally without ever using/assuming a parametric model for the data or any "rules of thumb".<br  />
+ Particularly, this algorithm is immune to accuracy failures in the estimation of multimodal densities with widely separated modes (see examples below).<br  />
+</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>: The input matrix of shape <code>[nrow, 2]</code> containing the continuous data whose density estimate is to be returned.<br  />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">resol</td><td>: The input scalar whole number representing the size of the <code>resol</code> by <code>resol</code> grid over which the density is computed where <code>resol</code> has to be a power of <code>2</code>, otherwise <code>resol = 2^ceil(log2(resol))</code> will be used.<br  />
+ (<b>optional</b>. If missing or empty, it will be set to <code>2^8</code>.) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xymin</td><td>: The input vector of size <code>2</code> containing the lower limits of the bounding box over which the density is computed.<br  />
+ (<b>optional</b>. If missing or empty, it will be set to an appropriate value as prescribed in the note below.) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xymax</td><td>: The input vector of size <code>2</code> containing the upper limits of the bounding box over which the density is computed.<br  />
+ (<b>optional</b>. If missing or empty, it will be set to an appropriate value as prescribed in the note below.)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>bandwidth</code> : The output row vector with the two optimal bandwidths for a bivaroate Gaussian kernel.<br  />
+ The format of the vector is <code>bandwidth = [bandwidth_x, bandwidth_y]</code>.<br  />
+ <code>density</code> : The output <code>resol</code> by <code>resol</code> matrix containing the density values over the <code>resol</code> by <code>resol</code> grid.<br  />
+ This argument is not computed unless the output argument is present.<br  />
+ <code>meshx</code> : The x-axis meshgrid over which the variable "density" has been computed.<br  />
+ This output is particularly useful in combination with MATLAB intrinsic <code>surf</code>.<br  />
+ The intended usage is <code>surf(meshx, meshy, density)</code>.<br  />
+ <code>meshy</code> : The y-axis meshgrid over which the variable "density" has been computed.<br  />
+ This output is particularly useful in combination with MATLAB intrinsic <code>surf</code>.<br  />
+ The intended usage is <code>surf(meshx, meshy, density)</code>.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="interface-kde2d"></a><b>Possible calling interfaces</b> <a href="#interface-kde2d">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">[bandwidth, density, meshx, meshy] = pm.fit.kde2d(data);</div>
+<div class="line">[bandwidth, density, meshx, meshy] = pm.fit.kde2d(data, resol);</div>
+<div class="line">[bandwidth, density, meshx, meshy] = pm.fit.kde2d(data, resol, xymin);</div>
+<div class="line">[bandwidth, density, meshx, meshy] = pm.fit.kde2d(data, resol, xymin, xymax);</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The procedure for computing the default values for the input arguments <code>xymin</code> and <code>xymax</code> are as follows:<br  />
+ <div class="fragment"><div class="line">dmax = max(data, [], 1);</div>
+<div class="line">dmin = min(data, [], 1);</div>
+<div class="line">dlim = dmax - dmin;</div>
+<div class="line">xymax = dmax + dlim / 4;</div>
+<div class="line">xymin = dmin - dlim / 4;</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section see"><dt>See also</dt><dd>Kernel density estimation via diffusion, Z. I. Botev, J. F. Grotowski, and D. P. Kroese (2010) Annals of Statistics, Volume 38, Number 5, pages 2916-2957.<br  />
+ <a class="el" href="classContour.html">pm.vis.subplot.Contour</a>.<br  />
+ <a class="el" href="classContour.html">pm.vis.cascade.Contour</a>.<br  />
+ <a class="el" href="classContour.html">pm.vis.plot.Contour</a>.<br  />
+ <a class="el" href="classContour.html">pm.vis.tile.Contour</a>.<br  />
+ <a class="el" href="classContourf.html">pm.vis.subplot.Contourf</a>.<br  />
+ <a class="el" href="classContourf.html">pm.vis.cascade.Contourf</a>.<br  />
+ <a class="el" href="classContourf.html">pm.vis.plot.Contourf</a>.<br  />
+ <a class="el" href="classContourf.html">pm.vis.tile.Contourf</a>.<br  />
+ <a class="el" href="classContour3.html">pm.vis.subplot.Contour3</a>.<br  />
+ <a class="el" href="classContour3.html">pm.vis.cascade.Contour3</a>.<br  />
+ <a class="el" href="classContour3.html">pm.vis.plot.Contour3</a>.<br  />
+ <a class="el" href="classContour3.html">pm.vis.tile.Contour3</a>.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-mvnmix"></a><b>Example usage</b> <a href="#example-mvnmix">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"></div><!-- fragment --> \matlabrun{mvnmix} <br  />
+<a class="anchor" id="vis-mvnmix"></a><b>Visualization of the example output</b> <a href="#vis-mvnmix">⛓</a> <div class="image">
+<img src="example/fit/kde2d/mvnmix/kde2d.png" alt="" width="700"/>
+</div>
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-mvnmixfar"></a><b>Example usage</b> <a href="#example-mvnmixfar">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"></div><!-- fragment --> \matlabrun{mvnmixfar} <br  />
+<a class="anchor" id="vis-mvnmixfar"></a><b>Visualization of the example output</b> <a href="#vis-mvnmixfar">⛓</a> <div class="image">
+<img src="example/fit/kde2d/mvnmixfar/kde2d.png" alt="" width="700"/>
+</div>
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-sincos"></a><b>Example usage</b> <a href="#example-sincos">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"></div><!-- fragment --> \matlabrun{sincos} <br  />
+<a class="anchor" id="vis-sincos"></a><b>Visualization of the example output</b> <a href="#vis-sincos">⛓</a> <div class="image">
+<img src="example/fit/kde2d/sincos/kde2d.png" alt="" width="700"/>
+</div>
+</dd></dl>
+<p><br  />
+<a class="anchor" id="final-kde2d"></a><b>Final Remarks</b> <a href="#final-kde2d">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+fit/kde2d.m#L94 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+</p><ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+<p>This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<p>Copyright (c) 2015, Dr. Zdravko Botev All rights reserved.</p>
+<p >Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: </p><pre class="fragment">* Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in
+  the documentation and/or other materials provided with the distribution
+* Neither the name of the The University of New South Wales nor the names
+  of its contributors may be used to endorse or promote products derived
+  from this software without specific prior written permission.
+</pre><p> THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. </p>
 
 </div>
 </div>
@@ -437,7 +541,7 @@ Functions</h2></td></tr>
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_c9701723fea82abc2ca4a55a98a51e38.html">+fit</a></li><li class="navelem"><a class="el" href="kde2d_8m.html">kde2d.m</a></li>
-        <li class="footer">Generated on Sat May 18 2024 23:23:08 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu May 23 2024 19:37:46 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

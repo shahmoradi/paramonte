@@ -7,7 +7,7 @@ var kde2d_8m =
     [ "idct1d", "kde2d_8m.html#a8265e07abb49b1d90fc698df43406c71", null ],
     [ "idct2d", "kde2d_8m.html#a07d4772d8a0f7f67c9f41fa25140b3e5", null ],
     [ "K", "kde2d_8m.html#a309c15b0d9b65b2964e2ae1cd4f19b41", null ],
-    [ "kde2d", "kde2d_8m.html#aa714dd95b499d1590a33b46518e2db67", null ],
+    [ "kde2d", "kde2d_8m.html#ac3954bb5681cb9fd19f4acf85f39447c", null ],
     [ "ndhist", "kde2d_8m.html#a435edcbcc9e320e752441064dfbd4cea", null ],
     [ "psi", "kde2d_8m.html#afee392da8e9b61e47a027218ecdab0b0", null ],
     [ "root", "kde2d_8m.html#a026e50e02e7e3857d23ce7bbec121c92", null ]

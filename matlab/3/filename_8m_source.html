@@ -140,87 +140,75 @@ $(document).ready(function(){initNavTree('filename_8m_source.html',''); initResi
   <div class="headertitle"><div class="title">filename.m</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="filename_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="filename_8m.html#afccca88f30b0b5fde69638d92c4d19f6">    1</a></span>function str = <a class="code hl_function" href="filename_8m.html#afccca88f30b0b5fde69638d92c4d19f6">filename</a>(prefix)</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>    %</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    %   Return a scalar MATLAB <span class="keywordtype">string</span> containing</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    %   an ``outputFileName`` base simulation specification</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    %   of the ParaMonte samplers based on the current date and time.</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    %</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    %   \note</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    %</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    %       This functionality is primarily used by the ParaMonte</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    %       samplers to generate random output file base <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> <span class="keywordflow">for</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    %       situations where the use does not specify a <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>.</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    %</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    %   Parameters</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    %   ----------</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    %</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    %       prefix</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    %</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    %           The input scalar MATLAB string,</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    %           containing the desired prefix, e.g.,</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    %           ParaDRAM, ParaDISE, ParaNest, ...</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    %           (**optional**, <span class="keywordflow">default</span> = ``<span class="stringliteral">&quot;&quot;</span>``)</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    %</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    %   Returns</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    %   -------</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    %</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    %       str</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    %</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    %           The output scalar MATLAB <span class="keywordtype">string</span> containing</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    %           an output file <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> based on the current date and time.</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    %</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    %           The following represents the <span class="keyword">template</span> used</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    %           across all programming language environments:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    %</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    %               YYYYMMDD_HHMMSS_MMM</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    %</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    %           or</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    %</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    %               prefix_YYYYMMDD_HHMMSS_MMM</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    %</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    %           where,</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    %</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    %               1.  ``prefix``  is replaced with the input ``prefix`` <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>.</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    %               2.  ``YYYY``    is replaced with the current Gregorian year.</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    %               2.  ``MM``      is replaced with the current month of year.</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    %               2.  ``DD``      is replaced with the current day of month.</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    %               2.  ``HH``      is replaced with the current hour of day.</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    %               2.  ``MM``      is replaced with the current minute of hour.</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    %               2.  ``SS``      is replaced with the current second of minute.</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    %               2.  ``MMM``     is replaced with the current millisecond of second.</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    %</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    %   Interface</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    %   ---------</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    %</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    %       str = pm.io.filename(prefix)</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    %</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    %   LICENSE</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    %   -------</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    %</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    %       https:<span class="comment">//github.com/cdslaborg/paramonte/blob/main/LICENSE.md</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    %</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> nargin &lt; 1</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        prefix = [];</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    end</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    str = datestr(now, <span class="stringliteral">&#39;yyyymmdd_HHMMSS_FFF&#39;</span>);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    % MATLAB recommends replacing the above with the following.</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    % The plan was to keep the old syntax as it is not clear </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    % when the <span class="keyword">new</span> syntax was instroduces.</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    %str = string(datetime(<span class="stringliteral">&#39;now&#39;</span>, <span class="stringliteral">&#39;format&#39;</span>, <span class="stringliteral">&#39;yyyyMMdd_HHmmss_SSS&#39;</span>))</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    if ~isempty(prefix)</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        str = <span class="keywordtype">string</span>(prefix) + &quot;_&quot; + str;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    end</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>end</div>
-<div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div></div>
-<div class="ttc" id="afilename_8m_html_afccca88f30b0b5fde69638d92c4d19f6"><div class="ttname"><a href="filename_8m.html#afccca88f30b0b5fde69638d92c4d19f6">filename</a></div><div class="ttdeci">function filename(in prefix)</div></div>
+<a href="filename_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>%&gt;  \brief</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Return a scalar MATLAB <span class="keywordtype">string</span> containing</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;  an ``outputFileName`` base simulation specification</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;  of the ParaMonte samplers based on the current date and time.</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  \note</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;  This functionality is primarily used by the ParaMonte</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;  samplers to generate random output file base <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> <span class="keywordflow">for</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  situations where the use does not specify a <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>.</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;  \param[in]  prefix  :   The input scalar MATLAB string,</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;                          containing the desired prefix, e.g.,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;                          ParaDRAM, ParaDISE, ParaNest, ...</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;                          (**optional**, <span class="keywordflow">default</span> = ``<span class="stringliteral">&quot;&quot;</span>``)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;  \<span class="keywordflow">return</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;  `str`               :   The output scalar MATLAB <span class="keywordtype">string</span> containing</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;                          an output file <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> based on the current date and time.&lt;br&gt;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;                          The following represents the <span class="keyword">template</span> used</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;                          across all programming language environments:&lt;br&gt;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;                          &lt;pre&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;                              YYYYMMDD_HHMMSS_MMM</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;                          or</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;                              prefix_YYYYMMDD_HHMMSS_MMM</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;                          where,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;                              1.  ``prefix``  is replaced with the input ``prefix`` <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>.</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;                              2.  ``YYYY``    is replaced with the current Gregorian year.</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;                              2.  ``MM``      is replaced with the current month of year.</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;                              2.  ``DD``      is replaced with the current day of month.</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;                              2.  ``HH``      is replaced with the current hour of day.</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;                              2.  ``MM``      is replaced with the current minute of hour.</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;                              2.  ``SS``      is replaced with the current second of minute.</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;                              2.  ``MMM``     is replaced with the current millisecond of second.</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;                          &lt;/pre&gt;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;  \interface{<a class="code hl_function" href="filename_8m.html#afccca88f30b0b5fde69638d92c4d19f6">filename</a>}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;  \code{.m}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;      str = pm.io.filename(prefix)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>%&gt;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>%&gt;  \endcode</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>%&gt;  \final{<a class="code hl_function" href="filename_8m.html#afccca88f30b0b5fde69638d92c4d19f6">filename</a>}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>%&gt;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>%&gt;  \author</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>%&gt;  \JoshuaOsborne, May 21 2024, 6:13 PM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="filename_8m.html#afccca88f30b0b5fde69638d92c4d19f6">   48</a></span>function str = <a class="code hl_function" href="filename_8m.html#afccca88f30b0b5fde69638d92c4d19f6">filename</a>(prefix)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> nargin &lt; 1</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        prefix = [];</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    end</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    str = datestr(now, <span class="stringliteral">&#39;yyyymmdd_HHMMSS_FFF&#39;</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    % MATLAB recommends replacing the above with the following.</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    % The plan was to keep the old syntax as it is not clear </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    % when the <span class="keyword">new</span> syntax was instroduces.</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    %str = string(datetime(<span class="stringliteral">&#39;now&#39;</span>, <span class="stringliteral">&#39;format&#39;</span>, <span class="stringliteral">&#39;yyyyMMdd_HHmmss_SSS&#39;</span>))</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    if ~isempty(prefix)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        str = <span class="keywordtype">string</span>(prefix) + &quot;_&quot; + str;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    end</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>end</div>
+<div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div><div class="ttdoc">Return the MPI library name as used in naming the ParaMonte MATLAB shared libraries.</div></div>
+<div class="ttc" id="afilename_8m_html_afccca88f30b0b5fde69638d92c4d19f6"><div class="ttname"><a href="filename_8m.html#afccca88f30b0b5fde69638d92c4d19f6">filename</a></div><div class="ttdeci">function filename(in prefix)</div><div class="ttdoc">Return a scalar MATLAB string containing an outputFileName base simulation specification of the ParaM...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_854d52beedff43dae06452a3ce5eadab.html">+io</a></li><li class="navelem"><a class="el" href="filename_8m.html">filename.m</a></li>
-        <li class="footer">Generated on Sat May 18 2024 23:23:06 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu May 23 2024 19:37:45 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

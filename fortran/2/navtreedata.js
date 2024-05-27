@@ -44,7 +44,7 @@ var NAVTREE =
     [ "ParaMonte Fortran Language Examples", "index.html#ParaMonteLangExamples", null ],
     [ "ParaMonte Fortran Language Benchmarks", "index.html#ParaMonteLangBenchmarks", null ],
     [ "ParaMonte Fortran Documentation Troubleshooting", "index.html#ParaMonteLangDocumentationTroubleshooting", null ],
-    [ "ParaMonte Fortran ToDO List", "index.html#ParaMonteLangToDo", null ],
+    [ "ParaMonte Fortran ToDo List", "index.html#ParaMonteLangToDo", null ],
     [ "Todo List", "todo.html", null ],
     [ "Authors", "authors.html", null ],
     [ "Test List", "test.html", null ],

@@ -1,4 +1,4 @@
 var credits_8m =
 [
-    [ "authors", "credits_8m.html#ad5933f73f67bbfe38c80ad2ac8cc9ddf", null ]
+    [ "credits", "credits_8m.html#ad922d80af3007a2ca33c26e89c77fbee", null ]
 ];

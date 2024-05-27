@@ -5,6 +5,7 @@ var searchData=
   ['make_5fcell_2',['make_cell',['../savefig_8m.html#a0c6e0590314a0ef5a661a49da8c1cb2b',1,'savefig.m']]],
   ['map_3',['map',['../map_8m.html#ae3665b5622a063cb00f01de3bd29b658',1,'map.m']]],
   ['medimage_4',['medimage',['../medimage_8m.html#a3c27fa8a3a6b47c4a334345066b89f0e',1,'medimage.m']]],
-  ['mex_5',['mex',['../mex_8m.html#afbd3ce0a6d28b7d13813025e98c43feb',1,'mex(in mexname, in config):&#160;mex.m'],['../mexdir_8m.html#afbd3ce0a6d28b7d13813025e98c43feb',1,'mex(in mexname, in config):&#160;mexdir.m']]],
-  ['mincirc_6',['mincirc',['../mincirc_8m.html#a0de12e6a6b8b8db3285d3600803d2082',1,'mincirc.m']]]
+  ['mex_5',['mex',['../mex_8m.html#afbd3ce0a6d28b7d13813025e98c43feb',1,'mex.m']]],
+  ['mexdir_6',['mexdir',['../mexdir_8m.html#afe14acaa5deaa1ac6ce46094ac8019ad',1,'mexdir.m']]],
+  ['mincirc_7',['mincirc',['../mincirc_8m.html#a0de12e6a6b8b8db3285d3600803d2082',1,'mincirc.m']]]
 ];

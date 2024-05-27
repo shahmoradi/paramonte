@@ -140,285 +140,252 @@ $(document).ready(function(){initNavTree('Sampler_8m_source.html',''); initResiz
   <div class="headertitle"><div class="title">Sampler.m</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="Sampler_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="classSampler.html">    1</a></span>classdef <a class="code hl_class" href="classSampler.html">Sampler</a> &lt; pm.matlab.Handle</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>    %</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    %   This is the base <span class="keyword">class </span>for the ParaMonte sampler routines.</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    %</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    %   Attributes</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    %   ----------</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    %</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    %       See below <span class="keywordflow">for</span> information on the attributes (properties).</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    %</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    %   Methods</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    %   -------</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    %</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    %       See below <span class="keywordflow">for</span> information on the methods.</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    %</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    %   LICENSE</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    %   -------</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    %</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    %       https:<span class="comment">//github.com/cdslaborg/paramonte/blob/main/LICENSE.md</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    %</div>
+<a href="Sampler_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>%&gt;  \brief</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  This is the base <span class="keyword">class </span>for the ParaMonte sampler routines.</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;  \note</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  See below <span class="keywordflow">for</span> information on the attributes (properties).</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;  \note</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;  See below <span class="keywordflow">for</span> information on the methods.</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;  \final{<a class="code hl_class" href="classSampler.html">Sampler</a>}</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;  \author</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;  \JoshuaOsborne, May 21 2024, 12:43 AM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classSampler.html">   16</a></span>classdef <a class="code hl_class" href="classSampler.html">Sampler</a> &lt; pm.matlab.Handle</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    properties(Access = <span class="keyword">public</span>)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        %</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        %   input</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        %</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        %       Optional scalar MATLAB <span class="keywordtype">string</span> representing the path to an external</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        %       input file that contains the simulation specification namelist(s).</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        %</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        %       \warning</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        %</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        %           USE THIS OPTIONAL ARGUMENT ONLY IF YOU KNOW WHAT YOU ARE DOING.</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        %           Specifying an input simulation file will force the ParaMonte sampler</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        %           to ignore all other simulation specifications set by the user via</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        %           the ``spec`` component of the sampler instance.</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        %</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        input = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        %</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        %   checked</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classSampler.html#af29c6f7effc6fae97c39d08d80903698">   37</a></span>        %</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        %       Optional scalar MATLAB logical.</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        %       If set to ``<span class="keyword">true</span>``, then the checked (verified) versions of the</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        %       ParaMonte MATLAB shared libraries will be used <span class="keywordflow">for</span> simulations.</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        %       This means that most function calls and computations will be</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        %       checked at runtime to ensure correctness, at the cost of</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        %       noticeably slower runtime simulation speeds.</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        %</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        %       Set <span class="keyword">this</span> option to ``<span class="keyword">true</span>`` only <span class="keywordflow">for</span> diagnostics, testing, and development.</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        %       If set to empty, the sampler will first search <span class="keywordflow">for</span> the non-checked <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        %       and <span class="keywordflow">if</span> none found, will search <span class="keywordflow">for</span> a checked <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> of the library.</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        %</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        checked = [];</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        %</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        %   mpiname</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        %</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classSampler.html#ae1f73075258327f6911b4a302909fb9b">   53</a></span>        %       Optional scalar MATLAB <span class="keywordtype">string</span> representing the (<a class="code hl_function" href="vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a>) <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> of the</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        %       MPI runtime library. The following three library names are supported:</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        %</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        %           -   <span class="stringliteral">&quot;impi&quot;</span>      :   The Intel MPI runtime library (Windows/Linux).</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        %           -   <span class="stringliteral">&quot;mpich&quot;</span>     :   The MPICH MPI runtime library (Linux/macOS).</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        %           -   <span class="stringliteral">&quot;openmpi&quot;</span>   :   The OpenMPI runtime library (Linux/macOS).</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        %</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        %       By <span class="keywordflow">default</span>, you should set <span class="keyword">this</span> argument to ``pm.lib.mpi.choice()``</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        %       to enable the right preferred <a class="code hl_function" href="choice_8m.html#ad6ebd2e3ca4b3f6315f1e52a3cc195a6">choice</a> of MPI-enabled ParaMonte libraries.</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        %       If <span class="keywordflow">for</span> any reason, you want to use a non-preferred non-<span class="keywordflow">default</span> MPI library,</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        %       you can set the MPI library <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> explicitly as in the above <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a>.</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        %</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        %       Beware that you must launch MATLAB with an ``mpiexec`` binary that</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        %       comes from the same MPI library <a class="code hl_function" href="vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a> specified <span class="keywordflow">for</span> ``mpiname``.</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        %       Note that the MPI-<a class="code hl_function" href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a> ParaMonte shared libraries</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        %       corresponding to the specified value <span class="keywordflow">for</span> ``mpiname``</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        %       may not exist in the ParaMonte package.</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        %       For example,</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        %</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        %           -   On Windows, only ParaMonte library</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        %               builds with Intel MPI are supported.</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        %</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        %           -   On Linux, the ParaMonte library builds with</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        %               all MPI libraries listed above are supported,</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        %               but there is no guarantee of their availability in</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        %               the package. Only the ParaMonte library builds with</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        %               Intel MPI (``<span class="stringliteral">&quot;impi&quot;</span>``) are guaranteed to exist,</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        %               unless user builds the ParaMonte MATLAB package</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        %               from GitHub source for the desired MPI library.</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        %</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        %           -   On Darwin (macOS), only the ParaMonte shared library</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        %               builds with MPICH and OpenMPI libraries are supported,</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        %               but there is no guarantee of their availability in the</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        %               package. Only the ParaMonte library builds with OpenMPI</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        %               (``&quot;openmpi&quot;``) are guaranteed to exist, unless user</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        %               builds the ParaMonte MATLAB package from GitHub</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        %               source for the desired specified MPI library.</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        %</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        %       \warning</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        %</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        %           USE THIS OPTIONAL ARGUMENT ONLY IF YOU KNOW ITS RAMIFICATIONS.</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        %           This option should rarely be needed in any normal simulation.</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        %</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        %       The default value for ``mpiname`` is an empty <span class="keywordtype">string</span>,</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        %       implying no use of MPI-enabled ParaMonte library routines.</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        %</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        mpiname = &quot;&quot;;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        %</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        %   silent</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        %</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        %       Optional logical (Boolean) indicator <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> is ``false`` by default.</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classSampler.html#ae472602c809f8250aa62cdad84ef9cfe">  104</a></span>        %       If it is set to ``true``, it will silence all output postprocessing messages.</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        %</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        %       \note</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        %</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        %           Setting ``mpiname`` to a non-empty <span class="keywordtype">string</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        %           will automatically set ``silent`` to ``true``.</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        %</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        silent = false;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        %</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        %   spec</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        %</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        %       A MATLAB structure containing all simulation specifications.</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        %       All specifications are set to appropriate default values at runtime.</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classSampler.html#ac5a72d9797fc1bb96b84601276d4bd33">  117</a></span>        %       Set the `spec` attributes to the desired values of your <a class="code hl_function" href="choice_8m.html#ad6ebd2e3ca4b3f6315f1e52a3cc195a6">choice</a></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        %       to override the default simulation specifications.</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        %</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        spec = [];</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    end</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    properties(Access = public, Hidden)</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        mexname = &quot;pm_sampling&quot;;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        libtype = &quot;shared&quot;;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        partype = &quot;serial&quot;;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classSampler.html#a82cff287f10efc0233740053268b1848">  127</a></span>        memtype = &quot;heap&quot;;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        bldtype = &quot;&quot;; % build type</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        clstype = &quot;&quot;; % <a class="code hl_function" href="compiler_8m.html#a97012960b56e67629c96f09b91cd7ec8">compiler</a>/linker suite</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> = &quot;self&quot;;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <a class="code hl_function" href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a> = [];</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classSampler.html#a13470386f7e22a5a0c8d6612e2b9ba46">  132</a></span>        matpath = []; % MATLAB paths.</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        method = &quot;&quot;;</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classSampler.html#a7fa765a0d8864e7b81d4c0cd9b638fca">  134</a></span>        ndim = [];</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        %njob = [];</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classSampler.html#a3d682527fcb12304f4369255d6079250">  136</a></span>        nml = [];</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        %</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classSampler.html#aff3b3a560e37699428dbcb4b445e0d5a">  138</a></span>        %   libspec</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        %</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="classSampler.html#ab62fb4b958ab96f81a6b261448f4e72b">  140</a></span>        %       Optional scalar MATLAB <span class="keywordtype">string</span> containing a <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> of colon-(:)-separated</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        %       configurations of the kernel shared library to be used for the sampling task.</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classSampler.html#acd00278ba57e029073aba586e85d8ece">  142</a></span>        %       The most important of all is the <a class="code hl_function" href="compiler_8m.html#a97012960b56e67629c96f09b91cd7ec8">compiler</a> suite with <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> the library is built.</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        %</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classSampler.html#ab4f4d5fc46d66e522d3cc2ec8d5fb0ef">  144</a></span>        %       \warning</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        %</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="classSampler.html#a3936123e51bf6cac36fd878ce285a69b">  146</a></span>        %           USE THIS OPTIONAL ARGUMENT ONLY IF YOU KNOW WHAT YOU ARE DOING.</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        %           The specified value for ``libspec`` is parsed internally to match</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="classSampler.html#a22f66b8a421ae0113a990528a5c996b4">  148</a></span>        %           a corresponding library path <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> within the ParaMonte library.</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        %           The simulations will fail if no such directory can be found.</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classSampler.html#a2aecf3fc3f3e679765fc34414a7c387e">  150</a></span>        %</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        libspec = &quot;nocheck&quot;;</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classSampler.html#aaf6eaedfc14499ba223ad75bb6405858">  152</a></span>    end</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="classSampler.html#aaf4895178075a0d6aaacdd607fe80887">  155</a></span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    methods(Access = public)</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        function self = <a class="code hl_class" href="classSampler.html">Sampler</a>(method)</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            %</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            %   Return a scalar <span class="keywordtype">object</span> of class ``pm.sampling.<a class="code hl_class" href="classSampler.html">Sampler</a>``.</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            %</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            %   This is the constructor of the class ``pm.sampling.<a class="code hl_class" href="classSampler.html">Sampler</a>``.</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            %   This class is not meant to be accessed by the end users.</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            %   It merely serves as the blueprint for the sampler subclasses</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            %   accessible to the end users.</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            %</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            %   Parameters</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            %   ----------</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            %</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            %       method</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="classSampler.html#aadb3b663b661dbff6fbce17264689d8d">  171</a></span>            %</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            %           The input scalar MATLAB <span class="keywordtype">string</span> containing</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            %           the <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> of the target ParaMonte sampler.</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            %</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            %   Returns</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            %   -------</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            %</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            %       self</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="classSampler.html#a203ff4b56b6248910944a745de505e82">  179</a></span>            %</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            %           The output scalar <span class="keywordtype">object</span> of class ``pm.sampling.<a class="code hl_class" href="classSampler.html">Sampler</a>``.</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            %</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            %   Interface</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            %   ---------</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            %</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            %       sampler = pm.sampling.<a class="code hl_class" href="classSampler.html">Sampler</a>();</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            %       sampler = pm.sampling.<a class="code hl_class" href="classSampler.html">Sampler</a>([]);</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            %       sampler = pm.sampling.<a class="code hl_class" href="classSampler.html">Sampler</a>(method);</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            %</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            %   LICENSE</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            %   -------</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            %</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            %       https:<span class="comment">//github.com/cdslaborg/paramonte/blob/main/LICENSE.md</span></div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            %</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            if  nargin &lt; 1</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                self.method = &quot;sampler&quot;;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            else</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                self.method = <span class="keywordtype">string</span>(method);</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            end</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            self.<a class="code hl_function" href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a> = pm.<a class="code hl_function" href="lib_8m.html#ab7532545afe200f8d0e973cf2497d215">lib</a>.<a class="code hl_function" href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a>();</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            if  self.method == &quot;ParaDRAM&quot;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                self.spec = pm.sampling.<a class="code hl_class" href="classSpecDRAM.html">SpecDRAM</a>(self.method);</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            elseif self.method == &quot;sampler&quot;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                self.spec = pm.sampling.<a class="code hl_class" href="classSpecBase.html">SpecBase</a>(self.method);</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            else</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                error   ( newline ...</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                        + &quot;Unrecognized or unsupported ParaMonte sampler: &quot; + self.method + newline ...</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                        + newline ...</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                        );</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            end</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            %filePath = mfilename(&quot;fullpath&quot;); addpath(genpath(filePath),&quot;-begin&quot;);</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            self.<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> = inputname(1);</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        end</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        reportList = readReport(self, pattern)</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        restartList = readRestart(self, pattern)</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        chainList = readChain(self, pattern, sep)</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        sampleList = readSample(self, pattern, sep)</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        progressList = readProgress(self, pattern, sep)</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    end</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    methods(Hidden)</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        finalize(self);</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        run(self, <a class="code hl_function" href="getLogFunc_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b">getLogFunc</a>, ndim)</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        fileList = findfile(self, ftype, pattern);</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    end</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>end</div>
-<div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div></div>
-<div class="ttc" id="a_09os_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div></div>
-<div class="ttc" id="a_09update_2version_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div></div>
-<div class="ttc" id="achoice_8m_html_ad6ebd2e3ca4b3f6315f1e52a3cc195a6"><div class="ttname"><a href="choice_8m.html#ad6ebd2e3ca4b3f6315f1e52a3cc195a6">choice</a></div><div class="ttdeci">function choice()</div></div>
-<div class="ttc" id="aclassHandle_html"><div class="ttname"><a href="classHandle.html">Handle</a></div><div class="ttdef"><b>Definition:</b> <a href="Handle_8m_source.html#l00001">Handle.m:1</a></div></div>
-<div class="ttc" id="aclassSampler_html"><div class="ttname"><a href="classSampler.html">Sampler</a></div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00001">Sampler.m:2</a></div></div>
-<div class="ttc" id="aclassSampler_html_a04e65e54cdf2f48c07889ac0f8c1861a"><div class="ttname"><a href="classSampler.html#a04e65e54cdf2f48c07889ac0f8c1861a">Sampler::readSample</a></div><div class="ttdeci">function readSample(in self, in pattern, in sep)</div></div>
-<div class="ttc" id="aclassSampler_html_a05facc7b19d55723b4b9b7f5754c8ae6"><div class="ttname"><a href="classSampler.html#a05facc7b19d55723b4b9b7f5754c8ae6">Sampler::run</a></div><div class="ttdeci">function run(in self, in getLogFunc, in ndim)</div></div>
-<div class="ttc" id="aclassSampler_html_a13470386f7e22a5a0c8d6612e2b9ba46"><div class="ttname"><a href="classSampler.html#a13470386f7e22a5a0c8d6612e2b9ba46">Sampler::mexname</a></div><div class="ttdeci">Property mexname</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00132">Sampler.m:132</a></div></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        %&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        %&gt;  \param[in] input   :   Optional scalar MATLAB <span class="keywordtype">string</span> representing the path to an external</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        %&gt;                          input file that contains the simulation specification namelist(s).</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        %&gt;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        %&gt;  \warning</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        %&gt;  USE THIS OPTIONAL ARGUMENT ONLY IF YOU KNOW WHAT YOU ARE DOING.</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        %&gt;  Specifying an input simulation file will force the ParaMonte sampler</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        %&gt;  to ignore all other simulation specifications set by the user via</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        %&gt;  the ``spec`` component of the sampler instance.</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        %&gt;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        input = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        %&gt;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        %&gt;   \param checked :   Optional scalar MATLAB logical.</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classSampler.html#af29c6f7effc6fae97c39d08d80903698">   34</a></span>        %&gt;                      If set to ``<span class="keyword">true</span>``, then the checked (verified) versions of the</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        %&gt;                      ParaMonte MATLAB shared libraries will be used <span class="keywordflow">for</span> simulations.</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        %&gt;                      This means that most function calls and computations will be</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        %&gt;                      checked at runtime to ensure correctness, at the cost of</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        %&gt;                      noticeably slower runtime simulation speeds.&lt;br&gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        %&gt;                      Set <span class="keyword">this</span> option to ``<span class="keyword">true</span>`` only <span class="keywordflow">for</span> diagnostics, testing, and development.</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        %&gt;                      If set to empty, the sampler will first search <span class="keywordflow">for</span> the non-checked <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        %&gt;                      and <span class="keywordflow">if</span> none found, will search <span class="keywordflow">for</span> a checked <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> of the library.</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        %&gt;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        checked = [];</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        %&gt;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        %&gt;  \param  mpiname :   Optional scalar MATLAB <span class="keywordtype">string</span> representing the (<a class="code hl_function" href="vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a>) <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> of the</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        %&gt;                      MPI runtime library. The following three library names are supported:&lt;br&gt;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classSampler.html#ae1f73075258327f6911b4a302909fb9b">   47</a></span>        %&gt;                          -   <span class="stringliteral">&quot;impi&quot;</span>      :   The Intel MPI runtime library (Windows/Linux).</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        %&gt;                          -   <span class="stringliteral">&quot;mpich&quot;</span>     :   The MPICH MPI runtime library (Linux/macOS).</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        %&gt;                          -   <span class="stringliteral">&quot;openmpi&quot;</span>   :   The OpenMPI runtime library (Linux/macOS).&lt;br&gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        %&gt;                      By <span class="keywordflow">default</span>, you should set <span class="keyword">this</span> argument to ``pm.lib.mpi.choice()``</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        %&gt;                      to enable the right preferred <a class="code hl_function" href="choice_8m.html#ad6ebd2e3ca4b3f6315f1e52a3cc195a6">choice</a> of MPI-enabled ParaMonte libraries.</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        %&gt;                      If <span class="keywordflow">for</span> any reason, you want to use a non-preferred non-<span class="keywordflow">default</span> MPI library,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        %&gt;                      you can set the MPI library <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> explicitly as in the above <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a>.&lt;br&gt;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        %&gt;                      Beware that you must launch MATLAB with an ``mpiexec`` binary that</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        %&gt;                      comes from the same MPI library <a class="code hl_function" href="vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a> specified <span class="keywordflow">for</span> ``mpiname``.</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        %&gt;                      Note that the MPI-<a class="code hl_function" href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a> ParaMonte shared libraries</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        %&gt;                      corresponding to the specified value <span class="keywordflow">for</span> ``mpiname``</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        %&gt;                      may not exist in the ParaMonte package.</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        %&gt;                      For example,&lt;br&gt;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        %&gt;                          -   On Windows, only ParaMonte library</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        %&gt;                              builds with Intel MPI are supported.&lt;br&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        %&gt;                          -   On Linux, the ParaMonte library builds with</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        %&gt;                              all MPI libraries listed above are supported,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        %&gt;                              but there is no guarantee of their availability in</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        %&gt;                              the package. Only the ParaMonte library builds with</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        %&gt;                              Intel MPI (``<span class="stringliteral">&quot;impi&quot;</span>``) are guaranteed to exist,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        %&gt;                              unless user builds the ParaMonte MATLAB package</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        %&gt;                              from GitHub source for the desired MPI library.&lt;br&gt;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        %&gt;                          -   On Darwin (macOS), only the ParaMonte shared library</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        %&gt;                              builds with MPICH and OpenMPI libraries are supported,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        %&gt;                              but there is no guarantee of their availability in the</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        %&gt;                              package. Only the ParaMonte library builds with OpenMPI</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        %&gt;                              (``&quot;openmpi&quot;``) are guaranteed to exist, unless user</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        %&gt;                              builds the ParaMonte MATLAB package from GitHub</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        %&gt;                              source for the desired specified MPI library.&lt;br&gt;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        %&gt;                      \warning                        </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        %&gt;                      USE THIS OPTIONAL ARGUMENT ONLY IF YOU KNOW ITS RAMIFICATIONS.</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        %&gt;                      This option should rarely be needed in any normal simulation..&lt;br&gt;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        %&gt;                      The default value for ``mpiname`` is an empty <span class="keywordtype">string</span>,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        %&gt;                          implying no use of MPI-enabled ParaMonte library routines.</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        %&gt;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        mpiname = &quot;&quot;;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        %&gt;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        %&gt;  \param  silent  :   Optional logical (Boolean) indicator <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> is ``false`` by default.</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        %&gt;                      If it is set to ``true``, it will silence all output postprocessing messages.</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        %&gt;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classSampler.html#ae472602c809f8250aa62cdad84ef9cfe">   87</a></span>        %&gt;  \note</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        %&gt;  Setting ``mpiname`` to a non-empty <span class="keywordtype">string</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        %&gt;  will automatically set ``silent`` to ``true``.</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        %&gt;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        silent = false;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        %&gt;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        %&gt;  \param  spec    :   A MATLAB structure containing all simulation specifications.</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        %&gt;                      All specifications are set to appropriate default values at runtime.</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        %&gt;                      Set the `spec` attributes to the desired values of your <a class="code hl_function" href="choice_8m.html#ad6ebd2e3ca4b3f6315f1e52a3cc195a6">choice</a></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        %&gt;                      to override the default simulation specifications.</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classSampler.html#ac5a72d9797fc1bb96b84601276d4bd33">   97</a></span>        %&gt;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        spec = [];</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    end</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    properties(Access = public, Hidden)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        mexname = &quot;pm_sampling&quot;;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classSampler.html#a82cff287f10efc0233740053268b1848">  105</a></span>        libtype = &quot;shared&quot;;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        partype = &quot;serial&quot;;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        memtype = &quot;heap&quot;;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        bldtype = &quot;&quot;; % build type</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        clstype = &quot;&quot;; % <a class="code hl_function" href="compiler_8m.html#a97012960b56e67629c96f09b91cd7ec8">compiler</a>/linker suite</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> = &quot;self&quot;;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <a class="code hl_function" href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a> = [];</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classSampler.html#a13470386f7e22a5a0c8d6612e2b9ba46">  112</a></span>        matpath = []; % MATLAB paths.</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        method = &quot;&quot;;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classSampler.html#a7fa765a0d8864e7b81d4c0cd9b638fca">  114</a></span>        ndim = [];</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        %njob = [];</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classSampler.html#a3d682527fcb12304f4369255d6079250">  116</a></span>        nml = [];</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        %&gt;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classSampler.html#aff3b3a560e37699428dbcb4b445e0d5a">  118</a></span>        %&gt;  \param  libspec :   Optional scalar MATLAB <span class="keywordtype">string</span> containing a <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> of colon-(:)-separated</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        %&gt;                      configurations of the kernel shared library to be used for the sampling task.</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classSampler.html#ab62fb4b958ab96f81a6b261448f4e72b">  120</a></span>        %&gt;                      The most important of all is the <a class="code hl_function" href="compiler_8m.html#a97012960b56e67629c96f09b91cd7ec8">compiler</a> suite with <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> the library is built.</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        %&gt;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classSampler.html#acd00278ba57e029073aba586e85d8ece">  122</a></span>        %&gt;  \warning</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        %&gt;  USE THIS OPTIONAL ARGUMENT ONLY IF YOU KNOW WHAT YOU ARE DOING.</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classSampler.html#ab4f4d5fc46d66e522d3cc2ec8d5fb0ef">  124</a></span>        %&gt;  The specified value for ``libspec`` is parsed internally to match</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        %&gt;  a corresponding library path <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> within the ParaMonte library.</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classSampler.html#a3936123e51bf6cac36fd878ce285a69b">  126</a></span>        %&gt;  The simulations will fail if no such directory can be found.</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        %&gt;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="classSampler.html#a22f66b8a421ae0113a990528a5c996b4">  128</a></span>        libspec = &quot;nocheck&quot;;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    end</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classSampler.html#a2aecf3fc3f3e679765fc34414a7c387e">  130</a></span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classSampler.html#aaf6eaedfc14499ba223ad75bb6405858">  132</a></span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    methods(Access = public)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        %&gt;  \brief</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="classSampler.html#aaf4895178075a0d6aaacdd607fe80887">  135</a></span>        %&gt;  Return a scalar <span class="keywordtype">object</span> of class ``pm.sampling.<a class="code hl_class" href="classSampler.html">Sampler</a>``.</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        %&gt;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        %&gt;  \details</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        %&gt;  This is the constructor of the class ``pm.sampling.<a class="code hl_class" href="classSampler.html">Sampler</a>``.</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        %&gt;  This class is not meant to be accessed by the end users.</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        %&gt;  It merely serves as the blueprint for the sampler subclasses</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        %&gt;  accessible to the end users.</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        %&gt;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        %&gt;  \param[in]  method  :   The input scalar MATLAB <span class="keywordtype">string</span> containing</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        %&gt;                          the <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> of the target ParaMonte sampler.</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        %&gt;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        %&gt;  \return</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        %&gt;  `self`              :   The output scalar <span class="keywordtype">object</span> of class ``pm.sampling.<a class="code hl_class" href="classSampler.html">Sampler</a>``.</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="classSampler.html#aadb3b663b661dbff6fbce17264689d8d">  148</a></span>        %&gt;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        %&gt;  \interface{<a class="code hl_class" href="classSampler.html">Sampler</a>}</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        %&gt;  \code{.m}</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        %&gt;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        %&gt;      sampler = pm.sampling.<a class="code hl_function" href="classSampler.html#a203ff4b56b6248910944a745de505e82">Sampler</a>();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        %&gt;      sampler = pm.sampling.Sampler([]);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        %&gt;      sampler = pm.sampling.Sampler(method);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        %&gt;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        %&gt;  \endcode</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        %&gt;  \final{<a class="code hl_class" href="classSampler.html">Sampler</a>}</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        %&gt;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        %&gt;  \author</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        %&gt;  \JoshuaOsborne, May 21 2024, 12:52 AM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        %&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        %&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        function self = <a class="code hl_class" href="classSampler.html">Sampler</a>(method)</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keywordflow">if</span>  nargin &lt; 1</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                self.<a class="code hl_variable" href="classSampler.html#a2aecf3fc3f3e679765fc34414a7c387e">method</a> = <span class="stringliteral">&quot;sampler&quot;</span>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                self.method = string(method);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            end</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            self.weblinks = pm.lib.weblinks();</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <span class="keywordflow">if</span>  self.method == <span class="stringliteral">&quot;ParaDRAM&quot;</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                self.spec = pm.sampling.SpecDRAM(self.method);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            elseif self.method == <span class="stringliteral">&quot;sampler&quot;</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                self.spec = pm.sampling.SpecBase(self.method);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                error   ( newline ...</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                        + <span class="stringliteral">&quot;Unrecognized or unsupported ParaMonte sampler: &quot;</span> + self.method + newline ...</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                        + newline ...</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                        );</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            end</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            %filePath = mfilename(<span class="stringliteral">&quot;fullpath&quot;</span>); addpath(genpath(filePath),<span class="stringliteral">&quot;-begin&quot;</span>);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            self.name = inputname(1);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        end</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classSampler.html#a203ff4b56b6248910944a745de505e82">  184</a></span>        reportList = readReport(self, pattern)</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        restartList = readRestart(self, pattern)</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        chainList = readChain(self, pattern, sep)</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        sampleList = readSample(self, pattern, sep)</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        progressList = readProgress(self, pattern, sep)</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    end</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    methods(Hidden)</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        finalize(self);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        run(self, <a class="code hl_function" href="getLogFunc_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b">getLogFunc</a>, ndim)</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        fileList = findfile(self, ftype, pattern);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    end</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>end</div>
+<div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div><div class="ttdoc">Return the MPI library name as used in naming the ParaMonte MATLAB shared libraries.</div></div>
+<div class="ttc" id="a_09os_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div><div class="ttdoc">Return a list of MATLAB strings containing the names of OS platforms supported by the ParaMonte MATLA...</div></div>
+<div class="ttc" id="a_09update_2version_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
+<div class="ttc" id="achoice_8m_html_ad6ebd2e3ca4b3f6315f1e52a3cc195a6"><div class="ttname"><a href="choice_8m.html#ad6ebd2e3ca4b3f6315f1e52a3cc195a6">choice</a></div><div class="ttdeci">function choice()</div><div class="ttdoc">Return the ParaMonte-preferred MPI library vendor name as used in naming the ParaMonte MATLAB shared ...</div></div>
+<div class="ttc" id="aclassHandle_html"><div class="ttname"><a href="classHandle.html">Handle</a></div><div class="ttdoc">This is the Abstract base class for generating subclass of MATLAB handle superclass whose annoying me...</div><div class="ttdef"><b>Definition:</b> <a href="Handle_8m_source.html#l00023">Handle.m:23</a></div></div>
+<div class="ttc" id="aclassSampler_html"><div class="ttname"><a href="classSampler.html">Sampler</a></div><div class="ttdoc">This is the base class for the ParaMonte sampler routines.</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00016">Sampler.m:17</a></div></div>
+<div class="ttc" id="aclassSampler_html_a04e65e54cdf2f48c07889ac0f8c1861a"><div class="ttname"><a href="classSampler.html#a04e65e54cdf2f48c07889ac0f8c1861a">Sampler::readSample</a></div><div class="ttdeci">function readSample(in self, in pattern, in sep)</div><div class="ttdoc">Return a list of objects of class pm.sampling.FileContentsSample containing the content(s) of the Par...</div></div>
+<div class="ttc" id="aclassSampler_html_a05facc7b19d55723b4b9b7f5754c8ae6"><div class="ttname"><a href="classSampler.html#a05facc7b19d55723b4b9b7f5754c8ae6">Sampler::run</a></div><div class="ttdeci">function run(in self, in getLogFunc, in ndim)</div><div class="ttdoc">Perform the basic runtime checks for the sampler and return nothing.</div></div>
+<div class="ttc" id="aclassSampler_html_a13470386f7e22a5a0c8d6612e2b9ba46"><div class="ttname"><a href="classSampler.html#a13470386f7e22a5a0c8d6612e2b9ba46">Sampler::mexname</a></div><div class="ttdeci">Property mexname</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00112">Sampler.m:112</a></div></div>
 <div class="ttc" id="aclassSampler_html_a1863d9371c47d3adefe212b340f15507"><div class="ttname"><a href="classSampler.html#a1863d9371c47d3adefe212b340f15507">Sampler::getLogFuncConcurrent</a></div><div class="ttdeci">function getLogFuncConcurrent(in state)</div></div>
-<div class="ttc" id="aclassSampler_html_a203ff4b56b6248910944a745de505e82"><div class="ttname"><a href="classSampler.html#a203ff4b56b6248910944a745de505e82">Sampler::Sampler</a></div><div class="ttdeci">function Sampler(in method)</div></div>
-<div class="ttc" id="aclassSampler_html_a22f66b8a421ae0113a990528a5c996b4"><div class="ttname"><a href="classSampler.html#a22f66b8a421ae0113a990528a5c996b4">Sampler::matpath</a></div><div class="ttdeci">Property matpath</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00148">Sampler.m:148</a></div></div>
-<div class="ttc" id="aclassSampler_html_a2aecf3fc3f3e679765fc34414a7c387e"><div class="ttname"><a href="classSampler.html#a2aecf3fc3f3e679765fc34414a7c387e">Sampler::method</a></div><div class="ttdeci">Property method</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00150">Sampler.m:150</a></div></div>
-<div class="ttc" id="aclassSampler_html_a3936123e51bf6cac36fd878ce285a69b"><div class="ttname"><a href="classSampler.html#a3936123e51bf6cac36fd878ce285a69b">Sampler::weblinks</a></div><div class="ttdeci">Property weblinks</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00146">Sampler.m:146</a></div></div>
-<div class="ttc" id="aclassSampler_html_a3d682527fcb12304f4369255d6079250"><div class="ttname"><a href="classSampler.html#a3d682527fcb12304f4369255d6079250">Sampler::partype</a></div><div class="ttdeci">Property partype</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00136">Sampler.m:136</a></div></div>
-<div class="ttc" id="aclassSampler_html_a753ccd6a5b6734db44952de25be7e002"><div class="ttname"><a href="classSampler.html#a753ccd6a5b6734db44952de25be7e002">Sampler::readReport</a></div><div class="ttdeci">function readReport(in self, in pattern)</div></div>
-<div class="ttc" id="aclassSampler_html_a7fa765a0d8864e7b81d4c0cd9b638fca"><div class="ttname"><a href="classSampler.html#a7fa765a0d8864e7b81d4c0cd9b638fca">Sampler::libtype</a></div><div class="ttdeci">Property libtype</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00134">Sampler.m:134</a></div></div>
-<div class="ttc" id="aclassSampler_html_a81e0970bfb647fe928db20cdd9d8caaf"><div class="ttname"><a href="classSampler.html#a81e0970bfb647fe928db20cdd9d8caaf">Sampler::readChain</a></div><div class="ttdeci">function readChain(in self, in pattern, in sep)</div></div>
-<div class="ttc" id="aclassSampler_html_a82cff287f10efc0233740053268b1848"><div class="ttname"><a href="classSampler.html#a82cff287f10efc0233740053268b1848">Sampler::spec</a></div><div class="ttdeci">Property spec</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00127">Sampler.m:127</a></div></div>
-<div class="ttc" id="aclassSampler_html_aadb3b663b661dbff6fbce17264689d8d"><div class="ttname"><a href="classSampler.html#aadb3b663b661dbff6fbce17264689d8d">Sampler::libspec</a></div><div class="ttdeci">Property libspec</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00171">Sampler.m:171</a></div></div>
-<div class="ttc" id="aclassSampler_html_aaf4895178075a0d6aaacdd607fe80887"><div class="ttname"><a href="classSampler.html#aaf4895178075a0d6aaacdd607fe80887">Sampler::nml</a></div><div class="ttdeci">Property nml</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00155">Sampler.m:155</a></div></div>
-<div class="ttc" id="aclassSampler_html_aaf6eaedfc14499ba223ad75bb6405858"><div class="ttname"><a href="classSampler.html#aaf6eaedfc14499ba223ad75bb6405858">Sampler::ndim</a></div><div class="ttdeci">Property ndim</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00152">Sampler.m:152</a></div></div>
-<div class="ttc" id="aclassSampler_html_ab4f4d5fc46d66e522d3cc2ec8d5fb0ef"><div class="ttname"><a href="classSampler.html#ab4f4d5fc46d66e522d3cc2ec8d5fb0ef">Sampler::name</a></div><div class="ttdeci">Property name</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00144">Sampler.m:144</a></div></div>
-<div class="ttc" id="aclassSampler_html_ab62fb4b958ab96f81a6b261448f4e72b"><div class="ttname"><a href="classSampler.html#ab62fb4b958ab96f81a6b261448f4e72b">Sampler::bldtype</a></div><div class="ttdeci">Property bldtype</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00140">Sampler.m:140</a></div></div>
+<div class="ttc" id="aclassSampler_html_a203ff4b56b6248910944a745de505e82"><div class="ttname"><a href="classSampler.html#a203ff4b56b6248910944a745de505e82">Sampler::Sampler</a></div><div class="ttdeci">function Sampler(in method)</div><div class="ttdoc">Return a scalar object of class pm.sampling.Sampler.</div></div>
+<div class="ttc" id="aclassSampler_html_a22f66b8a421ae0113a990528a5c996b4"><div class="ttname"><a href="classSampler.html#a22f66b8a421ae0113a990528a5c996b4">Sampler::matpath</a></div><div class="ttdeci">Property matpath</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00128">Sampler.m:128</a></div></div>
+<div class="ttc" id="aclassSampler_html_a2aecf3fc3f3e679765fc34414a7c387e"><div class="ttname"><a href="classSampler.html#a2aecf3fc3f3e679765fc34414a7c387e">Sampler::method</a></div><div class="ttdeci">Property method</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00130">Sampler.m:130</a></div></div>
+<div class="ttc" id="aclassSampler_html_a3936123e51bf6cac36fd878ce285a69b"><div class="ttname"><a href="classSampler.html#a3936123e51bf6cac36fd878ce285a69b">Sampler::weblinks</a></div><div class="ttdeci">Property weblinks</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00126">Sampler.m:126</a></div></div>
+<div class="ttc" id="aclassSampler_html_a3d682527fcb12304f4369255d6079250"><div class="ttname"><a href="classSampler.html#a3d682527fcb12304f4369255d6079250">Sampler::partype</a></div><div class="ttdeci">Property partype</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00116">Sampler.m:116</a></div></div>
+<div class="ttc" id="aclassSampler_html_a753ccd6a5b6734db44952de25be7e002"><div class="ttname"><a href="classSampler.html#a753ccd6a5b6734db44952de25be7e002">Sampler::readReport</a></div><div class="ttdeci">function readReport(in self, in pattern)</div><div class="ttdoc">Return a list of objects of class pm.sampling.FileContentsReport containing the content(s) of the Par...</div></div>
+<div class="ttc" id="aclassSampler_html_a7fa765a0d8864e7b81d4c0cd9b638fca"><div class="ttname"><a href="classSampler.html#a7fa765a0d8864e7b81d4c0cd9b638fca">Sampler::libtype</a></div><div class="ttdeci">Property libtype</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00114">Sampler.m:114</a></div></div>
+<div class="ttc" id="aclassSampler_html_a81e0970bfb647fe928db20cdd9d8caaf"><div class="ttname"><a href="classSampler.html#a81e0970bfb647fe928db20cdd9d8caaf">Sampler::readChain</a></div><div class="ttdeci">function readChain(in self, in pattern, in sep)</div><div class="ttdoc">Return a list of objects of class pm.sampling.FileContentsChain containing the content(s) of the Para...</div></div>
+<div class="ttc" id="aclassSampler_html_a82cff287f10efc0233740053268b1848"><div class="ttname"><a href="classSampler.html#a82cff287f10efc0233740053268b1848">Sampler::spec</a></div><div class="ttdeci">Property spec</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00105">Sampler.m:105</a></div></div>
+<div class="ttc" id="aclassSampler_html_aadb3b663b661dbff6fbce17264689d8d"><div class="ttname"><a href="classSampler.html#aadb3b663b661dbff6fbce17264689d8d">Sampler::libspec</a></div><div class="ttdeci">Property libspec</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00148">Sampler.m:148</a></div></div>
+<div class="ttc" id="aclassSampler_html_aaf4895178075a0d6aaacdd607fe80887"><div class="ttname"><a href="classSampler.html#aaf4895178075a0d6aaacdd607fe80887">Sampler::nml</a></div><div class="ttdeci">Property nml</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00135">Sampler.m:135</a></div></div>
+<div class="ttc" id="aclassSampler_html_aaf6eaedfc14499ba223ad75bb6405858"><div class="ttname"><a href="classSampler.html#aaf6eaedfc14499ba223ad75bb6405858">Sampler::ndim</a></div><div class="ttdeci">Property ndim</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00132">Sampler.m:132</a></div></div>
+<div class="ttc" id="aclassSampler_html_ab4f4d5fc46d66e522d3cc2ec8d5fb0ef"><div class="ttname"><a href="classSampler.html#ab4f4d5fc46d66e522d3cc2ec8d5fb0ef">Sampler::name</a></div><div class="ttdeci">Property name</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00124">Sampler.m:124</a></div></div>
+<div class="ttc" id="aclassSampler_html_ab62fb4b958ab96f81a6b261448f4e72b"><div class="ttname"><a href="classSampler.html#ab62fb4b958ab96f81a6b261448f4e72b">Sampler::bldtype</a></div><div class="ttdeci">Property bldtype</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00120">Sampler.m:120</a></div></div>
 <div class="ttc" id="aclassSampler_html_abff971dc236c62019bbe6aa280817260"><div class="ttname"><a href="classSampler.html#abff971dc236c62019bbe6aa280817260">Sampler::getLogFuncWrapped</a></div><div class="ttdeci">function getLogFuncWrapped(in state)</div></div>
-<div class="ttc" id="aclassSampler_html_ac5a72d9797fc1bb96b84601276d4bd33"><div class="ttname"><a href="classSampler.html#ac5a72d9797fc1bb96b84601276d4bd33">Sampler::silent</a></div><div class="ttdeci">Property silent</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00117">Sampler.m:117</a></div></div>
-<div class="ttc" id="aclassSampler_html_acd00278ba57e029073aba586e85d8ece"><div class="ttname"><a href="classSampler.html#acd00278ba57e029073aba586e85d8ece">Sampler::clstype</a></div><div class="ttdeci">Property clstype</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00142">Sampler.m:142</a></div></div>
-<div class="ttc" id="aclassSampler_html_ad1e47e4d1c58f13f9d6468dc28488144"><div class="ttname"><a href="classSampler.html#ad1e47e4d1c58f13f9d6468dc28488144">Sampler::findfile</a></div><div class="ttdeci">function findfile(in self, in ftype, in pattern)</div></div>
-<div class="ttc" id="aclassSampler_html_ad563aa53879139a7482e81eed36d68ac"><div class="ttname"><a href="classSampler.html#ad563aa53879139a7482e81eed36d68ac">Sampler::readRestart</a></div><div class="ttdeci">function readRestart(in self, in pattern)</div></div>
-<div class="ttc" id="aclassSampler_html_ae1f73075258327f6911b4a302909fb9b"><div class="ttname"><a href="classSampler.html#ae1f73075258327f6911b4a302909fb9b">Sampler::checked</a></div><div class="ttdeci">Property checked</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00053">Sampler.m:53</a></div></div>
-<div class="ttc" id="aclassSampler_html_ae3f0f62c32f8da4d9f4c882f9cc39c6e"><div class="ttname"><a href="classSampler.html#ae3f0f62c32f8da4d9f4c882f9cc39c6e">Sampler::readProgress</a></div><div class="ttdeci">function readProgress(in self, in pattern, in sep)</div></div>
-<div class="ttc" id="aclassSampler_html_ae472602c809f8250aa62cdad84ef9cfe"><div class="ttname"><a href="classSampler.html#ae472602c809f8250aa62cdad84ef9cfe">Sampler::mpiname</a></div><div class="ttdeci">Property mpiname</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00104">Sampler.m:104</a></div></div>
-<div class="ttc" id="aclassSampler_html_af102f0a6a2b1e59537a9045dd4799cf1"><div class="ttname"><a href="classSampler.html#af102f0a6a2b1e59537a9045dd4799cf1">Sampler::finalize</a></div><div class="ttdeci">function finalize(in self)</div></div>
-<div class="ttc" id="aclassSampler_html_af29c6f7effc6fae97c39d08d80903698"><div class="ttname"><a href="classSampler.html#af29c6f7effc6fae97c39d08d80903698">Sampler::input</a></div><div class="ttdeci">Property input</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00037">Sampler.m:37</a></div></div>
-<div class="ttc" id="aclassSampler_html_aff3b3a560e37699428dbcb4b445e0d5a"><div class="ttname"><a href="classSampler.html#aff3b3a560e37699428dbcb4b445e0d5a">Sampler::memtype</a></div><div class="ttdeci">Property memtype</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00138">Sampler.m:138</a></div></div>
-<div class="ttc" id="aclassSpecBase_html"><div class="ttname"><a href="classSpecBase.html">SpecBase</a></div><div class="ttdef"><b>Definition:</b> <a href="SpecBase_8m_source.html#l00001">SpecBase.m:2</a></div></div>
-<div class="ttc" id="aclassSpecDRAM_html"><div class="ttname"><a href="classSpecDRAM.html">SpecDRAM</a></div><div class="ttdef"><b>Definition:</b> <a href="SpecDRAM_8m_source.html#l00001">SpecDRAM.m:2</a></div></div>
-<div class="ttc" id="acompiler_8m_html_a97012960b56e67629c96f09b91cd7ec8"><div class="ttname"><a href="compiler_8m.html#a97012960b56e67629c96f09b91cd7ec8">compiler</a></div><div class="ttdeci">function compiler()</div></div>
+<div class="ttc" id="aclassSampler_html_ac5a72d9797fc1bb96b84601276d4bd33"><div class="ttname"><a href="classSampler.html#ac5a72d9797fc1bb96b84601276d4bd33">Sampler::silent</a></div><div class="ttdeci">Property silent</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00097">Sampler.m:97</a></div></div>
+<div class="ttc" id="aclassSampler_html_acd00278ba57e029073aba586e85d8ece"><div class="ttname"><a href="classSampler.html#acd00278ba57e029073aba586e85d8ece">Sampler::clstype</a></div><div class="ttdeci">Property clstype</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00122">Sampler.m:122</a></div></div>
+<div class="ttc" id="aclassSampler_html_ad1e47e4d1c58f13f9d6468dc28488144"><div class="ttname"><a href="classSampler.html#ad1e47e4d1c58f13f9d6468dc28488144">Sampler::findfile</a></div><div class="ttdeci">function findfile(in self, in ftype, in pattern)</div><div class="ttdoc">Return a vector of MATLAB strings containing the fully-resolved paths matching the input pattern.</div></div>
+<div class="ttc" id="aclassSampler_html_ad563aa53879139a7482e81eed36d68ac"><div class="ttname"><a href="classSampler.html#ad563aa53879139a7482e81eed36d68ac">Sampler::readRestart</a></div><div class="ttdeci">function readRestart(in self, in pattern)</div><div class="ttdoc">Return a list of objects of class pm.sampling.FileContentsRestartDRAM containing the content(s) of th...</div></div>
+<div class="ttc" id="aclassSampler_html_ae1f73075258327f6911b4a302909fb9b"><div class="ttname"><a href="classSampler.html#ae1f73075258327f6911b4a302909fb9b">Sampler::checked</a></div><div class="ttdeci">Property checked</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00047">Sampler.m:47</a></div></div>
+<div class="ttc" id="aclassSampler_html_ae3f0f62c32f8da4d9f4c882f9cc39c6e"><div class="ttname"><a href="classSampler.html#ae3f0f62c32f8da4d9f4c882f9cc39c6e">Sampler::readProgress</a></div><div class="ttdeci">function readProgress(in self, in pattern, in sep)</div><div class="ttdoc">Return a list of objects of class pm.sampling.FileContentsProgress containing the content(s) of the P...</div></div>
+<div class="ttc" id="aclassSampler_html_ae472602c809f8250aa62cdad84ef9cfe"><div class="ttname"><a href="classSampler.html#ae472602c809f8250aa62cdad84ef9cfe">Sampler::mpiname</a></div><div class="ttdeci">Property mpiname</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00087">Sampler.m:87</a></div></div>
+<div class="ttc" id="aclassSampler_html_af102f0a6a2b1e59537a9045dd4799cf1"><div class="ttname"><a href="classSampler.html#af102f0a6a2b1e59537a9045dd4799cf1">Sampler::finalize</a></div><div class="ttdeci">function finalize(in self)</div><div class="ttdoc">Finalize the ParaMonte MATLAB sampler simulation run.</div></div>
+<div class="ttc" id="aclassSampler_html_af29c6f7effc6fae97c39d08d80903698"><div class="ttname"><a href="classSampler.html#af29c6f7effc6fae97c39d08d80903698">Sampler::input</a></div><div class="ttdeci">Property input</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00034">Sampler.m:34</a></div></div>
+<div class="ttc" id="aclassSampler_html_aff3b3a560e37699428dbcb4b445e0d5a"><div class="ttname"><a href="classSampler.html#aff3b3a560e37699428dbcb4b445e0d5a">Sampler::memtype</a></div><div class="ttdeci">Property memtype</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00118">Sampler.m:118</a></div></div>
+<div class="ttc" id="acompiler_8m_html_a97012960b56e67629c96f09b91cd7ec8"><div class="ttname"><a href="compiler_8m.html#a97012960b56e67629c96f09b91cd7ec8">compiler</a></div><div class="ttdeci">function compiler()</div><div class="ttdoc">Return a scalar MATLAB logical that is true if and only if the current installation of MATLAB contain...</div></div>
 <div class="ttc" id="agetLogFunc_8m_html_a77e1a6b154cc75d50b224f2e00cc6b8b"><div class="ttname"><a href="getLogFunc_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b">getLogFunc</a></div><div class="ttdeci">function getLogFunc(in point)</div></div>
-<div class="ttc" id="alib_8m_html_ab7532545afe200f8d0e973cf2497d215"><div class="ttname"><a href="lib_8m.html#ab7532545afe200f8d0e973cf2497d215">lib</a></div><div class="ttdeci">function lib(in key)</div></div>
-<div class="ttc" id="aparallel_8m_html_a01b198603048be87b719ba0cbd8b3864"><div class="ttname"><a href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a></div><div class="ttdeci">function parallel()</div></div>
-<div class="ttc" id="avendor_8m_html_afe63f699e7725dd68ec9e0a4c6975caa"><div class="ttname"><a href="vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a></div><div class="ttdeci">function vendor(in path)</div></div>
-<div class="ttc" id="aweblinks_8m_html_abe2a936890c070a4b1d43fc8ea5bb4ea"><div class="ttname"><a href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a></div><div class="ttdeci">function weblinks()</div></div>
-<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div></div>
+<div class="ttc" id="aparallel_8m_html_a01b198603048be87b719ba0cbd8b3864"><div class="ttname"><a href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a></div><div class="ttdeci">function parallel()</div><div class="ttdoc">Return a scalar MATLAB logical that is true if and only if the current installation of MATLAB contain...</div></div>
+<div class="ttc" id="avendor_8m_html_afe63f699e7725dd68ec9e0a4c6975caa"><div class="ttname"><a href="vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a></div><div class="ttdeci">function vendor(in path)</div><div class="ttdoc">Return the a MATLAB string containing the MPI library vendor name corresponding to the input mpiexec ...</div></div>
+<div class="ttc" id="aweblinks_8m_html_abe2a936890c070a4b1d43fc8ea5bb4ea"><div class="ttname"><a href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a></div><div class="ttdeci">function weblinks()</div><div class="ttdoc">Return a structure containing tree of weblinks for the ParaMonte MATLAB library source file and docum...</div></div>
+<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_870970980bbbd119e0b6d78557b3d4cb.html">+sampling</a></li><li class="navelem"><a class="el" href="dir_0e0170126dfae72f4e93d1cf5bd3ba28.html">@Sampler</a></li><li class="navelem"><a class="el" href="Sampler_8m.html">Sampler.m</a></li>
-        <li class="footer">Generated on Sat May 18 2024 23:23:06 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu May 23 2024 19:37:45 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

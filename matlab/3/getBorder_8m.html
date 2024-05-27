@@ -214,36 +214,15 @@ Functions</h2></td></tr>
  <a class="el" href="classEllipse.html">pm.vis.tile.Ellipse</a><br  />
 </dd></dl>
 <p><br  />
-<a class="anchor" id="example-getBorder"></a><b>Example usage</b> <a href="#example-getBorder">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>srcdir = fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>));</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>cd(srcdir); % Change working directory to source code directory.</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>addpath(<span class="stringliteral">&#39;../../../+pm&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="kde2d_8m.html#a026e50e02e7e3857d23ce7bbec121c92">root</a> directory to the search path.</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>bcrd = pm.geom.ell2.getBorder();</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>figure(<span class="stringliteral">&quot;visible&quot;</span>, <span class="stringliteral">&quot;off&quot;</span>);</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>plot(bcrd(:, 1), bcrd(:, 2), <span class="charliteral">&#39;-&#39;</span>);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>pm.vis.figure.savefig(<span class="stringliteral">&quot;getBorder.2d.png&quot;</span>, <span class="stringliteral">&quot;-m4 -transparent&quot;</span>);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>bcrd = pm.geom.ell2.getBorder([], [], 1);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>figure(<span class="stringliteral">&quot;visible&quot;</span>, <span class="stringliteral">&quot;off&quot;</span>);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>plot3(bcrd(:, 1), bcrd(:, 2), bcrd(:, 3), <span class="charliteral">&#39;-&#39;</span>);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>pm.vis.figure.savefig(<span class="stringliteral">&quot;getBorder.3d.png&quot;</span>, <span class="stringliteral">&quot;-m4 -transparent&quot;</span>);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>npnt = 500;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>range = 10 * pi * [-1 : 2 / (npnt - 1) : 1];</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>bcrd = pm.geom.ell2.getBorder([], [], sin(range / 5) + sin(range) / 5, npnt);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>figure(<span class="stringliteral">&quot;visible&quot;</span>, <span class="stringliteral">&quot;off&quot;</span>);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>plot3(bcrd(:, 1), bcrd(:, 2), bcrd(:, 3));</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>pm.vis.figure.savefig(<span class="stringliteral">&quot;getBorder.wavy.png&quot;</span>, <span class="stringliteral">&quot;-m4 -transparent&quot;</span>);</div>
-<div class="ttc" id="akde2d_8m_html_a026e50e02e7e3857d23ce7bbec121c92"><div class="ttname"><a href="kde2d_8m.html#a026e50e02e7e3857d23ce7bbec121c92">root</a></div><div class="ttdeci">function root(in f, in N)</div></div>
-</div><!-- fragment --> \matlabrun{getBorder} <br  />
+<a class="anchor" id="example-getBorder"></a><b>Example usage</b> <a href="#example-getBorder">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"></div><!-- fragment --> \matlabrun{getBorder} <br  />
 <a class="anchor" id="vis-getBorder"></a><b>Visualization of the example output</b> <a href="#vis-getBorder">⛓</a> <div class="image">
-<img src="example/+geom/+ell2/getBorder/getBorder.2d.png" alt="" width="700"/>
+<img src="example/geom/ell2/getBorder/getBorder.2d.png" alt="" width="700"/>
 </div>
  <div class="image">
-<img src="example/+geom/+ell2/getBorder/getBorder.3d.png" alt="" width="700"/>
+<img src="example/geom/ell2/getBorder/getBorder.3d.png" alt="" width="700"/>
 </div>
  <div class="image">
-<img src="example/+geom/+ell2/getBorder/getBorder.wavy.png" alt="" width="700"/>
+<img src="example/geom/ell2/getBorder/getBorder.wavy.png" alt="" width="700"/>
 </div>
 </dd></dl>
 <p><br  />
@@ -263,7 +242,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000004">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000015">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin </dd></dl>
 
 </div>
 </div>
@@ -273,7 +252,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_05729935b8d7cc9b82d9efdbe5fea313.html">+geom</a></li><li class="navelem"><a class="el" href="dir_9be8e5a8aa31988f4fac0370d869a96b.html">+ell2</a></li><li class="navelem"><a class="el" href="getBorder_8m.html">getBorder.m</a></li>
-        <li class="footer">Generated on Sat May 18 2024 23:23:08 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu May 23 2024 19:37:46 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -140,183 +140,167 @@ $(document).ready(function(){initNavTree('getBorders_8m_source.html',''); initRe
   <div class="headertitle"><div class="title">getBorders.m</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="getBorders_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2">    1</a></span>function bcrd = <a class="code hl_function" href="getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2">getBorders</a>(gramian, center, zval, npnt)</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>    %</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    %   Return a matrix of MATLAB doubles of shape ``[npnt, 2 * nell]``</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    %   (or ``[npnt, 3 * nell]`` <span class="keywordflow">if</span> the input ``zval`` is present)</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    %   containing the 2D (or 3D) coordinates of a set of points on the boundary</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    %   of a set of 2D ellipsoids whose Gramian matrices and centers are specified</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    %   as input argument. Here ``nell`` refers to the number of ellipsoids <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    %   is equal to ``2 * max(1, size(gramian, 3), size(center, 2))``.</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    %</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    %   Parameters</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    %   ----------</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    %</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    %       gramian</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    %</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    %           The input matrix of MATLAB doubles of shape ``[2, 2, nell]``</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    %           containing the Gramian matrices of the ``nell`` 2D ellipsoids</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    %           whose boundary points are to be returned.</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    %           (**optional**, <span class="keywordflow">default</span> = ``eye(2, 2, 1)``)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    %</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    %       center</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    %</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    %           The input matrix of MATLAB doubles of shape ``[2, nell]`` containing</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    %           the 2D coordinates of the centers of the ``nell`` 2D ellipsoids</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    %           whose boundary points are to be returned.</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    %           (**optional**, <span class="keywordflow">default</span> = ``zeros(2, 1)``)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    %</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    %       zval</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    %</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    %           The input scalar (or matrix of shape ``[npnt, nell]`` of) MATLAB double(s)</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    %           containing the z-axis coordinates of the points on the borders of the ``nell`` 2D ellipsoids.</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    %           If present, the specified value(s) will occupy the ``[1 : 2 : 3 * nell]`` columns of the output ``bcrd``.</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    %           (**optional**. If not present or empty, it will not be present in the output.)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    %</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    %           \note</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    %</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    %               This argument is present <span class="keywordflow">for</span> the sake of convenience and</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    %               better performance of the algorithm to avoid further reallocations.</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    %</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    %       npnt</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    %</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    %           The input scalar MATLAB whole number containing the number of</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    %           points to <span class="keywordflow">return</span> on the boundary of the target 2D ellipsoid.</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    %           (**optional**, <span class="keywordflow">default</span> = ``50``)</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    %</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    %           \warning</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    %</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    %               The condition ``npnt == size(zval, 1)``</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    %               must hold <span class="keywordflow">for</span> the corresponding input arguments.</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    %</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    %   Returns</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    %   -------</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    %</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    %       bcrd</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    %</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    %           The output matrix of MATLAB doubles of shape ``[npnt, 2 * nell]``</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    %           (or ``[npnt, 3 * nell]`` <span class="keywordflow">if</span> the input argument ``zval`` is present)</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    %           containing the coordinates of a set of ``npnt`` points on</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    %           the boundary of the target 2D ellipsoid.</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    %</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    %   Interface</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    %   ---------</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    %</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    %       pm.geom.ell2.getBorders()</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    %       pm.geom.ell2.getBorders(gramian)</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    %       pm.geom.ell2.getBorders(gramian, center)</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    %       pm.geom.ell2.getBorders(gramian, center, zval)</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    %       pm.geom.ell2.getBorders(gramian, center, zval, npnt)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    %</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    %   Example</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    %   -------</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    %</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    %       bcrd = pm.geom.ell2.getBorders();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    %       figure; h = plot(bcrd(:, 1), bcrd(:, 2), <span class="charliteral">&#39;-&#39;</span>);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    %</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    %       bcrd = pm.geom.ell2.getBorders([], [], 20);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    %       figure; h = plot3(bcrd(:, 1), bcrd(:, 2), bcrd(:, 3), <span class="charliteral">&#39;-&#39;</span>);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    %</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    %       npnt = 50;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    %       figure; hold on; view(3);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    %       bcrd = pm.geom.ell2.getBorders([], [], repmat([1 : 20], npnt, 1));</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    %       <span class="keywordflow">for</span> iell = 1 : 2 : size(bcrd, 2) / 3</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    %           icol = (iell - 1) * 3 + 1;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    %           plot3(bcrd(:, icol), bcrd(:, icol + 1), bcrd(:, icol + 2), <span class="charliteral">&#39;-&#39;</span>);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    %       end</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    %</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    %   LICENSE</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    %   -------</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    %</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    %       https:<span class="comment">//github.com/cdslaborg/paramonte/blob/main/LICENSE.md</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    %</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">if</span>  nargin &lt; 4</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        npnt = [];</div>
+<a href="getBorders_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>%&gt;  \brief</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Return a matrix of MATLAB doubles of shape ``[npnt, 2 * nell]``</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;  (or ``[npnt, 3 * nell]`` <span class="keywordflow">if</span> the input ``zval`` is present)</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;  containing the 2D (or 3D) coordinates of a set of points on the boundary</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  of a set of 2D ellipsoids whose Gramian matrices and centers are specified</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  as input argument.&lt;br&gt;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;  Here ``nell`` refers to the number of ellipsoids <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;  is equal to ``2 * max(1, size(gramian, 3), size(center, 2))``.</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;  \param[in]  gramian :   The input matrix of MATLAB doubles of shape ``[2, 2, nell]``</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;                          containing the Gramian matrices of the ``nell`` 2D ellipsoids</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;                          whose boundary points are to be returned.&lt;br&gt;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;                          (**optional**, <span class="keywordflow">default</span> = ``eye(2, 2, 1)``)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;  \param[in]  center  :   The input matrix of MATLAB doubles of shape ``[2, nell]`` containing</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                          the 2D coordinates of the centers of the ``nell`` 2D ellipsoids</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                          whose boundary points are to be returned.&lt;br&gt;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;                          (**optional**, <span class="keywordflow">default</span> = ``zeros(2, 1)``)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;  \param[in]  zval    :   The input scalar (or matrix of shape ``[npnt, nell]`` of) MATLAB double(s)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;                          containing the z-axis coordinates of the points on the borders of the ``nell`` 2D ellipsoids.&lt;br&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;                          If present, the specified value(s) will occupy the ``[1 : 2 : 3 * nell]`` columns of the output ``bcrd``.&lt;br&gt;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;                          (**optional**. If not present or empty, it will not be present in the output.)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;      \note</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;      This argument is present <span class="keywordflow">for</span> the sake of convenience and</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;      better performance of the algorithm to avoid further reallocations.</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;  \param[in]  npnt    :   The input scalar MATLAB whole number containing the number of</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;                          points to <span class="keywordflow">return</span> on the boundary of the target 2D ellipsoid.&lt;br&gt;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;                          (**optional**, <span class="keywordflow">default</span> = ``50``)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;          \warning</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;           The condition ``npnt == size(zval, 1)``</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;           must hold <span class="keywordflow">for</span> the corresponding input arguments.</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;  \return</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;  `bcrd`              :   The output matrix of MATLAB doubles of shape ``[npnt, 2 * nell]``</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;                          (or ``[npnt, 3 * nell]`` <span class="keywordflow">if</span> the input argument ``zval`` is present)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>%&gt;                          containing the coordinates of a set of ``npnt`` points on</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>%&gt;                          the boundary of the target 2D ellipsoid.</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>%&gt;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>%&gt;  \interface{<a class="code hl_function" href="getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2">getBorders</a>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>%&gt;  \code{.m}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>%&gt;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>%&gt;      pm.geom.ell2.getBorders()</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>%&gt;      pm.geom.ell2.getBorders(gramian)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>%&gt;      pm.geom.ell2.getBorders(gramian, center)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>%&gt;      pm.geom.ell2.getBorders(gramian, center, zval)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>%&gt;      pm.geom.ell2.getBorders(gramian, center, zval, npnt)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>%&gt;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>%&gt;  \endcode</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>%&gt;  \example{<a class="code hl_function" href="getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2">getBorders</a>}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>%&gt;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>%&gt;      bcrd = pm.geom.ell2.getBorders();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>%&gt;      figure; h = plot(bcrd(:, 1), bcrd(:, 2), <span class="charliteral">&#39;-&#39;</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>%&gt;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>%&gt;      bcrd = pm.geom.ell2.getBorders([], [], 20);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>%&gt;      figure; h = plot3(bcrd(:, 1), bcrd(:, 2), bcrd(:, 3), <span class="charliteral">&#39;-&#39;</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>%&gt;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>%&gt;      npnt = 50;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>%&gt;      figure; hold on; view(3);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>%&gt;      bcrd = pm.geom.ell2.getBorders([], [], repmat([1 : 20], npnt, 1));</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>%&gt;      <span class="keywordflow">for</span> iell = 1 : 2 : size(bcrd, 2) / 3</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>%&gt;          icol = (iell - 1) * 3 + 1;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>%&gt;          plot3(bcrd(:, icol), bcrd(:, icol + 1), bcrd(:, icol + 2), <span class="charliteral">&#39;-&#39;</span>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>%&gt;      end</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>%&gt;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>%&gt;  \final{<a class="code hl_function" href="getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2">getBorders</a>}</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>%&gt;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>%&gt;  \author</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>%&gt;  %&gt;  \JoshuaOsborne, May 21 2024, 5:33 PM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>%</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2">   74</a></span>function bcrd = <a class="code hl_function" href="getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2">getBorders</a>(gramian, center, zval, npnt)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">if</span>  nargin &lt; 4</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        npnt = [];</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    end</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">if</span>  nargin &lt; 3</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        zval = [];</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    end</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">if</span>  nargin &lt; 2</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        center = [];</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    end</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">if</span>  nargin &lt; 1</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        gramian = [];</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    end</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">if</span>  isempty(npnt)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">if</span>  1 &lt; size(zval, 1)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            npnt = size(zval, 1);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        else</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            npnt = 50;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        end</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    end</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">if</span>  nargin &lt; 3</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        zval = [];</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    if  isempty(center)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        center = zeros(2, 1);</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    end</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">if</span>  nargin &lt; 2</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        center = [];</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    end</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span>  nargin &lt; 1</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        gramian = [];</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    end</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">if</span>  isempty(npnt)</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">if</span>  1 &lt; size(zval, 1)</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            npnt = size(zval, 1);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        else</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            npnt = 50;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        end</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    end</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    if  isempty(center)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        center = zeros(2, 1);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    end</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    if  isempty(gramian)</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        gramian = zeros(2, 2, 1);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        gramian(:, :, 1) = eye(2);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    end</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    nell = max(size(gramian, 3), size(center, 2));</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    asserted = size(gramian, 3) == size(center, 2) || size(gramian, 3) == 1 || size(center, 2) == 1;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    if ~asserted</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        help(&quot;pm.geom.ell2.<a class="code hl_function" href="getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2">getBorders</a>&quot;)</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        disp(&quot;size(gramian)&quot;)</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        disp( size(gramian) )</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        disp(&quot;size(center)&quot;)</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        disp( size(center) )</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        error   ( newline ...</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                + &quot;The condition ``size(gramian, 3) == size(center, 2) || size(gramian, 3) == 1 || size(center, 2) == 1`` must hold.&quot; + newline ...</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                + &quot;For more information, see the documentation displayed above.&quot; + newline ...</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                + newline ...</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                );</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    end</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    %%%% Make the 2D ellipsoid boundaries.</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    if ~isempty(zval)</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        asserted = nell == size(zval, 2) || size(zval, 2) == 1 || (size(gramian, 3) == 1 || size(center, 2) == 1);</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        if ~asserted</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            help(&quot;pm.geom.ell2.<a class="code hl_function" href="getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2">getBorders</a>&quot;)</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            disp(&quot;size(gramian, 3)&quot;)</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            disp( size(gramian, 3) )</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            disp(&quot;size(canter, 3)&quot;)</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            disp( size(canter, 3) )</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            disp(&quot;size(zval)&quot;)</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            disp( size(zval) )</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            error   ( newline ...</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                    + &quot;The specified number of ellipsoids must be either the same or one in the input ``gramian``, ``center``, and ``zval``.&quot; + newline ...</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                    + &quot;For more information, see the documentation displayed above.&quot; + newline ...</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                    + newline ...</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                    );</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        end</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        zvalScalar = numel(zval) == 1;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        nell = max(nell, size(zval, 2));</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        bcrd = zeros(npnt, 3);</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        for iell = 1 : nell</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            icol = (iell - 1) * 3 + 1;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            bcrd(:, icol : icol + 1) = pm.geom.ell2.<a class="code hl_function" href="getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9">getBorder</a>(gramian(:, :, min(iell, size(gramian, 3))), center(:, min(iell, size(center, 2))), [], npnt);</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            if  zvalScalar</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                bcrd(:, icol + 2) = zval;</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            else</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                bcrd(:, icol + 2) = zval(:, min(iell, size(zval, 2)));</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            end</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        end</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    else</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        bcrd = zeros(npnt, 2);</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        for iell = 1 : nell</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            icol = (iell - 1) * 2 + 1;</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            bcrd(:, icol : icol + 1) = pm.geom.ell2.<a class="code hl_function" href="getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9">getBorder</a>(gramian(:, :, min(iell, size(gramian, 3))), center(:, min(iell, size(center, 2))), [], npnt);</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        end</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    end</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>end</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    if  isempty(gramian)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        gramian = zeros(2, 2, 1);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        gramian(:, :, 1) = eye(2);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    end</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    nell = max(size(gramian, 3), size(center, 2));</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    asserted = size(gramian, 3) == size(center, 2) || size(gramian, 3) == 1 || size(center, 2) == 1;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    if ~asserted</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        help(&quot;pm.geom.ell2.<a class="code hl_function" href="getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2">getBorders</a>&quot;)</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        disp(&quot;size(gramian)&quot;)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        disp( size(gramian) )</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        disp(&quot;size(center)&quot;)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        disp( size(center) )</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        error   ( newline ...</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                + &quot;The condition ``size(gramian, 3) == size(center, 2) || size(gramian, 3) == 1 || size(center, 2) == 1`` must hold.&quot; + newline ...</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                + &quot;For more information, see the documentation displayed above.&quot; + newline ...</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                + newline ...</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                );</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    end</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    %%%% Make the 2D ellipsoid boundaries.</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    if ~isempty(zval)</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        asserted = nell == size(zval, 2) || size(zval, 2) == 1 || (size(gramian, 3) == 1 || size(center, 2) == 1);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        if ~asserted</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            help(&quot;pm.geom.ell2.<a class="code hl_function" href="getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2">getBorders</a>&quot;)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            disp(&quot;size(gramian, 3)&quot;)</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            disp( size(gramian, 3) )</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            disp(&quot;size(canter, 3)&quot;)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            disp( size(canter, 3) )</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            disp(&quot;size(zval)&quot;)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            disp( size(zval) )</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            error   ( newline ...</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                    + &quot;The specified number of ellipsoids must be either the same or one in the input ``gramian``, ``center``, and ``zval``.&quot; + newline ...</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                    + &quot;For more information, see the documentation displayed above.&quot; + newline ...</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                    + newline ...</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                    );</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        end</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        zvalScalar = numel(zval) == 1;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        nell = max(nell, size(zval, 2));</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        bcrd = zeros(npnt, 3);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        for iell = 1 : nell</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            icol = (iell - 1) * 3 + 1;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            bcrd(:, icol : icol + 1) = pm.geom.ell2.<a class="code hl_function" href="getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9">getBorder</a>(gramian(:, :, min(iell, size(gramian, 3))), center(:, min(iell, size(center, 2))), npnt);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            if  zvalScalar</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                bcrd(:, icol + 2) = zval;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            else</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                bcrd(:, icol + 2) = zval(:, min(iell, size(zval, 2)));</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            end</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        end</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    else</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        bcrd = zeros(npnt, 2);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        for iell = 1 : nell</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            icol = (iell - 1) * 2 + 1;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            bcrd(:, icol : icol + 1) = pm.geom.ell2.<a class="code hl_function" href="getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9">getBorder</a>(gramian(:, :, min(iell, size(gramian, 3))), center(:, min(iell, size(center, 2))), npnt);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        end</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    end</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>end</div>
 <div class="ttc" id="agetBorder_8m_html_a6ec0cec943dde2125d78bb3cfb88d0b9"><div class="ttname"><a href="getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9">getBorder</a></div><div class="ttdeci">function getBorder(in gramian, in center, in npnt)</div><div class="ttdoc">Return a matrix of MATLAB doubles of shape [npnt, 2] containing the coordinates of a set of points on...</div></div>
-<div class="ttc" id="agetBorders_8m_html_a5c7b2b04ed3effb3fcc23a5179ca18c2"><div class="ttname"><a href="getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2">getBorders</a></div><div class="ttdeci">function getBorders(in gramian, in center, in zval, in npnt)</div></div>
-<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div></div>
+<div class="ttc" id="agetBorders_8m_html_a5c7b2b04ed3effb3fcc23a5179ca18c2"><div class="ttname"><a href="getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2">getBorders</a></div><div class="ttdeci">function getBorders(in gramian, in center, in zval, in npnt)</div><div class="ttdoc">Return a matrix of MATLAB doubles of shape [npnt, 2 * nell] (or [npnt, 3 * nell] if the input zval is...</div></div>
+<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_05729935b8d7cc9b82d9efdbe5fea313.html">+geom</a></li><li class="navelem"><a class="el" href="dir_9be8e5a8aa31988f4fac0370d869a96b.html">+ell2</a></li><li class="navelem"><a class="el" href="getBorders_8m.html">getBorders.m</a></li>
-        <li class="footer">Generated on Sat May 18 2024 23:23:06 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu May 23 2024 19:37:45 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

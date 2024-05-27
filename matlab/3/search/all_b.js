@@ -12,11 +12,12 @@ var searchData=
   ['medimage_2em_9',['medimage.m',['../medimage_8m.html',1,'']]],
   ['memtype_10',['memtype',['../classSampler.html#aff3b3a560e37699428dbcb4b445e0d5a',1,'Sampler']]],
   ['method_11',['method',['../classSampler.html#a2aecf3fc3f3e679765fc34414a7c387e',1,'Sampler::method()'],['../classFileContentsReport.html#a780338dec09702ef418c1fd40276d895',1,'FileContentsReport::method()'],['../classFileContentsRestart.html#aebab22b40a7dfa05e600126337065597',1,'FileContentsRestart::method()'],['../classSpecBase.html#abe5c76c70b8bdc708e8e495099e5c078',1,'SpecBase::method()'],['../classCor.html#adc89b459da8289c6f2a5fc3416543f2f',1,'Cor::method()'],['../classCov.html#a2d25f316c27c004247825b624b988cc1',1,'Cov::method()']]],
-  ['mex_12',['mex',['../mex_8m.html#afbd3ce0a6d28b7d13813025e98c43feb',1,'mex(in mexname, in config):&#160;mex.m'],['../mexdir_8m.html#afbd3ce0a6d28b7d13813025e98c43feb',1,'mex(in mexname, in config):&#160;mexdir.m']]],
+  ['mex_12',['mex',['../mex_8m.html#afbd3ce0a6d28b7d13813025e98c43feb',1,'mex.m']]],
   ['mex_2em_13',['mex.m',['../mex_8m.html',1,'']]],
-  ['mexdir_2em_14',['mexdir.m',['../mexdir_8m.html',1,'']]],
-  ['mexname_15',['mexname',['../classSampler.html#a13470386f7e22a5a0c8d6612e2b9ba46',1,'Sampler']]],
-  ['mincirc_16',['mincirc',['../mincirc_8m.html#a0de12e6a6b8b8db3285d3600803d2082',1,'mincirc.m']]],
-  ['mincirc_2em_17',['mincirc.m',['../mincirc_8m.html',1,'']]],
-  ['mpiname_18',['mpiname',['../classSampler.html#ae472602c809f8250aa62cdad84ef9cfe',1,'Sampler']]]
+  ['mexdir_14',['mexdir',['../mexdir_8m.html#afe14acaa5deaa1ac6ce46094ac8019ad',1,'mexdir.m']]],
+  ['mexdir_2em_15',['mexdir.m',['../mexdir_8m.html',1,'']]],
+  ['mexname_16',['mexname',['../classSampler.html#a13470386f7e22a5a0c8d6612e2b9ba46',1,'Sampler']]],
+  ['mincirc_17',['mincirc',['../mincirc_8m.html#a0de12e6a6b8b8db3285d3600803d2082',1,'mincirc.m']]],
+  ['mincirc_2em_18',['mincirc.m',['../mincirc_8m.html',1,'']]],
+  ['mpiname_19',['mpiname',['../classSampler.html#ae472602c809f8250aa62cdad84ef9cfe',1,'Sampler']]]
 ];

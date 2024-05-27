@@ -140,172 +140,172 @@ $(document).ready(function(){initNavTree('colornames_8m_source.html',''); initRe
   <div class="headertitle"><div class="title">colornames.m</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="colornames_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">    1</a></span>function [cnc, <a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a>, dtE] = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(palette, varargin)</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>    % Convert between RGB values and color names: from RGB to names, and names to RGB.</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    %</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    % (c) 2014-2019 Stephen Cobeldick</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    %</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    % Easily convert between RGB values and color names, in both directions!</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    %</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    % COLORNAMES matches the input colors (either names or an RGB <a class="code hl_function" href="map_8m.html#ae3665b5622a063cb00f01de3bd29b658">map</a>) to colors</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    % from the requested palette. It returns both the color names and RGB values.</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    %</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    %%% Syntax:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    %  palettes = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>()</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    %  names = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(palette)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    %  names = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(palette,RGB)</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    %  names = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(palette,RGB,deltaE)</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    %  names = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(palette,names)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    %  names = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(palette,name1,name2,...)</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    % [names,RGB] = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(palette,...)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    %</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    %%% RGB inputs:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    % * Accepts multiple RGB values in a standard MATLAB Nx3 colormap.</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    % * Choice of color distance (deltaE) calculation, any one of:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    %   <span class="stringliteral">&#39;CIEDE2000&#39;</span>, <span class="stringliteral">&#39;DIN99&#39;</span>, <span class="stringliteral">&#39;CIE94&#39;</span> (<span class="keywordflow">default</span>), <span class="stringliteral">&#39;CIE76&#39;</span>, <span class="stringliteral">&#39;CMCl:c&#39;</span>, or <span class="stringliteral">&#39;RGB&#39;</span>.</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    %   For <a class="code hl_function" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a> on deltaE: &lt;https:<span class="comment">//en.wikipedia.org/wiki/Color_difference&gt;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    %   or: &lt;http:<span class="comment">//www.colorwiki.com/wiki/Delta_E:_The_Color_Difference&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    % Note that palettes with sparse colors can produce unexpected matches.</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    %</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    %%% Color <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> inputs:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    % * Accepts multiple color names (in one cell array, or as separate inputs).</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    % * Case-insensitive color <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> matches, e.g. <span class="stringliteral">&#39;Blue&#39;</span> == <span class="stringliteral">&#39;blue&#39;</span> == <span class="stringliteral">&#39;BLUE&#39;</span>.</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    % * Allows optional space characters between the color <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> words.</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    % * Allows camelCase to specify color names with space characters in them.</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    % * Palettes with <a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a> numbers may be specified by the number: e.g.: <span class="charliteral">&#39;5&#39;</span>.</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    % * Palettes Alphabet, MATLAB, and Natural also match the initial letter to</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    %   the color <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> (except <span class="keywordflow">for</span> <span class="stringliteral">&#39;Black&#39;</span> <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> is matched by <span class="charliteral">&#39;k&#39;</span>).</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    %</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    %% Space Characters in Color Names %%</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    %</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    % Many palettes use camelCase in the color names: COLORNAMES will match</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    % the input names with any character <span class="keywordflow">case</span> or spaces between the words, e.g.:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    % <span class="stringliteral">&#39;Sky Blue&#39;</span> == <span class="stringliteral">&#39;SKY BLUE&#39;</span> == <span class="stringliteral">&#39;sky blue&#39;</span> == <span class="stringliteral">&#39;SkyBlue&#39;</span> == <span class="stringliteral">&#39;SKYBLUE&#39;</span> == <span class="stringliteral">&#39;skyblue&#39;</span>.</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    %</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    % Palettes Foster and xkcd include spaces: clashes occur <span class="keywordflow">if</span> the names are</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    % converted to one <span class="keywordflow">case</span> (e.g. lower) and the spaces removed. To make these</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    % names more convenient to use, camelCase is equivalent to words separated</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    % by spaces, e.g.: <span class="stringliteral">&#39;EggShell&#39;</span> == <span class="stringliteral">&#39;Egg Shell&#39;</span> == <span class="stringliteral">&#39;egg shell&#39;</span> == <span class="stringliteral">&#39;EGG SHELL&#39;</span>.</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    % Note <span class="keyword">this</span> is a different color to <span class="stringliteral">&#39;Eggshell&#39;</span> == <span class="stringliteral">&#39;eggshell&#39;</span> == <span class="stringliteral">&#39;EGGSHELL&#39;</span>.</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    %</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    % In xkcd the forward slash (<span class="charliteral">&#39;/&#39;</span>) also distinguishes between different</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    % colors, e.g.: &#39;Blue/Green&#39; is not the same as &#39;Blue Green&#39; (== &#39;BlueGreen&#39;).</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    %</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    %% Index Numbers in Color Names %%</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    %</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    % Palettes with a leading <a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a> number (e.g. AppleII, BS381C, CGA, RAL, etc)</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    % can also use just the <a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a> number or words to select a color, e.g.:</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    % &#39;5&#39; == &#39;Blue Flower&#39; == &#39;BLUE FLOWER&#39; == &#39;BlueFlower&#39; == &#39;5 Blue Flower&#39;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    % And for the palettes with spaces, camelCase is also equivalent to words</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    % separated by spaces, e.g.: &#39;5BlueFlower&#39; == &#39;5 Blue Flower&#39; == &#39;5 blue flower&#39;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    %</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    %% Initial Letter Color Name Abbreviations %%</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    %</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    % Palettes Alphabet, MATLAB, and Natural also match the initial letter to</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    % the color <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> (except for &#39;Black&#39; <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> is matched by &#39;k&#39;), e.g.:</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    % &#39;B&#39; == &#39;Blue&#39;, &#39;Y&#39; ==&#39;Yellow&#39;, &#39;M&#39; == &#39;Magenta&#39;, &#39;<a class="code hl_function" href="kde2d_8m.html#a309c15b0d9b65b2964e2ae1cd4f19b41">K</a>&#39; == &#39;Black&#39;.</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    %</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    %% Examples %%</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    %</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    % &gt;&gt; palettes = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>()</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    % palettes =</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    %     &#39;Alphabet&#39;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    %     &#39;AmstradCPC&#39;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    %     &#39;AppleII&#39;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    %     &#39;Bang&#39;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    %     &#39;BS381C&#39;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    %     &#39;CGA&#39;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    %     &#39;Crayola&#39;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    %     &#39;CSS&#39;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    %     &#39;dvips&#39;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    %     &#39;Foster&#39;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    %     &#39;HTML4&#39;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    %     &#39;ISCC&#39;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    %     &#39;Kelly&#39;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    %     &#39;MacBeth&#39;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    %     &#39;MATLAB&#39;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    %     &#39;Natural&#39;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    %     &#39;R&#39;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    %     &#39;RAL&#39;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    %     &#39;Resene&#39;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    %     &#39;Resistor&#39;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    %     &#39;SherwinWilliams&#39;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    %     &#39;SVG&#39;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    %     &#39;Tableau&#39;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    %     &#39;Thesaurus&#39;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    %     &#39;Trubetskoy&#39;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    %     &#39;Wikipedia&#39;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    %     &#39;Wolfram&#39;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    %     &#39;X11&#39;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    %     &#39;xcolor&#39;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    %     &#39;xkcd&#39;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    %</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    % &gt;&gt; <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(&#39;Natural&#39;) % all color names for one palette</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    % ans =</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    %     &#39;Black&#39;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    %     &#39;Blue&#39;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    %     &#39;Green&#39;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    %     &#39;Red&#39;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    %     &#39;White&#39;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    %     &#39;Yellow&#39;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    %</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    % &gt;&gt; [names,<a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a>] = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(&#39;HTML4&#39;,&#39;blue&#39;,&#39;red&#39;,&#39;teal&#39;,&#39;olive&#39;)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    % names =</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    %     &#39;Blue&#39;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    %     &#39;Red&#39;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    %     &#39;Teal&#39;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    %     &#39;Olive&#39;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    % <a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a> =</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    %          0         0    1.0000</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    %     1.0000         0         0</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    %          0    0.5020    0.5020</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    %     0.5020    0.5020         0</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    %</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    % &gt;&gt; <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(&#39;HTML4&#39;,[0,0.5,1;1,0.5,0]) % default deltaE = CIE94</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    % ans =</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    %     &#39;Blue&#39;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    %     &#39;Red&#39;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    %</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    % &gt;&gt; <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(&#39;HTML4&#39;,[0,0.5,1;1,0.5,0],&#39;<a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a>&#39;) % specify deltaE</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    % ans =</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    %     &#39;Teal&#39;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    %     &#39;Olive&#39;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    %</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    % &gt;&gt; [names,<a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a>] = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(&#39;MATLAB&#39;);</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    % &gt;&gt; [<span class="keywordtype">char</span>(strcat(names,{<span class="stringliteral">&#39;  &#39;</span>})),num2str(<a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a>)]</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    %  ans =</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    %  Black    0  0  0</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    %  Blue     0  0  1</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    %  Cyan     0  1  1</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    %  Green    0  1  0</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    %  Magenta  1  0  1</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    %  Red      1  0  0</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    %  White    1  1  1</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    %  Yellow   1  1  0</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    %</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    % &gt;&gt; <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(<span class="stringliteral">&#39;MATLAB&#39;</span>,<span class="charliteral">&#39;c&#39;</span>,<span class="charliteral">&#39;m&#39;</span>,<span class="charliteral">&#39;y&#39;</span>,<span class="charliteral">&#39;k&#39;</span>)</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    % ans =</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    %     <span class="stringliteral">&#39;Cyan&#39;</span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    %     <span class="stringliteral">&#39;Magenta&#39;</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    %     <span class="stringliteral">&#39;Yellow&#39;</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    %     <span class="stringliteral">&#39;Black&#39;</span></div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    %</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    %% Input and Output Arguments %%</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    %</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    %%% Inputs (*=<span class="keywordflow">default</span>):</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    %  palette = CharRowVector, the <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> of a supported palette, e.g.: <span class="stringliteral">&#39;CSS&#39;</span>.</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    %%% The optional input/s can be names or RGB values. Names can be either:</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    %  names  = CellOfCharRowVectors, any number of supported color names.</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    %  name1,name2,... = CharRowVectors, any number of supported color names.</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    %%% RGB values in a matrix, with optional <a class="code hl_function" href="choice_8m.html#ad6ebd2e3ca4b3f6315f1e52a3cc195a6">choice</a> of color-distance deltaE:</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    %  RGB    = NumericMatrix, size Nx3, each row is an RGB triple (0&lt;=<a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a>&lt;=1).</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    %  deltaE = CharRowVector: <span class="stringliteral">&#39;CIEDE2000&#39;</span>, <span class="stringliteral">&#39;DIN99&#39;</span>, <span class="stringliteral">&#39;CIE94&#39;</span>*, <span class="stringliteral">&#39;CIE76&#39;</span>, <span class="stringliteral">&#39;CMCl:c&#39;</span>, or <span class="stringliteral">&#39;RGB&#39;</span>.</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    %</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    %%% Outputs:</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    %  cnc = CellOfCharRowVectors, size Nx1, the color names that best match the inputs.</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    %  <a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a> = NumericMatrix, size Nx3, RGB values corresponding to names in &lt;cnc&gt;.</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    %</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    % See also COLORNAMES_CUBE COLORNAMES_DELTAE COLORNAMES_VIEW MAXDISTCOLOR COLORMAP</div>
+<a href="colornames_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>% Convert between RGB values and color names: from RGB to names, and names to RGB.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>% (c) 2014-2019 Stephen Cobeldick</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>% Easily convert between RGB values and color names, in both directions!</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>% COLORNAMES matches the input colors (either names or an RGB <a class="code hl_function" href="map_8m.html#ae3665b5622a063cb00f01de3bd29b658">map</a>) to colors</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>% from the requested palette. It returns both the color names and RGB values.</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%%% Syntax:</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%  palettes = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>()</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%  names = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(palette)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%  names = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(palette,RGB)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%  names = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(palette,RGB,deltaE)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%  names = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(palette,names)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%  names = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(palette,name1,name2,...)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>% [names,RGB] = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(palette,...)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%%% RGB inputs:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>% * Accepts multiple RGB values in a standard MATLAB Nx3 colormap.</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>% * Choice of color distance (deltaE) calculation, any one of:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%   <span class="stringliteral">&#39;CIEDE2000&#39;</span>, <span class="stringliteral">&#39;DIN99&#39;</span>, <span class="stringliteral">&#39;CIE94&#39;</span> (<span class="keywordflow">default</span>), <span class="stringliteral">&#39;CIE76&#39;</span>, <span class="stringliteral">&#39;CMCl:c&#39;</span>, or <span class="stringliteral">&#39;RGB&#39;</span>.</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%   For <a class="code hl_function" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a> on deltaE: &lt;https:<span class="comment">//en.wikipedia.org/wiki/Color_difference&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%   or: &lt;http:<span class="comment">//www.colorwiki.com/wiki/Delta_E:_The_Color_Difference&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>% Note that palettes with sparse colors can produce unexpected matches.</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%%% Color <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> inputs:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>% * Accepts multiple color names (in one cell array, or as separate inputs).</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>% * Case-insensitive color <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> matches, e.g. <span class="stringliteral">&#39;Blue&#39;</span> == <span class="stringliteral">&#39;blue&#39;</span> == <span class="stringliteral">&#39;BLUE&#39;</span>.</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>% * Allows optional space characters between the color <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> words.</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>% * Allows camelCase to specify color names with space characters in them.</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>% * Palettes with <a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a> numbers may be specified by the number: e.g.: <span class="charliteral">&#39;5&#39;</span>.</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>% * Palettes Alphabet, MATLAB, and Natural also match the initial letter to</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%   the color <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> (except <span class="keywordflow">for</span> <span class="stringliteral">&#39;Black&#39;</span> <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> is matched by <span class="charliteral">&#39;k&#39;</span>).</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%% Space Characters in Color Names %%</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>% Many palettes use camelCase in the color names: COLORNAMES will match</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>% the input names with any character <span class="keywordflow">case</span> or spaces between the words, e.g.:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>% <span class="stringliteral">&#39;Sky Blue&#39;</span> == <span class="stringliteral">&#39;SKY BLUE&#39;</span> == <span class="stringliteral">&#39;sky blue&#39;</span> == <span class="stringliteral">&#39;SkyBlue&#39;</span> == <span class="stringliteral">&#39;SKYBLUE&#39;</span> == <span class="stringliteral">&#39;skyblue&#39;</span>.</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>%</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>% Palettes Foster and xkcd include spaces: clashes occur <span class="keywordflow">if</span> the names are</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>% converted to one <span class="keywordflow">case</span> (e.g. lower) and the spaces removed. To make these</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>% names more convenient to use, camelCase is equivalent to words separated</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>% by spaces, e.g.: <span class="stringliteral">&#39;EggShell&#39;</span> == <span class="stringliteral">&#39;Egg Shell&#39;</span> == <span class="stringliteral">&#39;egg shell&#39;</span> == <span class="stringliteral">&#39;EGG SHELL&#39;</span>.</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>% Note <span class="keyword">this</span> is a different color to <span class="stringliteral">&#39;Eggshell&#39;</span> == <span class="stringliteral">&#39;eggshell&#39;</span> == <span class="stringliteral">&#39;EGGSHELL&#39;</span>.</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>%</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>% In xkcd the forward slash (<span class="charliteral">&#39;/&#39;</span>) also distinguishes between different</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>% colors, e.g.: &#39;Blue/Green&#39; is not the same as &#39;Blue Green&#39; (== &#39;BlueGreen&#39;).</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>%</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>%% Index Numbers in Color Names %%</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>%</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>% Palettes with a leading <a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a> number (e.g. AppleII, BS381C, CGA, RAL, etc)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>% can also use just the <a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a> number or words to select a color, e.g.:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>% &#39;5&#39; == &#39;Blue Flower&#39; == &#39;BLUE FLOWER&#39; == &#39;BlueFlower&#39; == &#39;5 Blue Flower&#39;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>% And for the palettes with spaces, camelCase is also equivalent to words</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>% separated by spaces, e.g.: &#39;5BlueFlower&#39; == &#39;5 Blue Flower&#39; == &#39;5 blue flower&#39;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>%</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>%% Initial Letter Color Name Abbreviations %%</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>%</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>% Palettes Alphabet, MATLAB, and Natural also match the initial letter to</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>% the color <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> (except for &#39;Black&#39; <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> is matched by &#39;k&#39;), e.g.:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>% &#39;B&#39; == &#39;Blue&#39;, &#39;Y&#39; ==&#39;Yellow&#39;, &#39;M&#39; == &#39;Magenta&#39;, &#39;<a class="code hl_function" href="kde2d_8m.html#a309c15b0d9b65b2964e2ae1cd4f19b41">K</a>&#39; == &#39;Black&#39;.</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>%</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>%% Examples %%</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>%</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>% &gt;&gt; palettes = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>()</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>% palettes =</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>%     &#39;Alphabet&#39;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>%     &#39;AmstradCPC&#39;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>%     &#39;AppleII&#39;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>%     &#39;Bang&#39;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>%     &#39;BS381C&#39;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>%     &#39;CGA&#39;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>%     &#39;Crayola&#39;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>%     &#39;CSS&#39;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>%     &#39;dvips&#39;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>%     &#39;Foster&#39;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>%     &#39;HTML4&#39;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>%     &#39;ISCC&#39;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>%     &#39;Kelly&#39;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>%     &#39;MacBeth&#39;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>%     &#39;MATLAB&#39;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>%     &#39;Natural&#39;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>%     &#39;R&#39;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>%     &#39;RAL&#39;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>%     &#39;Resene&#39;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>%     &#39;Resistor&#39;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>%     &#39;SherwinWilliams&#39;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>%     &#39;SVG&#39;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>%     &#39;Tableau&#39;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>%     &#39;Thesaurus&#39;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>%     &#39;Trubetskoy&#39;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>%     &#39;Wikipedia&#39;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>%     &#39;Wolfram&#39;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>%     &#39;X11&#39;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>%     &#39;xcolor&#39;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>%     &#39;xkcd&#39;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>%</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>% &gt;&gt; <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(&#39;Natural&#39;) % all color names for one palette</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>% ans =</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>%     &#39;Black&#39;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>%     &#39;Blue&#39;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>%     &#39;Green&#39;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>%     &#39;Red&#39;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>%     &#39;White&#39;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>%     &#39;Yellow&#39;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>%</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>% &gt;&gt; [names,<a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a>] = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(&#39;HTML4&#39;,&#39;blue&#39;,&#39;red&#39;,&#39;teal&#39;,&#39;olive&#39;)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>% names =</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>%     &#39;Blue&#39;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>%     &#39;Red&#39;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>%     &#39;Teal&#39;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>%     &#39;Olive&#39;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>% <a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a> =</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>%          0         0    1.0000</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>%     1.0000         0         0</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>%          0    0.5020    0.5020</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>%     0.5020    0.5020         0</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>%</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>% &gt;&gt; <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(&#39;HTML4&#39;,[0,0.5,1;1,0.5,0]) % default deltaE = CIE94</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>% ans =</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>%     &#39;Blue&#39;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>%     &#39;Red&#39;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>%</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>% &gt;&gt; <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(&#39;HTML4&#39;,[0,0.5,1;1,0.5,0],&#39;<a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a>&#39;) % specify deltaE</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>% ans =</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>%     &#39;Teal&#39;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>%     &#39;Olive&#39;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>%</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>% &gt;&gt; [names,<a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a>] = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(&#39;MATLAB&#39;);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>% &gt;&gt; [<span class="keywordtype">char</span>(strcat(names,{<span class="stringliteral">&#39;  &#39;</span>})),num2str(<a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a>)]</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>%  ans =</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>%  Black    0  0  0</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>%  Blue     0  0  1</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>%  Cyan     0  1  1</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>%  Green    0  1  0</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>%  Magenta  1  0  1</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>%  Red      1  0  0</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>%  White    1  1  1</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>%  Yellow   1  1  0</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>%</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>% &gt;&gt; <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(<span class="stringliteral">&#39;MATLAB&#39;</span>,<span class="charliteral">&#39;c&#39;</span>,<span class="charliteral">&#39;m&#39;</span>,<span class="charliteral">&#39;y&#39;</span>,<span class="charliteral">&#39;k&#39;</span>)</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>% ans =</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>%     <span class="stringliteral">&#39;Cyan&#39;</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>%     <span class="stringliteral">&#39;Magenta&#39;</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>%     <span class="stringliteral">&#39;Yellow&#39;</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>%     <span class="stringliteral">&#39;Black&#39;</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>%</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>%% Input and Output Arguments %%</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>%</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>%%% Inputs (*=<span class="keywordflow">default</span>):</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>%  palette = CharRowVector, the <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> of a supported palette, e.g.: <span class="stringliteral">&#39;CSS&#39;</span>.</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>%%% The optional input/s can be names or RGB values. Names can be either:</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>%  names  = CellOfCharRowVectors, any number of supported color names.</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>%  name1,name2,... = CharRowVectors, any number of supported color names.</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>%%% RGB values in a matrix, with optional <a class="code hl_function" href="choice_8m.html#ad6ebd2e3ca4b3f6315f1e52a3cc195a6">choice</a> of color-distance deltaE:</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>%  RGB    = NumericMatrix, size Nx3, each row is an RGB triple (0&lt;=<a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a>&lt;=1).</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>%  deltaE = CharRowVector: <span class="stringliteral">&#39;CIEDE2000&#39;</span>, <span class="stringliteral">&#39;DIN99&#39;</span>, <span class="stringliteral">&#39;CIE94&#39;</span>*, <span class="stringliteral">&#39;CIE76&#39;</span>, <span class="stringliteral">&#39;CMCl:c&#39;</span>, or <span class="stringliteral">&#39;RGB&#39;</span>.</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>%</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>%%% Outputs:</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>%  cnc = CellOfCharRowVectors, size Nx1, the color names that best match the inputs.</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>%  <a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a> = NumericMatrix, size Nx3, RGB values corresponding to names in &lt;cnc&gt;.</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>%</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>% See also COLORNAMES_CUBE COLORNAMES_DELTAE COLORNAMES_VIEW MAXDISTCOLOR COLORMAP</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">  166</a></span>function [cnc, <a class="code hl_function" href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a>, dtE] = <a class="code hl_function" href="colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911">colornames</a>(palette, varargin)</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    %% Read Palette Data %%</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    %</div>
@@ -668,10 +668,10 @@ $(document).ready(function(){initNavTree('colornames_8m_source.html',''); initRe
 <div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span><span class="stringliteral">end</span></div>
 <div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span><span class="stringliteral"></span> </div>
 <div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span><span class="stringliteral">% cnAtan2d</span></div>
-<div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div></div>
-<div class="ttc" id="a_09os_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div></div>
-<div class="ttc" id="a_09sort_2index_8m_html_a5e9da7e1ba3f2f6d159127bb7d902c6b"><div class="ttname"><a href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a></div><div class="ttdeci">function index(in array)</div></div>
-<div class="ttc" id="achoice_8m_html_ad6ebd2e3ca4b3f6315f1e52a3cc195a6"><div class="ttname"><a href="choice_8m.html#ad6ebd2e3ca4b3f6315f1e52a3cc195a6">choice</a></div><div class="ttdeci">function choice()</div></div>
+<div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div><div class="ttdoc">Return the MPI library name as used in naming the ParaMonte MATLAB shared libraries.</div></div>
+<div class="ttc" id="a_09os_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div><div class="ttdoc">Return a list of MATLAB strings containing the names of OS platforms supported by the ParaMonte MATLA...</div></div>
+<div class="ttc" id="a_09sort_2index_8m_html_a5e9da7e1ba3f2f6d159127bb7d902c6b"><div class="ttname"><a href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a></div><div class="ttdeci">function index(in array)</div><div class="ttdoc">Given array(1 : n), return the array index indx(1:n) such that array(indx) is in ascending order.</div></div>
+<div class="ttc" id="achoice_8m_html_ad6ebd2e3ca4b3f6315f1e52a3cc195a6"><div class="ttname"><a href="choice_8m.html#ad6ebd2e3ca4b3f6315f1e52a3cc195a6">choice</a></div><div class="ttdeci">function choice()</div><div class="ttdoc">Return the ParaMonte-preferred MPI library vendor name as used in naming the ParaMonte MATLAB shared ...</div></div>
 <div class="ttc" id="acolornames_8m_html_a03e9ad466b77a6201420f756bc651e81"><div class="ttname"><a href="colornames_8m.html#a03e9ad466b77a6201420f756bc651e81">cnRGB2HSV</a></div><div class="ttdeci">function cnRGB2HSV(in rgb)</div></div>
 <div class="ttc" id="acolornames_8m_html_a1713911620af4c4b41a13262f9500c4e"><div class="ttname"><a href="colornames_8m.html#a1713911620af4c4b41a13262f9500c4e">cnEdits</a></div><div class="ttdeci">function cnEdits(in S1, in S2)</div></div>
 <div class="ttc" id="acolornames_8m_html_a3ee710bc11d66cc445e6ce63154319d5"><div class="ttname"><a href="colornames_8m.html#a3ee710bc11d66cc445e6ce63154319d5">cnClosest</a></div><div class="ttdeci">function cnClosest(in dtE, in ord, in rgb, in inp, in typ)</div></div>
@@ -687,19 +687,19 @@ $(document).ready(function(){initNavTree('colornames_8m_source.html',''); initRe
 <div class="ttc" id="acolornames_8m_html_af40281fddb169fca43b2e6b9c235cdb7"><div class="ttname"><a href="colornames_8m.html#af40281fddb169fca43b2e6b9c235cdb7">cnPickBest</a></div><div class="ttdeci">function cnPickBest(in raw, in str, in idm)</div></div>
 <div class="ttc" id="acolornames_8m_html_afc8572c9fe43033bf1ca3996b7b18f6e"><div class="ttname"><a href="colornames_8m.html#afc8572c9fe43033bf1ca3996b7b18f6e">cnNoMatch</a></div><div class="ttdeci">function cnNoMatch(in pnm, in cnc, in inp)</div></div>
 <div class="ttc" id="acolornames_8m_html_afd2b3c53c8fa04f6fd67d20eca447d51"><div class="ttname"><a href="colornames_8m.html#afd2b3c53c8fa04f6fd67d20eca447d51">cnLab2LCh</a></div><div class="ttdeci">function cnLab2LCh(in lab)</div></div>
-<div class="ttc" id="afind_8m_html_aa94df3e8e4e5c54cbfe8cfaa7ae6f94c"><div class="ttname"><a href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">find</a></div><div class="ttdeci">function find(in vendor)</div></div>
-<div class="ttc" id="ainfo_8m_html_a87faef413694ac4a58dd4890b2b59f8c"><div class="ttname"><a href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a></div><div class="ttdeci">function info()</div></div>
+<div class="ttc" id="afind_8m_html_aa94df3e8e4e5c54cbfe8cfaa7ae6f94c"><div class="ttname"><a href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">find</a></div><div class="ttdeci">function find(in vendor)</div><div class="ttdoc">Return a list of scalar MATLAB strings containing the paths to all detected mpiexec binaries installe...</div></div>
+<div class="ttc" id="ainfo_8m_html_a87faef413694ac4a58dd4890b2b59f8c"><div class="ttname"><a href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a></div><div class="ttdeci">function info()</div><div class="ttdoc">Return a MATLAB string containing the current system information.</div></div>
 <div class="ttc" id="akde2d_8m_html_a309c15b0d9b65b2964e2ae1cd4f19b41"><div class="ttname"><a href="kde2d_8m.html#a309c15b0d9b65b2964e2ae1cd4f19b41">K</a></div><div class="ttdeci">function K(in s)</div></div>
-<div class="ttc" id="amap_8m_html_ae3665b5622a063cb00f01de3bd29b658"><div class="ttname"><a href="map_8m.html#ae3665b5622a063cb00f01de3bd29b658">map</a></div><div class="ttdeci">function map()</div></div>
-<div class="ttc" id="argb_8m_html_a5bf52092f6437dfb37d3161760328054"><div class="ttname"><a href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a></div><div class="ttdeci">function rgb(in cname)</div></div>
-<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div></div>
+<div class="ttc" id="amap_8m_html_ae3665b5622a063cb00f01de3bd29b658"><div class="ttname"><a href="map_8m.html#ae3665b5622a063cb00f01de3bd29b658">map</a></div><div class="ttdeci">function map()</div><div class="ttdoc">Return a scalar MATLAB logical that is true if and only if the current installation of MATLAB contain...</div></div>
+<div class="ttc" id="argb_8m_html_a5bf52092f6437dfb37d3161760328054"><div class="ttname"><a href="rgb_8m.html#a5bf52092f6437dfb37d3161760328054">rgb</a></div><div class="ttdeci">function rgb(in cname)</div><div class="ttdoc">Return the RGB triplet corresponding to the input color name cname.</div></div>
+<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_77a461de7b91f32df8032085d9a00b9a.html">+vis</a></li><li class="navelem"><a class="el" href="dir_749fd4d86fc2cd1c662a8bf1a9de3abc.html">+color</a></li><li class="navelem"><a class="el" href="dir_40702f80dd528686190a3ecf92af7cb5.html">+names</a></li><li class="navelem"><a class="el" href="colornames_8m.html">colornames.m</a></li>
-        <li class="footer">Generated on Sat May 18 2024 23:23:07 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu May 23 2024 19:37:46 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

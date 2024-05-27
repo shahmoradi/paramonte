@@ -140,86 +140,79 @@ $(document).ready(function(){initNavTree('_09sys_2_09path_2list_8m_source.html',
   <div class="headertitle"><div class="title">list.m</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_09sys_2_09path_2list_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="_09sys_2_09path_2list_8m.html#a00bf3dae9ea3cbc861beb81ecd975f8b">    1</a></span>function namelist = <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a>(path)</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>    %</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    %   Return a cell vector of MATLAB <span class="keywordtype">string</span> values each of <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    %   corresponds to one non-<span class="keywordflow">default</span> file or folder path</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    %   in the specified input directory path.</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    %</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    %   \note</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    %</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    %       The primary use of <span class="keyword">this</span> function is to create a <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> of items</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    %       in a given folder <span class="keywordflow">while</span> excluding the <span class="keywordflow">default</span> system items</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    %       <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> includes the current and parent directories.</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    %</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    %   Parameters</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    %   ----------</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    %</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    %       path</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    %</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    %           The input scalar MATLAB <span class="keywordtype">string</span> or character containing the path to an</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    %           existing directory whose file and folder <a class="code hl_function" href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a> should be listed,</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    %           excluding the <span class="keywordflow">default</span> ``<span class="stringliteral">&quot;.&quot;</span>`` and ``<span class="stringliteral">&quot;..&quot;</span>`` system paths.</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    %           (**optional**, <span class="keywordflow">default</span> = ``<span class="stringliteral">&quot;.&quot;</span>``)</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    %</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    %   Returns</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    %   -------</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    %</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    %       namelist</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    %</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    %           A MATLAB cell vector, each element of <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> corresponds to an existing</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    %           non-<span class="keywordflow">default</span> file or folder in the specified input directory path.</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    %           If the input path contains a base directory <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>, the <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    %           will be prefixed to each item in the output ``namelist``.</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    %           If the input `path` is not a directory or is empty,</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    %           the output `namelist` will be empty.</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    %</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    %   Interface</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    %   ---------</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    %</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    %       namelist = pm.sys.path.list()</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    %       namelist = pm.sys.path.list(path)</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    %</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    %   LICENSE</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    %   -------</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    %</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    %       https:<span class="comment">//github.com/cdslaborg/paramonte/blob/main/LICENSE.md</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    %</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">if</span> nargin &lt; 1</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        path = <span class="stringliteral">&quot;.&quot;</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    end</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    namelist = [];</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">if</span>  isfolder(path)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        [dirname, ~, ~] = fileparts(path);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        fileSpecList = dir(path);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        namelistRaw = string({fileSpecList.name});</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        namelistLen = length(namelistRaw);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        cleanListLen = namelistLen - (any(strcmp(namelistRaw, <span class="stringliteral">&quot;.&quot;</span>)) + any(strcmp(namelistRaw, <span class="stringliteral">&quot;..&quot;</span>)));</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">if</span> cleanListLen == namelistLen</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            namelist = fullfile(dirname, namelistRaw);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            namelist = strings([cleanListLen, 1]);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            counter = 0;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">for</span> i = 1 : namelistLen</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                <span class="keywordflow">if</span> ~(strcmp(namelistRaw(i), <span class="stringliteral">&quot;.&quot;</span>) || strcmp(namelistRaw(i), <span class="stringliteral">&quot;..&quot;</span>))</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                    counter = counter + 1;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                    namelist(counter) = fullfile(dirname, namelistRaw(i));</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                end</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            end</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        end</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    end</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>end</div>
-<div class="ttc" id="a_09bash__profile_2contents_8m_html_ac8cba6ddf5f553e8277972eecd196b81"><div class="ttname"><a href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a></div><div class="ttdeci">function contents()</div></div>
-<div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div></div>
-<div class="ttc" id="a_09os_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div></div>
-<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div></div>
+<a href="_09sys_2_09path_2list_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>%&gt;  \brief</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Return a cell vector of MATLAB <span class="keywordtype">string</span> values each of <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;  corresponds to one non-<span class="keywordflow">default</span> file or folder path</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;  in the specified input directory path.</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  \note</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;  The primary use of <span class="keyword">this</span> function is to create a <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> of items</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;  in a given folder <span class="keywordflow">while</span> excluding the <span class="keywordflow">default</span> system items</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> includes the current and parent <a class="code hl_variable" href="glob_8m.html#a3ac3addbc05e2c89f055173ea2e08a5d">directories</a>.</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;  \param[in]  path    :   The input scalar MATLAB <span class="keywordtype">string</span> or character containing the path to an</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;                          existing directory whose file and folder <a class="code hl_function" href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a> should be listed,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;                          excluding the <span class="keywordflow">default</span> ``<span class="stringliteral">&quot;.&quot;</span>`` and ``<span class="stringliteral">&quot;..&quot;</span>`` system paths.</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;                          (**optional**, <span class="keywordflow">default</span> = ``<span class="stringliteral">&quot;.&quot;</span>``)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;  \<span class="keywordflow">return</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;  `namelist`          :   A MATLAB cell vector, each element of <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> corresponds to an existing</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;                          non-<span class="keywordflow">default</span> file or folder in the specified input directory path.</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;                          If the input path contains a base directory <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>, the <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;                          will be prefixed to each item in the output ``namelist``.</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;                          If the input `path` is not a directory or is empty,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;                          the output `namelist` will be empty.</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;  \interface{<a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;  \code{.m}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;      namelist = pm.sys.path.list()</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;      namelist = pm.sys.path.list(path)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;  \endcode</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;  \final{<a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a>}</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;  \author</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;  \JoshuaOsborne, May 21 2024, 5:26 AM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="_09sys_2_09path_2list_8m.html#a00bf3dae9ea3cbc861beb81ecd975f8b">   37</a></span>function namelist = <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a>(path)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span> nargin &lt; 1</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        path = <span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    end</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    namelist = [];</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span>  isfolder(path)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        [dirname, ~, ~] = fileparts(path);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        fileSpecList = dir(path);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        namelistRaw = string({fileSpecList.name});</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        namelistLen = length(namelistRaw);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        cleanListLen = namelistLen - (any(strcmp(namelistRaw, <span class="stringliteral">&quot;.&quot;</span>)) + any(strcmp(namelistRaw, <span class="stringliteral">&quot;..&quot;</span>)));</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">if</span> cleanListLen == namelistLen</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            namelist = fullfile(dirname, namelistRaw);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            namelist = strings([cleanListLen, 1]);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            counter = 0;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keywordflow">for</span> i = 1 : namelistLen</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <span class="keywordflow">if</span> ~(strcmp(namelistRaw(i), <span class="stringliteral">&quot;.&quot;</span>) || strcmp(namelistRaw(i), <span class="stringliteral">&quot;..&quot;</span>))</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                    counter = counter + 1;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    namelist(counter) = fullfile(dirname, namelistRaw(i));</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                end</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            end</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        end</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    end</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>end</div>
+<div class="ttc" id="a_09bash__profile_2contents_8m_html_ac8cba6ddf5f553e8277972eecd196b81"><div class="ttname"><a href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a></div><div class="ttdeci">function contents()</div><div class="ttdoc">Return the contents of the .bash_profile file in the system home folder as a scalar MATLAB string.</div></div>
+<div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div><div class="ttdoc">Return the MPI library name as used in naming the ParaMonte MATLAB shared libraries.</div></div>
+<div class="ttc" id="a_09os_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div><div class="ttdoc">Return a list of MATLAB strings containing the names of OS platforms supported by the ParaMonte MATLA...</div></div>
+<div class="ttc" id="aglob_8m_html_a3ac3addbc05e2c89f055173ea2e08a5d"><div class="ttname"><a href="glob_8m.html#a3ac3addbc05e2c89f055173ea2e08a5d">directories</a></div><div class="ttdeci">recursively list all directories</div><div class="ttdoc">Expand wildcards for files and directory names.</div><div class="ttdef"><b>Definition:</b> <a href="glob_8m_source.html#l00101">glob.m:101</a></div></div>
+<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_1a54d7f1a807380c05b535e170b3b863.html">+sys</a></li><li class="navelem"><a class="el" href="dir_95cf40ee0b095ce667d66c91ca3f11ae.html">+path</a></li><li class="navelem"><a class="el" href="_09sys_2_09path_2list_8m.html">list.m</a></li>
-        <li class="footer">Generated on Sat May 18 2024 23:23:06 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu May 23 2024 19:37:45 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

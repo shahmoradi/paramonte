@@ -43,6 +43,7 @@ var NAVTREE =
     [ "ParaMonte MATLAB Language Benchmarks", "index.html#ParaMonteLangBenchmarks", null ],
     [ "ParaMonte MATLAB Documentation Troubleshooting", "index.html#ParaMonteLangDocumentationTroubleshooting", null ],
     [ "Authors", "authors.html", null ],
+    [ "Developer Remarks", "DEVNOTE.html", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -57,7 +58,8 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
-        [ "Functions", "globals_func.html", "globals_func" ]
+        [ "Functions", "globals_func.html", "globals_func" ],
+        [ "Variables", "globals_vars.html", null ]
       ] ]
     ] ],
     [ "GitHub", "^https://github.com/cdslaborg/paramonte", null ],
@@ -88,11 +90,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "../../c/2/index.html",
-"_09tile_2Histfit_8m_source.html",
-"classHandle.html#abb5818cbfb207d440c8e20af81669aa9",
-"copy_8m.html#a3718abda67edd88f029c9887fa20489a",
-"info_8m.html#a87faef413694ac4a58dd4890b2b59f8c",
-"user__string_8m.html"
+"_09tile_2Heatmap_8m.html",
+"classHandle.html#a947a5724d3049a96f81abfceada06714",
+"compiler_8m.html#a97012960b56e67629c96f09b91cd7ec8",
+"index.html#ParaMonteDocumentation",
+"testParaMonte__release_8m_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

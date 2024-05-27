@@ -143,12 +143,15 @@ $(document).ready(function(){initNavTree('classAutoCorr.html',''); initResizable
   <div class="headertitle"><div class="title">AutoCorr Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>This is the base class for generating objects containing information about autocorrelation of the input data.  
+ <a href="classAutoCorr.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for AutoCorr:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAutoCorr__inherit__graph.png" border="0" usemap="#aAutoCorr_inherit__map" alt="Inheritance graph"/></div>
 <map name="aAutoCorr_inherit__map" id="aAutoCorr_inherit__map">
-<area shape="rect" title=" " alt="" coords="41,80,120,107"/>
+<area shape="rect" title="This is the base class for generating objects containing information about autocorrelation of the inp..." alt="" coords="41,80,120,107"/>
 <area shape="rect" title=" " alt="" coords="5,5,156,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -157,7 +160,7 @@ Collaboration diagram for AutoCorr:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAutoCorr__coll__graph.png" border="0" usemap="#aAutoCorr_coll__map" alt="Collaboration graph"/></div>
 <map name="aAutoCorr_coll__map" id="aAutoCorr_coll__map">
-<area shape="rect" title=" " alt="" coords="41,80,120,107"/>
+<area shape="rect" title="This is the base class for generating objects containing information about autocorrelation of the inp..." alt="" coords="41,80,120,107"/>
 <area shape="rect" title=" " alt="" coords="5,5,156,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -165,8 +168,11 @@ Collaboration diagram for AutoCorr:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af64664dd2c4895e2aef1313044b8a33b"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutoCorr.html#af64664dd2c4895e2aef1313044b8a33b">AutoCorr</a> (in df, in <a class="el" href="classAutoCorr.html#ace1a005289fa2c8a0b0880cfb035311c">numlags</a>, in <a class="el" href="classAutoCorr.html#a9e02e376c0a640655a6052af8c49bf1a">numstd</a>)</td></tr>
+<tr class="memdesc:af64664dd2c4895e2aef1313044b8a33b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an object of class <code>pm.stats.AutoCorr</code>.<br  />
+ This is the constructor of the <code>pm.stats.AutoCorr</code> class.  <a href="classAutoCorr.html#af64664dd2c4895e2aef1313044b8a33b">More...</a><br /></td></tr>
 <tr class="separator:af64664dd2c4895e2aef1313044b8a33b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a825bc786dcd8e91d8e17a3fceec1cd59"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutoCorr.html#a825bc786dcd8e91d8e17a3fceec1cd59">get</a> (in self, in df, in <a class="el" href="classAutoCorr.html#ace1a005289fa2c8a0b0880cfb035311c">numlags</a>, in <a class="el" href="classAutoCorr.html#a9e02e376c0a640655a6052af8c49bf1a">numstd</a>)</td></tr>
+<tr class="memdesc:a825bc786dcd8e91d8e17a3fceec1cd59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the autocorrelation of the input data from a lag of <code>0</code> to <code>numlags</code>.  <a href="classAutoCorr.html#a825bc786dcd8e91d8e17a3fceec1cd59">More...</a><br /></td></tr>
 <tr class="separator:a825bc786dcd8e91d8e17a3fceec1cd59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -183,8 +189,43 @@ Data Fields</h2></td></tr>
 <tr class="separator:afd63ea7ff2b4899ab64617385740970f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="AutoCorr_8m_source.html#l00001">1</a> of file <a class="el" href="AutoCorr_8m_source.html">AutoCorr.m</a>.</p>
+<div class="textblock"><p >This is the base class for generating objects containing information about autocorrelation of the input data. </p>
+<dl class="section note"><dt>Note</dt><dd>This is convenience class for easy computation of autocorrelation and its storage all in one place. The primary advantage of this class over the MATLAB intrinsic functions is in the ability of this class to compute the result for input dataframe table and return the results always in MATLAB <code>table</code> format. See the documentation of the class constructor below.</dd>
+<dd>
+See the documentation of the class constructor below.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>See the documentation of the class constructor below.</dd></dl>
+<p><br  />
+<a class="anchor" id="interface-AutoCorr"></a><b>Possible calling interfaces</b> <a href="#interface-AutoCorr">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">acf = pm.stats.AutoCorr()</div>
+<div class="line">acf = pm.stats.AutoCorr(df)</div>
+<div class="line">acf = pm.stats.AutoCorr(df, <a class="code hl_variable" href="classAutoCorr.html#ace1a005289fa2c8a0b0880cfb035311c">numlags</a>)</div>
+<div class="line">acf = pm.stats.AutoCorr(df, [], <a class="code hl_variable" href="classAutoCorr.html#a9e02e376c0a640655a6052af8c49bf1a">numstd</a>)</div>
+<div class="line">acf = pm.stats.AutoCorr(df, <a class="code hl_variable" href="classAutoCorr.html#ace1a005289fa2c8a0b0880cfb035311c">numlags</a>, <a class="code hl_variable" href="classAutoCorr.html#a9e02e376c0a640655a6052af8c49bf1a">numstd</a>)</div>
+<div class="ttc" id="aclassAutoCorr_html_a9e02e376c0a640655a6052af8c49bf1a"><div class="ttname"><a href="classAutoCorr.html#a9e02e376c0a640655a6052af8c49bf1a">AutoCorr::numstd</a></div><div class="ttdeci">Property numstd</div><div class="ttdef"><b>Definition:</b> <a href="AutoCorr_8m_source.html#l00057">AutoCorr.m:57</a></div></div>
+<div class="ttc" id="aclassAutoCorr_html_ace1a005289fa2c8a0b0880cfb035311c"><div class="ttname"><a href="classAutoCorr.html#ace1a005289fa2c8a0b0880cfb035311c">AutoCorr::numlags</a></div><div class="ttdeci">Property numlags</div><div class="ttdef"><b>Definition:</b> <a href="AutoCorr_8m_source.html#l00048">AutoCorr.m:48</a></div></div>
+</div><!-- fragment --> <br  />
+<a class="anchor" id="final-AutoCorr"></a><b>Final Remarks</b> <a href="#final-AutoCorr">⛓</a> <hr  />
+ If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/AutoCorr.m#L30 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+<ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000148">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 4:06 AM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+ <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
+ </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="AutoCorr_8m_source.html#l00036">36</a> of file <a class="el" href="AutoCorr_8m_source.html">AutoCorr.m</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af64664dd2c4895e2aef1313044b8a33b" name="af64664dd2c4895e2aef1313044b8a33b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af64664dd2c4895e2aef1313044b8a33b">&#9670;&nbsp;</a></span>AutoCorr()</h2>
@@ -217,6 +258,45 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Return an object of class <code>pm.stats.AutoCorr</code>.<br  />
+ This is the constructor of the <code>pm.stats.AutoCorr</code> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">df</td><td>: The input MATLAB matrix or table of rank <code>2</code> containing the data as <code>ncol</code> columns of <code>nrow</code> observations whose autocorrelation must be computed. (<b>optional</b>. If missing, the autocorrelation will not be computed.)</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">numstd</td><td>: The input positive scalar MATLAB double representing the number of standard deviations to be used in computing the lower and upper significance levels of the autocorrelation. This argument is directly passed to the corresponding argument of the MATLAB intrinsic <code>autocorr()</code> in the Econometrics Toolbox. (<b>optional</b>, default = <code>1</code>)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>self</code> : The output object of class <code>pm.stats.AutoCorr</code>.</dd></dl>
+<p><br  />
+<a class="anchor" id="interface-AutoCorr"></a><b>Possible calling interfaces</b> <a href="#interface-AutoCorr">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">acf = pm.stats.AutoCorr()</div>
+<div class="line">acf = pm.stats.AutoCorr(df)</div>
+<div class="line">acf = pm.stats.AutoCorr(df, <a class="code hl_variable" href="classAutoCorr.html#ace1a005289fa2c8a0b0880cfb035311c">numlags</a>)</div>
+<div class="line">acf = pm.stats.AutoCorr(df, [], <a class="code hl_variable" href="classAutoCorr.html#a9e02e376c0a640655a6052af8c49bf1a">numstd</a>)</div>
+<div class="line">acf = pm.stats.AutoCorr(df, <a class="code hl_variable" href="classAutoCorr.html#ace1a005289fa2c8a0b0880cfb035311c">numlags</a>, <a class="code hl_variable" href="classAutoCorr.html#a9e02e376c0a640655a6052af8c49bf1a">numstd</a>)</div>
+</div><!-- fragment --> <br  />
+<a class="anchor" id="final-AutoCorr"></a><b>Final Remarks</b> <a href="#final-AutoCorr">⛓</a> <hr  />
+ If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/AutoCorr.m#L125 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+<ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000149">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 4:10 AM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+ <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
+ </dd></dl>
 
 </div>
 </div>
@@ -259,6 +339,56 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Return the autocorrelation of the input data from a lag of <code>0</code> to <code>numlags</code>. </p>
+<p >This is a dynamic method of the <code>pm.stats.AutoCorr</code> class.<br  />
+ This method automatically stores any input information in the corresponding components of the parent object.<br  />
+ However, any components of the parent object corresponding to the output of this method must be set explicitly manually.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">df</td><td>: The input MATLAB matrix or table of rank <code>2</code> containing the data as <code>ncol</code> columns of <code>nrow</code> observations whose autocorrelation must be computed.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">numlags</td><td>: The input positive scalar MATLAB integer representing the number of lags to be used in computing the autocorrelation.<br  />
+ The default value will be used if the input <code>numlags</code> is unspecified or empty <code>[]</code>.<br  />
+ (<b>optional</b>, default = <code>size(df, 1) - 1</code>)</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">numstd</td><td>: The input positive scalar MATLAB double representing the number of standard deviations to be used in computing the lower and upper significance levels of the autocorrelation.<br  />
+ This argument is directly passed to the corresponding argument of the MATLAB intrinsic <code>autocorr()</code> in the Econometrics Toolbox.<br  />
+ The default value will be used if the input <code>numstd</code> is empty <code>[]</code>.<br  />
+ (<b>optional</b>, default = <code>1</code>)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>val</code> : The output MATLAB <code>table</code> of size <code>numlags + 1</code> containing the autocorrelation from lag <code>0</code> to <code>numlags</code>.</dd></dl>
+<p><code>lag</code> : The output MATLAB <code>table</code> of size <code>numlags + 1</code> containing the autocorrelation lags from <code>0</code> to <code>numlags</code>.</p>
+<p ><code>bnd</code> : The output MATLAB <code>table</code> of <code>size(df, 2)</code> rows by one column containing the absolute <code>numstd</code>-significance level of the computed autocorrelations. Any autocorrelation value whose magnitude is smaller than the corresponding <code>bnd</code> element can be considered insignificant and mere fluctuation.</p>
+<p ><br  />
+<a class="anchor" id="interface-get"></a><b>Possible calling interfaces</b> <a href="#interface-get">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">acf = pm.stats.AutoCorr()</div>
+<div class="line">[acf.val, acf.lag, acf.bnd] = acf.get(df)</div>
+<div class="line">[acf.val, acf.lag, acf.bnd] = acf.get(df, [])</div>
+<div class="line">[acf.val, acf.lag, acf.bnd] = acf.get(df, <a class="code hl_variable" href="classAutoCorr.html#ace1a005289fa2c8a0b0880cfb035311c">numlags</a>)</div>
+<div class="line">[acf.val, acf.lag, acf.bnd] = acf.get(df, [], <a class="code hl_variable" href="classAutoCorr.html#a9e02e376c0a640655a6052af8c49bf1a">numstd</a>)</div>
+<div class="line">[acf.val, acf.lag, acf.bnd] = acf.get(df, <a class="code hl_variable" href="classAutoCorr.html#ace1a005289fa2c8a0b0880cfb035311c">numlags</a>, <a class="code hl_variable" href="classAutoCorr.html#a9e02e376c0a640655a6052af8c49bf1a">numstd</a>)</div>
+</div><!-- fragment --> <br  />
+<a class="anchor" id="final-get"></a><b>Final Remarks</b> <a href="#final-get">⛓</a> <hr  />
+ If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/AutoCorr.m#L204 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+<ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000150">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 4:14 AM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+ <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
+ </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
@@ -273,8 +403,14 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bnd</td><td>: The MATLAB table of rank <code>2</code> serving as a convenient storage component each column of which corresponds to the absolute <code>numstd</code>-significance bound for the corresponding computed autocorrelations of the input data (that is optionally stored in the <code>val</code> component of the parent object). The values represent the <code>numstd</code>-sigma standard errors on the computed autocorrelations. Any autocorrelation value bound within these limits can be considered random fluctuations at <code>numstd</code>-sigma confidence level. This component is automatically populated at the time of constructing an object of class <code>pm.stats.AutoCorr</code>. It must be populated manually at all other times. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="AutoCorr_8m_source.html#l00085">85</a> of file <a class="el" href="AutoCorr_8m_source.html">AutoCorr.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AutoCorr_8m_source.html#l00073">73</a> of file <a class="el" href="AutoCorr_8m_source.html">AutoCorr.m</a>.</p>
 
 </div>
 </div>
@@ -289,8 +425,14 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lag</td><td>: The MATLAB vector integers representing the lags for which the autocorrelation is computed. This component is automatically populated at the time of constructing an object of class <code>pm.stats.AutoCorr</code>. It must be populated manually at all other times. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="AutoCorr_8m_source.html#l00096">96</a> of file <a class="el" href="AutoCorr_8m_source.html">AutoCorr.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AutoCorr_8m_source.html#l00082">82</a> of file <a class="el" href="AutoCorr_8m_source.html">AutoCorr.m</a>.</p>
 
 </div>
 </div>
@@ -305,8 +447,14 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">numstd</td><td>: The positive scalar MATLAB double representing the number of lags for which the autocorrelation must be computed. This argument is directly passed to the corresponding argument of the MATLAB intrinsic <code>autocorr()</code> in the Econometrics Toolbox. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="AutoCorr_8m_source.html#l00056">56</a> of file <a class="el" href="AutoCorr_8m_source.html">AutoCorr.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AutoCorr_8m_source.html#l00048">48</a> of file <a class="el" href="AutoCorr_8m_source.html">AutoCorr.m</a>.</p>
 
 </div>
 </div>
@@ -321,8 +469,14 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">numstd</td><td>: The positive scalar MATLAB double representing the number of standard deviations to be used in computing the lower and upper significance levels of the autocorrelation. This argument is directly passed to the corresponding argument of the MATLAB intrinsic <code>autocorr()</code> in the Econometrics Toolbox. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="AutoCorr_8m_source.html#l00067">67</a> of file <a class="el" href="AutoCorr_8m_source.html">AutoCorr.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AutoCorr_8m_source.html#l00057">57</a> of file <a class="el" href="AutoCorr_8m_source.html">AutoCorr.m</a>.</p>
 
 </div>
 </div>
@@ -337,8 +491,14 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>: The MATLAB table of rank <code>2</code> serving as a convenient storage component for the autocorrelation. This component is automatically populated at the time of constructing an object of class <code>pm.stats.AutoCorr</code>. It must be populated manually at all other times. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="AutoCorr_8m_source.html#l00107">107</a> of file <a class="el" href="AutoCorr_8m_source.html">AutoCorr.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AutoCorr_8m_source.html#l00091">91</a> of file <a class="el" href="AutoCorr_8m_source.html">AutoCorr.m</a>.</p>
 
 </div>
 </div>
@@ -351,7 +511,7 @@ Data Fields</h2></td></tr>
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classAutoCorr.html">AutoCorr</a></li>
-        <li class="footer">Generated on Sat May 18 2024 23:23:08 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu May 23 2024 19:37:47 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

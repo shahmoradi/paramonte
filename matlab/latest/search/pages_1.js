@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['paramonte_20matlab_203_2e0_2e0_0',['ParaMonte MATLAB 3.0.0',['../index.html',1,'']]]
+  ['developer_20remarks_0',['Developer Remarks',['../DEVNOTE.html',1,'']]]
 ];
