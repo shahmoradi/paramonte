@@ -147,14 +147,14 @@ $(document).ready(function(){initNavTree('cite_8m_source.html',''); initResizabl
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  \param[in]  format  :   The input scalar MATLAB <span class="keywordtype">string</span> indicating</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;                          the format of the output we address.</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;                              1.  An input value of ``<span class="stringliteral">&quot;raw&quot;</span>`` will <span class="keywordflow">return</span> a raw web address.</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;                              2.  An input value of ``<span class="stringliteral">&quot;html&quot;</span>`` will <span class="keywordflow">return</span> an HTML style web address.        </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;                              2.  An input value of ``<span class="stringliteral">&quot;html&quot;</span>`` will <span class="keywordflow">return</span> an HTML style web address.</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;                          (**optional**, <span class="keywordflow">default</span> = ``<span class="stringliteral">&quot;html&quot;</span>``)</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;  \<span class="keywordflow">return</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;  `str`               :   The output scalar MATLAB <span class="keywordtype">string</span> containing either,</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;                          -   a raw <a class="code hl_function" href="weblink_8m.html#a9e435e334dfd7c7783e058bd74708ff8">weblink</a> to the ParaMonte library publications</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;                              <span class="keywordflow">if</span> the library is used outside the MATLAB GUI interface, or,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;          </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                          -   an HTML-style <a class="code hl_function" href="hyperlink_8m.html#adbf38a9875ba9d157caf299f66138f8e">hyperlink</a> to the ParaMonte library publications</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                              <span class="keywordflow">if</span> the library is used within the MATLAB GUI interface.</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;</div>
@@ -181,22 +181,23 @@ $(document).ready(function(){initNavTree('cite_8m_source.html',''); initResizabl
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">if</span> strcmpi(format, <span class="stringliteral">&quot;html&quot;</span>)</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            str = pm.web.<a class="code hl_function" href="href_8m.html#ab28e4ee901c69380281aa173544fa51b">href</a>(str);</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        end</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    catch</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    catch me</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        str = &quot;&quot;;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_function" href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a> = pm.<a class="code hl_function" href="lib_8m.html#ab7532545afe200f8d0e973cf2497d215">lib</a>.<a class="code hl_function" href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a>();</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        warning ( newline ...</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                + &quot;Failed to read the <a class="code hl_function" href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a> of the citation file:&quot; + newline ...</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                + newline ...</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;&quot;&quot;&quot; + citefile + &quot;&quot;&quot;&quot; + newline ...</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                + newline ...</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                + &quot;The structure of the ParaMonte library appears compromised.&quot; + newline ...</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                + &quot;You can always a fresh latest <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> of the library from:&quot; + newline ...</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                + newline ...</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + pm.web.<a class="code hl_function" href="href_8m.html#ab28e4ee901c69380281aa173544fa51b">href</a>(<a class="code hl_function" href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a>.github.<a class="code hl_function" href="release_8m.html#a51df1f91ecccd6f14aa72471c11fb780">release</a>.url()) + newline ...</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                + newline ...</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                );</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    end</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>end</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                + <span class="keywordtype">string</span>(me.identifier) + &quot; : &quot; + <span class="keywordtype">string</span>(me.message) + newline ...</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                + &quot;Failed to read the <a class="code hl_function" href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a> of the citation file:&quot; + newline ...</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                + newline ...</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;&quot;&quot;&quot; + citefile + &quot;&quot;&quot;&quot; + newline ...</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                + newline ...</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                + &quot;The structure of the ParaMonte library appears compromised.&quot; + newline ...</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                + &quot;You can always a fresh latest <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> of the library from:&quot; + newline ...</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                + newline ...</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + pm.web.<a class="code hl_function" href="href_8m.html#ab28e4ee901c69380281aa173544fa51b">href</a>(<a class="code hl_function" href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a>.github.<a class="code hl_function" href="release_8m.html#a51df1f91ecccd6f14aa72471c11fb780">release</a>.url()) + newline ...</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                + newline ...</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                );</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    end</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>end</div>
 <div class="ttc" id="a_09bash__profile_2contents_8m_html_ac8cba6ddf5f553e8277972eecd196b81"><div class="ttname"><a href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a></div><div class="ttdeci">function contents()</div><div class="ttdoc">Return the contents of the .bash_profile file in the system home folder as a scalar MATLAB string.</div></div>
 <div class="ttc" id="a_09update_2version_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
 <div class="ttc" id="acite_8m_html_ac46dbef704bb1dcd1159b100569f99c5"><div class="ttname"><a href="cite_8m.html#ac46dbef704bb1dcd1159b100569f99c5">cite</a></div><div class="ttdeci">function cite(in format)</div><div class="ttdoc">Return a scalar MATLAB raw string or HTML-style hyperlink containing the weblink to ParaMonte library...</div></div>
@@ -213,7 +214,7 @@ $(document).ready(function(){initNavTree('cite_8m_source.html',''); initResizabl
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_0c006b8a7b0a63b87b86162ded07c4ff.html">+lib</a></li><li class="navelem"><a class="el" href="cite_8m.html">cite.m</a></li>
-        <li class="footer">Generated on Thu May 23 2024 19:37:45 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue May 28 2024 00:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

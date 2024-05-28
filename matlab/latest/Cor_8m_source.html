@@ -297,23 +297,22 @@ $(document).ready(function(){initNavTree('Cor_8m_source.html',''); initResizable
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            end</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            try</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                <a class="code hl_variable" href="classCor.html#ac35281c9b12a36f480bd198fb777d1b2">val</a> = array2table(corr(data, &quot;type&quot;, self.<a class="code hl_variable" href="classCor.html#adc89b459da8289c6f2a5fc3416543f2f">method</a>));</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            catch ME</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            catch me</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                <a class="code hl_variable" href="classCor.html#ac35281c9b12a36f480bd198fb777d1b2">val</a> = NaN(size(data, 2), size(data, 2));</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                warning ( newline ...</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                        + <span class="keywordtype">string</span>(ME.message) + newline ...</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                        + newline ...</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                        + &quot;skipping the correlation matrix computation...&quot; + newline ...</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                        );</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                return;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            end</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            if isa(df, &quot;table&quot;)</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                <a class="code hl_variable" href="classCor.html#ac35281c9b12a36f480bd198fb777d1b2">val</a>.Properties.VariableNames = df.Properties.VariableNames;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            end</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        end</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    end</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>end</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                        + <span class="keywordtype">string</span>(me.identifier) + &quot; : &quot; + <span class="keywordtype">string</span>(me.message) + newline ...</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                        + &quot;skipping the correlation matrix computation...&quot; + newline ...</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                        );</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                return;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            end</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            if isa(df, &quot;table&quot;)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                <a class="code hl_variable" href="classCor.html#ac35281c9b12a36f480bd198fb777d1b2">val</a>.Properties.VariableNames = df.Properties.VariableNames;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            end</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        end</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    end</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>end</div>
 <div class="ttc" id="aclassCor_html"><div class="ttname"><a href="classCor.html">Cor</a></div><div class="ttdoc">This is the base class for generating objects with methods and storage components for computing and s...</div><div class="ttdef"><b>Definition:</b> <a href="Cor_8m_source.html#l00035">Cor.m:36</a></div></div>
 <div class="ttc" id="aclassCor_html_a073f0726795dd828acaa504536ec2e56"><div class="ttname"><a href="classCor.html#a073f0726795dd828acaa504536ec2e56">Cor::get</a></div><div class="ttdeci">function get(in self, in df, in method)</div><div class="ttdoc">Return the correlation matrix of the input data.</div></div>
 <div class="ttc" id="aclassCor_html_a54b29b51507a1155cbaf8e98641438d0"><div class="ttname"><a href="classCor.html#a54b29b51507a1155cbaf8e98641438d0">Cor::Cor</a></div><div class="ttdeci">function Cor(in df, in method)</div><div class="ttdoc">Return an object of class Cor.  This is the constructor of the Cor class.</div></div>
@@ -326,7 +325,7 @@ $(document).ready(function(){initNavTree('Cor_8m_source.html',''); initResizable
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_5f2f7d6d6a421f083844944f36109908.html">+stats</a></li><li class="navelem"><a class="el" href="Cor_8m.html">Cor.m</a></li>
-        <li class="footer">Generated on Thu May 23 2024 19:37:46 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue May 28 2024 00:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

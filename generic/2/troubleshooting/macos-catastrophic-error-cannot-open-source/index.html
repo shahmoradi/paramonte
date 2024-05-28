@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" troubleshooting libgfortran not-found runtime dynamic shared dll so Fortran">
-<title>xcrun: error: unable to find utility "clang" | ParaMonte: Parallel Monte Carlo and Machine Learning Library</title>
+<title>catastrophic error: cannot open source file "stdio.h" | ParaMonte: Parallel Monte Carlo and Machine Learning Library</title>
 <link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/prismOkaidia.css">
 <script src="https://www.cdslab.org/paramonte/generic/2/js/prismOkaidia.js"></script>
 <!--
@@ -225,7 +225,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: "https://www.cdslab.org/paramonte/generic/2/search.json",
-                                searchResultTemplate: '<li><a href="https://www.cdslab.org/paramonte/generic/2{url}" title="xcrun: error: unable to find utility &quot;clang&quot;">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="https://www.cdslab.org/paramonte/generic/2{url}" title="catastrophic error: cannot open source file &quot;stdio.h&quot;">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -547,21 +547,7 @@
                         
                                 
                                     
-                                        <li><a title="catastrophic error: cannot open source file" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/catastrophic-error-cannot-open-source-file/">catastrophic error: cannot open source file</a></li>
-                                    
-                                    
-                                
-                        
-                                
-                                    
                                         <li><a title="Catastrophic error: could not set locale" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/catastrophic-error-could-not-set-locale/">Catastrophic error: could not set locale</a></li>
-                                    
-                                    
-                                
-                        
-                                
-                                    
-                                        <li class="active"><a title="xcrun: error: unable to find utility "clang"" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/xcrun-error-unable-to-find-utility-clang/">xcrun: error: unable to find utility "clang"</a></li>
                                     
                                     
                                 
@@ -603,7 +589,28 @@
                         
                                 
                                     
+                                        <li class="active"><a title="macOS: catastrophic error: cannot open source" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/macos-catastrophic-error-cannot-open-source/">macOS: catastrophic error: cannot open source</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
                                         <li><a title="macOS: developer cannot be verified" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/macos-developer-cannot-be-verified/">macOS: developer cannot be verified</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="macOS: unsupported tapi file type" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/macos-unsupported-tapi-file-type/">macOS: unsupported tapi file type</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="macOS: xcrun: unable to find utility "clang"" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/macos-xcrun-error-unable-to-find-utility-clang/">macOS: xcrun: unable to find utility "clang"</a></li>
                                     
                                     
                                 
@@ -655,7 +662,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
                     <!-- Content Column -->
                     <div class="col-md-9" id="tg-sb-content">
                         <div class="post-header">
-   <h1 class="post-title-main">xcrun: error: unable to find utility "clang"</h1>
+   <h1 class="post-title-main">catastrophic error: cannot open source file "stdio.h"</h1>
 </div>
 
 <div class="post-content">
@@ -685,45 +692,31 @@ the script runs before the sidebar code runs and the class never gets inserted.
     
     
     
-<p>While building the ParaMonte MATLAB library on macOS, you may receive a compiler error message similar to the following,</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcrun: error: unable to find utility "clang", not a developer tool or in PATH
+<p>While compiling and linking your C/C++ code against the ParaMonte libraries via the Intel C/C++ compilers on macOS, you may receive a compiler error message similar to the following,</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>catastrophic error: cannot open source file "stdio.h"
 </code></pre></div></div>
 
-<p>or particularly, after macOS automatic update to a more recent version, for example, macosx10.15.4,</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MEX - xcodebuild: error: SDK "macosx10.15.4" cannot be located
+<p>or,</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>catastrophic error: cannot open source file "math.h"
 </code></pre></div></div>
 
-<p>To resolve this error,</p>
+<p>or,</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
+</code></pre></div></div>
 
-<ul>
-  <li>Open MATLAB. On the MATLAB command line, type,
-    <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">compilerCfg</span> <span class="o">=</span> <span class="nb">mex</span><span class="o">.</span><span class="n">getCompilerConfigurations</span>
-<span class="nb">open</span><span class="p">(</span><span class="n">compilerCfg</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">MexOpt</span><span class="p">)</span>
-<span class="nb">open</span><span class="p">(</span><span class="n">compilerCfg</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">MexOpt</span><span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-  <li>The above commands should open two MATLAB internal files named <code>mex_C_maci64.xml</code> and <code>mex_C++_maci64.xml</code>. Toward the ends of each one of these files, look for a line that is similar to, or exactly, the following,
-    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;SDKVER&gt;</span>
-    <span class="nt">&lt;cmdReturns</span> <span class="na">name=</span><span class="s">"xcrun -sdk macosx --show-sdk-version"</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/SDKVER&gt;</span>
-</code></pre></div>    </div>
-  </li>
-  <li>Once you find the lines, replace them with the following,
-    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;SDKVER&gt;</span>
-    <span class="nt">&lt;cmdReturns</span> <span class="na">name=</span><span class="s">"xcrun -sdk macosx --show-sdk-version | cut -c1-5"</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/SDKVER&gt;</span>
-</code></pre></div>    </div>
-    <p>Once you make the changes, save boths files and close them.</p>
-  </li>
-  <li>Now, on the MATLAB command line, type,
-    <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mex</span> <span class="o">-</span><span class="nb">setup</span> <span class="n">C</span><span class="o">++</span>
-<span class="nb">mex</span> <span class="o">-</span><span class="nb">setup</span> <span class="n">C</span>
-</code></pre></div>    </div>
-  </li>
-  <li>The above should hopefully fix the error. Now open a Bash terminal and rerun the same command that you originally used to build the ParaMonte library.</li>
-</ul>
+<p>Taking the following steps to install the macOS <b>Command Line Tools</b> and then agreeing with its license terms may fix this issue. 
+Open a <b>Bash command prompt</b> and type the following and run them,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcode-select <span class="nt">--install</span> <span class="c"># Install the Command Line Tools in case you do not have it already.</span>
+<span class="nb">sudo </span>xcode-select <span class="nt">--switch</span> /Library/Developer/CommandLineTools <span class="c"># Enable command line tools</span>
+</code></pre></div></div>
+
+<p>or, alternatively, via the full Xcode.app (if it is already installed on your system),</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>xcode-select <span class="nt">-s</span> /Applications/Xcode.app/Contents/Developer <span class="c"># change the path if Xcode is installed somewhere else.</span>
+</code></pre></div></div>
+
+<p>You will have to also agree with the Xcode license terms, which requires running the following command on the Bash terminal,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>xcodebuild <span class="nt">-license</span> accept
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -828,7 +821,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on May 27, 2024<br/>
+            Last updated on May 28, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/2/images/logo.png" }}" alt="cdslab.org" /></a>

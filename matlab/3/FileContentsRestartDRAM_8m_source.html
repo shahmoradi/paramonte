@@ -249,10 +249,10 @@ $(document).ready(function(){initNavTree('FileContentsRestartDRAM_8m_source.html
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        %&gt;</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        %&gt;  \param[in]  file    :   The input scalar MATLAB <span class="keywordtype">string</span></div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        %&gt;                          containing the path to an external report file.</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        %&gt;  </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        %&gt;</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        %&gt;  \param[in]  silent  :   See the corresponding argument of ``pm.sampling.FileContentsRestart`` <span class="keyword">class</span>.</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        %&gt;                          (**optional**. The <span class="keywordflow">default</span> is set by ``pm.sampling.FileContentsRestart``.)</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        %&gt;  </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        %&gt;</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        %&gt;  \return</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        %&gt;  `self`              :   The output scalar <span class="keywordtype">object</span> of <span class="keyword">class </span>``pm.sampling.FileContentsRestartDRAM``.</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        %&gt;</div>
@@ -300,59 +300,83 @@ $(document).ready(function(){initNavTree('FileContentsRestartDRAM_8m_source.html
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            skip = 10 + self.ndim * (self.ndim + 3) / 2;</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            icount = 0;</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            istart = 1;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            <span class="keywordflow">while</span> istart &lt; length(self.lineList) - skip</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                <span class="keywordflow">if</span> ~strcmp(self.lineList{self.ilast + istart}, self.lineList{self.ilast + istart + 2})</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                    icount = icount + 1;</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                    if mod(icount, 10) == 0</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                        self.spinner.spin(icount / self.count);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                    end</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                    self.meanAcceptanceRateSinceStart   (icount) = str2double(self.lineList(self.ilast + istart + 1));</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                    self.uniqueStateVisitCount          (icount) = str2double(self.lineList(self.ilast + istart + 3));</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                    self.proposalAdaptiveScaleSq        (icount) = str2double(self.lineList(self.ilast + istart + 5));</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                    self.proposalLogVolume              (icount) = str2double(self.lineList(self.ilast + istart + 7));</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                    istart = istart + 9;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                    iend = istart + self.ndim;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                    self.proposalMean(1 : self.ndim, icount) = str2double(self.lineList(self.ilast + istart : self.ilast + iend - 1));</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                    for idim = 1 : self.ndim % covmat</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                        istart = iend + 1;</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                        iend = iend + idim;</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                        cholupp(1 : idim, idim) = str2double(self.lineList(self.ilast + istart : self.ilast + iend)); % This is the upper Cholesky.</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                    end</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                    self.proposalCov(:, :, icount) = cholupp&#39; * cholupp;</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                    self.proposalCor(:, :, icount) = corrcov(squeeze(self.proposalCov(:, :, icount)));</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                    istart = iend + 1;</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                else</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                    istart = istart + 2;</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                end</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            end</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            self.spinner.spin(1);</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            self.checkpoint([]);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            <span class="keywordflow">while</span> istart &lt; length(self.lineList) - skip</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                <span class="keywordflow">if</span> ~strcmp(self.lineList{self.ilast + istart}, self.lineList{self.ilast + istart + 2})</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                    icount = icount + 1;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                    if mod(icount, 10) == 0</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                        self.spinner.spin(icount / self.count);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                    end</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                    self.meanAcceptanceRateSinceStart   (icount) = str2double(self.lineList(self.ilast + istart + 1));</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                    self.uniqueStateVisitCount          (icount) = str2double(self.lineList(self.ilast + istart + 3));</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                    self.proposalAdaptiveScaleSq        (icount) = str2double(self.lineList(self.ilast + istart + 5));</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                    self.proposalLogVolume              (icount) = str2double(self.lineList(self.ilast + istart + 7));</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                    istart = istart + 9;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                    iend = istart + self.ndim;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                    self.proposalMean(1 : self.ndim, icount) = str2double(self.lineList(self.ilast + istart : self.ilast + iend - 1));</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                    for idim = 1 : self.ndim % covmat</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                        istart = iend + 1;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                        iend = iend + idim;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                        cholupp(1 : idim, idim) = str2double(self.lineList(self.ilast + istart : self.ilast + iend)); % This is the upper Cholesky.</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                    end</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                    self.proposalCov(:, :, icount) = cholupp&#39; * cholupp;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                    istart = iend + 1;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                else</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                    istart = istart + 2;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                end</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            end</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        end % constructor</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    end % methods(Access = public)</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            %%%%</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            %%%% Ensure the instrinc ``corrcov`` is installed.</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            %%%%</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            try</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    methods(Access = public, Hidden)</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        function warn(self)</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            warning ( newline ...</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                    + &quot;The structure of the file:&quot; + newline ...</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                    + newline ...</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                    + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + self.file + newline ...</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                    + newline ...</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                    + &quot;does not match a DRAM-class restart file.&quot; + newline ...</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                    + &quot;The <a class="code hl_function" href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a> of the file may have been compromised.&quot; + newline ...</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                    + &quot;Verify the integrity of the file <a class="code hl_function" href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a> before attempting a reread.&quot; + newline ...</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                    );</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        end</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="classFileContentsRestartDRAM.html#ad9cb75895987bc4286b9d990185fc0d6">  208</a></span> </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    end % methods(Access = Hidden)</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                for icount = 1 : size(self.proposalCov, 3)</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                    self.proposalCor(:, :, icount) = corrcov(squeeze(self.proposalCov(:, :, icount)));</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                end</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            catch me</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                self.proposalCor = self.proposalCov;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                warning ( newline ...</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                        + <span class="keywordtype">string</span>(me.identifier) + &quot; : &quot; + <span class="keywordtype">string</span>(me.message) + newline ...</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                        + &quot;The component ``proposalCor`` will be set to the same values as the component ``proposalCor``.&quot; + newline ...</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                        + newline ...</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                        );</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            end</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            self.spinner.spin(1);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            self.checkpoint([]);</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>end % classdef</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        end % constructor</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    end % methods(Access = public)</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    methods(Access = public, Hidden)</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        function warn(self)</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            warning ( newline ...</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                    + &quot;The structure of the file:&quot; + newline ...</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                    + newline ...</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                    + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + self.file + newline ...</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                    + newline ...</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                    + &quot;does not match a DRAM-class restart file.&quot; + newline ...</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                    + &quot;The <a class="code hl_function" href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a> of the file may have been compromised.&quot; + newline ...</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                    + &quot;Verify the integrity of the file <a class="code hl_function" href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a> before attempting a reread.&quot; + newline ...</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                    );</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        end</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="classFileContentsRestartDRAM.html#ad9cb75895987bc4286b9d990185fc0d6">  232</a></span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    end % methods(Access = Hidden)</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>end % classdef</div>
 <div class="ttc" id="a_09bash__profile_2contents_8m_html_ac8cba6ddf5f553e8277972eecd196b81"><div class="ttname"><a href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a></div><div class="ttdeci">function contents()</div><div class="ttdoc">Return the contents of the .bash_profile file in the system home folder as a scalar MATLAB string.</div></div>
 <div class="ttc" id="aclassFileContentsRestartDRAM_html"><div class="ttname"><a href="classFileContentsRestartDRAM.html">FileContentsRestartDRAM</a></div><div class="ttdoc">This is the base class for generating objects that contain the contents of a restart file generated b...</div><div class="ttdef"><b>Definition:</b> <a href="FileContentsRestartDRAM_8m_source.html#l00039">FileContentsRestartDRAM.m:40</a></div></div>
 <div class="ttc" id="aclassFileContentsRestartDRAM_html_a401e6880c61d11bf1ff99a39b2b3b1e7"><div class="ttname"><a href="classFileContentsRestartDRAM.html#a401e6880c61d11bf1ff99a39b2b3b1e7">FileContentsRestartDRAM::FileContentsRestartDRAM</a></div><div class="ttdeci">function FileContentsRestartDRAM(in file, in silent)</div><div class="ttdoc">Return a scalar object of class pm.sampling.FileContentsRestartDRAM.</div></div>
@@ -373,7 +397,7 @@ $(document).ready(function(){initNavTree('FileContentsRestartDRAM_8m_source.html
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_870970980bbbd119e0b6d78557b3d4cb.html">+sampling</a></li><li class="navelem"><a class="el" href="FileContentsRestartDRAM_8m.html">FileContentsRestartDRAM.m</a></li>
-        <li class="footer">Generated on Thu May 23 2024 19:37:45 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue May 28 2024 00:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
