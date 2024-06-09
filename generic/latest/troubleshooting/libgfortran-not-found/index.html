@@ -603,6 +603,13 @@
                         
                                 
                                     
+                                        <li><a title="macOS: ld: library not found" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/macos-ld-library-not-found/">macOS: ld: library not found</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
                                         <li><a title="macOS: unsupported tapi file type" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/macos-unsupported-tapi-file-type/">macOS: unsupported tapi file type</a></li>
                                     
                                     
@@ -695,7 +702,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note: </b>
 The latest release of the prebuilt ParaMonte libraries for dynamic linking for the Linux Operating System has been built via the <b>GNU Compiler Collection <code>version 13.1.0</code></b>. As a result, when using these specific GNU-based prebuilt ParaMonte libraries, you may encounter C/C++/Fortran application compilation and linking errors, similar in nature to the following error message,  
 <pre>
-/opt/apps/gcc/6.3.0/bin/ld: warning: libgfortran.so.5, needed by libparamonte_c_linux_x64_gnu_release_shared_heap.so, not found
+/opt/apps/gcc/6.3.0/bin/ld: warning: libgfortran.so.5, needed by libparamonte_c_linux_amd64_gnu_release_shared_heap.so, not found
 </pre>
 All of such errors imply that the compiler/linker cannot locate the required <b><code>libgfortran</code></b> or other shared library files on your system, or if they exist, they are not compatible with the required missing shared file and therefore cannot serve as a substitute. The possible resolutions are the following,  
 
@@ -714,7 +721,7 @@ All of such errors imply that the compiler/linker cannot locate the required <b>
         Install a fresh compatible version of the GNU Compiler Collection, or,  
     </li>
     <li>
-        As the last resort, download the <a href="https://github.com/cdslaborg/paramonte/releases/download/2024.03.14/libgfortran.so.5">libgfortran shared library file</a> against which the prebuilt ParaMonte libaries have been linked, then place thelibrary file in the same folder as the ParaMonte library folder. Then redefine the Bash environmental variable <b><code>LD_LIBRARY_PATH</code></b> to also search the working build directory of your application for the dependencies,  
+        As the last resort, download the <a href="https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/libgfortran.so.5">libgfortran shared library file</a> against which the prebuilt ParaMonte libaries have been linked, then place thelibrary file in the same folder as the ParaMonte library folder. Then redefine the Bash environmental variable <b><code>LD_LIBRARY_PATH</code></b> to also search the working build directory of your application for the dependencies,  
         
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>.:<span class="nv">$LD_LIBRARY_PATH</span></code></pre></figure>
 
@@ -843,7 +850,7 @@ All of such errors imply that the compiler/linker cannot locate the required <b>
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on June 7, 2024<br/>
+            Last updated on June 9, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/latest/images/logo.png" }}" alt="cdslab.org" /></a>
