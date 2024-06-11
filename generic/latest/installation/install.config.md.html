@@ -707,16 +707,16 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
 <p>This file contains information about the ParaMonte library build configuration flags.</p>
 
-<p>The ParaMonte library build scripts accept a large number of 
+<p>The ParaMonte library build scripts accept a large number of
 optional flags that can be used to configure the library build.</p>
 
 <p>Nearly all configuration flags can be specified as command line arguments
-to the <a href="./install.bat.md">install.bat</a>, <a href="./install.sh.md">install.sh</a>, or 
+to the <a href="./install.bat.md">install.bat</a>, <a href="./install.sh.md">install.sh</a>, or
 the <a href="./CMakeLists.md">CMake binary executable</a>. Some flags may be essential
 to directly call the CMake executable binary, while others are available
 only as optional arguments to the library install scripts mentioned above.</p>
 
-<p>Due to the sheer number of available optional flags, they are categorized 
+<p>Due to the sheer number of available optional flags, they are categorized
 in tiers sorted by their relevance and importance to the end users.</p>
 
 <ol>
@@ -729,7 +729,7 @@ in tiers sorted by their relevance and importance to the end users.</p>
 <h2 id="tier-1-paramonte-library-build-configuration-flags">TIER-1 ParaMonte library build configuration flags</h2>
 
 <p>The ParaMonte TIER-1 build flags set the most important and useful build configurations.
-Assuming the required compilers and external (e.g., Coarray, MPI parallel) libraries are 
+Assuming the required compilers and external (e.g., Coarray, MPI parallel) libraries are
 available on the system, these flags can readily customized the library build.</p>
 
 <h3 id="build"><code>build</code></h3>
@@ -1070,8 +1070,8 @@ list of possible values for which the library will be built in the specified ord
 
 <h2 id="tier-2-paramonte-library-build-configuration-flags">TIER-2 ParaMonte library build configuration flags</h2>
 
-<p>The ParaMonte TIER-2 build flags set the additional optional arguments that 
-run library benchmarks, examples, or tests, or are critical for the correct 
+<p>The ParaMonte TIER-2 build flags set the additional optional arguments that
+run library benchmarks, examples, or tests, or are critical for the correct
 selection of compilers or external compilation libraries, or customize the
 build and installation folders.</p>
 
@@ -1542,25 +1542,21 @@ built without any LAPACK dependency.</p>
 
 <h3 id="matlabdir"><code>matlabdir</code></h3>
 
-<p>Specifies the path to the <strong>directory</strong> of MATLAB binary executable against which the library will be linked.</p>
+<p>Specifies the path to the root <strong>directory</strong> of MATLAB against which the library will be linked.
+Within a MATLAB session, this directory path is returned by the MATLAB intrinsic function <code>matlabroot</code>.</p>
 
 <ul>
   <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--matlabdir</span> <span class="s2">"matlab_executable_dir_path"</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--matlabdir</span> <span class="s2">"matlab_root_dir_path"</span>
 </code></pre></div>    </div>
   </li>
   <li>Usage (with <code>cmake</code> binary executable)
-    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dmatlabdir=<span class="s2">"matlab_executable_dir_path"</span>
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dmatlabdir=<span class="s2">"matlab_root_dir_path"</span>
 </code></pre></div>    </div>
   </li>
 </ul>
 
-<p>where <code>matlab_executable_dir_path</code> is the path to the directory containing the
-MATLAB executable binary file (virtually always named <code>matlab</code> or <code>matlab.exe</code>).</p>
-
-<blockquote>
-  <p>Beware this MATLAB binary directory almost always ends with <code>/bin</code>.</p>
-</blockquote>
+<p>where <code>matlab_root_dir_path</code> is the path to the root directory of MATLAB.</p>
 
 <blockquote>
   <p>This option is relevant only to builds where the <code>lang</code> configuration flag is set to <code>matlab</code>.
@@ -1569,6 +1565,10 @@ The specified value is ignored for all language builds of the ParaMonte library.
 
 <blockquote>
   <p>Specifying this option helps CMake find the MATLAB library dependencies.</p>
+</blockquote>
+
+<blockquote>
+  <p>If specified, it sets the value of the CMake configuration variable <code>Matlab_ROOT_DIR</code>.</p>
 </blockquote>
 
 <blockquote>
@@ -1581,8 +1581,7 @@ a particular installation of MATLAB among multiple installations.</p>
 as CMake often has difficultly choosing the right MATLAB version among several options.</p>
 </blockquote>
 
-<p><strong>optional</strong>. The default value for <code>matlab_executable_dir_path</code>
-is determined automatically by CMake.</p>
+<p><strong>optional</strong>. The default value for <code>matlab_root_dir_path</code> is set automatically by CMake.</p>
 
 <h3 id="me"><code>me</code></h3>
 
@@ -1666,9 +1665,9 @@ where the default value of <code>mod</code> is usually not <code>"all"</code>.</
   <p><strong>WARNING</strong>
 The ParaMonte extended precision tests are prone to failure.
 This is due to GNU compiler bugs for extended precision arithmetic.
-To avoid bug-induced test failures when using GNU compilers, 
-you can additionally specify the <a href="#rki"><code>--rki "1;2"</code></a> build 
-to build the library and its test for only the 
+To avoid bug-induced test failures when using GNU compilers,
+you can additionally specify the <a href="#rki"><code>--rki "1;2"</code></a> build
+to build the library and its test for only the
 single and double <code>real</code> type precisions.</p>
 </blockquote>
 
@@ -1677,7 +1676,7 @@ single and double <code>real</code> type precisions.</p>
 <h2 id="tier-3-paramonte-library-build-configuration-flags">TIER-3 ParaMonte library build configuration flags</h2>
 
 <p>The ParaMonte TIER-3 build flags are mostly relevant to the ParaMonte library developers
-or advanced users who wish to further customize the library configurations for their needs.<br />
+or advanced users who wish to further customize the library configurations for their needs.
 Some of the available options with intricate implications require careful attention before usage.</p>
 
 <h3 id="benchpp"><code>benchpp</code></h3>
@@ -2121,7 +2120,7 @@ then <code>fortran_preprocessing_style</code> is set to <code>none</code>.</li>
 
 <h3 id="fresh"><code>fresh</code></h3>
 
-<p>Specifies the subdirectories of the build and deployment directories 
+<p>Specifies the subdirectories of the build and deployment directories
 that must be deleted before starting the new CMake configuration and build.</p>
 
 <ul>
@@ -2228,7 +2227,7 @@ the install scripts fail to identify the right build generator for CMake.</p>
   <p>This build flag <strong>must be explicitly set</strong> when CMake executable is directly invoked.</p>
 </blockquote>
 
-<p><strong>optional</strong>. Only when specified for the install scripts. 
+<p><strong>optional</strong>. Only when specified for the install scripts.
 The default value for <code>cmake_build_generator</code> is</p>
 <ol>
   <li><code>Unix Makefiles</code> on Unix systems (macOS, Linux).</li>
@@ -2505,12 +2504,12 @@ otherwise <code>impure</code> if <code>checking</code> is set to <code>checked</
 
 <h2 id="tier-4-paramonte-library-build-configuration-flags">TIER-4 ParaMonte library build configuration flags</h2>
 
-<p>The ParaMonte TIER-4 build flags set the additional optional arguments that 
-change the behavior of the library at the lowest level by setting the types.<br />
-These build flags are mostly relevant to the ParaMonte library developers or 
+<p>The ParaMonte TIER-4 build flags set the additional optional arguments that
+change the behavior of the library at the lowest level by setting the types.
+These build flags are mostly relevant to the ParaMonte library developers or
 advanced users who wish to reduce the final library size or supported types.</p>
 
-<p>The values of these build options are automatically set by the CMake scripts.<br />
+<p>The values of these build options are automatically set by the CMake scripts.
 Changing the default behavior requires careful attention to the consequences.</p>
 
 <p>The Fortran language 2023 supports five intrinsic types:</p>
@@ -2903,7 +2902,7 @@ all other programming languages.</p>
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on June 9, 2024<br/>
+            Last updated on June 10, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/latest/images/logo.png" }}" alt="cdslab.org" /></a>
