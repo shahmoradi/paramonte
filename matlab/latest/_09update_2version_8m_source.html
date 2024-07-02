@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('_09update_2version_8m_source.html','')
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;                          latest available ParaMonte MATLAB <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> newer</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;                          than the existing <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> on the current system.&lt;br&gt;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;                          The output ``str`` will be set to empty <span class="keywordtype">string</span> ``<span class="stringliteral">&quot;&quot;</span>``</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                          <span class="keywordflow">if</span> there is no newer <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> or the function fails.</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                          <span class="keywordflow">if</span> there is no newer <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> or the function fails.&lt;br&gt;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;  \interface{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;  \code{.m}</div>
@@ -163,45 +163,52 @@ $(document).ready(function(){initNavTree('_09update_2version_8m_source.html','')
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;      str = pm.lib.update.version()</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;  \endcode</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;  \final{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;  \author</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;  \JoshuaOsborne, May 21 2024, 7:57 PM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">   30</a></span>function str = <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>(silent)</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span>  nargin &lt; 1</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        silent = [];</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    end</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">if</span>  isempty(silent)</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        silent = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    end</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a> = pm.lib.weblinks();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    versionLink = <span class="stringliteral">&quot;https://raw.githubusercontent.com/cdslaborg/paramonte/main/src/matlab/VERSION.md&quot;</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">try</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        versionFileLineList = strsplit(webread(versionLink), newline);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        str = string(versionFileLineList{1});</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">catch</span> me</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        str = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">if</span> ~silent</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            warning ( newline ...</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                    + <span class="keywordtype">string</span>(me.identifier) + <span class="stringliteral">&quot; : &quot;</span> + <span class="keywordtype">string</span>(me.message) + newline ...</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                    + <span class="stringliteral">&quot;Failed to fetch the latest version number from the weblink:&quot;</span> + newline ...</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                    + newline ...</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                    + pm.io.tab + pm.web.href(versionLink) + newline ...</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    + newline ...</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                    + <span class="stringliteral">&quot;Ensure MATLAB has access to the internet.&quot;</span> + newline ...</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    + <span class="stringliteral">&quot;Otherwise, the structure of the ParaMonte library project on GitHub might have changed.&quot;</span> + newline ...</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                    + <span class="stringliteral">&quot;The current ParaMonte library on your system is &quot;</span> + pm.lib.version() + newline ...</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                    + <span class="stringliteral">&quot;You can check for any newer package releases on the ParaMonte GitHub repository release page:&quot;</span> + newline ...</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                    + newline ...</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    + pm.io.tab + pm.web.href(<a class="code hl_function" href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a>.github.release.url) + newline ...</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                    + newline ...</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                    );</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        end</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    end</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>end</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;  \example{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;  \include{lineno} example/<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>/update/<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>/main.m</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;  \output{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;  \include{lineno} example/<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>/update/<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>/main.out.m</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;  \final{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;  \author</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;  \JoshuaOsborne, May 21 2024, 7:57 PM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">   36</a></span>function str = <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>(silent)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span>  nargin &lt; 1</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        silent = [];</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    end</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span>  isempty(silent)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        silent = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    end</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_function" href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a> = pm.lib.weblinks();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    versionLink = <span class="stringliteral">&quot;https://raw.githubusercontent.com/cdslaborg/paramonte/main/src/matlab/VERSION.md&quot;</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        versionFileLineList = strsplit(webread(versionLink), newline);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        str = string(versionFileLineList{1});</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">catch</span> me</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        str = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span> ~silent</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            warning ( newline ...</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    + <span class="keywordtype">string</span>(me.identifier) + <span class="stringliteral">&quot; : &quot;</span> + <span class="keywordtype">string</span>(me.message) + newline ...</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                    + <span class="stringliteral">&quot;Failed to fetch the latest version number from the weblink:&quot;</span> + newline ...</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                    + newline ...</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                    + pm.io.tab + pm.web.href(versionLink) + newline ...</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    + newline ...</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                    + <span class="stringliteral">&quot;Ensure MATLAB has access to the internet.&quot;</span> + newline ...</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                    + <span class="stringliteral">&quot;Otherwise, the structure of the ParaMonte library project on GitHub might have changed.&quot;</span> + newline ...</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                    + <span class="stringliteral">&quot;The current ParaMonte library on your system is &quot;</span> + pm.lib.version() + newline ...</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                    + <span class="stringliteral">&quot;You can check for any newer package releases on the ParaMonte GitHub repository release page:&quot;</span> + newline ...</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                    + newline ...</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                    + pm.io.tab + pm.web.href(<a class="code hl_function" href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a>.github.release.url) + newline ...</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                    + newline ...</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                    );</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        end</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    end</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>end</div>
 <div class="ttc" id="a_09update_2version_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
+<div class="ttc" id="alib_8m_html_a3d11053ebcdfc6f0bef7af9c8d14fa13"><div class="ttname"><a href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a></div><div class="ttdeci">function lib()</div><div class="ttdoc">Return a scalar MATLAB string containing the path to the lib directory of the ParaMonte library packa...</div></div>
 <div class="ttc" id="aweblinks_8m_html_abe2a936890c070a4b1d43fc8ea5bb4ea"><div class="ttname"><a href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a></div><div class="ttdeci">function weblinks()</div><div class="ttdoc">Return a structure containing tree of weblinks for the ParaMonte MATLAB library source file and docum...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -209,7 +216,7 @@ $(document).ready(function(){initNavTree('_09update_2version_8m_source.html','')
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_0c006b8a7b0a63b87b86162ded07c4ff.html">+lib</a></li><li class="navelem"><a class="el" href="dir_3c27051dac6e3e2bc9806fe11438f347.html">+update</a></li><li class="navelem"><a class="el" href="_09update_2version_8m.html">version.m</a></li>
-        <li class="footer">Generated on Tue May 28 2024 00:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Jul 2 2024 02:16:50 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

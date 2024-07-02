@@ -46,6 +46,5 @@ var searchData=
   ['proposalstartdomaincubelimitlower_43',['proposalStartDomainCubeLimitLower',['../classSpecMCMC.html#a67dea2c4aa19050c694c04a00e93fd62',1,'SpecMCMC']]],
   ['proposalstartdomaincubelimitupper_44',['proposalStartDomainCubeLimitUpper',['../classSpecMCMC.html#a0f838c8f66839359190dc1e84f9a6b67',1,'SpecMCMC']]],
   ['proposalstartrandomized_45',['proposalStartRandomized',['../classSpecMCMC.html#ada7038ea62fac66ee240e670302fe0dd',1,'SpecMCMC']]],
-  ['proposalstd_46',['proposalStd',['../classSpecMCMC.html#a67efe189cd276876f70bfceb18b73122',1,'SpecMCMC']]],
-  ['psi_47',['psi',['../kde2d_8m.html#afee392da8e9b61e47a027218ecdab0b0',1,'kde2d.m']]]
+  ['proposalstd_46',['proposalStd',['../classSpecMCMC.html#a67efe189cd276876f70bfceb18b73122',1,'SpecMCMC']]]
 ];

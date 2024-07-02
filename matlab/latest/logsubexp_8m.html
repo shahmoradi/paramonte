@@ -147,13 +147,13 @@ $(document).ready(function(){initNavTree('logsubexp_8m.html',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9c5171c6864979d6781f43fe95c046f0"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logsubexp_8m.html#a9c5171c6864979d6781f43fe95c046f0">logsubexp</a> (in smaller, in larger)</td></tr>
-<tr class="memdesc:a9c5171c6864979d6781f43fe95c046f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return <code>log(exp(larger) - exp(smaller))</code> more accurately.  <a href="logsubexp_8m.html#a9c5171c6864979d6781f43fe95c046f0">More...</a><br /></td></tr>
-<tr class="separator:a9c5171c6864979d6781f43fe95c046f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c9022cce003c48cfca37d8a338fdfe0"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a> (in logSmaller, in logLarger)</td></tr>
+<tr class="memdesc:a5c9022cce003c48cfca37d8a338fdfe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return <code>log(exp(logLarger) - exp(logSmaller))</code> more accurately.  <a href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">More...</a><br /></td></tr>
+<tr class="separator:a5c9022cce003c48cfca37d8a338fdfe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a9c5171c6864979d6781f43fe95c046f0" name="a9c5171c6864979d6781f43fe95c046f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c5171c6864979d6781f43fe95c046f0">&#9670;&nbsp;</a></span>logsubexp()</h2>
+<a id="a5c9022cce003c48cfca37d8a338fdfe0" name="a5c9022cce003c48cfca37d8a338fdfe0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c9022cce003c48cfca37d8a338fdfe0">&#9670;&nbsp;</a></span>logsubexp()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,13 +162,13 @@ Functions</h2></td></tr>
           <td class="memname">function logsubexp </td>
           <td>(</td>
           <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>smaller</em>, </td>
+          <td class="paramname"><em>logSmaller</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>larger</em>&#160;</td>
+          <td class="paramname"><em>logLarger</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -178,28 +178,44 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return <code>log(exp(larger) - exp(smaller))</code> more accurately. </p>
-<dl class="section warning"><dt>Warning</dt><dd>The onus is on the user to ensure <code>smaller &lt; larger</code>.</dd></dl>
+<p>Return <code>log(exp(logLarger) - exp(logSmaller))</code> more accurately. </p>
+<dl class="section warning"><dt>Warning</dt><dd>The onus is on the user to ensure <code>logSmaller &lt; logLarger</code>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">smaller</td><td>: The input scalar MATLAB real representing the natural logarithm of the smaller value.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">smaller</td><td>: The input scalar MATLAB real representing the natural logarithm of the larger value.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">logSmaller</td><td>: The input scalar MATLAB <code>real</code> representing the natural logarithm of the smaller value.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">logLarger</td><td>: The input scalar MATLAB <code>real</code> representing the natural logarithm of the larger value.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>val The output scalar MATLAB real containing the the result of <code>log(exp(larger) - exp(smaller))</code> accurately.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>logDiff</code> : The output scalar MATLAB <code>real</code> containing the result of <code>log(exp(logLarger) - exp(logSmaller))</code> accurately.</dd></dl>
 <p><br  />
-<a class="anchor" id="interface-logsubexp"></a><b>Possible calling interfaces</b> <a href="#interface-logsubexp">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">val = pm.math.logsubexp(smaller, larger)</div>
+<a class="anchor" id="interface-logsubexp"></a><b>Possible calling interfaces</b> <a href="#interface-logsubexp">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">logDiff = pm.math.logsubexp(smaller, larger)</div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
+<a class="anchor" id="example-logsubexp"></a><b>Example usage</b> <a href="#example-logsubexp">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>addpath(<span class="stringliteral">&#39;../../../&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory to the search path.</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>pm.matlab.show()</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>pm.matlab.show(<span class="stringliteral">&quot;pm.math.logsubexp(log(400), log(1000))&quot;</span>)</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>pm.matlab.show( pm.math.logsubexp(log(400), log(1000)) )</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>pm.matlab.show()</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>pm.matlab.show(<span class="stringliteral">&quot;pm.math.logsubexp(log(1000.), log(1001))&quot;</span>)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>pm.matlab.show( pm.math.logsubexp(log(1000.), log(1001)) )</div>
+<div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
 </div><!-- fragment --> <br  />
-<a class="anchor" id="example-logsubexp"></a><b>Example usage</b> <a href="#example-logsubexp">⛓</a> </dd></dl>
-<dl class="section user"><dt></dt><dd><pre class="fragment">pm.math.logsubexp(log(400), log(1000))
-</pre> <br  />
-<a class="anchor" id="final-logsubexp"></a><b>Final Remarks</b> <a href="#final-logsubexp">⛓</a> <hr  />
- If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+math/logsubexp.m#L30 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<a class="anchor" id="output-logsubexp"></a><b>Example output</b> <a href="#output-logsubexp">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>pm.math.logsubexp(log(400), log(1000))</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>   6.396929655216146</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>pm.math.logsubexp(log(1000.), log(1001))</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>     6.927791673660977e-14</div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
+<a class="anchor" id="final-logsubexp"></a><b>Final Remarks</b> <a href="#final-logsubexp">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+math/logsubexp.m#L29 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
-<ol>
+</p><ol>
 <li>
 If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
@@ -207,11 +223,10 @@ If you use any parts or concepts from this library to any extent, <b>please ackn
 If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
-This software is available to the public under a highly permissive license.<br  />
+<p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
- </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000055">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 9:45 PM, University of Texas at Arlington<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000066">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 9:45 PM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -224,7 +239,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_50f4aa4d358155d60ba77656b75f520d.html">+math</a></li><li class="navelem"><a class="el" href="logsubexp_8m.html">logsubexp.m</a></li>
-        <li class="footer">Generated on Tue May 28 2024 00:36:52 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Jul 2 2024 02:16:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

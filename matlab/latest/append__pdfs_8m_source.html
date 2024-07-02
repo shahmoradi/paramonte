@@ -237,9 +237,9 @@ $(document).ready(function(){initNavTree('append__pdfs_8m_source.html',''); init
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    % Ensure that all input files exist</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">for</span> fileIdx = 2 : numel(varargin)</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <a class="code hl_function" href="filename_8m.html#afccca88f30b0b5fde69638d92c4d19f6">filename</a> = varargin{fileIdx};</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">if</span> ~exist(<a class="code hl_function" href="filename_8m.html#afccca88f30b0b5fde69638d92c4d19f6">filename</a>,<span class="stringliteral">&#39;file&#39;</span>)</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            error(&#39;export_fig:append_pdf:MissingFile&#39;,&#39;Input file %s does not exist&#39;,<a class="code hl_function" href="filename_8m.html#afccca88f30b0b5fde69638d92c4d19f6">filename</a>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        filename = varargin{fileIdx};</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">if</span> ~exist(filename,<span class="stringliteral">&#39;file&#39;</span>)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            error(&#39;export_fig:append_pdf:MissingFile&#39;,&#39;Input file %s does not exist&#39;,filename);</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        end</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    end</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
@@ -336,7 +336,6 @@ $(document).ready(function(){initNavTree('append__pdfs_8m_source.html',''); init
 <div class="ttc" id="aappend__pdfs_8m_html_aea8f7f5d624cc6dfca7e2680f8699841"><div class="ttname"><a href="append__pdfs_8m.html#aea8f7f5d624cc6dfca7e2680f8699841">append_pdfs</a></div><div class="ttdeci">function append_pdfs(in varargin)</div></div>
 <div class="ttc" id="aappend__pdfs_8m_html_af80b06337dad70c7ba84ab519a94e39c"><div class="ttname"><a href="append__pdfs_8m.html#af80b06337dad70c7ba84ab519a94e39c">cleanup</a></div><div class="ttdeci">function cleanup(in cmdfile)</div></div>
 <div class="ttc" id="acopy_8m_html_a3718abda67edd88f029c9887fa20489a"><div class="ttname"><a href="copy_8m.html#a3718abda67edd88f029c9887fa20489a">copy</a></div><div class="ttdeci">function copy(in from, in to, in fields)</div><div class="ttdoc">Copy the contents of the struct/object from to the struct/object to recursively and without destroyin...</div></div>
-<div class="ttc" id="afilename_8m_html_afccca88f30b0b5fde69638d92c4d19f6"><div class="ttname"><a href="filename_8m.html#afccca88f30b0b5fde69638d92c4d19f6">filename</a></div><div class="ttdeci">function filename(in prefix)</div><div class="ttdoc">Return a scalar MATLAB string containing an outputFileName base simulation specification of the ParaM...</div></div>
 <div class="ttc" id="aghostscript_8m_html_a013fedac994253f16dff2bd620c92646"><div class="ttname"><a href="ghostscript_8m.html#a013fedac994253f16dff2bd620c92646">ghostscript</a></div><div class="ttdeci">function ghostscript(in cmd)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -344,7 +343,7 @@ $(document).ready(function(){initNavTree('append__pdfs_8m_source.html',''); init
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_77a461de7b91f32df8032085d9a00b9a.html">+vis</a></li><li class="navelem"><a class="el" href="dir_71b9da55d4f4009145fe80947fd39cfd.html">+figure</a></li><li class="navelem"><a class="el" href="dir_92b82a48e546f16814df4630051690f9.html">private</a></li><li class="navelem"><a class="el" href="append__pdfs_8m.html">append_pdfs.m</a></li>
-        <li class="footer">Generated on Tue May 28 2024 00:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Jul 2 2024 02:16:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

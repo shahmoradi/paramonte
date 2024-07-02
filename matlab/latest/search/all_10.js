@@ -34,7 +34,7 @@ var searchData=
   ['riskman_2em_31',['riskman.m',['../riskman_8m.html',1,'']]],
   ['rmfile_32',['rmfile',['../rmfile_8m.html#a187144d1a1f8d4a89214be107be88a48',1,'rmfile.m']]],
   ['rmfile_2em_33',['rmfile.m',['../rmfile_8m.html',1,'']]],
-  ['root_34',['root',['../kde2d_8m.html#a026e50e02e7e3857d23ce7bbec121c92',1,'root(in f, in N):&#160;kde2d.m'],['../root_8m.html#a89008b0d9aee9934beddaed8433fec4d',1,'root():&#160;root.m']]],
+  ['root_34',['root',['../root_8m.html#a89008b0d9aee9934beddaed8433fec4d',1,'root.m']]],
   ['root_2em_35',['root.m',['../root_8m.html',1,'']]],
   ['rows_36',['rows',['../classSubplot.html#aaf6e5ee395a3d84a0f249971143b4013',1,'Subplot']]],
   ['rowslog_37',['rowslog',['../classDataFrame.html#a88d1577f1c8bcee5e3dea37137e1e1e2',1,'DataFrame']]],

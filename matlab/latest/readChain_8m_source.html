@@ -153,7 +153,7 @@ $(document).ready(function(){initNavTree('readChain_8m_source.html',''); initRes
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;  in MPI-<a class="code hl_function" href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a> simulations.</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;  \param[in]  pattern :   The input scalar MATLAB <span class="keywordtype">string</span> containing the pattern matching</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;                          the desired chain file(s) whose <a class="code hl_function" href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a> is to be read.</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;                          the desired chain file(s) whose contents is to be read.</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;                          The specified ``pattern`` only needs to partially identify</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                          the <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> of the simulation to <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> the chain file belongs.</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                          For example, specifying ``<span class="stringliteral">&quot;./mydir/mysim&quot;</span>`` as input will</div>
@@ -162,7 +162,7 @@ $(document).ready(function(){initNavTree('readChain_8m_source.html',''); initRes
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;                          If there are multiple files matching in the input ``pattern``,</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;                          then all such files will be read and returned as elements of a <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a>.&lt;br&gt;                      </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;                          If the specified pattern is a valid existing URL, the file will be</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;                          downloaded as a temporary file to the local system, its <a class="code hl_function" href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;                          downloaded as a temporary file to the local system, its contents</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;                          shall be parsed and the file will be subsequently removed.&lt;br&gt;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;                          If the input ``pattern`` is empty, then the method will search</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;                          <span class="keywordflow">for</span> any possible candidate files with the appropriate suffix</div>
@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('readChain_8m_source.html',''); initRes
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;  \return</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;  `chainList`         :   The output MATLAB cell array of objects</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;                          of <span class="keyword">class </span>``pm.sampling.FileContentsChain``,</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;                          each of <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> corresponds to the <a class="code hl_function" href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;                          each of <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> corresponds to the contents</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;                          of a unique chain file.</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;  \interface{readChain}</div>
@@ -239,7 +239,6 @@ $(document).ready(function(){initNavTree('readChain_8m_source.html',''); initRes
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        chainList{ifile} = pm.sampling.FileContentsChain(pathList(ifile), self.silent, sep);</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    end</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>end</div>
-<div class="ttc" id="a_09bash__profile_2contents_8m_html_ac8cba6ddf5f553e8277972eecd196b81"><div class="ttname"><a href="_09bash__profile_2contents_8m.html#ac8cba6ddf5f553e8277972eecd196b81">contents</a></div><div class="ttdeci">function contents()</div><div class="ttdoc">Return the contents of the .bash_profile file in the system home folder as a scalar MATLAB string.</div></div>
 <div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div><div class="ttdoc">Return the MPI library name as used in naming the ParaMonte MATLAB shared libraries.</div></div>
 <div class="ttc" id="a_09os_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div><div class="ttdoc">Return a list of MATLAB strings containing the names of OS platforms supported by the ParaMonte MATLA...</div></div>
 <div class="ttc" id="aparallel_8m_html_a01b198603048be87b719ba0cbd8b3864"><div class="ttname"><a href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a></div><div class="ttdeci">function parallel()</div><div class="ttdoc">Return a scalar MATLAB logical that is true if and only if the current installation of MATLAB contain...</div></div>
@@ -250,7 +249,7 @@ $(document).ready(function(){initNavTree('readChain_8m_source.html',''); initRes
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_870970980bbbd119e0b6d78557b3d4cb.html">+sampling</a></li><li class="navelem"><a class="el" href="dir_0e0170126dfae72f4e93d1cf5bd3ba28.html">@Sampler</a></li><li class="navelem"><a class="el" href="readChain_8m.html">readChain.m</a></li>
-        <li class="footer">Generated on Tue May 28 2024 00:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Jul 2 2024 02:16:50 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

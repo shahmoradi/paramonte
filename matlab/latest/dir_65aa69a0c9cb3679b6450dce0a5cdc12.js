@@ -9,5 +9,6 @@ var dir_65aa69a0c9cb3679b6450dce0a5cdc12 =
     ] ],
     [ "iscmd.m", "iscmd_8m.html", "iscmd_8m" ],
     [ "isgui.m", "isgui_8m.html", "isgui_8m" ],
-    [ "release.m", "release_8m.html", "release_8m" ]
+    [ "release.m", "release_8m.html", "release_8m" ],
+    [ "show.m", "show_8m.html", "show_8m" ]
 ];

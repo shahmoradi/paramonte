@@ -2,7 +2,7 @@ var searchData=
 [
   ['le_0',['le',['../classHandle.html#a03f1b16cb526a091bcb27052b21c7405',1,'Handle']]],
   ['len_1',['len',['../len_8m.html#a3e234d11d9d845036a6be6752d1f80ec',1,'len.m']]],
-  ['lib_2',['lib',['../lib_8m.html#ab7532545afe200f8d0e973cf2497d215',1,'lib.m']]],
+  ['lib_2',['lib',['../lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13',1,'lib.m']]],
   ['lin_3',['lin',['../lin_8m.html#a51376849eef26a184229da7a38e8a5ac',1,'lin.m']]],
   ['line_4',['Line',['../classLine.html#a62e22453fb1cd4c1b529a398f77e7891',1,'Line::Line(in dfref, in varargin)'],['../classLine.html#a62e22453fb1cd4c1b529a398f77e7891',1,'Line::Line(in dfref, in varargin)'],['../classLine.html#a62e22453fb1cd4c1b529a398f77e7891',1,'Line::Line(in dfref, in varargin)'],['../classLine.html#a62e22453fb1cd4c1b529a398f77e7891',1,'Line::Line(in dfref, in varargin)']]],
   ['line3_5',['Line3',['../classLine3.html#aa839b66fc78256df647c42f800c9ae12',1,'Line3::Line3(in dfref, in varargin)'],['../classLine3.html#aa839b66fc78256df647c42f800c9ae12',1,'Line3::Line3(in dfref, in varargin)'],['../classLine3.html#aa839b66fc78256df647c42f800c9ae12',1,'Line3::Line3(in dfref, in varargin)'],['../classLine3.html#aa839b66fc78256df647c42f800c9ae12',1,'Line3::Line3(in dfref, in varargin)']]],
@@ -15,7 +15,7 @@ var searchData=
   ['logrange_12',['logrange',['../logrange_8m.html#ada0933ae070e1e2d1f38c545ab592d6d',1,'logrange.m']]],
   ['logspace_13',['logspace',['../logspace_8m.html#a0e89c47d8ee19a6d7923d28b2dd19cf0',1,'logspace.m']]],
   ['logspaceint_14',['logspaceint',['../logspaceint_8m.html#a52817f12eb7861b8b39d0800554682ae',1,'logspaceint.m']]],
-  ['logsubexp_15',['logsubexp',['../logsubexp_8m.html#a9c5171c6864979d6781f43fe95c046f0',1,'logsubexp.m']]],
+  ['logsubexp_15',['logsubexp',['../logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0',1,'logsubexp.m']]],
   ['ls_5fregexp_16',['ls_regexp',['../glob_8m.html#a8e49c9970024381269a21db17e985871',1,'glob.m']]],
   ['ls_5fregexp_5ftree_17',['ls_regexp_tree',['../glob_8m.html#ad2bae39cc635583ae1988041ee4af9fd',1,'glob.m']]],
   ['lt_18',['lt',['../classHandle.html#af380c6c0b3996c3940f9ab0705ddabd6',1,'Handle']]]

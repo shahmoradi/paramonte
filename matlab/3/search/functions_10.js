@@ -18,7 +18,7 @@ var searchData=
   ['rgb2grey_15',['rgb2grey',['../savefig_8m.html#a59307c39b8d06b5d8f17a2ebd8afb1a1',1,'savefig.m']]],
   ['riskman_16',['riskman',['../riskman_8m.html#a1695131c2aa5bf808cd6192b13c23338',1,'riskman.m']]],
   ['rmfile_17',['rmfile',['../rmfile_8m.html#a187144d1a1f8d4a89214be107be88a48',1,'rmfile.m']]],
-  ['root_18',['root',['../root_8m.html#a89008b0d9aee9934beddaed8433fec4d',1,'root():&#160;root.m'],['../kde2d_8m.html#a026e50e02e7e3857d23ce7bbec121c92',1,'root(in f, in N):&#160;kde2d.m']]],
+  ['root_18',['root',['../root_8m.html#a89008b0d9aee9934beddaed8433fec4d',1,'root.m']]],
   ['rowslog_19',['rowslog',['../classDataFrame.html#a88d1577f1c8bcee5e3dea37137e1e1e2',1,'DataFrame']]],
   ['run_20',['run',['../classSampler.html#a05facc7b19d55723b4b9b7f5754c8ae6',1,'Sampler::run()'],['../classParadram.html#aa386416992b6113574a6d1ad0034fb13',1,'Paradram::run()']]]
 ];

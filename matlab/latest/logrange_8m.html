@@ -187,10 +187,10 @@ Functions</h2></td></tr>
 <p>Return a set of maximum <code>sizemax</code> unique integer spacings almost linearly spaced in the natural logarithmic scale between the specified <code>start</code> and <code>stop</code> of the output range. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">start</td><td>: The input scalar MATLAB whole-number (integer) representing the starting point of the output range.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">stop</td><td>: The input scalar MATLAB whole-number (integer) representing the stopping point of the output range.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sizemax</td><td>: The input scalar MATLAB whole-number (integer) representing the maximum size of the output range. <br  />
- Due to rounding operation involved in creating the output range, it is impossible to prespecify the output range size, only the maximum. <br  />
+    <tr><td class="paramdir">[in]</td><td class="paramname">start</td><td>: The input scalar MATLAB whole-number (integer) representing the starting point of the output range. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">stop</td><td>: The input scalar MATLAB whole-number (integer) representing the stopping point of the output range. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sizemax</td><td>: The input scalar MATLAB whole-number (integer) representing the maximum size of the output range.<br  />
+ Due to rounding operation involved in creating the output range, it is impossible to prespecify the output range size, only the maximum.<br  />
  (<b>optional</b>, default = <code>100</code>)</td></tr>
   </table>
   </dd>
@@ -202,17 +202,61 @@ Functions</h2></td></tr>
 <div class="line">array = pm.array.logrange(start, stop, sizemax)</div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
-<a class="anchor" id="example-logrange"></a><b>Example usage</b> <a href="#example-logrange">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">array = pm.array.logrange(1, 1000) % 10 11 12 13 14 15 16 17 18 19 20
-array = pm.array.logrange(1, 1000, 10) % 1 2 4 8 16 32 63 126 251 501 1000
-array = pm.array.logrange(1, 1000, 20) % 10  15
-array = pm.array.logrange(1, 1000, [])
-</pre> <br  />
-<a class="anchor" id="final-logrange"></a><b>Final Remarks</b> <a href="#final-logrange">⛓</a> <hr  />
- If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+array/logrange.m#L40 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<a class="anchor" id="example-logrange"></a><b>Example usage</b> <a href="#example-logrange">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>addpath(<span class="stringliteral">&#39;../../../&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory to the search path.</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>assert(all(pm.array.logrange(1, 1000, 10) == [1, 2, 4, 8, 16, 32, 63, 126, 251, 501, 1000]));</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>assert(all(pm.array.logrange(1, 1000, 20) == [1, 2, 3, 4, 6, 8, 11, 16, 22, 32, 45, 63, 89, 126, 178, 251, 355, 501, 708, 1000]));</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>pm.array.logrange(1, 1000, [])</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>pm.array.logrange(1, 100)</div>
+<div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
+</div><!-- fragment --> <br  />
+<a class="anchor" id="output-logrange"></a><b>Example output</b> <a href="#output-logrange">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>ans =</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>  Columns 1 through 6</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>           1           2           3           4           5           6</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>  Columns 7 through 12</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>           7           8           9          10          11          12</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>  Columns 13 through 18</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>          13          14          15          16          17          18</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  Columns 19 through 24</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>          19          21          22          24          26          28</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  Columns 25 through 30</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>          30          32          34          36          39          42</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  Columns 31 through 36</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>          45          48          51          55          59          63</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  Columns 37 through 42</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>          68          72          78          83          89          95</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  Columns 43 through 48</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>         102         110         117         126         135         145</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  Columns 49 through 54</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>         155         166         178         191         204         219</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  Columns 55 through 60</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>         234         251         269         288         309         331</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  Columns 61 through 66</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>         355         380         407         437         468         501</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  Columns 67 through 72</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>         537         575         617         661         708         759</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  Columns 73 through 76</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>         813         871         933        1000</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>ans =</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  Columns 1 through 13</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>     1     2     3     4     5     6     7     8     9    10    11    12    13</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  Columns 14 through 26</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    14    15    16    17    18    19    20    21    22    23    24    25    26</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  Columns 27 through 39</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    28    29    30    32    33    35    36    38    40    42    44    46    48</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  Columns 40 through 52</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    50    52    55    58    60    63    66    69    72    76    79    83    87</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  Columns 53 through 55</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    91    95   100</div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
+<a class="anchor" id="final-logrange"></a><b>Final Remarks</b> <a href="#final-logrange">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+array/logrange.m#L36 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
-<ol>
+</p><ol>
 <li>
 If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
@@ -220,10 +264,9 @@ If you use any parts or concepts from this library to any extent, <b>please ackn
 If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
-This software is available to the public under a highly permissive license.<br  />
+<p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
- </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
 <dl class="authors"><dt><b><a class="el" href="authors.html#_authors000003">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 4:29 PM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
@@ -237,7 +280,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_1b6a14a69736c2d1dbf6a7d99ce36b4a.html">+array</a></li><li class="navelem"><a class="el" href="logrange_8m.html">logrange.m</a></li>
-        <li class="footer">Generated on Tue May 28 2024 00:36:52 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Jul 2 2024 02:16:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

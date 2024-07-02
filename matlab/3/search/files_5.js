@@ -9,12 +9,11 @@ var searchData=
   ['filecontentsrestartdram_2em_6',['FileContentsRestartDRAM.m',['../FileContentsRestartDRAM_8m.html',1,'']]],
   ['filecontentssample_2em_7',['FileContentsSample.m',['../FileContentsSample_8m.html',1,'']]],
   ['filecontentstabular_2em_8',['FileContentsTabular.m',['../FileContentsTabular_8m.html',1,'']]],
-  ['filename_2em_9',['filename.m',['../filename_8m.html',1,'']]],
-  ['finalize_2em_10',['finalize.m',['../finalize_8m.html',1,'']]],
-  ['financial_2em_11',['financial.m',['../financial_8m.html',1,'']]],
-  ['find_2em_12',['find.m',['../find_8m.html',1,'']]],
-  ['findfile_2em_13',['findfile.m',['../findfile_8m.html',1,'']]],
-  ['fit_2em_14',['fit.m',['../fit_8m.html',1,'']]],
-  ['fix_5flines_2em_15',['fix_lines.m',['../fix__lines_8m.html',1,'']]],
-  ['fuzzy_2em_16',['fuzzy.m',['../fuzzy_8m.html',1,'']]]
+  ['finalize_2em_9',['finalize.m',['../finalize_8m.html',1,'']]],
+  ['financial_2em_10',['financial.m',['../financial_8m.html',1,'']]],
+  ['find_2em_11',['find.m',['../find_8m.html',1,'']]],
+  ['findfile_2em_12',['findfile.m',['../findfile_8m.html',1,'']]],
+  ['fit_2em_13',['fit.m',['../fit_8m.html',1,'']]],
+  ['fix_5flines_2em_14',['fix_lines.m',['../fix__lines_8m.html',1,'']]],
+  ['fuzzy_2em_15',['fuzzy.m',['../fuzzy_8m.html',1,'']]]
 ];

@@ -90,11 +90,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "../../c/2/index.html",
-"_09tile_2Heatmap_8m.html",
-"classHandle.html#a947a5724d3049a96f81abfceada06714",
-"compiler_8m.html#a97012960b56e67629c96f09b91cd7ec8",
-"index.html#ParaMonteDocumentation",
-"testParaMonte__release_8m_source.html"
+"_09subplot_2Scatter3_8m_source.html",
+"classFileContentsRestartDRAM.html#a4f7cdb1375fd6d809cc2d94e787d5ee9",
+"colornames_8m.html#af40281fddb169fca43b2e6b9c235cdb7",
+"globals_v.html",
+"split2real_8m.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

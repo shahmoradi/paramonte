@@ -147,76 +147,80 @@ $(document).ready(function(){initNavTree('version_8m_source.html',''); initResiz
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  \param[in]  current :   The input scalar MATLAB <span class="keywordtype">string</span> containing the</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;                          current Semantic <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> of the library in</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;                          triplet format (e.g., ``<span class="stringliteral">&quot;1.2.3&quot;</span>``).</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;                          triplet format (e.g., ``<span class="stringliteral">&quot;1.2.3&quot;</span>``).&lt;br&gt;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;  \return</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;  `vernum`            :   The output scalar MATLAB <span class="keywordtype">string</span> containing either:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;                          1.  the ParaMonte MATLAB <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> <span class="keywordflow">if</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;                              the input argument ``current`` is missing.</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;                          2.  the semantically-previous <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> of the library</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;                              <span class="keywordflow">if</span> the input argument ``current`` is present.</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                              The output <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> may not necessarily exist</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                              as a <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> of the ParaMonte library.</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;  \interface{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;  \code{.m}</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;      vernum = pm.lib.version()</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;      vernum = pm.lib.version(current)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;  \endcode</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;  \example{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;      vernum = pm.lib.version(<span class="stringliteral">&quot;1.1.1&quot;</span>) % 1.1.0</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;      vernum = pm.lib.version(<span class="stringliteral">&quot;1.1.0&quot;</span>) % 1.0.0</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;  \final{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;  \author</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;  \JoshuaOsborne, May 21 2024, 8:13 PM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="version_8m.html#ad556dad9c2fbe69720440cec7fbfc5c2">   37</a></span>function vernum = <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>(current)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    persistent vernum_persistent;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">if</span> nargin &lt; 1</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">if</span> isempty(vernum_persistent)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keyword">try</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                fid = fopen(fullfile(pm.lib.path.auxil(), <span class="stringliteral">&quot;VERSION.md&quot;</span>));</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                vernum_persistent = string(strip(fgetl(fid)));</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                fclose(fid);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">catch</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                vernum_persistent = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            end</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        end</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        vernum = vernum_persistent;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        currentVerionTriplet = pm.str.split2real(current);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        vernum = [];</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a> = 4;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">while</span> <span class="keyword">true</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a> = <a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a> - 1;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">if</span> <a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a> &lt;= 0</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                <span class="keywordflow">if</span> currentVerionTriplet(<a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a>) &gt; 0</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                    previousVerionTriplet = currentVerionTriplet;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                    previousVerionTriplet(<a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a>) = previousVerionTriplet(<a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a>) - 1;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                    vernum = join(<span class="keywordtype">string</span>(previousVerionTriplet),<span class="stringliteral">&quot;.&quot;</span>);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                end</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            end</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        end</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    end</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>end</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;                          &lt;ol&gt;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;                              &lt;li&gt;    the ParaMonte MATLAB <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> <span class="keywordflow">if</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;                                      the input argument ``current`` is missing.&lt;br&gt;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;                              &lt;li&gt;    the semantically-previous <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> of the library</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                                      <span class="keywordflow">if</span> the input argument ``current`` is present.&lt;br&gt;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                                      The output <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> **may not necessarily exist**</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;                                      as a <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> of the ParaMonte library.&lt;br&gt;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;                          &lt;/ol&gt;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;  \interface{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;  \code{.m}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;      vernum = pm.lib.version()</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;      vernum = pm.lib.version(current)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;  \endcode</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;  \example{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;  \include{lineno} example/<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>/<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>/main.m</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;  \output{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;  \include{lineno} example/<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>/<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>/main.out.m</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;  \final{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;  \author</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;  \JoshuaOsborne, May 21 2024, 8:13 PM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="version_8m.html#ad556dad9c2fbe69720440cec7fbfc5c2">   40</a></span>function vernum = <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>(current)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    persistent vernum_persistent;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span>  nargin &lt; 1</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span> isempty(vernum_persistent)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keyword">try</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                fid = fopen(fullfile(pm.lib.path.auxil(), <span class="stringliteral">&quot;VERSION.md&quot;</span>));</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                vernum_persistent = string(strip(fgetl(fid)));</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                fclose(fid);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">catch</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                vernum_persistent = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            end</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        end</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        vernum = vernum_persistent;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        currentVerionTriplet = pm.str.split2real(current);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        vernum = [];</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a> = 4;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">while</span> <span class="keyword">true</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a> = <a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a> - 1;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordflow">if</span> <a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a> &lt;= 0</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                <span class="keywordflow">if</span> currentVerionTriplet(<a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a>) &gt; 0</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                    previousVerionTriplet = currentVerionTriplet;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                    previousVerionTriplet(<a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a>) = previousVerionTriplet(<a class="code hl_function" href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a>) - 1;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                    vernum = join(<span class="keywordtype">string</span>(previousVerionTriplet),<span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                end</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            end</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        end</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    end</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>end</div>
 <div class="ttc" id="a_09sort_2index_8m_html_a5e9da7e1ba3f2f6d159127bb7d902c6b"><div class="ttname"><a href="_09sort_2index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b">index</a></div><div class="ttdeci">function index(in array)</div><div class="ttdoc">Given array(1 : n), return the array index indx(1:n) such that array(indx) is in ascending order.</div></div>
 <div class="ttc" id="a_09update_2version_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
+<div class="ttc" id="alib_8m_html_a3d11053ebcdfc6f0bef7af9c8d14fa13"><div class="ttname"><a href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a></div><div class="ttdeci">function lib()</div><div class="ttdoc">Return a scalar MATLAB string containing the path to the lib directory of the ParaMonte library packa...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_0c006b8a7b0a63b87b86162ded07c4ff.html">+lib</a></li><li class="navelem"><a class="el" href="version_8m.html">version.m</a></li>
-        <li class="footer">Generated on Tue May 28 2024 00:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Jul 2 2024 02:16:50 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

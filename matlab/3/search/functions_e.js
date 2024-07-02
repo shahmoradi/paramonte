@@ -13,6 +13,5 @@ var searchData=
   ['preparecmdfile_10',['prepareCmdFile',['../append__pdfs_8m.html#aa029673b2a3634f41ecf915ba07988ee',1,'append_pdfs.m']]],
   ['print2array_11',['print2array',['../print2array_8m.html#aaf500360abeaa0f66c501c642cfc45e5',1,'print2array.m']]],
   ['print2eps_12',['print2eps',['../print2eps_8m.html#ac513bb70bab782e7884fde67dd56284a',1,'print2eps.m']]],
-  ['programscrosscheck_13',['programsCrossCheck',['../savefig_8m.html#a7f18cefdad3d3bd2b47563bd0efb2604',1,'savefig.m']]],
-  ['psi_14',['psi',['../kde2d_8m.html#afee392da8e9b61e47a027218ecdab0b0',1,'kde2d.m']]]
+  ['programscrosscheck_13',['programsCrossCheck',['../savefig_8m.html#a7f18cefdad3d3bd2b47563bd0efb2604',1,'savefig.m']]]
 ];

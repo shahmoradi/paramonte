@@ -8,6 +8,7 @@ var dir_0c006b8a7b0a63b87b86162ded07c4ff =
     [ "bldtypes.m", "bldtypes_8m.html", "bldtypes_8m" ],
     [ "cite.m", "cite_8m.html", "cite_8m" ],
     [ "clstypes.m", "clstypes_8m.html", "clstypes_8m" ],
+    [ "Contents.m", "_09lib_2Contents_8m.html", null ],
     [ "credits.m", "credits_8m.html", "credits_8m" ],
     [ "verify.m", "_09lib_2verify_8m.html", "_09lib_2verify_8m" ],
     [ "version.m", "version_8m.html", "version_8m" ],
