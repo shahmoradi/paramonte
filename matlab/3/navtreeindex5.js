@@ -1,17 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"split2real_8m.html":[17,0,0,0,0,0,13,5],
-"split2real_8m.html#a0ead684d81a66df92d6aef561475d062":[17,0,0,0,0,0,13,5,0],
-"split2real_8m_source.html":[17,0,0,0,0,0,13,5],
-"statistics_8m.html":[17,0,0,0,0,0,8,0,20],
-"statistics_8m.html#adfdc30479d2baa9a189e1138bdbeaa08":[17,0,0,0,0,0,8,0,20,0],
-"statistics_8m_source.html":[17,0,0,0,0,0,8,0,20],
-"struct2hash_8m.html":[17,0,0,0,0,0,8,1,6],
-"struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01":[17,0,0,0,0,0,8,1,6,0],
-"struct2hash_8m_source.html":[17,0,0,0,0,0,8,1,6],
-"tab_8m.html":[17,0,0,0,0,0,5,6],
-"tab_8m.html#a4095dcc55685eb8292558e335f0dab06":[17,0,0,0,0,0,5,6,0],
-"tab_8m_source.html":[17,0,0,0,0,0,5,6],
 "testParaMonte_8m.html":[17,0,0,0,1,1],
 "testParaMonte_8m_source.html":[17,0,0,0,1,1],
 "testParaMonte__Rosenbrock_8m.html":[17,0,0,0,1,6],

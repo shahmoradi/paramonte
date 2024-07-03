@@ -148,7 +148,9 @@ $(document).ready(function(){initNavTree('repKeyVal_8m.html',''); initResizable(
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:acd6e02478529e8f19c91b04f86cb69ee"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="repKeyVal_8m.html#acd6e02478529e8f19c91b04f86cb69ee">repKeyVal</a> (in key, in val, in hashmap)</td></tr>
-<tr class="memdesc:acd6e02478529e8f19c91b04f86cb69ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the input hashmap with the new (key, val) appended. only if the input pair does not exist in the input hashmap. If the pair exists, replace it with the new value.  <a href="repKeyVal_8m.html#acd6e02478529e8f19c91b04f86cb69ee">More...</a><br /></td></tr>
+<tr class="memdesc:acd6e02478529e8f19c91b04f86cb69ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the input <code>hashmap</code> with the new <code>(key, val)</code> appended, only if the input pair does not exist in the input <code>hashmap</code>.<br  />
+ If the pair exists, replace it with the new value.<br  />
+  <a href="repKeyVal_8m.html#acd6e02478529e8f19c91b04f86cb69ee">More...</a><br /></td></tr>
 <tr class="separator:acd6e02478529e8f19c91b04f86cb69ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -184,31 +186,100 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return the input hashmap with the new (key, val) appended. only if the input pair does not exist in the input hashmap. If the pair exists, replace it with the new value. </p>
+<p>Return the input <code>hashmap</code> with the new <code>(key, val)</code> appended, only if the input pair does not exist in the input <code>hashmap</code>.<br  />
+ If the pair exists, replace it with the new value.<br  />
+ </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>: The input scalar MATLAB string containing the key to add to the input pair list.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>: The input value to be appended to the input hashmap after the input <code>key</code>.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">hashmap</td><td>: The input cell array of even number of elements containing the <code>(key, val)</code> pairs of the hashmap in sequence as element of the cell array.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>: The input scalar MATLAB string containing the key to add to the input pair list. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>: The input value to be appended to the input <code>hashmap</code> after the input <code>key</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hashmap</td><td>: The input cell array of even number of elements containing the <code>(key, val)</code> pairs of the <code>hashmap</code> in sequence as element of the cell array.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>hashnew</code> : The output cell array of even number of elements containing the input pair list and <code>(key, val)</code> pair. If the input <code>key</code> exists in the input <code>hashmap</code>, the input <code>(key, val)</code> pair will not be added.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>hashnew</code> : The output cell array of even number of elements containing the input pair list and <code>(key, val)</code> pair.<br  />
+ If the input <code>key</code> exists in the input <code>hashmap</code>, the input <code>(key, val)</code> pair will not be added.</dd></dl>
 <p><br  />
 <a class="anchor" id="interface-repKeyVal"></a><b>Possible calling interfaces</b> <a href="#interface-repKeyVal">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">hashnew = pm.matlab.hashmap.repKeyVal(key, val, hashmap)</div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
+<a class="anchor" id="example-repKeyVal"></a><b>Example usage</b> <a href="#example-repKeyVal">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>addpath(<span class="stringliteral">&#39;../../../../&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory to the search path.</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>pm.matlab.show()</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>pm.matlab.show(<span class="stringliteral">&#39;hashmap = {&quot;key1&quot;, 1, &quot;key2&quot;, &quot;val2&quot;};&#39;</span>)</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>                hashmap = {<span class="stringliteral">&quot;key1&quot;</span>, 1, <span class="stringliteral">&quot;key2&quot;</span>, <span class="stringliteral">&quot;val2&quot;</span>};</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>pm.matlab.show()</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>pm.matlab.show(<span class="stringliteral">&#39;hashnew = pm.matlab.hashmap.repKeyVal(&quot;key2&quot;, 2, hashmap);&#39;</span>)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>                hashnew = pm.matlab.hashmap.repKeyVal(<span class="stringliteral">&quot;key2&quot;</span>, 2, hashmap);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>pm.matlab.show(<span class="stringliteral">&#39;hashnew&#39;</span>)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>pm.matlab.show( hashnew )</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>pm.matlab.show()</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>pm.matlab.show(<span class="stringliteral">&#39;hashnew = pm.matlab.hashmap.repKeyVal(&quot;key3&quot;, true, hashmap);&#39;</span>)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                hashnew = pm.matlab.hashmap.repKeyVal(<span class="stringliteral">&quot;key3&quot;</span>, <span class="keyword">true</span>, hashmap);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>pm.matlab.show(<span class="stringliteral">&#39;hashnew&#39;</span>)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>pm.matlab.show( hashnew )</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>pm.matlab.show()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>pm.matlab.show(<span class="stringliteral">&#39;hashnew = pm.matlab.hashmap.repKeyVal(&quot;key3&quot;, false, hashmap);&#39;</span>)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                hashnew = pm.matlab.hashmap.repKeyVal(<span class="stringliteral">&quot;key3&quot;</span>, <span class="keyword">false</span>, hashmap);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>pm.matlab.show(<span class="stringliteral">&#39;hashnew&#39;</span>)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>pm.matlab.show( hashnew )</div>
+<div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
 </div><!-- fragment --> <br  />
-<a class="anchor" id="example-repKeyVal"></a><b>Example usage</b> <a href="#example-repKeyVal">⛓</a> </dd></dl>
-<dl class="section user"><dt></dt><dd><pre class="fragment">hashmap = {"key1", 1, "key2", "val2"};
-hashnew = pm.matlab.hashmap.repKeyVal("key2", 2, hashmap)
-hashnew = pm.matlab.hashmap.repKeyVal("key3", true, hashmap)
-hashnew = pm.matlab.hashmap.repKeyVal("key3", false, hashmap)
-</pre> <br  />
-<a class="anchor" id="final-repKeyVal"></a><b>Final Remarks</b> <a href="#final-repKeyVal">⛓</a> <hr  />
- If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+matlab/+hashmap/repKeyVal.m#L35 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<a class="anchor" id="output-repKeyVal"></a><b>Example output</b> <a href="#output-repKeyVal">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>hashmap = {<span class="stringliteral">&quot;key1&quot;</span>, 1, <span class="stringliteral">&quot;key2&quot;</span>, <span class="stringliteral">&quot;val2&quot;</span>};</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>hashnew = pm.matlab.hashmap.repKeyVal(<span class="stringliteral">&quot;key2&quot;</span>, 2, hashmap);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>hashnew</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>hashnew{1}</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>key1</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>hashnew{2}</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>     1</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>hashnew{3}</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>key2</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>hashnew{4}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>     2</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>hashnew = pm.matlab.hashmap.repKeyVal(<span class="stringliteral">&quot;key3&quot;</span>, <span class="keyword">true</span>, hashmap);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>hashnew</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>hashnew{1}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>key1</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>hashnew{2}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>     1</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>hashnew{3}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>key2</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>hashnew{4}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>val2</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>hashnew{5}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>key3</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>hashnew{6}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>   1</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>hashnew = pm.matlab.hashmap.repKeyVal(<span class="stringliteral">&quot;key3&quot;</span>, <span class="keyword">false</span>, hashmap);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>hashnew</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>hashnew{1}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>key1</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>hashnew{2}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>     1</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>hashnew{3}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>key2</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>hashnew{4}</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>val2</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>hashnew{5}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>key3</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>hashnew{6}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>   0</div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
+<a class="anchor" id="final-repKeyVal"></a><b>Final Remarks</b> <a href="#final-repKeyVal">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+matlab/+hashmap/repKeyVal.m#L32 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
-<ol>
+</p><ol>
 <li>
 If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
@@ -216,10 +287,9 @@ If you use any parts or concepts from this library to any extent, <b>please ackn
 If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
-This software is available to the public under a highly permissive license.<br  />
+<p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
- </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
 <dl class="authors"><dt><b><a class="el" href="authors.html#_authors000096">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 10:52 PM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
@@ -233,7 +303,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_65aa69a0c9cb3679b6450dce0a5cdc12.html">+matlab</a></li><li class="navelem"><a class="el" href="dir_98d2fce6d7141ba32838da4524baa07b.html">+hashmap</a></li><li class="navelem"><a class="el" href="repKeyVal_8m.html">repKeyVal.m</a></li>
-        <li class="footer">Generated on Tue Jul 2 2024 02:16:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Jul 2 2024 21:16:00 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

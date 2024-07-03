@@ -158,26 +158,27 @@ $(document).ready(function(){initNavTree('touch_8m_source.html',''); initResizab
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;      str = pm.sys.bash_profile.touch()</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;  \endcode</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;  \final{<a class="code hl_function" href="touch_8m.html#a478e3168a07b178b461fc45b566085db">touch</a>}</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;  \author</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;  \JoshuaOsborne, May 21 2024, 4:58 AM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="touch_8m.html#a478e3168a07b178b461fc45b566085db">   25</a></span>function str = <a class="code hl_function" href="touch_8m.html#a478e3168a07b178b461fc45b566085db">touch</a>()</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    path = fullfile(pm.sys.path.<a class="code hl_function" href="home_8m.html#a787e5a46cc2bc13d73dce1f37e581a5f">home</a>(), &quot;.bash_profile&quot;);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    if  isfile(path)</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        str = <span class="keywordtype">string</span>(fileread(path));</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    else</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        str = &quot;&quot;;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    end</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    if ~contains(str, &quot;.bashrc&quot;)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        fid = fopen(path, &#39;a+&#39;);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        fprintf(fid, &#39;%s&#39;, [newline, &#39;[ -f $HOME/.bashrc ] &amp;&amp; . $HOME/.bashrc&#39;, newline]);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        fclose(fid);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        str = <span class="keywordtype">string</span>(fileread(path));</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    end</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>end</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;  \final{<a class="code hl_function" href="touch_8m.html#a478e3168a07b178b461fc45b566085db">touch</a>}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;  \author</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;  \JoshuaOsborne, May 21 2024, 4:58 AM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="touch_8m.html#a478e3168a07b178b461fc45b566085db">   26</a></span>function str = <a class="code hl_function" href="touch_8m.html#a478e3168a07b178b461fc45b566085db">touch</a>()</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    path = fullfile(pm.sys.path.<a class="code hl_function" href="home_8m.html#a787e5a46cc2bc13d73dce1f37e581a5f">home</a>(), &quot;.bash_profile&quot;);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    if  isfile(path)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        str = <span class="keywordtype">string</span>(fileread(path));</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    else</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        str = &quot;&quot;;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    end</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    if ~contains(str, &quot;.bashrc&quot;)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        fid = fopen(path, &#39;a+&#39;);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        fprintf(fid, &#39;%s&#39;, [newline, &#39;[ -f $HOME/.bashrc ] &amp;&amp; . $HOME/.bashrc&#39;, newline]);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        fclose(fid);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        str = <span class="keywordtype">string</span>(fileread(path));</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    end</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>end</div>
 <div class="ttc" id="ahome_8m_html_a787e5a46cc2bc13d73dce1f37e581a5f"><div class="ttname"><a href="home_8m.html#a787e5a46cc2bc13d73dce1f37e581a5f">home</a></div><div class="ttdeci">function home(in varargin)</div><div class="ttdoc">Return a MATLAB string containing the absolute path to the system home directory.</div></div>
 <div class="ttc" id="atouch_8m_html_a478e3168a07b178b461fc45b566085db"><div class="ttname"><a href="touch_8m.html#a478e3168a07b178b461fc45b566085db">touch</a></div><div class="ttdeci">function touch()</div><div class="ttdoc">Return the contents of the .bash_profile file in the system home folder as a scalar MATLAB string....</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -186,7 +187,7 @@ $(document).ready(function(){initNavTree('touch_8m_source.html',''); initResizab
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_1a54d7f1a807380c05b535e170b3b863.html">+sys</a></li><li class="navelem"><a class="el" href="dir_593316b30ad2c3f7953738ffbba366ad.html">+bash_profile</a></li><li class="navelem"><a class="el" href="touch_8m.html">touch.m</a></li>
-        <li class="footer">Generated on Tue Jul 2 2024 02:16:50 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Jul 2 2024 21:15:59 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

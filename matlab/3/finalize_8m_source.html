@@ -143,31 +143,29 @@ $(document).ready(function(){initNavTree('finalize_8m_source.html',''); initResi
 <a href="finalize_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>%&gt;  \brief</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Finalize the ParaMonte MATLAB sampler simulation run.</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;  \param[in]  `None`</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  \return</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;  `None`</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;  \final{<a class="code hl_function" href="getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9">getBorder</a>}</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;  \author</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;  \JoshuaOsborne, May 21 2024, 12:10 AM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>function finalize(self)</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">if</span>  self.partype == <span class="stringliteral">&quot;openmp&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">if</span> ~self.silent</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <span class="keyword">delete</span>(gcp(<span class="stringliteral">&quot;nocreate&quot;</span>));</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            evalc(<span class="stringliteral">&#39;delete(gcp(&quot;nocreate&quot;)&#39;</span>);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        end</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    end</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    munlock(self.mexname);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    clear(self.mexname);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    path(self.matpath);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span>  self.clstype == <span class="stringliteral">&quot;gnu&quot;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        setenv(<span class="stringliteral">&#39;GFORTRAN_STDIN_UNIT&#39;</span> , <span class="stringliteral">&#39;-1&#39;</span>);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        setenv(<span class="stringliteral">&#39;GFORTRAN_STDOUT_UNIT&#39;</span>, <span class="stringliteral">&#39;-1&#39;</span>);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        setenv(<span class="stringliteral">&#39;GFORTRAN_STDERR_UNIT&#39;</span>, <span class="stringliteral">&#39;-1&#39;</span>);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    end</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>end</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;  \return</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  `None`</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  \final{<a class="code hl_function" href="getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9">getBorder</a>}</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;  \author</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  \JoshuaOsborne, May 21 2024, 12:10 AM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>function finalize(self)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">if</span>  self.partype == <span class="stringliteral">&quot;openmp&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">if</span> ~self.silent</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keyword">delete</span>(gcp(<span class="stringliteral">&quot;nocreate&quot;</span>));</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            evalc(<span class="stringliteral">&#39;delete(gcp(&quot;nocreate&quot;)&#39;</span>);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        end</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    end</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    munlock(self.mexname);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    clear(self.mexname);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    path(self.matpath);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">if</span>  self.clstype == <span class="stringliteral">&quot;gnu&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        setenv(<span class="stringliteral">&#39;GFORTRAN_STDIN_UNIT&#39;</span> , <span class="stringliteral">&#39;-1&#39;</span>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        setenv(<span class="stringliteral">&#39;GFORTRAN_STDOUT_UNIT&#39;</span>, <span class="stringliteral">&#39;-1&#39;</span>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        setenv(<span class="stringliteral">&#39;GFORTRAN_STDERR_UNIT&#39;</span>, <span class="stringliteral">&#39;-1&#39;</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    end</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>end</div>
 <div class="ttc" id="agetBorder_8m_html_a6ec0cec943dde2125d78bb3cfb88d0b9"><div class="ttname"><a href="getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9">getBorder</a></div><div class="ttdeci">function getBorder(in gramian, in center, in npnt)</div><div class="ttdoc">Return a matrix of MATLAB doubles of shape [npnt, 2] containing the coordinates of a set of points on...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -175,7 +173,7 @@ $(document).ready(function(){initNavTree('finalize_8m_source.html',''); initResi
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_870970980bbbd119e0b6d78557b3d4cb.html">+sampling</a></li><li class="navelem"><a class="el" href="dir_0e0170126dfae72f4e93d1cf5bd3ba28.html">@Sampler</a></li><li class="navelem"><a class="el" href="finalize_8m.html">finalize.m</a></li>
-        <li class="footer">Generated on Tue Jul 2 2024 02:16:50 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Jul 2 2024 21:15:59 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -175,75 +175,76 @@ $(document).ready(function(){initNavTree('find_8m_source.html',''); initResizabl
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;      pathList = pm.sys.path.mpiexec.find(<a class="code hl_function" href="vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a>)</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;  \endcode</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;  \final{<a class="code hl_function" href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">find</a>}</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;  \author</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;  \JoshuaOsborne, May 21 2024, 5:03 AM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">   42</a></span>function pathList = <a class="code hl_function" href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">find</a>(<a class="code hl_function" href="vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a>)</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    pathList = [];</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">if</span> 0 &lt; nargin</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        vendorLower = lower(<a class="code hl_function" href="vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a>);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span> vendorLower == <span class="stringliteral">&quot;impi&quot;</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            vendorLower = <span class="stringliteral">&quot;intel&quot;</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        elseif vendorLower == <span class="stringliteral">&quot;open-mpi&quot;</span> || vendorLower == <span class="stringliteral">&quot;openrte&quot;</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            vendorLower = <span class="stringliteral">&quot;openmpi&quot;</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        end</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        vendorList = vendorLower;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        vendorList = [<span class="stringliteral">&quot;Intel&quot;</span>, <span class="stringliteral">&quot;MPICH&quot;</span>, <span class="stringliteral">&quot;OpenMPI&quot;</span>];</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        vendorLower = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    end</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    % The strategy is to search <span class="keywordflow">for</span> any executable in the</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    % environmental paths whose <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> contains `mpiexec`.</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    paths = getenv(<span class="stringliteral">&quot;PATH&quot;</span>);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    paths = string(strsplit(paths, pathsep));</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">for</span> path = paths</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        apps = pm.sys.path.list(path);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">for</span> icell = 1 : length(apps)</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            app = apps(icell);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">if</span> contains(app, <span class="stringliteral">&quot;mpiexec&quot;</span>) &amp;&amp; isfile(app)</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <span class="keywordflow">if</span> 0 &lt; nargin</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                    <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> = lower(pm.sys.path.mpiexec.vendor(app));</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                    <span class="keywordflow">if</span>  <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> ~= <span class="stringliteral">&quot;&quot;</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                        <span class="keywordflow">if</span>  contains(<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>, vendorLower)</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                            pathList = [pathList, app];</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                        end</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                    end</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    pathList = [pathList, app];</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                end</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            end</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        end</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    end</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    % Try more via `<a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a>()` and <span class="keywordflow">default</span> installation paths.</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">for</span> <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> = vendorList</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        path = pm.sys.path.mpiexec.which(<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">if</span>  path ~= <span class="stringliteral">&quot;&quot;</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordflow">if</span> isempty(pathList)</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                pathList = [pathList, path];</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            elseif sum(strcmp(pathList, path)) == 0</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                pathList = [pathList, path];</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            end</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        end</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    end</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">if</span>  nargin == 0 || contains(vendorLower, <span class="stringliteral">&quot;intel&quot;</span>)</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        possibilities = [ &quot;C:\Program Files (x86)\Intel\oneAPI\mpi\latest\bin\mpiexec.exe&quot; ...</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                        , &quot;C:\Program Files\Intel\oneAPI\mpi\latest\bin\mpiexec.exe&quot; ...</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                        , &quot;/opt/intel/oneapi/mpi/latest/bin/mpiexec&quot; ...</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                        ];</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        for path = possibilities</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            if isfile(path)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                if isempty(pathList)</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                    pathList = [pathList, path];</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                elseif sum(contains(pathList, path)) == 0</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                    pathList = [pathList, path];</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                end</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            end</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        end</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    end</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>end</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;  \final{<a class="code hl_function" href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">find</a>}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;  \author</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>%&gt;  \JoshuaOsborne, May 21 2024, 5:03 AM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">   43</a></span>function pathList = <a class="code hl_function" href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">find</a>(<a class="code hl_function" href="vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    pathList = [];</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> 0 &lt; nargin</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        vendorLower = lower(<a class="code hl_function" href="vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">if</span> vendorLower == <span class="stringliteral">&quot;impi&quot;</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            vendorLower = <span class="stringliteral">&quot;intel&quot;</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        elseif vendorLower == <span class="stringliteral">&quot;open-mpi&quot;</span> || vendorLower == <span class="stringliteral">&quot;openrte&quot;</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            vendorLower = <span class="stringliteral">&quot;openmpi&quot;</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        end</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        vendorList = vendorLower;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        vendorList = [<span class="stringliteral">&quot;Intel&quot;</span>, <span class="stringliteral">&quot;MPICH&quot;</span>, <span class="stringliteral">&quot;OpenMPI&quot;</span>];</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        vendorLower = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    end</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    % The strategy is to search <span class="keywordflow">for</span> any executable in the</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    % environmental paths whose <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> contains `mpiexec`.</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    paths = getenv(<span class="stringliteral">&quot;PATH&quot;</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    paths = string(strsplit(paths, pathsep));</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">for</span> path = paths</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        apps = pm.sys.path.list(path);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">for</span> icell = 1 : length(apps)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            app = apps(icell);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">if</span> contains(app, <span class="stringliteral">&quot;mpiexec&quot;</span>) &amp;&amp; isfile(app)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                <span class="keywordflow">if</span> 0 &lt; nargin</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                    <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> = lower(pm.sys.path.mpiexec.vendor(app));</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                    <span class="keywordflow">if</span>  <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> ~= <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                        <span class="keywordflow">if</span>  contains(<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>, vendorLower)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                            pathList = [pathList, app];</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                        end</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                    end</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                    pathList = [pathList, app];</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                end</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            end</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        end</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    end</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    % Try more via `<a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a>()` and <span class="keywordflow">default</span> installation paths.</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">for</span> <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> = vendorList</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        path = pm.sys.path.mpiexec.which(<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">if</span>  path ~= <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">if</span> isempty(pathList)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                pathList = [pathList, path];</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            elseif sum(strcmp(pathList, path)) == 0</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                pathList = [pathList, path];</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            end</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        end</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    end</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">if</span>  nargin == 0 || contains(vendorLower, <span class="stringliteral">&quot;intel&quot;</span>)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        possibilities = [ &quot;C:\Program Files (x86)\Intel\oneAPI\mpi\latest\bin\mpiexec.exe&quot; ...</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                        , &quot;C:\Program Files\Intel\oneAPI\mpi\latest\bin\mpiexec.exe&quot; ...</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                        , &quot;/opt/intel/oneapi/mpi/latest/bin/mpiexec&quot; ...</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                        ];</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        for path = possibilities</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            if isfile(path)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                if isempty(pathList)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                    pathList = [pathList, path];</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                elseif sum(contains(pathList, path)) == 0</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    pathList = [pathList, path];</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                end</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            end</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        end</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    end</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>end</div>
 <div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div><div class="ttdoc">Return the MPI library name as used in naming the ParaMonte MATLAB shared libraries.</div></div>
 <div class="ttc" id="a_09os_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div><div class="ttdoc">Return a list of MATLAB strings containing the names of OS platforms supported by the ParaMonte MATLA...</div></div>
 <div class="ttc" id="afind_8m_html_aa94df3e8e4e5c54cbfe8cfaa7ae6f94c"><div class="ttname"><a href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">find</a></div><div class="ttdeci">function find(in vendor)</div><div class="ttdoc">Return a list of scalar MATLAB strings containing the paths to all detected mpiexec binaries installe...</div></div>
@@ -256,7 +257,7 @@ $(document).ready(function(){initNavTree('find_8m_source.html',''); initResizabl
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_1a54d7f1a807380c05b535e170b3b863.html">+sys</a></li><li class="navelem"><a class="el" href="dir_95cf40ee0b095ce667d66c91ca3f11ae.html">+path</a></li><li class="navelem"><a class="el" href="dir_fe17b5fa8411b6baf3217cfaff561b17.html">+mpiexec</a></li><li class="navelem"><a class="el" href="find_8m.html">find.m</a></li>
-        <li class="footer">Generated on Tue Jul 2 2024 02:16:50 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Jul 2 2024 21:15:59 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

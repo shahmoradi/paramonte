@@ -13,12 +13,10 @@ var searchData=
   ['financial_10',['financial',['../financial_8m.html#affc01d23e7952adbd5f866e18a3b2b15',1,'financial.m']]],
   ['find_11',['find',['../find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c',1,'find.m']]],
   ['findfile_12',['findfile',['../classSampler.html#ad1e47e4d1c58f13f9d6468dc28488144',1,'Sampler']]],
-  ['findobj_13',['findobj',['../classHandle.html#a43c1162affdbca27cb58b33e87d90129',1,'Handle']]],
-  ['findprop_14',['findprop',['../classHandle.html#a3bdeab02472ee7815abf5de46a188a47',1,'Handle']]],
-  ['fitaxes_15',['fitaxes',['../fit_8m.html#a2798aec00d5134c664516cc68c2fca95',1,'fit.m']]],
-  ['fix_5flines_16',['fix_lines',['../fix__lines_8m.html#a03b23f1f3c52b4ac3bcf759eb29fd9a5',1,'fix_lines.m']]],
-  ['fixblackaxle_17',['fixBlackAxle',['../savefig_8m.html#ac3ae4193630cf06abf036537fb949df5',1,'savefig.m']]],
-  ['fixblacktext_18',['fixBlackText',['../savefig_8m.html#a6dcecaa3b1849fb964ef2b9c103e6db0',1,'savefig.m']]],
-  ['font_5fpath_19',['font_path',['../eps2pdf_8m.html#a4289a51d03a8ce6ba80650a8704a4c8e',1,'font_path():&#160;eps2pdf.m'],['../print2array_8m.html#a4289a51d03a8ce6ba80650a8704a4c8e',1,'font_path():&#160;print2array.m']]],
-  ['fuzzy_20',['fuzzy',['../fuzzy_8m.html#a42a082d6a8083240b22f0661e7d470ff',1,'fuzzy.m']]]
+  ['fitaxes_13',['fitaxes',['../fit_8m.html#a2798aec00d5134c664516cc68c2fca95',1,'fit.m']]],
+  ['fix_5flines_14',['fix_lines',['../fix__lines_8m.html#a03b23f1f3c52b4ac3bcf759eb29fd9a5',1,'fix_lines.m']]],
+  ['fixblackaxle_15',['fixBlackAxle',['../savefig_8m.html#ac3ae4193630cf06abf036537fb949df5',1,'savefig.m']]],
+  ['fixblacktext_16',['fixBlackText',['../savefig_8m.html#a6dcecaa3b1849fb964ef2b9c103e6db0',1,'savefig.m']]],
+  ['font_5fpath_17',['font_path',['../eps2pdf_8m.html#a4289a51d03a8ce6ba80650a8704a4c8e',1,'font_path():&#160;eps2pdf.m'],['../print2array_8m.html#a4289a51d03a8ce6ba80650a8704a4c8e',1,'font_path():&#160;print2array.m']]],
+  ['fuzzy_18',['fuzzy',['../fuzzy_8m.html#a42a082d6a8083240b22f0661e7d470ff',1,'fuzzy.m']]]
 ];

@@ -141,94 +141,89 @@ $(document).ready(function(){initNavTree('struct2hash_8m_source.html',''); initR
 </div><!--header-->
 <div class="contents">
 <a href="struct2hash_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>%&gt;  \brief</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Return a hashmap cell array containing all field names</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;  and field values of input scalar MATLAB ``<span class="keywordtype">object</span>`` as (key, val)</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;  stored sequentially in the cell array.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Return a ``hashmap`` cell array containing all field names</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;  and field values of input scalar MATLAB ``<span class="keywordtype">object</span>`` as ``(key, val)``</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;  stored sequentially in the cell array.&lt;br&gt;</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  \param[in]  object      :   The input scalar MATLAB <span class="keyword">struct</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  \param[in]  <span class="keywordtype">object</span>      :   The input scalar MATLAB <span class="keyword">struct</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;                              whose field names and values are</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;                              to be converted to a hashmap cell.</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;  \param[in]  exkeys      :   The input vector of MATLAB strings</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;                              containing a <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> of field names of the input ``<span class="keywordtype">object</span>``</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;                              that must be excluded from the output hashmap cell.</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;                              (**optional**, <span class="keywordflow">default</span> = ``[]``)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;  </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;  \param[in]  unique      :   The input scalar MATLAB logical.</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                              If ``<span class="keyword">true</span>``, only the first instance of occurrence</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                              of any field <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> is added to the output cell array</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;                              without considering <span class="keywordflow">case</span>-sensitivity of the field names.</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;                              (**optional**, <span class="keywordflow">default</span> = ``<span class="keyword">false</span>``)</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;  </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;  \param[in]  onlyfull    :   The input scalar MATLAB logical.</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;                              If ``<span class="keyword">true</span>``, only the structure field names field values</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;                              are nonempty (as assessed by the MATLAB intrinsic ``isempty()``)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;                              are included in the output hashmap.</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;                              (**optional**, <span class="keywordflow">default</span> = ``<span class="keyword">false</span>``)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;  \<span class="keywordflow">return</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;  `hashmap`               :   The output cell array of even number of elements</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;                              containing the field names and values of the input ``<span class="keywordtype">object</span>``</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;                              as ``(key, val)`` pairs stored sequentially as the cell elements.</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;                              to be converted to a ``hashmap`` cell.&lt;br&gt;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  \param[in]  exkeys      :   The input vector of MATLAB strings</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;                              containing a <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> of field names of the input ``<span class="keywordtype">object</span>``</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;                              that must be <a class="code hl_variable" href="show_8m.html#a697b21ad16cea9f33b6f71bb3f665f2b">excluded</a> from the output ``hashmap`` cell.&lt;br&gt;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;                              (**optional**, <span class="keywordflow">default</span> = ``[]``)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;  \param[in]  unique      :   The input scalar MATLAB logical.&lt;br&gt;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;                              If ``<span class="keyword">true</span>``, only the first instance of occurrence</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;                              of any field <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> is added to the output cell array</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                              without considering <span class="keywordflow">case</span>-sensitivity of the field names.&lt;br&gt;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                              (**optional**, <span class="keywordflow">default</span> = ``<span class="keyword">false</span>``)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;  \param[in]  onlyfull    :   The input scalar MATLAB logical.</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;                              If ``<span class="keyword">true</span>``, only the structure field names field values</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;                              are nonempty (as assessed by the MATLAB intrinsic ``isempty()``)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;                              are included in the output ``hashmap``.&lt;br&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;                              (**optional**, <span class="keywordflow">default</span> = ``<span class="keyword">false</span>``)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;  \return</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;  `hashmap`               :   The output cell array of even number of elements</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;                              containing the field names and values of the input ``<span class="keywordtype">object</span>``</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;                              as ``(key, val)`` pairs stored sequentially as the cell elements.</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;  \interface{<a class="code hl_function" href="struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01">struct2hash</a>}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;  \code{.m}</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;  \interface{<a class="code hl_function" href="struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01">struct2hash</a>}</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;  \code{.m}</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, exkeys)</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, [], unique)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, exkeys, unique)</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, exkeys, [], onlyfull)</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, [], unique, onlyfull)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, exkeys, unique, onlyfull)</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, [], [], onlyfull)</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, [], [], [])</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>%&gt;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>%&gt;  \endcode</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>%&gt;  \example{<a class="code hl_function" href="struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01">struct2hash</a>}</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>%&gt;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>%&gt;      s = <span class="keyword">struct</span>(<span class="stringliteral">&quot;key1&quot;</span>, 1, <span class="stringliteral">&quot;key2&quot;</span>, <span class="stringliteral">&quot;val2&quot;</span>, <span class="stringliteral">&quot;Key2&quot;</span>, <span class="stringliteral">&quot;val2duplicate&quot;</span>, <span class="stringliteral">&quot;key3&quot;</span>, <span class="keyword">false</span>, <span class="stringliteral">&quot;key4&quot;</span>, []);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(s)</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(s, <span class="stringliteral">&quot;key1&quot;</span>)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(s, [], <span class="keyword">true</span>)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(s, <span class="stringliteral">&quot;key1&quot;</span>, <span class="keyword">true</span>)</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(s, <span class="stringliteral">&quot;key1&quot;</span>, [], <span class="keyword">true</span>)</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>%&gt;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>%&gt;  \final{<a class="code hl_function" href="struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01">struct2hash</a>}</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>%&gt;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>%&gt;  \author</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>%&gt;  \JoshuaOsborne, May 21 2024, 10:56 PM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01">   61</a></span>function hashmap = <a class="code hl_function" href="struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01">struct2hash</a>(<span class="keywordtype">object</span>, exkeys, unique, onlyfull)</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    fnameList = fieldnames(<span class="keywordtype">object</span>);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    fnameListLen = length(fnameList);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">if</span> nargin &lt; 4; onlyfull = []; end</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">if</span> nargin &lt; 3; unique = []; end</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">if</span> nargin &lt; 2; exkeys = []; end</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> isempty(unique); unique = <span class="keyword">false</span>; end</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">if</span> isempty(onlyfull); onlyfull = <span class="keyword">false</span>; end</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">if</span> unique</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        fnameListLower = lower(fnameList);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    end</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    hashmap = cell(fnameListLen * 2, 1);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    exkeys = string(exkeys);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    counter = 0;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">for</span> i = 1 : fnameListLen</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        fname = string(fnameList{i});</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">if</span> ~any(strcmp(exkeys, fname))</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keywordflow">if</span> ~(onlyfull &amp;&amp; isempty(<span class="keywordtype">object</span>.(fname))) &amp;&amp; ~(unique &amp;&amp; any(strcmpi(fnameListLower(1 : i - 1), fname)))</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                counter = counter + 1;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                hashmap{counter} = fname;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                counter = counter + 1;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                hashmap{counter} = <span class="keywordtype">object</span>.(fname);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            end</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        end</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    end</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    hashmap = hashmap(1 : counter);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>end</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, exkeys)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, [], unique)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, exkeys, unique)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, exkeys, [], onlyfull)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, [], unique, onlyfull)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, exkeys, unique, onlyfull)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, [], [], onlyfull)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>%&gt;      hashmap = pm.matlab.hashmap.struct2hash(<span class="keywordtype">object</span>, [], [], [])</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>%&gt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>%&gt;  \endcode</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>%&gt;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>%&gt;  \example{<a class="code hl_function" href="struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01">struct2hash</a>}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>%&gt;  \include{lineno} example/matlab/hashmap/<a class="code hl_function" href="struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01">struct2hash</a>/main.m</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>%&gt;  \output{<a class="code hl_function" href="struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01">struct2hash</a>}</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>%&gt;  \include{lineno} example/matlab/hashmap/<a class="code hl_function" href="struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01">struct2hash</a>/main.out.m</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>%&gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>%&gt;  \final{<a class="code hl_function" href="struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01">struct2hash</a>}</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>%&gt;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>%&gt;  \author</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>%&gt;  \JoshuaOsborne, May 21 2024, 10:56 PM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01">   55</a></span>function hashmap = <a class="code hl_function" href="struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01">struct2hash</a>(<span class="keywordtype">object</span>, exkeys, unique, onlyfull)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    fnameList = fieldnames(<span class="keywordtype">object</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    fnameListLen = length(fnameList);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">if</span> nargin &lt; 4; onlyfull = []; end</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> nargin &lt; 3; unique = []; end</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> nargin &lt; 2; exkeys = []; end</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> isempty(unique); unique = <span class="keyword">false</span>; end</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">if</span> isempty(onlyfull); onlyfull = <span class="keyword">false</span>; end</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> unique</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        fnameListLower = lower(fnameList);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    end</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    hashmap = cell(fnameListLen * 2, 1);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    exkeys = string(exkeys);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    counter = 0;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">for</span> i = 1 : fnameListLen</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        fname = string(fnameList{i});</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">if</span> ~any(strcmp(exkeys, fname))</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">if</span> ~(onlyfull &amp;&amp; isempty(<span class="keywordtype">object</span>.(fname))) &amp;&amp; ~(unique &amp;&amp; any(strcmpi(fnameListLower(1 : i - 1), fname)))</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                counter = counter + 1;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                hashmap{counter} = fname;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                counter = counter + 1;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                hashmap{counter} = <span class="keywordtype">object</span>.(fname);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            end</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        end</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    end</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    hashmap = hashmap(1 : counter);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>end</div>
 <div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div><div class="ttdoc">Return the MPI library name as used in naming the ParaMonte MATLAB shared libraries.</div></div>
 <div class="ttc" id="a_09os_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div><div class="ttdoc">Return a list of MATLAB strings containing the names of OS platforms supported by the ParaMonte MATLA...</div></div>
+<div class="ttc" id="ashow_8m_html_a697b21ad16cea9f33b6f71bb3f665f2b"><div class="ttname"><a href="show_8m.html#a697b21ad16cea9f33b6f71bb3f665f2b">excluded</a></div><div class="ttdeci">excluded</div><div class="ttdef"><b>Definition:</b> <a href="show_8m_source.html#l00172">show.m:173</a></div></div>
 <div class="ttc" id="astruct2hash_8m_html_a27eb3d802890451f25b4f7eb9a1fae01"><div class="ttname"><a href="struct2hash_8m.html#a27eb3d802890451f25b4f7eb9a1fae01">struct2hash</a></div><div class="ttdeci">function struct2hash(in object, in exkeys, in unique, in onlyfull)</div><div class="ttdoc">Return a hashmap cell array containing all field names and field values of input scalar MATLAB object...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -236,7 +231,7 @@ $(document).ready(function(){initNavTree('struct2hash_8m_source.html',''); initR
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_65aa69a0c9cb3679b6450dce0a5cdc12.html">+matlab</a></li><li class="navelem"><a class="el" href="dir_98d2fce6d7141ba32838da4524baa07b.html">+hashmap</a></li><li class="navelem"><a class="el" href="struct2hash_8m.html">struct2hash.m</a></li>
-        <li class="footer">Generated on Tue Jul 2 2024 02:16:50 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Jul 2 2024 21:15:59 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -92,9 +92,9 @@ var NAVTREEINDEX =
 "../../c/2/index.html",
 "_09subplot_2Scatter3_8m_source.html",
 "classFileContentsRestartDRAM.html#a4f7cdb1375fd6d809cc2d94e787d5ee9",
-"colornames_8m.html#af40281fddb169fca43b2e6b9c235cdb7",
-"globals_v.html",
-"split2real_8m.html"
+"colornames__cube_8m_source.html",
+"home_8m.html",
+"testParaMonte_8m.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
