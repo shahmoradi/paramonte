@@ -13,7 +13,7 @@ var searchData=
   ['histogram_2em_10',['Histogram.m',['../_09tile_2Histogram_8m.html',1,'(Global Namespace)'],['../_09subplot_2Histogram_8m.html',1,'(Global Namespace)'],['../_09plot_2Histogram_8m.html',1,'(Global Namespace)'],['../_09cascade_2Histogram_8m.html',1,'(Global Namespace)']]],
   ['histogram2_11',['Histogram2',['../classHistogram2.html#a7ba1a3cb35808226b21524aee62eb646',1,'Histogram2::Histogram2(in dfref, in varargin)'],['../classHistogram2.html#a7ba1a3cb35808226b21524aee62eb646',1,'Histogram2::Histogram2(in dfref, in varargin)'],['../classHistogram2.html#a7ba1a3cb35808226b21524aee62eb646',1,'Histogram2::Histogram2(in dfref, in varargin)'],['../classHistogram2.html#a7ba1a3cb35808226b21524aee62eb646',1,'Histogram2::Histogram2(in dfref, in varargin)'],['../classHistogram2.html',1,'Histogram2']]],
   ['histogram2_2em_12',['Histogram2.m',['../_09tile_2Histogram2_8m.html',1,'(Global Namespace)'],['../_09subplot_2Histogram2_8m.html',1,'(Global Namespace)'],['../_09plot_2Histogram2_8m.html',1,'(Global Namespace)'],['../_09cascade_2Histogram2_8m.html',1,'(Global Namespace)']]],
-  ['home_13',['home',['../home_8m.html#a787e5a46cc2bc13d73dce1f37e581a5f',1,'home.m']]],
+  ['home_13',['home',['../home_8m.html#a339d3746582110c322f94831b08d1715',1,'home.m']]],
   ['home_2em_14',['home.m',['../home_8m.html',1,'']]],
   ['href_15',['href',['../href_8m.html#ab28e4ee901c69380281aa173544fa51b',1,'href.m']]],
   ['href_2em_16',['href.m',['../href_8m.html',1,'']]],

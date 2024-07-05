@@ -13,7 +13,7 @@ var searchData=
   ['financial_2em_10',['financial.m',['../financial_8m.html',1,'']]],
   ['find_2em_11',['find.m',['../find_8m.html',1,'']]],
   ['findfile_2em_12',['findfile.m',['../findfile_8m.html',1,'']]],
-  ['fit_2em_13',['fit.m',['../fit_8m.html',1,'']]],
+  ['fitaxes_2em_13',['fitAxes.m',['../fitAxes_8m.html',1,'']]],
   ['fix_5flines_2em_14',['fix_lines.m',['../fix__lines_8m.html',1,'']]],
   ['fuzzy_2em_15',['fuzzy.m',['../fuzzy_8m.html',1,'']]]
 ];

@@ -19,7 +19,7 @@ var searchData=
   ['nproc_16',['nproc',['../nproc_8m.html#ae4e7a0b4a0899bd219a852812281fa1a',1,'nproc.m']]],
   ['nproc_2em_17',['nproc.m',['../nproc_8m.html',1,'']]],
   ['nrow_18',['nrow',['../classFileContentsTabular.html#a68881fa2c51e3e1ee24f2f61bfff7b70',1,'FileContentsTabular::nrow()'],['../classDataFrame.html#a82baa0f7f743914e93eccd4752e68cad',1,'DataFrame::nrow()']]],
-  ['numlags_19',['numlags',['../classAutoCorr.html#ace1a005289fa2c8a0b0880cfb035311c',1,'AutoCorr']]],
+  ['numlag_19',['numlag',['../classAutoCorr.html#ab83ebe3ae92086e67d4f033e0da0ebb1',1,'AutoCorr']]],
   ['numlines_20',['numlines',['../numlines_8m.html#acb48197f6cd2093f904c5b160d73e45a',1,'numlines.m']]],
   ['numlines_2em_21',['numlines.m',['../numlines_8m.html',1,'']]],
   ['numstd_22',['numstd',['../classAutoCorr.html#a9e02e376c0a640655a6052af8c49bf1a',1,'AutoCorr']]]

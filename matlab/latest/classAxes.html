@@ -144,7 +144,8 @@ $(document).ready(function(){initNavTree('classAxes.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 
-<p>This is the class for generating instances of objects that contain the specifications of various types of plots.  
+<p>This is the class for generating instances of objects that contain the specifications of various types of plots.<br  />
+  
  <a href="classAxes.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Axes:</div>
@@ -168,13 +169,20 @@ Collaboration diagram for Axes:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:adc3e38949422b27b0fcd944956a76286"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAxes.html#adc3e38949422b27b0fcd944956a76286">Axes</a> (in ptype, in varargin)</td></tr>
+<tr class="memdesc:adc3e38949422b27b0fcd944956a76286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct and return an object of class <a class="el" href="classAxes.html">pm.vis.axes.Axes</a>.<br  />
+  <a href="classAxes.html#adc3e38949422b27b0fcd944956a76286">More...</a><br /></td></tr>
 <tr class="separator:adc3e38949422b27b0fcd944956a76286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3c10d54343f0edc838bd80126b28afb"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAxes.html#ae3c10d54343f0edc838bd80126b28afb">reset</a> (in self, in varargin)</td></tr>
-<tr class="memdesc:ae3c10d54343f0edc838bd80126b28afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the properties of the plot to the original default settings. Use this method when you change many attributes of the plot and you want to clean up and go back to the default settings.  <a href="classAxes.html#ae3c10d54343f0edc838bd80126b28afb">More...</a><br /></td></tr>
+<tr class="memdesc:ae3c10d54343f0edc838bd80126b28afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the properties of the plot to the original default settings and return nothing.<br  />
+  <a href="classAxes.html#ae3c10d54343f0edc838bd80126b28afb">More...</a><br /></td></tr>
 <tr class="separator:ae3c10d54343f0edc838bd80126b28afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f50529d698eaf3facf5443a8c50234c"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAxes.html#a1f50529d698eaf3facf5443a8c50234c">premake</a> (in self, in varargin)</td></tr>
+<tr class="memdesc:a1f50529d698eaf3facf5443a8c50234c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the plot settings and specifications and return nothing.<br  />
+  <a href="classAxes.html#a1f50529d698eaf3facf5443a8c50234c">More...</a><br /></td></tr>
 <tr class="separator:a1f50529d698eaf3facf5443a8c50234c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa948643bde5d3772f331580ae4ddd0c2"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAxes.html#aa948643bde5d3772f331580ae4ddd0c2">comp2hash</a> (in self, in comp)</td></tr>
+<tr class="memdesc:aa948643bde5d3772f331580ae4ddd0c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the components of the input component <code>comp</code> of the parent object into a cell array of key-val pairs.<br  />
+  <a href="classAxes.html#aa948643bde5d3772f331580ae4ddd0c2">More...</a><br /></td></tr>
 <tr class="separator:aa948643bde5d3772f331580ae4ddd0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -185,11 +193,677 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:ade94bbc2925a410ef58df3fb415116c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >This is the class for generating instances of objects that contain the specifications of various types of plots. </p>
-<p >This class primarily serves as the superclass for the visualization-ready subclass <a class="el" href="classSubplot.html">pm.vis.subplot.Subplot</a> and its subclasses, all accessible to the end users.</p>
+<div class="textblock"><p >This is the class for generating instances of objects that contain the specifications of various types of plots.<br  />
+ </p>
+<p >This class primarily serves as the superclass for the visualization-ready subclass <a class="el" href="classSubplot.html">pm.vis.subplot.Subplot</a> and its subclasses, all accessible to the end users.<br  />
+</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Dynamic class attributes</h2>
+<p >This class contains a set of attributes that are defined dynamically at runtime for the output object depending on its subclass (plot type it represents).<br  />
+ The following is the list of all class attributes that are dynamically added to the instantiated class objects based on the specified input plot type.<br  />
+ See also the explicit class and superclass attributes not listed below.<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>axes</code> (available for all subplots except <a class="el" href="classHeatmap.html">pm.vis.subplot.Heatmap</a>)<br  />
+</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>set()</code> for the current active axes object in the plot <code>gca()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>colorbar</code> (available for all axes types that allow color-mapping)<br  />
+</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>colorbar</code>.<br  />
+ The following are the default components of <code>colorbar</code>:<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>enabled</code></p>
+<p class="interli">A <code>logical</code> value. If <code>true</code>, the color bar will be applied to the axes.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli">others</p>
+<p class="endli">See the acceptable keyword arguments of the MATLAB intrinsic <code>colorbar()</code>.<br  />
+ </p>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
+ Hence, ensure you do not add the same keyword as multiple different fields.<br  />
+ For example, <code>colorbar.color</code> and <code>colorbar.Color</code> are the same, and only one of the two will be processed.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-colorbar"></a><b>Example usage</b> <a href="#example-colorbar">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">self.colorbar.enabled = <span class="keyword">true</span>;</div>
+<div class="line">self.colorbar.location = <span class="stringliteral">&quot;west&quot;</span>;</div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>colormap</code> (available for all axes types that allow color-mapping)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>colormap</code>.<br  />
+ The following are the default components of <code>colormap</code>:<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>enabled</code></p>
+<p class="interli">A logical value. If <code>true</code>, the colormap will be applied to the axes.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>map</code></p>
+<p class="interli">A string or a vector of color triplets or any other value that the intrinsic MATLAB <code>colormap</code> accepts as input.<br  />
+</p>
+<p class="endli">This option is relevant only to visualizations that allow color-mapping.<br  />
+ </p>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
+ Hence, ensure you do not add the same keyword as multiple different fields.<br  />
+ For example, <code>colormap.map</code> and <code>colormap.Map</code> are the same, and only one of the two will be processed.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-colormap"></a><b>Example usage</b> <a href="#example-colormap">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">self.colormap.enabled = <span class="keyword">true</span>;</div>
+<div class="line">self.colormap.map = <span class="stringliteral">&quot;winter&quot;</span>;</div>
+<div class="line">self.colormap.map = <span class="stringliteral">&quot;winter&quot;</span>;</div>
+<div class="line">self.colormap.map = <span class="stringliteral">&#39;default&#39;</span>;</div>
+<div class="line">self.colormap.map = pm.vis.cmap.redblue();</div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>contour</code> (available only for <a class="el" href="classContour.html">pm.vis.subplot.Contour</a> axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>contour</code>.<br  />
+ The following are the default components of <code>contour</code>:<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>enabled</code></p>
+<p class="interli">A logical value. If <code>true</code>, the contour will be added to the axes.</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>levels</code></p>
+<p class="interli">See the corresponding positional argument of the MATLAB intrinsic <code>contourf()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>lineSpec</code></p>
+<p class="interli">See the corresponding positional argument of the MATLAB intrinsic <code>contourf()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli">others</p>
+<p class="endli">See the acceptable keyword arguments of the MATLAB intrinsic <code>contour()</code>.<br  />
+ </p>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
+ Hence, ensure you do not add the same keyword as multiple different fields.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-colormap"></a><b>Example usage</b> <a href="#example-colormap">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">self.contour.enabled = <span class="keyword">true</span>;</div>
+<div class="line">self.contour.lineWidth = <span class="stringliteral">&quot;none&quot;</span>;</div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>contour3</code> (available only for <a class="el" href="classContour3.html">pm.vis.subplot.Contour3</a> axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>contour3</code>.<br  />
+ The following are the default components of <code>contour3</code>:<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>enabled</code></p>
+<p class="interli">A logical value. If <code>true</code>, the contour3 will be added to the axes.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>levels</code></p>
+<p class="interli">See the corresponding positional argument of the MATLAB intrinsic <code>contourf()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>lineSpec</code></p>
+<p class="interli">See the corresponding positional argument of the MATLAB intrinsic <code>contourf()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli">others</p>
+<p class="endli">See the acceptable keyword arguments of the MATLAB intrinsic <code>contour3()</code>.<br  />
+ </p>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
+ Hence, ensure you do not add the same keyword as multiple different fields.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-colormap"></a><b>Example usage</b> <a href="#example-colormap">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">self.contour3.enabled = <span class="keyword">true</span>;</div>
+<div class="line">self.contour3.lineWidth = <span class="stringliteral">&quot;none&quot;</span>;</div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>contourf</code> (available only for <a class="el" href="classContourf.html">pm.vis.subplot.Contourf</a> axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>contourf</code>.<br  />
+ The following are the default components of <code>contourf</code>:<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>enabled</code></p>
+<p class="interli">A logical value. If <code>true</code>, the contourf will be added to the axes.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>levels</code></p>
+<p class="interli">See the corresponding positional argument of the MATLAB intrinsic <code>contourf()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>lineSpec</code></p>
+<p class="interli">See the corresponding positional argument of the MATLAB intrinsic <code>contourf()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli">others</p>
+<p class="endli">See the acceptable keyword arguments of the MATLAB intrinsic <code>contourf()</code>.<br  />
+ </p>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
+ Hence, ensure you do not add the same keyword as multiple different fields.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-contourf"></a><b>Example usage</b> <a href="#example-contourf">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">self.contourf.enabled = <span class="keyword">true</span>;</div>
+<div class="line">self.contourf.lineWidth = <span class="stringliteral">&quot;none&quot;</span>;</div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>histfit</code> (available only for <a class="el" href="classHistfit.html">pm.vis.subplot.Histfit</a> axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>histfit</code>.<br  />
+ The following are the default components of <code>histfit</code>:<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>enabled</code></p>
+<p class="interli">A logical value. If <code>true</code>, the histfit will be added to the axes.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>nbins</code></p>
+<p class="interli">See the corresponding positional argument of the MATLAB intrinsic <code>histfit()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>dist</code></p>
+<p class="endli">See the corresponding positional argument of the MATLAB intrinsic <code>histfit()</code>.<br  />
+ </p>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
+ Hence, ensure you do not add the same keyword as multiple different fields.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-histfit"></a><b>Example usage</b> <a href="#example-histfit">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">self.histfit.enabled = <span class="keyword">true</span>;</div>
+<div class="line">self.histfit.nbins = 20;</div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>histogram</code> (available only for <a class="el" href="classHistogram.html">pm.vis.subplot.Histogram</a> axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>histogram</code>.<br  />
+ The following are the default components of <code>histogram</code>:<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>enabled</code></p>
+<p class="interli">A logical value. If <code>true</code>, the histogram will be added to the axes.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>nbins</code></p>
+<p class="interli">See the corresponding positional argument of the MATLAB intrinsic <code>histogram()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>edges</code></p>
+<p class="interli">See the corresponding positional argument of the MATLAB intrinsic <code>histogram()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli">others</p>
+<p class="endli">See the corresponding acceptable keyword arguments of the MATLAB intrinsic <code>histogram()</code>.<br  />
+ </p>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
+ Hence, ensure you do not add the same keyword as multiple different fields.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-histogram"></a><b>Example usage</b> <a href="#example-histogram">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">self.histogram.enabled = <span class="keyword">true</span>;</div>
+<div class="line">self.histogram.edgeColor = <span class="stringliteral">&quot;none&quot;</span>;</div>
+<div class="line">self.histogram.nbins = 20;</div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>histogram2</code> (available only for <a class="el" href="classHistogram2.html">pm.vis.subplot.Histogram2</a> axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>histogram2</code>.<br  />
+ The following are the default components of <code>histogram2</code>:<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>enabled</code></p>
+<p class="interli">A logical value. If <code>true</code>, the histogram2 will be added to the axes.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>nbins</code></p>
+<p class="interli">See the corresponding positional argument of the MATLAB intrinsic <code>histogram2()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>xedges</code></p>
+<p class="interli">See the corresponding positional argument of the MATLAB intrinsic <code>histogram2()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>yedges</code></p>
+<p class="interli">See the corresponding positional argument of the MATLAB intrinsic <code>histogram2()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli">others</p>
+<p class="endli">See the corresponding acceptable keyword arguments of the MATLAB intrinsic <code>histogram2()</code>.<br  />
+ </p>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
+ Hence, ensure you do not add the same keyword as multiple different fields.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-histogram2"></a><b>Example usage</b> <a href="#example-histogram2">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">self.histogram2.enabled = <span class="keyword">true</span>;</div>
+<div class="line">self.histogram2.edgeColor = <span class="stringliteral">&quot;none&quot;</span>;</div>
+<div class="line">self.histogram2.nbins = 20;</div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>legend</code> (available for all axes types except <a class="el" href="classHeatmap.html">pm.vis.subplot.Heatmap</a>)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>title()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>maxnoise</code> (available only for <a class="el" href="classContour.html">Contour</a>/<a class="el" href="classContourf.html">Contourf</a>/<a class="el" href="classContour3.html">Contour3</a> axes types)</p>
+<p class="interli">A float indicating the threshold below which the kernel density estimate is considered to be noise and is rounded to zero.<br  />
+ The higher this value is, the less noise will be visible in the resulting contour plots.<br  />
+ If empty, the default value is <code>0.001</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>plot</code> (available only for <a class="el" href="classLine.html">pm.vis.subplot.Line</a>/<a class="el" href="classLineScatter.html">pm.vis.subplot.LineScatter</a> axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>plot</code>.<br  />
+ The following are the default components of <code>plot</code>:<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>enabled</code></p>
+<p class="interli">A logical value. If <code>true</code>, the plot will be added to the axes.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>lineSpec</code></p>
+<p class="interli">See the corresponding positional argument of the MATLAB intrinsic <code>plot()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli">others</p>
+<p class="endli">See the corresponding acceptable keyword arguments of the MATLAB intrinsic <code>plot()</code>.<br  />
+ </p>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
+ Hence, ensure you do not add the same keyword as multiple different fields.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-plot"></a><b>Example usage</b> <a href="#example-plot">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">self.plot.enabled = <span class="keyword">true</span>;</div>
+<div class="line">self.plot.lineWidth = 1;</div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>plot3</code> (available only for <a class="el" href="classLine3.html">Line3</a>/<a class="el" href="classLineScatter3.html">LineScatter3</a> axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>plot3</code>.<br  />
+ The following are the default components of <code>plot3</code>:<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>enabled</code></p>
+<p class="interli">A logical value. If <code>true</code>, the <code>plot3</code> will be added to the axes.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>lineSpec</code></p>
+<p class="interli">See the corresponding positional argument of the MATLAB intrinsic <code>plot3()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli">others</p>
+<p class="endli">See the corresponding acceptable keyword arguments of the MATLAB intrinsic <code>plot3()</code>.<br  />
+ </p>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
+ Hence, ensure you do not add the same keyword as multiple different fields.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-plot3"></a><b>Example usage</b> <a href="#example-plot3">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">self.plot3.enabled = <span class="keyword">true</span>;</div>
+<div class="line">self.plot3.lineWidth = 1;</div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>precision</code> (available only for <a class="el" href="classHeatmap.html">pm.vis.subplot.Heatmap</a> axes types)</p>
+<p class="interli">A scalar integer representing the number of digits after the decimal point for the values that appear in each cell of the heatmap. The default value is set by MATLAB.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>resolution</code> (available only for <a class="el" href="classContour.html">Contour</a>/<a class="el" href="classContourf.html">Contourf</a>/<a class="el" href="classContour3.html">Contour3</a> axes types)</p>
+<p class="interli">A scalar integer indicating the grid resolution for discretization of the data during the kernel density estimation. It must be a power of two, otherwise it will be changed to the next power of two at the time of using it. If empty, the default value is <code>2^9</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>scatter</code> (available only for <a class="el" href="classScatter.html">Scatter</a>/<a class="el" href="classLineScatter.html">LineScatter</a> axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>scatter</code>.<br  />
+ The following are the default components of <code>scatter</code>:<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>enabled</code></p>
+<p class="interli">A logical value. If <code>true</code>, the scatter will be added to the axes.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>size</code></p>
+<p class="interli">See the corresponding <code>sz</code> positional argument of the MATLAB intrinsic <code>plot3()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>color</code></p>
+<p class="interli">See the corresponding <code>C</code> positional argument of the MATLAB intrinsic <code>plot3()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>filled</code></p>
+<p class="interli">See the corresponding <code>filled</code> positional argument of the MATLAB intrinsic <code>plot3()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>marker</code></p>
+<p class="interli">See the corresponding <code>mkr</code> positional argument of the MATLAB intrinsic <code>plot3()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli">others</p>
+<p class="endli">See the corresponding acceptable keyword arguments of the MATLAB intrinsic <code>scatter()</code>.<br  />
+ </p>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
+ Hence, ensure you do not add the same keyword as multiple different fields.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-scatter"></a><b>Example usage</b> <a href="#example-scatter">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">self.scatter.enabled = <span class="keyword">true</span>; % add scatter()</div>
+<div class="line">self.scatter.color = &quot;red&quot;; % set the points color</div>
+<div class="line">self.scatter.marker = &quot;.&quot;; % set the marker <a class="code hl_variable" href="classAxes.html#ab42b61658f77680fa1fc793199598c50">type</a></div>
+<div class="line">self.scatter.size = 10; % set the point size</div>
+<div class="line">self.scatter.lineWidth = 0;</div>
+<div class="ttc" id="aclassAxes_html_ab42b61658f77680fa1fc793199598c50"><div class="ttname"><a href="classAxes.html#ab42b61658f77680fa1fc793199598c50">Axes::type</a></div><div class="ttdeci">Property type</div><div class="ttdef"><b>Definition:</b> <a href="Axes_8m_source.html#l00630">Axes.m:630</a></div></div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>scatter3</code> (available only for <a class="el" href="classScatter3.html">Scatter3</a>/<a class="el" href="classLineScatter3.html">LineScatter3</a> axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>scatter3</code>.<br  />
+ The following are the default components of <code>scatter3</code>:<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>enabled</code></p>
+<p class="interli">A logical value. If <code>true</code>, the scatter3 will be added to the axes.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>size</code></p>
+<p class="interli">See the corresponding <code>sz</code> positional argument of the MATLAB intrinsic <code>plot3()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>color</code></p>
+<p class="interli">See the corresponding <code>C</code> positional argument of the MATLAB intrinsic <code>plot3()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>filled</code></p>
+<p class="interli">See the corresponding <code>filled</code> positional argument of the MATLAB intrinsic <code>plot3()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>marker</code></p>
+<p class="interli">See the corresponding <code>mkr</code> positional argument of the MATLAB intrinsic <code>plot3()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli">others</p>
+<p class="endli">See the corresponding acceptable keyword arguments of the MATLAB intrinsic <code>scatter3()</code>.<br  />
+ </p>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
+ Hence, ensure you do not add the same keyword as multiple different fields.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-scatter3"></a><b>Example usage</b> <a href="#example-scatter3">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">self.scatter3.enabled = <span class="keyword">true</span>; % add scatter3()</div>
+<div class="line">self.scatter3.color = &quot;red&quot;; % set the points color</div>
+<div class="line">self.scatter3.marker = &quot;.&quot;; % set the marker <a class="code hl_variable" href="classAxes.html#ab42b61658f77680fa1fc793199598c50">type</a></div>
+<div class="line">self.scatter3.size = 10; % set the point size</div>
+<div class="line">self.scatter3.lineWidth = 0;</div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>surface</code> (available only for <a class="el" href="classLine.html">Line</a>/<a class="el" href="classLineScatter.html">LineScatter</a>/<a class="el" href="classLine3.html">Line3</a>/<a class="el" href="classLineScatter3.html">LineScatter3</a> axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>surface</code>.<br  />
+ The following are the default components of <code>surface</code>:<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>enabled</code></p>
+<p class="interli">A logical value. If <code>true</code>, the surface will be added to the axes.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli">others</p>
+<p class="endli">See the corresponding acceptable keyword arguments of the MATLAB intrinsic <code>surface()</code>.<br  />
+ </p>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
+ Hence, ensure you do not add the same keyword as multiple different fields.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-surface"></a><b>Example usage</b> <a href="#example-surface">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">self.surface.enabled = <span class="keyword">true</span>;</div>
+<div class="line">self.surface.edgeColor = 1;</div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>title</code> (available for all axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>title()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>xlabel</code> (available for all axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>xlabel()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>ylabel</code> (available for all axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>ylabel()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>zlabel</code> (available only for all tri-axes axes types)</p>
+<p class="interli">A MATLAB <code>struct</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>zlabel()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>xlim</code> (available for all axes types)</p>
+<p class="interli">A MATLAB vector of length <code>2</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>xlim()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>ylim</code> (available for all axes types)</p>
+<p class="interli">A MATLAB vector of length <code>2</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>ylim()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>zlim</code> (available only for all tri-axes axes types)</p>
+<p class="interli">A MATLAB vector of length <code>2</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>zlim()</code>.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>xscale</code> (available for all axes types)</p>
+<p class="interli">A MATLAB string whose value is passed directly to the MATLAB intrinsic <code>xscale()</code> to set the axis scale to either logarithmic or linear.<br  />
+ Possible values are: <code>"log"</code>, <code>"linear"</code>.<br  />
+ The default behavior is set by MATLAB.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>yscale</code> (available for all axes types)</p>
+<p class="interli">A MATLAB string whose value is passed directly to the MATLAB intrinsic <code>yscale()</code> to set the axis scale to either logarithmic or linear.<br  />
+ Possible values are: <code>"log"</code>, <code>"linear"</code>.<br  />
+ The default behavior is set by MATLAB.<br  />
+</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><code>zscale</code> (available only for all tri-axes axes types)</p>
+<p class="endli">A MATLAB string whose value is passed directly to the MATLAB intrinsic <code>zscale()</code> to set the axis scale to either logarithmic or linear.<br  />
+ Possible values are: <code>"log"</code>, <code>"linear"</code>.<br  />
+ The default behavior is set by MATLAB.<br  />
+ </p>
+</li>
+</ol>
+<dl class="DEVNOTE"><dt><b><a class="el" href="DEVNOTE.html#_DEVNOTE000008">Developer Remark:</a></b></dt><dd>While dynamic addition of class attributes is not ideal, the current design was deemed unavoidable and best, given the constraints of the MATLAB language and visualization tools.<br  />
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classHandle.html">pm.matlab.Handle</a><br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L614 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+</p><ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+<p>This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000208">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+ <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
+ </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Axes_8m_source.html#l00619">619</a> of file <a class="el" href="Axes_8m_source.html">Axes.m</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="adc3e38949422b27b0fcd944956a76286" name="adc3e38949422b27b0fcd944956a76286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc3e38949422b27b0fcd944956a76286">&#9670;&nbsp;</a></span>Axes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">function Axes::Axes </td>
+          <td>(</td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>ptype</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>varargin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct and return an object of class <a class="el" href="classAxes.html">pm.vis.axes.Axes</a>.<br  />
+ </p>
+<p >This function is the constructor of the class <a class="el" href="classAxes.html">pm.vis.axes.Axes</a>.<br  />
+ For more information, see the documentation of the class <a class="el" href="classAxes.html">pm.vis.axes.Axes</a>.<br  />
+</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ptype</td><td>: The input scalar MATLAB string containing the name of the subclass that whose parent is <a class="el" href="classAxes.html" title="This is the class for generating instances of objects that contain the specifications of various type...">Axes</a> (e.g., "heatmap"). Supported plot names are:<br  />
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptype</td><td>: The input scalar MATLAB string containing the name of the subclass that whose parent is <a class="el" href="classAxes.html" title="This is the class for generating instances of objects that contain the specifications of various type...">Axes</a> (e.g., "heatmap").<br  />
+ Supported plot names are:<br  />
  <ol>
 <li>
 <code>"line"</code> </li>
@@ -221,462 +895,19 @@ Protected Attributes</h2></td></tr>
 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the object.<br  />
  If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs.<br  />
- Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classAxes.html#a1f50529d698eaf3facf5443a8c50234c">premake()</a></code> method.<br  />
+ Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classAxes.html#a1f50529d698eaf3facf5443a8c50234c" title="Configure the plot settings and specifications and return nothing.">premake()</a></code> method.<br  />
 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>self</code> : The output scalar object of class <code>pm.vis.axes.Axes</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>self</code> : The output scalar object of class <code>pm.vis.axes.Axes</code>.<br  />
+</dd></dl>
 <p><br  />
 <a class="anchor" id="interface-Axes"></a><b>Possible calling interfaces</b> <a href="#interface-Axes">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">axes = pm.vis.axes.Axes(ptype);</div>
 </div><!-- fragment --></dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The following is the list of all class attributes that are dynamically added to the instantiated class objects based on the specified input plot type.<br  />
- See also the explicit class and superclass attributes not listed below.<br  />
-</dd></dl>
-<dl class="DEVNOTE"><dt><b><a class="el" href="DEVNOTE.html#_DEVNOTE000008">Developer Remark:</a></b></dt><dd>While dynamic addition of class attributes is not ideal, the current design was deemed unavoidable and best, given the constraints of the MATLAB language and visualization tools.<br  />
-</dd></dl>
-<h2><a class="anchor" id="autotoc_md4"></a>
-Dynamic class attributes</h2>
-<p >This class contains a set of attributes that are defined dynamically at runtime for the output object depending on its subclass (plot type it represents).<br  />
- The following lists the dynamic attributes and explains their functionalities.<br  />
-</p>
-<ol>
-<li>
-<p class="startli"><code>axes</code> (available for all plots except heatmap)<br  />
-</p>
-<p class="interli">A MATLAB <code>struct</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>set()</code> for the current active axes object in the plot <code>gca()</code>.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli"><code>colorbar</code> (available for all axes types that allow color-mapping)<br  />
-</p>
-<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>colorbar</code>.<br  />
- The following are the default components of <code>colorbar</code>:</p>
-<ol>
-<li>
-<p class="startli"><code>enabled</code></p>
-<p class="interli">A logical value. If <code>true</code>, the color bar will be applied to the axes.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">others</p>
-<p class="endli">See the acceptable keyword arguments of the MATLAB intrinsic <code>colorbar()</code>. </p>
-</li>
-</ol>
-<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
- Hence, ensure you do not add the same keyword as multiple different fields.<br  />
- For example, <code>colorbar.color</code> and <code>colorbar.Color</code> are the same, and only one of the two will be processed.</dd></dl>
-<p>Example usage:</p>
-<div class="fragment"><div class="line">self.colorbar.enabled = <span class="keyword">true</span>;</div>
-<div class="line">self.colorbar.location = <span class="stringliteral">&quot;west&quot;</span>;</div>
-</div><!-- fragment --><p class="endli"></p>
-</li>
-<li>
-<p class="startli"><code>colormap</code> (available for all axes types that allow color-mapping)</p>
-<p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>colormap</code>. The following are the default components of <code>colormap</code>:</p>
-<ol>
-<li>
-<p class="startli"><code>enabled</code></p>
-<p class="interli">A logical value. If <code>true</code>, the colormap will be applied to the axes.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli"><code>map</code></p>
-<p class="interli">A string or a vector of color triplets or any other value that the intrinsic MATLAB <code>colormap</code> accepts as input.</p>
-<p class="endli">This option is relevant only to visualizations that allow color-mapping. </p>
-</li>
-</ol>
-<dl class="section warning"><dt>Warning</dt><dd>Keep in mind that MATLAB keyword arguments are case-INsensitive.<br  />
- Hence, ensure you do not add the same keyword as multiple different fields.<br  />
- For example, <code>colormap.map</code> and <code>colormap.Map</code> are the same, and only one of the two will be processed.<br  />
-</dd></dl>
-<p>Example usage:</p>
-<div class="fragment"><div class="line">self.colormap.enabled = <span class="keyword">true</span>;</div>
-<div class="line">self.colormap.map = <span class="stringliteral">&quot;winter&quot;</span>;</div>
-<div class="line">self.colormap.map = <span class="stringliteral">&quot;winter&quot;</span>;</div>
-<div class="line">self.colormap.map = <span class="stringliteral">&#39;default&#39;</span>;</div>
-<div class="line">self.colormap.map = pm.vis.cmap.redblue();</div>
-</div><!-- fragment --><p class="endli"></p>
-</li>
-<li>
-<p class="startli"><code>contour</code> (available only for contour axes types)</p>
-<p class="endli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>contour</code>. The following are the default components of <code>contour</code>: </p><pre class="fragment">``enabled``
-
-    A logical value. If ``true``, the
-    contour will be added to the axes.
-
-``levels``
-
-    See the corresponding positional argument of the MATLAB intrinsic ``contourf()``.
-
-``lineSpec``
-
-    See the corresponding positional argument of the MATLAB intrinsic ``contourf()``.
-
-``others``
-
-    See the acceptable keyword arguments of the MATLAB intrinsic ``contour()``.
-
-\warning
-Keep in mind that MATLAB keyword arguments are case-INsensitive.&lt;br&gt;
-Hence, ensure you do not add the same keyword as multiple different fields.&lt;br&gt;
-</pre><p> Example usage: </p><pre class="fragment">1.  self.contour.enabled = true;
-2.  self.contour.lineWidth = "none";
-</pre> </li>
-<li>
-<p class="startli"><code>contour3</code> (available only for contour3 axes types)</p>
-<p class="endli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>contour3</code>. The following are the default components of <code>contour3</code>: </p><pre class="fragment">``enabled``
-
-    A logical value. If ``true``, the
-    contour3 will be added to the axes.
-
-``levels``
-
-    See the corresponding positional argument of the MATLAB intrinsic ``contourf()``.
-
-``lineSpec``
-
-    See the corresponding positional argument of the MATLAB intrinsic ``contourf()``.
-
-others
-
-    See the acceptable keyword arguments of the MATLAB intrinsic ``contour3()``.
-</pre><p> Example usage: </p><pre class="fragment">1.  self.contour3.enabled = true;
-2.  self.contour3.lineWidth = "none";
-</pre> <dl class="section warning"><dt>Warning</dt><dd><pre class="fragment">Keep in mind that MATLAB keyword arguments are case-INsensitive.&lt;br&gt;
-Hence, ensure you do not add the same keyword as multiple different fields.&lt;br&gt;
-</pre> </dd></dl>
-</li>
-<li>
-<p class="startli"><code>contourf</code> (available only for contourf axes types)</p>
-<p class="endli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>contourf</code>.<br  />
- The following are the default components of <code>contourf</code>:<br  />
- </p><pre class="fragment">``enabled``
-
-    A logical value. If ``true``, the
-    contourf will be added to the axes.
-
-``levels``
-
-    See the corresponding positional argument of the MATLAB intrinsic ``contourf()``.
-
-lineSpec
-
-    See the corresponding positional argument of the MATLAB intrinsic ``contourf()``.
-
-others
-
-    See the acceptable keyword arguments of the MATLAB intrinsic ``contourf()``.
-</pre><p> Example usage: </p><pre class="fragment">1.  self.contourf.enabled = true;
-2.  self.contourf.lineWidth = "none";
-</pre> <dl class="section warning"><dt>Warning</dt><dd><pre class="fragment">Keep in mind that MATLAB keyword arguments are case-INsensitive.&lt;br&gt;
-Hence, ensure you do not add the same keyword as multiple different fields.&lt;br&gt;
-</pre> </dd></dl>
-</li>
-<li>
-<p class="startli">histfit (available only for histfit axes types)</p>
-<p class="endli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>histfit</code>. The following are the default components of <code>histfit</code>: </p><pre class="fragment">enabled
-
-    A logical value. If ``true``, the
-    histfit will be added to the axes.
-
-nbins
-
-    See the corresponding positional argument of the MATLAB intrinsic ``histfit()``.
-
-dist
-
-    See the corresponding positional argument of the MATLAB intrinsic ``histfit()``.
-</pre><p> Example usage: </p><pre class="fragment">1.  self.histfit.enabled = true;
-2.  self.histfit.nbins = 20;
-</pre> <dl class="section warning"><dt>Warning</dt><dd><pre class="fragment">Keep in mind that MATLAB keyword arguments are case-INsensitive.&lt;br&gt;
-Hence, ensure you do not add the same keyword as multiple different fields.&lt;br&gt;
-</pre> </dd></dl>
-</li>
-<li>
-<p class="startli">histogram (available only for histogram axes types)</p>
-<p class="endli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>histogram</code>.<br  />
- The following are the default components of <code>histogram</code>:<br  />
- </p><pre class="fragment">enabled
-
-    A logical value. If ``true``, the
-    histogram will be added to the axes.
-
-nbins
-
-    See the corresponding positional argument of the MATLAB intrinsic ``histogram()``.
-
-edges
-
-    See the corresponding positional argument of the MATLAB intrinsic ``histogram()``.
-
-others
-
-    See the corresponding acceptable keyword arguments of the MATLAB intrinsic ``histogram()``.
-</pre><p> Example usage: </p><pre class="fragment">1.  self.histogram.enabled = true;
-2.  self.histogram.edgeColor = "none";
-3.  self.histogram.nbins = 20;
-</pre> <dl class="section warning"><dt>Warning</dt><dd><pre class="fragment">Keep in mind that MATLAB keyword arguments are case-INsensitive.&lt;br&gt;
-Hence, ensure you do not add the same keyword as multiple different fields.&lt;br&gt;
-</pre> </dd></dl>
-</li>
-<li>
-<p class="startli">histogram2 (available only for histogram2 axes types)</p>
-<p class="endli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>histogram2</code>.<br  />
- The following are the default components of <code>histogram2</code>:<br  />
- </p><pre class="fragment">enabled
-
-    A logical value. If ``true``, the
-    histogram2 will be added to the axes.
-
-nbins
-
-    See the corresponding positional argument of the MATLAB intrinsic ``histogram2()``.
-
-xedges
-
-    See the corresponding positional argument of the MATLAB intrinsic ``histogram2()``.
-
-yedges
-
-    See the corresponding positional argument of the MATLAB intrinsic ``histogram2()``.
-
-others
-
-    See the corresponding acceptable keyword arguments of the MATLAB intrinsic ``histogram2()``.
-</pre><p> Example usage: </p><pre class="fragment">1.  self.histogram2.enabled = true;
-2.  self.histogram2.edgeColor = "none";
-3.  self.histogram2.nbins = 20;
-</pre> <dl class="section warning"><dt>Warning</dt><dd><pre class="fragment">Keep in mind that MATLAB keyword arguments are case-INsensitive.&lt;br&gt;
-Hence, ensure you do not add the same keyword as multiple different fields.&lt;br&gt;
-</pre> </dd></dl>
-</li>
-<li>
-<p class="startli">legend (available for all axes types except heatmap)</p>
-<p class="interli">A MATLAB <code>struct</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>title()</code>.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">maxnoise (available only for contour/contourf/contour3 axes types)</p>
-<p class="interli">A float indicating the threshold below which the kernel density estimate is considered to be noise and is rounded to zero.<br  />
- The higher this value is, the less noise will be visible in the resulting contour plots.<br  />
- If empty, the default value is <code>0.001</code>.<br  />
-</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">plot (available only for line/lineScatter axes types)</p>
-<p class="endli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>plot</code>.<br  />
- The following are the default components of <code>plot</code>:<br  />
- </p><pre class="fragment">enabled
-
-    A logical value. If ``true``, the
-    plot will be added to the axes.
-
-lineSpec
-
-    See the corresponding positional argument of the MATLAB intrinsic ``plot()``.
-
-others
-
-    See the corresponding acceptable keyword arguments of the MATLAB intrinsic ``plot()``.
-</pre><p> Example usage: </p><pre class="fragment">1.  self.plot.enabled = true;
-2.  self.plot.lineWidth = 1;
-</pre> <dl class="section warning"><dt>Warning</dt><dd><pre class="fragment">Keep in mind that MATLAB keyword arguments are case-INsensitive.&lt;br&gt;
-Hence, ensure you do not add the same keyword as multiple different fields.&lt;br&gt;
-</pre> </dd></dl>
-</li>
-<li>
-<p class="startli">plot3 (available only for line3/lineScatter3 axes types)</p>
-<p class="endli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>plot3</code>.<br  />
- The following are the default components of <code>plot3</code>:<br  />
- </p><pre class="fragment">enabled
-
-    A logical value. If ``true``, the
-    plot3 will be added to the axes.
-
-lineSpec
-
-    See the corresponding positional argument of the MATLAB intrinsic ``plot3()``.
-
-others
-
-    See the corresponding acceptable keyword arguments of the MATLAB intrinsic ``plot3()``.
-</pre><p> Example usage: </p><pre class="fragment">1.  self.plot3.enabled = true;
-2.  self.plot3.lineWidth = 1;
-</pre> <dl class="section warning"><dt>Warning</dt><dd><pre class="fragment">Keep in mind that MATLAB keyword arguments are case-INsensitive.&lt;br&gt;
-Hence, ensure you do not add the same keyword as multiple different fields.&lt;br&gt;
-</pre> </dd></dl>
-</li>
-<li>
-<p class="startli">precision (available only for heatmap axes types)</p>
-<p class="interli">A scalar integer representing the number of digits after the decimal point for the values that appear in each cell of the heatmap. The default value is set by MATLAB.<br  />
-</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">resolution (available only for contour/contourf/contour3 axes types)</p>
-<p class="interli">A scalar integer indicating the grid resolution for discretization of the data during the kernel density estimation. It must be a power of two, otherwise it will be changed to the next power of two at the time of using it. If empty, the default value is <code>2^9</code>.<br  />
-</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">scatter (available only for scatter/lineScatter axes types)</p>
-<p class="endli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>scatter</code>.<br  />
- The following are the default components of <code>scatter</code>:<br  />
- </p><pre class="fragment">enabled
-
-    A logical value. If ``true``, the
-    scatter will be added to the axes.
-
-size
-
-    See the corresponding ``sz`` positional argument of the MATLAB intrinsic ``plot3()``.
-
-color
-
-    See the corresponding ``C`` positional argument of the MATLAB intrinsic ``plot3()``.
-
-filled
-
-    See the corresponding ``filled`` positional argument of the MATLAB intrinsic ``plot3()``.
-
-marker
-
-    See the corresponding ``mkr`` positional argument of the MATLAB intrinsic ``plot3()``.
-
-others
-
-    See the corresponding acceptable keyword arguments of the MATLAB intrinsic ``scatter()``.
-</pre><p> Example usage: </p><pre class="fragment">1.  self.scatter.enabled = true; % add scatter()
-4.  self.scatter.color = "red"; % set the points color
-2.  self.scatter.marker = "."; % set the marker type
-3.  self.scatter.size = 10; % set the point size
-4.  self.scatter.lineWidth = 0;
-</pre> <dl class="section warning"><dt>Warning</dt><dd><pre class="fragment">Keep in mind that MATLAB keyword arguments are case-INsensitive.&lt;br&gt;
-Hence, ensure you do not add the same keyword as multiple different fields.&lt;br&gt;
-</pre> </dd></dl>
-</li>
-<li>
-<p class="startli">scatter3 (available only for scatter3/lineScatter3 axes types)</p>
-<p class="endli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>scatter3</code>.<br  />
- The following are the default components of <code>scatter3</code>:<br  />
- </p><pre class="fragment">enabled
-
-    A logical value. If ``true``, the
-    scatter3 will be added to the axes.
-
-size
-
-    See the corresponding ``sz`` positional argument of the MATLAB intrinsic ``plot3()``.
-
-color
-
-    See the corresponding ``C`` positional argument of the MATLAB intrinsic ``plot3()``.
-
-filled
-
-    See the corresponding ``filled`` positional argument of the MATLAB intrinsic ``plot3()``.
-
-marker
-
-    See the corresponding ``mkr`` positional argument of the MATLAB intrinsic ``plot3()``.
-
-others
-
-    See the corresponding acceptable keyword arguments of the MATLAB intrinsic ``scatter3()``.
-</pre><p> Example usage: </p><pre class="fragment">1.  self.scatter3.enabled = true; % add scatter3()
-4.  self.scatter3.color = "red"; % set the points color
-2.  self.scatter3.marker = "."; % set the marker type
-3.  self.scatter3.size = 10; % set the point size
-4.  self.scatter3.lineWidth = 0;
-</pre> <dl class="section warning"><dt>Warning</dt><dd><pre class="fragment">Keep in mind that MATLAB keyword arguments are case-INsensitive.&lt;br&gt;
-Hence, ensure you do not add the same keyword as multiple different fields.&lt;br&gt;
-</pre> </dd></dl>
-</li>
-<li>
-<p class="startli">surface (available only for line/lineScatter/line3/lineScatter3 axes types)</p>
-<p class="endli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>surface</code>.<br  />
- The following are the default components of <code>surface</code>:<br  />
- </p><pre class="fragment">enabled
-
-    A logical value. If ``true``, the
-    surface will be added to the axes.
-
-others
-
-    See the corresponding acceptable keyword arguments of the MATLAB intrinsic ``surface()``.
-</pre><p> Example usage: </p><pre class="fragment">1.  self.surface.enabled = true;
-2.  self.surface.edgeColor = 1;
-</pre> <dl class="section warning"><dt>Warning</dt><dd><pre class="fragment">Keep in mind that MATLAB keyword arguments are case-INsensitive.&lt;br&gt;
-Hence, ensure you do not add the same keyword as multiple different fields.&lt;br&gt;
-</pre> </dd></dl>
-</li>
-<li>
-<p class="startli">title (available for all axes types)</p>
-<p class="interli">A MATLAB <code>struct</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>title()</code>.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">xlabel (available for all axes types)</p>
-<p class="interli">A MATLAB <code>struct</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>xlabel()</code>.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">ylabel (available for all axes types)</p>
-<p class="interli">A MATLAB <code>struct</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>ylabel()</code>.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">zlabel (available only for all tri-axes axes types)</p>
-<p class="interli">A MATLAB <code>struct</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>zlabel()</code>.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">xlim (available for all axes types)</p>
-<p class="interli">A MATLAB vector of length <code>2</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>xlim()</code>.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">ylim (available for all axes types)</p>
-<p class="interli">A MATLAB vector of length <code>2</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>ylim()</code>.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">zlim (available only for all tri-axes axes types)</p>
-<p class="interli">A MATLAB vector of length <code>2</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>zlim()</code>.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">xscale (available for all axes types)</p>
-<p class="interli">A MATLAB string whose value is passed directly to the MATLAB intrinsic <code>xscale()</code> to set the axis scale to either logarithmic or linear.<br  />
- Possible values are: <code>"log"</code>, <code>"linear"</code>.<br  />
- The default behavior is set by MATLAB.<br  />
-</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">yscale (available for all axes types)</p>
-<p class="interli">A MATLAB string whose value is passed directly to the MATLAB intrinsic <code>yscale()</code> to set the axis scale to either logarithmic or linear.<br  />
- Possible values are: <code>"log"</code>, <code>"linear"</code>.<br  />
- The default behavior is set by MATLAB.<br  />
-</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">zscale (available only for all tri-axes axes types)</p>
-<p class="interli">A MATLAB string whose value is passed directly to the MATLAB intrinsic <code>zscale()</code> to set the axis scale to either logarithmic or linear.<br  />
- Possible values are: <code>"log"</code>, <code>"linear"</code>.<br  />
- The default behavior is set by MATLAB.<br  />
-</p>
-<p class="endli"></p>
-</li>
-</ol>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classHandle.html">pm.matlab.Handle</a><br  />
-</dd></dl>
 <p><br  />
 <a class="anchor" id="final-Axes"></a><b>Final Remarks</b> <a href="#final-Axes">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L597 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L686 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -691,37 +922,10 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000206">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000209">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 5:59 AM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Axes_8m_source.html#l00602">602</a> of file <a class="el" href="Axes_8m_source.html">Axes.m</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="adc3e38949422b27b0fcd944956a76286" name="adc3e38949422b27b0fcd944956a76286"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc3e38949422b27b0fcd944956a76286">&#9670;&nbsp;</a></span>Axes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">function Axes::Axes </td>
-          <td>(</td>
-          <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>ptype</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>varargin</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -752,6 +956,52 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
+<p>Convert the components of the input component <code>comp</code> of the parent object into a cell array of key-val pairs.<br  />
+ </p>
+<p >This is a dynamic method of the class <a class="el" href="classAxes.html">pm.vis.axes.Axes</a>.<br  />
+ This method is used internally by the subclasses to convert the parent object attributes to input arguments of MATLAB intrinsic visualization functions.<br  />
+</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">comp</td><td>: The input scalar MATLAB string representing the name of a <code>struct</code> component of the parent object, whose fields names and values are to be returned as subsequent pairs in the output <code>hash</code> cell array.<br  />
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>hash</code> : The output cell array containing the pairs of <code>field-name, field-value</code> of the input MATLAB struct <code>comp</code>.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="interface-comp2hash"></a><b>Possible calling interfaces</b> <a href="#interface-comp2hash">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">a = pm.vis.axes.Axes(ptype);</div>
+<div class="line"> </div>
+<div class="line">hash = a.comp2hash(comp);</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This method has side-effects by manipulating the existing attributes of the parent object.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-comp2hash"></a><b>Example usage</b> <a href="#example-comp2hash">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">a = pm.vis.axes.Axes(<span class="stringliteral">&quot;histogram&quot;</span>, <span class="stringliteral">&quot;histogram&quot;</span>, {<span class="stringliteral">&quot;nbins&quot;</span>, 5});</div>
+<div class="line">hash = a.comp2hash(a.histogram)</div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
+<a class="anchor" id="final-comp2hash"></a><b>Final Remarks</b> <a href="#final-comp2hash">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L1421 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+</p><ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+<p>This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000212">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+ <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
+ </dd></dl>
+
 </div>
 </div>
 <a id="a1f50529d698eaf3facf5443a8c50234c" name="a1f50529d698eaf3facf5443a8c50234c"></a>
@@ -779,13 +1029,37 @@ Help us justify its continued development and maintenance by acknowledging its b
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd><a class="anchor" id="interface-copy"></a><b>Possible calling interfaces</b> <a href="#interface-copy">⛓</a> </dd></dl>
-<dl class="section user"><dt></dt><dd><div class="fragment"></div><!-- fragment --> <a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> <hr  />
- If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L1053 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+
+<p>Configure the plot settings and specifications and return nothing.<br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
+ If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs.<br  />
+ Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classAxes.html#a1f50529d698eaf3facf5443a8c50234c" title="Configure the plot settings and specifications and return nothing.">premake()</a></code> method.<br  />
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+<a class="anchor" id="interface-premake"></a><b>Possible calling interfaces</b> <a href="#interface-premake">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">a = pm.vis.axes.Axes(ptype);</div>
+<div class="line"> </div>
+<div class="line">a.premake(varargin);</div>
+<div class="line">a.premake();</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This method has side-effects by manipulating the existing attributes of the parent object.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-premake"></a><b>Example usage</b> <a href="#example-premake">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">a = pm.vis.axes.Axes(<span class="stringliteral">&quot;line&quot;</span>);</div>
+<div class="line">a.premake(<span class="stringliteral">&quot;xlim&quot;</span>, [0, 1])</div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
+<a class="anchor" id="final-premake"></a><b>Final Remarks</b> <a href="#final-premake">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L1125 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
-<ol>
+</p><ol>
 <li>
 If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
@@ -793,11 +1067,10 @@ If you use any parts or concepts from this library to any extent, <b>please ackn
 If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
-This software is available to the public under a highly permissive license.<br  />
+<p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
- </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a>{}</dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000208">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000211">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
@@ -829,25 +1102,33 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
-<p>Reset the properties of the plot to the original default settings. Use this method when you change many attributes of the plot and you want to clean up and go back to the default settings. </p>
-<pre class="fragment">varargin
-
-    Any ``property, value`` pair of the parent object.
-    If the property is a ``struct()``, then its value must be given as a cell array,
-    with consecutive elements representing the struct ``property-name, property-value`` pairs.
-    Note that all of these property-value pairs can be also directly set via the
-    parent object attributes.
-</pre> <dl class="section return"><dt>Returns</dt><dd><pre class="fragment">None
-</pre> <br  />
-<a class="anchor" id="interface-copy"></a><b>Possible calling interfaces</b> <a href="#interface-copy">⛓</a> </dd></dl>
-<dl class="section user"><dt></dt><dd><div class="fragment"></div><!-- fragment --> <pre class="fragment">pm.vis.axes.Axes.reset() # reset the plot to the default settings.
-</pre> <br  />
-<a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> <hr  />
- If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L692 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p>Reset the properties of the plot to the original default settings and return nothing.<br  />
+ </p>
+<p >Use this method when you change many attributes of the plot and you want to clean up and go back to the default settings.<br  />
+</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
+ If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs.<br  />
+ Note that all of these property-value pairs can be also directly set via the parent object attributes.<br  />
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+<a class="anchor" id="interface-reset"></a><b>Possible calling interfaces</b> <a href="#interface-reset">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">a = pm.vis.axes.Axes(ptype)</div>
+<div class="line"> </div>
+<div class="line">a.reset(varargin) % <a class="code hl_function" href="classAxes.html#ae3c10d54343f0edc838bd80126b28afb">reset</a> the plot to settings in ``varargin`` and the rest to <span class="keywordflow">default</span>.</div>
+<div class="line">a.reset() % <a class="code hl_function" href="classAxes.html#ae3c10d54343f0edc838bd80126b28afb">reset</a> the plot to the <span class="keywordflow">default</span> settings.</div>
+<div class="ttc" id="aclassAxes_html_ae3c10d54343f0edc838bd80126b28afb"><div class="ttname"><a href="classAxes.html#ae3c10d54343f0edc838bd80126b28afb">Axes::reset</a></div><div class="ttdeci">function reset(in self, in varargin)</div><div class="ttdoc">Reset the properties of the plot to the original default settings and return nothing.</div></div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
+<a class="anchor" id="final-reset"></a><b>Final Remarks</b> <a href="#final-reset">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L763 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
-<ol>
+</p><ol>
 <li>
 If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
@@ -855,11 +1136,10 @@ If you use any parts or concepts from this library to any extent, <b>please ackn
 If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
-This software is available to the public under a highly permissive license.<br  />
+<p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
- </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a>{}</dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000207">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000210">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
@@ -885,8 +1165,9 @@ Help us justify its continued development and maintenance by acknowledging its b
   </tr>
 </table>
 </div><div class="memdoc">
+<p ><code>cenabled</code> : auxiliary logical scalar that is true if plot is color-mapped. </p>
 
-<p class="definition">Definition at line <a class="el" href="Axes_8m_source.html#l00612">612</a> of file <a class="el" href="Axes_8m_source.html">Axes.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Axes_8m_source.html#l00635">635</a> of file <a class="el" href="Axes_8m_source.html">Axes.m</a>.</p>
 
 </div>
 </div>
@@ -909,8 +1190,9 @@ Help us justify its continued development and maintenance by acknowledging its b
   </tr>
 </table>
 </div><div class="memdoc">
+<p ><code>type</code> : auxiliary struct containing plot type information. </p>
 
-<p class="definition">Definition at line <a class="el" href="Axes_8m_source.html#l00610">610</a> of file <a class="el" href="Axes_8m_source.html">Axes.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Axes_8m_source.html#l00630">630</a> of file <a class="el" href="Axes_8m_source.html">Axes.m</a>.</p>
 
 </div>
 </div>
@@ -923,7 +1205,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classAxes.html">Axes</a></li>
-        <li class="footer">Generated on Tue Jul 2 2024 21:16:00 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Fri Jul 5 2024 10:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

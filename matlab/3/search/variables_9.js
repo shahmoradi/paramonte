@@ -9,6 +9,6 @@ var searchData=
   ['nmlsep_6',['nmlsep',['../classSpecBase.html#a8396679c21a45a9d3a0ee138f416a978',1,'SpecBase']]],
   ['npnt_7',['npnt',['../classEllipse3.html#a5f7237716da1a77e90a4f400f27a14ab',1,'Ellipse3']]],
   ['nrow_8',['nrow',['../classFileContentsTabular.html#a68881fa2c51e3e1ee24f2f61bfff7b70',1,'FileContentsTabular']]],
-  ['numlags_9',['numlags',['../classAutoCorr.html#ace1a005289fa2c8a0b0880cfb035311c',1,'AutoCorr']]],
+  ['numlag_9',['numlag',['../classAutoCorr.html#ab83ebe3ae92086e67d4f033e0da0ebb1',1,'AutoCorr']]],
   ['numstd_10',['numstd',['../classAutoCorr.html#a9e02e376c0a640655a6052af8c49bf1a',1,'AutoCorr']]]
 ];

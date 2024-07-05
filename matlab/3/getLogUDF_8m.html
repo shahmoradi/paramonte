@@ -148,7 +148,8 @@ $(document).ready(function(){initNavTree('getLogUDF_8m.html',''); initResizable(
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a236a995cbbb8abe88727027b7bfb62e9"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getLogUDF_8m.html#a236a995cbbb8abe88727027b7bfb62e9">getLogUDF</a> (in x, in y, in epsilon)</td></tr>
-<tr class="memdesc:a236a995cbbb8abe88727027b7bfb62e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the natural logarithm of the Unnormalized Density Function (UDF) of the inverse of the 2-dimensional modified Himmelblau function.  <a href="getLogUDF_8m.html#a236a995cbbb8abe88727027b7bfb62e9">More...</a><br /></td></tr>
+<tr class="memdesc:a236a995cbbb8abe88727027b7bfb62e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the natural logarithm of the Unnormalized Density Function (UDF) of the inverse of the 2-dimensional modified Himmelblau function.<br  />
+  <a href="getLogUDF_8m.html#a236a995cbbb8abe88727027b7bfb62e9">More...</a><br /></td></tr>
 <tr class="separator:a236a995cbbb8abe88727027b7bfb62e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -184,27 +185,33 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return the natural logarithm of the Unnormalized Density Function (UDF) of the inverse of the 2-dimensional modified Himmelblau function. </p>
-<p >Himmelblau's function is a multi-modal function, used to test the performance of optimization algorithms. The function is defined by:  </p><p class="formulaDsp">
+<p>Return the natural logarithm of the Unnormalized Density Function (UDF) of the inverse of the 2-dimensional modified Himmelblau function.<br  />
+ </p>
+<p >Himmelblau's function is a multi-modal function, used to test the performance of optimization algorithms. The function is defined by:<br  />
+  </p><p class="formulaDsp">
 \begin{equation}
     H(x, y) = (x^{2} + y - 11)^{2} + (x + y^{2} - 7)^{2} ~.
 \end{equation}
 </p>
-<p >It has one local maximum at \(x = -0.270845\) and \(y = -0.923039\) where \(H(x, y) = 181.617\), and four identical local minima:  </p><p class="formulaDsp">
-\begin{equation}
-    H(3.0,2.0) = 0.0 ~,
-    H(-2.805118, 3.131312)=0.0 ~,
-    H(-3.779310, -3.283186)=0.0 ~,
-    H(3.584428, -1.848126)=0.0 ~.
-\end{equation}
+<p >It has one local maximum at \(x = -0.270845\) and \(y = -0.923039\) where \(H(x, y) = 181.617\), and four identical local minima:<br  />
+  </p><p class="formulaDsp">
+\begin{eqnarray}
+    H(3.0,2.0) &amp;=&amp; 0.0 ~,\\
+    H(-2.805118, 3.131312) &amp;=&amp; 0.0 ~,\\
+    H(-3.779310, -3.283186) &amp;=&amp; 0.0 ~,\\
+    H(3.584428, -1.848126) &amp;=&amp; 0.0 ~.
+\end{eqnarray}
 </p>
 <p >The function is named after David Mautner Himmelblau (1924–2011), who introduced it.<br  />
  The locations of all the minima can be found analytically.<br  />
 </p>
-<p >This MATLAB function returns a modification of the Himmelblau function as a density function suitable for testing sampling algorithms (or stochastic maximizers):  </p><p class="formulaDsp">
+<p >This MATLAB function returns a modification of the Himmelblau function as a density function suitable for testing sampling algorithms (or stochastic maximizers):<br  />
+  </p><p class="formulaDsp">
 \begin{equation}
     f(x, y, \epsilon) = \frac{1}{H(x, y) + \epsilon} ~.
 \end{equation}
+</p>
+<p> where \(\epsilon\) is an arbitrary positive real number which determines the sharpness of the function four peaks.<br  />
 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -219,7 +226,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>logUDF</code> : The output Unnormalized Density Function (UDF) of the Himmelblau density at the specified input <code>state</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>logUDF</code> : The output Unnormalized Density Function (UDF) of the Himmelblau density at the specified input <code>state</code>.<br  />
+</dd></dl>
 <p><br  />
 <a class="anchor" id="interface-getLogUDF"></a><b>Possible calling interfaces</b> <a href="#interface-getLogUDF">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">logUDF = pm.stats.himmelblau.getLogUDF(state);</div>
 <div class="line">logUDF = pm.stats.himmelblau.getLogUDF(state, epsilon);</div>
@@ -229,17 +237,42 @@ Functions</h2></td></tr>
  <a class="el" href="classParadram.html">pm.sampling.Paradram</a><br  />
 </dd></dl>
 <p><br  />
-<a class="anchor" id="example-getLogUDF"></a><b>Example usage</b> <a href="#example-getLogUDF">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"></div><!-- fragment --> <br  />
+<a class="anchor" id="example-getLogUDF"></a><b>Example usage</b> <a href="#example-getLogUDF">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>addpath(<span class="stringliteral">&#39;../../../../../&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory to the search path.</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>range = -6 : 0.01 : 6;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>[x, y] = meshgrid(range, range);</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>z = exp(pm.stats.dist.himmelblau.getLogUDF(x, y, 1));</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keywordflow">for</span> dim = 2 : 3</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    figure(<span class="stringliteral">&quot;color&quot;</span>, <span class="stringliteral">&quot;white&quot;</span>);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">if</span>  dim == 2</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        contourf(x, y, log(z), 50, <span class="stringliteral">&quot;EdgeColor&quot;</span>, <span class="stringliteral">&quot;none&quot;</span>);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        surf(x, y, z, log(z), <span class="stringliteral">&quot;EdgeColor&quot;</span>, <span class="stringliteral">&quot;none&quot;</span>);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        set(gca, <span class="stringliteral">&quot;zscale&quot;</span>, <span class="stringliteral">&quot;log&quot;</span>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        zlabel(<span class="stringliteral">&quot;Z&quot;</span>);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    end</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    xlabel(<span class="stringliteral">&quot;X&quot;</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    ylabel(<span class="stringliteral">&quot;Y&quot;</span>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    cbar = colorbar();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    ylabel(cbar, <span class="stringliteral">&quot;Function Value&quot;</span>)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    set(gca, &quot;fontsize&quot;, 13);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    pm.vis.figure.<a class="code hl_function" href="savefig_8m.html#ab0f7c7e07bc0a440eee76153cda628f8">savefig</a>(&quot;himmelblau.<a class="code hl_function" href="getLogUDF_8m.html#a236a995cbbb8abe88727027b7bfb62e9">getLogUDF</a>.&quot; + <span class="keywordtype">string</span>(dim) + &quot;d.png&quot;, &quot;-m4&quot;);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>end</div>
+<div class="ttc" id="agetLogUDF_8m_html_a236a995cbbb8abe88727027b7bfb62e9"><div class="ttname"><a href="getLogUDF_8m.html#a236a995cbbb8abe88727027b7bfb62e9">getLogUDF</a></div><div class="ttdeci">function getLogUDF(in x, in y, in epsilon)</div><div class="ttdoc">Return the natural logarithm of the Unnormalized Density Function (UDF) of the inverse of the 2-dimen...</div></div>
+<div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
+<div class="ttc" id="asavefig_8m_html_ab0f7c7e07bc0a440eee76153cda628f8"><div class="ttname"><a href="savefig_8m.html#ab0f7c7e07bc0a440eee76153cda628f8">savefig</a></div><div class="ttdeci">function savefig(in varargin)</div></div>
+</div><!-- fragment --> <br  />
 <a class="anchor" id="vis-getLogUDF"></a><b>Visualization of the example output</b> <a href="#vis-getLogUDF">⛓</a> <div class="image">
-<img src="example/stats/himmelblau/getLogUDF/getLogUDF.2d.png" alt="" width="700"/>
+<img src="himmelblau.getLogUDF.2d.png" alt="" width="700"/>
 </div>
  <div class="image">
-<img src="example/stats/himmelblau/getLogUDF/getLogUDF.3d.png" alt="" width="700"/>
+<img src="himmelblau.getLogUDF.3d.png" alt="" width="700"/>
 </div>
 </dd></dl>
 <p><br  />
 <a class="anchor" id="final-getLogUDF"></a><b>Final Remarks</b> <a href="#final-getLogUDF">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/+dist/+himmelblau/getLogUDF.m#L70 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/+dist/+himmelblau/getLogUDF.m#L72 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -254,7 +287,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000156">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000157">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin </dd></dl>
 
 </div>
 </div>
@@ -264,7 +297,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_5f2f7d6d6a421f083844944f36109908.html">+stats</a></li><li class="navelem"><a class="el" href="dir_d694f06def73710f7681c1701584508c.html">+dist</a></li><li class="navelem"><a class="el" href="dir_4e9ef727557d6a2857b27b6e8c436c49.html">+himmelblau</a></li><li class="navelem"><a class="el" href="getLogUDF_8m.html">getLogUDF.m</a></li>
-        <li class="footer">Generated on Tue Jul 2 2024 21:16:00 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Fri Jul 5 2024 10:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

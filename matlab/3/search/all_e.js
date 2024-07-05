@@ -9,7 +9,7 @@ var searchData=
   ['parallelismnumthread_6',['parallelismNumThread',['../classSpecBase.html#a7a5090fd019a85811dc19031e14a693f',1,'SpecBase']]],
   ['paramonte_20matlab_203_2e0_2e0_7',['ParaMonte MATLAB 3.0.0',['../index.html',1,'']]],
   ['parse_5fargs_8',['parse_args',['../savefig_8m.html#a29ada54023f8ba17b5f30d9345b07bc5',1,'parse_args(in nout, in fig, in argNames, in varargin):&#160;savefig.m'],['../im2gif_8m.html#a406f3b1b666559c9e0e756fc57128c5e',1,'parse_args(in A, in varargin):&#160;im2gif.m']]],
-  ['parseargs_9',['parseArgs',['../get_8m.html#ad69281c8dae9a0c6faad8e992157b1fd',1,'get.m']]],
+  ['parseargs_9',['parseArgs',['../getAxes_8m.html#ad69281c8dae9a0c6faad8e992157b1fd',1,'getAxes.m']]],
   ['partype_10',['partype',['../classSampler.html#a3d682527fcb12304f4369255d6079250',1,'Sampler']]],
   ['pde_11',['pde',['../pde_8m.html#abc0ac1c169ca5d685ea93b6f4670d929',1,'pde.m']]],
   ['pde_2em_12',['pde.m',['../pde_8m.html',1,'']]],

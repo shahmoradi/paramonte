@@ -45,7 +45,7 @@ var searchData=
   ['cnxyz2lab_42',['cnXYZ2Lab',['../colornames_8m.html#a6325739d1cf4d980c1aa6f6c939485ce',1,'colornames.m']]],
   ['col_43',['col',['../crop__borders_8m.html#aac68f2e2fc9dcfff0e2b0a2baa4ec811',1,'crop_borders.m']]],
   ['cold_44',['cold',['../cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a',1,'cold.m']]],
-  ['colorbarpos_45',['colorbarpos',['../fit_8m.html#ada59f74af9176d5b72d8e48b0b2d95e7',1,'fit.m']]],
+  ['colorbarpos_45',['colorbarpos',['../fitAxes_8m.html#ada59f74af9176d5b72d8e48b0b2d95e7',1,'fitAxes.m']]],
   ['colornames_46',['colornames',['../colornames_8m.html#a8ca4480e3fb2889fa5fad2c7cb231911',1,'colornames.m']]],
   ['colornames_5fcube_47',['colornames_cube',['../colornames__cube_8m.html#a2db7141a8cf3232444fb872ca078fcaa',1,'colornames_cube.m']]],
   ['colornames_5fdeltae_48',['colornames_deltaE',['../colornames__deltaE_8m.html#a6738ad6654bb4618eb00a42468a2517a',1,'colornames_deltaE.m']]],

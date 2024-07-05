@@ -3,7 +3,7 @@ var searchData=
   ['paradram_0',['Paradram',['../classParadram.html#ab6e5aae9d1d85b5277bb0f43cdf5c21d',1,'Paradram']]],
   ['parallel_1',['parallel',['../parallel_8m.html#a01b198603048be87b719ba0cbd8b3864',1,'parallel.m']]],
   ['parse_5fargs_2',['parse_args',['../savefig_8m.html#a29ada54023f8ba17b5f30d9345b07bc5',1,'parse_args(in nout, in fig, in argNames, in varargin):&#160;savefig.m'],['../im2gif_8m.html#a406f3b1b666559c9e0e756fc57128c5e',1,'parse_args(in A, in varargin):&#160;im2gif.m']]],
-  ['parseargs_3',['parseArgs',['../get_8m.html#ad69281c8dae9a0c6faad8e992157b1fd',1,'get.m']]],
+  ['parseargs_3',['parseArgs',['../getAxes_8m.html#ad69281c8dae9a0c6faad8e992157b1fd',1,'getAxes.m']]],
   ['pde_4',['pde',['../pde_8m.html#abc0ac1c169ca5d685ea93b6f4670d929',1,'pde.m']]],
   ['pdf2eps_5',['pdf2eps',['../pdf2eps_8m.html#a7f68f61e0193d61c10085caa4a3cd052',1,'pdf2eps.m']]],
   ['pdftops_6',['pdftops',['../pdftops_8m.html#a6f19fbd1da5c8afc348b22d9e4436442',1,'pdftops.m']]],

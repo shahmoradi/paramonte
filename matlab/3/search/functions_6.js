@@ -1,11 +1,11 @@
 var searchData=
 [
   ['gads_0',['gads',['../gads_8m.html#a27a09d5e29fab293638e956a8531e2ff',1,'gads.m']]],
-  ['get_1',['get',['../classCor.html#a073f0726795dd828acaa504536ec2e56',1,'Cor::get()'],['../classCov.html#ad510605b455bd314743187ee8cbbea25',1,'Cov::get()'],['../classAutoCorr.html#a825bc786dcd8e91d8e17a3fceec1cd59',1,'AutoCorr::get()']]],
-  ['getaxes_2',['getAxes',['../get_8m.html#a950d613e300cefe3e40f8ceb67c3e43d',1,'get.m']]],
+  ['get_1',['get',['../classCor.html#a073f0726795dd828acaa504536ec2e56',1,'Cor::get()'],['../classCov.html#ad510605b455bd314743187ee8cbbea25',1,'Cov::get()'],['../classAutoCorr.html#ae0e59d3c3e0f778362b1b42e03945ef5',1,'AutoCorr::get()']]],
+  ['getaxes_2',['getAxes',['../getAxes_8m.html#a950d613e300cefe3e40f8ceb67c3e43d',1,'getAxes.m']]],
   ['getborder_3',['getBorder',['../getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9',1,'getBorder.m']]],
   ['getborders_4',['getBorders',['../getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2',1,'getBorders.m']]],
-  ['getcontents_5',['getContents',['../_09bash__profile_2getContents_8m.html#a54034ba01900faa2926b4713e9372fb2',1,'getContents():&#160;getContents.m'],['../_09bashrc_2getContents_8m.html#a54034ba01900faa2926b4713e9372fb2',1,'getContents():&#160;getContents.m']]],
+  ['getcontents_5',['getContents',['../_09bashrc_2getContents_8m.html#a54034ba01900faa2926b4713e9372fb2',1,'getContents():&#160;getContents.m'],['../_09bash__profile_2getContents_8m.html#a54034ba01900faa2926b4713e9372fb2',1,'getContents():&#160;getContents.m']]],
   ['getentriesnml_6',['getEntriesNML',['../classSpecBase.html#a282ea8d2c506394d925742732cdf18c2',1,'SpecBase::getEntriesNML()'],['../classSpecDRAM.html#ae2fc7420bbd06d80a8371604e544425b',1,'SpecDRAM::getEntriesNML()'],['../classSpecMCMC.html#ad7ffbaa23bc6d5cbef50f42050304bfc',1,'SpecMCMC::getEntriesNML()']]],
   ['getentrynml_7',['getEntryNML',['../getEntryNML_8m.html#a31907aada26bcb9d3a39956e1b2c354f',1,'getEntryNML.m']]],
   ['getfigimage_8',['getFigImage',['../savefig_8m.html#a168fc673e3ecb70aaed5aa6b3197d137',1,'savefig.m']]],
@@ -19,12 +19,13 @@ var searchData=
   ['getlogfuncwrapped_16',['getLogFuncWrapped',['../classSampler.html#abff971dc236c62019bbe6aa280817260',1,'Sampler']]],
   ['getlogudf_17',['getLogUDF',['../getLogUDF_8m.html#a236a995cbbb8abe88727027b7bfb62e9',1,'getLogUDF.m']]],
   ['getprintimage_18',['getPrintImage',['../print2array_8m.html#aaea0f9ea758f9ae9beb9da5f0de69956',1,'print2array.m']]],
-  ['gettransferdata_19',['getTransferData',['../classImageSelection.html#a6f15fd833df17c959d77dc3b876fbef0',1,'ImageSelection']]],
-  ['gettransferdataflavors_20',['getTransferDataFlavors',['../classImageSelection.html#af70af946a4b974ec739bb7d24f9e5fa1',1,'ImageSelection']]],
-  ['ghostscript_21',['ghostscript',['../ghostscript_8m.html#a013fedac994253f16dff2bd620c92646',1,'ghostscript.m']]],
-  ['glob_22',['glob',['../glob_8m.html#a178f7fec5deb4ac07219e7bef4f63482',1,'glob.m']]],
-  ['glob2regexp_23',['glob2regexp',['../glob_8m.html#a3307b46dc453655e47bd7a6e9b043579',1,'glob.m']]],
-  ['gpucoder_24',['gpucoder',['../gpucoder_8m.html#ab96fe221db4c1db94c219c0833abf3f2',1,'gpucoder.m']]],
-  ['gs_5fcommand_25',['gs_command',['../ghostscript_8m.html#a810b120e1481e29d85b0d43393472d25',1,'ghostscript.m']]],
-  ['gs_5fpath_26',['gs_path',['../ghostscript_8m.html#a66bf1693fe2631b415983b7e561a901c',1,'ghostscript.m']]]
+  ['getrand_19',['getRand',['../_09mvn_2getRand_8m.html#ab7d5a41157c4609d0db943055ce7b4dc',1,'getRand(in mean, in cholow, in s1):&#160;getRand.m'],['../_09mvu_2getRand_8m.html#ab7d5a41157c4609d0db943055ce7b4dc',1,'getRand(in mean, in cholow, in s1):&#160;getRand.m']]],
+  ['gettransferdata_20',['getTransferData',['../classImageSelection.html#a6f15fd833df17c959d77dc3b876fbef0',1,'ImageSelection']]],
+  ['gettransferdataflavors_21',['getTransferDataFlavors',['../classImageSelection.html#af70af946a4b974ec739bb7d24f9e5fa1',1,'ImageSelection']]],
+  ['ghostscript_22',['ghostscript',['../ghostscript_8m.html#a013fedac994253f16dff2bd620c92646',1,'ghostscript.m']]],
+  ['glob_23',['glob',['../glob_8m.html#a178f7fec5deb4ac07219e7bef4f63482',1,'glob.m']]],
+  ['glob2regexp_24',['glob2regexp',['../glob_8m.html#a3307b46dc453655e47bd7a6e9b043579',1,'glob.m']]],
+  ['gpucoder_25',['gpucoder',['../gpucoder_8m.html#ab96fe221db4c1db94c219c0833abf3f2',1,'gpucoder.m']]],
+  ['gs_5fcommand_26',['gs_command',['../ghostscript_8m.html#a810b120e1481e29d85b0d43393472d25',1,'ghostscript.m']]],
+  ['gs_5fpath_27',['gs_path',['../ghostscript_8m.html#a66bf1693fe2631b415983b7e561a901c',1,'ghostscript.m']]]
 ];

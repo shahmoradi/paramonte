@@ -141,66 +141,75 @@ $(document).ready(function(){initNavTree('info_8m_source.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 <a href="info_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>%&gt;  \brief</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Return a MATLAB <span class="keywordtype">string</span> containing the current system information.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Return a MATLAB <span class="keywordtype">string</span> containing the current system information.&lt;br&gt;</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;  \return</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  `str`   :   The output scalar MATLAB <span class="keywordtype">string</span> containing the current system information.&lt;br&gt;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  `cache` :   The output scalar MATLAB <span class="keywordtype">string</span> representing the path to</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;              the cache file containing the current system information.</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;              The returned cache file path has the form:&lt;br&gt;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;                  &lt;DIR&gt;/.info&lt;YEAR&gt;&lt;MONTH&gt;.cache&lt;br&gt;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;          where,&lt;br&gt;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;              &lt;DIR&gt; is replaced by the directory containing the function ``pm.sys.info.cache()``,</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;              &lt;YEAR&gt; is replaced by the current year,</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;              &lt;MONTH&gt; is replaced by the current month.&lt;br&gt;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;          This means that the cache file contents are supposed to be updated only every month <span class="keywordflow">if</span> necessary.</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;          A cache file is generated because retrieving system information is an expensive shell command-line operation.</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;          The time expense is particularly notable on Windows systems.</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;  \interface{<a class="code hl_function" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a>}</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;  \code{.m}</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;      [str, cache] = pm.sys.info()</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;  \endcode</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  ``str``     :   The output scalar MATLAB <span class="keywordtype">string</span> containing the current system information.&lt;br&gt;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  ``cache``   :   The output scalar MATLAB <span class="keywordtype">string</span> representing the path to the</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;                  cache file containing the current system information.&lt;br&gt;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;                  The returned cache file path has the form:&lt;br&gt;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;                  \code{.m}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;                      &lt;DIR&gt;/.info&lt;YEAR&gt;&lt;MONTH&gt;.cache&lt;br&gt;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;                  \endcode</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;                  where,&lt;br&gt;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;                  &lt;ol&gt;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;                      &lt;li&gt;    ``&lt;DIR&gt;`` is replaced by the directory containing the function [pm.sys.info.cache](@ref cache),</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;                      &lt;li&gt;    ``&lt;YEAR&gt;`` is replaced by the current year,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                      &lt;li&gt;    ``&lt;MONTH&gt;`` is replaced by the current month.</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                  &lt;/ol&gt;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;                  This means that the cache file contents are supposed to be updated only every month <span class="keywordflow">if</span> necessary.&lt;br&gt;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;                  A cache file is generated because retrieving system information is an expensive shell command-line operation.&lt;br&gt;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;                  The time expense is particularly notable on Windows systems.&lt;br&gt;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;  \interface{<a class="code hl_function" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;  \code{.m}</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;  \final{<a class="code hl_function" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;      [str, cache] = pm.sys.info()</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;  \author</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;  \JoshuaOsborne, May 21 2024, 5:31 AM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">   31</a></span>function [str, cache] = <a class="code hl_function" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a>()</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    prefix = &quot;.<a class="code hl_function" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a>&quot;;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    suffix = &quot;.cache&quot;;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    [dirname, ~, ~] = fileparts(mfilename(&#39;fullpath&#39;));</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    cache = fullfile(<span class="keywordtype">string</span>(dirname), prefix + <span class="keywordtype">string</span>(year(date)) + <span class="keywordtype">string</span>(month(date)) + suffix); % update cache once a month.</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    if ~isfile(cache)</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        delete(prefix + &quot;*&quot; + suffix);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        if ispc</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            cmd = &quot;systeminfo&quot;;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        end</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        if ismac</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            cmd = &quot;uname -a; sysctl -a | grep machdep.cpu&quot;;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        end</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        if isunix &amp;&amp; ~ismac</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            cmd = &quot;uname -a; lscpu&quot;;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        end</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        [errorOccurred, str] = system(cmd);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        if errorOccurred</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            warning ( newline ...</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    + &quot;Failed to fetch the system information on the current system. skipping...&quot; ...</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                    + newline ...</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    );</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        end</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        fid = fopen(cache, &#39;wt&#39;);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        fprintf(fid, &quot;%s&quot;, str);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        fclose(fid);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    else</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        str = fileread(cache);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    end</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    str = <span class="keywordtype">string</span>(str);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>end</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;  \endcode</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;  \example{<a class="code hl_function" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a>}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;  \include{lineno} example/sys/<a class="code hl_function" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a>/main.m</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;  \output{<a class="code hl_function" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a>}</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;  \include{lineno} example/sys/<a class="code hl_function" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a>/main.out.m</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;  \final{<a class="code hl_function" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a>}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;  \author</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;  \JoshuaOsborne, May 21 2024, 5:31 AM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">   40</a></span>function [str, cache] = <a class="code hl_function" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a>()</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    prefix = &quot;.<a class="code hl_function" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a>&quot;;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    suffix = &quot;.cache&quot;;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    [dirname, ~, ~] = fileparts(mfilename(&#39;fullpath&#39;));</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    cache = fullfile(<span class="keywordtype">string</span>(dirname), prefix + <span class="keywordtype">string</span>(year(date)) + <span class="keywordtype">string</span>(month(date)) + suffix); % update cache once a month.</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    if ~isfile(cache)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        delete(prefix + &quot;*&quot; + suffix);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        if ispc</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            cmd = &quot;systeminfo&quot;;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        end</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        if ismac</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            cmd = &quot;uname -a; sysctl -a | grep machdep.cpu&quot;;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        end</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        if isunix &amp;&amp; ~ismac</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            cmd = &quot;uname -a; lscpu&quot;;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        end</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        [errorOccurred, str] = system(cmd);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        if errorOccurred</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            warning ( newline ...</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                    + &quot;Failed to fetch the system information on the current system. skipping...&quot; ...</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                    + newline ...</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                    );</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        end</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        fid = fopen(cache, &#39;wt&#39;);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        fprintf(fid, &quot;%s&quot;, str);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        fclose(fid);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    else</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        str = fileread(cache);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    end</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    str = <span class="keywordtype">string</span>(str);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>end</div>
 <div class="ttc" id="ainfo_8m_html_a87faef413694ac4a58dd4890b2b59f8c"><div class="ttname"><a href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a></div><div class="ttdeci">function info()</div><div class="ttdoc">Return a MATLAB string containing the current system information.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -208,7 +217,7 @@ $(document).ready(function(){initNavTree('info_8m_source.html',''); initResizabl
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_1a54d7f1a807380c05b535e170b3b863.html">+sys</a></li><li class="navelem"><a class="el" href="info_8m.html">info.m</a></li>
-        <li class="footer">Generated on Tue Jul 2 2024 21:15:59 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Fri Jul 5 2024 10:36:49 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

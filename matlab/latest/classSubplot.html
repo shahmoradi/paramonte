@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('classSubplot.html',''); initResizable(
 <div class="contents">
 
 <p>This is the abstract class for generating instances of axes with various types of plots from one or more columns of data.<br  />
- While it can be directly used for visualization tasks, this class primarily serves as the superclass for the visualization subclasses accessible to the end users.  
+  
  <a href="classSubplot.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Subplot:</div>
@@ -169,15 +169,20 @@ Collaboration diagram for Subplot:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a594af158cec2dbcde06e8f86e08b02e9"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSubplot.html#a594af158cec2dbcde06e8f86e08b02e9">Subplot</a> (in ptype, in dfref, in varargin)</td></tr>
+<tr class="memdesc:a594af158cec2dbcde06e8f86e08b02e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct and return an object of class <a class="el" href="classSubplot.html">pm.vis.subplot.Subplot</a>.<br  />
+  <a href="classSubplot.html#a594af158cec2dbcde06e8f86e08b02e9">More...</a><br /></td></tr>
 <tr class="separator:a594af158cec2dbcde06e8f86e08b02e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9cba39876d38b81c94f6ff4d60026ae"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSubplot.html#ae9cba39876d38b81c94f6ff4d60026ae">make</a> (in self, in varargin)</td></tr>
-<tr class="memdesc:ae9cba39876d38b81c94f6ff4d60026ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a plot from the selected columns of the parent object component <code>df</code>.  <a href="classSubplot.html#ae9cba39876d38b81c94f6ff4d60026ae">More...</a><br /></td></tr>
+<tr class="memdesc:ae9cba39876d38b81c94f6ff4d60026ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a plot from the selected columns of the parent object component <code>df</code>.<br  />
+  <a href="classSubplot.html#ae9cba39876d38b81c94f6ff4d60026ae">More...</a><br /></td></tr>
 <tr class="separator:ae9cba39876d38b81c94f6ff4d60026ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5392906987ad544c48a2aa952f43c244"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSubplot.html#a5392906987ad544c48a2aa952f43c244">premake</a> (in self, in varargin)</td></tr>
-<tr class="memdesc:a5392906987ad544c48a2aa952f43c244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare the subplot for visualization.  <a href="classSubplot.html#a5392906987ad544c48a2aa952f43c244">More...</a><br /></td></tr>
+<tr class="memdesc:a5392906987ad544c48a2aa952f43c244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare the subplot for visualization.<br  />
+  <a href="classSubplot.html#a5392906987ad544c48a2aa952f43c244">More...</a><br /></td></tr>
 <tr class="separator:a5392906987ad544c48a2aa952f43c244"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70e03eec50ebbc5072032f9013d4a144"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSubplot.html#a70e03eec50ebbc5072032f9013d4a144">reset</a> (in self, in varargin)</td></tr>
-<tr class="memdesc:a70e03eec50ebbc5072032f9013d4a144"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the properties of the plot to the original default settings. Use this method when you change many attributes of the plot and you want to clean up and go back to the default settings.  <a href="classSubplot.html#a70e03eec50ebbc5072032f9013d4a144">More...</a><br /></td></tr>
+<tr class="memdesc:a70e03eec50ebbc5072032f9013d4a144"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the properties of the plot to the original default settings.<br  />
+  <a href="classSubplot.html#a70e03eec50ebbc5072032f9013d4a144">More...</a><br /></td></tr>
 <tr class="separator:a70e03eec50ebbc5072032f9013d4a144"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -191,9 +196,174 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This is the abstract class for generating instances of axes with various types of plots from one or more columns of data.<br  />
- While it can be directly used for visualization tasks, this class primarily serves as the superclass for the visualization subclasses accessible to the end users. </p>
+ </p>
+<p >While it can be directly used for visualization tasks, this class primarily serves as the superclass for the visualization subclasses accessible to the end users.<br  />
+</p>
+<dl class="section note"><dt>Note</dt><dd>In case of <a class="el" href="classContour.html">Contour</a>/<a class="el" href="classContourf.html">Contourf</a>/<a class="el" href="classContour3.html">Contour3</a> visualization objects, the density of the input data is first computed and smoothed by a Gaussian kernel density estimator and then passed to the MATLAB intrinsic plotting functions , <code>contour</code>, <code>contourf</code>, <code>contour3</code>.<br  />
+</dd></dl>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Dynamic class attributes</h2>
+<p >This class contains a set of attributes that are defined dynamically at runtime for the output object depending on its subclass (plot type it represents).<br  />
+ The following is the list of all class attributes that are dynamically added to the instantiated class objects based on the specified input plot type.<br  />
+ See also the explicit class and superclass attributes not listed below.<br  />
+</p>
+<ol>
+<li>
+<p class="startli"><code>colx</code> (standing for x-columns; available for all axes types)<br  />
+</p>
+<p class="interli">Optional property that determines the columns of the specified dataframe to serve as the x-values. It can have multiple forms:<br  />
+ </p><ol>
+<li>
+a numeric or cell array of column indices in the input <code>dfref</code>. </li>
+<li>
+a string or cell array of column names in <code>dfref.Properties.VariableNames</code>. </li>
+<li>
+a cell array of a mix of the above two. </li>
+<li>
+a numeric range. </li>
+</ol>
+<p>If <code>colx</code> is empty,<br  />
+ </p><ol>
+<li>
+it will be set to the row indices of <code>dfref</code> for line/scatter axes types. </li>
+<li>
+it will be set to all columns of <code>dfref</code> for density axes types. </li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>In all cases, <code>colx</code> must have a length that is either 0 (empty), 1, or equal to the length of <code>coly</code> or <code>colz</code>.<br  />
+ If the length is 1, then <code>colx</code> will be plotted against data corresponding to each element of <code>coly</code> and <code>colz</code>.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-colx"></a><b>Example usage</b> <a href="#example-colx">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colx = [7, 8, 9]</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colx = [<span class="stringliteral">&quot;sampleLogFunc&quot;</span>, <span class="stringliteral">&quot;sampleVariable1&quot;</span>]</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colx = {<span class="stringliteral">&quot;sampleLogFunc&quot;</span>, 9, <span class="stringliteral">&quot;sampleVariable1&quot;</span>}</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colx = 7:9      # every column in the data frame starting from column #7 to #9</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colx = 7:2:20   # every other column in the data frame starting from column #7 to #20</div>
+<div class="ttc" id="aclassSubplot_html"><div class="ttname"><a href="classSubplot.html">Subplot</a></div><div class="ttdoc">This is the abstract class for generating instances of axes with various types of plots from one or m...</div><div class="ttdef"><b>Definition:</b> <a href="Subplot_8m_source.html#l00175">Subplot.m:176</a></div></div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>coly</code> (standing for y-columns; available for all axes types except <a class="el" href="classHeatmap.html">Heatmap</a>, <a class="el" href="classHistogram.html">Histogram</a>, <a class="el" href="classHistfit.html">Histfit</a>)<br  />
+</p>
+<p class="interli">Optional property that determines the columns of the specified dataframe to serve as the z-values.<br  />
+ It can have multiple forms:<br  />
+ </p><ol>
+<li>
+a numeric or cell array of column indices in the input <code>dfref</code>. </li>
+<li>
+a string or cell array of column names in <code>dfref.Properties.VariableNames</code>. </li>
+<li>
+a cell array of a mix of the above two. </li>
+<li>
+a numeric range. </li>
+</ol>
+<p>If <code>coly</code> is empty,<br  />
+ </p><ol>
+<li>
+it will be set to the row indices of <code>dfref</code> for line/scatter axes types. </li>
+<li>
+it will be set to all columns of <code>dfref</code> for density axes types. </li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>In all cases, <code>coly</code> must have a length that is either 0 (empty), 1, or equal to the length of <code>colx</code> or <code>colz</code>.<br  />
+ If the length is 1, then <code>coly</code> will be plotted against data corresponding to each element of <code>colx</code> and <code>colz</code>.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-coly"></a><b>Example usage</b> <a href="#example-coly">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.coly = [7, 8, 9]</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.coly = [<span class="stringliteral">&quot;sampleLogFunc&quot;</span>, <span class="stringliteral">&quot;sampleVariable1&quot;</span>]</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.coly = {<span class="stringliteral">&quot;sampleLogFunc&quot;</span>, 9, <span class="stringliteral">&quot;sampleVariable1&quot;</span>}</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.coly = 7:9      # every column in the data frame starting from column #7 to #9</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.coly = 7:2:20   # every other column in the data frame starting from column #7 to #20</div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>colz</code> (standing for z-columns; available only for 3D plots, e.g., <a class="el" href="classLine3.html">Line3</a>, <a class="el" href="classScatter3.html">Scatter3</a>, <a class="el" href="classLineScatter3.html">LineScatter3</a>)<br  />
+</p>
+<p class="interli">Optional property that determines the columns of the specified dataframe to serve as the z-values.<br  />
+ It can have multiple forms:<br  />
+ </p><ol>
+<li>
+a numeric or cell array of column indices in the input <code>dfref</code>. </li>
+<li>
+a string or cell array of column names in <code>dfref.Properties.VariableNames</code>. </li>
+<li>
+a cell array of a mix of the above two. </li>
+<li>
+a numeric range. </li>
+</ol>
+<p>If <code>colz</code> is empty,<br  />
+ </p><ol>
+<li>
+it will be set to the row indices of <code>dfref</code> for line/scatter axes types. </li>
+<li>
+it will be set to all columns of <code>dfref</code> for density axes types. </li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>In all cases, <code>colz</code> must have a length that is either 0 (empty), 1, or equal to the length of <code>colx</code> or <code>coly</code>.<br  />
+ If the length is 1, then <code>colz</code> will be plotted against data corresponding to each element of <code>colx</code> and <code>coly</code>.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-colz"></a><b>Example usage</b> <a href="#example-colz">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colz = [7, 8, 9]</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colz = [<span class="stringliteral">&quot;sampleLogFunc&quot;</span>, <span class="stringliteral">&quot;sampleVariable1&quot;</span>]</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colz = {<span class="stringliteral">&quot;sampleLogFunc&quot;</span>, 9, <span class="stringliteral">&quot;sampleVariable1&quot;</span>}</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colz = 7:9      % every column in the data frame starting from column #7 to #9</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colz = 7:2:20   % every other column in the data frame starting from column #7 to #20</div>
+</div><!-- fragment --> <br  />
+</dd></dl>
+</li>
+<li>
+<p class="startli"><code>colc</code> (standing for color-columns; available only for 2D/3D line/scatter axes types, e.g., <a class="el" href="classLine3.html">Line3</a>, <a class="el" href="classScatter3.html">Scatter3</a>, <a class="el" href="classLineScatter3.html">LineScatter3</a>, <a class="el" href="classLine.html">Line</a>, <a class="el" href="classScatter.html">Scatter</a>, <a class="el" href="classLineScatter.html">LineScatter</a>)<br  />
+</p>
+<p class="endli">Optional property that determines the columns of the input <code>dfref</code> to use as the color mapping values for each line/point element in the plot.<br  />
+ It can have multiple forms:<br  />
+ </p><ol>
+<li>
+a numeric or cell array of column indices in the input <code>dfref</code>. </li>
+<li>
+a string or cell array of column names in <code>dfref.Properties.VariableNames</code>. </li>
+<li>
+a cell array of a mix of the above two. </li>
+<li>
+a numeric range. </li>
+</ol>
+<p>The default value is the indices of the rows of the input <code>dfref</code>.<br  />
+ <br  />
+<a class="anchor" id="example-colc"></a><b>Example usage</b> <a href="#example-colc">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colc = [7,8,9]</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colc = [<span class="stringliteral">&quot;sampleLogFunc&quot;</span>, <span class="stringliteral">&quot;sampleVariable1&quot;</span>]</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colc = {<span class="stringliteral">&quot;sampleLogFunc&quot;</span>, 9, <span class="stringliteral">&quot;sampleVariable1&quot;</span>}</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colc = 7:9      # every column in the data frame starting from column #7 to #9</div>
+<div class="line"><a class="code hl_class" href="classSubplot.html">Subplot</a>.colc = 7:2:20   # every other column in the data frame starting from column #7 to #20</div>
+</div><!-- fragment --> <br  />
+ </dd></dl>
+</li>
+</ol>
+<dl class="DEVNOTE"><dt><b><a class="el" href="DEVNOTE.html#_DEVNOTE000009">Developer Remark:</a></b></dt><dd>While dynamic addition of class attributes is not ideal, the current design was deemed unavoidable and best, given the constraints of the MATLAB language and visualization tools.<br  />
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classHandle.html">pm.matlab.Handle</a><br  />
+ <a class="el" href="classAxes.html">pm.vis.axes.Axes</a><br  />
+ <a class="el" href="classPlot.html">pm.vis.plot.Plot</a><br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+subplot/Subplot.m#L170 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+</p><ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+<p>This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000290">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+ <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
+ </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Subplot_8m_source.html#l00007">7</a> of file <a class="el" href="Subplot_8m_source.html">Subplot.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Subplot_8m_source.html#l00175">175</a> of file <a class="el" href="Subplot_8m_source.html">Subplot.m</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a594af158cec2dbcde06e8f86e08b02e9" name="a594af158cec2dbcde06e8f86e08b02e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a594af158cec2dbcde06e8f86e08b02e9">&#9670;&nbsp;</a></span>Subplot()</h2>
@@ -226,143 +396,41 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section note"><dt>Note</dt><dd>In case of contourf/contour3/contour visualization objects, the density of the input data is first computed and smoothed by a Gaussian kernel density estimator and then passed to the MATLAB intrinsic plotting functions contourf/contour3/contour.</dd></dl>
+
+<p>Construct and return an object of class <a class="el" href="classSubplot.html">pm.vis.subplot.Subplot</a>.<br  />
+ </p>
+<p >This is the custom constructor of the class <a class="el" href="classSubplot.html">pm.vis.subplot.Subplot</a>.<br  />
+</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ptype</td><td>: See the documentation of the corresponding component of the superclass constructor.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dfref</td><td>: The input MATLAB matrix or table containing the data to plot or a function handle that returns such a MATLAB matrix or table. Specifying a function handle is superior to specifying the data directly, because the function handle will always use the most updated version of the user table or matrix. (<b>optional</b>. The default is an empty table.)</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptype</td><td>: See the documentation of the corresponding component of the superclass constructor.<br  />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dfref</td><td>: The input MATLAB matrix or table containing the data to plot or a function handle that returns such a MATLAB matrix or table.<br  />
+ Specifying a function handle is superior to specifying the data directly, because the function handle will always use the most updated version of the user table or matrix.<br  />
+ (<b>optional</b>. The default is an empty table.)</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>self</code> : The output scalar object of class <code>pm.vis.subplot.Subplot</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>self</code> : The output scalar object of class <a class="el" href="classSubplot.html">pm.vis.subplot.Subplot</a>.<br  />
+</dd></dl>
 <p><br  />
 <a class="anchor" id="interface-Subplot"></a><b>Possible calling interfaces</b> <a href="#interface-Subplot">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">s = pm.vis.subplot.Subplot(ptype, dfref);</div>
 <div class="line">s = pm.vis.subplot.Subplot(ptype, dfref, varargin);</div>
 </div><!-- fragment --></dd></dl>
-<dl class="section note"><dt>Note</dt><dd>See the documentation of the superclass for a list of all class attributes that are dynamically added to the instantiated class objects based on the specified input plot type. See also the explicit class and superclass attributes not listed below.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">colx</td><td>(standing for x-columns; available for all axes types) : Optional property that determines the columns of the specified dataframe to serve as the x-values. It can have multiple forms:<br  />
- <ol>
-<li>
-a numeric or cell array of column indices in the input <code>dfref</code>. </li>
-<li>
-a string or cell array of column names in <code>dfref.Properties.VariableNames</code>. </li>
-<li>
-a cell array of a mix of the above two. </li>
-<li>
-a numeric range. </li>
-</ol>
-If <code>colx</code> is empty,<br  />
- <ol>
-<li>
-it will be set to the row indices of <code>dfref</code> for line/scatter axes types. </li>
-<li>
-it will be set to all columns of <code>dfref</code> for density axes types. </li>
-</ol>
-<br  />
-<a class="anchor" id="example-Subplot"></a><b>Example usage</b> <a href="#example-Subplot">⛓</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section user"><dt></dt><dd><pre class="fragment">1.  self.colx = [7, 8, 9]
-2.  self.colx = ["sampleLogFunc", "sampleVariable1"]
-3.  self.colx = {"sampleLogFunc", 9, "sampleVariable1"}
-4.  self.colx = 7:9      # every column in the data frame starting from column #7 to #9
-5.  self.colx = 7:2:20   # every other column in the data frame starting from column #7 to #20
-</pre> </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>In all cases, <code>colx</code> must have a length that is either 0 (empty), 1, or equal to the length of <code>coly</code> or <code>colz</code>. If the length is 1, then <code>colx</code> will be plotted against data corresponding to each element of <code>coly</code> and <code>colz</code>.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">coly</td><td>(standing for y-columns; available for all axes types except heatmap, histogram, histfit) : Optional property that determines the columns of the specified dataframe to serve as the z-values. It can have multiple forms:<br  />
- <ol>
-<li>
-a numeric or cell array of column indices in the input <code>dfref</code>. </li>
-<li>
-a string or cell array of column names in <code>dfref.Properties.VariableNames</code>. </li>
-<li>
-a cell array of a mix of the above two. </li>
-<li>
-a numeric range. </li>
-</ol>
-If <code>coly</code> is empty,<br  />
- <ol>
-<li>
-it will be set to the row indices of <code>dfref</code> for line/scatter axes types. </li>
-<li>
-it will be set to all columns of <code>dfref</code> for density axes types. </li>
-</ol>
-</td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section warning"><dt>Warning</dt><dd>In all cases, <code>colc</code> must have a length that is either 0, or 1, or equal to the maximum lengths of <code>(colx, coly, colz)</code>.<br  />
+ If the length is 1, then all data will be plotted with the same color mapping determined by values specified by the elements of <code>colc</code>.<br  />
+ If it is an empty object having length 0, then the default value will be used.<br  />
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>In case of <a class="el" href="classContour.html">Contour</a>/<a class="el" href="classContourf.html">Contourf</a>/<a class="el" href="classContour3.html">Contour3</a> visualization objects, the density of the input data is first computed and smoothed by a Gaussian kernel density estimator and then passed to the MATLAB intrinsic plotting functions , <code>contour</code>, <code>contourf</code>, <code>contour3</code>.<br  />
+</dd></dl>
 <p><br  />
-<a class="anchor" id="example-Subplot"></a><b>Example usage</b> <a href="#example-Subplot">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">1.  self.coly = [7, 8, 9]
-2.  self.coly = ["sampleLogFunc", "sampleVariable1"]
-3.  self.coly = {"sampleLogFunc", 9, "sampleVariable1"}
-4.  self.coly = 7:9      # every column in the data frame starting from column #7 to #9
-5.  self.coly = 7:2:20   # every other column in the data frame starting from column #7 to #20
-</pre> </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>In all cases, <code>coly</code> must have a length that is either 0 (empty), 1, or equal to the length of <code>colx</code> or <code>colz</code>. If the length is 1, then <code>coly</code> will be plotted against data corresponding to each element of <code>colx</code> and <code>colz</code>.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">colz</td><td>(standing for z-columns; available only for 3D plots, e.g., line3, scatter3, lineScatter3) : Optional property that determines the columns of the specified dataframe to serve as the z-values. It can have multiple forms:<br  />
- <ol>
-<li>
-a numeric or cell array of column indices in the input <code>dfref</code>. </li>
-<li>
-a string or cell array of column names in <code>dfref.Properties.VariableNames</code>. </li>
-<li>
-a cell array of a mix of the above two. </li>
-<li>
-a numeric range. </li>
-</ol>
-If <code>colz</code> is empty,<br  />
- <ol>
-<li>
-it will be set to the row indices of <code>dfref</code> for line/scatter axes types. </li>
-<li>
-it will be set to all columns of <code>dfref</code> for density axes types. </li>
-</ol>
-<br  />
-<a class="anchor" id="example-Subplot"></a><b>Example usage</b> <a href="#example-Subplot">⛓</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section user"><dt></dt><dd><pre class="fragment">1.  self.colz = [7, 8, 9]
-2.  self.colz = ["sampleLogFunc", "sampleVariable1"]
-3.  self.colz = {"sampleLogFunc", 9, "sampleVariable1"}
-4.  self.colz = 7:9      # every column in the data frame starting from column #7 to #9
-5.  self.colz = 7:2:20   # every other column in the data frame starting from column #7 to #20
-</pre> </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>In all cases, <code>colz</code> must have a length that is either 0 (empty), 1, or equal to the length of <code>colx</code> or <code>coly</code>. If the length is 1, then <code>colz</code> will be plotted against data corresponding to each element of <code>colx</code> and <code>coly</code>.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">colc</td><td>(standing for color-columns; available only for 2D/3D line/scatter axes types) : Optional property that determines the columns of the input <code>dfref</code> to use as the color mapping values for each line/point element in the plot. It can have multiple forms: <ol>
-<li>
-a numeric or cell array of column indices in the input <code>dfref</code>. </li>
-<li>
-a string or cell array of column names in <code>dfref.Properties.VariableNames</code>. </li>
-<li>
-a cell array of a mix of the above two. </li>
-<li>
-a numeric range. </li>
-</ol>
-The default value is the indices of the rows of the input <code>dfref</code>. <br  />
-<a class="anchor" id="example-Subplot"></a><b>Example usage</b> <a href="#example-Subplot">⛓</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section user"><dt></dt><dd><pre class="fragment">1.  self.colc = [7,8,9]
-2.  self.colc = ["sampleLogFunc", "sampleVariable1"]
-3.  self.colc = {"sampleLogFunc", 9, "sampleVariable1"}
-4.  self.colc = 7:9      # every column in the data frame starting from column #7 to #9
-5.  self.colc = 7:2:20   # every other column in the data frame starting from column #7 to #20
-</pre> </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>In all cases, <code>colc</code> must have a length that is either 0, or 1, or equal to the maximum lengths of <code>(colx, coly, colz)</code>. If the length is 1, then all data will be plotted with the same color mapping determined by values specified by the elements of <code>colc</code>. If it is an empty object having length 0, then the default value will be used.</dd></dl>
+<a class="anchor" id="example-make"></a><b>Example usage</b> <a href="#example-make">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">dfref = pm.stats.dist.mvu.getRand(zeros(3, 1), chol([1 .9 .9; .9 1 .9; .9 .9 1]), 10000)<span class="stringliteral">&#39;;</span></div>
+<div class="line"><span class="stringliteral">s = pm.vis.subplot.Subplot(&quot;scatter&quot;, dfref);</span></div>
+<div class="line"><span class="stringliteral">s.make(&quot;colx&quot;, 1, &quot;coly&quot;, 2, &quot;colc&quot;, 3);</span></div>
+</div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-Subplot"></a><b>Final Remarks</b> <a href="#final-Subplot">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+subplot/Subplot.m#L218 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+subplot/Subplot.m#L285 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -377,7 +445,8 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000286">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 6:45 PM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000291">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 6:45 PM, University of Texas at Arlington<br  />
+ <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, July 5 2024, 1:07 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
  </dd></dl>
 
 </div>
@@ -409,28 +478,35 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
-<p>Generate a plot from the selected columns of the parent object component <code>df</code>. </p>
-<dl class="section warning"><dt>Warning</dt><dd>This method has side-effects by manipulating the existing attributes of the parent object.</dd></dl>
+<p>Generate a plot from the selected columns of the parent object component <code>df</code>.<br  />
+ </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object. If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classSubplot.html#ae9cba39876d38b81c94f6ff4d60026ae" title="Generate a plot from the selected columns of the parent object component df.">make()</a></code> method.</td></tr>
+    <tr><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
+ If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs.<br  />
+ Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classSubplot.html#ae9cba39876d38b81c94f6ff4d60026ae" title="Generate a plot from the selected columns of the parent object component df.">make()</a></code> method.<br  />
+</td></tr>
   </table>
   </dd>
 </dl>
 <p><br  />
-<a class="anchor" id="interface-make"></a><b>Possible calling interfaces</b> <a href="#interface-make">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">pm.vis.subplot.Subplot.make(varargin);</div>
+<a class="anchor" id="interface-make"></a><b>Possible calling interfaces</b> <a href="#interface-make">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">s = pm.vis.subplot.Subplot(ptype, dfref)</div>
+<div class="line">s.make(varargin);</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This method has side-effects by manipulating the existing attributes of the parent object.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-make"></a><b>Example usage</b> <a href="#example-make">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">dfref = rand(1000, 3);</div>
+<div class="line">s = pm.vis.subplot.Subplot(<span class="stringliteral">&quot;scatter&quot;</span>, dfref);</div>
+<div class="line">s.make(<span class="stringliteral">&quot;colx&quot;</span>, 1, <span class="stringliteral">&quot;coly&quot;</span>, 2, <span class="stringliteral">&quot;colc&quot;</span>, 3)</div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
-<a class="anchor" id="example-make"></a><b>Example usage</b> <a href="#example-make">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">dfref = rand(1000, 3);
-s = pm.vis.subplot.Subplot("scatter", dfref);
-s.make("colx", 1, "coly", 2, "colc", 3)
-</pre> <br  />
-<a class="anchor" id="final-make"></a><b>Final Remarks</b> <a href="#final-make">⛓</a> <hr  />
- If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+subplot/Subplot.m#L263 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<a class="anchor" id="final-make"></a><b>Final Remarks</b> <a href="#final-make">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+subplot/Subplot.m#L335 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
-<ol>
+</p><ol>
 <li>
 If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
@@ -438,11 +514,10 @@ If you use any parts or concepts from this library to any extent, <b>please ackn
 If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
-This software is available to the public under a highly permissive license.<br  />
+<p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
- </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000287">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 6:36 PM, University of Texas at Arlington<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000292">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 6:36 PM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -475,8 +550,8 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
-<p>Prepare the subplot for visualization. </p>
-<dl class="section warning"><dt>Warning</dt><dd>This method has side-effects by manipulating the existing attributes of the parent object.</dd></dl>
+<p>Prepare the subplot for visualization.<br  />
+ </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object. If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classSubplot.html#a5392906987ad544c48a2aa952f43c244" title="Prepare the subplot for visualization.">premake()</a></code> method.</td></tr>
@@ -486,17 +561,20 @@ Help us justify its continued development and maintenance by acknowledging its b
 <p><br  />
 <a class="anchor" id="interface-premake"></a><b>Possible calling interfaces</b> <a href="#interface-premake">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">pm.vis.subplot.Subplot.premake(varargin);</div>
 </div><!-- fragment --></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This method has side-effects by manipulating the existing attributes of the parent object.<br  />
+</dd></dl>
 <p><br  />
-<a class="anchor" id="example-premake"></a><b>Example usage</b> <a href="#example-premake">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">dfref = rand(1000, 3);
-s = pm.vis.subplot.Subplot("scatter", dfref);
-s.premake("colx", 1, "coly", 2, "colc", 3)
-</pre> <br  />
-<a class="anchor" id="final-premake"></a><b>Final Remarks</b> <a href="#final-premake">⛓</a> <hr  />
- If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+subplot/Subplot.m#L876 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<a class="anchor" id="example-premake"></a><b>Example usage</b> <a href="#example-premake">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">dfref = rand(1000, 3);</div>
+<div class="line">s = pm.vis.subplot.Subplot(<span class="stringliteral">&quot;scatter&quot;</span>, dfref);</div>
+<div class="line">s.premake(<span class="stringliteral">&quot;colx&quot;</span>, 1, <span class="stringliteral">&quot;coly&quot;</span>, 2, <span class="stringliteral">&quot;colc&quot;</span>, 3)</div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
+<a class="anchor" id="final-premake"></a><b>Final Remarks</b> <a href="#final-premake">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+subplot/Subplot.m#L953 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
-<ol>
+</p><ol>
 <li>
 If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
 </li>
@@ -504,11 +582,10 @@ If you use any parts or concepts from this library to any extent, <b>please ackn
 If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
 </li>
 </ol>
-This software is available to the public under a highly permissive license.<br  />
+<p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
- </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000288">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 6:41 PM, University of Texas at Arlington<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000293">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 6:41 PM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -541,20 +618,26 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
-<p>Reset the properties of the plot to the original default settings. Use this method when you change many attributes of the plot and you want to clean up and go back to the default settings. </p>
+<p>Reset the properties of the plot to the original default settings.<br  />
+ </p>
+<p >Use this method when you change many attributes of the plot and you want to clean up and go back to the default settings.<br  />
+</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object. If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classSubplot.html#ae9cba39876d38b81c94f6ff4d60026ae" title="Generate a plot from the selected columns of the parent object component df.">make()</a></code> method.</td></tr>
+    <tr><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
+ If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs.<br  />
+ Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classSubplot.html#ae9cba39876d38b81c94f6ff4d60026ae" title="Generate a plot from the selected columns of the parent object component df.">make()</a></code> method.<br  />
+</td></tr>
   </table>
   </dd>
 </dl>
 <p><br  />
-<a class="anchor" id="interface-reset"></a><b>Possible calling interfaces</b> <a href="#interface-reset">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">pm.vis.subplot.Subplot.reset() # <a class="code hl_function" href="classSubplot.html#a70e03eec50ebbc5072032f9013d4a144">reset</a> the plot to the <span class="keywordflow">default</span> settings.</div>
-<div class="ttc" id="aclassSubplot_html_a70e03eec50ebbc5072032f9013d4a144"><div class="ttname"><a href="classSubplot.html#a70e03eec50ebbc5072032f9013d4a144">Subplot::reset</a></div><div class="ttdeci">function reset(in self, in varargin)</div><div class="ttdoc">Reset the properties of the plot to the original default settings. Use this method when you change ma...</div></div>
+<a class="anchor" id="interface-reset"></a><b>Possible calling interfaces</b> <a href="#interface-reset">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">pm.vis.subplot.Subplot.reset() % <a class="code hl_function" href="classSubplot.html#a70e03eec50ebbc5072032f9013d4a144">reset</a> the plot to the <span class="keywordflow">default</span> settings.</div>
+<div class="ttc" id="aclassSubplot_html_a70e03eec50ebbc5072032f9013d4a144"><div class="ttname"><a href="classSubplot.html#a70e03eec50ebbc5072032f9013d4a144">Subplot::reset</a></div><div class="ttdeci">function reset(in self, in varargin)</div><div class="ttdoc">Reset the properties of the plot to the original default settings.</div></div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-reset"></a><b>Final Remarks</b> <a href="#final-reset">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+subplot/Subplot.m#L907 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+subplot/Subplot.m#L986 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -569,7 +652,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000289">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 6:43 PM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000294">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 6:43 PM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -589,9 +672,10 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 <p ><code>df</code></p>
-<p >A scalar object of class <code>pm.data.DataFrame</code> containing the user-specified data to visualize. </p>
+<p >A scalar object of class <code>pm.data.DataFrame</code> containing the user-specified data to visualize.<br  />
+ </p>
 
-<p class="definition">Definition at line <a class="el" href="Subplot_8m_source.html#l00021">21</a> of file <a class="el" href="Subplot_8m_source.html">Subplot.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Subplot_8m_source.html#l00189">189</a> of file <a class="el" href="Subplot_8m_source.html">Subplot.m</a>.</p>
 
 </div>
 </div>
@@ -607,9 +691,10 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 <p ><code>fout</code></p>
-<p >A MATLAB <code>struct</code> whose fields are the outputs of various plotting tools used to make the current axis. </p>
+<p >A MATLAB <code>struct</code> whose fields are the outputs of various plotting tools used to make the current axis.<br  />
+ </p>
 
-<p class="definition">Definition at line <a class="el" href="Subplot_8m_source.html#l00029">29</a> of file <a class="el" href="Subplot_8m_source.html">Subplot.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Subplot_8m_source.html#l00197">197</a> of file <a class="el" href="Subplot_8m_source.html">Subplot.m</a>.</p>
 
 </div>
 </div>
@@ -626,21 +711,25 @@ Help us justify its continued development and maintenance by acknowledging its b
 </div><div class="memdoc">
 <p ><code>rows</code></p>
 <p >A numeric vector that serves as a storage for an arbitrary subset of indices of the rows of the input dataframe reference <code>dfref</code> to the class constructor .<br  />
- It can be either: </p><ol>
+ It can be either:<br  />
+ </p><ol>
 <li>
 a numeric range, or, </li>
 <li>
 a list of row indices of the <code>dfref</code>. </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md5"></a>
-Example usage</h2>
-<div class="fragment"><div class="line">s = pm.vis.subplot.Subplot();</div>
+<p ><br  />
+<a class="anchor" id="example-rows"></a><b>Example usage</b> <a href="#example-rows">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">s = pm.vis.subplot.Subplot();</div>
+<div class="line"> </div>
 <div class="line">s.rows = 15 : -2 : 8;</div>
 <div class="line">s.rows = [12, 46, 7, 8, 9, 4, 7, 163];</div>
-</div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>If <code>rows</code> is empty, the default will be all rows of the <code>dfref</code>.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="classDataFrame.html#a88d1577f1c8bcee5e3dea37137e1e1e2">pm.data.DataFrame.rowslog()</a> method of this class can be used to generate logarithmically-spaced row indices of the target dataframe. </dd></dl>
+</div><!-- fragment --></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If <code>rows</code> is empty, the default will be all rows of the <code>dfref</code>.<br  />
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="classDataFrame.html#a88d1577f1c8bcee5e3dea37137e1e1e2">pm.data.DataFrame.rowslog()</a> method of this class can be used to generate logarithmically-spaced row indices of the target dataframe.<br  />
+ </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Subplot_8m_source.html#l00061">61</a> of file <a class="el" href="Subplot_8m_source.html">Subplot.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Subplot_8m_source.html#l00228">228</a> of file <a class="el" href="Subplot_8m_source.html">Subplot.m</a>.</p>
 
 </div>
 </div>
@@ -653,7 +742,7 @@ Example usage</h2>
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classSubplot.html">Subplot</a></li>
-        <li class="footer">Generated on Tue Jul 2 2024 21:16:00 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Fri Jul 5 2024 10:36:52 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

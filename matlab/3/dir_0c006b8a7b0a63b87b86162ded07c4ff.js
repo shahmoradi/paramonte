@@ -12,5 +12,6 @@ var dir_0c006b8a7b0a63b87b86162ded07c4ff =
     [ "credits.m", "credits_8m.html", "credits_8m" ],
     [ "verify.m", "_09lib_2verify_8m.html", "_09lib_2verify_8m" ],
     [ "version.m", "version_8m.html", "version_8m" ],
+    [ "versionmm.m", "versionmm_8m.html", "versionmm_8m" ],
     [ "weblinks.m", "weblinks_8m.html", "weblinks_8m" ]
 ];

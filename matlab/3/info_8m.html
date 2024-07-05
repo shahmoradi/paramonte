@@ -148,7 +148,8 @@ $(document).ready(function(){initNavTree('info_8m.html',''); initResizable(); })
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a87faef413694ac4a58dd4890b2b59f8c"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a> ()</td></tr>
-<tr class="memdesc:a87faef413694ac4a58dd4890b2b59f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a MATLAB string containing the current system information.  <a href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">More...</a><br /></td></tr>
+<tr class="memdesc:a87faef413694ac4a58dd4890b2b59f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a MATLAB string containing the current system information.<br  />
+  <a href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">More...</a><br /></td></tr>
 <tr class="separator:a87faef413694ac4a58dd4890b2b59f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -167,19 +168,173 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return a MATLAB string containing the current system information. </p>
+<p>Return a MATLAB string containing the current system information.<br  />
+ </p>
 <dl class="section return"><dt>Returns</dt><dd><code>str</code> : The output scalar MATLAB string containing the current system information.<br  />
- <code>cache</code> : The output scalar MATLAB string representing the path to the cache file containing the current system information. The returned cache file path has the form:<br  />
- &lt;DIR&gt;/.info&lt;YEAR&gt;&lt;MONTH&gt;.cache<br  />
- where,<br  />
- &lt;DIR&gt; is replaced by the directory containing the function <code>pm.sys.info.cache()</code>, &lt;YEAR&gt; is replaced by the current year, &lt;MONTH&gt; is replaced by the current month.<br  />
- This means that the cache file contents are supposed to be updated only every month if necessary. A cache file is generated because retrieving system information is an expensive shell command-line operation. The time expense is particularly notable on Windows systems.</dd></dl>
+ <code>cache</code> : The output scalar MATLAB string representing the path to the cache file containing the current system information.<br  />
+ The returned cache file path has the form:<br  />
+ <div class="fragment"><div class="line">&lt;DIR&gt;/.info&lt;YEAR&gt;&lt;MONTH&gt;.cache&lt;br&gt;</div>
+</div><!-- fragment --> where,<br  />
+ <ol>
+<li>
+<code>&lt;DIR&gt;</code> is replaced by the directory containing the function pm.sys.info.cache, </li>
+<li>
+<code>&lt;YEAR&gt;</code> is replaced by the current year, </li>
+<li>
+<code>&lt;MONTH&gt;</code> is replaced by the current month. </li>
+</ol>
+This means that the cache file contents are supposed to be updated only every month if necessary.<br  />
+ A cache file is generated because retrieving system information is an expensive shell command-line operation.<br  />
+ The time expense is particularly notable on Windows systems.<br  />
+</dd></dl>
 <p><br  />
 <a class="anchor" id="interface-info"></a><b>Possible calling interfaces</b> <a href="#interface-info">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">[str, cache] = pm.sys.info()</div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
+<a class="anchor" id="example-info"></a><b>Example usage</b> <a href="#example-info">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>addpath(<span class="stringliteral">&#39;../../../&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory to the search path.</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>pm.matlab.show()</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>pm.matlab.show(<span class="stringliteral">&#39;pm.sys.info()&#39;</span>)</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>pm.matlab.show( pm.sys.info() )</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>pm.matlab.show()</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>pm.matlab.show(<span class="stringliteral">&#39;[str, cache] = pm.sys.info();&#39;</span>)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>                [str, cache] = pm.sys.info();</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>pm.matlab.show(<span class="stringliteral">&#39;cache&#39;</span>)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>pm.matlab.show( cache )</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>pm.matlab.show(<span class="stringliteral">&#39;str&#39;</span>)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>pm.matlab.show( str )</div>
+<div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
+</div><!-- fragment --> <br  />
+<a class="anchor" id="output-info"></a><b>Example output</b> <a href="#output-info">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>pm.sys.info()</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>Linux amir 5.15.153.1-microsoft-standard-WSL2 #1 SMP Fri Mar 29 23:14:13 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>Architecture:            x86_64</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>  CPU op-mode(s):        32-bit, 64-bit</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>  Address sizes:         46 bits physical, 48 bits virtual</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>  Byte Order:            Little Endian</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>CPU(s):                  24</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  On-line CPU(s) <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a>:   0-23</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>Vendor ID:               GenuineIntel</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  Model <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>:            12th Gen Intel(R) Core(TM) i9-12950HX</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    CPU family:          6</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    Model:               151</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    Thread(s) per core:  2</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    Core(s) per socket:  12</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    Socket(s):           1</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    Stepping:            2</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    BogoMIPS:            4992.00</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mc</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                         a cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscal</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                         l nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopo</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                         logy tsc_reliable nonstop_tsc cpuid pni pclmulqdq vmx s</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                         sse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_dea</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                         dline_timer aes xsave avx f16c rdrand hypervisor lahf_l</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                         m abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                         tpr_shadow vnmi ept vpid ept_ad fsgsbase tsc_adjust bmi</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                         1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushop</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                         t clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_vnni u</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                         mip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                         b fsrm serialize flush_l1d arch_capabilities</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>Virtualization features: </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  Virtualization:        VT-x</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  Hypervisor <a class="code hl_function" href="vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a>:     Microsoft</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  Virtualization type:   full</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>Caches (sum of all):     </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  L1d:                   576 KiB (12 instances)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  L1i:                   384 KiB (12 instances)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  L2:                    15 MiB (12 instances)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  L3:                    30 MiB (1 instance)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>Vulnerabilities:         </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  Gather data sampling:  Not affected</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  Itlb multihit:         Not affected</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  L1tf:                  Not affected</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  Mds:                   Not affected</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  Meltdown:              Not affected</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  Mmio stale data:       Not affected</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  Retbleed:              Mitigation; Enhanced IBRS</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  Spec rstack overflow:  Not affected</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  Spec store bypass:     Mitigation; Speculative Store Bypass disabled via prctl</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                          and seccomp</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  Spectre v1:            Mitigation; usercopy/swapgs barriers and __user pointer</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                          sanitization</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  Spectre v2:            Mitigation; Enhanced IBRS, IBPB conditional, RSB fillin</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                         g, PBRSB-eIBRS SW sequence</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  Srbds:                 Not affected</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  Tsx async abort:       Not affected</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>[str, cache] = pm.sys.info();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>cache</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>cache</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>/<a class="code hl_function" href="home_8m.html#a339d3746582110c322f94831b08d1715">home</a>/amir/git/paramonte/external/paramonted/doxygen/bld/linux/amd64/gnu/13.1.0/native/<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>/mem/serial/matlab/checking/pkg/+pm/+sys/.info20247.cache</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>str</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>str</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>Linux amir 5.15.153.1-microsoft-standard-WSL2 #1 SMP Fri Mar 29 23:14:13 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>Architecture:            x86_64</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  CPU op-mode(s):        32-bit, 64-bit</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  Address sizes:         46 bits physical, 48 bits virtual</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  Byte Order:            Little Endian</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>CPU(s):                  24</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  On-line CPU(s) <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a>:   0-23</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>Vendor ID:               GenuineIntel</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  Model <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>:            12th Gen Intel(R) Core(TM) i9-12950HX</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    CPU family:          6</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    Model:               151</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    Thread(s) per core:  2</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    Core(s) per socket:  12</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    Socket(s):           1</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    Stepping:            2</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    BogoMIPS:            4992.00</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mc</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                         a cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscal</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                         l nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopo</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                         logy tsc_reliable nonstop_tsc cpuid pni pclmulqdq vmx s</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                         sse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_dea</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                         dline_timer aes xsave avx f16c rdrand hypervisor lahf_l</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                         m abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                         tpr_shadow vnmi ept vpid ept_ad fsgsbase tsc_adjust bmi</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                         1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushop</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                         t clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_vnni u</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                         mip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                         b fsrm serialize flush_l1d arch_capabilities</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>Virtualization features: </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  Virtualization:        VT-x</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  Hypervisor <a class="code hl_function" href="vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a>:     Microsoft</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  Virtualization type:   full</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>Caches (sum of all):     </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  L1d:                   576 KiB (12 instances)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  L1i:                   384 KiB (12 instances)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  L2:                    15 MiB (12 instances)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  L3:                    30 MiB (1 instance)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>Vulnerabilities:         </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  Gather data sampling:  Not affected</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  Itlb multihit:         Not affected</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  L1tf:                  Not affected</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  Mds:                   Not affected</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  Meltdown:              Not affected</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  Mmio stale data:       Not affected</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  Retbleed:              Mitigation; Enhanced IBRS</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  Spec rstack overflow:  Not affected</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  Spec store bypass:     Mitigation; Speculative Store Bypass disabled via prctl</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                          and seccomp</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  Spectre v1:            Mitigation; usercopy/swapgs barriers and __user pointer</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                          sanitization</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  Spectre v2:            Mitigation; Enhanced IBRS, IBPB conditional, RSB fillin</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                         g, PBRSB-eIBRS SW sequence</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  Srbds:                 Not affected</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  Tsx async abort:       Not affected</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div><div class="ttdoc">Return the MPI library name as used in naming the ParaMonte MATLAB shared libraries.</div></div>
+<div class="ttc" id="a_09os_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div><div class="ttdoc">Return a list of MATLAB strings containing the names of OS platforms supported by the ParaMonte MATLA...</div></div>
+<div class="ttc" id="ahome_8m_html_a339d3746582110c322f94831b08d1715"><div class="ttname"><a href="home_8m.html#a339d3746582110c322f94831b08d1715">home</a></div><div class="ttdeci">function home()</div><div class="ttdoc">Return a MATLAB string containing the absolute path to the system home directory.</div></div>
+<div class="ttc" id="alib_8m_html_a3d11053ebcdfc6f0bef7af9c8d14fa13"><div class="ttname"><a href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a></div><div class="ttdeci">function lib()</div><div class="ttdoc">Return a scalar MATLAB string containing the path to the lib directory of the ParaMonte library packa...</div></div>
+<div class="ttc" id="avendor_8m_html_afe63f699e7725dd68ec9e0a4c6975caa"><div class="ttname"><a href="vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a></div><div class="ttdeci">function vendor(in path)</div><div class="ttdoc">Return the a MATLAB string containing the MPI library vendor name corresponding to the input mpiexec ...</div></div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
 <a class="anchor" id="final-info"></a><b>Final Remarks</b> <a href="#final-info">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sys/info.m#L25 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sys/info.m#L34 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -194,7 +349,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000196">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 5:31 AM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000198">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 5:31 AM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -207,7 +362,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_1a54d7f1a807380c05b535e170b3b863.html">+sys</a></li><li class="navelem"><a class="el" href="info_8m.html">info.m</a></li>
-        <li class="footer">Generated on Tue Jul 2 2024 21:16:00 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Fri Jul 5 2024 10:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

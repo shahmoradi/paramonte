@@ -179,7 +179,97 @@ Functions</h2></td></tr>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>pm.lib.verify();</div>
 <div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
 </div><!-- fragment --> <br  />
-<a class="anchor" id="output-verify"></a><b>Example output</b> <a href="#output-verify">⛓</a> <div class="fragment"></div><!-- fragment --></dd></dl>
+<a class="anchor" id="output-verify"></a><b>Example output</b> <a href="#output-verify">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>Checking MATLAB <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> &gt;2017b rquirement <span class="keywordflow">for</span> compatibility with ParaMonte...PASSED</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>Checking the system architecture compatibility with the ParaMonte library...PASSED</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>Checking the intel MPI library installations. This may take a bit...</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    The following Intel `mpiexec` binaries were detected:</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>        /opt/intel/oneapi/mpi/latest/bin/mpiexec</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>Checking the mpich MPI library installations. This may take a bit...</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    The following MPICH `mpiexec` binaries were detected:</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        /usr/bin/mpiexec.mpich</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>Checking the openmpi MPI library installations. This may take a bit...</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    The following OpenMPI `mpiexec` binaries were detected:</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        /usr/bin/mpiexec</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>At least one MPI runtime library installation from vendors </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>compatible with the ParaMonte library exists on your system.</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>The MPI runtime libraries are required ONLY <span class="keywordflow">for</span> the <a class="code hl_function" href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a> ParaMonte simulations.</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>The MPI-<a class="code hl_function" href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a> <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> of the ParaMonte library <span class="keyword">requires</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>one of the following MPI runtime libraries:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    1)  Intel MPI runtime library (recommended and available only <span class="keywordflow">for</span> Windows and Linux)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        This can be downloaded from Intel MPI library website.</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    2)  MPICH MPI runtime library (available only <span class="keywordflow">for</span> Linux and macOS/Darwin)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        This can be downloaded and installed via a <span class="keyword">package </span>manager.</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        On Linux Ubuntu systems, you can use the shell installation command:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            sudo apt install mpich</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        On macOS/Darwin systems, you can use the Homebrew application to install MPICH:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            brew install mpich &amp;&amp; brew link mpich</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            If you do not have Homebrew installed on your system, you can do so by</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            typing the following command in your (Bash/zsh) shell terminal:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                /bin/bash -c &quot;$(curl -fsSL https:<span class="comment">//raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    3)  OpenMPI runtime library (available only for Linux and macOS/Darwin)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>Once you have installed any of the above MPI runtime libraries,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>ensure the `mpiexec` MPI executable binary is available on the command line in your terminal.</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>On Windows systems with Intel MPI library, you may have difficulty finding mpiexec in Windows terminals.</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>For this reason, Intel provides its dedicated Intel OneAPI command-prompt on Windows which has all</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>environmental paths predefined within the shell.</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    On Windows systems, you can also directly run the Intel Windows `vars.bat` Batch script within a</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    compatible Windows shell to define all necessary environmental variables for MPI-parallel simulations.</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    By default, this script is frequently stored in the following installation path:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        &quot;C:\Program Files (x86)\Intel\oneAPI\mpi\latest\env\vars.bat&quot;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    On Linux systems, you can also directly run the Intel `vars.sh` Bash script within a</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    compatible terminal to define all necessary environmental variables for MPI-parallel simulations.</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    By default, this script is frequently stored in the following installation path:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        &quot;/opt/intel/oneapi/mpi/latest/env/vars.sh&quot;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>For more information on running MPI-parallel simulations, visit:</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    &lt;a href = &quot;www.cdslab.org/pm&quot;&gt;www.cdslab.org/pm&lt;/a&gt;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>On Linux/macOS systems, launch the MPI-parallel ParaMonte</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>simulation on the shell terminal via the following command:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    mpiexec -n 3 matlab -batch &quot;main&quot;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>where,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    1.  ``mpiexec`` is the MPI launcher application.</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    2.  ``-n 3`` specified three processes to be used for the MPI-parallel simulation.</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    3.  ``matlab -batch`` launches the LANG_NAME software per MPI process on the command line.</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    5.  ``main`` is the name of your script containing the ParaMonte library task to run in parallel.</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        Replace the script name with whatever the actual name of your script file is.</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        Notice the MATLAB filename `main` appears without the file extension.</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        Notice the MATLAB filename is enclosed with quotation marks.</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>On Windows systems using the Intel MPI library, an additional ``-localonly`` flag is required:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    mpiexec -localonly -n 3 matlab -batch &quot;main&quot;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>where,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    1.  ``-localonly`` indicates a parallel simulation on only a single node.</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        This flag will obviate the need for MPI library credentials registration.</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        For more information, visit the Intel MPI library website.</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="ttc" id="a_09update_2version_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
+<div class="ttc" id="aparallel_8m_html_a01b198603048be87b719ba0cbd8b3864"><div class="ttname"><a href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a></div><div class="ttdeci">function parallel()</div><div class="ttdoc">Return a scalar MATLAB logical that is true if and only if the current installation of MATLAB contain...</div></div>
+</div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-verify"></a><b>Final Remarks</b> <a href="#final-verify">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+lib/verify.m#L19 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -197,7 +287,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000059">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 8:11 PM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000058">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 8:11 PM, University of Texas at Arlington<br  />
  </dd></dl>
 
 </div>
@@ -208,7 +298,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_0c006b8a7b0a63b87b86162ded07c4ff.html">+lib</a></li><li class="navelem"><a class="el" href="_09lib_2verify_8m.html">verify.m</a></li>
-        <li class="footer">Generated on Tue Jul 2 2024 21:16:00 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Fri Jul 5 2024 10:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

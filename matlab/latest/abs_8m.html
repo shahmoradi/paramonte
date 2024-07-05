@@ -148,8 +148,8 @@ $(document).ready(function(){initNavTree('abs_8m.html',''); initResizable(); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa5a18068d39642deefb2f500d14403db"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="abs_8m.html#aa5a18068d39642deefb2f500d14403db">abs</a> (in path, in style)</td></tr>
-<tr class="memdesc:aa5a18068d39642deefb2f500d14403db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the Get absolute canonical path of a file or folder. Absolute path names are safer than relative paths, e.g. when a GUI or TIMER callback changes the current directory. Only canonical paths without <code>"."</code> and <code>".."</code> can be recognized uniquely.<br  />
- Long path names (&gt;259 characters) require a magic initial key <code>"\\?\"</code> to be handled by Windows API functions, e.g. for MATLAB intrinsic routines <code>fopen()</code>, <code>dir()</code> and <code>exist()</code>.  <a href="abs_8m.html#aa5a18068d39642deefb2f500d14403db">More...</a><br /></td></tr>
+<tr class="memdesc:aa5a18068d39642deefb2f500d14403db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the Get absolute canonical path of a file or folder.<br  />
+  <a href="abs_8m.html#aa5a18068d39642deefb2f500d14403db">More...</a><br /></td></tr>
 <tr class="separator:aa5a18068d39642deefb2f500d14403db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -179,57 +179,195 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return the Get absolute canonical path of a file or folder. Absolute path names are safer than relative paths, e.g. when a GUI or TIMER callback changes the current directory. Only canonical paths without <code>"."</code> and <code>".."</code> can be recognized uniquely.<br  />
- Long path names (&gt;259 characters) require a magic initial key <code>"\\?\"</code> to be handled by Windows API functions, e.g. for MATLAB intrinsic routines <code>fopen()</code>, <code>dir()</code> and <code>exist()</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Some functions of the Windows-API still do not support long file names. E.g. the Recycler and the Windows Explorer fail even with the magic <code>'\\?\'</code> prefix. Some functions of MATLAB accept 260 characters (value of MAX_PATH), some at 259 already. The <code>'fat'</code> style is useful e.g., when MATLAB <code>dir()</code> command is called for a folder with less than <code>260</code> characters, but together with the file name this limit is exceeded. Then, <code>"dir(pm.sys.path.abs([folder, '\*.*'], 'fat'))"</code> helps.</dd></dl>
-<dl class="DEVNOTE"><dt><b><a class="el" href="DEVNOTE.html#_DEVNOTE000005">Developer Remark:</a></b></dt><dd>A MEX version of this function developed by Jan Simon performs much faster on Windows. Difference between M- and Mex-version:<br  />
-<ul>
-<li>Mex does not work under MacOS/Unix.</li>
-<li>Mex calls Windows API function pm.sys.path.abs.</li>
-<li>Mex is much faster.</li>
-</ul>
+<p>Return the Get absolute canonical path of a file or folder.<br  />
+ </p>
+<p >Absolute path names are safer than relative paths, e.g., when a GUI or TIMER callback changes the current directory.<br  />
+ Only canonical paths without <code>"."</code> and <code>".."</code> can be recognized uniquely.<br  />
+</p>
+<dl class="section note"><dt>Note</dt><dd>Long path names (&gt;259 characters) require a magic initial key <code>"\\?\"</code> to be handled by Windows API functions, e.g. for MATLAB intrinsic routines <code>fopen()</code>, <code>dir()</code> and <code>exist()</code>.<br  />
+</dd>
+<dd>
+Some functions of the Windows-API still do not support long file names.<br  />
+ For example, the Recycler and the Windows Explorer fail even with the magic <code>'\\?\'</code> prefix.<br  />
+ Some functions of MATLAB accept 260 characters (value of MAX_PATH), some at 259 already.<br  />
+ The <code>'fat'</code> style is useful e.g., when MATLAB <code>dir()</code> command is called for a folder with less than <code>260</code> characters, but together with the file name this limit is exceeded.<br  />
+ Then, <code>"dir(pm.sys.path.abs([folder, '\*.*'], 'fat'))"</code> helps.<br  />
 </dd></dl>
+<dl class="DEVNOTE"><dt><b><a class="el" href="DEVNOTE.html#_DEVNOTE000005">Developer Remark:</a></b></dt><dd>A MEX version of this function developed by Jan Simon performs much faster on Windows.<br  />
+ Difference between M- and Mex-version:<br  />
+ </dd></dl>
+<ol>
+<li>
+Mex does not work under MacOS/Unix. </li>
+<li>
+Mex calls Windows API function pm.sys.path.abs. </li>
+<li>
+Mex is much faster. </li>
+</ol>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>: The input argument that can be either,<br  />
-<ul>
-<li>a scalar MATLAB string or character, or,</li>
-<li>a MATLAB cell array of strings or character values, containing the absolute or relative name(s) of a file(s) or folder(s). The path need not exist. Unicode strings, UNC paths and long names are supported.</li>
-</ul>
-</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">style</td><td>: The optional input scalar MATLAB string or character, containing the style of the output as string. The following values are possible:<br  />
-<ul>
-<li>'auto' : Add '\?\' or '\?\UNC\' for long names on demand.</li>
-<li>'lean' : Magic string is not added.</li>
-<li>'fat' : Magic string is added for short names also. The input <code>style</code> is ignored when not running under Windows. (<b>optional</b>, default = 'auto')</li>
-</ul>
-</td></tr>
+ <ol>
+<li>
+a scalar MATLAB string or character, or, </li>
+<li>
+a MATLAB string or cell array of strings or character values, </li>
+</ol>
+containing the absolute or relative name(s) of a file(s) or folder(s).<br  />
+ The path need not exist. Unicode strings, UNC paths and long names are supported.<br  />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">style</td><td>: The optional input scalar MATLAB string or character, containing the style of the output as string.<br  />
+ The following values are possible:<br  />
+ <ol>
+<li>
+<code>'auto'</code> : Add <code>'\\?\'</code> or <code>'\\?\UNC\'</code> for long names on demand. </li>
+<li>
+<code>'lean'</code> : Magic string is not added. </li>
+<li>
+<code>'fat'</code> : Magic string is added for short names also. </li>
+</ol>
+The input <code>style</code> is ignored when not running under Windows.<br  />
+ (<b>optional</b>, default = 'auto')</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>path</code> : The output scalar MATLAB character string containing the absolute path corresponding to the input path. If the input <code>path</code> is empty, <code>pathAbs</code> is the current directory. The optional prefixes <code>'\\?\'</code> or <code>'\\?\UNC'</code> are added on demand as requested by the optional input argument <code>style</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>path</code> : The output scalar MATLAB character string containing the absolute path corresponding to the input path.<br  />
+ If the input <code>path</code> is empty, <code>pathAbs</code> is the current directory.<br  />
+ The optional prefixes <code>'\\?\'</code> or <code>'\\?\UNC'</code> are added on demand as requested by the optional input argument <code>style</code>.<br  />
+</dd></dl>
 <p><br  />
 <a class="anchor" id="interface-abs"></a><b>Possible calling interfaces</b> <a href="#interface-abs">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">path = pm.sys.path.abs(file)</div>
 <div class="line">path = pm.sys.path.abs(file, style)</div>
 </div><!-- fragment --></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="http://www.n-simon.de/mex">A collection of MATLAB mex files for system path manipulation</a><br  />
+</dd></dl>
 <p><br  />
-<a class="anchor" id="example-abs"></a><b>Example usage</b> <a href="#example-abs">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">cd(tempdir);                                        % Assumed as 'C:\Temp' here
-pm.sys.path.abs('File.Ext')                         % 'C:\Temp\File.Ext'
-pm.sys.path.abs('..\File.Ext')                      % 'C:\File.Ext'
-pm.sys.path.abs('..\..\File.Ext')                   % 'C:\File.Ext'
-pm.sys.path.abs('.\File.Ext')                       % 'C:\Temp\File.Ext'
-pm.sys.path.abs('*.txt')                            % 'C:\Temp\*.txt'
-pm.sys.path.abs('..')                               % 'C:\'
-pm.sys.path.abs('..\..\..')                         % 'C:\'
-pm.sys.path.abs('Folder\')                          % 'C:\Temp\Folder\'
-pm.sys.path.abs('D:\A\..\B')                        % 'D:\B'
-pm.sys.path.abs('\\Server\Folder\Sub\..\File.ext')  % '\\Server\Folder\File.ext'
-pm.sys.path.abs({'..', 'new'})                      % {'C:\', 'C:\Temp\new'}
-pm.sys.path.abs('.', 'fat')                         % '\\?\C:\Temp\File.Ext'
-</pre> See also: <a href="http://www.n-simon.de/mex">http://www.n-simon.de/mex</a> - A collection of MATLAB mex files for system path manipulation.</dd></dl>
+<a class="anchor" id="example-abs-raw"></a><b>Example usage</b> <a href="#example-abs-raw">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">cd(tempdir);                                        % Assumed as <span class="stringliteral">&#39;C:\Temp&#39;</span> here</div>
+<div class="line">pm.sys.path.abs(<span class="stringliteral">&#39;File.Ext&#39;</span>)                         % <span class="stringliteral">&#39;C:\Temp\File.Ext&#39;</span></div>
+<div class="line">pm.sys.path.abs(<span class="stringliteral">&#39;..\File.Ext&#39;</span>)                      % <span class="stringliteral">&#39;C:\File.Ext&#39;</span></div>
+<div class="line">pm.sys.path.abs(<span class="stringliteral">&#39;..\..\File.Ext&#39;</span>)                   % <span class="stringliteral">&#39;C:\File.Ext&#39;</span></div>
+<div class="line">pm.sys.path.abs(<span class="stringliteral">&#39;.\File.Ext&#39;</span>)                       % <span class="stringliteral">&#39;C:\Temp\File.Ext&#39;</span></div>
+<div class="line">pm.sys.path.abs(<span class="stringliteral">&#39;*.txt&#39;</span>)                            % <span class="stringliteral">&#39;C:\Temp\*.txt&#39;</span></div>
+<div class="line">pm.sys.path.abs(<span class="stringliteral">&#39;..&#39;</span>)                               % <span class="stringliteral">&#39;C:\&#39;</span></div>
+<div class="line"><span class="stringliteral">pm.sys.path.abs(&#39;</span>..\..\..<span class="stringliteral">&#39;)                         % &#39;</span>C:\<span class="stringliteral">&#39;</span></div>
+<div class="line"><span class="stringliteral">pm.sys.path.abs(&#39;</span>Folder\<span class="stringliteral">&#39;)                          % &#39;</span>C:\Temp\Folder\<span class="stringliteral">&#39;</span></div>
+<div class="line"><span class="stringliteral">pm.sys.path.abs(&#39;</span>D:\A\..\B<span class="stringliteral">&#39;)                        % &#39;</span>D:\B<span class="stringliteral">&#39;</span></div>
+<div class="line"><span class="stringliteral">pm.sys.path.abs(&#39;</span>\\Server\Folder\Sub\..\File.ext<span class="stringliteral">&#39;)  % &#39;</span>\\Server\Folder\File.ext<span class="stringliteral">&#39;</span></div>
+<div class="line"><span class="stringliteral">pm.sys.path.abs({&#39;</span>..<span class="stringliteral">&#39;, &#39;</span><span class="keyword">new</span><span class="stringliteral">&#39;})                      % {&#39;</span>C:\<span class="stringliteral">&#39;, &#39;</span>C:\Temp\new<span class="stringliteral">&#39;}</span></div>
+<div class="line"><span class="stringliteral">pm.sys.path.abs([&quot;..&quot;, &quot;new&quot;])                      % [&quot;C:\&quot;, &quot;C:\Temp\new&quot;]</span></div>
+<div class="line"><span class="stringliteral">pm.sys.path.abs(&#39;</span>.<span class="stringliteral">&#39;, &#39;</span>fat<span class="stringliteral">&#39;)                         % &#39;</span>\\?\C:\Temp\File.Ext<span class="stringliteral">&#39;</span></div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
+<a class="anchor" id="example-abs"></a><b>Example usage</b> <a href="#example-abs">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>addpath(<span class="stringliteral">&#39;../../../../&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory to the search path.</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>pm.matlab.show()</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>pm.matlab.show(<span class="stringliteral">&#39;cd(tempdir); pwd&#39;</span>)</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>                cd(tempdir); pwd</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>pm.matlab.show()</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>pm.matlab.show(<span class="stringliteral">&#39;pm.sys.path.abs(&quot;File.Ext&quot;)&#39;</span>)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>pm.matlab.show( pm.sys.path.abs(<span class="stringliteral">&quot;File.Ext&quot;</span>) )</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>pm.matlab.show()</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>pm.matlab.show(<span class="stringliteral">&#39;pm.sys.path.abs(&quot;..\File.Ext&quot;)&#39;</span>)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>pm.matlab.show( pm.sys.path.abs(<span class="stringliteral">&quot;..\File.Ext&quot;</span>) )</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>pm.matlab.show()</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>pm.matlab.show(<span class="stringliteral">&#39;pm.sys.path.abs(&quot;..\..\File.Ext&quot;)&#39;</span>)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>pm.matlab.show( pm.sys.path.abs(<span class="stringliteral">&quot;..\..\File.Ext&quot;</span>) )</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>pm.matlab.show()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>pm.matlab.show(<span class="stringliteral">&#39;pm.sys.path.abs(&quot;.\File.Ext&quot;)&#39;</span>)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>pm.matlab.show( pm.sys.path.abs(<span class="stringliteral">&quot;.\File.Ext&quot;</span>) )</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>pm.matlab.show()</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>pm.matlab.show(<span class="stringliteral">&#39;pm.sys.path.abs(&quot;*.txt&quot;)&#39;</span>)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>pm.matlab.show( pm.sys.path.abs(<span class="stringliteral">&quot;*.txt&quot;</span>) )</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>pm.matlab.show()</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>pm.matlab.show(<span class="stringliteral">&#39;pm.sys.path.abs(&quot;..&quot;)&#39;</span>)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>pm.matlab.show( pm.sys.path.abs(<span class="stringliteral">&quot;..&quot;</span>) )</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>pm.matlab.show()</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>pm.matlab.show(<span class="stringliteral">&#39;pm.sys.path.abs(&quot;..\..\..&quot;)&#39;</span>)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>pm.matlab.show( pm.sys.path.abs(<span class="stringliteral">&quot;..\..\..&quot;</span>) )</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>pm.matlab.show()</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>pm.matlab.show(<span class="stringliteral">&#39;pm.sys.path.abs(&quot;Folder\&quot;)&#39;</span>)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>pm.matlab.show( pm.sys.path.abs(<span class="stringliteral">&quot;Folder\&quot;) )</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="stringliteral">pm.matlab.show()</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="stringliteral">pm.matlab.show(&#39;pm.sys.path.abs(&quot;</span>D:\A\..\B<span class="stringliteral">&quot;)&#39;)</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="stringliteral">pm.matlab.show( pm.sys.path.abs(&quot;</span>D:\A\..\B<span class="stringliteral">&quot;) )</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="stringliteral">pm.matlab.show()</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="stringliteral">pm.matlab.show(&#39;pm.sys.path.abs(&quot;</span>\\Server\Folder\Sub\..\File.ext<span class="stringliteral">&quot;)&#39;)</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="stringliteral">pm.matlab.show( pm.sys.path.abs(&quot;</span>\\Server\Folder\Sub\..\File.ext<span class="stringliteral">&quot;) )</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="stringliteral">pm.matlab.show()</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="stringliteral">pm.matlab.show(&#39;pm.sys.path.abs([&quot;</span>..<span class="stringliteral">&quot;, &quot;</span><span class="keyword">new</span><span class="stringliteral">&quot;])&#39;)</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="stringliteral">pm.matlab.show( pm.sys.path.abs([&quot;</span>..<span class="stringliteral">&quot;, &quot;</span><span class="keyword">new</span><span class="stringliteral">&quot;]) )</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="stringliteral">pm.matlab.show()</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="stringliteral">pm.matlab.show(&quot;</span>pm.sys.path.abs({<span class="stringliteral">&#39;..&#39;</span>, <span class="stringliteral">&#39;new&#39;</span>})<span class="stringliteral">&quot;)</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="stringliteral">pm.matlab.show( pm.sys.path.abs({&#39;..&#39;, &#39;new&#39;}) )</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="stringliteral">pm.matlab.show()</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="stringliteral">pm.matlab.show(&#39;pm.sys.path.abs(&quot;</span>.<span class="stringliteral">&quot;, &quot;</span>fat<span class="stringliteral">&quot;)&#39;)</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="stringliteral">pm.matlab.show( pm.sys.path.abs(&quot;</span>.<span class="stringliteral">&quot;, &quot;</span>fat<span class="stringliteral">&quot;) )</span></div>
+<div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
+</div><!-- fragment --> <br  />
+<a class="anchor" id="output-abs"></a><b>Example output</b> <a href="#output-abs">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>cd(tempdir); pwd</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>ans =</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="stringliteral">&#39;/tmp&#39;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>pm.sys.path.abs(<span class="stringliteral">&quot;File.Ext&quot;</span>)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>/tmp/File.Ext</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>pm.sys.path.abs(<span class="stringliteral">&quot;..\File.Ext&quot;</span>)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>/File.Ext</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>pm.sys.path.abs(<span class="stringliteral">&quot;..\..\File.Ext&quot;</span>)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>/File.Ext</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>pm.sys.path.abs(<span class="stringliteral">&quot;.\File.Ext&quot;</span>)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>/tmp/File.Ext</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>pm.sys.path.abs(<span class="stringliteral">&quot;*.txt&quot;</span>)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>/tmp<span class="comment">/*.txt</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"></span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">pm.sys.path.abs(&quot;..&quot;)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"></span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">pm.sys.path.abs(&quot;..\..\..&quot;)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"></span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">pm.sys.path.abs(&quot;Folder\&quot;)</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">/tmp/Folder/</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"></span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">pm.sys.path.abs(&quot;D:\A\..\B&quot;)</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/tmp/D:/B</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"></span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">pm.sys.path.abs(&quot;\\Server\Folder\Sub\..\File.ext&quot;)</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">//Server/Folder/File.ext</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"></span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">pm.sys.path.abs([&quot;..&quot;, &quot;new&quot;])</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">    &quot;/&quot;    &quot;/tmp/new&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"></span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">pm.sys.path.abs({&#39;..&#39;, &#39;new&#39;})</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">{1}</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">/</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">{2}</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">/tmp/new</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"></span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">pm.sys.path.abs(&quot;.&quot;, &quot;fat&quot;)</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/tmp</span></div>
+</div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-abs"></a><b>Final Remarks</b> <a href="#final-abs">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sys/+path/abs.m#L74 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sys/+path/abs.m#L94 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -244,19 +382,65 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000187">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 5:15 AM, University of Texas at Arlington<br  />
+<p>This file is based on a functionality originally developed by Jan Simon.</p>
+<pre class="fragment">///      Copyright (c) 2016, Jan Simon
+///      All rights reserved.
+///
+///      Redistribution and use in source and binary forms, with or without
+///      modification, are permitted provided that the following conditions are met:
+///
+///      * Redistributions of source code must retain the above copyright notice, this
+///        list of conditions and the following disclaimer.
+///
+///      * Redistributions in binary form must reproduce the above copyright notice,
+///        this list of conditions and the following disclaimer in the documentation
+///        and/or other materials provided with the distribution
+///      * Neither the name of  nor the names of its
+///        contributors may be used to endorse or promote products derived from this
+///        software without specific prior written permission.
+///      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+///      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+///      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+///      DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE
+///      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+///      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+///      SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+///      CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+///      OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+///      OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+///
+///      Tested: MATLAB 2009a, 2015b(32/64), 2016b, 2018b, Win7/10
+///              Compiler: LCC2.4/3.8, BCC5.5, OWC1.8, MSVC2008/2010
+///      Assumed Compatibility: higher MATLAB versions
+///      Author: Jan Simon, Heidelberg, (C) 2009-2019 matlab.2010(a)n(MINUS)simon.de
+///
+///      $JRev: R-M V:038 Sum:C/6JMzUYsYsc Date:19-May-2019 17:25:55 $
+///      $License: BSD (use/copy/change/redistribute on own risk, mention the author) $
+///      $UnitTest: uTest_getFullPath $
+///      $File: Tools\GLFile\pm.sys.path.abs.m $
+///      History:
+///      001: 20-Apr-2010 22:28, Successor of Rel2AbsPath.
+///      010: 27-Jul-2008 21:59, Consider leading separator in M-version also.
+///      011: 24-Jan-2011 12:11, Cell strings, '~File' under linux.
+///           Check of input types in the M-version.
+///      015: 31-Mar-2011 10:48, BUGFIX: Accept [] as input as in the Mex version.
+///           Thanks to Jiro Doke, who found this bug by running the test function for
+///           the M-version.
+///      020: 18-Oct-2011 00:57, BUGFIX: Linux version created bad results.
+///           Thanks to Daniel.
+///      024: 10-Dec-2011 14:00, Care for long names under Windows in M-version.
+///           Improved the unittest function for Linux. Thanks to Paul Sexton.
+///      025: 09-Aug-2012 14:00, In MEX: Paths starting with "\\" can be non-UNC.
+///           The former version treated "\\?\C:\&lt;longpath&gt;\file" as UNC path and
+///           replied "\\?\UNC\?\C:\&lt;longpath&gt;\file".
+///      032: 12-Jan-2013 21:16, 'auto', 'lean' and 'fat' style.
+///      038: 19-May-2019 17:25, BUGFIX, Thanks HHang Li, "File(7:..." -&gt; "File(8:..."
+///  </pre><p> <br  />
+</p>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000189">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 5:15 AM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
- This file is based on a functionality originally developed by Jan Simon.</dd></dl>
-<p >Copyright (c) 2016, Jan Simon All rights reserved.</p>
-<p >Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
-<ul>
-<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
-<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution</li>
-<li>Neither the name of nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</li>
-</ul>
-<p >Tested: MATLAB 2009a, 2015b(32/64), 2016b, 2018b, Win7/10 Compiler: LCC2.4/3.8, BCC5.5, OWC1.8, MSVC2008/2010 Assumed Compatibility: higher MATLAB versions Author: Jan Simon, Heidelberg, (C) 2009-2019 matlab.2010(a)n(MINUS)simon.de</p>
-<p >$JRev: R-M V:038 Sum:C/6JMzUYsYsc Date:19-May-2019 17:25:55 $ $License: BSD (use/copy/change/redistribute on own risk, mention the author) $ $UnitTest: uTest_getFullPath $ $File: Tools\GLFile\pm.sys.path.abs.m $ History: 001: 20-Apr-2010 22:28, Successor of Rel2AbsPath. 010: 27-Jul-2008 21:59, Consider leading separator in M-version also. 011: 24-Jan-2011 12:11, Cell strings, '~File' under linux. Check of input types in the M-version. 015: 31-Mar-2011 10:48, BUGFIX: Accept [] as input as in the Mex version. Thanks to Jiro Doke, who found this bug by running the test function for the M-version. 020: 18-Oct-2011 00:57, BUGFIX: Linux version created bad results. Thanks to Daniel. 024: 10-Dec-2011 14:00, Care for long names under Windows in M-version. Improved the unittest function for Linux. Thanks to Paul Sexton. 025: 09-Aug-2012 14:00, In MEX: Paths starting with "\\" can be non-UNC. The former version treated "\\?\C:\&lt;longpath&gt;\file" as UNC path and replied "\\?\UNC\?\C:\&lt;longpath&gt;\file". 032: 12-Jan-2013 21:16, 'auto', 'lean' and 'fat' style. 038: 19-May-2019 17:25, BUGFIX, Thanks HHang Li, "File(7:..." -&gt; "File(8:..." </p>
+ </dd></dl>
 
 </div>
 </div>
@@ -266,7 +450,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_1a54d7f1a807380c05b535e170b3b863.html">+sys</a></li><li class="navelem"><a class="el" href="dir_95cf40ee0b095ce667d66c91ca3f11ae.html">+path</a></li><li class="navelem"><a class="el" href="abs_8m.html">abs.m</a></li>
-        <li class="footer">Generated on Tue Jul 2 2024 21:16:00 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Fri Jul 5 2024 10:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

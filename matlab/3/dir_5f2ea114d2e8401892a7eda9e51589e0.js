@@ -2,7 +2,6 @@ var dir_5f2ea114d2e8401892a7eda9e51589e0 =
 [
     [ "+array", "dir_1b6a14a69736c2d1dbf6a7d99ce36b4a.html", "dir_1b6a14a69736c2d1dbf6a7d99ce36b4a" ],
     [ "+data", "dir_f52c1e74ea44b46933de48ddc06bec7f.html", "dir_f52c1e74ea44b46933de48ddc06bec7f" ],
-    [ "+fit", "dir_c9701723fea82abc2ca4a55a98a51e38.html", "dir_c9701723fea82abc2ca4a55a98a51e38" ],
     [ "+geom", "dir_05729935b8d7cc9b82d9efdbe5fea313.html", "dir_05729935b8d7cc9b82d9efdbe5fea313" ],
     [ "+introspection", "dir_f9605479ce94a868b8c276b182b85c2e.html", "dir_f9605479ce94a868b8c276b182b85c2e" ],
     [ "+io", "dir_854d52beedff43dae06452a3ce5eadab.html", "dir_854d52beedff43dae06452a3ce5eadab" ],

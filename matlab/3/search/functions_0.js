@@ -13,7 +13,7 @@ var searchData=
   ['append_5fpdfs_10',['append_pdfs',['../append__pdfs_8m.html#aea8f7f5d624cc6dfca7e2680f8699841',1,'append_pdfs.m']]],
   ['arch_11',['arch',['../arch_8m.html#a6bb561de6d23e1ae02ae4e7378fd7581',1,'arch.m']]],
   ['authors_12',['authors',['../authors_8m.html#ad5933f73f67bbfe38c80ad2ac8cc9ddf',1,'authors.m']]],
-  ['autocorr_13',['AutoCorr',['../classAutoCorr.html#af64664dd2c4895e2aef1313044b8a33b',1,'AutoCorr']]],
+  ['autocorr_13',['AutoCorr',['../classAutoCorr.html#ab5476b1d48756287609e1bb9b95a307d',1,'AutoCorr']]],
   ['auxil_14',['auxil',['../auxil_8m.html#a984acc59f890ee8926535f953f913eea',1,'auxil.m']]],
   ['axes_15',['Axes',['../classAxes.html#adc3e38949422b27b0fcd944956a76286',1,'Axes']]]
 ];

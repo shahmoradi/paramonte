@@ -141,44 +141,64 @@ $(document).ready(function(){initNavTree('split2real_8m_source.html',''); initRe
 </div><!--header-->
 <div class="contents">
 <a href="split2real_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>%&gt;  \brief</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Return an integer triplet <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> from the input dot-separated <span class="keywordtype">string</span>.</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;  This function is primarily used <span class="keywordflow">for</span> splitting a dot-separated <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> <span class="keywordtype">string</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;  into a <span class="keywordtype">double</span> vector of whole-number <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>.</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  \param[in]  str :   The input MATLAB <span class="keywordtype">string</span> containing a dot-separated string,</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;                      such as software <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> corresponding to major, minor, and patch versions.</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;  </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  \return</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;  `real`          :   The output MATLAB vector of size ``ndot + 1`` containing the</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;                      whole-number versions retrieved from the input <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> string,</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;                      where ``ndot`` represents the number of dots in the input <span class="keywordtype">string</span>.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Return a vector of real values by splitting the</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;  input ``str`` <span class="keywordtype">string</span> by the specified input ``sep``.&lt;br&gt;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  \details</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  This function is primarily used <span class="keywordflow">for</span> splitting a</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;  <span class="keywordtype">string</span> into a <span class="keywordtype">double</span> vector of real numbers.&lt;br&gt;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  \param[in]  str :   The input scalar MATLAB <span class="keywordtype">string</span> containing from <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> the numbers must be retrieved</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;                      such as software <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> corresponding to major, minor, and patch versions.&lt;br&gt;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;  \param[in]  sep :   The input scalar MATLAB <span class="keywordtype">string</span> containing a <span class="keywordtype">string</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;                      to be used the separator in splitting.&lt;br&gt;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;  \interface{<a class="code hl_function" href="split2real_8m.html#a0ead684d81a66df92d6aef561475d062">split2real</a>}</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;  \code{.m}</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;      real = pm.str.split2real()</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;  \endcode</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;  \return</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;  ``real``        :   The output MATLAB vector of size ``nsep + 1`` containing</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                      the numbers retrieved from the input <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> string, where ``nsep``</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                      represents the number of input ``sep`` found in the input <span class="keywordtype">string</span>.&lt;br&gt;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;                      If the specified input ``sep`` is empty ``[]``, the <span class="keywordflow">default</span> value is used.&lt;br&gt;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;                      (**optional**, <span class="keywordflow">default</span> = ``<span class="stringliteral">&quot;.&quot;</span>``)</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;  \final{<a class="code hl_function" href="split2real_8m.html#a0ead684d81a66df92d6aef561475d062">split2real</a>}</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;  \author</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;  \JoshuaOsborne, May 21 2024, 4:41 AM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="split2real_8m.html#a0ead684d81a66df92d6aef561475d062">   27</a></span>function real = <a class="code hl_function" href="split2real_8m.html#a0ead684d81a66df92d6aef561475d062">split2real</a>(str)</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    real = str2double(<span class="keywordtype">string</span>(strsplit(str, <span class="stringliteral">&quot;.&quot;</span>)));</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>end</div>
-<div class="ttc" id="a_09os_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div><div class="ttdoc">Return a list of MATLAB strings containing the names of OS platforms supported by the ParaMonte MATLA...</div></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;  \interface{<a class="code hl_function" href="split2real_8m.html#a64dbc1f5f181d273a2b9f88aaeeed966">split2real</a>}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;  \code{.m}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;      real = pm.str.split2real(str)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;      real = pm.str.split2real(str, [])</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;      real = pm.str.split2real(str, sep)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;  \endcode</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;  \final{<a class="code hl_function" href="split2real_8m.html#a64dbc1f5f181d273a2b9f88aaeeed966">split2real</a>}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;  \example{<a class="code hl_function" href="split2real_8m.html#a64dbc1f5f181d273a2b9f88aaeeed966">split2real</a>}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;  \include{lineno} example/str/<a class="code hl_function" href="split2real_8m.html#a64dbc1f5f181d273a2b9f88aaeeed966">split2real</a>/main.m</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;  \output{<a class="code hl_function" href="split2real_8m.html#a64dbc1f5f181d273a2b9f88aaeeed966">split2real</a>}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;  \include{lineno} example/str/<a class="code hl_function" href="split2real_8m.html#a64dbc1f5f181d273a2b9f88aaeeed966">split2real</a>/main.out.m</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;  \author</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;  \JoshuaOsborne, May 21 2024, 4:41 AM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="split2real_8m.html#a64dbc1f5f181d273a2b9f88aaeeed966">   41</a></span>function real = <a class="code hl_function" href="split2real_8m.html#a64dbc1f5f181d273a2b9f88aaeeed966">split2real</a>(str, sep)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span>  nargin &lt; 2</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        sep = [];</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    end</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span>  isempty(sep)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        sep = <span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    end</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    real = str2double(<span class="keywordtype">string</span>(strsplit(str, sep)));</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>end</div>
 <div class="ttc" id="a_09update_2version_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
-<div class="ttc" id="asplit2real_8m_html_a0ead684d81a66df92d6aef561475d062"><div class="ttname"><a href="split2real_8m.html#a0ead684d81a66df92d6aef561475d062">split2real</a></div><div class="ttdeci">function split2real(in str)</div><div class="ttdoc">Return an integer triplet list from the input dot-separated string. This function is primarily used f...</div></div>
+<div class="ttc" id="asplit2real_8m_html_a64dbc1f5f181d273a2b9f88aaeeed966"><div class="ttname"><a href="split2real_8m.html#a64dbc1f5f181d273a2b9f88aaeeed966">split2real</a></div><div class="ttdeci">function split2real(in str, in sep)</div><div class="ttdoc">Return a vector of real values by splitting the input str string by the specified input sep.</div></div>
+<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_b051662a69b2d462e6e42f329ca2dcb1.html">+str</a></li><li class="navelem"><a class="el" href="split2real_8m.html">split2real.m</a></li>
-        <li class="footer">Generated on Tue Jul 2 2024 21:15:59 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Fri Jul 5 2024 10:36:49 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
