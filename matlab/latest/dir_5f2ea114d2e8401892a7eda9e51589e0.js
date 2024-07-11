@@ -8,6 +8,7 @@ var dir_5f2ea114d2e8401892a7eda9e51589e0 =
     [ "+lib", "dir_0c006b8a7b0a63b87b86162ded07c4ff.html", "dir_0c006b8a7b0a63b87b86162ded07c4ff" ],
     [ "+math", "dir_50f4aa4d358155d60ba77656b75f520d.html", "dir_50f4aa4d358155d60ba77656b75f520d" ],
     [ "+matlab", "dir_65aa69a0c9cb3679b6450dce0a5cdc12.html", "dir_65aa69a0c9cb3679b6450dce0a5cdc12" ],
+    [ "+matrix", "dir_d22bc94e83486d739c3841c1ed42a928.html", "dir_d22bc94e83486d739c3841c1ed42a928" ],
     [ "+os", "dir_529b7572393d110e7adef20dde644233.html", "dir_529b7572393d110e7adef20dde644233" ],
     [ "+sampling", "dir_870970980bbbd119e0b6d78557b3d4cb.html", "dir_870970980bbbd119e0b6d78557b3d4cb" ],
     [ "+sort", "dir_9cd36cbda634a7eb8617342b70552436.html", "dir_9cd36cbda634a7eb8617342b70552436" ],

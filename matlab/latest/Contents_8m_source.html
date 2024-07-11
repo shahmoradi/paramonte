@@ -308,7 +308,7 @@ $(document).ready(function(){initNavTree('Contents_8m_source.html',''); initResi
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>%&gt;  +   The abbreviation `hell`     stands <span class="keywordflow">for</span> **Hellinger** in statistical distance computations. Example: `getDisHellSq()`.</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>%&gt;  +   The abbreviation `herm`     stands <span class="keywordflow">for</span> **hermitian** in matrix algebra.</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>%&gt;  +   The abbreviation `ice`      stands <span class="keywordflow">for</span> **Internal Compiler Error**. It typically appears in the bug descriptions tagged via Doxygen command &lt;tt&gt;\\bug&lt;/tt&gt;.</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>%&gt;  +   The abbreviation `inv`      stands <span class="keywordflow">for</span> **inverse**. Example: `getMatInv()`.</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>%&gt;  +   The abbreviation `<a class="code hl_function" href="inv_8m.html#ac509bb38155c4ae02d2d4eec7017af73">inv</a>`      stands <span class="keywordflow">for</span> **inverse**. Example: `getMatInv()`.</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>%&gt;  +   The abbreviation `ks`       stands <span class="keywordflow">for</span> **Kolmogorov-Smirnov** test. Example: `getProbKS()`.</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>%&gt;  +   The abbreviation `<a class="code hl_function" href="lin_8m.html#a51376849eef26a184229da7a38e8a5ac">lin</a>`      stands <span class="keywordflow">for</span> **linear**. Example: `getLinSpace()`.</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>%&gt;  +   The abbreviation `low`      stands <span class="keywordflow">for</span> **lower triangle of a matrix** or **lower limits**. Example: `setChoLow()`.</div>
@@ -459,8 +459,8 @@ $(document).ready(function(){initNavTree('Contents_8m_source.html',''); initResi
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>%&gt;</div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>%&gt;  \brief</div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>%&gt;  Once you assign the desired simulation specifications to the corresponding</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>%&gt;  attributes within the component `spec` of an object of class ``pm.sampling.<a class="code hl_class" href="classParadram.html">Paradram</a>``,</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>%&gt;  call the ParaDRAM sampler via the object method ``pm.sampling.<a class="code hl_class" href="classParadram.html">Paradram</a>.run()``.&lt;br&gt;</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>%&gt;  attributes within the component `spec` of an object of class [pm.sampling.<a class="code hl_class" href="classParadram.html">Paradram</a>](@ref <a class="code hl_class" href="classParadram.html">Paradram</a>),</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>%&gt;  call the ParaDRAM sampler via the object method [pm.sampling.<a class="code hl_class" href="classParadram.html">Paradram</a>.run()](@ref <a class="code hl_class" href="classParadram.html">Paradram</a>::run).&lt;br&gt;</div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>%&gt;</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>%&gt;  While the constructor of this class does not take any input arguments,</div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>%&gt;  all ParaDRAM simulation specifications can be set after creating the object.&lt;br&gt;</div>
@@ -512,7 +512,7 @@ $(document).ready(function(){initNavTree('Contents_8m_source.html',''); initResi
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>%&gt;                  );</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>%&gt;      samples = sampler.readSample();</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>%&gt;      sample = samples{1};</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>%&gt;      tile = pm.vis.tile.Line(sample.df);</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>%&gt;      tile = pm.vis.TileLine(sample.df);</div>
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>%&gt;      tile.make(<span class="stringliteral">&quot;coly&quot;</span>, sample.sampleLogFuncColIndex + 1 : sample.sampleLogFuncColIndex + 4, <span class="stringliteral">&quot;colc&quot;</span>, <span class="stringliteral">&quot;sampleLogFunc&quot;</span>);</div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>%&gt;</div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>%&gt;  \endcode</div>
@@ -721,6 +721,7 @@ $(document).ready(function(){initNavTree('Contents_8m_source.html',''); initResi
 <div class="ttc" id="acopy_8m_html_a3718abda67edd88f029c9887fa20489a"><div class="ttname"><a href="copy_8m.html#a3718abda67edd88f029c9887fa20489a">copy</a></div><div class="ttdeci">function copy(in from, in to, in fields)</div><div class="ttdoc">Copy the contents of the struct/object from to the struct/object to recursively and without destroyin...</div></div>
 <div class="ttc" id="agetLogFunc_8m_html_a77e1a6b154cc75d50b224f2e00cc6b8b"><div class="ttname"><a href="getLogFunc_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b">getLogFunc</a></div><div class="ttdeci">function getLogFunc(in point)</div></div>
 <div class="ttc" id="ahref_8m_html_ab28e4ee901c69380281aa173544fa51b"><div class="ttname"><a href="href_8m.html#ab28e4ee901c69380281aa173544fa51b">href</a></div><div class="ttdeci">function href(in url)</div><div class="ttdoc">Return an HTML-style decoration of the input URL if the ParaMonte MATLAB library is used in GUI,...</div></div>
+<div class="ttc" id="ainv_8m_html_ac509bb38155c4ae02d2d4eec7017af73"><div class="ttname"><a href="inv_8m.html#ac509bb38155c4ae02d2d4eec7017af73">inv</a></div><div class="ttdeci">function inv(in cholow)</div><div class="ttdoc">Generate and return the inverse of a positive-definite matrix whose Lower-triangular Cholesky factori...</div></div>
 <div class="ttc" id="alin_8m_html_a51376849eef26a184229da7a38e8a5ac"><div class="ttname"><a href="lin_8m.html#a51376849eef26a184229da7a38e8a5ac">lin</a></div><div class="ttdeci">function lin()</div><div class="ttdoc">Return true if the current OS is Linux.</div></div>
 <div class="ttc" id="aparallel_8m_html_a01b198603048be87b719ba0cbd8b3864"><div class="ttname"><a href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a></div><div class="ttdeci">function parallel()</div><div class="ttdoc">Return a scalar MATLAB logical that is true if and only if the current installation of MATLAB contain...</div></div>
 <div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
@@ -732,7 +733,7 @@ $(document).ready(function(){initNavTree('Contents_8m_source.html',''); initResi
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="Contents_8m.html">Contents.m</a></li>
-        <li class="footer">Generated on Fri Jul 5 2024 10:36:48 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Jul 11 2024 09:52:09 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

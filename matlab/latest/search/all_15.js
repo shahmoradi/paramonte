@@ -14,5 +14,5 @@ var searchData=
   ['win_11',['win',['../win_8m.html#a08bde0314846557f33356b49576914c5',1,'win.m']]],
   ['win_2em_12',['win.m',['../win_8m.html',1,'']]],
   ['window_13',['window',['../classCascade.html#af2a01d6e7f55f39db7f18e52e4445b75',1,'Cascade']]],
-  ['workspace_14',['workspace',['../classEllipse3.html#a0152a1e0c3fa3ff51a4b8334b914bda5',1,'Ellipse3']]]
+  ['workspace_14',['workspace',['../classSubplotEllipse3.html#a52ab14da3133932e1a5aa075b6fa2bc1',1,'SubplotEllipse3']]]
 ];

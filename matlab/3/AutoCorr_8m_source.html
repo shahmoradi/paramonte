@@ -160,7 +160,7 @@ $(document).ready(function(){initNavTree('AutoCorr_8m_source.html',''); initResi
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;  \author</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;  \JoshuaOsborne, May 21 2024, 4:06 AM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classAutoCorr.html">   23</a></span>classdef <a class="code hl_class" href="classAutoCorr.html">AutoCorr</a> &lt; pm.matlab.Handle</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
@@ -267,7 +267,7 @@ $(document).ready(function(){initNavTree('AutoCorr_8m_source.html',''); initResi
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        %&gt;</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        %&gt;  \author</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        %&gt;  \JoshuaOsborne, May 21 2024, 4:10 AM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        %&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        %&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        %&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        function self = <a class="code hl_class" href="classAutoCorr.html">AutoCorr</a>(df, numlag, numstd)</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keywordflow">if</span> nargin &lt; 3</div>
@@ -299,34 +299,34 @@ $(document).ready(function(){initNavTree('AutoCorr_8m_source.html',''); initResi
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        %&gt;  corresponding to the output of <span class="keyword">this</span> method</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        %&gt;  must be set explicitly manually.&lt;br&gt;</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        %&gt;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        %&gt;  \param[in]  df      :   The input MATLAB matrix or table of rank ``2``</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        %&gt;                          containing the data as ``ncol`` columns of ``nrow``</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        %&gt;                          observations whose autocorrelation must be computed.&lt;br&gt;</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        %&gt;</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        %&gt;  \param[in]  numlag :   The input positive scalar MATLAB integer representing the</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        %&gt;                          number of lags to be used in computing the autocorrelation.&lt;br&gt;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        %&gt;                          The <span class="keywordflow">default</span> value will be used <span class="keywordflow">if</span> the input ``numlag``</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        %&gt;                          is unspecified or empty ``[]``.&lt;br&gt;</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        %&gt;                          (**optional**, <span class="keywordflow">default</span> = ``size(df, 1) - 1``)</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        %&gt;</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        %&gt;  \param[in]  numstd  :   The input positive scalar MATLAB <span class="keywordtype">double</span> representing the</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        %&gt;                          number of standard deviations to be used in computing the</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        %&gt;                          lower and upper significance levels of the autocorrelation.&lt;br&gt;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        %&gt;                          This argument is directly passed to the corresponding argument</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        %&gt;                          of the MATLAB intrinsic ``autocorr()`` in the Econometrics Toolbox.&lt;br&gt;</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        %&gt;                          The <span class="keywordflow">default</span> value will be used <span class="keywordflow">if</span> the input ``numstd`` is empty ``[]``.&lt;br&gt;</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        %&gt;                          (**optional**, <span class="keywordflow">default</span> = ``1``)</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        %&gt;  \param[inout]   self    :   The input/output parent <span class="keywordtype">object</span> of <span class="keyword">class</span> [pm.stats.AutoCorr](@ref <a class="code hl_class" href="classAutoCorr.html">AutoCorr</a>)</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        %&gt;                              <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> is **implicitly** passed to <span class="keyword">this</span> dynamic method (not by the user).&lt;br&gt;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        %&gt;  \param[in]      df      :   The input MATLAB matrix or table of rank ``2``</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        %&gt;                              containing the data as ``ncol`` columns of ``nrow``</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        %&gt;                              observations whose autocorrelation must be computed.&lt;br&gt;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        %&gt;  \param[in]      numlag  :   The input positive scalar MATLAB integer representing the</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        %&gt;                              number of lags to be used in computing the autocorrelation.&lt;br&gt;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        %&gt;                              The <span class="keywordflow">default</span> value will be used <span class="keywordflow">if</span> the input ``numlag``</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        %&gt;                              is unspecified or empty ``[]``.&lt;br&gt;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        %&gt;                              (**optional**, <span class="keywordflow">default</span> = ``size(df, 1) - 1``)</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        %&gt;  \param[in]      numstd  :   The input positive scalar MATLAB <span class="keywordtype">double</span> representing the</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        %&gt;                              number of standard deviations to be used in computing the</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        %&gt;                              lower and upper significance levels of the autocorrelation.&lt;br&gt;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        %&gt;                              This argument is directly passed to the corresponding argument</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        %&gt;                              of the MATLAB intrinsic ``autocorr()`` in the Econometrics Toolbox.&lt;br&gt;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        %&gt;                              The <span class="keywordflow">default</span> value will be used <span class="keywordflow">if</span> the input ``numstd`` is empty ``[]``.&lt;br&gt;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        %&gt;                              (**optional**, <span class="keywordflow">default</span> = ``1``)</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        %&gt;</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        %&gt;  \<span class="keywordflow">return</span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        %&gt;  ``val``             :   The output MATLAB ``table`` of size ``numlag + 1``</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        %&gt;                          containing the autocorrelation from lag ``0`` to ``numlag``.&lt;br&gt;</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        %&gt;  ``lag``             :   The output MATLAB ``table`` of size ``numlag + 1``</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        %&gt;                          containing the autocorrelation lags from ``0`` to ``numlag``.&lt;br&gt;</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        %&gt;  ``bnd``             :   The output MATLAB ``table`` of ``size(df, 2)`` rows by one column</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        %&gt;                          containing the absolute ``numstd``-significance level of the</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        %&gt;                          computed autocorrelations. Any autocorrelation value whose</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        %&gt;                          magnitude is smaller than the corresponding ``bnd`` element</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        %&gt;                          can be considered insignificant and mere fluctuation.&lt;br&gt;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        %&gt;  ``val``                 :   The output MATLAB ``table`` of size ``numlag + 1``</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        %&gt;                              containing the autocorrelation from lag ``0`` to ``numlag``.&lt;br&gt;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        %&gt;  ``lag``                 :   The output MATLAB ``table`` of size ``numlag + 1``</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        %&gt;                              containing the autocorrelation lags from ``0`` to ``numlag``.&lt;br&gt;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        %&gt;  ``bnd``                 :   The output MATLAB ``table`` of ``size(df, 2)`` rows by one column</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        %&gt;                              containing the absolute ``numstd``-significance level of the</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        %&gt;                              computed autocorrelations. Any autocorrelation value whose</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        %&gt;                              magnitude is smaller than the corresponding ``bnd`` element</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        %&gt;                              can be considered insignificant and mere fluctuation.&lt;br&gt;</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        %&gt;</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        %&gt;  \interface{get}</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        %&gt;  \code{.m}</div>
@@ -348,7 +348,7 @@ $(document).ready(function(){initNavTree('AutoCorr_8m_source.html',''); initResi
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        %&gt;</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        %&gt;  \author</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        %&gt;  \JoshuaOsborne, May 21 2024, 4:14 AM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        %&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        %&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        %&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        function [val, lag, bnd] = get(self, df, numlag, numstd)</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            <span class="keywordflow">if</span> nargin &lt; 2</div>
@@ -419,7 +419,7 @@ $(document).ready(function(){initNavTree('AutoCorr_8m_source.html',''); initResi
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_5f2f7d6d6a421f083844944f36109908.html">+stats</a></li><li class="navelem"><a class="el" href="AutoCorr_8m.html">AutoCorr.m</a></li>
-        <li class="footer">Generated on Fri Jul 5 2024 10:36:49 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Jul 11 2024 09:52:10 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

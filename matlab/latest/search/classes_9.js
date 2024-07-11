@@ -7,5 +7,20 @@ var searchData=
   ['specdram_4',['SpecDRAM',['../classSpecDRAM.html',1,'']]],
   ['specmcmc_5',['SpecMCMC',['../classSpecMCMC.html',1,'']]],
   ['spinner_6',['Spinner',['../classSpinner.html',1,'']]],
-  ['subplot_7',['Subplot',['../classSubplot.html',1,'']]]
+  ['subplot_7',['Subplot',['../classSubplot.html',1,'']]],
+  ['subplotcontour_8',['SubplotContour',['../classSubplotContour.html',1,'']]],
+  ['subplotcontour3_9',['SubplotContour3',['../classSubplotContour3.html',1,'']]],
+  ['subplotcontourf_10',['SubplotContourf',['../classSubplotContourf.html',1,'']]],
+  ['subplotellipse_11',['SubplotEllipse',['../classSubplotEllipse.html',1,'']]],
+  ['subplotellipse3_12',['SubplotEllipse3',['../classSubplotEllipse3.html',1,'']]],
+  ['subplotheatmap_13',['SubplotHeatmap',['../classSubplotHeatmap.html',1,'']]],
+  ['subplothistfit_14',['SubplotHistfit',['../classSubplotHistfit.html',1,'']]],
+  ['subplothistogram_15',['SubplotHistogram',['../classSubplotHistogram.html',1,'']]],
+  ['subplothistogram2_16',['SubplotHistogram2',['../classSubplotHistogram2.html',1,'']]],
+  ['subplotline_17',['SubplotLine',['../classSubplotLine.html',1,'']]],
+  ['subplotline3_18',['SubplotLine3',['../classSubplotLine3.html',1,'']]],
+  ['subplotlinescatter_19',['SubplotLineScatter',['../classSubplotLineScatter.html',1,'']]],
+  ['subplotlinescatter3_20',['SubplotLineScatter3',['../classSubplotLineScatter3.html',1,'']]],
+  ['subplotscatter_21',['SubplotScatter',['../classSubplotScatter.html',1,'']]],
+  ['subplotscatter3_22',['SubplotScatter3',['../classSubplotScatter3.html',1,'']]]
 ];

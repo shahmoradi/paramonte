@@ -157,19 +157,19 @@ $(document).ready(function(){initNavTree('Paradram_8m_source.html',''); initResi
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        %&gt;  \brief</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        %&gt;  Generate and <span class="keywordflow">return</span> an instance of the serial and <a class="code hl_function" href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        %&gt;  Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        %&gt;  sampler of the ParaMonte MATLAB library.</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        %&gt;  sampler of the ParaMonte MATLAB library.&lt;br&gt;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        %&gt;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        %&gt;  \details</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        %&gt;  This function is the constructor of the [pm.sampling.Paradram](@ref <a class="code hl_class" href="classParadram.html">Paradram</a>) sampler <span class="keyword">class</span>.&lt;br&gt;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        %&gt;  Once you assign the desired simulation specifications to the corresponding attributes within the</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        %&gt;  component `spec` of an <span class="keywordtype">object</span> of <span class="keyword">class</span> ``pm.sampling.Paradram``, call the ParaDRAM sampler</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        %&gt;  via the <span class="keywordtype">object</span> method [pm.sampling.Paradram.run()](@ref <a class="code hl_function" href="classParadram.html#aa386416992b6113574a6d1ad0034fb13">Paradram::run</a>).&lt;br&gt;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        %&gt;  component `spec` of an <span class="keywordtype">object</span> of <span class="keyword">class</span> [pm.sampling.Paradram](@ref <a class="code hl_class" href="classParadram.html">Paradram</a>), call the ParaDRAM</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        %&gt;  sampler via the <span class="keywordtype">object</span> method [pm.sampling.Paradram.run()](@ref <a class="code hl_function" href="classParadram.html#aa386416992b6113574a6d1ad0034fb13">Paradram::run</a>).&lt;br&gt;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        %&gt;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        %&gt;  While the constructor of <span class="keyword">this</span> <span class="keyword">class</span> does not take any input arguments,</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        %&gt;  all ParaDRAM simulation specifications can be set after creating the <span class="keywordtype">object</span>.</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        %&gt;  all ParaDRAM simulation specifications can be set after creating the <span class="keywordtype">object</span>.&lt;br&gt;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        %&gt;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        %&gt;  \<span class="keywordflow">return</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        %&gt;  ``sampler`` :   The output scalar <span class="keywordtype">object</span> of <span class="keyword">class</span> [pm.sampling.Paradram](@ref <a class="code hl_class" href="classParadram.html">Paradram</a>).</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        %&gt;  ``sampler`` :   The output scalar <span class="keywordtype">object</span> of <span class="keyword">class</span> [pm.sampling.Paradram](@ref <a class="code hl_class" href="classParadram.html">Paradram</a>).&lt;br&gt;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        %&gt;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        %&gt;  \interface{<a class="code hl_class" href="classParadram.html">Paradram</a>}</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        %&gt;  \code{.m}</div>
@@ -231,7 +231,7 @@ $(document).ready(function(){initNavTree('Paradram_8m_source.html',''); initResi
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        %&gt;                  );</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        %&gt;      samples = sampler.readSample();</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        %&gt;      sample = samples{1};</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        %&gt;      tile = pm.vis.tile.Line(sample.df);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        %&gt;      tile = pm.vis.TileLine(sample.df);</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        %&gt;      tile.make(<span class="stringliteral">&quot;coly&quot;</span>, sample.sampleLogFuncColIndex + 1 : sample.sampleLogFuncColIndex + 4, <span class="stringliteral">&quot;colc&quot;</span>, <span class="stringliteral">&quot;sampleLogFunc&quot;</span>);</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        %&gt;</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        %&gt;  \endcode</div>
@@ -381,24 +381,25 @@ $(document).ready(function(){initNavTree('Paradram_8m_source.html',''); initResi
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        %&gt;</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        %&gt;  \example{himmelblau}</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        %&gt;  \include{lineno} example/sampling/<a class="code hl_class" href="classParadram.html">Paradram</a>/himmelblau/main.m</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        %&gt;  \include{lineno} example/sampling/<a class="code hl_class" href="classParadram.html">Paradram</a>/himmelblau/main.out.m</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        %&gt;  \vis{himmelblau}</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        %&gt;  \image html example/sampling/<a class="code hl_class" href="classParadram.html">Paradram</a>/himmelblau/<a class="code hl_class" href="classParadram.html">Paradram</a>.himmelblau.domain.png width=700</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        %&gt;  \image html example/sampling/<a class="code hl_class" href="classParadram.html">Paradram</a>/himmelblau/<a class="code hl_class" href="classParadram.html">Paradram</a>.himmelblau.traceplot.png width=700</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        %&gt;  \image html example/sampling/<a class="code hl_class" href="classParadram.html">Paradram</a>/himmelblau/<a class="code hl_class" href="classParadram.html">Paradram</a>.himmelblau.proposalCov.png width=700</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        %&gt;  \image html example/sampling/<a class="code hl_class" href="classParadram.html">Paradram</a>/himmelblau/<a class="code hl_class" href="classParadram.html">Paradram</a>.himmelblau.proposalAdaptation.png width=700</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        %&gt;</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        %&gt;  \final{<a class="code hl_class" href="classParadram.html">Paradram</a>}</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        %&gt;</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        %&gt;  \author</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        %&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        function self = <a class="code hl_class" href="classParadram.html">Paradram</a>()</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            self = self@pm.sampling.<a class="code hl_class" href="classSampler.html">Sampler</a>(&quot;ParaDRAM&quot;)</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        end</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="classParadram.html#ab6e5aae9d1d85b5277bb0f43cdf5c21d">  256</a></span>        failed = run(self, <a class="code hl_function" href="getLogFunc_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b">getLogFunc</a>, ndim);</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        chainMarkovList = readChainMarkov(self, pattern, sep);</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    end</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>end</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        %&gt;  \output{himmelblau}</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        %&gt;  \include{lineno} example/sampling/<a class="code hl_class" href="classParadram.html">Paradram</a>/himmelblau/main.out.m</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        %&gt;  \vis{himmelblau}</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        %&gt;  \image html example/sampling/<a class="code hl_class" href="classParadram.html">Paradram</a>/himmelblau/<a class="code hl_class" href="classParadram.html">Paradram</a>.himmelblau.domain.png width=700</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        %&gt;  \image html example/sampling/<a class="code hl_class" href="classParadram.html">Paradram</a>/himmelblau/<a class="code hl_class" href="classParadram.html">Paradram</a>.himmelblau.traceplot.png width=700</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        %&gt;  \image html example/sampling/<a class="code hl_class" href="classParadram.html">Paradram</a>/himmelblau/<a class="code hl_class" href="classParadram.html">Paradram</a>.himmelblau.proposalCov.png width=700</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        %&gt;  \image html example/sampling/<a class="code hl_class" href="classParadram.html">Paradram</a>/himmelblau/<a class="code hl_class" href="classParadram.html">Paradram</a>.himmelblau.proposalAdaptation.png width=700</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        %&gt;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        %&gt;  \final{<a class="code hl_class" href="classParadram.html">Paradram</a>}</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        %&gt;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        %&gt;  \author</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        %&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        function self = <a class="code hl_class" href="classParadram.html">Paradram</a>()</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            self = self@pm.sampling.<a class="code hl_class" href="classSampler.html">Sampler</a>(&quot;ParaDRAM&quot;)</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        end</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno"><a class="line" href="classParadram.html#ab6e5aae9d1d85b5277bb0f43cdf5c21d">  257</a></span>        failed = run(self, <a class="code hl_function" href="getLogFunc_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b">getLogFunc</a>, ndim);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        chainMarkovList = readChainMarkov(self, pattern, sep);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    end</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>end</div>
 <div class="ttc" id="a_09introspection_2verify_8m_html_ae339f0f4a1b7dbc72c7481f34b9555cc"><div class="ttname"><a href="_09introspection_2verify_8m.html#ae339f0f4a1b7dbc72c7481f34b9555cc">verify</a></div><div class="ttdeci">function verify(in varval, in vartype, in varsize, in varname)</div><div class="ttdoc">Verify the type and number of elements of the input varval match the specified input vartype and vars...</div></div>
 <div class="ttc" id="a_09update_2version_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
 <div class="ttc" id="aclassParadram_html"><div class="ttname"><a href="classParadram.html">Paradram</a></div><div class="ttdoc">This is the ParaDRAM class for generating instances of serial and parallel Delayed-Rejection Adaptive...</div><div class="ttdef"><b>Definition:</b> <a href="Paradram_8m_source.html#l00013">Paradram.m:14</a></div></div>
@@ -415,7 +416,7 @@ $(document).ready(function(){initNavTree('Paradram_8m_source.html',''); initResi
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_870970980bbbd119e0b6d78557b3d4cb.html">+sampling</a></li><li class="navelem"><a class="el" href="dir_402a553b8efbef9857276df0f51a8f12.html">@Paradram</a></li><li class="navelem"><a class="el" href="Paradram_8m.html">Paradram.m</a></li>
-        <li class="footer">Generated on Fri Jul 5 2024 10:36:49 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Jul 11 2024 09:52:10 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

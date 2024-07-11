@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('classTile.html',''); initResizable(); 
 <div class="contents">
 
 <p>This is the abstract class for generating instances of objects that contain the specifications of various types of tile figures.<br  />
- This is a generic class for generating figures containing multiple subplots (axes) of the same class.  
+  
  <a href="classTile.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Tile:</div>
@@ -189,9 +189,10 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This is the abstract class for generating instances of objects that contain the specifications of various types of tile figures.<br  />
- This is a generic class for generating figures containing multiple subplots (axes) of the same class. </p>
+ </p>
+<p >This is a generic class for generating figures containing multiple subplots (axes) of the same class. </p>
 
-<p class="definition">Definition at line <a class="el" href="Tile_8m_source.html#l00006">6</a> of file <a class="el" href="Tile_8m_source.html">Tile.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Tile_8m_source.html#l00008">8</a> of file <a class="el" href="Tile_8m_source.html">Tile.m</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a12758ae279b359412b43164a4a75d5ff" name="a12758ae279b359412b43164a4a75d5ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a12758ae279b359412b43164a4a75d5ff">&#9670;&nbsp;</a></span>Tile()</h2>
@@ -227,20 +228,21 @@ Data Fields</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>This class is not meant to be used directly by the end users. Instead, use the subclasses of this abstract class for visualizations.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">template</td><td>: The input scalar object of superclass <a class="el" href="classSubplot.html">pm.vis.subplot.Subplot</a>. It serves as the template based upon which all subplots are constructed.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">template</td><td>: The input scalar object of superclass <a class="el" href="classSubplot.html">pm.vis.Subplot</a>. It serves as the template based upon which all subplots are constructed.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object. If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classTile.html#a0f9093564760dc1792a79241a589317d" title="Configure the tile settings and specifications, make the tile, and return nothing.">make()</a></code> method.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>The input <code>varargin</code> can also contain the components of the <code>template</code> component of the parent object.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd><code>self</code> : The output scalar object of class <code>pm.vis.tile.Tile</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>self</code> : The output scalar object of class <a class="el" href="classTile.html">pm.vis.Tile</a>.</dd></dl>
 <p><br  />
-<a class="anchor" id="interface-Tile"></a><b>Possible calling interfaces</b> <a href="#interface-Tile">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">tile = pm.vis.tile.Tile(<span class="keyword">template</span>);</div>
+<a class="anchor" id="interface-Tile"></a><b>Possible calling interfaces</b> <a href="#interface-Tile">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">tile = pm.vis.Tile(<span class="keyword">template</span>);</div>
+<div class="line">tile = pm.vis.Tile(<span class="keyword">template</span>, varargin);</div>
 </div><!-- fragment --></dd></dl>
-<dl class="section note"><dt>Note</dt><dd>See the list of class attributes below, also those of the superclass <code>pm.vis.figure.Tiling</code>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>See the list of class attributes below, also those of the superclass <a class="el" href="classTiling.html">pm.vis.figure.Tiling</a>.</dd></dl>
 <p><br  />
 <a class="anchor" id="final-Tile"></a><b>Final Remarks</b> <a href="#final-Tile">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+tile/Tile.m#L73 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Tile.m#L76 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -255,7 +257,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000310">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:39 PM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000352">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:39 PM, University of Texas at Arlington<br  />
  </dd></dl>
 
 </div>
@@ -298,14 +300,16 @@ Help us justify its continued development and maintenance by acknowledging its b
 </dl>
 <dl class="section note"><dt>Note</dt><dd>The input <code>varargin</code> can also contain the components of the <code>subplot</code> component of the parent object.</dd></dl>
 <p><br  />
-<a class="anchor" id="interface-make"></a><b>Possible calling interfaces</b> <a href="#interface-make">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">t = pm.vis.tile.Tile.make(varargin);</div>
+<a class="anchor" id="interface-make"></a><b>Possible calling interfaces</b> <a href="#interface-make">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">tile = pm.vis.Tile(<span class="keyword">template</span>, varargin);</div>
+<div class="line">tile.make(varargin);</div>
+<div class="line">tile.make();</div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
-<a class="anchor" id="example-make"></a><b>Example usage</b> <a href="#example-make">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">t = pm.vis.tile.Tile(pm.vis.subplot.Line());
+<a class="anchor" id="example-make"></a><b>Example usage</b> <a href="#example-make">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">t = pm.vis.Tile(pm.vis.SubplotLine());
 t.make()
 </pre> <br  />
 <a class="anchor" id="final-make"></a><b>Final Remarks</b> <a href="#final-make">⛓</a> <hr  />
- If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+tile/Tile.m#L171 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Tile.m#L178 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -321,8 +325,8 @@ This software is available to the public under a highly permissive license.<br  
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000312">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:44 PM, University of Texas at Arlington<br  />
- <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000354">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:44 PM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
@@ -363,14 +367,16 @@ Help us justify its continued development and maintenance by acknowledging its b
   </dd>
 </dl>
 <p><br  />
-<a class="anchor" id="interface-premake"></a><b>Possible calling interfaces</b> <a href="#interface-premake">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">f = pm.vis.tile.Tile.premake(varargin);</div>
+<a class="anchor" id="interface-premake"></a><b>Possible calling interfaces</b> <a href="#interface-premake">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">tile = pm.vis.Tile(<span class="keyword">template</span>, varargin);</div>
+<div class="line">tile.premake(varargin);</div>
+<div class="line">tile.premake();</div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
-<a class="anchor" id="example-getBorder"></a><b>Example usage</b> <a href="#example-getBorder">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">f = pm.vis.tile.Tile(pm.vis.Line());
+<a class="anchor" id="example-getBorder"></a><b>Example usage</b> <a href="#example-getBorder">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">f = pm.vis.Tile(pm.vis.Line());
 f.premake("figure", {"color", "none"})
 </pre> <br  />
 <a class="anchor" id="final-premake"></a><b>Final Remarks</b> <a href="#final-premake">⛓</a> <hr  />
- If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+tile/Tile.m#L395 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Tile.m#L402 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -386,8 +392,8 @@ This software is available to the public under a highly permissive license.<br  
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000313">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:46 PM, University of Texas at Arlington<br  />
- <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000355">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:46 PM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
@@ -428,12 +434,14 @@ Help us justify its continued development and maintenance by acknowledging its b
 </dl>
 <dl class="section note"><dt>Note</dt><dd>The input <code>varargin</code> can also contain the components of the <code>subplot</code> component of the parent object.</dd></dl>
 <p><br  />
-<a class="anchor" id="interface-reset"></a><b>Possible calling interfaces</b> <a href="#interface-reset">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">pm.vis.tile.Tile.reset() % <a class="code hl_function" href="classTile.html#a93bbea68b380655fc32571f718878f75">reset</a> the tile to the <span class="keywordflow">default</span> settings.</div>
+<a class="anchor" id="interface-reset"></a><b>Possible calling interfaces</b> <a href="#interface-reset">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">tile = pm.vis.Tile(<span class="keyword">template</span>, varargin);</div>
+<div class="line">tile.reset(varargin)</div>
+<div class="line">tile.reset() % <a class="code hl_function" href="classTile.html#a93bbea68b380655fc32571f718878f75">reset</a> the tile to the <span class="keywordflow">default</span> settings.</div>
 <div class="ttc" id="aclassTile_html_a93bbea68b380655fc32571f718878f75"><div class="ttname"><a href="classTile.html#a93bbea68b380655fc32571f718878f75">Tile::reset</a></div><div class="ttdeci">function reset(in self, in varargin)</div><div class="ttdoc">Reset the properties of the tile to the original default settings. Use this method when you change ma...</div></div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-reset"></a><b>Final Remarks</b> <a href="#final-reset">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+tile/Tile.m#L111 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Tile.m#L116 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -448,8 +456,8 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000311">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:42 PM, University of Texas at Arlington<br  />
- <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000353">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:42 PM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
@@ -469,12 +477,12 @@ Help us justify its continued development and maintenance by acknowledging its b
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">template</td><td>: The scalar object of superclass <a class="el" href="classSubplot.html">pm.vis.subplot.Subplot</a> representing the template of the set of subplots to display. </td></tr>
+    <tr><td class="paramname">template</td><td>: The scalar object of superclass <a class="el" href="classSubplot.html">pm.vis.Subplot</a> representing the template of the set of subplots to display. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Tile_8m_source.html#l00018">18</a> of file <a class="el" href="Tile_8m_source.html">Tile.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Tile_8m_source.html#l00020">20</a> of file <a class="el" href="Tile_8m_source.html">Tile.m</a>.</p>
 
 </div>
 </div>
@@ -496,12 +504,12 @@ Help us justify its continued development and maintenance by acknowledging its b
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Tile_8m_source.html#l00027">27</a> of file <a class="el" href="Tile_8m_source.html">Tile.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Tile_8m_source.html#l00029">29</a> of file <a class="el" href="Tile_8m_source.html">Tile.m</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/matlab/main/+pm/+vis/+tile/<a class="el" href="Tile_8m_source.html">Tile.m</a></li>
+<li>src/matlab/main/+pm/+vis/<a class="el" href="Tile_8m_source.html">Tile.m</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -509,7 +517,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classTile.html">Tile</a></li>
-        <li class="footer">Generated on Fri Jul 5 2024 10:36:52 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Jul 11 2024 09:52:12 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

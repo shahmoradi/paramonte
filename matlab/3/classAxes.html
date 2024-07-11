@@ -195,7 +195,7 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This is the class for generating instances of objects that contain the specifications of various types of plots.<br  />
  </p>
-<p >This class primarily serves as the superclass for the visualization-ready subclass <a class="el" href="classSubplot.html">pm.vis.subplot.Subplot</a> and its subclasses, all accessible to the end users.<br  />
+<p >This class primarily serves as the superclass for the visualization-ready subclass <a class="el" href="classSubplot.html">pm.vis.Subplot</a> and its subclasses, all accessible to the end users.<br  />
 </p>
 <h2><a class="anchor" id="autotoc_md4"></a>
 Dynamic class attributes</h2>
@@ -205,7 +205,7 @@ Dynamic class attributes</h2>
 </p>
 <ol>
 <li>
-<p class="startli"><code>axes</code> (available for all subplots except <a class="el" href="classHeatmap.html">pm.vis.subplot.Heatmap</a>)<br  />
+<p class="startli"><code>axes</code> (available for all subplots except <a class="el" href="classSubplotHeatmap.html">pm.vis.SubplotHeatmap</a>)<br  />
 </p>
 <p class="interli">A MATLAB <code>struct</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>set()</code> for the current active axes object in the plot <code>gca()</code>.<br  />
 </p>
@@ -274,7 +274,7 @@ Dynamic class attributes</h2>
 </dd></dl>
 </li>
 <li>
-<p class="startli"><code>contour</code> (available only for <a class="el" href="classContour.html">pm.vis.subplot.Contour</a> axes types)</p>
+<p class="startli"><code>contour</code> (available only for <a class="el" href="classSubplotContour.html">pm.vis.SubplotContour</a> axes types)</p>
 <p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>contour</code>.<br  />
  The following are the default components of <code>contour</code>:<br  />
 </p>
@@ -312,7 +312,7 @@ Dynamic class attributes</h2>
 </dd></dl>
 </li>
 <li>
-<p class="startli"><code>contour3</code> (available only for <a class="el" href="classContour3.html">pm.vis.subplot.Contour3</a> axes types)</p>
+<p class="startli"><code>contour3</code> (available only for <a class="el" href="classSubplotContour3.html">pm.vis.SubplotContour3</a> axes types)</p>
 <p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>contour3</code>.<br  />
  The following are the default components of <code>contour3</code>:<br  />
 </p>
@@ -351,7 +351,7 @@ Dynamic class attributes</h2>
 </dd></dl>
 </li>
 <li>
-<p class="startli"><code>contourf</code> (available only for <a class="el" href="classContourf.html">pm.vis.subplot.Contourf</a> axes types)</p>
+<p class="startli"><code>contourf</code> (available only for <a class="el" href="classSubplotContourf.html">pm.vis.SubplotContourf</a> axes types)</p>
 <p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>contourf</code>.<br  />
  The following are the default components of <code>contourf</code>:<br  />
 </p>
@@ -390,7 +390,7 @@ Dynamic class attributes</h2>
 </dd></dl>
 </li>
 <li>
-<p class="startli"><code>histfit</code> (available only for <a class="el" href="classHistfit.html">pm.vis.subplot.Histfit</a> axes types)</p>
+<p class="startli"><code>histfit</code> (available only for <a class="el" href="classSubplotHistfit.html">pm.vis.SubplotHistfit</a> axes types)</p>
 <p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>histfit</code>.<br  />
  The following are the default components of <code>histfit</code>:<br  />
 </p>
@@ -423,7 +423,7 @@ Dynamic class attributes</h2>
 </dd></dl>
 </li>
 <li>
-<p class="startli"><code>histogram</code> (available only for <a class="el" href="classHistogram.html">pm.vis.subplot.Histogram</a> axes types)</p>
+<p class="startli"><code>histogram</code> (available only for <a class="el" href="classSubplotHistogram.html">pm.vis.SubplotHistogram</a> axes types)</p>
 <p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>histogram</code>.<br  />
  The following are the default components of <code>histogram</code>:<br  />
 </p>
@@ -463,7 +463,7 @@ Dynamic class attributes</h2>
 </dd></dl>
 </li>
 <li>
-<p class="startli"><code>histogram2</code> (available only for <a class="el" href="classHistogram2.html">pm.vis.subplot.Histogram2</a> axes types)</p>
+<p class="startli"><code>histogram2</code> (available only for <a class="el" href="classSubplotHistogram2.html">pm.vis.SubplotHistogram2</a> axes types)</p>
 <p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>histogram2</code>.<br  />
  The following are the default components of <code>histogram2</code>:<br  />
 </p>
@@ -509,13 +509,13 @@ Dynamic class attributes</h2>
 </dd></dl>
 </li>
 <li>
-<p class="startli"><code>legend</code> (available for all axes types except <a class="el" href="classHeatmap.html">pm.vis.subplot.Heatmap</a>)</p>
+<p class="startli"><code>legend</code> (available for all axes types except <a class="el" href="classSubplotHeatmap.html">pm.vis.SubplotHeatmap</a>)</p>
 <p class="interli">A MATLAB <code>struct</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>title()</code>.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>maxnoise</code> (available only for <a class="el" href="classContour.html">Contour</a>/<a class="el" href="classContourf.html">Contourf</a>/<a class="el" href="classContour3.html">Contour3</a> axes types)</p>
+<p class="startli"><code>maxnoise</code> (available only for pm.vis.SubplotContour/pm.vis.SubplotContourf/pm.vis.SubplotContour3 axes types)</p>
 <p class="interli">A float indicating the threshold below which the kernel density estimate is considered to be noise and is rounded to zero.<br  />
  The higher this value is, the less noise will be visible in the resulting contour plots.<br  />
  If empty, the default value is <code>0.001</code>.<br  />
@@ -523,7 +523,7 @@ Dynamic class attributes</h2>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>plot</code> (available only for <a class="el" href="classLine.html">pm.vis.subplot.Line</a>/<a class="el" href="classLineScatter.html">pm.vis.subplot.LineScatter</a> axes types)</p>
+<p class="startli"><code>plot</code> (available only for <a class="el" href="classSubplotLine.html">pm.vis.SubplotLine</a>, <a class="el" href="classSubplotLineScatter.html">pm.vis.SubplotLineScatter</a> axes types)</p>
 <p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>plot</code>.<br  />
  The following are the default components of <code>plot</code>:<br  />
 </p>
@@ -556,7 +556,7 @@ Dynamic class attributes</h2>
 </dd></dl>
 </li>
 <li>
-<p class="startli"><code>plot3</code> (available only for <a class="el" href="classLine3.html">Line3</a>/<a class="el" href="classLineScatter3.html">LineScatter3</a> axes types)</p>
+<p class="startli"><code>plot3</code> (available only for <a class="el" href="classSubplotLine3.html">pm.vis.SubplotLine3</a>/<a class="el" href="classSubplotLineScatter3.html">pm.vis.SubplotLineScatter3</a> axes types)</p>
 <p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>plot3</code>.<br  />
  The following are the default components of <code>plot3</code>:<br  />
 </p>
@@ -589,19 +589,19 @@ Dynamic class attributes</h2>
 </dd></dl>
 </li>
 <li>
-<p class="startli"><code>precision</code> (available only for <a class="el" href="classHeatmap.html">pm.vis.subplot.Heatmap</a> axes types)</p>
+<p class="startli"><code>precision</code> (available only for <a class="el" href="classSubplotHeatmap.html">pm.vis.SubplotHeatmap</a> axes types)</p>
 <p class="interli">A scalar integer representing the number of digits after the decimal point for the values that appear in each cell of the heatmap. The default value is set by MATLAB.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>resolution</code> (available only for <a class="el" href="classContour.html">Contour</a>/<a class="el" href="classContourf.html">Contourf</a>/<a class="el" href="classContour3.html">Contour3</a> axes types)</p>
+<p class="startli"><code>resolution</code> (available only for pm.vis.SubplotContour, pm.vis.SubplotContourf, pm.vis.SubplotContour3 axes types)</p>
 <p class="interli">A scalar integer indicating the grid resolution for discretization of the data during the kernel density estimation. It must be a power of two, otherwise it will be changed to the next power of two at the time of using it. If empty, the default value is <code>2^9</code>.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>scatter</code> (available only for <a class="el" href="classScatter.html">Scatter</a>/<a class="el" href="classLineScatter.html">LineScatter</a> axes types)</p>
+<p class="startli"><code>scatter</code> (available only for <a class="el" href="classSubplotScatter.html">pm.vis.SubplotScatter</a>, <a class="el" href="classSubplotLineScatter.html">pm.vis.SubplotLineScatter</a> axes types)</p>
 <p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>scatter</code>.<br  />
  The following are the default components of <code>scatter</code>:<br  />
 </p>
@@ -651,12 +651,12 @@ Dynamic class attributes</h2>
 <div class="line">self.scatter.marker = &quot;.&quot;; % set the marker <a class="code hl_variable" href="classAxes.html#ab42b61658f77680fa1fc793199598c50">type</a></div>
 <div class="line">self.scatter.size = 10; % set the point size</div>
 <div class="line">self.scatter.lineWidth = 0;</div>
-<div class="ttc" id="aclassAxes_html_ab42b61658f77680fa1fc793199598c50"><div class="ttname"><a href="classAxes.html#ab42b61658f77680fa1fc793199598c50">Axes::type</a></div><div class="ttdeci">Property type</div><div class="ttdef"><b>Definition:</b> <a href="Axes_8m_source.html#l00630">Axes.m:630</a></div></div>
+<div class="ttc" id="aclassAxes_html_ab42b61658f77680fa1fc793199598c50"><div class="ttname"><a href="classAxes.html#ab42b61658f77680fa1fc793199598c50">Axes::type</a></div><div class="ttdeci">Property type</div><div class="ttdef"><b>Definition:</b> <a href="Axes_8m_source.html#l00634">Axes.m:634</a></div></div>
 </div><!-- fragment --> <br  />
 </dd></dl>
 </li>
 <li>
-<p class="startli"><code>scatter3</code> (available only for <a class="el" href="classScatter3.html">Scatter3</a>/<a class="el" href="classLineScatter3.html">LineScatter3</a> axes types)</p>
+<p class="startli"><code>scatter3</code> (available only for <a class="el" href="classSubplotScatter3.html">pm.vis.SubplotScatter3</a>, <a class="el" href="classSubplotLineScatter3.html">pm.vis.SubplotLineScatter3</a> axes types)</p>
 <p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>scatter3</code>.<br  />
  The following are the default components of <code>scatter3</code>:<br  />
 </p>
@@ -710,7 +710,7 @@ Dynamic class attributes</h2>
 </dd></dl>
 </li>
 <li>
-<p class="startli"><code>surface</code> (available only for <a class="el" href="classLine.html">Line</a>/<a class="el" href="classLineScatter.html">LineScatter</a>/<a class="el" href="classLine3.html">Line3</a>/<a class="el" href="classLineScatter3.html">LineScatter3</a> axes types)</p>
+<p class="startli"><code>surface</code> (available only for <a class="el" href="classSubplotLine.html">pm.vis.SubplotLine</a>, pm.vis.SubplotLineScatter, <a class="el" href="classSubplotLine3.html">pm.vis.SubplotLine3</a>/<a class="el" href="classSubplotLineScatter3.html">pm.vis.SubplotLineScatter3</a> axes types)</p>
 <p class="interli">A MATLAB <code>struct</code> whose fields and their values will be passed as keyword arguments to the MATLAB intrinsic <code>surface</code>.<br  />
  The following are the default components of <code>surface</code>:<br  />
 </p>
@@ -761,13 +761,13 @@ Dynamic class attributes</h2>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>xlim</code> (available for all axes types)</p>
+<p class="startli"><code>xlim</code> (available for all axes types, except <a class="el" href="classSubplotHeatmap.html">pm.vis.SubplotHeatmap</a>)</p>
 <p class="interli">A MATLAB vector of length <code>2</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>xlim()</code>.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>ylim</code> (available for all axes types)</p>
+<p class="startli"><code>ylim</code> (available for all axes types, except <a class="el" href="classSubplotHeatmap.html">pm.vis.SubplotHeatmap</a>)</p>
 <p class="interli">A MATLAB vector of length <code>2</code> whose fields and values are passed as keyword arguments to the MATLAB intrinsic <code>ylim()</code>.<br  />
 </p>
 <p class="endli"></p>
@@ -779,7 +779,7 @@ Dynamic class attributes</h2>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>xscale</code> (available for all axes types)</p>
+<p class="startli"><code>xscale</code> (available for all axes types, except <a class="el" href="classSubplotHeatmap.html">pm.vis.SubplotHeatmap</a>)</p>
 <p class="interli">A MATLAB string whose value is passed directly to the MATLAB intrinsic <code>xscale()</code> to set the axis scale to either logarithmic or linear.<br  />
  Possible values are: <code>"log"</code>, <code>"linear"</code>.<br  />
  The default behavior is set by MATLAB.<br  />
@@ -787,7 +787,7 @@ Dynamic class attributes</h2>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>yscale</code> (available for all axes types)</p>
+<p class="startli"><code>yscale</code> (available for all axes types, except <a class="el" href="classSubplotHeatmap.html">pm.vis.SubplotHeatmap</a>)</p>
 <p class="interli">A MATLAB string whose value is passed directly to the MATLAB intrinsic <code>yscale()</code> to set the axis scale to either logarithmic or linear.<br  />
  Possible values are: <code>"log"</code>, <code>"linear"</code>.<br  />
  The default behavior is set by MATLAB.<br  />
@@ -808,7 +808,7 @@ Dynamic class attributes</h2>
 </dd></dl>
 <p><br  />
 <a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L614 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L616 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -823,11 +823,11 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000208">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000212">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Axes_8m_source.html#l00619">619</a> of file <a class="el" href="Axes_8m_source.html">Axes.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Axes_8m_source.html#l00621">621</a> of file <a class="el" href="Axes_8m_source.html">Axes.m</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="adc3e38949422b27b0fcd944956a76286" name="adc3e38949422b27b0fcd944956a76286"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc3e38949422b27b0fcd944956a76286">&#9670;&nbsp;</a></span>Axes()</h2>
@@ -900,14 +900,116 @@ Help us justify its continued development and maintenance by acknowledging its b
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>self</code> : The output scalar object of class <code>pm.vis.axes.Axes</code>.<br  />
+<dl class="section return"><dt>Returns</dt><dd><code>self</code> : The output scalar object of class <a class="el" href="classAxes.html">pm.vis.axes.Axes</a>.<br  />
 </dd></dl>
 <p><br  />
 <a class="anchor" id="interface-Axes"></a><b>Possible calling interfaces</b> <a href="#interface-Axes">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">axes = pm.vis.axes.Axes(ptype);</div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
+<a class="anchor" id="example-Axes"></a><b>Example usage</b> <a href="#example-Axes">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>addpath(<span class="stringliteral">&#39;../../../../&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory to the search path.</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>pm.matlab.show()</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>pm.matlab.show(<span class="stringliteral">&#39;a = pm.vis.axes.Axes(&quot;line&quot;)&#39;</span>)</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>                a = pm.vis.axes.Axes(<span class="stringliteral">&quot;line&quot;</span>)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>pm.matlab.show()</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>pm.matlab.show()</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>pm.matlab.show(<span class="stringliteral">&#39;a = pm.vis.axes.Axes(&quot;line&quot;, &quot;plot&quot;, {&quot;linewidth&quot;, 2})&#39;</span>)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>                a = pm.vis.axes.Axes(<span class="stringliteral">&quot;line&quot;</span>, <span class="stringliteral">&quot;plot&quot;</span>, {<span class="stringliteral">&quot;linewidth&quot;</span>, 2})</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>pm.matlab.show(<span class="stringliteral">&#39;hash = a.comp2hash(&quot;plot&quot;)&#39;</span>)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                hash = a.comp2hash(<span class="stringliteral">&quot;plot&quot;</span>)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>pm.matlab.show()</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>pm.matlab.show(<span class="stringliteral">&#39;a.plot&#39;</span>)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                a.plot</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>pm.matlab.show()</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>pm.matlab.show(<span class="stringliteral">&#39;a.reset(&quot;plot&quot;, {&quot;markerSize&quot;, 5});&#39;</span>)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                a.reset(<span class="stringliteral">&quot;plot&quot;</span>, {<span class="stringliteral">&quot;markerSize&quot;</span>, 5});</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>pm.matlab.show()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>pm.matlab.show(<span class="stringliteral">&#39;a.plot&#39;</span>)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                a.plot</div>
+<div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
+</div><!-- fragment --> <br  />
+<a class="anchor" id="output-Axes"></a><b>Example output</b> <a href="#output-Axes">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>a = pm.vis.axes.Axes(<span class="stringliteral">&quot;line&quot;</span>)</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>a = </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>  <a class="code hl_class" href="classAxes.html">Axes</a> with properties:</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>      ylabel: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        plot: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>     surface: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    colormap: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        ylim: []</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>      yscale: []</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    colorbar: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        colc: {}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        xlim: []</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>       title: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        axes: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>      xscale: []</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>      legend: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      xlabel: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>a = pm.vis.axes.<a class="code hl_function" href="classAxes.html#adc3e38949422b27b0fcd944956a76286">Axes</a>(<span class="stringliteral">&quot;line&quot;</span>, <span class="stringliteral">&quot;plot&quot;</span>, {<span class="stringliteral">&quot;linewidth&quot;</span>, 2})</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>a = </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <a class="code hl_class" href="classAxes.html">Axes</a> with properties:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      ylabel: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        plot: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>     surface: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    colormap: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        ylim: []</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      yscale: []</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    colorbar: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        colc: {}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        xlim: []</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>       title: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        axes: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      xscale: []</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      legend: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      xlabel: [1x1 <span class="keyword">struct</span>]</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>hash = a.<a class="code hl_function" href="classAxes.html#aa948643bde5d3772f331580ae4ddd0c2">comp2hash</a>(<span class="stringliteral">&quot;plot&quot;</span>)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>hash =</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  2x1 cell array</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    {[<span class="stringliteral">&quot;lineWidth&quot;</span>]}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    {[          2]}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>a.plot</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>ans = </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">struct </span>with fields:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>              color: []</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>          lineWidth: 2</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>          lineStyle: []</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    markeredgeColor: []</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    markerFaceColor: []</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      markerIndices: []</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>         markerSize: []</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            enabled: []</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>a.<a class="code hl_function" href="classAxes.html#ae3c10d54343f0edc838bd80126b28afb">reset</a>(&quot;plot&quot;, {&quot;markerSize&quot;, 5});</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>a.plot</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>ans = </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  struct with fields:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>              color: []</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>          lineWidth: []</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>          lineStyle: []</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    markeredgeColor: []</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    markerFaceColor: []</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      markerIndices: []</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>         markerSize: 5</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            enabled: []</div>
+<div class="ttc" id="aclassAxes_html"><div class="ttname"><a href="classAxes.html">Axes</a></div><div class="ttdoc">This is the class for generating instances of objects that contain the specifications of various type...</div><div class="ttdef"><b>Definition:</b> <a href="Axes_8m_source.html#l00621">Axes.m:622</a></div></div>
+<div class="ttc" id="aclassAxes_html_aa948643bde5d3772f331580ae4ddd0c2"><div class="ttname"><a href="classAxes.html#aa948643bde5d3772f331580ae4ddd0c2">Axes::comp2hash</a></div><div class="ttdeci">function comp2hash(in self, in comp)</div><div class="ttdoc">Convert the components of the input component comp of the parent object into a cell array of key-val ...</div></div>
+<div class="ttc" id="aclassAxes_html_adc3e38949422b27b0fcd944956a76286"><div class="ttname"><a href="classAxes.html#adc3e38949422b27b0fcd944956a76286">Axes::Axes</a></div><div class="ttdeci">function Axes(in ptype, in varargin)</div><div class="ttdoc">Construct and return an object of class pm.vis.axes.Axes.</div></div>
+<div class="ttc" id="aclassAxes_html_ae3c10d54343f0edc838bd80126b28afb"><div class="ttname"><a href="classAxes.html#ae3c10d54343f0edc838bd80126b28afb">Axes::reset</a></div><div class="ttdeci">function reset(in self, in varargin)</div><div class="ttdoc">Reset the properties of the plot to the original default settings and return nothing.</div></div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
 <a class="anchor" id="final-Axes"></a><b>Final Remarks</b> <a href="#final-Axes">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L686 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L697 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -922,8 +1024,8 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000209">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 5:59 AM, University of Texas at Arlington<br  />
- <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000213">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 5:59 AM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
@@ -963,6 +1065,8 @@ Help us justify its continued development and maintenance by acknowledging its b
 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">self</td><td>: The input/output parent object of class <a class="el" href="classAxes.html">pm.vis.axes.Axes</a> which is <b>implicitly</b> passed to this dynamic method (not by the user).<br  />
+ </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">comp</td><td>: The input scalar MATLAB string representing the name of a <code>struct</code> component of the parent object, whose fields names and values are to be returned as subsequent pairs in the output <code>hash</code> cell array.<br  />
 </td></tr>
   </table>
@@ -978,12 +1082,12 @@ Help us justify its continued development and maintenance by acknowledging its b
 <dl class="section warning"><dt>Warning</dt><dd>This method has side-effects by manipulating the existing attributes of the parent object.<br  />
 </dd></dl>
 <p><br  />
-<a class="anchor" id="example-comp2hash"></a><b>Example usage</b> <a href="#example-comp2hash">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">a = pm.vis.axes.Axes(<span class="stringliteral">&quot;histogram&quot;</span>, <span class="stringliteral">&quot;histogram&quot;</span>, {<span class="stringliteral">&quot;nbins&quot;</span>, 5});</div>
-<div class="line">hash = a.comp2hash(a.histogram)</div>
+<a class="anchor" id="example-comp2hash"></a><b>Example usage</b> <a href="#example-comp2hash">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">a = pm.vis.axes.Axes(<span class="stringliteral">&quot;line&quot;</span>, <span class="stringliteral">&quot;plot&quot;</span>, {<span class="stringliteral">&quot;linewidth&quot;</span>, 2})</div>
+<div class="line">hash = a.comp2hash(<span class="stringliteral">&quot;plot&quot;</span>)</div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-comp2hash"></a><b>Final Remarks</b> <a href="#final-comp2hash">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L1421 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L1440 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -998,7 +1102,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000212">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000216">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
@@ -1034,6 +1138,8 @@ Help us justify its continued development and maintenance by acknowledging its b
  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">self</td><td>: The input/output parent object of class <a class="el" href="classAxes.html">pm.vis.axes.Axes</a> which is <b>implicitly</b> passed to this dynamic method (not by the user).<br  />
+ </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
  If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs.<br  />
  Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classAxes.html#a1f50529d698eaf3facf5443a8c50234c" title="Configure the plot settings and specifications and return nothing.">premake()</a></code> method.<br  />
@@ -1055,7 +1161,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-premake"></a><b>Final Remarks</b> <a href="#final-premake">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L1125 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L1142 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -1070,7 +1176,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000211">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000215">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
@@ -1108,6 +1214,8 @@ Help us justify its continued development and maintenance by acknowledging its b
 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">self</td><td>: The input/output parent object of class <a class="el" href="classAxes.html">pm.vis.axes.Axes</a> which is <b>implicitly</b> passed to this dynamic method (not by the user).<br  />
+ </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
  If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs.<br  />
  Note that all of these property-value pairs can be also directly set via the parent object attributes.<br  />
@@ -1120,11 +1228,10 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"> </div>
 <div class="line">a.reset(varargin) % <a class="code hl_function" href="classAxes.html#ae3c10d54343f0edc838bd80126b28afb">reset</a> the plot to settings in ``varargin`` and the rest to <span class="keywordflow">default</span>.</div>
 <div class="line">a.reset() % <a class="code hl_function" href="classAxes.html#ae3c10d54343f0edc838bd80126b28afb">reset</a> the plot to the <span class="keywordflow">default</span> settings.</div>
-<div class="ttc" id="aclassAxes_html_ae3c10d54343f0edc838bd80126b28afb"><div class="ttname"><a href="classAxes.html#ae3c10d54343f0edc838bd80126b28afb">Axes::reset</a></div><div class="ttdeci">function reset(in self, in varargin)</div><div class="ttdoc">Reset the properties of the plot to the original default settings and return nothing.</div></div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-reset"></a><b>Final Remarks</b> <a href="#final-reset">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L763 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+axes/Axes.m#L776 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -1139,7 +1246,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000210">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000214">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
@@ -1165,9 +1272,10 @@ Help us justify its continued development and maintenance by acknowledging its b
   </tr>
 </table>
 </div><div class="memdoc">
-<p ><code>cenabled</code> : auxiliary logical scalar that is true if plot is color-mapped. </p>
+<p ><code>cenabled</code></p>
+<p >An auxiliary scalar MATLAB <code>logical</code> that is true if plot is color-mapped. </p>
 
-<p class="definition">Definition at line <a class="el" href="Axes_8m_source.html#l00635">635</a> of file <a class="el" href="Axes_8m_source.html">Axes.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Axes_8m_source.html#l00641">641</a> of file <a class="el" href="Axes_8m_source.html">Axes.m</a>.</p>
 
 </div>
 </div>
@@ -1190,9 +1298,10 @@ Help us justify its continued development and maintenance by acknowledging its b
   </tr>
 </table>
 </div><div class="memdoc">
-<p ><code>type</code> : auxiliary struct containing plot type information. </p>
+<p ><code>type</code></p>
+<p >An auxiliary MATLAB <code>struct</code> containing plot type information. </p>
 
-<p class="definition">Definition at line <a class="el" href="Axes_8m_source.html#l00630">630</a> of file <a class="el" href="Axes_8m_source.html">Axes.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Axes_8m_source.html#l00634">634</a> of file <a class="el" href="Axes_8m_source.html">Axes.m</a>.</p>
 
 </div>
 </div>
@@ -1205,7 +1314,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classAxes.html">Axes</a></li>
-        <li class="footer">Generated on Fri Jul 5 2024 10:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Jul 11 2024 09:52:11 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -177,7 +177,7 @@ Functions</h2></td></tr>
 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">nell</td><td>: The input scalar MATLAB integer representing the number of rows of the output colormap matrix.<br  />
+    <tr><td class="paramdir">[in]</td><td class="paramname">nell</td><td>: The input scalar MATLAB integer representing the number of elements (rows) of the output colormap matrix.<br  />
  (<b>optional</b>, default = <code>size(get(gcf, 'colormap'), 1)</code>)</td></tr>
   </table>
   </dd>
@@ -190,18 +190,35 @@ Functions</h2></td></tr>
 <div class="line">cmap = pm.vis.cmap.redblue(nell)</div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
-<a class="anchor" id="example-redblue"></a><b>Example usage</b> <a href="#example-redblue">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">imagesc(peaks(500));
-colormap(pm.vis.cmap.redblue());
-colorbar;
-
-load topo
-imagesc(0:360, -90:90, topo); axis("xy");
-colormap(pm.vis.cmap.redblue());
-colorbar;
-</pre> See also: hsv, gray, hot, bone, copper, pink, flag, colormap, rgbplot.</dd></dl>
+<a class="anchor" id="example-redblue"></a><b>Example usage</b> <a href="#example-redblue">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>addpath(<span class="stringliteral">&#39;../../../../&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory to the search path.</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>figure(<span class="stringliteral">&quot;color&quot;</span>, <span class="stringliteral">&quot;white&quot;</span>);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>imagesc(peaks(500));</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>colormap(pm.vis.cmap.redblue(256));</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>colorbar;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>pm.vis.figure.savefig(<span class="stringliteral">&quot;redblue.1.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>figure(<span class="stringliteral">&quot;color&quot;</span>, <span class="stringliteral">&quot;white&quot;</span>);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>load topo</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>imagesc(0:360, -90:90, topo); axis(<span class="stringliteral">&quot;xy&quot;</span>);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>colormap(pm.vis.cmap.redblue());</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>colorbar;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>pm.vis.figure.savefig(<span class="stringliteral">&quot;redblue.2.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
+<div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
+</div><!-- fragment --> <br  />
+<a class="anchor" id="vis-redblue"></a><b>Visualization of the example output</b> <a href="#vis-redblue">⛓</a> <div class="image">
+<img src="redblue.1.png" alt="" width="700"/>
+</div>
+ <div class="image">
+<img src="redblue.2.png" alt="" width="700"/>
+</div>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>MATLAB intrinsic functions <code>hsv()</code>, <code>gray()</code>, <code>hot()</code>, <code>bone()</code>, <code>copper()</code>, <code>pink()</code>, <code>flag()</code>, <code>colormap()</code>, <code>rgbplot()</code>.<br  />
+</dd></dl>
 <p><br  />
 <a class="anchor" id="final-redblue"></a><b>Final Remarks</b> <a href="#final-redblue">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+cmap/redblue.m#L41 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+cmap/redblue.m#L37 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -216,36 +233,18 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000236">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 7:44 AM, University of Texas at Arlington<br  />
- <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+<p>Adam Auton, 9th October 2009 Copyright (c) 2009, Adam Auton All rights reserved.</p>
+<p >Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<ul>
+<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution</li>
+</ul>
+<p >This software is provided by the copyright holders and contributors "as is" and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. in no event shall the copyright owner or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.</p>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000222">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 7:44 AM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
- Originally by: </dd></dl>
-<pre class="fragment">Adam Auton, 9th October 2009
-Copyright (c) 2009, Adam Auton
-All rights reserved.
+ </dd></dl>
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are
-met:
-
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright
-      notice, this list of conditions and the following disclaimer in
-      the documentation and/or other materials provided with the distribution
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE.
-</pre> 
 </div>
 </div>
 </div><!-- contents -->
@@ -254,7 +253,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_77a461de7b91f32df8032085d9a00b9a.html">+vis</a></li><li class="navelem"><a class="el" href="dir_49c7bba4fd7231315df758dd2b93e609.html">+cmap</a></li><li class="navelem"><a class="el" href="redblue_8m.html">redblue.m</a></li>
-        <li class="footer">Generated on Fri Jul 5 2024 10:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Jul 11 2024 09:52:11 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

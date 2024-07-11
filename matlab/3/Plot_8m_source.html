@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte MATLAB 3.0.0: src/matlab/main/+pm/+vis/+plot/Plot.m Source File</title>
+    <title>ParaMonte MATLAB 3.0.0: src/matlab/main/+pm/+vis/Plot.m Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -146,247 +146,323 @@ $(document).ready(function(){initNavTree('Plot_8m_source.html',''); initResizabl
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  \details</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  This is a <span class="keyword">generic</span> <span class="keyword">class </span><span class="keywordflow">for</span> generating</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;  figures containing a single subplot (axes).&lt;br&gt;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;  figures containing a **single** subplot (axes).&lt;br&gt;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  \final</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;  \AmirShahmoradi, July 5 2024, 1:07 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classPlot.html">   12</a></span>classdef <a class="code hl_class" href="classPlot.html">Plot</a> &lt; pm.vis.figure.Figure</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    properties(Access = <span class="keyword">public</span>)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        %&gt;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        %&gt;  ``subplot``</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        %&gt;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        %&gt;  The scalar <span class="keywordtype">object</span> of superclass [pm.vis.subplot.Subplot](@ref <a class="code hl_class" href="classSubplot.html">Subplot</a>)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        %&gt;  representing the set of subplots to display in the figure.&lt;br&gt;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        %&gt;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        subplot = [];</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    end</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classPlot.html#a7013505fed5d8767a744a6b7a9cbd803">   26</a></span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    methods(Access = <span class="keyword">public</span>)</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  \note</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;  See the documentation of the constructor of the <span class="keyword">class</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;  [pm.vis.Plot](@ref <a class="code hl_function" href="classPlot.html#a9aeac840bdaaf12398b98367f8405d24">Plot::Plot</a>) <span class="keywordflow">for</span> example usage.&lt;br&gt;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;  \note</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;  See the documentation of the attributes</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;  of the superclass [pm.vis.figure.Figure](@ref <a class="code hl_class" href="classFigure.html">Figure</a>).&lt;br&gt;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;  \see</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;  [pm.vis.Cascade](@ref <a class="code hl_class" href="classCascade.html">Cascade</a>)&lt;br&gt;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;  [pm.vis.Subplot](@ref <a class="code hl_class" href="classSubplot.html">Subplot</a>)&lt;br&gt;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;  [pm.vis.Figure](@ref <a class="code hl_class" href="classFigure.html">Figure</a>)&lt;br&gt;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;  [pm.vis.Corner](@ref <a class="code hl_class" href="classCorner.html">Corner</a>)&lt;br&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;  [pm.vis.Plot](@ref <a class="code hl_class" href="classPlot.html">Plot</a>)&lt;br&gt;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;  [pm.vis.Tile](@ref <a class="code hl_class" href="classTile.html">Tile</a>)&lt;br&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;  \final</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;  \AmirShahmoradi, July 5 2024, 1:07 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classPlot.html">   28</a></span>classdef <a class="code hl_class" href="classPlot.html">Plot</a> &lt; pm.vis.figure.Figure</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        %&gt;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        %&gt;  \param[in]  subplot     :   The input scalar <span class="keywordtype">object</span> of superclass [pm.vis.subplot.Subplot](@ref <a class="code hl_class" href="classSubplot.html">Subplot</a>).&lt;br&gt;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        %&gt;                              The input ``subplot`` <span class="keywordtype">object</span> must minimally have the ``make()`` and ``reset()`` methods.&lt;br&gt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    properties(Access = <span class="keyword">public</span>)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        %&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        %&gt;  ``subplot``</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        %&gt;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        %&gt;  \param[in]  varargin    :   Any ``property, value`` pair of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        %&gt;                              If the <span class="keyword">property</span> is a ``<span class="keyword">struct</span>()``, then its value must be given as a cell array,</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        %&gt;                              with consecutive elements representing the <span class="keyword">struct</span> ``property-<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>, property-value`` pairs.&lt;br&gt;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        %&gt;                              Note that all of these property-value pairs can be also directly set via the</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        %&gt;                              parent <span class="keywordtype">object</span> attributes, before calling the ``make()`` method.&lt;br&gt;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        %&gt;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        %&gt;  \note</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        %&gt;  The input ``varargin`` can also contain the components</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        %&gt;  of the ``subplot`` component of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        %&gt;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        %&gt;  \return</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        %&gt;  ``self``                :   The output scalar <span class="keywordtype">object</span> of <span class="keyword">class </span>``pm.vis.plot.Plot``.&lt;br&gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        %&gt;  The scalar <span class="keywordtype">object</span> of superclass [pm.vis.Subplot](@ref <a class="code hl_class" href="classSubplot.html">Subplot</a>)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        %&gt;  representing the set of subplots to display in the figure.&lt;br&gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        %&gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        subplot = [];</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    end</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classPlot.html#a7013505fed5d8767a744a6b7a9cbd803">   42</a></span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    methods(Access = <span class="keyword">public</span>)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        %&gt;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        %&gt;  \interface{<a class="code hl_class" href="classPlot.html">Plot</a>}</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        %&gt;  \code{.m}</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        %&gt;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        %&gt;      plot = pm.vis.plot.<a class="code hl_function" href="classPlot.html#a9aeac840bdaaf12398b98367f8405d24">Plot</a>(subplot);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        %&gt;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        %&gt;  \endcode</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        %&gt;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        %&gt;  \note</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        %&gt;  See the <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> of <span class="keyword">class </span>attributes below,</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        %&gt;  also those of the superclass ``pm.vis.figure.Figure``.&lt;br&gt;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        %&gt;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        %&gt;  \final{<a class="code hl_class" href="classPlot.html">Plot</a>}</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        %&gt;  \param[in]  subplot     :   The input scalar <span class="keywordtype">object</span> of superclass [pm.vis.Subplot](@ref <a class="code hl_class" href="classSubplot.html">Subplot</a>).&lt;br&gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        %&gt;                              The input ``subplot`` <span class="keywordtype">object</span> must minimally have the ``make()`` and ``reset()`` methods.&lt;br&gt;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        %&gt;  \param[in]  varargin    :   Any ``property, value`` pair of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        %&gt;                              If the <span class="keyword">property</span> is a ``<span class="keyword">struct</span>()``, then its value must be given as a cell array,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        %&gt;                              with consecutive elements representing the <span class="keyword">struct</span> ``property-<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>, property-value`` pairs.&lt;br&gt;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        %&gt;                              Note that all of these property-value pairs can be also directly set via the</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        %&gt;                              parent <span class="keywordtype">object</span> attributes, before calling the ``make()`` method.&lt;br&gt;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        %&gt;                              The input ``varargin`` can also contain the components</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        %&gt;                              of the ``subplot`` component of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        %&gt;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        %&gt;  \return</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        %&gt;  ``self``                :   The output scalar <span class="keywordtype">object</span> of <span class="keyword">class </span>[pm.vis.Plot](@ref <a class="code hl_class" href="classPlot.html">Plot</a>).&lt;br&gt;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        %&gt;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        %&gt;  \author</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        %&gt;  \JoshuaOsborne, May 21 2024, 9:32 AM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        %&gt;  \AmirShahmoradi, July 5 2024, 1:07 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        function self = <a class="code hl_class" href="classPlot.html">Plot</a>(subplot, varargin)</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            varargin = {<span class="stringliteral">&quot;subplot&quot;</span>, subplot, varargin{:}};</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            self = self@pm.vis.figure.Figure(varargin{:});</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        end</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classPlot.html#a9aeac840bdaaf12398b98367f8405d24">   69</a></span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        %&gt;  \brief</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        %&gt;  Reset the properties of the plot to the original <span class="keywordflow">default</span> settings.&lt;br&gt;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        %&gt;  Use <span class="keyword">this</span> method when you change many attributes of the plot and</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        %&gt;  you want to <a class="code hl_function" href="clean_8m.html#a6facc6381d5f76b76fa90c6175ab00ca">clean</a> up and go back to the <span class="keywordflow">default</span> settings.&lt;br&gt;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        %&gt;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        %&gt;  \param[in]  varargin    :   Any ``property, value`` pair of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        %&gt;                              If the <span class="keyword">property</span> is a ``<span class="keyword">struct</span>()``, then its value must be given as a cell array,</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        %&gt;                              with consecutive elements representing the <span class="keyword">struct</span> ``property-<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>, property-value`` pairs.&lt;br&gt;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        %&gt;                              Note that all of these property-value pairs can be also directly set via the</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        %&gt;                              parent <span class="keywordtype">object</span> attributes, before calling the ``make()`` method.&lt;br&gt;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        %&gt;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        %&gt;  \note</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        %&gt;  The input ``varargin`` can also contain the components</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        %&gt;  of the ``subplot`` component of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        %&gt;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        %&gt;  \interface{reset}</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        %&gt;  \code{.m}</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        %&gt;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        %&gt;      pm.vis.plot.Plot.reset() % reset the plot to the <span class="keywordflow">default</span> settings.</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        %&gt;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        %&gt;  \endcode</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        %&gt;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        %&gt;  \final{reset}</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        %&gt;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        %&gt;  \author</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        %&gt;  \JoshuaOsborne, May 21 2024, 9:35 AM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        %&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        %&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        function reset(self, varargin)</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            [varfig, varsub] = pm.matlab.hashmap.popKeyVal([<span class="stringliteral">&quot;figure&quot;</span>, <span class="stringliteral">&quot;subplot&quot;</span>], varargin);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            reset@pm.vis.figure.Figure(self, varfig{:});</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            self.subplot.reset(varsub{:});</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classPlot.html#a4961f1b6ad1954d5003d0473b0ac4dac">  105</a></span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            %%%% RULE 0: Any non-MATLAB-<span class="keywordflow">default</span> setting must be preferably set in premake() method to override user null values.</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        end</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        %&gt;  \brief</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        %&gt;  Configure the plot settings and specifications,</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        %&gt;  make the plot, and return nothing.</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        %&gt;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        %&gt;  \details</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        %&gt;  In making the figure, this method we call the ``make()``</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        %&gt;  methods of each of the subplot objects stored in the</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        %&gt;  ``subplot`` component.</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        %&gt;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        %&gt;  \warning</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        %&gt;  This method has side-effects by manipulating</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        %&gt;  the existing attributes of the parent <span class="keywordtype">object</span>.</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        %&gt;  \interface{<a class="code hl_class" href="classPlot.html">Plot</a>}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        %&gt;  \code{.m}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        %&gt;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        %&gt;      plot = pm.vis.<a class="code hl_function" href="classPlot.html#a9aeac840bdaaf12398b98367f8405d24">Plot</a>(subplot);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        %&gt;      plot = pm.vis.Plot(subplot, varargin);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        %&gt;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        %&gt;  \endcode</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        %&gt;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        %&gt;  \note</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        %&gt;  The input ``varargin`` can also contain the components</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        %&gt;  of the ``subplot`` component of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        %&gt;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        %&gt;  \note</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        %&gt;  See the <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> of <span class="keyword">class </span>attributes below,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        %&gt;  also those of the superclass [pm.vis.figure.Figure](@ref <a class="code hl_class" href="classFigure.html">Figure</a>).&lt;br&gt;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        %&gt;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        %&gt;  \example{<a class="code hl_class" href="classPlot.html">Plot</a>}</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        %&gt;  \include{lineno} example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/main.m</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        %&gt;  \vis{<a class="code hl_class" href="classPlot.html">Plot</a>}</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotLine.html">PlotLine</a>.1.png width=700</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotLine3.html">PlotLine3</a>.1.png width=700</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotScatter.html">PlotScatter</a>.1.png width=700</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotScatter3.html">PlotScatter3</a>.1.png width=700</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotLineScatter.html">PlotLineScatter</a>.1.png width=700</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotLineScatter3.html">PlotLineScatter3</a>.1.png width=700</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotHistfit.html">PlotHistfit</a>.1.png width=700</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotHistogram.html">PlotHistogram</a>.1.png width=700</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotHistogram2.html">PlotHistogram2</a>.1.png width=700</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotContour.html">PlotContour</a>.1.png width=700</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotContourf.html">PlotContourf</a>.1.png width=700</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotContour3.html">PlotContour3</a>.1.png width=700</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotHeatmap.html">PlotHeatmap</a>.1.png width=700</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotEllipse3.html">PlotEllipse3</a>.1.png width=700</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotEllipse.html">PlotEllipse</a>.1.png width=700</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        %&gt;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        %&gt;  \final{<a class="code hl_class" href="classPlot.html">Plot</a>}</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        %&gt;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        %&gt;  \author</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        %&gt;  \JoshuaOsborne, May 21 2024, 9:32 AM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        %&gt;  \AmirShahmoradi, July 5 2024, 1:07 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        function self = <a class="code hl_class" href="classPlot.html">Plot</a>(subplot, varargin)</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            varargin = {<span class="stringliteral">&quot;subplot&quot;</span>, subplot, varargin{:}};</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            self = self@pm.vis.figure.Figure(varargin{:});</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        end</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classPlot.html#a9aeac840bdaaf12398b98367f8405d24">  106</a></span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        %&gt;  \brief</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        %&gt;  Reset the properties of the plot to the original <span class="keywordflow">default</span> settings.&lt;br&gt;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        %&gt;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        %&gt;  \details</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        %&gt;  Use <span class="keyword">this</span> method when you change many attributes of the plot and</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        %&gt;  you want to <a class="code hl_function" href="clean_8m.html#a6facc6381d5f76b76fa90c6175ab00ca">clean</a> up and go back to the <span class="keywordflow">default</span> settings.&lt;br&gt;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        %&gt;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        %&gt;  \param[inout]   self        :   The input/output parent <span class="keywordtype">object</span> of <span class="keyword">class </span>[pm.vis.Subplot](@ref <a class="code hl_class" href="classSubplot.html">Subplot</a>)</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        %&gt;                                  <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> is **implicitly** passed to <span class="keyword">this</span> dynamic method (not by the user).&lt;br&gt;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        %&gt;  \param[in]      varargin    :   Any ``property, value`` pair of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        %&gt;                                  If the <span class="keyword">property</span> is a ``<span class="keyword">struct</span>()``, then its value must be given as a cell array,</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        %&gt;                                  with consecutive elements representing the <span class="keyword">struct</span> ``property-<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>, property-value`` pairs.&lt;br&gt;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        %&gt;                                  Note that all of these property-value pairs can be also directly set via the</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        %&gt;                                  parent <span class="keywordtype">object</span> attributes, before calling the ``make()`` method.&lt;br&gt;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        %&gt;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        %&gt;  \interface{reset}</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        %&gt;  \code{.m}</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        %&gt;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        %&gt;  \param[in]  varargin    :   Any ``property, value`` pair of the parent <span class="keywordtype">object</span>.</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        %&gt;                              If the property is a ``struct()``, then its value must be given as a cell array,</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        %&gt;                              with consecutive elements representing the struct ``property-<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>, property-value`` pairs.</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        %&gt;                              Note that all of these property-value pairs can be also directly set via the</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        %&gt;                              parent <span class="keywordtype">object</span> attributes, before calling the ``make()`` method.</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        %&gt;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        %&gt;  \note</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        %&gt;  The input ``varargin`` can also contain the components</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        %&gt;  of the ``subplot`` component of the parent <span class="keywordtype">object</span>.</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        %&gt;      pm.vis.Plot.reset() % reset the plot to the <span class="keywordflow">default</span> settings.</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        %&gt;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        %&gt;  \endcode</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        %&gt;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        %&gt;  \note</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        %&gt;  The input ``varargin`` can also contain the components</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        %&gt;  of the ``subplot`` component of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        %&gt;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        %&gt;  \final{reset}</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        %&gt;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        %&gt;  \interface{make}</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        %&gt;  \code{.m}</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        %&gt;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        %&gt;      p = pm.vis.plot.Plot.make(varargin);</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        %&gt;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        %&gt;  \endcode</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        %&gt;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        %&gt;  \example{make}</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        %&gt;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        %&gt;      p = pm.vis.plot.Plot(pm.vis.subplot.Line());</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        %&gt;      p.make()</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        %&gt;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        %&gt;  \final{make}</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        %&gt;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        %&gt;  \author</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        %&gt;  \JoshuaOsborne, May 21 2024, 9:37 AM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        %&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        %&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        function make(self, varargin)</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            [varfig, varsub] = pm.matlab.hashmap.popKeyVal([<span class="stringliteral">&quot;figure&quot;</span>, <span class="stringliteral">&quot;subplot&quot;</span>], varargin);</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            make@pm.vis.figure.Figure(self, varfig{:});</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            self.subplot.make(varsub{:});</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            <span class="keywordflow">if</span>  isprop(self.subplot, <span class="stringliteral">&quot;axes&quot;</span>) % <a class="code hl_class" href="classHeatmap.html">Heatmap</a> does not accept ``hold``.</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classPlot.html#ad0d17e6eec2b23db06c3dce3d80ffe5e">  161</a></span>                hold off;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            end</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        end % function</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    end</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    methods(Access = <span class="keyword">public</span>, Hidden)</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        %&gt;  \brief</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        %&gt;  Configure the plot settings and specifications and <span class="keywordflow">return</span> nothing.&lt;br&gt;</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        %&gt;</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        %&gt;  \warning</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        %&gt;  This method has side-effects by manipulating</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        %&gt;  the existing attributes of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        %&gt;</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        %&gt;  \param[in]  varargin    :   Any ``property, value`` pair of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        %&gt;                              If the <span class="keyword">property</span> is a ``<span class="keyword">struct</span>()``, then its value must be given as a cell array,</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        %&gt;                              with consecutive elements representing the <span class="keyword">struct</span> ``property-<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>, property-value`` pairs.&lt;br&gt;</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        %&gt;                              Note that all of these property-value pairs can be also directly set via the</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        %&gt;                              parent <span class="keywordtype">object</span> attributes, before calling the ``premake()`` method.&lt;br&gt;</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        %&gt;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        %&gt;  \interface{premake}</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        %&gt;  \code{.m}</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        %&gt;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        %&gt;      f = pm.vis.plot.Plot.premake(varargin);</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        %&gt;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        %&gt;  \endcode</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        %&gt;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        %&gt;  \example{<a class="code hl_function" href="getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9">getBorder</a>}</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        %&gt;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        %&gt;      f = pm.vis.plot.Plot(pm.vis.Line());</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        %&gt;      f.premake(<span class="stringliteral">&quot;figure&quot;</span>, {<span class="stringliteral">&quot;color&quot;</span>, <span class="stringliteral">&quot;none&quot;</span>})</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        %&gt;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        %&gt;  \<span class="keyword">final</span>{premake}</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        %&gt;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        %&gt;  \author</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        %&gt;  \JoshuaOsborne, May 21 2024, 9:39 AM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        %&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        %&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        function premake(self, varargin)</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            [varfig, varsub] = pm.matlab.hashmap.popKeyVal([<span class="stringliteral">&quot;figure&quot;</span>, <span class="stringliteral">&quot;subplot&quot;</span>], varargin);</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            premake@pm.vis.figure.Figure(self, varfig{:});</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            <span class="keywordflow">if</span> ~isempty(varsub)</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                self.subplot.hash2comp(varsub);</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            end</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="classPlot.html#a000d17b4ad7a466c28ac841c0da3a0b5">  214</a></span> </div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            %%%% These settings must happen here so that they can be reset every time user nullifies the values.</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        end</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    end</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>end</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        %&gt;  \author</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        %&gt;  \JoshuaOsborne, May 21 2024, 9:35 AM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        %&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        %&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        function reset(self, varargin)</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            [varfig, varsub] = pm.matlab.hashmap.popKeyVal([<span class="stringliteral">&quot;figure&quot;</span>, <span class="stringliteral">&quot;subplot&quot;</span>], varargin);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            reset@pm.vis.figure.Figure(self, varfig{:});</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            self.subplot.reset(varsub{:});</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="classPlot.html#a4961f1b6ad1954d5003d0473b0ac4dac">  146</a></span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            %%%% RULE 0: Any non-MATLAB-<span class="keywordflow">default</span> setting must be preferably set in premake() method to override user null values.</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        end</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        %&gt;  \brief</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        %&gt;  Configure the plot settings and specifications,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        %&gt;  make the plot, and return nothing.&lt;br&gt;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        %&gt;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        %&gt;  \details</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        %&gt;  In making the figure, this method we call the ``make()`` methods of</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        %&gt;  each of the subplot objects stored in the ``subplot`` component.&lt;br&gt;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        %&gt;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        %&gt;  \warning</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        %&gt;  This method has side-effects by manipulating</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        %&gt;  the existing attributes of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        %&gt;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        %&gt;  \param[inout]   self        :   The input/output parent <span class="keywordtype">object</span> of class [pm.vis.<a class="code hl_class" href="classSubplot.html">Subplot</a>](@ref <a class="code hl_class" href="classSubplot.html">Subplot</a>)</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        %&gt;                                  <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> is **implicitly** passed to this dynamic method (not by the user).&lt;br&gt;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        %&gt;  \param[in]      varargin    :   Any ``property, value`` pair of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        %&gt;                                  If the property is a ``struct()``, then its value must be given as a cell array,</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        %&gt;                                  with consecutive elements representing the struct ``property-<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>, property-value`` pairs.&lt;br&gt;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        %&gt;                                  Note that all of these property-value pairs can be also directly set via the</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        %&gt;                                  parent <span class="keywordtype">object</span> attributes, before calling the ``make()`` method.&lt;br&gt;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        %&gt;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        %&gt;  \interface{make}</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        %&gt;  \code{.m}</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        %&gt;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        %&gt;      p = pm.vis.Plot.make(varargin);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        %&gt;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        %&gt;  \endcode</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        %&gt;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        %&gt;  \note</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        %&gt;  The input ``varargin`` can also contain the components</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        %&gt;  of the ``subplot`` component of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        %&gt;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        %&gt;  \example{<a class="code hl_class" href="classPlot.html">Plot</a>}</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        %&gt;  \include{lineno} example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/main.m</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        %&gt;  \vis{<a class="code hl_class" href="classPlot.html">Plot</a>}</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotLine.html">PlotLine</a>.1.png width=700</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotLine3.html">PlotLine3</a>.1.png width=700</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotScatter.html">PlotScatter</a>.1.png width=700</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotScatter3.html">PlotScatter3</a>.1.png width=700</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotLineScatter.html">PlotLineScatter</a>.1.png width=700</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotLineScatter3.html">PlotLineScatter3</a>.1.png width=700</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotHistfit.html">PlotHistfit</a>.1.png width=700</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotHistogram.html">PlotHistogram</a>.1.png width=700</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotHistogram2.html">PlotHistogram2</a>.1.png width=700</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotContour.html">PlotContour</a>.1.png width=700</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotContourf.html">PlotContourf</a>.1.png width=700</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotContour3.html">PlotContour3</a>.1.png width=700</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotHeatmap.html">PlotHeatmap</a>.1.png width=700</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotEllipse3.html">PlotEllipse3</a>.1.png width=700</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classPlot.html">Plot</a>/<a class="code hl_class" href="classPlotEllipse.html">PlotEllipse</a>.1.png width=700</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        %&gt;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        %&gt;  \final{make}</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        %&gt;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        %&gt;  \author</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        %&gt;  \JoshuaOsborne, May 21 2024, 9:37 AM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        %&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        %&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        function make(self, varargin)</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            [varfig, varsub] = pm.matlab.hashmap.popKeyVal([<span class="stringliteral">&quot;figure&quot;</span>, <span class="stringliteral">&quot;subplot&quot;</span>], varargin);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            make@pm.vis.figure.Figure(self, varfig{:});</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            self.subplot.make(varsub{:});</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            <span class="keywordflow">if</span>  isprop(self.subplot, <span class="stringliteral">&quot;axes&quot;</span>) % Heatmap does not accept ``hold``.</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="classPlot.html#ad0d17e6eec2b23db06c3dce3d80ffe5e">  217</a></span>                hold off;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            end</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        end % function</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    end</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    methods(Access = <span class="keyword">public</span>, Hidden)</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        %&gt;  \brief</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        %&gt;  Configure the plot settings and specifications and <span class="keywordflow">return</span> nothing.&lt;br&gt;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        %&gt;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        %&gt;  \warning</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        %&gt;  This method has side-effects by manipulating</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        %&gt;  the existing attributes of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        %&gt;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        %&gt;  \param[inout]   self        :   The input/output parent <span class="keywordtype">object</span> of <span class="keyword">class </span>[pm.vis.Subplot](@ref <a class="code hl_class" href="classSubplot.html">Subplot</a>)</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        %&gt;                                  <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> is **implicitly** passed to <span class="keyword">this</span> dynamic method (not by the user).&lt;br&gt;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        %&gt;  \param[in]      varargin    :   Any ``property, value`` pair of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        %&gt;                                  If the <span class="keyword">property</span> is a ``<span class="keyword">struct</span>()``, then its value must be given as a cell array,</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        %&gt;                                  with consecutive elements representing the <span class="keyword">struct</span> ``property-<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>, property-value`` pairs.&lt;br&gt;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        %&gt;                                  Note that all of these property-value pairs can be also directly set via the</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        %&gt;                                  parent <span class="keywordtype">object</span> attributes, before calling the ``premake()`` method.&lt;br&gt;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        %&gt;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        %&gt;  \interface{premake}</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        %&gt;  \code{.m}</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        %&gt;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        %&gt;      f = pm.vis.Plot.premake(varargin);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        %&gt;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        %&gt;  \endcode</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        %&gt;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        %&gt;  \example{<a class="code hl_function" href="getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9">getBorder</a>}</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        %&gt;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        %&gt;      f = pm.vis.Plot(pm.vis.Line());</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        %&gt;      f.premake(<span class="stringliteral">&quot;figure&quot;</span>, {<span class="stringliteral">&quot;color&quot;</span>, <span class="stringliteral">&quot;none&quot;</span>})</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        %&gt;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        %&gt;  \<span class="keyword">final</span>{premake}</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        %&gt;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        %&gt;  \author</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        %&gt;  \JoshuaOsborne, May 21 2024, 9:39 AM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        %&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        %&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        function premake(self, varargin)</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            [varfig, varsub] = pm.matlab.hashmap.popKeyVal([<span class="stringliteral">&quot;figure&quot;</span>, <span class="stringliteral">&quot;subplot&quot;</span>], varargin);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            premake@pm.vis.figure.Figure(self, varfig{:});</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            <span class="keywordflow">if</span> ~isempty(varsub)</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                self.subplot.hash2comp(varsub);</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>            end</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno"><a class="line" href="classPlot.html#a000d17b4ad7a466c28ac841c0da3a0b5">  272</a></span> </div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>            %%%% These settings must happen here so that they can be reset every time user nullifies the values.</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        end</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    end</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>end</div>
 <div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div><div class="ttdoc">Return the MPI library name as used in naming the ParaMonte MATLAB shared libraries.</div></div>
 <div class="ttc" id="a_09os_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div><div class="ttdoc">Return a list of MATLAB strings containing the names of OS platforms supported by the ParaMonte MATLA...</div></div>
-<div class="ttc" id="aclassFigure_html"><div class="ttname"><a href="classFigure.html">Figure</a></div><div class="ttdoc">This is the abstract class for generating instances of objects that contain the specifications of var...</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8m_source.html#l00006">Figure.m:7</a></div></div>
-<div class="ttc" id="aclassHeatmap_html"><div class="ttname"><a href="classHeatmap.html">Heatmap</a></div><div class="ttdoc">This is the Heatmap class for generating instances of 2-dimensional Heatmap plots based on the releva...</div><div class="ttdef"><b>Definition:</b> <a href="_09cascade_2Heatmap_8m_source.html#l00006">Heatmap.m:7</a></div></div>
-<div class="ttc" id="aclassPlot_html"><div class="ttname"><a href="classPlot.html">Plot</a></div><div class="ttdoc">This is the base class for generating instances of objects that contain the specifications of various...</div><div class="ttdef"><b>Definition:</b> <a href="Plot_8m_source.html#l00012">Plot.m:13</a></div></div>
+<div class="ttc" id="aclassCascade_html"><div class="ttname"><a href="classCascade.html">Cascade</a></div><div class="ttdoc">This is the abstract class for generating instances of objects that contain the specifications of a c...</div><div class="ttdef"><b>Definition:</b> <a href="Cascade_8m_source.html#l00031">Cascade.m:32</a></div></div>
+<div class="ttc" id="aclassCorner_html"><div class="ttname"><a href="classCorner.html">Corner</a></div><div class="ttdoc">This is the abstract class for generating instances of figures containing a symmetric grid (corners) ...</div><div class="ttdef"><b>Definition:</b> <a href="Corner_8m_source.html#l00004">Corner.m:5</a></div></div>
+<div class="ttc" id="aclassFigure_html"><div class="ttname"><a href="classFigure.html">Figure</a></div><div class="ttdoc">This is the abstract class for generating instances of objects that contain the specifications of var...</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8m_source.html#l00026">Figure.m:27</a></div></div>
+<div class="ttc" id="aclassPlotContour3_html"><div class="ttname"><a href="classPlotContour3.html">PlotContour3</a></div><div class="ttdoc">This is the Contour3 class for generating instances of 3-dimensional Contour Plot visualizations base...</div><div class="ttdef"><b>Definition:</b> <a href="PlotContour3_8m_source.html#l00029">PlotContour3.m:30</a></div></div>
+<div class="ttc" id="aclassPlotContour_html"><div class="ttname"><a href="classPlotContour.html">PlotContour</a></div><div class="ttdoc">This is the PlotContour class for generating instances of 2-dimensional Contour Plot visualizations b...</div><div class="ttdef"><b>Definition:</b> <a href="PlotContour_8m_source.html#l00029">PlotContour.m:30</a></div></div>
+<div class="ttc" id="aclassPlotContourf_html"><div class="ttname"><a href="classPlotContourf.html">PlotContourf</a></div><div class="ttdoc">This is the PlotContourf class for generating instances of 2-dimensional Contourf Plot visualizations...</div><div class="ttdef"><b>Definition:</b> <a href="PlotContourf_8m_source.html#l00029">PlotContourf.m:30</a></div></div>
+<div class="ttc" id="aclassPlotEllipse3_html"><div class="ttname"><a href="classPlotEllipse3.html">PlotEllipse3</a></div><div class="ttdoc">This is the PlotEllipse3 class for generating instances of 3-dimensional Ellipse Plot visualizations ...</div><div class="ttdef"><b>Definition:</b> <a href="PlotEllipse3_8m_source.html#l00028">PlotEllipse3.m:29</a></div></div>
+<div class="ttc" id="aclassPlotEllipse_html"><div class="ttname"><a href="classPlotEllipse.html">PlotEllipse</a></div><div class="ttdoc">This is the PlotEllipse class for generating instances of 2-dimensional Ellipse Plot visualizations b...</div><div class="ttdef"><b>Definition:</b> <a href="PlotEllipse_8m_source.html#l00029">PlotEllipse.m:30</a></div></div>
+<div class="ttc" id="aclassPlotHeatmap_html"><div class="ttname"><a href="classPlotHeatmap.html">PlotHeatmap</a></div><div class="ttdoc">This is the PlotHeatmap class for generating instances of 2-dimensional Heatmap Plot visualizations b...</div><div class="ttdef"><b>Definition:</b> <a href="PlotHeatmap_8m_source.html#l00029">PlotHeatmap.m:30</a></div></div>
+<div class="ttc" id="aclassPlotHistfit_html"><div class="ttname"><a href="classPlotHistfit.html">PlotHistfit</a></div><div class="ttdoc">This is the Histfit class for generating instances of 2-dimensional Histfit Plot visualizations based...</div><div class="ttdef"><b>Definition:</b> <a href="PlotHistfit_8m_source.html#l00029">PlotHistfit.m:30</a></div></div>
+<div class="ttc" id="aclassPlotHistogram2_html"><div class="ttname"><a href="classPlotHistogram2.html">PlotHistogram2</a></div><div class="ttdoc">This is the PlotHistogram2 class for generating instances of 2-dimensional Histogram2 Plot visualizat...</div><div class="ttdef"><b>Definition:</b> <a href="PlotHistogram2_8m_source.html#l00029">PlotHistogram2.m:30</a></div></div>
+<div class="ttc" id="aclassPlotHistogram_html"><div class="ttname"><a href="classPlotHistogram.html">PlotHistogram</a></div><div class="ttdoc">This is the PlotHistogram class for generating instances of 1-dimensional Histogram Plot visualizatio...</div><div class="ttdef"><b>Definition:</b> <a href="PlotHistogram_8m_source.html#l00029">PlotHistogram.m:30</a></div></div>
+<div class="ttc" id="aclassPlotLine3_html"><div class="ttname"><a href="classPlotLine3.html">PlotLine3</a></div><div class="ttdoc">This is the PlotLine3 class for generating instances of 3-dimensional Line Plot visualizations based ...</div><div class="ttdef"><b>Definition:</b> <a href="PlotLine3_8m_source.html#l00029">PlotLine3.m:30</a></div></div>
+<div class="ttc" id="aclassPlotLineScatter3_html"><div class="ttname"><a href="classPlotLineScatter3.html">PlotLineScatter3</a></div><div class="ttdoc">This is the PlotLineScatter3 class for generating instances of 3-dimensional Line-Scatter Plot visual...</div><div class="ttdef"><b>Definition:</b> <a href="PlotLineScatter3_8m_source.html#l00029">PlotLineScatter3.m:30</a></div></div>
+<div class="ttc" id="aclassPlotLineScatter_html"><div class="ttname"><a href="classPlotLineScatter.html">PlotLineScatter</a></div><div class="ttdoc">This is the PlotLineScatter class for generating instances of 2-dimensional Line-Scatter Plot visuali...</div><div class="ttdef"><b>Definition:</b> <a href="PlotLineScatter_8m_source.html#l00029">PlotLineScatter.m:30</a></div></div>
+<div class="ttc" id="aclassPlotLine_html"><div class="ttname"><a href="classPlotLine.html">PlotLine</a></div><div class="ttdoc">This is the PlotLine class for generating instances of 2-dimensional Line Plot visualizations based o...</div><div class="ttdef"><b>Definition:</b> <a href="PlotLine_8m_source.html#l00029">PlotLine.m:30</a></div></div>
+<div class="ttc" id="aclassPlotScatter3_html"><div class="ttname"><a href="classPlotScatter3.html">PlotScatter3</a></div><div class="ttdoc">This is the PlotScatter3 class for generating instances of 3-dimensional Scatter Plot visualizations ...</div><div class="ttdef"><b>Definition:</b> <a href="PlotScatter3_8m_source.html#l00029">PlotScatter3.m:30</a></div></div>
+<div class="ttc" id="aclassPlotScatter_html"><div class="ttname"><a href="classPlotScatter.html">PlotScatter</a></div><div class="ttdoc">This is the PlotScatter class for generating instances of 2-dimensional Scatter Plot visualizations b...</div><div class="ttdef"><b>Definition:</b> <a href="PlotScatter_8m_source.html#l00029">PlotScatter.m:30</a></div></div>
+<div class="ttc" id="aclassPlot_html"><div class="ttname"><a href="classPlot.html">Plot</a></div><div class="ttdoc">This is the base class for generating instances of objects that contain the specifications of various...</div><div class="ttdef"><b>Definition:</b> <a href="Plot_8m_source.html#l00028">Plot.m:29</a></div></div>
 <div class="ttc" id="aclassPlot_html_a000d17b4ad7a466c28ac841c0da3a0b5"><div class="ttname"><a href="classPlot.html#a000d17b4ad7a466c28ac841c0da3a0b5">Plot::premake</a></div><div class="ttdeci">function premake(in self, in varargin)</div><div class="ttdoc">Configure the plot settings and specifications and return nothing.</div></div>
-<div class="ttc" id="aclassPlot_html_a4961f1b6ad1954d5003d0473b0ac4dac"><div class="ttname"><a href="classPlot.html#a4961f1b6ad1954d5003d0473b0ac4dac">Plot::reset</a></div><div class="ttdeci">function reset(in self, in varargin)</div><div class="ttdoc">Reset the properties of the plot to the original default settings.  Use this method when you change m...</div></div>
-<div class="ttc" id="aclassPlot_html_a7013505fed5d8767a744a6b7a9cbd803"><div class="ttname"><a href="classPlot.html#a7013505fed5d8767a744a6b7a9cbd803">Plot::subplot</a></div><div class="ttdeci">Property subplot</div><div class="ttdef"><b>Definition:</b> <a href="Plot_8m_source.html#l00026">Plot.m:26</a></div></div>
+<div class="ttc" id="aclassPlot_html_a4961f1b6ad1954d5003d0473b0ac4dac"><div class="ttname"><a href="classPlot.html#a4961f1b6ad1954d5003d0473b0ac4dac">Plot::reset</a></div><div class="ttdeci">function reset(in self, in varargin)</div><div class="ttdoc">Reset the properties of the plot to the original default settings.</div></div>
+<div class="ttc" id="aclassPlot_html_a7013505fed5d8767a744a6b7a9cbd803"><div class="ttname"><a href="classPlot.html#a7013505fed5d8767a744a6b7a9cbd803">Plot::subplot</a></div><div class="ttdeci">Property subplot</div><div class="ttdef"><b>Definition:</b> <a href="Plot_8m_source.html#l00042">Plot.m:42</a></div></div>
 <div class="ttc" id="aclassPlot_html_a9aeac840bdaaf12398b98367f8405d24"><div class="ttname"><a href="classPlot.html#a9aeac840bdaaf12398b98367f8405d24">Plot::Plot</a></div><div class="ttdeci">function Plot(in subplot, in varargin)</div></div>
 <div class="ttc" id="aclassPlot_html_ad0d17e6eec2b23db06c3dce3d80ffe5e"><div class="ttname"><a href="classPlot.html#ad0d17e6eec2b23db06c3dce3d80ffe5e">Plot::make</a></div><div class="ttdeci">function make(in self, in varargin)</div><div class="ttdoc">Configure the plot settings and specifications, make the plot, and return nothing.</div></div>
-<div class="ttc" id="aclassSubplot_html"><div class="ttname"><a href="classSubplot.html">Subplot</a></div><div class="ttdoc">This is the abstract class for generating instances of axes with various types of plots from one or m...</div><div class="ttdef"><b>Definition:</b> <a href="Subplot_8m_source.html#l00175">Subplot.m:176</a></div></div>
+<div class="ttc" id="aclassSubplot_html"><div class="ttname"><a href="classSubplot.html">Subplot</a></div><div class="ttdoc">This is the abstract class for generating instances of axes with various types of plots from one or m...</div><div class="ttdef"><b>Definition:</b> <a href="Subplot_8m_source.html#l00187">Subplot.m:188</a></div></div>
+<div class="ttc" id="aclassTile_html"><div class="ttname"><a href="classTile.html">Tile</a></div><div class="ttdoc">This is the abstract class for generating instances of objects that contain the specifications of var...</div><div class="ttdef"><b>Definition:</b> <a href="Tile_8m_source.html#l00008">Tile.m:9</a></div></div>
 <div class="ttc" id="aclean_8m_html_a6facc6381d5f76b76fa90c6175ab00ca"><div class="ttname"><a href="clean_8m.html#a6facc6381d5f76b76fa90c6175ab00ca">clean</a></div><div class="ttdeci">function clean()</div><div class="ttdoc">Remove all paths that contain the ParaMonte lib directory from the MATLAB path variable.</div></div>
 <div class="ttc" id="agetBorder_8m_html_a6ec0cec943dde2125d78bb3cfb88d0b9"><div class="ttname"><a href="getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9">getBorder</a></div><div class="ttdeci">function getBorder(in gramian, in center, in npnt)</div><div class="ttdoc">Return a matrix of MATLAB doubles of shape [npnt, 2] containing the coordinates of a set of points on...</div></div>
+<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_77a461de7b91f32df8032085d9a00b9a.html">+vis</a></li><li class="navelem"><a class="el" href="dir_8bf8e7ed4c93fade8245a09bdf19ea78.html">+plot</a></li><li class="navelem"><a class="el" href="Plot_8m.html">Plot.m</a></li>
-        <li class="footer">Generated on Fri Jul 5 2024 10:36:50 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_77a461de7b91f32df8032085d9a00b9a.html">+vis</a></li><li class="navelem"><a class="el" href="Plot_8m.html">Plot.m</a></li>
+        <li class="footer">Generated on Thu Jul 11 2024 09:52:10 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

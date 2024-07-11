@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('cold_8m_source.html',''); initResizabl
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;  of shape ``(nell, 3)`` containing a **<a class="code hl_function" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">cold</a>** colormap.&lt;br&gt;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  \param[in]  nell    :   The input scalar MATLAB integer representing</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;                          the number of rows of the output colormap matrix.&lt;br&gt;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;                          the number of elements (rows) of the output colormap matrix.&lt;br&gt;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;                          (**optional**, <span class="keywordflow">default</span> = ``size(get(gcf, <span class="stringliteral">&#39;colormap&#39;</span>), 1)``)</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  \<span class="keywordflow">return</span></div>
@@ -161,70 +161,64 @@ $(document).ready(function(){initNavTree('cold_8m_source.html',''); initResizabl
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;  \endcode</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;  \example{<a class="code hl_function" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">cold</a>}</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;      imagesc(peaks(500));</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;      colormap(pm.vis.cmap.cold());</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;      colorbar;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;      load topo</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;      imagesc(0:360, -90:90, topo); axis(<span class="stringliteral">&quot;xy&quot;</span>);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;      colormap(pm.vis.cmap.cold());</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;      colorbar;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;  \see</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;  MATLAB intrinsic functions ``hot()``, ``cool()``, ``jet()``, ``hsv()``, ``gray()``, ``copper()``, ``bone()``, ``vivid()``.&lt;br&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;  \example{<a class="code hl_function" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">cold</a>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;  \include{lineno} example/vis/cmap/<a class="code hl_function" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">cold</a>/main.m</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;  \vis{<a class="code hl_function" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">cold</a>}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;  \image html example/vis/cmap/<a class="code hl_function" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">cold</a>/<a class="code hl_function" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">cold</a>.1.png width=700</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;  \image html example/vis/cmap/<a class="code hl_function" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">cold</a>/<a class="code hl_function" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">cold</a>.2.png width=700</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;  \final{<a class="code hl_function" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">cold</a>}</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;  See also: hot, cool, jet, hsv, gray, copper, bone, vivid</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;  \final{<a class="code hl_function" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">cold</a>}</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;  \author</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;  \JoshuaOsborne, May 21 2024, 7:42 AM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>%&gt;      Originally by:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>%&gt;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>%&gt;          Author: Joseph Kirk</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>%&gt;          Email: jdkirk630@gmail.com</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>%&gt;          Release: 1.0</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>%&gt;          Date: 04/21/09</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>%&gt;  </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>%&gt;          Copyright (c) 2009, Joseph Kirk</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>%&gt;          All rights reserved.</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>%&gt;  </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>%&gt;          Redistribution and use in source and binary forms, with or without</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>%&gt;          modification, are permitted provided that the following conditions are</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>%&gt;          met:</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>%&gt;  </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>%&gt;              * Redistributions of source code must retain the above copyright</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>%&gt;                notice, <span class="keyword">this</span> <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> of conditions and the following disclaimer.</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>%&gt;              * Redistributions in binary form must reproduce the above copyright</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>%&gt;                notice, <span class="keyword">this</span> <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> of conditions and the following disclaimer in</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>%&gt;                the documentation and/or other materials provided with the distribution</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>%&gt;  </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>%&gt;          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS <span class="stringliteral">&quot;AS IS&quot;</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>%&gt;          AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>%&gt;          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>%&gt;          ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>%&gt;          LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>%&gt;          CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>%&gt;          SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>%&gt;          INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>%&gt;          CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>%&gt;          ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>%&gt;          POSSIBILITY OF SUCH DAMAGE.</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>%&gt;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">   73</a></span>function cmap = <a class="code hl_function" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">cold</a>(nell)</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">if</span> nargin &lt; 1</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        nell = [];</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    end</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">if</span>  isempty(nell)</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        nell = size(get(gcf, <span class="stringliteral">&#39;colormap&#39;</span>), 1);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    end</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    n = fix(3 / 8 * nell);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    r = [zeros(2 * n, 1); (1 : nell - 2 * n)<span class="stringliteral">&#39; / (nell - 2 * n)];</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="stringliteral">    g = [zeros(n, 1); (1 : n)&#39;</span> / n; ones(nell - 2 * n, 1)];</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    b = [(1 : n)<span class="stringliteral">&#39; / n; ones(nell - n, 1)];</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="stringliteral">    cmap = [r, g, b];</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="stringliteral">end</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;  Author: Joseph Kirk</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;  Email: jdkirk630@gmail.com</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;  Release: 1.0</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;  Date: 04/21/09</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;  Copyright (c) 2009, Joseph Kirk</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;  All rights reserved.</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>%&gt;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>%&gt;  Redistribution and use in source and binary forms, with or without</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>%&gt;  modification, are permitted provided that the following conditions are</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>%&gt;  met:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>%&gt;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>%&gt;  * Redistributions of source code must retain the above copyright</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>%&gt;    notice, <span class="keyword">this</span> <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> of conditions and the following disclaimer.</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>%&gt;  * Redistributions in binary form must reproduce the above copyright</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>%&gt;    notice, <span class="keyword">this</span> <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> of conditions and the following disclaimer in</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>%&gt;    the documentation and/or other materials provided with the distribution</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>%&gt;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>%&gt;  This software is provided by the copyright holders and contributors <span class="stringliteral">&quot;as is&quot;</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>%&gt;  and any express or implied warranties, including, but not limited to, the</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>%&gt;  implied warranties of merchantability and fitness <span class="keywordflow">for</span> a particular purpose</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>%&gt;  are disclaimed. in no <span class="keyword">event</span> shall the copyright owner or contributors be</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>%&gt;  liable <span class="keywordflow">for</span> any direct, indirect, incidental, special, exemplary, or</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>%&gt;  consequential damages (including, but not limited to, procurement of</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>%&gt;  substitute goods or services; loss of use, data, or profits; or business</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>%&gt;  interruption) however caused and on any theory of liability, whether in</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>%&gt;  contract, strict liability, or tort (including negligence or otherwise)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>%&gt;  arising in any way out of the use of <span class="keyword">this</span> software, even <span class="keywordflow">if</span> advised of the</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>%&gt;  possibility of such damage.</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>%&gt;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>%&gt;  \author</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>%&gt;  \JoshuaOsborne, May 21 2024, 7:42 AM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">   67</a></span>function cmap = <a class="code hl_function" href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">cold</a>(nell)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">if</span> nargin &lt; 1</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        nell = [];</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    end</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span>  isempty(nell)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        nell = size(get(gcf, <span class="stringliteral">&#39;colormap&#39;</span>), 1);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    end</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    n = fix(3 / 8 * nell);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    r = [zeros(2 * n, 1); (1 : nell - 2 * n)<span class="stringliteral">&#39; / (nell - 2 * n)];</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="stringliteral">    g = [zeros(n, 1); (1 : n)&#39;</span> / n; ones(nell - 2 * n, 1)];</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    b = [(1 : n)<span class="stringliteral">&#39; / n; ones(nell - n, 1)];</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="stringliteral">    cmap = [r, g, b];</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="stringliteral">end</span></div>
 <div class="ttc" id="a_09os_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div><div class="ttdoc">Return a list of MATLAB strings containing the names of OS platforms supported by the ParaMonte MATLA...</div></div>
 <div class="ttc" id="acold_8m_html_ada03d3c3a1ef5c571a0393cc80b9869a"><div class="ttname"><a href="cold_8m.html#ada03d3c3a1ef5c571a0393cc80b9869a">cold</a></div><div class="ttdeci">function cold(in nell)</div><div class="ttdoc">Return a black-blue-cyan-white colormap matrix of shape (nell, 3) containing a cold colormap.</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -233,7 +227,7 @@ $(document).ready(function(){initNavTree('cold_8m_source.html',''); initResizabl
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_77a461de7b91f32df8032085d9a00b9a.html">+vis</a></li><li class="navelem"><a class="el" href="dir_49c7bba4fd7231315df758dd2b93e609.html">+cmap</a></li><li class="navelem"><a class="el" href="cold_8m.html">cold.m</a></li>
-        <li class="footer">Generated on Fri Jul 5 2024 10:36:49 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Jul 11 2024 09:52:10 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

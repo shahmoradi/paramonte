@@ -202,58 +202,65 @@ $(document).ready(function(){initNavTree('version_8m_source.html',''); initResiz
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>%&gt;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>%&gt;  \author</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>%&gt;  \JoshuaOsborne, May 21 2024, 8:13 PM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="version_8m.html#a383808131a2553869b9db626d7c1856f">   65</a></span>function vernum = <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>(lang, type)</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    persistent vernum_persistent;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">if</span>  nargin &lt; 2</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        type = [];</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    end</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">if</span>  nargin &lt; 1</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        lang = [];</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    end</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">if</span> ~isempty(type)</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        type = string(lower(type));</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        type = <span class="stringliteral">&quot;all&quot;</span>;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    end</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span> ~isempty(lang)</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        lang = string(lower(lang));</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        lang = <span class="stringliteral">&quot;matlab&quot;</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    end</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">if</span>  isempty(vernum_persistent)</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        vernum_persistent = <span class="keyword">struct</span>();</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    end</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">if</span> ~isfield(vernum_persistent, lang)</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keyword">try</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            fid = fopen(fullfile(pm.lib.path.auxil(), <span class="stringliteral">&quot;VERSION.&quot;</span> + lang + <span class="stringliteral">&quot;.md&quot;</span>));</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            vernum_persistent.(lang) = <span class="keywordtype">string</span>(strip(fgetl(fid)));</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            fclose(fid);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">catch</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            vernum_persistent.(lang) = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        end</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    end</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span>  nargin &lt; 2</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        type = [];</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    end</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">if</span>  nargin &lt; 1</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        lang = [];</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    end</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">if</span> ~isempty(type)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        type = string(lower(type));</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        type = <span class="stringliteral">&quot;all&quot;</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    end</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">if</span> ~isempty(lang)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        lang = string(lower(lang));</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        lang = <span class="stringliteral">&quot;matlab&quot;</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    end</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    % persistent vernum_persistent;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    % <span class="keywordflow">if</span>  isempty(vernum_persistent)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    %     vernum_persistent = <span class="keyword">struct</span>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    % end</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    %</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    % <span class="keywordflow">if</span> ~isfield(vernum_persistent, lang)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    %     <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    %         fid = fopen(fullfile(pm.lib.path.auxil(), <span class="stringliteral">&quot;VERSION.&quot;</span> + lang + <span class="stringliteral">&quot;.md&quot;</span>));</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    %         vernum_persistent.(lang) = <span class="keywordtype">string</span>(strip(fgetl(fid)));</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    %         fclose(fid);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    %     <span class="keywordflow">catch</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    %         vernum_persistent.(lang) = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    %     end</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    % end</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    %</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    % vernum = vernum_persistent.(lang);</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    vernum = vernum_persistent.(lang);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">if</span> ~strcmp(type, <span class="stringliteral">&quot;all&quot;</span>)</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        triplet = strsplit(vernum, &quot;.&quot;);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        if  strcmp(type, &quot;major&quot;)</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            vernum = <span class="keywordtype">string</span>(triplet(1));</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        elseif strcmp(type, &quot;minor&quot;)</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            vernum = <span class="keywordtype">string</span>(triplet(2));</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        elseif strcmp(type, &quot;patch&quot;)</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            vernum = <span class="keywordtype">string</span>(triplet(3));</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        end</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    end</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>end</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        version_file = fullfile(pm.lib.path.auxil(), <span class="stringliteral">&quot;VERSION.&quot;</span> + lang + <span class="stringliteral">&quot;.md&quot;</span>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        fid = fopen(version_file);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        vernum = string(strip(fgetl(fid)));</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        fclose(fid);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">catch</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        vernum = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    end</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">if</span> ~strcmp(type, <span class="stringliteral">&quot;all&quot;</span>)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        triplet = strsplit(vernum, &quot;.&quot;);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        if  strcmp(type, &quot;major&quot;)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            vernum = <span class="keywordtype">string</span>(triplet(1));</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        elseif strcmp(type, &quot;minor&quot;) &amp;&amp; numel(triplet) &gt; 1</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            vernum = <span class="keywordtype">string</span>(triplet(2));</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        elseif strcmp(type, &quot;patch&quot;) &amp;&amp; numel(triplet) &gt; 2</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            vernum = <span class="keywordtype">string</span>(triplet(3));</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        end</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    end</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>end</div>
 <div class="ttc" id="a_09update_2version_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
 <div class="ttc" id="afind_8m_html_aa94df3e8e4e5c54cbfe8cfaa7ae6f94c"><div class="ttname"><a href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">find</a></div><div class="ttdeci">function find(in vendor)</div><div class="ttdoc">Return a list of scalar MATLAB strings containing the paths to all detected mpiexec binaries installe...</div></div>
 <div class="ttc" id="alib_8m_html_a3d11053ebcdfc6f0bef7af9c8d14fa13"><div class="ttname"><a href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a></div><div class="ttdeci">function lib()</div><div class="ttdoc">Return a scalar MATLAB string containing the path to the lib directory of the ParaMonte library packa...</div></div>
@@ -264,7 +271,7 @@ $(document).ready(function(){initNavTree('version_8m_source.html',''); initResiz
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_0c006b8a7b0a63b87b86162ded07c4ff.html">+lib</a></li><li class="navelem"><a class="el" href="version_8m.html">version.m</a></li>
-        <li class="footer">Generated on Fri Jul 5 2024 10:36:48 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Jul 11 2024 09:52:09 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gramian_0',['gramian',['../classEllipse3.html#afbd7b8851eec73804c1187719640188a',1,'Ellipse3']]]
+  ['gramian_0',['gramian',['../classSubplotEllipse3.html#a3293fde038ab123b457cd4ed95532176',1,'SubplotEllipse3']]]
 ];

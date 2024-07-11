@@ -57,8 +57,8 @@ var NAVTREE =
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
-        [ "All", "globals.html", "globals_dup" ],
-        [ "Functions", "globals_func.html", "globals_func" ],
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ]
       ] ]
     ] ],
@@ -90,11 +90,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "../../c/2/index.html",
-"_09subplot_2Scatter3_8m_source.html",
-"classFileContentsRestartDRAM.html#a4f7cdb1375fd6d809cc2d94e787d5ee9",
-"colornames__cube_8m_source.html",
-"href_8m.html",
-"testParaMonte__Rosenbrock_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b"
+"_09mvu_2getRand_8m.html#ab7d5a41157c4609d0db943055ce7b4dc",
+"classFileContentsRestartDRAM.html#ad9cb75895987bc4286b9d990185fc0d6",
+"classTileScatter.html#a6abbed6fc6984d6f0ab9a6e3b5bc40fa",
+"iscmd_8m_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

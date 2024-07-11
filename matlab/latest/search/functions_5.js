@@ -15,8 +15,6 @@ var searchData=
   ['findfile_12',['findfile',['../classSampler.html#ad1e47e4d1c58f13f9d6468dc28488144',1,'Sampler']]],
   ['fitaxes_13',['fitAxes',['../fitAxes_8m.html#a6f5920b1a20da6523d042b79582de684',1,'fitAxes.m']]],
   ['fix_5flines_14',['fix_lines',['../fix__lines_8m.html#a03b23f1f3c52b4ac3bcf759eb29fd9a5',1,'fix_lines.m']]],
-  ['fixblackaxle_15',['fixBlackAxle',['../savefig_8m.html#ac3ae4193630cf06abf036537fb949df5',1,'savefig.m']]],
-  ['fixblacktext_16',['fixBlackText',['../savefig_8m.html#a6dcecaa3b1849fb964ef2b9c103e6db0',1,'savefig.m']]],
-  ['font_5fpath_17',['font_path',['../eps2pdf_8m.html#a4289a51d03a8ce6ba80650a8704a4c8e',1,'font_path():&#160;eps2pdf.m'],['../print2array_8m.html#a4289a51d03a8ce6ba80650a8704a4c8e',1,'font_path():&#160;print2array.m']]],
-  ['fuzzy_18',['fuzzy',['../fuzzy_8m.html#a42a082d6a8083240b22f0661e7d470ff',1,'fuzzy.m']]]
+  ['font_5fpath_15',['font_path',['../eps2pdf_8m.html#a4289a51d03a8ce6ba80650a8704a4c8e',1,'font_path():&#160;eps2pdf.m'],['../print2array_8m.html#a4289a51d03a8ce6ba80650a8704a4c8e',1,'font_path():&#160;print2array.m']]],
+  ['fuzzy_16',['fuzzy',['../fuzzy_8m.html#a42a082d6a8083240b22f0661e7d470ff',1,'fuzzy.m']]]
 ];

@@ -209,8 +209,8 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000168">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 4:16 AM, University of Texas at Arlington<br  />
- <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000172">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 4:16 AM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
@@ -251,10 +251,18 @@ Help us justify its continued development and maintenance by acknowledging its b
     <tr><td class="paramdir">[in]</td><td class="paramname">df</td><td>: The input MATLAB matrix or table of rank <code>2</code> containing the data as <code>ncol</code> columns of <code>nrow</code> observations whose correlation matrix must be computed.<br  />
  (<b>optional</b>. If missing, the correlation matrix will not be computed.)</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">method</td><td>: The input scalar MATLAB string that can be either:<br  />
- "pearson" : for computing the Pearson correlation matrix of the input data.<br  />
- "kendall" : for computing the kendall rank correlation matrix of the input data.<br  />
- "spearman" : for computing the Spearman rank correlation matrix of the input data.<br  />
- (<b>optional</b>, default = <code>"pearson"</code>)</td></tr>
+ <ol>
+<li>
+<code>"pearson"</code> : for computing the Pearson correlation matrix of the input data.<br  />
+ </li>
+<li>
+<code>"kendall"</code> : for computing the kendall rank correlation matrix of the input data.<br  />
+ </li>
+<li>
+<code>"spearman"</code> : for computing the Spearman rank correlation matrix of the input data.<br  />
+ </li>
+</ol>
+(<b>optional</b>, default = <code>"pearson"</code>)</td></tr>
   </table>
   </dd>
 </dl>
@@ -271,107 +279,84 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>% Make a positive-definite random matrix.</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>pm.matlab.show()</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>pm.matlab.show(<span class="stringliteral">&#39;randmat = diag(unifrnd(0, .9, 5, 1), 0);&#39;</span>)</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>                randmat = diag(unifrnd(0, .9, 5, 1), 0);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>pm.matlab.show(<span class="stringliteral">&#39;randmat(randmat==0) = unifrnd(-.9, .9, numel(randmat) - size(randmat, 1), 1);&#39;</span>)</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>                randmat(randmat==0) = unifrnd(-.9, .9, numel(randmat) - size(randmat, 1), 1);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>pm.matlab.show(<span class="stringliteral">&quot;covmat = corrcov(tril(randmat)&#39; * tril(randmat))&quot;</span>)</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>                covmat = corrcov(tril(randmat)<span class="stringliteral">&#39; * tril(randmat))</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="stringliteral">pm.matlab.show(&quot;cholow = chol(covmat, &#39;</span>lower<span class="stringliteral">&#39;);&quot;)</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="stringliteral">                cholow = chol(covmat, &#39;</span>lower<span class="stringliteral">&#39;);</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral">pm.matlab.show(&quot;df = pm.stats.dist.mvn.getRand(zeros(length(cholow), 1), cholow, 5000)&#39;</span>;<span class="stringliteral">&quot;)</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="stringliteral">                df = pm.stats.dist.mvn.getRand(zeros(length(cholow), 1), cholow, 5000)&#39;;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="stringliteral"></span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">pm.matlab.show()</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">pm.matlab.show(&#39;c = pm.stats.Cor(df); c.val&#39;)</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">                c = pm.stats.Cor(df); c.val</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="stringliteral"></span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="stringliteral">pm.matlab.show()</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="stringliteral">pm.matlab.show(&#39;c = pm.stats.Cor(df, &quot;</span>pearson<span class="stringliteral">&quot;); c.val&#39;)</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="stringliteral">                c = pm.stats.Cor(df, &quot;</span>pearson<span class="stringliteral">&quot;); c.val</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="stringliteral"></span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="stringliteral">pm.matlab.show()</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="stringliteral">pm.matlab.show(&#39;c = pm.stats.Cor(df, &quot;</span>spearman<span class="stringliteral">&quot;); c.val&#39;)</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="stringliteral">                c = pm.stats.Cor(df, &quot;</span>spearman<span class="stringliteral">&quot;); c.val</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="stringliteral"></span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="stringliteral">pm.matlab.show()</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="stringliteral">pm.matlab.show(&#39;c = pm.stats.Cor(df, &quot;</span>kendall<span class="stringliteral">&quot;); c.val&#39;)</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="stringliteral">                c = pm.stats.Cor(df, &quot;</span>kendall<span class="stringliteral">&quot;); c.val</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="stringliteral"></span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="stringliteral">pm.matlab.show()</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="stringliteral">pm.matlab.show(&#39;p = pm.vis.plot.Heatmap(c.val); p.make(&quot;</span>precision<span class="stringliteral">&quot;, 2); p.subplot.setColorLim();&#39;)</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="stringliteral">                p = pm.vis.plot.Heatmap(c.val); p.make(&quot;</span>precision<span class="stringliteral">&quot;, 2); p.subplot.setColorLim();</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="stringliteral">pm.matlab.show(&#39;p.savefig(&quot;</span><a class="code hl_class" href="classCor.html">Cor</a>.unifrnd.png<span class="stringliteral">&quot;, &quot;</span>-m4<span class="stringliteral">&quot;);&#39;)</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="stringliteral">                p.savefig(&quot;</span><a class="code hl_class" href="classCor.html">Cor</a>.unifrnd.png<span class="stringliteral">&quot;, &quot;</span>-m4<span class="stringliteral">&quot;);</span></div>
-<div class="ttc" id="aclassCor_html"><div class="ttname"><a href="classCor.html">Cor</a></div><div class="ttdoc">This is the base class for generating objects with methods and storage components for computing and s...</div><div class="ttdef"><b>Definition:</b> <a href="Cor_8m_source.html#l00023">Cor.m:24</a></div></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>pm.matlab.show(<span class="stringliteral">&quot;cholow = chol(pm.stats.dist.cov.getRand(5), &#39;lower&#39;);&quot;</span>)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>                cholow = chol(pm.stats.dist.cov.getRand(5), <span class="stringliteral">&#39;lower&#39;</span>);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>pm.matlab.show(<span class="stringliteral">&quot;df = pm.stats.dist.mvn.getRand(zeros(length(cholow), 1), cholow, 5000)&#39;;&quot;</span>)</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>                df = pm.stats.dist.mvn.getRand(zeros(length(cholow), 1), cholow, 5000)<span class="stringliteral">&#39;;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="stringliteral">pm.matlab.show()</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="stringliteral">pm.matlab.show(&#39;</span>c = pm.stats.Cor(df); c.val<span class="stringliteral">&#39;)</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="stringliteral">                c = pm.stats.Cor(df); c.val</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="stringliteral">pm.matlab.show()</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="stringliteral">pm.matlab.show(&#39;</span>c = pm.stats.Cor(df, <span class="stringliteral">&quot;pearson&quot;</span>); c.val<span class="stringliteral">&#39;)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">                c = pm.stats.Cor(df, &quot;pearson&quot;); c.val</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">pm.matlab.show()</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="stringliteral">pm.matlab.show(&#39;</span>c = pm.stats.Cor(df, <span class="stringliteral">&quot;spearman&quot;</span>); c.val<span class="stringliteral">&#39;)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="stringliteral">                c = pm.stats.Cor(df, &quot;spearman&quot;); c.val</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="stringliteral">pm.matlab.show()</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="stringliteral">pm.matlab.show(&#39;</span>c = pm.stats.Cor(df, <span class="stringliteral">&quot;kendall&quot;</span>); c.val<span class="stringliteral">&#39;)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="stringliteral">                c = pm.stats.Cor(df, &quot;kendall&quot;); c.val</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="stringliteral">pm.matlab.show()</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="stringliteral">pm.matlab.show(&#39;</span>p = pm.vis.PlotHeatmap(c.val); p.make(<span class="stringliteral">&quot;precision&quot;</span>, 2); p.subplot.setColorLim();<span class="stringliteral">&#39;)</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="stringliteral">                p = pm.vis.PlotHeatmap(c.val); p.make(&quot;precision&quot;, 2); p.subplot.setColorLim();</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="stringliteral">pm.matlab.show(&#39;</span>p.savefig(<span class="stringliteral">&quot;Cor.unifrnd.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);<span class="stringliteral">&#39;)</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="stringliteral">                p.savefig(&quot;Cor.unifrnd.png&quot;, &quot;-m3&quot;);</span></div>
 <div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="output-Cor"></a><b>Example output</b> <a href="#output-Cor">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>randmat = diag(unifrnd(0, .9, 5, 1), 0);</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>randmat(randmat==0) = unifrnd(-.9, .9, numel(randmat) - size(randmat, 1), 1);</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>covmat = corrcov(tril(randmat)<span class="stringliteral">&#39; * tril(randmat))</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="stringliteral">covmat =</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="stringliteral">  Columns 1 through 3</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="stringliteral">   1.000000000000000   0.113700621377358   0.173849051679862</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="stringliteral">   0.113700621377358   1.000000000000000  -0.372894214911536</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="stringliteral">   0.173849051679862  -0.372894214911536   1.000000000000000</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="stringliteral">   0.442376195743323   0.459471802550392   0.545102240260699</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="stringliteral">  -0.687659188062835  -0.290537930255604  -0.540098925940785</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="stringliteral">  Columns 4 through 5</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="stringliteral">   0.442376195743323  -0.687659188062835</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral">   0.459471802550392  -0.290537930255604</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="stringliteral">   0.545102240260699  -0.540098925940785</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="stringliteral">   1.000000000000000  -0.926621515170595</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">  -0.926621515170595   1.000000000000000</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">cholow = chol(covmat, &#39;</span>lower<span class="stringliteral">&#39;);</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">df = pm.stats.dist.mvn.getRand(zeros(length(cholow), 1), cholow, 5000)&#39;</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>c = pm.stats.Cor(df); c.val</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>ans =</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  5x5 table</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                   Var1                  Var2                  Var3                  Var4                  Var5       </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            __________________    __________________    __________________    __________________    __________________</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    Var1                     1      0.12860934591087     0.158238790963238      0.44461341769283    -0.690799643065125</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    Var2      0.12860934591087                     1    -0.366888429188192     0.479759178782899    -0.317424163400421</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    Var3     0.158238790963238    -0.366888429188192                     1     0.531773381665011    -0.520413117893663</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    Var4      0.44461341769283     0.479759178782899     0.531773381665011                     1    -0.926879387005201</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    Var5    -0.690799643065126    -0.317424163400421    -0.520413117893663    -0.926879387005201                     1</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>c = pm.stats.Cor(df, <span class="stringliteral">&quot;pearson&quot;</span>); c.val</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>ans =</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  5x5 table</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                   Var1                  Var2                  Var3                  Var4                  Var5       </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            __________________    __________________    __________________    __________________    __________________</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    Var1                     1      0.12860934591087     0.158238790963238      0.44461341769283    -0.690799643065125</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    Var2      0.12860934591087                     1    -0.366888429188192     0.479759178782899    -0.317424163400421</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    Var3     0.158238790963238    -0.366888429188192                     1     0.531773381665011    -0.520413117893663</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    Var4      0.44461341769283     0.479759178782899     0.531773381665011                     1    -0.926879387005201</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    Var5    -0.690799643065126    -0.317424163400421    -0.520413117893663    -0.926879387005201                     1</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>c = pm.stats.Cor(df, <span class="stringliteral">&quot;spearman&quot;</span>); c.val</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>ans =</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  5x5 table</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                   Var1                  Var2                  Var3                  Var4                  Var5       </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            __________________    __________________    __________________    __________________    __________________</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    Var1                     1     0.120975855687034      0.14917148785486     0.430809323088373    -0.673122896780916</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    Var2     0.120975855687034                     1    -0.356371572622863     0.466439670945587    -0.306035611537425</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    Var3      0.14917148785486    -0.356371572622863                     1     0.508771088830844    -0.499464518698581</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    Var4     0.430809323088373     0.466439670945587     0.508771088830844                     1    -0.920773886270955</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    Var5    -0.673122896780916    -0.306035611537425    -0.499464518698581    -0.920773886270955                     1</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>c = pm.stats.Cor(df, <span class="stringliteral">&quot;kendall&quot;</span>); c.val</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>ans =</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  5x5 table</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                   Var1                  Var2                  Var3                  Var4                  Var5       </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            __________________    __________________    __________________    __________________    __________________</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    Var1                     1    0.0807025405081016     0.100061932386477     0.294481456291258    -0.484926105221044</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    Var2    0.0807025405081016                     1    -0.241517423484697     0.320591318263653    -0.206726785357071</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    Var3     0.100061932386477    -0.241517423484697                     1     0.352940828165633    -0.346837367473495</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    Var4     0.294481456291258     0.320591318263653     0.352940828165633                     1    -0.755289777955591</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    Var5    -0.484926105221044    -0.206726785357071    -0.346837367473495    -0.755289777955591                     1</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>p = pm.vis.plot.Heatmap(c.val); p.make(<span class="stringliteral">&quot;precision&quot;</span>, 2); p.subplot.setColorLim();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>p.savefig(<span class="stringliteral">&quot;Cor.unifrnd.png&quot;</span>, <span class="stringliteral">&quot;-m4&quot;</span>);</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>cholow = chol(pm.stats.dist.cov.getRand(5), <span class="stringliteral">&#39;lower&#39;</span>);</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>df = pm.stats.dist.mvn.getRand(zeros(length(cholow), 1), cholow, 5000)<span class="stringliteral">&#39;;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="stringliteral">c = pm.stats.Cor(df); c.val</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="stringliteral">ans =</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="stringliteral">  5x5 table</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="stringliteral">                  Var1                 Var2                 Var3                 Var4                 Var5       </span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="stringliteral">            _________________    _________________    _________________    _________________    _________________</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="stringliteral">    Var1                    1    0.999665242214288    0.458249571370196    0.792715437534784    0.516374060655296</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="stringliteral">    Var2    0.999665242214288                    1    0.442021537667676    0.789882259020928    0.523298427619952</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="stringliteral">    Var3    0.458249571370196    0.442021537667675                    1    0.111302230708503    0.369318991921761</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="stringliteral">    Var4    0.792715437534784    0.789882259020928    0.111302230708503                    1    0.144750985785344</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral">    Var5    0.516374060655296    0.523298427619952    0.369318991921762    0.144750985785344                    1</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="stringliteral">c = pm.stats.Cor(df, &quot;pearson&quot;); c.val</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">ans =</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">  5x5 table</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">                  Var1                 Var2                 Var3                 Var4                 Var5       </span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="stringliteral">            _________________    _________________    _________________    _________________    _________________</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="stringliteral">    Var1                    1    0.999665242214288    0.458249571370196    0.792715437534784    0.516374060655296</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="stringliteral">    Var2    0.999665242214288                    1    0.442021537667676    0.789882259020928    0.523298427619952</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="stringliteral">    Var3    0.458249571370196    0.442021537667675                    1    0.111302230708503    0.369318991921761</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="stringliteral">    Var4    0.792715437534784    0.789882259020928    0.111302230708503                    1    0.144750985785344</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="stringliteral">    Var5    0.516374060655296    0.523298427619952    0.369318991921762    0.144750985785344                    1</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="stringliteral">c = pm.stats.Cor(df, &quot;spearman&quot;); c.val</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="stringliteral">ans =</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="stringliteral">  5x5 table</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="stringliteral">                  Var1                 Var2                 Var3                 Var4                 Var5       </span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="stringliteral">            _________________    _________________    _________________    _________________    _________________</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="stringliteral">    Var1                    1    0.999614926128597    0.441025917961037    0.777405685336228    0.497278984627159</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="stringliteral">    Var2    0.999614926128597                    1    0.424880785923231    0.774544424133777    0.503945071197803</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="stringliteral">    Var3    0.441025917961037    0.424880785923231                    1    0.106632464969299    0.359281052995242</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="stringliteral">    Var4    0.777405685336228    0.774544424133777    0.106632464969299                    1    0.135622407600896</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="stringliteral">    Var5    0.497278984627159    0.503945071197803    0.359281052995242    0.135622407600896                    1</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="stringliteral">c = pm.stats.Cor(df, &quot;kendall&quot;); c.val</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="stringliteral">ans =</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="stringliteral">  5x5 table</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="stringliteral">                  Var1                 Var2                  Var3                  Var4                  Var5       </span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="stringliteral">            _________________    _________________    __________________    __________________    __________________</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="stringliteral">    Var1                    1    0.983398279655931     0.302229885977195     0.582272774554911     0.344105301060212</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="stringliteral">    Var2    0.983398279655931                    1     0.290476175235047     0.579331066213243     0.349104380876175</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="stringliteral">    Var3    0.302229885977195    0.290476175235047                     1    0.0712644928985797      0.24269125825165</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="stringliteral">    Var4    0.582272774554911    0.579331066213243    0.0712644928985797                     1    0.0910433286657331</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="stringliteral">    Var5    0.344105301060212    0.349104380876175      0.24269125825165    0.0910433286657331                     1</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="stringliteral">p = pm.vis.PlotHeatmap(c.val); p.make(&quot;precision&quot;, 2); p.subplot.setColorLim();</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="stringliteral">p.savefig(&quot;Cor.unifrnd.png&quot;, &quot;-m3&quot;);</span></div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="vis-Cor"></a><b>Visualization of the example output</b> <a href="#vis-Cor">⛓</a> <div class="image">
 <img src="Cor.unifrnd.png" alt="" width="700"/>
@@ -379,7 +364,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 </dd></dl>
 <p><br  />
 <a class="anchor" id="final-Cor"></a><b>Final Remarks</b> <a href="#final-Cor">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/Cor.m#L93 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/Cor.m#L95 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -394,8 +379,8 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000169">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 4:22 AM, University of Texas at Arlington<br  />
- <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000173">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 4:22 AM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
@@ -455,7 +440,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <code>"spearman"</code> : for computing the Spearman rank correlation matrix of the input data.<br  />
  </li>
 </ol>
-(<b>optional</b>, default = <code>pm.stats.Cor.method</code>)</td></tr>
+(<b>optional</b>, default = <a class="el" href="classCor.html#adc89b459da8289c6f2a5fc3416543f2f">pm.stats.Cor.method</a>)</td></tr>
   </table>
   </dd>
 </dl>
@@ -470,7 +455,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 </dd></dl>
 <p><br  />
 <a class="anchor" id="final-get"></a><b>Final Remarks</b> <a href="#final-get">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/Cor.m#L148 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/Cor.m#L150 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -485,8 +470,8 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000170">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 4:24 AM, University of Texas at Arlington<br  />
- <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center, Washington, D.C.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000174">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 4:24 AM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
@@ -550,7 +535,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classCor.html">Cor</a></li>
-        <li class="footer">Generated on Fri Jul 5 2024 10:36:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Jul 11 2024 09:52:11 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
