@@ -258,8 +258,29 @@ Help us justify its continued development and maintenance by acknowledging its b
 See the documentation of the attributes of the superclass <a class="el" href="classCascade.html">pm.vis.Cascade</a>.<br  />
 </dd></dl>
 <p><br  />
+<a class="anchor" id="example-CascadeHistogram2"></a><b>Example usage</b> <a href="#example-CascadeHistogram2">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>addpath(<span class="stringliteral">&#39;../../../&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory to the search path.</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>cholow = chol(pm.stats.dist.cov.getRand(10), <span class="stringliteral">&#39;lower&#39;</span>);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>df = transpose(pm.stats.dist.mvu.getRand(zeros(length(cholow), 1), cholow, 5000));</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>cv = pm.vis.CascadeHistogram2(df, <span class="stringliteral">&quot;colx&quot;</span>, 1:2:5, <span class="stringliteral">&quot;coly&quot;</span>, 2:2:6);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>cv.make();</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>cv.savefigs([<span class="stringliteral">&quot;CascadeHistogram2.window.1.png&quot;</span>, <span class="stringliteral">&quot;CascadeHistogram2.window.2.png&quot;</span>, <span class="stringliteral">&quot;CascadeHistogram2.window.3.png&quot;</span>], <span class="stringliteral">&quot;-m3&quot;</span>);</div>
+<div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
+</div><!-- fragment --> <br  />
+<a class="anchor" id="vis-CascadeHistogram2"></a><b>Visualization of the example output</b> <a href="#vis-CascadeHistogram2">⛓</a> <div class="image">
+<img src="CascadeHistogram2.window.1.png" alt="" width="700"/>
+</div>
+ <div class="image">
+<img src="CascadeHistogram2.window.2.png" alt="" width="700"/>
+</div>
+ <div class="image">
+<img src="CascadeHistogram2.window.3.png" alt="" width="700"/>
+</div>
+</dd></dl>
+<p><br  />
 <a class="anchor" id="final-CascadeHistogram2"></a><b>Final Remarks</b> <a href="#final-CascadeHistogram2">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/CascadeHistogram2.m#L61 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/CascadeHistogram2.m#L68 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -290,7 +311,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classCascadeHistogram2.html">CascadeHistogram2</a></li>
-        <li class="footer">Generated on Thu Jul 11 2024 10:13:00 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Fri Jul 12 2024 15:48:24 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

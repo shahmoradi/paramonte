@@ -262,10 +262,10 @@ See the documentation of the attributes of the superclass <a class="el" href="cl
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>addpath(<span class="stringliteral">&#39;../../../&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory to the search path.</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>cholow = chol(pm.stats.dist.cov.getRand(10), <span class="stringliteral">&#39;lower&#39;</span>);</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>df = pm.stats.dist.mvu.getRand(zeros(length(cholow), 1), cholow, 5000)<span class="stringliteral">&#39;;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="stringliteral">cv = pm.vis.CascadeContourf(df, &quot;colx&quot;, 1:2:5, &quot;coly&quot;, 2:2:6);</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="stringliteral">cv.make();</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="stringliteral">cv.savefigs([&quot;CascadeContourf.window.1.png&quot;, &quot;CascadeContourf.window.2.png&quot;, &quot;CascadeContourf.window.3.png&quot;], &quot;-m3&quot;);</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>df = transpose(pm.stats.dist.mvu.getRand(zeros(length(cholow), 1), cholow, 5000));</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>cv = pm.vis.CascadeContourf(df, <span class="stringliteral">&quot;colx&quot;</span>, 1:2:5, <span class="stringliteral">&quot;coly&quot;</span>, 2:2:6);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>cv.make();</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>cv.savefigs([<span class="stringliteral">&quot;CascadeContourf.window.1.png&quot;</span>, <span class="stringliteral">&quot;CascadeContourf.window.2.png&quot;</span>, <span class="stringliteral">&quot;CascadeContourf.window.3.png&quot;</span>], <span class="stringliteral">&quot;-m3&quot;</span>);</div>
 <div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="vis-CascadeContourf"></a><b>Visualization of the example output</b> <a href="#vis-CascadeContourf">⛓</a> <div class="image">
@@ -311,7 +311,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classCascadeContourf.html">CascadeContourf</a></li>
-        <li class="footer">Generated on Thu Jul 11 2024 10:13:00 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Fri Jul 12 2024 15:48:24 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
