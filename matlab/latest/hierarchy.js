@@ -28,7 +28,8 @@ var hierarchy =
     ] ],
     [ "pm::vis::figure::Figure", null, [
       [ "Plot", "classPlot.html", null ],
-      [ "Tiling", "classTiling.html", null ]
+      [ "Tiling", "classTiling.html", null ],
+      [ "Triplex", "classTriplex.html", null ]
     ] ],
     [ "pm::io::FileContents", null, [
       [ "FileContentsReport", "classFileContentsReport.html", null ],
@@ -123,7 +124,8 @@ var hierarchy =
       [ "TileScatter", "classTileScatter.html", null ],
       [ "TileScatter3", "classTileScatter3.html", null ]
     ] ],
-    [ "pm::vis::figure::Tiling", null, [
+    [ "pm::vis::Tiling", null, [
+      [ "Corner", "classCorner.html", null ],
       [ "Corner", "classCorner.html", null ],
       [ "Tile", "classTile.html", null ]
     ] ],

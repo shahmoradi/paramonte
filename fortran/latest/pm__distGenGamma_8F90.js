@@ -6,5 +6,6 @@ var pm__distGenGamma_8F90 =
     [ "pm_distGenGamma::setGenGammaLogPDF", "interfacepm__distGenGamma_1_1setGenGammaLogPDF.html", null ],
     [ "pm_distGenGamma::getGenGammaCDF", "interfacepm__distGenGamma_1_1getGenGammaCDF.html", null ],
     [ "pm_distGenGamma::setGenGammaCDF", "interfacepm__distGenGamma_1_1setGenGammaCDF.html", null ],
+    [ "pm_distGenGamma::setGenGammaRand", "interfacepm__distGenGamma_1_1setGenGammaRand.html", null ],
     [ "MODULE_NAME", "pm__distGenGamma_8F90.html#a94bc149ee3ca44eee513f0075867897b", null ]
 ];

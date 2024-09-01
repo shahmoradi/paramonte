@@ -18,8 +18,10 @@ var namespacepm__polynomial =
     [ "setPolyRoot", "interfacepm__polynomial_1_1setPolyRoot.html", null ],
     [ "setPolyRootPolished", "interfacepm__polynomial_1_1setPolyRootPolished.html", null ],
     [ "setPolySub", "interfacepm__polynomial_1_1setPolySub.html", null ],
+    [ "skgo_type", "structpm__polynomial_1_1skgo__type.html", "structpm__polynomial_1_1skgo__type" ],
     [ "eigen", "namespacepm__polynomial.html#a4bf1d29725012070ab27ec81918df46b", null ],
     [ "jenkins", "namespacepm__polynomial.html#ac1f657eba9f64f4e251a5f1b67f0ba02", null ],
     [ "laguerre", "namespacepm__polynomial.html#ad7a9b1776fa3670d5b3cb401d91026e3", null ],
-    [ "MODULE_NAME", "namespacepm__polynomial.html#a7ed954ba0101852d40ea302341567ac1", null ]
+    [ "MODULE_NAME", "namespacepm__polynomial.html#a7ed954ba0101852d40ea302341567ac1", null ],
+    [ "skgo", "namespacepm__polynomial.html#aa393f8d8859f85bdae1b527db42c5118", null ]
 ];

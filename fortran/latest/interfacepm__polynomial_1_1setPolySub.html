@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -176,8 +177,8 @@ containing the coefficients of the left-hand-side polynomial in the subtraction,
 <a class="anchor" id="interface-setPolySub"></a><b>Possible calling interfaces</b> <a href="#interface-setPolySub">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__polynomial.html">pm_polynomial</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__polynomial_1_1setPolySub.html">setPolySub</a></div>
 <div class="line"> </div>
 <div class="line"><span class="fortran_statement">call</span> <a class="code hl_interface" href="interfacepm__polynomial_1_1setPolySub.html">setPolySub</a>(sub(<span class="fortran_numeric_literal">1</span> :<span class="fortran_function"> max</span>(<span class="fortran_function">size</span>(lhs),<span class="fortran_function"> size</span>(rhs))), lhs(:), rhs(:))</div>
-<div class="ttc" id="ainterfacepm__polynomial_1_1setPolySub_html"><div class="ttname"><a href="interfacepm__polynomial_1_1setPolySub.html">pm_polynomial::setPolySub</a></div><div class="ttdoc">Return the vector of coefficients of the polynomial resulting from the subtraction of a polynomial to...</div><div class="ttdef"><b>Definition:</b> <a href="pm__polynomial_8F90_source.html#l01531">pm_polynomial.F90:1531</a></div></div>
-<div class="ttc" id="anamespacepm__polynomial_html"><div class="ttname"><a href="namespacepm__polynomial.html">pm_polynomial</a></div><div class="ttdoc">This module contains procedures and generic interfaces for performing various mathematical operations...</div><div class="ttdef"><b>Definition:</b> <a href="pm__polynomial_8F90_source.html#l00383">pm_polynomial.F90:383</a></div></div>
+<div class="ttc" id="ainterfacepm__polynomial_1_1setPolySub_html"><div class="ttname"><a href="interfacepm__polynomial_1_1setPolySub.html">pm_polynomial::setPolySub</a></div><div class="ttdoc">Return the vector of coefficients of the polynomial resulting from the subtraction of a polynomial to...</div><div class="ttdef"><b>Definition:</b> <a href="pm__polynomial_8F90_source.html#l01586">pm_polynomial.F90:1586</a></div></div>
+<div class="ttc" id="anamespacepm__polynomial_html"><div class="ttname"><a href="namespacepm__polynomial.html">pm_polynomial</a></div><div class="ttdoc">This module contains procedures and generic interfaces for performing various mathematical operations...</div><div class="ttdef"><b>Definition:</b> <a href="pm__polynomial_8F90_source.html#l00438">pm_polynomial.F90:438</a></div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The condition <code>0 &lt; size(rhs)</code> must hold for the corresponding input arguments.<br  />
  The condition <code>0 &lt; size(lhs)</code> must hold for the corresponding input arguments.<br  />
@@ -273,7 +274,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor"></span>SET_POLY_SUB</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="fortran_statement">end program </span>example</div>
-<div class="ttc" id="ainterfacepm__polynomial_1_1getPolyStr_html"><div class="ttname"><a href="interfacepm__polynomial_1_1getPolyStr.html">pm_polynomial::getPolyStr</a></div><div class="ttdoc">Generate and return a string containing the polynomial expression corresponding to the input polynomi...</div><div class="ttdef"><b>Definition:</b> <a href="pm__polynomial_8F90_source.html#l02993">pm_polynomial.F90:2993</a></div></div>
+<div class="ttc" id="ainterfacepm__polynomial_1_1getPolyStr_html"><div class="ttname"><a href="interfacepm__polynomial_1_1getPolyStr.html">pm_polynomial::getPolyStr</a></div><div class="ttdoc">Generate and return a string containing the polynomial expression corresponding to the input polynomi...</div><div class="ttdef"><b>Definition:</b> <a href="pm__polynomial_8F90_source.html#l03048">pm_polynomial.F90:3048</a></div></div>
 <div class="ttc" id="anamespacepm__io_html"><div class="ttname"><a href="namespacepm__io.html">pm_io</a></div><div class="ttdoc">This module contains classes and procedures for input/output (IO) or generic display operations on st...</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l00252">pm_io.F90:252</a></div></div>
 <div class="ttc" id="anamespacepm__io_html_adbd5f19ab57266908f0e5000233840d3"><div class="ttname"><a href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">pm_io::disp</a></div><div class="ttdeci">type(display_type) disp</div><div class="ttdoc">This is a scalar module variable an object of type display_type for general display.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11393">pm_io.F90:11393</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html"><div class="ttname"><a href="namespacepm__kind.html">pm_kind</a></div><div class="ttdoc">This module defines the relevant Fortran kind type-parameters frequently used in the ParaMonte librar...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00268">pm_kind.F90:268</a></div></div>
@@ -379,10 +380,10 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000723">Test:</a></b></dt><dd>test_pm_polynomial</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000753">Test:</a></b></dt><dd>test_pm_polynomial</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-setPolySub"></a><b>Final Remarks</b> <a href="#final-setPolySub">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_polynomial.F90#L1527 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_polynomial.F90#L1582 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -397,9 +398,9 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001084">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, Tuesday 11:34 PM, August 10, 2021, Dallas, TX </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001128">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, Tuesday 11:34 PM, August 10, 2021, Dallas, TX </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__polynomial_8F90_source.html#l01531">1531</a> of file <a class="el" href="pm__polynomial_8F90_source.html">pm_polynomial.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__polynomial_8F90_source.html#l01586">1586</a> of file <a class="el" href="pm__polynomial_8F90_source.html">pm_polynomial.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
 <li>src/fortran/main/<a class="el" href="pm__polynomial_8F90_source.html">pm_polynomial.F90</a></li>
 </ul>
@@ -409,7 +410,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__polynomial.html">pm_polynomial</a></li><li class="navelem"><a class="el" href="interfacepm__polynomial_1_1setPolySub.html">setPolySub</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 13:03:41 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:57 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

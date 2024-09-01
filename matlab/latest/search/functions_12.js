@@ -22,5 +22,6 @@ var searchData=
   ['tiling_19',['Tiling',['../classTiling.html#aeac1d2a387b45e2a32b00c7393ec44df',1,'Tiling']]],
   ['timer_20',['Timer',['../classTimer.html#ac94b3d24dca0f844f24deece2ebff24c',1,'Timer']]],
   ['toc_21',['toc',['../classTimer.html#aa39d99c37317a6bb405a108817b50fbd',1,'Timer']]],
-  ['touch_22',['touch',['../touch_8m.html#a478e3168a07b178b461fc45b566085db',1,'touch.m']]]
+  ['touch_22',['touch',['../touch_8m.html#a478e3168a07b178b461fc45b566085db',1,'touch.m']]],
+  ['triplex_23',['Triplex',['../classTriplex.html#a7b491c20734cbe3053a6286daf1c5056',1,'Triplex']]]
 ];

@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -187,7 +188,7 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This module contains classes and procedures for computing the properties related to the covariance matrices of a random sample.<br  />
  </p>
-<h1><a class="anchor" id="autotoc_md129"></a>
+<h1><a class="anchor" id="autotoc_md132"></a>
 Variance</h1>
 <p >Variance is the squared deviation from the mean of a random variable.<br  />
  The variance is also often defined as the square of the standard deviation.<br  />
@@ -195,13 +196,13 @@ Variance</h1>
  It is the second central moment of a distribution, and the covariance of the random variable with itself.<br  />
  It is frequently represented by \(\Sigma\), \(\sigma^2\), \(s^2\), \(\up{Var}(X)\), or \(\mathbb{V}(X)\).<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md130"></a>
+<h2><a class="anchor" id="autotoc_md133"></a>
 Variance as a measure of dispersion</h2>
 <p >An advantage of variance as a measure of dispersion is that it is more amenable to algebraic manipulation than other measures of dispersion such as the expected absolute deviation.<br  />
  For example, the variance of a sum of uncorrelated random variables is equal to the sum of their variances.<br  />
  A disadvantage of the variance for practical applications is that, unlike the standard deviation, its units differ from the random variable, which is why the standard deviation is more commonly reported as a measure of dispersion once the calculation is finished.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md131"></a>
+<h2><a class="anchor" id="autotoc_md134"></a>
 Population vs. sample variance</h2>
 <p >There are two distinct concepts that are both called <em>variance</em>.<br  />
  One, as discussed above, is part of a theoretical probability distribution and is <b>defined by an equation</b>.<br  />
@@ -215,11 +216,11 @@ Population vs. sample variance</h2>
  To see how, consider that a theoretical probability distribution can be used as a generator of hypothetical observations.<br  />
  If an infinite number of observations are generated using a distribution, then the sample variance calculated from that infinite set will match the value calculated using the distribution's equation for variance.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md132"></a>
+<h2><a class="anchor" id="autotoc_md135"></a>
 History</h2>
 <p >The term <b>variance</b> was apparently first introduced by Ronald Fisher in his 1918 paper <em>The Correlation Between Relatives on the Supposition of Mendelian Inheritance</em>.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md133"></a>
+<h2><a class="anchor" id="autotoc_md136"></a>
 Definition</h2>
 <p >The variance of a random variable \(X\) is the expected value of the squared deviation from the mean of \(X\), \(\mu= \up{E}[X]\):<br  />
   </p><p class="formulaDsp">
@@ -250,7 +251,7 @@ Definition</h2>
 </p>
 <p> In other words, the variance of \(X\) is equal to the mean of the square of \(X\) minus the square of the mean of \(X\).&lt;br&lt; However, this formulation is never used for computations using floating point arithmetic, because it suffers from <a href="https://en.wikipedia.org/wiki/Catastrophic_cancellation">catastrophic cancellation</a> if the two components of the equation are similar in magnitude.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md134"></a>
+<h2><a class="anchor" id="autotoc_md137"></a>
 Population variance and sample variance</h2>
 <p >Real-world observations such as the measurements of yesterday rain throughout the day typically cannot be complete sets of all possible observations that could be made.<br  />
  As such, the variance calculated from the finite set will in general not match the variance that would have been calculated from the full population of possible observations.<br  />
@@ -280,7 +281,7 @@ Population variance and sample variance</h2>
  For example, when \(n = 1\) the variance of a single observation about the sample mean (itself) is obviously zero regardless of the population variance.<br  />
  If the mean is determined in some other way than from the same samples used to estimate the variance then this bias does not arise and the variance can safely be estimated as that of the samples about the (independently known) mean.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md135"></a>
+<h2><a class="anchor" id="autotoc_md138"></a>
 Biased sample variance</h2>
 <p >In many practical situations, the true variance of a population is not known a priori and must be computed.<br  />
  When dealing with extremely large populations, it is not possible to count every object in the population, so the computation must be performed on a sample of the population.<br  />
@@ -318,7 +319,7 @@ Biased sample variance</h2>
  For this reason, \(\tilde{\sigma}_X^2\) is referred to as the <b>biased sample variance</b>.<br  />
  The bias-correction factor in this case is \(\xi = \frac{n}{n - 1}\).<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md136"></a>
+<h2><a class="anchor" id="autotoc_md139"></a>
 Unbiased sample variance</h2>
 <p >Correcting for this bias yields the unbiased sample variance, denoted \(\sigma^2\):<br  />
   </p><p class="formulaDsp">
@@ -332,7 +333,7 @@ Unbiased sample variance</h2>
  The square root is a concave function and thus introduces negative bias (by the Jensen inequality), which depends on the distribution, and thus the corrected sample standard deviation is biased.<br  />
  The unbiased estimation of standard deviation is a technically involved problem, though for the normal distribution using the term \(n − 1.5\) yields an almost unbiased estimator.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md137"></a>
+<h2><a class="anchor" id="autotoc_md140"></a>
 Biased weighted sample variance</h2>
 <p >Given a <b>weighted sample</b> of \(n\) observations \(X_{1:n}\) with a <a class="el" href="namespacepm__sampleMean.html">weighted sample mean</a> \(\hat\mu_w\), the biased variance of the weighted sample is computed as,  </p><p class="formulaDsp">
 \begin{equation}
@@ -342,7 +343,7 @@ Biased weighted sample variance</h2>
 <p> where <code>n = nsam</code> is the number of observations in the sample, \(w_i\) are the weights of individual data points, and \(\hat\mu_w\) is the <b>weighted mean</b> of the sample.<br  />
  When the sample size is small, the above equation yields a biased estimate of the variance.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md138"></a>
+<h2><a class="anchor" id="autotoc_md141"></a>
 Unbiased weighted sample variance</h2>
 <p >There is no unique generic equation for the <b>unbiased variance</b> of a <b>weighted sample</b>.<br  />
  However, depending on the types of the weights involved, a few popular definitions exist.<br  />
@@ -391,7 +392,7 @@ Reliability weights are frequently (but not necessarily) normalized, meaning tha
 </ol>
 </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md139"></a>
+<h2><a class="anchor" id="autotoc_md142"></a>
 Variance updating</h2>
 <p >Consider a sample \(X_{1..n}\) of size \(n\) with weights \(w_{1..n}\).<br  />
  The weighted mean of this sample can be expressed as,  </p><p class="formulaDsp">
@@ -496,24 +497,24 @@ Double precision divide: 36 cycles </li>
 </li>
 </ol>
 </dd></dl>
-<h1><a class="anchor" id="autotoc_md140"></a>
+<h1><a class="anchor" id="autotoc_md143"></a>
 Generalization of variance</h1>
-<h2><a class="anchor" id="autotoc_md141"></a>
+<h2><a class="anchor" id="autotoc_md144"></a>
 Variance of complex variables</h2>
 <p >If \(x\) is a scalar complex-valued random variable, with values in \(\mathbb{C}\), then its variance is \(\up{E} \left[(x-\mu )(x-\mu )^{*}\right]\), where \(x^{*}\) is the complex conjugate of \(x\).<br  />
  This variance is a real scalar.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md142"></a>
+<h2><a class="anchor" id="autotoc_md145"></a>
 Matrix variance of vector-valued variables</h2>
 <p >If \(X\) is a vector-valued random variable, with values in \(\mathbb{R}^{n}\), and thought of as a column vector, then a natural generalization of variance is \(\up{E}\left[(X-\mu)(X-\mu)^{\up{T}}\right]\), where \(\mu = \up{E}(X)\) and \(X^{\up{T}}\) is the transpose of \(X\), and so is a row vector.<br  />
  The result is a positive semi-definite square matrix, commonly referred to as the <b>variance-covariance matrix</b> (or simply as the <a class="el" href="namespacepm__sampleCov.html">covariance matrix</a>).<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md143"></a>
+<h2><a class="anchor" id="autotoc_md146"></a>
 Matrix variance of complex vector-valued variables</h2>
 <p >If \(X\) is a vector- and complex-valued random variable, with values in \(\mathbb {C}^{n}\), then the covariance matrix is \(\up{E} \left[(X-\mu)(X-\mu)^{\dagger}\right]\), where \(X^{\dagger}\) is the conjugate transpose of \(X\).<br  />
  This matrix is also positive semi-definite and square.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md144"></a>
+<h2><a class="anchor" id="autotoc_md147"></a>
 Extension of scalar variance to higher dimensions</h2>
 <p >Another generalization of variance for vector-valued random variables \(X\), which results in a scalar value rather than in a matrix, is the generalized variance \(\det(C)\), the determinant of the covariance matrix.<br  />
  The generalized variance can be shown to be related to the multidimensional scatter of points around their mean.<br  />
@@ -521,7 +522,7 @@ Extension of scalar variance to higher dimensions</h2>
 <p >A different generalization is obtained by considering the variance of the Euclidean distance between the random variable and its mean.<br  />
  This results in \(\up{E} \left[(X-\mu)^{\up {T}}(X-\mu)\right] = \up{tr}(C)\), which is the <b>trace of the covariance matrix</b>.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md145"></a>
+<h2><a class="anchor" id="autotoc_md148"></a>
 Summary</h2>
 <ol>
 <li>
@@ -559,7 +560,7 @@ The most famous such correction is called the <a href="https://en.wikipedia.org/
  <em>Updating mean and variance estimates: an improved method</em>, D.H.D. West, 1979.<br  />
  Geisser and Cornfield, 1963, <em>Posterior distributions for multivariate normal parameters</em>.<br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000861">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__sampleCov.html">test_pm_sampleCov</a></dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000891">Test:</a></b></dt><dd>test_pm_sampleCov</dd></dl>
 <dl class="bug"><dt><b><a class="el" href="bug.html#_bug000066">Bug:</a></b></dt><dd><br  />
 <b>Status:</b> See <span style="color:red"><b>Unresolved</b></span>, See <a href="https://groups.google.com/g/comp.lang.fortran/c/NDE6JKTFbNU">this page</a> for more information.<br  />
  <br  />
@@ -588,10 +589,10 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000393">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: The inclusion of bias correction in the calculation of variance is a frequentist abomination and shenanigan that must be eliminated in the future.<br  />
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000400">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: The inclusion of bias correction in the calculation of variance is a frequentist abomination and shenanigan that must be eliminated in the future.<br  />
  The correction factor should be computed separately from the actual variance calculation.<br  />
 </dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001243">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Nov 24, 2020, 4:19 AM, Dallas, TX<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001289">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Nov 24, 2020, 4:19 AM, Dallas, TX<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, Thursday 12:45 AM, August 20, 2021, Dallas, TX<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Monday March 6, 2017, 2:48 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin.<br  />
  </dd></dl>
@@ -618,7 +619,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__sampleVar.html">pm_sampleVar</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 13:03:42 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:57 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

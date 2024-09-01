@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -170,6 +171,9 @@ the constant <a class="el" href="namespacepm__distanceEuclid.html#a4336d38b6dc6e
  This option is computationally faster than the <a class="el" href="namespacepm__distanceEuclid.html#a529a315df721d87e6cbbac61163290b4">euclid</a> method.<br  />
  </li>
 <li>
+the constant <a class="el" href="namespacepm__distanceEuclid.html#a9f677b5cc2ca3299586b5a1445aa3e53">euclidv</a> or an object of type <a class="el" href="structpm__distanceEuclid_1_1euclidv__type.html">euclidv_type</a>, implying that the volumes corresponding to all Euclidean distances must be returned <b>without</b> runtime checks for numerical overflow.<br  />
+ This option is computationally the fastest approach to computing the distances because it avoid costly <code>sqrt()</code> operations and runtime overflow </li>
+<li>
 the constant <a class="el" href="namespacepm__distanceEuclid.html#aac5b4ee8fb697e67d295e78509a5a239">euclidsq</a> or an object of type <a class="el" href="structpm__distanceEuclid_1_1euclidsq__type.html">euclidsq_type</a> implying that the <b>squared</b> values of all distance calculations must be returned <b>without</b> runtime checks for numerical overflow.<br  />
  This option is computationally the fastest approach to computing the distances because it avoid costly <code>sqrt()</code> operations and runtime overflow checks.<br  />
  </li>
@@ -194,14 +198,14 @@ containing the requested Euclidean (squared) distance(s).<br  />
 <div class="line">distance<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__distanceEuclid_1_1getDisEuclid.html">getDisEuclid</a>(point(<span class="fortran_numeric_literal">1</span>:ndim), method<span class="fortran_operator_symbols"> = </span>method)</div>
 <div class="line">distance(<span class="fortran_numeric_literal">1</span>:npnt)<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__distanceEuclid_1_1getDisEuclid.html">getDisEuclid</a>(point(<span class="fortran_numeric_literal">1</span>:ndim,<span class="fortran_numeric_literal"> 1</span>:npnt), method<span class="fortran_operator_symbols"> = </span>method)</div>
 <div class="line"> </div>
-<div class="line"><span class="fortran_comment">! distance with respect to origin.</span></div>
+<div class="line"><span class="fortran_comment">! distance with respect to custom reference.</span></div>
 <div class="line"> </div>
 <div class="line">distance<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__distanceEuclid_1_1getDisEuclid.html">getDisEuclid</a>(point(<span class="fortran_numeric_literal">1</span>:ndim), ref(<span class="fortran_numeric_literal">1</span>:ndim), method<span class="fortran_operator_symbols"> = </span>method)</div>
 <div class="line">distance(<span class="fortran_numeric_literal">1</span>:nref)<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__distanceEuclid_1_1getDisEuclid.html">getDisEuclid</a>(point(<span class="fortran_numeric_literal">1</span>:ndim), ref(<span class="fortran_numeric_literal">1</span>:ndim,<span class="fortran_numeric_literal"> 1</span>:nref), method<span class="fortran_operator_symbols"> = </span>method)</div>
 <div class="line">distance(<span class="fortran_numeric_literal">1</span>:npnt)<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__distanceEuclid_1_1getDisEuclid.html">getDisEuclid</a>(point(<span class="fortran_numeric_literal">1</span>:ndim,<span class="fortran_numeric_literal"> 1</span>:npnt), ref(<span class="fortran_numeric_literal">1</span>:ndim), method<span class="fortran_operator_symbols"> = </span>method)</div>
 <div class="line">distance(<span class="fortran_numeric_literal">1</span>:npnt,<span class="fortran_numeric_literal"> 1</span>:nref)<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__distanceEuclid_1_1getDisEuclid.html">getDisEuclid</a>(point(<span class="fortran_numeric_literal">1</span>:ndim,<span class="fortran_numeric_literal"> 1</span>:npnt), ref(<span class="fortran_numeric_literal">1</span>:ndim,<span class="fortran_numeric_literal"> 1</span>:nref), method<span class="fortran_operator_symbols"> = </span>method)</div>
 <div class="line">!</div>
-<div class="ttc" id="ainterfacepm__distanceEuclid_1_1getDisEuclid_html"><div class="ttname"><a href="interfacepm__distanceEuclid_1_1getDisEuclid.html">pm_distanceEuclid::getDisEuclid</a></div><div class="ttdoc">Generate and return the (squared) Euclidean distance of a (set of) point(s) in ndim-dimensions from a...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distanceEuclid_8F90_source.html#l00401">pm_distanceEuclid.F90:401</a></div></div>
+<div class="ttc" id="ainterfacepm__distanceEuclid_1_1getDisEuclid_html"><div class="ttname"><a href="interfacepm__distanceEuclid_1_1getDisEuclid.html">pm_distanceEuclid::getDisEuclid</a></div><div class="ttdoc">Generate and return the (squared) Euclidean distance of a (set of) point(s) in ndim-dimensions from a...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distanceEuclid_8F90_source.html#l00484">pm_distanceEuclid.F90:484</a></div></div>
 <div class="ttc" id="anamespacepm__distanceEuclid_html"><div class="ttname"><a href="namespacepm__distanceEuclid.html">pm_distanceEuclid</a></div><div class="ttdoc">This module contains procedures and generic interfaces for computing the Euclidean norm of a single p...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distanceEuclid_8F90_source.html#l00071">pm_distanceEuclid.F90:71</a></div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The condition <code>size(point, 1) == size(ref, 1)</code> must hold for the corresponding input arguments.<br  />
@@ -332,9 +336,9 @@ This generic interface intentionally does not have explicit procedures for 2D Eu
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="fortran_statement">end program </span>example</div>
 <div class="ttc" id="ainterfacepm__io_1_1show_html"><div class="ttname"><a href="interfacepm__io_1_1show.html">pm_io::show</a></div><div class="ttdoc">This is a generic method of the derived type display_type with pass attribute.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11726">pm_io.F90:11726</a></div></div>
 <div class="ttc" id="ainterfacepm__io_1_1skip_html"><div class="ttname"><a href="interfacepm__io_1_1skip.html">pm_io::skip</a></div><div class="ttdoc">This is a generic method of the derived type display_type with pass attribute.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11508">pm_io.F90:11508</a></div></div>
-<div class="ttc" id="anamespacepm__distanceEuclid_html_a4336d38b6dc6e3fa99840a223f9abfb0"><div class="ttname"><a href="namespacepm__distanceEuclid.html#a4336d38b6dc6e3fa99840a223f9abfb0">pm_distanceEuclid::euclidu</a></div><div class="ttdeci">type(euclidu_type), parameter euclidu</div><div class="ttdoc">This is a scalar parameter object of type euclidu_typethat is exclusively used to request unsafe meth...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distanceEuclid_8F90_source.html#l00207">pm_distanceEuclid.F90:207</a></div></div>
-<div class="ttc" id="anamespacepm__distanceEuclid_html_a529a315df721d87e6cbbac61163290b4"><div class="ttname"><a href="namespacepm__distanceEuclid.html#a529a315df721d87e6cbbac61163290b4">pm_distanceEuclid::euclid</a></div><div class="ttdeci">type(euclid_type), parameter euclid</div><div class="ttdoc">This is a scalar parameter object of type euclid_type that is exclusively used to request safe method...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distanceEuclid_8F90_source.html#l00143">pm_distanceEuclid.F90:143</a></div></div>
-<div class="ttc" id="anamespacepm__distanceEuclid_html_aac5b4ee8fb697e67d295e78509a5a239"><div class="ttname"><a href="namespacepm__distanceEuclid.html#aac5b4ee8fb697e67d295e78509a5a239">pm_distanceEuclid::euclidsq</a></div><div class="ttdeci">type(euclidsq_type), parameter euclidsq</div><div class="ttdoc">This is a scalar parameter object of type euclidsq_typethat is exclusively used to request computing ...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distanceEuclid_8F90_source.html#l00271">pm_distanceEuclid.F90:271</a></div></div>
+<div class="ttc" id="anamespacepm__distanceEuclid_html_a4336d38b6dc6e3fa99840a223f9abfb0"><div class="ttname"><a href="namespacepm__distanceEuclid.html#a4336d38b6dc6e3fa99840a223f9abfb0">pm_distanceEuclid::euclidu</a></div><div class="ttdeci">type(euclidu_type), parameter euclidu</div><div class="ttdoc">This is a scalar parameter object of type euclidu_typethat is exclusively used to request unsafe meth...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distanceEuclid_8F90_source.html#l00215">pm_distanceEuclid.F90:215</a></div></div>
+<div class="ttc" id="anamespacepm__distanceEuclid_html_a529a315df721d87e6cbbac61163290b4"><div class="ttname"><a href="namespacepm__distanceEuclid.html#a529a315df721d87e6cbbac61163290b4">pm_distanceEuclid::euclid</a></div><div class="ttdeci">type(euclid_type), parameter euclid</div><div class="ttdoc">This is a scalar parameter object of type euclid_type that is exclusively used to request safe method...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distanceEuclid_8F90_source.html#l00147">pm_distanceEuclid.F90:147</a></div></div>
+<div class="ttc" id="anamespacepm__distanceEuclid_html_aac5b4ee8fb697e67d295e78509a5a239"><div class="ttname"><a href="namespacepm__distanceEuclid.html#aac5b4ee8fb697e67d295e78509a5a239">pm_distanceEuclid::euclidsq</a></div><div class="ttdeci">type(euclidsq_type), parameter euclidsq</div><div class="ttdoc">This is a scalar parameter object of type euclidsq_typethat is exclusively used to request computing ...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distanceEuclid_8F90_source.html#l00351">pm_distanceEuclid.F90:351</a></div></div>
 <div class="ttc" id="anamespacepm__io_html"><div class="ttname"><a href="namespacepm__io.html">pm_io</a></div><div class="ttdoc">This module contains classes and procedures for input/output (IO) or generic display operations on st...</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l00252">pm_io.F90:252</a></div></div>
 <div class="ttc" id="anamespacepm__io_html_adbd5f19ab57266908f0e5000233840d3"><div class="ttname"><a href="namespacepm__io.html#adbd5f19ab57266908f0e5000233840d3">pm_io::disp</a></div><div class="ttdeci">type(display_type) disp</div><div class="ttdoc">This is a scalar module variable an object of type display_type for general display.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11393">pm_io.F90:11393</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html"><div class="ttname"><a href="namespacepm__kind.html">pm_kind</a></div><div class="ttdoc">This module defines the relevant Fortran kind type-parameters frequently used in the ParaMonte librar...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00268">pm_kind.F90:268</a></div></div>
@@ -429,11 +433,11 @@ This generic interface intentionally does not have explicit procedures for 2D Eu
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000257">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__distanceEuclid.html">test_pm_distanceEuclid</a></dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000260">Test:</a></b></dt><dd>test_pm_distanceEuclid</dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000147">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: A benchmark comparison with the equivalent compiler implementations would be informative.</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-getDisEuclid"></a><b>Final Remarks</b> <a href="#final-getDisEuclid">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distanceEuclid.F90#L394 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distanceEuclid.F90#L477 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -448,9 +452,9 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000367">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000378">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__distanceEuclid_8F90_source.html#l00401">401</a> of file <a class="el" href="pm__distanceEuclid_8F90_source.html">pm_distanceEuclid.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__distanceEuclid_8F90_source.html#l00484">484</a> of file <a class="el" href="pm__distanceEuclid_8F90_source.html">pm_distanceEuclid.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
 <li>src/fortran/main/<a class="el" href="pm__distanceEuclid_8F90_source.html">pm_distanceEuclid.F90</a></li>
 </ul>
@@ -460,7 +464,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distanceEuclid.html">pm_distanceEuclid</a></li><li class="navelem"><a class="el" href="interfacepm__distanceEuclid_1_1getDisEuclid.html">getDisEuclid</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 13:03:37 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:52 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

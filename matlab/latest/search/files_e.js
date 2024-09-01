@@ -21,7 +21,8 @@ var searchData=
   ['plotlinescatter3_2em_18',['PlotLineScatter3.m',['../PlotLineScatter3_8m.html',1,'']]],
   ['plotscatter_2em_19',['PlotScatter.m',['../PlotScatter_8m.html',1,'']]],
   ['plotscatter3_2em_20',['PlotScatter3.m',['../PlotScatter3_8m.html',1,'']]],
-  ['popkeyval_2em_21',['popKeyVal.m',['../popKeyVal_8m.html',1,'']]],
-  ['print2array_2em_22',['print2array.m',['../print2array_8m.html',1,'']]],
-  ['print2eps_2em_23',['print2eps.m',['../print2eps_8m.html',1,'']]]
+  ['pnint_2em_21',['pnint.m',['../pnint_8m.html',1,'']]],
+  ['popkeyval_2em_22',['popKeyVal.m',['../popKeyVal_8m.html',1,'']]],
+  ['print2array_2em_23',['print2array.m',['../print2array_8m.html',1,'']]],
+  ['print2eps_2em_24',['print2eps.m',['../print2eps_8m.html',1,'']]]
 ];

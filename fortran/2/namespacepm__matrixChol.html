@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -172,21 +173,21 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This module contains procedures and generic interfaces for computing the Cholesky factorization of positive definite matrices.<br  />
  </p>
-<h2><a class="anchor" id="autotoc_md66"></a>
+<h2><a class="anchor" id="autotoc_md69"></a>
 Quick start</h2>
 <p >The recommended routines for computing the Cholesky factorization are the procedures under the generic interface <a class="el" href="interfacepm__matrixChol_1_1setChoLow.html">setChoLow()</a> with assumed-shape dummy arguments.<br  />
  The explicit-shape procedures are not recommended as the array bounds cannot be checked and the return of error status for the Cholesky factorization failure is implicit (via the first element of the output argument <code>dia</code>).<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md67"></a>
+<h2><a class="anchor" id="autotoc_md70"></a>
 Cholesky factorization</h2>
 <p >In linear algebra, the Cholesky decomposition or Cholesky factorization is a decomposition of a Hermitian, positive-definite matrix into the product of a lower triangular matrix and its conjugate transpose.<br  />
  It was discovered by André-Louis Cholesky for real matrices, and posthumously published in 1924.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md68"></a>
+<h2><a class="anchor" id="autotoc_md71"></a>
 Algorithmic efficiency</h2>
 <p >When it is applicable, the Cholesky decomposition is roughly twice as efficient as the <a class="el" href="namespacepm__matrixLUP.html">LU decomposition</a> for solving systems of linear equations.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md69"></a>
+<h2><a class="anchor" id="autotoc_md72"></a>
 Definition</h2>
 <p >The Cholesky decomposition of a Hermitian positive-definite matrix \(A\) is a decomposition of the form,  </p><p class="formulaDsp">
 \begin{equation}
@@ -203,7 +204,7 @@ Definition</h2>
 </p>
 <p> where \(L\) is a real lower triangular matrix with positive diagonal entries.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md70"></a>
+<h2><a class="anchor" id="autotoc_md73"></a>
 Algorithm</h2>
 <p >For complex Hermitian matrix, the following formula applies<br  />
   </p><p class="formulaDsp">
@@ -234,7 +235,7 @@ The <b>Cholesky–Crout algorithm</b> starts from the upper left corner of the m
  Given that Fortran is a column-major language, the <b>Cholesky–Crout algorithm</b> algorithm can potentially be faster on the contemporary hardware.<br  />
  This means that the computations can be done more efficiently if one uses the upper-diagonal triangle of a Hermitian matrix to compute the corresponding upper-diagonal triangular Cholesky factorization.<br  />
 </p>
-<dl class="benchmarks"><dt><b><a class="el" href="benchmarks.html#_benchmarks000035">Benchmarks:</a></b></dt><dd></dd></dl>
+<dl class="benchmarks"><dt><b><a class="el" href="benchmarks.html#_benchmarks000038">Benchmarks:</a></b></dt><dd></dd></dl>
 <p ><br  />
 <a class="anchor" id="benchmark-cholesky_assumed_vs_explicit"></a><b>Benchmark :: Cholesky factorization - assumed-shape vs. explicit-shape dummy arguments</b> <a href="#benchmark-cholesky_assumed_vs_explicit">⛓</a> </p><dl class="section user"><dt></dt><dd>Here is a code snippet to compare the performances of the Cholesky factorization routine <a class="el" href="interfacepm__matrixChol_1_1setChoLow.html">setChoLow()</a> via two different interfaces: <ol>
 <li>
@@ -268,7 +269,7 @@ Overall, no significant difference between the two approaches is observed, meani
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>   <span class="fortran_comment">!real(RKG)                           :: dumm</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    offset<span class="fortran_operator_symbols"> = </span><span class="fortran_function">merge</span>(<span class="fortran_numeric_literal">1</span>,<span class="fortran_numeric_literal"> 0</span>,<span class="fortran_function"> same_type_as</span>(subset, lowDia_type()))</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a><span class="fortran_operator_symbols"> = </span>[ <a class="code hl_struct" href="structpm__bench_1_1bench__type.html">bench_type</a>(name<span class="fortran_operator_symbols"> = </span>SK_<span class="fortran_string">&quot;setMatCholComplement&quot;</span>, exec<span class="fortran_operator_symbols"> = </span>setMatCholComplement, overhead<span class="fortran_operator_symbols"> = </span>setOverhead)<span class="fortran_operator_symbols"> &amp;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    bench<span class="fortran_operator_symbols"> = </span>[ <a class="code hl_struct" href="structpm__bench_1_1bench__type.html">bench_type</a>(name<span class="fortran_operator_symbols"> = </span>SK_<span class="fortran_string">&quot;setMatCholComplement&quot;</span>, exec<span class="fortran_operator_symbols"> = </span>setMatCholComplement, overhead<span class="fortran_operator_symbols"> = </span>setOverhead)<span class="fortran_operator_symbols"> &amp;</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            , <a class="code hl_struct" href="structpm__bench_1_1bench__type.html">bench_type</a>(name<span class="fortran_operator_symbols"> = </span>SK_<span class="fortran_string">&quot;setMatCholOverwrite&quot;</span>, exec<span class="fortran_operator_symbols"> = </span>setMatCholOverwrite, overhead<span class="fortran_operator_symbols"> = </span>setOverhead)<span class="fortran_operator_symbols"> &amp;</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            , <a class="code hl_struct" href="structpm__bench_1_1bench__type.html">bench_type</a>(name<span class="fortran_operator_symbols"> = </span>SK_<span class="fortran_string">&quot;unsafeExplicitShape&quot;</span>, exec<span class="fortran_operator_symbols"> = </span>unsafeExplicitShape, overhead<span class="fortran_operator_symbols"> = </span>setOverhead)<span class="fortran_operator_symbols"> &amp;</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            , <a class="code hl_struct" href="structpm__bench_1_1bench__type.html">bench_type</a>(name<span class="fortran_operator_symbols"> = </span>SK_<span class="fortran_string">&quot;setMatCholRecursive&quot;</span>, exec<span class="fortran_operator_symbols"> = </span>setMatCholRecursive, overhead<span class="fortran_operator_symbols"> = </span>setOverhead)<span class="fortran_operator_symbols"> &amp;</span></div>
@@ -284,7 +285,7 @@ Overall, no significant difference between the two approaches is observed, meani
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="fortran_statement">    open</span>(newunit<span class="fortran_operator_symbols"> = </span>fileUnit, file<span class="fortran_operator_symbols"> = </span><span class="fortran_string">&quot;main.out&quot;</span>, status<span class="fortran_operator_symbols"> = </span><span class="fortran_string">&quot;replace&quot;</span>)</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="fortran_statement">        write</span>(fileUnit, <span class="fortran_string">&quot;(*(g0,:,&#39;,&#39;))&quot;</span>) <span class="fortran_string">&quot;rank&quot;</span>, (<a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a>(i)<span class="fortran_operator_symbols">%</span>name, i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>,<span class="fortran_function"> size</span>(<a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a>))</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="fortran_statement">        write</span>(fileUnit, <span class="fortran_string">&quot;(*(g0,:,&#39;,&#39;))&quot;</span>) <span class="fortran_string">&quot;rank&quot;</span>, (bench(i)<span class="fortran_operator_symbols">%</span>name, i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>,<span class="fortran_function"> size</span>(bench))</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="fortran_comment">!dumm = 0._RKG</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        loopOverMatrixSize: <span class="fortran_keywordflow">do</span> iarr<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>, NARR</div>
@@ -294,11 +295,11 @@ Overall, no significant difference between the two approaches is observed, meani
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="fortran_statement">            allocate</span>(mat(rank,<span class="fortran_numeric_literal"> 0</span> : rank), choDia(rank))</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="fortran_statement">            write</span>(<span class="fortran_operator_symbols">*</span>,<span class="fortran_string">&quot;(*(g0,:,&#39; &#39;))&quot;</span>) <span class="fortran_string">&quot;Benchmarking setChoLow() algorithms with array size&quot;</span>, rank, ntry</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="fortran_keywordflow">do</span> i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>,<span class="fortran_function"> size</span>(<a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a>)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                <a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a>(i)<span class="fortran_operator_symbols">%</span>timing<span class="fortran_operator_symbols"> = </span><a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a>(i)<span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__bench_1_1getTiming.html">getTiming</a>()</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="fortran_keywordflow">do</span> i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>,<span class="fortran_function"> size</span>(bench)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                bench(i)<span class="fortran_operator_symbols">%</span>timing<span class="fortran_operator_symbols"> = </span>bench(i)<span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__bench_1_1getTiming.html">getTiming</a>()</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="fortran_keywordflow">            end do</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="fortran_statement">            write</span>(fileUnit,<span class="fortran_string">&quot;(*(g0,:,&#39;,&#39;))&quot;</span>) rank, (<a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a>(i)<span class="fortran_operator_symbols">%</span>timing<span class="fortran_operator_symbols">%</span>mean<span class="fortran_operator_symbols"> / </span>ntry, i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>,<span class="fortran_function"> size</span>(<a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a>))</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="fortran_statement">            write</span>(fileUnit,<span class="fortran_string">&quot;(*(g0,:,&#39;,&#39;))&quot;</span>) rank, (bench(i)<span class="fortran_operator_symbols">%</span>timing<span class="fortran_operator_symbols">%</span>mean<span class="fortran_operator_symbols"> / </span>ntry, i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>,<span class="fortran_function"> size</span>(bench))</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="fortran_statement">            deallocate</span>(mat, choDia)</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="fortran_keywordflow">        end do</span> loopOverMatrixSize</div>
@@ -402,7 +403,6 @@ Overall, no significant difference between the two approaches is observed, meani
 <div class="ttc" id="anamespacepm__kind_html_aea9356815e78a03d410e7490f8827700"><div class="ttname"><a href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">pm_kind::SK</a></div><div class="ttdeci">integer, parameter SK</div><div class="ttdoc">The default character kind in the ParaMonte library: kind(&quot;a&quot;) in Fortran, c_char in C-Fortran Intero...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00539">pm_kind.F90:539</a></div></div>
 <div class="ttc" id="anamespacepm__matrixChol_html"><div class="ttname"><a href="namespacepm__matrixChol.html">pm_matrixChol</a></div><div class="ttdoc">This module contains procedures and generic interfaces for computing the Cholesky factorization of po...</div><div class="ttdef"><b>Definition:</b> <a href="pm__matrixChol_8F90_source.html#l00133">pm_matrixChol.F90:133</a></div></div>
 <div class="ttc" id="astructpm__bench_1_1bench__type_html"><div class="ttname"><a href="structpm__bench_1_1bench__type.html">pm_bench::bench_type</a></div><div class="ttdoc">This is the class for creating benchmark and performance-profiling objects.</div><div class="ttdef"><b>Definition:</b> <a href="pm__bench_8F90_source.html#l00386">pm_bench.F90:386</a></div></div>
-<div class="ttc" id="atest__pm__arraySort_8F90_html_a6c0c71b215d516f677316f817252eb18"><div class="ttname"><a href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a></div><div class="ttdeci">subroutine bench(sort, arraySize)</div><div class="ttdef"><b>Definition:</b> <a href="test__pm__arraySort_8F90_source.html#l04216">test_pm_arraySort.F90:4217</a></div></div>
 </div><!-- fragment --><p> <br  />
  <a class="anchor" id="compilefb-unix-intel-cholesky_assumed_vs_explicit"></a><b>Example Unix compile command via Intel <code>ifort</code> compiler</b> <a href="#compilefb-unix-intel-cholesky_assumed_vs_explicit">⛓</a> </p><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>rm main.exe</div>
@@ -507,7 +507,7 @@ Overall, no significant difference between the two approaches is observed, meani
  <div class="image">
 <img src="benchmark.cholesky_assumed_vs_explicit.runtime.ratio.png" alt="" width="1000"/>
 </div>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000337">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: A benchmark comparing the performance of the two computational algorithms above should be implemented and gauge the impact of row vs. column major access pattern.<br  />
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000344">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: A benchmark comparing the performance of the two computational algorithms above should be implemented and gauge the impact of row vs. column major access pattern.<br  />
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
@@ -526,7 +526,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000886">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Friday 1:54 AM, April 21, 2017, Institute for Computational Engineering and Sciences (ICES), The University of Texas, Austin, TX </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000930">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Friday 1:54 AM, April 21, 2017, Institute for Computational Engineering and Sciences (ICES), The University of Texas, Austin, TX </dd></dl>
 </div><h2 class="groupheader">Variable Documentation</h2>
 <a id="ab1198d2b6cfec93202b29cf9dc5b9609" name="ab1198d2b6cfec93202b29cf9dc5b9609"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1198d2b6cfec93202b29cf9dc5b9609">&#9670;&nbsp;</a></span>MODULE_NAME</h2>
@@ -550,7 +550,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__matrixChol.html">pm_matrixChol</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 14:42:02 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:55 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

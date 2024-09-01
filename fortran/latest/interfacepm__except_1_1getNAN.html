@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -169,7 +170,7 @@ whose type and kind will match the generated output <code>NaN</code>.</td></tr>
 <div class="line"> </div>
 <div class="line">nan<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__except_1_1getNAN.html">getNAN</a>(<span class="fortran_spcifier">mold</span><span class="fortran_operator_symbols"> = </span>nan)</div>
 <div class="ttc" id="ainterfacepm__except_1_1getNAN_html"><div class="ttname"><a href="interfacepm__except_1_1getNAN.html">pm_except::getNAN</a></div><div class="ttdoc">Generate and return an IEEE-compliant quiet NAN (Not a Number).</div><div class="ttdef"><b>Definition:</b> <a href="pm__except_8F90_source.html#l02414">pm_except.F90:2414</a></div></div>
-<div class="ttc" id="anamespacepm__except_html"><div class="ttname"><a href="namespacepm__except.html">pm_except</a></div><div class="ttdoc">This module contains procedures and generic interfaces and generic interfaces for testing for excepti...</div><div class="ttdef"><b>Definition:</b> <a href="pm__except_8F90_source.html#l00046">pm_except.F90:46</a></div></div>
+<div class="ttc" id="anamespacepm__except_html"><div class="ttname"><a href="namespacepm__except.html">pm_except</a></div><div class="ttdoc">This module contains procedures and generic interfaces for testing for exceptional cases at runtime.</div><div class="ttdef"><b>Definition:</b> <a href="pm__except_8F90_source.html#l00046">pm_except.F90:46</a></div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Keep in mind that <code>NaN</code> might not even be defined for non-IEEE-compliant compilers or when certain aggressive IEEE-breaking optimization flags are specified like <code>-O3 -ffast-math</code> with GNU <code>gfortran</code> or <code>-fast</code> with Intel <code>ifort</code> compilers.</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The procedures under discussion are <code>pure</code>.</dd>
@@ -482,7 +483,7 @@ The procedures under discussion are <code>elemental</code>.</dd></dl>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000534">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__except.html">test_pm_except</a></dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000546">Test:</a></b></dt><dd>test_pm_except</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-getNAN"></a><b>Final Remarks</b> <a href="#final-getNAN">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_except.F90#L2410 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -500,7 +501,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000665">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Friday 1:54 AM, April 21, 2017, Institute for Computational Engineering and Sciences (ICES), The University of Texas, Austin, TX </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000685">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Friday 1:54 AM, April 21, 2017, Institute for Computational Engineering and Sciences (ICES), The University of Texas, Austin, TX </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__except_8F90_source.html#l02414">2414</a> of file <a class="el" href="pm__except_8F90_source.html">pm_except.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
@@ -512,7 +513,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__except.html">pm_except</a></li><li class="navelem"><a class="el" href="interfacepm__except_1_1getNAN.html">getNAN</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 13:03:39 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:54 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

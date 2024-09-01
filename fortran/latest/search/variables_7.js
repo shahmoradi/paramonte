@@ -18,11 +18,5 @@ var searchData=
   ['hubble_5ftime_5fsec_15',['HUBBLE_TIME_SEC',['../namespacepm__cosmology.html#a5e94a071bd2d2377e361349e45fdd9db',1,'pm_cosmology']]],
   ['hubble_5fvolume_5fgly3_16',['HUBBLE_VOLUME_GLY3',['../namespacepm__cosmology.html#a570390faa88c8746e03a26389c19717d',1,'pm_cosmology']]],
   ['hubble_5fvolume_5fmpc3_17',['HUBBLE_VOLUME_MPC3',['../namespacepm__cosmology.html#add89e23735c144841668d886122ab7f4',1,'pm_cosmology']]],
-  ['hubedgecount_18',['HubEdgeCount',['../structtest__pm__knn_1_1TestData__type.html#a60b9a898a462fcdd7b3fe2928f8b5307',1,'test_pm_knn::TestData_type']]],
-  ['hubedgeindex_19',['HubEdgeIndex',['../structtest__pm__knn_1_1TestData__type.html#a6c80a8687950953430c7408ff1a65a55',1,'test_pm_knn::TestData_type']]],
-  ['hubedgelensq_20',['HubEdgeLenSq',['../structtest__pm__knn_1_1TestData__type.html#a7517730d7dc7b2d9e85cc783caaab53d',1,'test_pm_knn::TestData_type']]],
-  ['hubmindistedgeindex_21',['HubMinDistEdgeIndex',['../structtest__pm__knn_1_1TestData__type.html#ab2b277ccdaac7684ade3b2f84f6dcadd',1,'test_pm_knn::TestData_type']]],
-  ['hubmindistedgelensq_22',['HubMinDistEdgeLenSq',['../structtest__pm__knn_1_1TestData__type.html#a20e723b85b25a643a8a3f2b8e602d3bd',1,'test_pm_knn::TestData_type']]],
-  ['hubnodeindex_23',['HubNodeIndex',['../structtest__pm__knn_1_1TestData__type.html#a4670627b9942bc4b370f1772c8e50421',1,'test_pm_knn::TestData_type']]],
-  ['huge_24',['huge',['../structpm__kind_1_1modelr__type.html#a44bd2de95a892edb2e3b6f4f9605e6fe',1,'pm_kind::modelr_type::huge()'],['../structpm__kind_1_1modeli__type.html#a67e0fef02ebb000316206a5feadc408a',1,'pm_kind::modeli_type::huge()']]]
+  ['huge_18',['huge',['../structpm__kind_1_1modeli__type.html#a67e0fef02ebb000316206a5feadc408a',1,'pm_kind::modeli_type::huge()'],['../structpm__kind_1_1modelr__type.html#a44bd2de95a892edb2e3b6f4f9605e6fe',1,'pm_kind::modelr_type::huge()']]]
 ];

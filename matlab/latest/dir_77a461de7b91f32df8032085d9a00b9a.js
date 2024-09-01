@@ -3,7 +3,6 @@ var dir_77a461de7b91f32df8032085d9a00b9a =
     [ "+axes", "dir_78114897adc1db71b3350b5c91828ac7.html", "dir_78114897adc1db71b3350b5c91828ac7" ],
     [ "+cmap", "dir_49c7bba4fd7231315df758dd2b93e609.html", "dir_49c7bba4fd7231315df758dd2b93e609" ],
     [ "+color", "dir_749fd4d86fc2cd1c662a8bf1a9de3abc.html", "dir_749fd4d86fc2cd1c662a8bf1a9de3abc" ],
-    [ "+corner", "dir_00aab164b2036faade04fac53029f2a5.html", "dir_00aab164b2036faade04fac53029f2a5" ],
     [ "+figure", "dir_71b9da55d4f4009145fe80947fd39cfd.html", "dir_71b9da55d4f4009145fe80947fd39cfd" ],
     [ "Cascade.m", "Cascade_8m.html", [
       [ "Cascade", "classCascade.html", "classCascade" ]
@@ -54,6 +53,9 @@ var dir_77a461de7b91f32df8032085d9a00b9a =
       [ "CascadeScatter3", "classCascadeScatter3.html", "classCascadeScatter3" ]
     ] ],
     [ "Contents.m", "_09vis_2Contents_8m.html", null ],
+    [ "Corner.m", "Corner_8m.html", [
+      [ "Corner", "classCorner.html", "classCorner" ]
+    ] ],
     [ "Plot.m", "Plot_8m.html", [
       [ "Plot", "classPlot.html", "classPlot" ]
     ] ],
@@ -197,5 +199,14 @@ var dir_77a461de7b91f32df8032085d9a00b9a =
     ] ],
     [ "TileScatter3.m", "TileScatter3_8m.html", [
       [ "TileScatter3", "classTileScatter3.html", "classTileScatter3" ]
+    ] ],
+    [ "Tiling.m", "Tiling_8m.html", [
+      [ "Tiling", "classTiling.html", "classTiling" ]
+    ] ],
+    [ "TilingSymm.m", "TilingSymm_8m.html", [
+      [ "Corner", "classCorner.html", "classCorner" ]
+    ] ],
+    [ "Triplex.m", "Triplex_8m.html", [
+      [ "Triplex", "classTriplex.html", "classTriplex" ]
     ] ]
 ];

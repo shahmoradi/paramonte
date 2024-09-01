@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -184,8 +185,8 @@ Variables</h2></td></tr>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="fortran_statement">type</span>(bench_type)                    :: bench(NBENCH)</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="fortran_statement">type</span>(cvi_type),<span class="fortran_attribute"> allocatable</span>   :: ArraySplit(:)</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a>(<span class="fortran_numeric_literal">1</span>)<span class="fortran_operator_symbols"> = </span><a class="code hl_struct" href="structpm__bench_1_1bench__type.html">bench_type</a>(name<span class="fortran_operator_symbols"> = </span>SK_<span class="fortran_string">&quot;scalar_sep&quot;</span>, exec<span class="fortran_operator_symbols"> = </span>scalar_sep , overhead<span class="fortran_operator_symbols"> = </span>setOverhead)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a>(<span class="fortran_numeric_literal">2</span>)<span class="fortran_operator_symbols"> = </span><a class="code hl_struct" href="structpm__bench_1_1bench__type.html">bench_type</a>(name<span class="fortran_operator_symbols"> = </span>SK_<span class="fortran_string">&quot;vector_sep&quot;</span>, exec<span class="fortran_operator_symbols"> = </span>vector_sep , overhead<span class="fortran_operator_symbols"> = </span>setOverhead)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    bench(<span class="fortran_numeric_literal">1</span>)<span class="fortran_operator_symbols"> = </span><a class="code hl_struct" href="structpm__bench_1_1bench__type.html">bench_type</a>(name<span class="fortran_operator_symbols"> = </span>SK_<span class="fortran_string">&quot;scalar_sep&quot;</span>, exec<span class="fortran_operator_symbols"> = </span>scalar_sep , overhead<span class="fortran_operator_symbols"> = </span>setOverhead)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    bench(<span class="fortran_numeric_literal">2</span>)<span class="fortran_operator_symbols"> = </span><a class="code hl_struct" href="structpm__bench_1_1bench__type.html">bench_type</a>(name<span class="fortran_operator_symbols"> = </span>SK_<span class="fortran_string">&quot;vector_sep&quot;</span>, exec<span class="fortran_operator_symbols"> = </span>vector_sep , overhead<span class="fortran_operator_symbols"> = </span>setOverhead)</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    arraySize<span class="fortran_operator_symbols"> = </span>[(<span class="fortran_numeric_literal"> 2_IK</span><span class="fortran_operator_symbols">*</span><span class="fortran_operator_symbols">*</span>isize, isize<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1_IK</span>, NSIZE )]</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
@@ -195,7 +196,7 @@ Variables</h2></td></tr>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="fortran_statement">    open</span>(newunit<span class="fortran_operator_symbols"> = </span>fileUnit, file<span class="fortran_operator_symbols"> = </span><span class="fortran_string">&quot;main.out&quot;</span>, status<span class="fortran_operator_symbols"> = </span><span class="fortran_string">&quot;replace&quot;</span>)</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="fortran_statement">        write</span>(fileUnit, <span class="fortran_string">&quot;(*(g0,:,&#39;,&#39;))&quot;</span>) <span class="fortran_string">&quot;arraySize&quot;</span>, (<a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a>(i)<span class="fortran_operator_symbols">%</span>name, i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>, NBENCH)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="fortran_statement">        write</span>(fileUnit, <span class="fortran_string">&quot;(*(g0,:,&#39;,&#39;))&quot;</span>) <span class="fortran_string">&quot;arraySize&quot;</span>, (bench(i)<span class="fortran_operator_symbols">%</span>name, i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>, NBENCH)</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        loopOverArraySize: <span class="fortran_keywordflow">do</span> isize<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>, NSIZE</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
@@ -203,11 +204,11 @@ Variables</h2></td></tr>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="fortran_statement">            allocate</span>(array(arraySize(isize)))</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="fortran_keywordflow">do</span> i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>, NBENCH</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                <a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a>(i)<span class="fortran_operator_symbols">%</span>timing<span class="fortran_operator_symbols"> = </span><a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a>(i)<span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__bench_1_1getTiming.html">getTiming</a>(minsec<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">5_RK</span>)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                bench(i)<span class="fortran_operator_symbols">%</span>timing<span class="fortran_operator_symbols"> = </span>bench(i)<span class="fortran_operator_symbols">%</span><a class="code hl_interface" href="interfacepm__bench_1_1getTiming.html">getTiming</a>(minsec<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">0.</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">5_RK</span>)</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="fortran_keywordflow">            end do</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="fortran_statement">            deallocate</span>(array)</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="fortran_statement">            write</span>(fileUnit,<span class="fortran_string">&quot;(*(g0,:,&#39;,&#39;))&quot;</span>) arraySize(isize), (<a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a>(i)<span class="fortran_operator_symbols">%</span>timing<span class="fortran_operator_symbols">%</span>mean, i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>, NBENCH)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="fortran_statement">            write</span>(fileUnit,<span class="fortran_string">&quot;(*(g0,:,&#39;,&#39;))&quot;</span>) arraySize(isize), (bench(i)<span class="fortran_operator_symbols">%</span>timing<span class="fortran_operator_symbols">%</span>mean, i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>, NBENCH)</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="fortran_keywordflow">        end do</span> loopOverArraySize</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="fortran_statement">        write</span>(<span class="fortran_operator_symbols">*</span>,<span class="fortran_string">&quot;(*(g0,:,&#39; &#39;))&quot;</span>) dummy</div>
@@ -263,7 +264,6 @@ Variables</h2></td></tr>
 <div class="ttc" id="anamespacepm__kind_html_aea9356815e78a03d410e7490f8827700"><div class="ttname"><a href="namespacepm__kind.html#aea9356815e78a03d410e7490f8827700">pm_kind::SK</a></div><div class="ttdeci">integer, parameter SK</div><div class="ttdoc">The default character kind in the ParaMonte library: kind(&quot;a&quot;) in Fortran, c_char in C-Fortran Intero...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00539">pm_kind.F90:539</a></div></div>
 <div class="ttc" id="astructpm__bench_1_1bench__type_html"><div class="ttname"><a href="structpm__bench_1_1bench__type.html">pm_bench::bench_type</a></div><div class="ttdoc">This is the class for creating benchmark and performance-profiling objects.</div><div class="ttdef"><b>Definition:</b> <a href="pm__bench_8F90_source.html#l00386">pm_bench.F90:386</a></div></div>
 <div class="ttc" id="astructpm__container_1_1cvi__type_html"><div class="ttname"><a href="structpm__container_1_1cvi__type.html">pm_container::cvi_type</a></div><div class="ttdoc">This is the derived type for generating a container of a vector component of type integer of default ...</div><div class="ttdef"><b>Definition:</b> <a href="pm__container_8F90_source.html#l00566">pm_container.F90:566</a></div></div>
-<div class="ttc" id="atest__pm__arraySort_8F90_html_a6c0c71b215d516f677316f817252eb18"><div class="ttname"><a href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a></div><div class="ttdeci">subroutine bench(sort, arraySize)</div><div class="ttdef"><b>Definition:</b> <a href="test__pm__arraySort_8F90_source.html#l04216">test_pm_arraySort.F90:4217</a></div></div>
 </div><!-- fragment --> <br  />
  <a class="anchor" id="compilefb-unix-intel-scalarSep_vs_vectorSep"></a><b>Example Unix compile command via Intel <code>ifort</code> compiler</b> <a href="#compilefb-unix-intel-scalarSep_vs_vectorSep">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>rm main.exe</div>
@@ -373,7 +373,7 @@ Variables</h2></td></tr>
 </li>
 </ol>
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000111">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__arraySplit.html">test_pm_arraySplit</a></dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000114">Test:</a></b></dt><dd>test_pm_arraySplit</dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000106">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: A benchmark comparing the performance of output index array vs. output jagged array would be informative here.<br  />
 </dd></dl>
 <p ><br  />
@@ -393,7 +393,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000162">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, Wednesday 12:20 AM, October 13, 2021, Dallas, TX </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000171">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, Wednesday 12:20 AM, October 13, 2021, Dallas, TX </dd></dl>
 </div><h2 class="groupheader">Variable Documentation</h2>
 <a id="a3fab9d5e08ee6d00052d8c6487295c52" name="a3fab9d5e08ee6d00052d8c6487295c52"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3fab9d5e08ee6d00052d8c6487295c52">&#9670;&nbsp;</a></span>MODULE_NAME</h2>
@@ -417,7 +417,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__arraySplit.html">pm_arraySplit</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 13:03:37 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:51 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

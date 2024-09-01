@@ -4,8 +4,5 @@ var dir_71b9da55d4f4009145fe80947fd39cfd =
     [ "Figure.m", "Figure_8m.html", [
       [ "Figure", "classFigure.html", "classFigure" ]
     ] ],
-    [ "savefig.m", "savefig_8m.html", "savefig_8m" ],
-    [ "Tiling.m", "Tiling_8m.html", [
-      [ "Tiling", "classTiling.html", "classTiling" ]
-    ] ]
+    [ "savefig.m", "savefig_8m.html", "savefig_8m" ]
 ];

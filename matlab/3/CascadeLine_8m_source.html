@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -171,7 +172,7 @@ $(document).ready(function(){initNavTree('CascadeLine_8m_source.html',''); initR
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        %&gt;  Construct and <span class="keywordflow">return</span> an <span class="keywordtype">object</span> of <span class="keyword">class </span>[pm.vis.CascadeLine](@ref <a class="code hl_class" href="classCascadeLine.html">CascadeLine</a>).&lt;br&gt;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        %&gt;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        %&gt;  \param[in]  dfref       :   See the documentation of the corresponding input</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        %&gt;                              argument of the <span class="keyword">class </span>[pm.vis.Plot](@ref <a class="code hl_class" href="classPlot.html">Plot</a>).&lt;br&gt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        %&gt;                              argument of the <span class="keyword">class </span>[pm.vis.Subplot](@ref <a class="code hl_class" href="classSubplot.html">Subplot</a>).&lt;br&gt;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        %&gt;  </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        %&gt;  \param[in]  varargin    :   Any ``property, value`` pair of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        %&gt;                              If the <span class="keyword">property</span> is a ``<span class="keyword">struct</span>()``, then its value must be given as a cell array,</div>
@@ -226,7 +227,7 @@ $(document).ready(function(){initNavTree('CascadeLine_8m_source.html',''); initR
 <div class="ttc" id="aclassCascadeLine_html"><div class="ttname"><a href="classCascadeLine.html">CascadeLine</a></div><div class="ttdoc">This is the CascadeLine class for generating instances of 2-dimensional Line Cascade visualizations b...</div><div class="ttdef"><b>Definition:</b> <a href="CascadeLine_8m_source.html#l00024">CascadeLine.m:25</a></div></div>
 <div class="ttc" id="aclassCascadeLine_html_a9fd20ed84d5804347da6ac47f2327d0a"><div class="ttname"><a href="classCascadeLine.html#a9fd20ed84d5804347da6ac47f2327d0a">CascadeLine::CascadeLine</a></div><div class="ttdeci">function CascadeLine(in dfref, in varargin)</div><div class="ttdoc">Construct and return an object of class pm.vis.CascadeLine.</div></div>
 <div class="ttc" id="aclassCascade_html"><div class="ttname"><a href="classCascade.html">Cascade</a></div><div class="ttdoc">This is the abstract class for generating instances of objects that contain the specifications of a c...</div><div class="ttdef"><b>Definition:</b> <a href="Cascade_8m_source.html#l00031">Cascade.m:32</a></div></div>
-<div class="ttc" id="aclassCorner_html"><div class="ttname"><a href="classCorner.html">Corner</a></div><div class="ttdoc">This is the abstract class for generating instances of figures containing a symmetric grid (corners) ...</div><div class="ttdef"><b>Definition:</b> <a href="Corner_8m_source.html#l00004">Corner.m:5</a></div></div>
+<div class="ttc" id="aclassCorner_html"><div class="ttname"><a href="classCorner.html">Corner</a></div><div class="ttdoc">This is the base class for generating instances of figures containing a symmetric square grid or corn...</div><div class="ttdef"><b>Definition:</b> <a href="Corner_8m_source.html#l00018">Corner.m:19</a></div></div>
 <div class="ttc" id="aclassFigure_html"><div class="ttname"><a href="classFigure.html">Figure</a></div><div class="ttdoc">This is the abstract class for generating instances of objects that contain the specifications of var...</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8m_source.html#l00026">Figure.m:27</a></div></div>
 <div class="ttc" id="aclassPlot_html"><div class="ttname"><a href="classPlot.html">Plot</a></div><div class="ttdoc">This is the base class for generating instances of objects that contain the specifications of various...</div><div class="ttdef"><b>Definition:</b> <a href="Plot_8m_source.html#l00028">Plot.m:29</a></div></div>
 <div class="ttc" id="aclassSubplot_html"><div class="ttname"><a href="classSubplot.html">Subplot</a></div><div class="ttdoc">This is the abstract class for generating instances of axes with various types of plots from one or m...</div><div class="ttdef"><b>Definition:</b> <a href="Subplot_8m_source.html#l00187">Subplot.m:188</a></div></div>
@@ -237,7 +238,7 @@ $(document).ready(function(){initNavTree('CascadeLine_8m_source.html',''); initR
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_77a461de7b91f32df8032085d9a00b9a.html">+vis</a></li><li class="navelem"><a class="el" href="CascadeLine_8m.html">CascadeLine.m</a></li>
-        <li class="footer">Generated on Fri Jul 12 2024 15:48:23 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 21:18:30 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

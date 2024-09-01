@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -1729,11 +1730,11 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>T, T, T, T, T, T, T, T, T, T</div>
 <div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>T, T, T, T, T, T, T, T, T, T</div>
 <div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>T, T, T, T, T, T, T, T, T, T</div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>T, T, T, T, T, T, T, T, T, T</div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>T, T, T, F, T, T, T, T, T, T</div>
 <div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>T, T, T, T, T, T, T, T, T, T</div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>T, T, T, T, T, F, T, T, T, T</div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>T, T, T, T, T, T, T, T, T, T</div>
 <div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>T, T, T, T, T, T, T, T, T, T</div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>T, T, T, T, T, T, T, T, T, T</div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>T, T, T, T, T, T, T, F, T, T</div>
 <div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>T, T, T, T, T, T, T, T, T, T</div>
 <div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>T, T, T, T, T, T, T, T, T, T</div>
 <div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span> </div>
@@ -1747,7 +1748,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>T, T, T, T, T, T, T, T, T, T</div>
 <div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>T, T, T, T, T, T, T, T, T, T</div>
 <div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>T, T, T, T, T, T, T, T, T, T</div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>T, T, T, T, T, T, T, T, T, T</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>T, T, T, T, T, T, T, F, T, T</div>
 <div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>T, T, T, T, T, T, T, T, T, T</div>
 <div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>T, T, T, T, T, T, T, T, T, T</div>
 <div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span> </div>
@@ -1978,7 +1979,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span> </div>
 <div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000668">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__matrixInit.html">test_pm_matrixInit</a></dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000698">Test:</a></b></dt><dd>test_pm_matrixInit</dd></dl>
 <dl class="naming"><dt><b><a class="el" href="naming.html#_naming000009">Internal naming convention:</a></b></dt><dd>The following illustrates the internal naming convention used for the procedures within this generic interface.<br  />
  </dd></dl>
 <div class="fragment"><div class="line">getMatInitXXD_D2XX0_SK5()</div>
@@ -2002,7 +2003,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
  Instead, one has to use <a class="el" href="structpm__matrixSubset_1_1dia__type.html">dia_type()</a> to call the procedures when resolving the generic interface.<br  />
  As such, the argument names <code>upp, low, dia</code> were renamed to <code>vupp, vlow, vdia</code> to emphasize the <code>value</code> attribute of these arguments and to resolve the Intel name-conflict bug.<br  />
 </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000355">Todo:</a></b></dt><dd><span class="pvhigh">Critical Priority</span>: This generic interface should be extended to matrices of different packing formats besides the default.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000362">Todo:</a></b></dt><dd><span class="pvhigh">Critical Priority</span>: This generic interface should be extended to matrices of different packing formats besides the default.</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-getMatInit"></a><b>Final Remarks</b> <a href="#final-getMatInit">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_matrixInit.F90#L284 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2020,7 +2021,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000950">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Apr 21, 2017, 1:54 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000994">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Apr 21, 2017, 1:54 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__matrixInit_8F90_source.html#l00289">289</a> of file <a class="el" href="pm__matrixInit_8F90_source.html">pm_matrixInit.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
@@ -2032,7 +2033,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__matrixInit.html">pm_matrixInit</a></li><li class="navelem"><a class="el" href="interfacepm__matrixInit_1_1getMatInit.html">getMatInit</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 13:03:40 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:56 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

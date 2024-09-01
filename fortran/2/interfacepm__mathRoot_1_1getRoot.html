@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -230,7 +231,7 @@ the constant <a class="el" href="namespacepm__mathRoot.html#add19d3b40dedb3c6095
 the constant <a class="el" href="namespacepm__mathRoot.html#aea044c5c7944004b6c2f9c050e3cf810">schroder</a> or an object of type <a class="el" href="structpm__mathRoot_1_1schroder__type.html">schroder_type</a>,<br  />
  </li>
 </ol>
-all of which either require the first (Newton) or higher derivatives (Halley/Schroder) of the target function to find the function root, then <code>getFunc()</code> must take a two arguments:<br  />
+all of which either require the first (Newton) or higher derivatives (Halley/Schroder) of the target function to find the function root, then <code>getFunc()</code> must take two arguments:<br  />
  <ol>
 <li>
 A scalar input argument <code>x</code> of the same type and kind as the output argument <code>root</code> (below).<br  />
@@ -248,7 +249,7 @@ An input <code>order</code> value of <code>0</code> must yield the target functi
 An input <code>order</code> value of <code>1</code> must yield the target function first derivative at the input <code>x</code>.<br  />
  </li>
 <li>
-An input <code>order</code> value of <code>1</code> must yield the target function second derivative at the input <code>x</code>.<br  />
+An input <code>order</code> value of <code>2</code> must yield the target function second derivative at the input <code>x</code>.<br  />
  </li>
 </ol>
 The following illustrates the generic interface of <code>getFunc()</code> for the above values of <code>method</code>, <div class="fragment"><div class="line"><span class="fortran_prefix">function </span>getFunc(x, order) <span class="fortran_suffix">result</span>(func)</div>
@@ -834,7 +835,7 @@ The procedures under discussion are <code>recursive</code>.</dd></dl>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000643">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__mathRoot.html">test_pm_mathRoot</a></dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000668">Test:</a></b></dt><dd>test_pm_mathRoot</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-getRoot"></a><b>Final Remarks</b> <a href="#final-getRoot">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_mathRoot.F90#L1582 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -852,7 +853,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000874">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000907">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01589">1589</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
@@ -864,7 +865,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__mathRoot.html">pm_mathRoot</a></li><li class="navelem"><a class="el" href="interfacepm__mathRoot_1_1getRoot.html">getRoot</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 14:42:02 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:55 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

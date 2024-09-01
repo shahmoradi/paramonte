@@ -89,5 +89,6 @@ var annotated_dup =
     [ "TileScatter", "classTileScatter.html", "classTileScatter" ],
     [ "TileScatter3", "classTileScatter3.html", "classTileScatter3" ],
     [ "Tiling", "classTiling.html", "classTiling" ],
-    [ "Timer", "classTimer.html", "classTimer" ]
+    [ "Timer", "classTimer.html", "classTimer" ],
+    [ "Triplex", "classTriplex.html", "classTriplex" ]
 ];

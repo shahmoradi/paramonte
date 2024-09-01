@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -313,7 +314,7 @@ This procedure automatically generates nested directories if needed.<br  />
 <a class="anchor" id="output-isFailedMakeDir"></a><b>Example output</b> <a href="#output-isFailedMakeDir">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>cpath<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__sysPath_1_1getPathNew.html">getPathNew</a>() <span class="fortran_comment">! define a random unique path name.</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>cpath</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="fortran_string">&quot;new_20240518_195141_268_pid_1&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="fortran_string">&quot;new_20240822_211527_382_pid_1&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><a class="code hl_interface" href="interfacepm__sysPath_1_1isDir.html">isDir</a>(cpath)</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>F</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><a class="code hl_interface" href="interfacepm__sysPath_1_1isFailedMakeDir.html">isFailedMakeDir</a>(cpath)</div>
@@ -324,7 +325,7 @@ This procedure automatically generates nested directories if needed.<br  />
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>cpath<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__sysPath_1_1getPathNew.html">getPathNew</a>(dir<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__sysPath_1_1getPathNew.html">getPathNew</a>())) <span class="fortran_comment">! define a random unique **nested** path name.</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>cpath</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="fortran_string">&quot;new_20240518_195141_272_pid_1/new_20240518_195141_274_pid_1&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="fortran_string">&quot;new_20240822_211527_387_pid_1/new_20240822_211527_388_pid_1&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><a class="code hl_interface" href="interfacepm__sysPath_1_1isDir.html">isDir</a>(cpath)</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>F</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><a class="code hl_interface" href="interfacepm__sysPath_1_1isFailedMakeDir.html">isFailedMakeDir</a>(cpath)</div>
@@ -334,8 +335,8 @@ This procedure automatically generates nested directories if needed.<br  />
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000956">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__sysPath.html">test_pm_sysPath</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000424">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: The current Fortran standard 202x does not allow passing characters of non-default kind to the intrinsic Fortran statements and procedures.<br  />
+<dl class="test"><dt><b><a class="el" href="test.html#_test000986">Test:</a></b></dt><dd>test_pm_sysPath</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000431">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: The current Fortran standard 202x does not allow passing characters of non-default kind to the intrinsic Fortran statements and procedures.<br  />
  This generic interface should be extended to in the future to support non-default character kinds when they fully supported by the Fortran intrinsic procedures.<br  />
 </dd></dl>
 <p ><br  />
@@ -355,7 +356,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001374">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Tuesday March 7, 2017, 3:09 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001420">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Tuesday March 7, 2017, 3:09 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__sysPath_8F90_source.html#l03225">3225</a> of file <a class="el" href="pm__sysPath_8F90_source.html">pm_sysPath.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
@@ -367,7 +368,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__sysPath.html">pm_sysPath</a></li><li class="navelem"><a class="el" href="interfacepm__sysPath_1_1isFailedMakeDir.html">isFailedMakeDir</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 13:03:43 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:58 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

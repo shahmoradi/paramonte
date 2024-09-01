@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -277,7 +278,7 @@ If the input argument <code>operationA</code> is <a class="el" href="namespacepm
 <dd>
 The <code>pure</code> procedure(s) documented herein become <code>impure</code> when the ParaMonte library is compiled with preprocessor macro <code>CHECK_ENABLED=1</code>.<br  />
  By default, these procedures are <code>pure</code> in <code>release</code> build and <code>impure</code> in <code>debug</code> and <code>testing</code> builds.</dd></dl>
-<dl class="DEVNOTE"><dt><b><a class="el" href="DEVNOTE.html#_DEVNOTE000048">Developer Remark:</a></b></dt><dd>The optional input argument <code>operationA</code> in the current interface was originally designed be either missing or set to <a class="el" href="namespacepm__matrixTrans.html#a545e543f1c894dd146286cb138235f9c">trans</a> standing for <em>transposed</em>.<br  />
+<dl class="DEVNOTE"><dt><b><a class="el" href="DEVNOTE.html#_DEVNOTE000049">Developer Remark:</a></b></dt><dd>The optional input argument <code>operationA</code> in the current interface was originally designed be either missing or set to <a class="el" href="namespacepm__matrixTrans.html#a545e543f1c894dd146286cb138235f9c">trans</a> standing for <em>transposed</em>.<br  />
  While such convention offers a cleaner interface, it was later replaced with the two possible options <a class="el" href="namespacepm__matrixTrans.html#a37473f4d22d5fed4a283b1a988a0bd01">transSymm</a> and <a class="el" href="namespacepm__matrixTrans.html#ad3789a8183e8f2f59989694ca1d9e6f5">transHerm</a>.<br  />
  Although the new interface is uglier and verbose, it allows the possibility of extending this interface in the future without breaking the existing interface.<br  />
  The redundancy also offers an automatic compile-time check against semantic bugs, given that <code>alpha, beta</code> must be of type <code>real</code> when <a class="el" href="namespacepm__matrixTrans.html#ad3789a8183e8f2f59989694ca1d9e6f5">transHerm</a> transposition is requested.<br  />
@@ -806,8 +807,8 @@ The following table demonstrates the equivalence of the arguments of the relevan
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000688">Test:</a></b></dt><dd>test_pm_matrixUpdate</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000366">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: The input shape and offset arguments can be made optional by adding new interfaces to the module.<br  />
+<dl class="test"><dt><b><a class="el" href="test.html#_test000718">Test:</a></b></dt><dd>test_pm_matrixUpdate</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000373">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: The input shape and offset arguments can be made optional by adding new interfaces to the module.<br  />
  This should be done only after performing relevant benchmarks with the current interface to gauge whether the extension of this module is worth the effort.<br  />
 </dd></dl>
 <p ><br  />
@@ -827,7 +828,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001017">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, Tuesday 08:49 PM, August 10, 2021, Dallas, TX <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Friday 1:54 AM, April 21, 2017, Institute for Computational Engineering and Sciences (ICES), The University of Texas, Austin, TX </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001061">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, Tuesday 08:49 PM, August 10, 2021, Dallas, TX <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Friday 1:54 AM, April 21, 2017, Institute for Computational Engineering and Sciences (ICES), The University of Texas, Austin, TX </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__matrixUpdate_8F90_source.html#l05095">5095</a> of file <a class="el" href="pm__matrixUpdate_8F90_source.html">pm_matrixUpdate.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
@@ -839,7 +840,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__matrixUpdate.html">pm_matrixUpdate</a></li><li class="navelem"><a class="el" href="interfacepm__matrixUpdate_1_1setMatUpdateTriang.html">setMatUpdateTriang</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 13:03:41 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:56 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

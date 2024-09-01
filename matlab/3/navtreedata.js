@@ -90,10 +90,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "../../c/2/index.html",
-"_09mvu_2getRand_8m.html#ab7d5a41157c4609d0db943055ce7b4dc",
-"classFileContentsRestartDRAM.html#ad9cb75895987bc4286b9d990185fc0d6",
-"classTileScatter.html#a6abbed6fc6984d6f0ab9a6e3b5bc40fa",
-"iscmd_8m_source.html"
+"_09matlab_2_09hashmap_2Contents_8m_source.html",
+"classFileContentsRestart.html#a08921888a8aafb43b35dba919568e672",
+"classTileHeatmap.html#a6de19d8c2258ce4bb40349b6e445efab",
+"im2gif_8m.html#af4749aaaa8b2da99a97d3f94be3a67cb",
+"using__hg2_8m_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

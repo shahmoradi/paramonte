@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -541,12 +542,12 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>pm.vis.figure.savefig(<span class="stringliteral">&quot;SubplotEllipse.1.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>figure(<span class="stringliteral">&quot;color&quot;</span>, <span class="stringliteral">&quot;white&quot;</span>);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>sv = pm.vis.SubplotEllipse3(restart.proposalCov, restart.proposalMean, restart.uniqueStateVisitCount<span class="stringliteral">&#39;);</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="stringliteral">pv.subplot.title.titletext = &quot;Ellipse3 Subplot&quot;;</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="stringliteral">sv.make(&quot;axes&quot;, {&quot;zscale&quot;, &quot;log&quot;}, &quot;dimx&quot;, [1, 3], &quot;dimx&quot;, [1, 3] + 1);</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="stringliteral">pm.vis.figure.savefig(&quot;SubplotEllipse3.1.png&quot;, &quot;-m3&quot;);</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="stringliteral"></span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="stringliteral">close all;</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>sv = pm.vis.SubplotEllipse3(restart.proposalCov, restart.proposalMean, transpose(restart.uniqueStateVisitCount));</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>pv.subplot.title.titletext = <span class="stringliteral">&quot;Ellipse3 Subplot&quot;</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>sv.make(<span class="stringliteral">&quot;axes&quot;</span>, {<span class="stringliteral">&quot;zscale&quot;</span>, <span class="stringliteral">&quot;log&quot;</span>}, <span class="stringliteral">&quot;dimx&quot;</span>, [1, 3], <span class="stringliteral">&quot;dimx&quot;</span>, [1, 3] + 1);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>pm.vis.figure.savefig(<span class="stringliteral">&quot;SubplotEllipse3.1.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>close all;</div>
 <div class="ttc" id="aclassSubplot_html_a362e88405084d1b1fe0711554f2009ca"><div class="ttname"><a href="classSubplot.html#a362e88405084d1b1fe0711554f2009ca">Subplot::df</a></div><div class="ttdeci">Property df</div><div class="ttdef"><b>Definition:</b> <a href="Subplot_8m_source.html#l00201">Subplot.m:201</a></div></div>
 <div class="ttc" id="aclassSubplot_html_ae9cba39876d38b81c94f6ff4d60026ae"><div class="ttname"><a href="classSubplot.html#ae9cba39876d38b81c94f6ff4d60026ae">Subplot::make</a></div><div class="ttdeci">function make(in self, in varargin)</div><div class="ttdoc">Generate a plot from the selected columns of the parent object component df.</div></div>
 <div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
@@ -798,12 +799,12 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>pm.vis.figure.savefig(<span class="stringliteral">&quot;SubplotEllipse.1.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>figure(<span class="stringliteral">&quot;color&quot;</span>, <span class="stringliteral">&quot;white&quot;</span>);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>sv = pm.vis.SubplotEllipse3(restart.proposalCov, restart.proposalMean, restart.uniqueStateVisitCount<span class="stringliteral">&#39;);</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="stringliteral">pv.subplot.title.titletext = &quot;Ellipse3 Subplot&quot;;</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="stringliteral">sv.make(&quot;axes&quot;, {&quot;zscale&quot;, &quot;log&quot;}, &quot;dimx&quot;, [1, 3], &quot;dimx&quot;, [1, 3] + 1);</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="stringliteral">pm.vis.figure.savefig(&quot;SubplotEllipse3.1.png&quot;, &quot;-m3&quot;);</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="stringliteral"></span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="stringliteral">close all;</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>sv = pm.vis.SubplotEllipse3(restart.proposalCov, restart.proposalMean, transpose(restart.uniqueStateVisitCount));</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>pv.subplot.title.titletext = <span class="stringliteral">&quot;Ellipse3 Subplot&quot;</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>sv.make(<span class="stringliteral">&quot;axes&quot;</span>, {<span class="stringliteral">&quot;zscale&quot;</span>, <span class="stringliteral">&quot;log&quot;</span>}, <span class="stringliteral">&quot;dimx&quot;</span>, [1, 3], <span class="stringliteral">&quot;dimx&quot;</span>, [1, 3] + 1);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>pm.vis.figure.savefig(<span class="stringliteral">&quot;SubplotEllipse3.1.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>close all;</div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="vis-Subplot"></a><b>Visualization of the example output</b> <a href="#vis-Subplot">⛓</a> <br  />
 <div class="image">
@@ -1118,7 +1119,7 @@ a list of row indices of the <code>dfref</code>. </li>
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classSubplot.html">Subplot</a></li>
-        <li class="footer">Generated on Fri Jul 12 2024 15:48:25 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 21:18:31 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

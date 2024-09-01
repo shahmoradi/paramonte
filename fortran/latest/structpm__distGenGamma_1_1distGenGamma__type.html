@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -151,17 +152,17 @@ $(document).ready(function(){initNavTree('structpm__distGenGamma_1_1distGenGamma
 <div class="line"><span class="fortran_statement">type</span>(distGenGamma_type) :: distGenGamma</div>
 <div class="line"> </div>
 <div class="line">distGenGamma<span class="fortran_operator_symbols"> = </span><a class="code hl_struct" href="structpm__distGenGamma_1_1distGenGamma__type.html">distGenGamma_type</a>()</div>
-<div class="ttc" id="anamespacepm__distGenGamma_html"><div class="ttname"><a href="namespacepm__distGenGamma.html">pm_distGenGamma</a></div><div class="ttdoc">This module contains classes and procedures for computing various statistical quantities related to t...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distGenGamma_8F90_source.html#l00103">pm_distGenGamma.F90:103</a></div></div>
-<div class="ttc" id="astructpm__distGenGamma_1_1distGenGamma__type_html"><div class="ttname"><a href="structpm__distGenGamma_1_1distGenGamma__type.html">pm_distGenGamma::distGenGamma_type</a></div><div class="ttdoc">This is the derived type for signifying distributions that are of type GenGamma as defined in the des...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distGenGamma_8F90_source.html#l00146">pm_distGenGamma.F90:146</a></div></div>
+<div class="ttc" id="anamespacepm__distGenGamma_html"><div class="ttname"><a href="namespacepm__distGenGamma.html">pm_distGenGamma</a></div><div class="ttdoc">This module contains classes and procedures for computing various statistical quantities related to t...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distGenGamma_8F90_source.html#l00129">pm_distGenGamma.F90:129</a></div></div>
+<div class="ttc" id="astructpm__distGenGamma_1_1distGenGamma__type_html"><div class="ttname"><a href="structpm__distGenGamma_1_1distGenGamma__type.html">pm_distGenGamma::distGenGamma_type</a></div><div class="ttdoc">This is the derived type for signifying distributions that are of type GenGamma as defined in the des...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distGenGamma_8F90_source.html#l00174">pm_distGenGamma.F90:174</a></div></div>
 </div><!-- fragment --></dd></dl>
-<dl class="DEVNOTE"><dt><b><a class="el" href="DEVNOTE.html#_DEVNOTE000022">Developer Remark:</a></b></dt><dd>This derived type is currently devoid of any components or type-bound procedures because of the lack of portable and reliable support for Parameterized Derived Types (PDT) in some Fortran compilers.<br  />
+<dl class="DEVNOTE"><dt><b><a class="el" href="DEVNOTE.html#_DEVNOTE000023">Developer Remark:</a></b></dt><dd>This derived type is currently devoid of any components or type-bound procedures because of the lack of portable and reliable support for Parameterized Derived Types (PDT) in some Fortran compilers.<br  />
  For now, the utility of this derived type is limited to generic interface resolutions.<br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000340">Test:</a></b></dt><dd>test_pm_distGenGamma</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000195">Todo:</a></b></dt><dd><span class="pvhigh">Critical Priority</span>: This derived type must be converted to PDT and the relevant components and methods must be added once PDTs are well supported.</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000349">Test:</a></b></dt><dd>test_pm_distGenGamma</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000197">Todo:</a></b></dt><dd><span class="pvhigh">Critical Priority</span>: This derived type must be converted to PDT and the relevant components and methods must be added once PDTs are well supported.</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-distGenGamma_type"></a><b>Final Remarks</b> <a href="#final-distGenGamma_type">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distGenGamma.F90#L142 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distGenGamma.F90#L170 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -176,10 +177,10 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000452">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Monday March 6, 2017, 3:22 pm, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000469">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Monday March 6, 2017, 3:22 pm, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin.<br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__distGenGamma_8F90_source.html#l00146">146</a> of file <a class="el" href="pm__distGenGamma_8F90_source.html">pm_distGenGamma.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__distGenGamma_8F90_source.html#l00174">174</a> of file <a class="el" href="pm__distGenGamma_8F90_source.html">pm_distGenGamma.F90</a>.</p>
 </div><hr/>The documentation for this type was generated from the following file:<ul>
 <li>src/fortran/main/<a class="el" href="pm__distGenGamma_8F90_source.html">pm_distGenGamma.F90</a></li>
 </ul>
@@ -189,7 +190,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distGenGamma.html">pm_distGenGamma</a></li><li class="navelem"><a class="el" href="structpm__distGenGamma_1_1distGenGamma__type.html">distGenGamma_type</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 13:03:38 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:53 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

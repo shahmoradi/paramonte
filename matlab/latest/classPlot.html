@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -372,12 +373,12 @@ See the list of class attributes below, also those of the superclass <a class="e
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>pv.make(<span class="stringliteral">&quot;axes&quot;</span>, {<span class="stringliteral">&quot;zscale&quot;</span>, <span class="stringliteral">&quot;log&quot;</span>}, <span class="stringliteral">&quot;dimx&quot;</span>, [1, 3], <span class="stringliteral">&quot;dimx&quot;</span>, [1, 3] + 1);</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>pv.savefig(<span class="stringliteral">&quot;PlotEllipse.1.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>pv = pm.vis.Plot(pm.vis.SubplotEllipse3(restart.proposalCov, restart.proposalMean, restart.uniqueStateVisitCount<span class="stringliteral">&#39;));</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="stringliteral">pv.subplot.title.titletext = &quot;Ellipse3 Plot&quot;;</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="stringliteral">pv.make(&quot;axes&quot;, {&quot;zscale&quot;, &quot;log&quot;}, &quot;dimx&quot;, [1, 3], &quot;dimx&quot;, [1, 3] + 1);</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="stringliteral">pv.savefig(&quot;PlotEllipse3.1.png&quot;, &quot;-m3&quot;);</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="stringliteral"></span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="stringliteral">close all;</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>pv = pm.vis.Plot(pm.vis.SubplotEllipse3(restart.proposalCov, restart.proposalMean, transpose(restart.uniqueStateVisitCount)));</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>pv.subplot.title.titletext = <span class="stringliteral">&quot;Ellipse3 Plot&quot;</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>pv.make(<span class="stringliteral">&quot;axes&quot;</span>, {<span class="stringliteral">&quot;zscale&quot;</span>, <span class="stringliteral">&quot;log&quot;</span>}, <span class="stringliteral">&quot;dimx&quot;</span>, [1, 3], <span class="stringliteral">&quot;dimx&quot;</span>, [1, 3] + 1);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>pv.savefig(<span class="stringliteral">&quot;PlotEllipse3.1.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>close all;</div>
 <div class="ttc" id="aclassPlot_html_ad0d17e6eec2b23db06c3dce3d80ffe5e"><div class="ttname"><a href="classPlot.html#ad0d17e6eec2b23db06c3dce3d80ffe5e">Plot::make</a></div><div class="ttdeci">function make(in self, in varargin)</div><div class="ttdoc">Configure the plot settings and specifications, make the plot, and return nothing.</div></div>
 <div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
 </div><!-- fragment --> <br  />
@@ -609,12 +610,12 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>pv.make(<span class="stringliteral">&quot;axes&quot;</span>, {<span class="stringliteral">&quot;zscale&quot;</span>, <span class="stringliteral">&quot;log&quot;</span>}, <span class="stringliteral">&quot;dimx&quot;</span>, [1, 3], <span class="stringliteral">&quot;dimx&quot;</span>, [1, 3] + 1);</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>pv.savefig(<span class="stringliteral">&quot;PlotEllipse.1.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>pv = pm.vis.Plot(pm.vis.SubplotEllipse3(restart.proposalCov, restart.proposalMean, restart.uniqueStateVisitCount<span class="stringliteral">&#39;));</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="stringliteral">pv.subplot.title.titletext = &quot;Ellipse3 Plot&quot;;</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="stringliteral">pv.make(&quot;axes&quot;, {&quot;zscale&quot;, &quot;log&quot;}, &quot;dimx&quot;, [1, 3], &quot;dimx&quot;, [1, 3] + 1);</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="stringliteral">pv.savefig(&quot;PlotEllipse3.1.png&quot;, &quot;-m3&quot;);</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="stringliteral"></span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="stringliteral">close all;</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>pv = pm.vis.Plot(pm.vis.SubplotEllipse3(restart.proposalCov, restart.proposalMean, transpose(restart.uniqueStateVisitCount)));</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>pv.subplot.title.titletext = <span class="stringliteral">&quot;Ellipse3 Plot&quot;</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>pv.make(<span class="stringliteral">&quot;axes&quot;</span>, {<span class="stringliteral">&quot;zscale&quot;</span>, <span class="stringliteral">&quot;log&quot;</span>}, <span class="stringliteral">&quot;dimx&quot;</span>, [1, 3], <span class="stringliteral">&quot;dimx&quot;</span>, [1, 3] + 1);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>pv.savefig(<span class="stringliteral">&quot;PlotEllipse3.1.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>close all;</div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="vis-Plot"></a><b>Visualization of the example output</b> <a href="#vis-Plot">⛓</a> <br  />
 <div class="image">
@@ -873,7 +874,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classPlot.html">Plot</a></li>
-        <li class="footer">Generated on Fri Jul 12 2024 15:48:25 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 21:18:31 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

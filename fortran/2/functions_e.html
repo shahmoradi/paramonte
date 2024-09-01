@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -140,7 +141,7 @@ $(document).ready(function(){initNavTree('functions_e.html',''); initResizable()
 <div class="textblock">Here is a list of all data types members with links to the data types they belong to:</div>
 
 <h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
-<li>ebrk&#160;:&#160;<a class="el" href="structtest__pm__distBand_1_1BandSpec__type.html#ae81e6412eed9a6a3d515487240879a56">test_pm_distBand::BandSpec_type</a></li>
+<li>EffectiveSize&#160;:&#160;<a class="el" href="structPartition__mod_1_1BaseProp__type.html#abdea00df071890bccba064af36fa130c">Partition_mod::BaseProp_type</a></li>
 <li>encoding&#160;:&#160;<a class="el" href="structpm__io_1_1openArg__type.html#a60880b0e036d184374aee610e4937cc0">pm_io::openArg_type</a></li>
 <li>endall&#160;:&#160;<a class="el" href="structpm__strANSI_1_1styleSeq__type.html#ab1547c4d34f2ab7622731155d11ee53d">pm_strANSI::styleSeq_type</a></li>
 <li>endblinking&#160;:&#160;<a class="el" href="structpm__strANSI_1_1styleSeq__type.html#af8dfbdc7274364da35c8b3cef095cf08">pm_strANSI::styleSeq_type</a></li>
@@ -152,10 +153,9 @@ $(document).ready(function(){initNavTree('functions_e.html',''); initResizable()
 <li>endreverse&#160;:&#160;<a class="el" href="structpm__strANSI_1_1styleSeq__type.html#aa531fca301ed96a1ff0eccf440c0c439">pm_strANSI::styleSeq_type</a></li>
 <li>endstrike&#160;:&#160;<a class="el" href="structpm__strANSI_1_1styleSeq__type.html#a741e7b748b7530cc066e00a6086d203a">pm_strANSI::styleSeq_type</a></li>
 <li>endunderlined&#160;:&#160;<a class="el" href="structpm__strANSI_1_1styleSeq__type.html#a583f3b1b7ee18fcb0984623828afc5e4">pm_strANSI::styleSeq_type</a></li>
-<li>energyFluence&#160;:&#160;<a class="el" href="structtest__pm__distBand_1_1BandSpec__type.html#a688044d1d7389d2c204fc0298f711878">test_pm_distBand::BandSpec_type</a></li>
 <li>epeak&#160;:&#160;<a class="el" href="structpm__batse_1_1grb__type.html#aa615ba4ad4078ba732fcfbe21ae35339">pm_batse::grb_type</a></li>
-<li>epk&#160;:&#160;<a class="el" href="structtest__pm__distBand_1_1BandSpec__type.html#a3cfc43e32283f66611113b3b3912ac43">test_pm_distBand::BandSpec_type</a></li>
 <li>epsilon&#160;:&#160;<a class="el" href="structpm__kind_1_1modelr__type.html#a8214247ce7ecee412d801b9772b95e77">pm_kind::modelr_type</a></li>
+<li>Err&#160;:&#160;<a class="el" href="structPartition__mod_1_1KmeansTry__type.html#a3e0a1f446d3a7d1d39f82d88b6864249">Partition_mod::KmeansTry_type</a>, <a class="el" href="structPartition__mod_1_1Partition__type.html#a22aaaa828639dc26428c71c00642183f">Partition_mod::Partition_type</a></li>
 <li>excluded()&#160;:&#160;<a class="el" href="structpm__err_1_1mark__type.html#a773fee212712efac92986fb528545780">pm_err::mark_type</a>, <a class="el" href="structpm__err_1_1note__type.html#acaf9f275f57bcb71b3bc3f04f7cec2e9">pm_err::note_type</a>, <a class="el" href="structpm__err_1_1stop__type.html#aa5b620630374a01c5de79a6ac03fb41e">pm_err::stop_type</a>, <a class="el" href="structpm__err_1_1warn__type.html#a38472ebfe9bda42abea32b67a4b3ebc8">pm_err::warn_type</a>, <a class="el" href="structpm__io_1_1wrap__type.html#a8a84fa796fe0a61f708d7e487aab7ef2">pm_io::wrap_type</a></li>
 <li>exec_proc()&#160;:&#160;<a class="el" href="interfacepm__bench_1_1exec__proc.html#a2a2b4274ac51580712145285acb9c952">pm_bench::exec_proc</a></li>
 <li>exponent&#160;:&#160;<a class="el" href="structpm__quadRomb_1_1lbis__type.html#adb13427ed762896c0c143813e04a1a5f">pm_quadRomb::lbis_type</a>, <a class="el" href="structpm__quadRomb_1_1ubis__type.html#a7493bc3b7d8aa14b48ca9c7bafc397d9">pm_quadRomb::ubis_type</a></li>
@@ -166,7 +166,7 @@ $(document).ready(function(){initNavTree('functions_e.html',''); initResizable()
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="footer">Generated on Tue Jul 9 2024 14:42:06 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:02:00 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

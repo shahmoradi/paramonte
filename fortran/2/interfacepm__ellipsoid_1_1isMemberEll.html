@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -177,7 +178,7 @@ containing the coordinates of a point whose presence within the ellipsoid is to 
 <div class="line">isMember<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__ellipsoid_1_1isMemberEll.html">isMemberEll</a>(radius, center(<span class="fortran_numeric_literal">1</span>:ndim), point(<span class="fortran_numeric_literal">1</span>:ndim))</div>
 <div class="line">isMember<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__ellipsoid_1_1isMemberEll.html">isMemberEll</a>(invGram(<span class="fortran_numeric_literal">1</span>:ndim,<span class="fortran_numeric_literal"> 1</span>:ndim), point(<span class="fortran_numeric_literal">1</span>:ndim)))</div>
 <div class="line">isMember<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__ellipsoid_1_1isMemberEll.html">isMemberEll</a>(invGram(<span class="fortran_numeric_literal">1</span>:ndim,<span class="fortran_numeric_literal"> 1</span>:ndim), center(<span class="fortran_numeric_literal">1</span>:ndim), point(<span class="fortran_numeric_literal">1</span>:ndim)))</div>
-<div class="ttc" id="ainterfacepm__ellipsoid_1_1isMemberEll_html"><div class="ttname"><a href="interfacepm__ellipsoid_1_1isMemberEll.html">pm_ellipsoid::isMemberEll</a></div><div class="ttdoc">Generate and return .true. if and only if the input point is a member (i.e., inside) of the specified...</div><div class="ttdef"><b>Definition:</b> <a href="pm__ellipsoid_8F90_source.html#l00651">pm_ellipsoid.F90:651</a></div></div>
+<div class="ttc" id="ainterfacepm__ellipsoid_1_1isMemberEll_html"><div class="ttname"><a href="interfacepm__ellipsoid_1_1isMemberEll.html">pm_ellipsoid::isMemberEll</a></div><div class="ttdoc">Generate and return .true. if and only if the input point is a member (i.e., inside) of the specified...</div><div class="ttdef"><b>Definition:</b> <a href="pm__ellipsoid_8F90_source.html#l00889">pm_ellipsoid.F90:889</a></div></div>
 <div class="ttc" id="anamespacepm__ellipsoid_html"><div class="ttname"><a href="namespacepm__ellipsoid.html">pm_ellipsoid</a></div><div class="ttdoc">This module contains classes and procedures for setting up and computing the properties of the hyper-...</div><div class="ttdef"><b>Definition:</b> <a href="pm__ellipsoid_8F90_source.html#l00105">pm_ellipsoid.F90:105</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html"><div class="ttname"><a href="namespacepm__kind.html">pm_kind</a></div><div class="ttdoc">This module defines the relevant Fortran kind type-parameters frequently used in the ParaMonte librar...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00268">pm_kind.F90:268</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html_aa8e76d653e681cfd34defa591f079f35"><div class="ttname"><a href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">pm_kind::IK</a></div><div class="ttdeci">integer, parameter IK</div><div class="ttdoc">The default integer kind in the ParaMonte library: int32 in Fortran, c_int32_t in C-Fortran Interoper...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00540">pm_kind.F90:540</a></div></div>
@@ -322,16 +323,16 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000511">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__ellipsoid.html">test_pm_ellipsoid</a><br  />
+<dl class="test"><dt><b><a class="el" href="test.html#_test000523">Test:</a></b></dt><dd>test_pm_ellipsoid<br  />
 </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000292">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: A positive-definiteness runtime check for the <code>invGram</code> input argument of this generic interface must be added.<br  />
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000294">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: A positive-definiteness runtime check for the <code>invGram</code> input argument of this generic interface must be added.<br  />
 </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000293">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: The current implementation of this procedure hard-codes the computation of the Mahalanobis distance, whose current implementation relies on the Fortran intrinsic routines.<br  />
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000295">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: The current implementation of this procedure hard-codes the computation of the Mahalanobis distance, whose current implementation relies on the Fortran intrinsic routines.<br  />
  This hardcoding should be replaced with potential BLAS alternatives.<br  />
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="final-isMemberEll"></a><b>Final Remarks</b> <a href="#final-isMemberEll">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_ellipsoid.F90#L647 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_ellipsoid.F90#L885 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -346,9 +347,9 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000629">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, April 23, 2017, 1:36 AM, Institute for Computational Engineering and Sciences (ICES), University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000649">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, April 23, 2017, 1:36 AM, Institute for Computational Engineering and Sciences (ICES), University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__ellipsoid_8F90_source.html#l00651">651</a> of file <a class="el" href="pm__ellipsoid_8F90_source.html">pm_ellipsoid.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__ellipsoid_8F90_source.html#l00889">889</a> of file <a class="el" href="pm__ellipsoid_8F90_source.html">pm_ellipsoid.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
 <li>src/fortran/main/<a class="el" href="pm__ellipsoid_8F90_source.html">pm_ellipsoid.F90</a></li>
 </ul>
@@ -358,7 +359,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__ellipsoid.html">pm_ellipsoid</a></li><li class="navelem"><a class="el" href="interfacepm__ellipsoid_1_1isMemberEll.html">isMemberEll</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 14:42:01 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:54 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -194,13 +195,13 @@ Data Types</h2></td></tr>
   <a href="structpm__quadPack_1_1wcauchy__type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpm__quadPack_1_1wcos__type.html">wcos_type</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the derived type for constructing objects that signify the computation of the integral an arbitrary Cose-weighted function.  <a href="structpm__quadPack_1_1wcos__type.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the derived type for constructing objects that signify the computation of the integral of an arbitrary Cose-weighted function.  <a href="structpm__quadPack_1_1wcos__type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">type &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpm__quadPack_1_1weps__type.html">weps_type</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the indicator type for generating instances of objects that indicate the use of Epsilon extrapolation method of Wynn (1961) to accelerate the convergence of integrations of functions with integrable singularities and infinities using the (Adaptive) Global Gauss-Kronrod Quadrature of <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a>.  <a href="structpm__quadPack_1_1weps__type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpm__quadPack_1_1wsin__type.html">wsin_type</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the derived type for constructing objects that signify the computation of the integral an arbitrary Sine-weighted function.  <a href="structpm__quadPack_1_1wsin__type.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the derived type for constructing objects that signify the computation of the integral of an arbitrary Sine-weighted function.  <a href="structpm__quadPack_1_1wsin__type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -309,7 +310,7 @@ Variables</h2></td></tr>
  </p>
 <p >The algorithms of this module significantly extend the original routines of the venerable QuadPack library in FORTRAN77.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md101"></a>
+<h2><a class="anchor" id="autotoc_md104"></a>
 Usage guidelines</h2>
 <p ><b>Question</b><br  />
  Is there a hassle-free simple nimble reliable numerical integrator that I can use as the first try?<br  />
@@ -329,7 +330,7 @@ If you prefer to compute the integral by a fixed Gauss-Kronrod quadrature rule w
  In this case, any <b>error estimate</b> for the integration must be obtained manually by the user by computing the integral via progressively higher order Gauss-Kronrod quadrature rules until the desired accuracy is achieved.<br  />
  </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md102"></a>
+<h2><a class="anchor" id="autotoc_md105"></a>
 Background</h2>
 <p ><b>Gaussian Quadrature</b> is an approximation of the definite integral of a function, usually stated as a weighted sum of function values at specified points within the integration domain.<br  />
  An \(n\)-point Gaussian quadrature rule, named after <b>Carl Friedrich Gauss</b>, is a quadrature rule constructed to yield an <b>exact result</b> for <b>polynomials</b> of degree \(2n − 1\) or less by a suitable choice of the nodes \(x_i\) and weights \(w_i\) for \(i = \{1, \ldots, n\}\).<br  />
@@ -350,7 +351,7 @@ Background</h2>
  However, this is not optimal, as the zeros of the Legendre polynomials (i.e., the nodes of Gaussian quadrature) are never the same for different orders.<br  />
  This requires \(3n + 1\) function evaluations to be performed.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md103"></a>
+<h2><a class="anchor" id="autotoc_md106"></a>
 Gauss-Kronrod quadrature</h2>
 <p >The error estimation challenge mentioned above limits the direct application of the Gauss-Legendre quadrature to integration problems.<br  />
  Higher order Gauss-Legendre quadrature (corresponding to higher numbers of nodes and weights) does not necessarily overlap with the lower-order nodes.<br  />
@@ -372,7 +373,7 @@ wasting of computational power due to non-overlapping of the lower and higher or
 </p>
 <p >The Gauss-Kronrod is a powerful driver in Adaptive Global Quadrature methods (e.g., as implemented in <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a>).<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md104"></a>
+<h2><a class="anchor" id="autotoc_md107"></a>
 Clenshaw-Curtis quadrature</h2>
 <p >The <b>Clenshaw-Curtis quadrature</b> (Clenshaw and Curtis (1960)) handles the numerical computation of the integral of a function \(f(x)\) over a finite interval, with weight function \(w = 1\).<br  />
  The idea of Clenshaw-Curtis integration is to approximate \(f(x)\) by a truncated Chebyshev polynomials expansion, which can be integrated exactly.<br  />
@@ -397,7 +398,7 @@ Clenshaw-Curtis quadrature</h2>
  Note that this limitation only exists with predefined Gauss-Kronrod rules of this library.<br  />
  The generic interface <a class="el" href="interfacepm__quadPack_1_1setNodeWeightGK.html">setNodeWeightGK</a> can be always used at any distant future, for example, the year <a href="https://youtu.be/cdNnlfZgnY8">one million and a half</a>, to compute the Gauss-Kronrod rules for subsequent usage by the integrators of this module.<br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000733">Test:</a></b></dt><dd>test_pm_quadPack<br  />
+<dl class="test"><dt><b><a class="el" href="test.html#_test000763">Test:</a></b></dt><dd>test_pm_quadPack<br  />
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
@@ -416,7 +417,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001101">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001147">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 </div><h2 class="groupheader">Variable Documentation</h2>
 <a id="adfbf8a8189cff307f53afeea4cf77f22" name="adfbf8a8189cff307f53afeea4cf77f22"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adfbf8a8189cff307f53afeea4cf77f22">&#9670;&nbsp;</a></span>GK15</h2>
@@ -599,7 +600,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000741">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000771">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-GK15"></a><b>Final Remarks</b> <a href="#final-GK15">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L670 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -617,7 +618,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001109">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001155">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l00674">674</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -787,7 +788,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000747">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000777">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-GK21"></a><b>Final Remarks</b> <a href="#final-GK21">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L866 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -805,7 +806,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001115">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001161">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l00870">870</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -975,7 +976,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000753">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000783">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-GK31"></a><b>Final Remarks</b> <a href="#final-GK31">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1070 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -993,7 +994,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001121">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001167">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01074">1074</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -1163,7 +1164,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000759">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000789">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-GK41"></a><b>Final Remarks</b> <a href="#final-GK41">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1290 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -1181,7 +1182,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001127">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001173">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01294">1294</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -1351,7 +1352,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000765">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000795">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-GK51"></a><b>Final Remarks</b> <a href="#final-GK51">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1524 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -1369,7 +1370,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001133">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001179">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01528">1528</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -1539,7 +1540,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000771">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000801">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-GK61"></a><b>Final Remarks</b> <a href="#final-GK61">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1774 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -1557,7 +1558,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001139">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001185">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01778">1778</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -1598,7 +1599,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001146">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001192">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l04501">4501</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -1640,7 +1641,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000748">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000778">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-nodeG10"></a><b>Final Remarks</b> <a href="#final-nodeG10">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L890 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -1658,7 +1659,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001116">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001162">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l00894">894</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -1684,7 +1685,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000754">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000784">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-nodeG15"></a><b>Final Remarks</b> <a href="#final-nodeG15">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1094 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -1702,7 +1703,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001122">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001168">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01098">1098</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -1728,7 +1729,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000760">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000790">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-nodeG20"></a><b>Final Remarks</b> <a href="#final-nodeG20">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1314 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -1746,7 +1747,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001128">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001174">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01318">1318</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -1772,7 +1773,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000766">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000796">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-nodeG25"></a><b>Final Remarks</b> <a href="#final-nodeG25">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1548 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -1790,7 +1791,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001134">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001180">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01552">1552</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -1816,7 +1817,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000772">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000802">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-nodeG30"></a><b>Final Remarks</b> <a href="#final-nodeG30">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1798 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -1834,7 +1835,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001140">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001186">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01802">1802</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -1860,7 +1861,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000742">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000772">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-nodeG7"></a><b>Final Remarks</b> <a href="#final-nodeG7">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L694 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -1878,7 +1879,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001110">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001156">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l00698">698</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -1904,7 +1905,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000744">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000774">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-nodeK15"></a><b>Final Remarks</b> <a href="#final-nodeK15">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L750 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -1922,7 +1923,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001112">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001158">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l00754">754</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -1948,7 +1949,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000750">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000780">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-nodeK21"></a><b>Final Remarks</b> <a href="#final-nodeK21">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L948 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -1966,7 +1967,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001118">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001164">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l00952">952</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -1992,7 +1993,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000756">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000786">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-nodeK31"></a><b>Final Remarks</b> <a href="#final-nodeK31">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1158 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2010,7 +2011,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001124">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001170">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01162">1162</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2036,7 +2037,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000762">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000792">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-nodeK41"></a><b>Final Remarks</b> <a href="#final-nodeK41">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1382 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2054,7 +2055,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001130">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001176">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01386">1386</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2080,7 +2081,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000768">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000798">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-nodeK51"></a><b>Final Remarks</b> <a href="#final-nodeK51">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1622 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2098,7 +2099,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001136">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001182">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01626">1626</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2124,7 +2125,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000774">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000804">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-nodeK61"></a><b>Final Remarks</b> <a href="#final-nodeK61">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1876 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2142,7 +2143,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001142">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001188">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01880">1880</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2168,7 +2169,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000749">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000779">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-weightG10"></a><b>Final Remarks</b> <a href="#final-weightG10">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L919 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2186,7 +2187,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001117">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001163">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l00923">923</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2212,7 +2213,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000755">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000785">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-weightG15"></a><b>Final Remarks</b> <a href="#final-weightG15">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1126 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2230,7 +2231,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001123">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001169">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01130">1130</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2256,7 +2257,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000761">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000791">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-weightG20"></a><b>Final Remarks</b> <a href="#final-weightG20">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1348 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2274,7 +2275,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001129">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001175">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01352">1352</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2300,7 +2301,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000767">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000797">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-weightG25"></a><b>Final Remarks</b> <a href="#final-weightG25">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1585 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2318,7 +2319,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001135">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001181">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01589">1589</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2344,7 +2345,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000773">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000803">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-weightG30"></a><b>Final Remarks</b> <a href="#final-weightG30">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1837 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2362,7 +2363,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001141">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001187">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01841">1841</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2388,7 +2389,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000743">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000773">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-weightG7"></a><b>Final Remarks</b> <a href="#final-weightG7">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L722 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2406,7 +2407,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001111">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001157">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l00726">726</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2432,7 +2433,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000745">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000775">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-weightK15"></a><b>Final Remarks</b> <a href="#final-weightK15">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L782 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2450,7 +2451,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001113">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001159">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l00786">786</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2476,7 +2477,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000751">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000781">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-weightK21"></a><b>Final Remarks</b> <a href="#final-weightK21">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L983 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2494,7 +2495,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001119">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001165">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l00987">987</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2520,7 +2521,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000757">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000787">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-weightK31"></a><b>Final Remarks</b> <a href="#final-weightK31">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1198 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2538,7 +2539,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001125">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001171">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01202">1202</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2564,7 +2565,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000763">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000793">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-weightK41"></a><b>Final Remarks</b> <a href="#final-weightK41">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1427 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2582,7 +2583,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001131">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001177">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01431">1431</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2608,7 +2609,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000769">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000799">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-weightK51"></a><b>Final Remarks</b> <a href="#final-weightK51">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1672 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2626,7 +2627,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001137">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001183">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01676">1676</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2652,7 +2653,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a class="el" href="interfacepm__quadPack_1_1getQuadGK.html">getQuadGK</a><br  />
  <a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000775">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000805">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-weightK61"></a><b>Final Remarks</b> <a href="#final-weightK61">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L1931 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2670,7 +2671,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001143">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001189">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l01935">1935</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2693,7 +2694,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacepm__quadPack_1_1getQuadErr.html">getQuadErr</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000779">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000809">Test:</a></b></dt><dd>test_pm_quadPack</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-weps"></a><b>Final Remarks</b> <a href="#final-weps">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_quadPack.F90#L4547 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -2711,7 +2712,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001148">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001194">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__quadPack_8F90_source.html#l04551">4551</a> of file <a class="el" href="pm__quadPack_8F90_source.html">pm_quadPack.F90</a>.</p>
 
@@ -2723,7 +2724,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__quadPack.html">pm_quadPack</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 14:42:03 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:57 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

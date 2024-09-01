@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -296,7 +297,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="fortran_statement">end program </span>example</div>
 <div class="ttc" id="ainterfacepm__arraySpace_1_1getLinSpace_html"><div class="ttname"><a href="interfacepm__arraySpace_1_1getLinSpace.html">pm_arraySpace::getLinSpace</a></div><div class="ttdoc">Generate count evenly spaced points over the interval [x1, x2] if x1 &lt; x2, or [x2,...</div><div class="ttdef"><b>Definition:</b> <a href="pm__arraySpace_8F90_source.html#l00108">pm_arraySpace.F90:108</a></div></div>
-<div class="ttc" id="ainterfacepm__arraySpace_1_1setLinSpace_html"><div class="ttname"><a href="interfacepm__arraySpace_1_1setLinSpace.html">pm_arraySpace::setLinSpace</a></div><div class="ttdoc">Return the linSpace output argument with size(linSpace) elements of evenly-spaced values over the int...</div><div class="ttdef"><b>Definition:</b> <a href="pm__arraySpace_8F90_source.html#l00327">pm_arraySpace.F90:327</a></div></div>
+<div class="ttc" id="ainterfacepm__arraySpace_1_1setLinSpace_html"><div class="ttname"><a href="interfacepm__arraySpace_1_1setLinSpace.html">pm_arraySpace::setLinSpace</a></div><div class="ttdoc">Return the linSpace output argument with size(linSpace) elements of evenly-spaced values over the int...</div><div class="ttdef"><b>Definition:</b> <a href="pm__arraySpace_8F90_source.html#l00324">pm_arraySpace.F90:324</a></div></div>
 <div class="ttc" id="ainterfacepm__io_1_1show_html"><div class="ttname"><a href="interfacepm__io_1_1show.html">pm_io::show</a></div><div class="ttdoc">This is a generic method of the derived type display_type with pass attribute.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11726">pm_io.F90:11726</a></div></div>
 <div class="ttc" id="ainterfacepm__io_1_1skip_html"><div class="ttname"><a href="interfacepm__io_1_1skip.html">pm_io::skip</a></div><div class="ttdoc">This is a generic method of the derived type display_type with pass attribute.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11508">pm_io.F90:11508</a></div></div>
 <div class="ttc" id="ainterfacepm__mathBeta_1_1getLogBeta_html"><div class="ttname"><a href="interfacepm__mathBeta_1_1getLogBeta.html">pm_mathBeta::getLogBeta</a></div><div class="ttdoc">Generate and return the natural logarithm of the Beta Function  as defined in the details section of ...</div><div class="ttdef"><b>Definition:</b> <a href="pm__mathBeta_8F90_source.html#l00144">pm_mathBeta.F90:144</a></div></div>
@@ -408,7 +409,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordflow">for</span> kind <span class="keywordflow">in</span> [<span class="stringliteral">&quot;IK&quot;</span>, <span class="stringliteral">&quot;CK&quot;</span>, <span class="stringliteral">&quot;RK&quot;</span>]:</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    pattern = <span class="stringliteral">&quot;*.&quot;</span>+kind+<span class="stringliteral">&quot;.txt&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    pattern = <span class="stringliteral">&quot;*.&quot;</span> + kind + <span class="stringliteral">&quot;.txt&quot;</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    fileList = glob.glob(pattern)</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span> len(fileList) == 1:</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
@@ -461,7 +462,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <img src="getBetaPDF.RK.png" alt="" width="700"/>
 </div>
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000286">Test:</a></b></dt><dd>test_pm_distBeta</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000289">Test:</a></b></dt><dd>test_pm_distBeta</dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000159">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: This generic interface can be extended to <code>complex</code> arguments.<br  />
 </dd></dl>
 <p ><br  />
@@ -481,7 +482,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000398">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000409">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__distBeta_8F90_source.html#l00227">227</a> of file <a class="el" href="pm__distBeta_8F90_source.html">pm_distBeta.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
@@ -493,7 +494,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distBeta.html">pm_distBeta</a></li><li class="navelem"><a class="el" href="interfacepm__distBeta_1_1getBetaPDF.html">getBetaPDF</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 14:41:59 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:52 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

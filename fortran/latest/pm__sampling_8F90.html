@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -170,7 +171,8 @@ Data Types</h2></td></tr>
   <a href="structpm__sampling_1_1paranest__type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacepm__sampling_1_1getErrSampling.html">pm_sampling::getErrSampling</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate and return <code>.true.</code> if the procedure fails to fully accomplish the task of generating a Monte Carlo sample of the specified input mathematical objective function, otherwise, return <code>.false.</code>.  <a href="interfacepm__sampling_1_1getErrSampling.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate and return <code>.true.</code> if the procedure fails to fully accomplish the task of Monte Carlo sampling of the specified input mathematical objective function, otherwise, return <code>.false.</code>.<br  />
+  <a href="interfacepm__sampling_1_1getErrSampling.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -183,7 +185,7 @@ Modules</h2></td></tr>
 Functions/Subroutines</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">runParaDRAM</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p >C-Fortran Interoperation</p>
-<p >Generate and return a non-zero value (<code>1</code>) if the procedure fails to fully accomplish the task of generating a Monte Carlo sample of the specified input mathematical objective function, otherwise, return <code>0</code>.</p>
+<p >Generate and return a non-zero value (<code>1</code>) if the procedure fails to fully accomplish the task of Monte Carlo sampling of the specified input mathematical objective function, otherwise, return <code>0</code>.</p>
 <p >This interface group is the entry point to all <b>C-style interfaces</b> to the ParaDRAM samplers of mathematical density functions.<br  />
  Although the procedures of this generic interface return a single scalar of type <code>int32_t</code>, the procedures generate massive amounts of information about each simulation which are stored in appropriate external hard drive files.<br  />
 </p>
@@ -394,7 +396,7 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <img src="runParaDRAM.proposalAdaptation.png" alt="" width="700"/>
 </div>
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000873">Test:</a></b></dt><dd>test_pm_sampling</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000903">Test:</a></b></dt><dd>test_pm_sampling</dd></dl>
 <dl class="bug"><dt><b><a class="el" href="bug.html#_bug000067">Bug:</a></b></dt><dd><br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel LLVM Fortran Compiler <code>ifx</code> version 2024.0.0 20231017 <br  />
@@ -408,7 +410,7 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <b>Description:</b> The <code>runParaDRAML</code> interface for <code>long double</code> yields a segmentation fault error. <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): None as of today.<br  />
 </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000397">Todo:</a></b></dt><dd><span class="pvhigh">Critical Priority</span>: The current tests for <code>long double</code> interface fail with Intel LLVM Fortran Compiler <code>ifx</code> and Intel LLVM C/C++ Compiler <code>icx</code> compilers.<br  />
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000404">Todo:</a></b></dt><dd><span class="pvhigh">Critical Priority</span>: The current tests for <code>long double</code> interface fail with Intel LLVM Fortran Compiler <code>ifx</code> and Intel LLVM C/C++ Compiler <code>icx</code> compilers.<br  />
  Apparently, there is a mismatch between <code>long double</code> and <code>c_long_double</code> storage.<br  />
  This issue does not exist with GNU compilers, although the GNU definition of <code>long double</code> appears to yield incorrect values in some calculations, e.g., in <code>isFailedGeomCyclicFit()</code> of the ParaMonte library.<br  />
 </dd></dl>
@@ -429,7 +431,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001268">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001314">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin </dd></dl>
 </div></td></tr>
 <tr class="memitem:a467c4e5e118b23be51c8e2c0a245667f"><td class="memItemLeft" align="right" valign="top">integer(IK) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepm__sampling.html#a467c4e5e118b23be51c8e2c0a245667f">pm_sampling::runParaDRAML</a> (getLogFunc, ndim, input)</td></tr>
 <tr class="separator:a467c4e5e118b23be51c8e2c0a245667f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -449,7 +451,7 @@ Variables</h2></td></tr>
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_23395307b1b7d12df5db6f58c451dcdf.html">fortran</a></li><li class="navelem"><a class="el" href="dir_acc2146ae7e18e9f4b01d04597c074ce.html">main</a></li><li class="navelem"><a class="el" href="pm__sampling_8F90.html">pm_sampling.F90</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 13:03:35 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:50 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

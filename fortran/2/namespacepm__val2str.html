@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -174,7 +175,7 @@ Variables</h2></td></tr>
 </div><!-- fragment --><p> or to separate the items via an arbitrary separator, e.g., <code>_paramone_</code>, try, </p><div class="fragment"><div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__val2str.html">pm_val2str</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__val2str_1_1getStr.html">getStr</a></div>
 <div class="line"><span class="fortran_statement">character</span>(:),<span class="fortran_attribute"> allocatable</span> :: str</div>
 <div class="line">str<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__val2str_1_1getStr.html">getStr</a>([<span class="fortran_numeric_literal">1</span>,<span class="fortran_numeric_literal"> 2</span>,<span class="fortran_numeric_literal"> 3</span>,<span class="fortran_numeric_literal"> 4</span>],<span class="fortran_statement"> format</span><span class="fortran_operator_symbols"> = </span><span class="fortran_string">&quot;(*(g0,:,&#39;_paramone_&#39;))&quot;</span>)</div>
-</div><!-- fragment --><dl class="DEVNOTE"><dt><b><a class="el" href="DEVNOTE.html#_DEVNOTE000071">Developer Remark:</a></b></dt><dd>Do <b>not</b> change the double back-ticks in </dd></dl>
+</div><!-- fragment --><dl class="DEVNOTE"><dt><b><a class="el" href="DEVNOTE.html#_DEVNOTE000072">Developer Remark:</a></b></dt><dd>Do <b>not</b> change the double back-ticks in </dd></dl>
 <pre>``"(g0,:,',')"``</pre><p> to single back-ticks in any documentations in this module.<br  />
  Doxygen version 1.9 has difficultly parsing the code sections with single back-tick when the code contains advanced features of modern Fortran <code>g0</code> edit descriptor.<br  />
 </p>
@@ -184,7 +185,7 @@ Variables</h2></td></tr>
  <a class="el" href="namespacepm__val2complex.html">pm_val2complex</a><br  />
  <a class="el" href="namespacepm__val2real.html">pm_val2real</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test001032">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__val2str.html">test_pm_val2str</a></dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test001062">Test:</a></b></dt><dd>test_pm_val2str</dd></dl>
 <p ><br  />
 <a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_val2str.F90#L51 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -202,7 +203,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001474">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001520">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 </div><h2 class="groupheader">Variable Documentation</h2>
 <a id="ae131c0ae6930fe8770ea3ba4a2d0c0f6" name="ae131c0ae6930fe8770ea3ba4a2d0c0f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae131c0ae6930fe8770ea3ba4a2d0c0f6">&#9670;&nbsp;</a></span>MODULE_NAME</h2>
@@ -226,7 +227,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__val2str.html">pm_val2str</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 14:42:05 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:59 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

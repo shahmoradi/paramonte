@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -221,7 +222,7 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This module contains classes and procedures for computing properties related to the correlation matrices of random samples. </p>
-<h1><a class="anchor" id="autotoc_md113"></a>
+<h1><a class="anchor" id="autotoc_md116"></a>
 Correlation matrix</h1>
 <p >The correlation matrix of \(N\) random variables \(X_{1}, \ldots, X_{N}\) is the \(N\times N\) matrix \(\rho\) whose \((i, j)\) entry is,  </p><p class="formulaDsp">
 \begin{equation}
@@ -246,7 +247,7 @@ Correlation matrix</h1>
 <dd>
 The vector of standard deviations can be readily extracted from the covariance matrix via <a class="el" href="interfacepm__matrixCopy_1_1getMatCopy.html">getMatCopy</a>.<br  />
 </dd></dl>
-<h1><a class="anchor" id="autotoc_md114"></a>
+<h1><a class="anchor" id="autotoc_md117"></a>
 Sample Cordance</h1>
 <p >Let \(\{(X_{1}, Y_{1}), \ldots, (X_{N}, Y_{N})\}\) be a set of \(N\) observations of the joint random variables \(X\) and \(Y\).<br  />
  A concordant pair is a pair of observations, each on two variables, \((X_i, Y_i)\) and \((X_j, Y2_j)\), having the property that  </p><p class="formulaDsp">
@@ -291,19 +292,19 @@ Sample Cordance</h1>
 </ol>
 <p >The generic interface <a class="el" href="interfacepm__sampleCor_1_1setCordance.html">setCordance</a> of this module returns the <b>sample cordance tuple/vector</b> comprised of the number of x-ties, y-ties, concordant pairs, and discordant pairs.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md115"></a>
+<h2><a class="anchor" id="autotoc_md118"></a>
 Sample Cordance Algorithm</h2>
 <p >The naive method of computing sample concordance quickly becomes expensive for large \(N\), because there are \({N \choose 2} = \frac{N (N - 1)}{2}\) (the binomial coefficient) number of ways to choose two items from \(N\) items.<br  />
  This makes the naive algorithm of complexity \(\mathcal{O}(N^{2})\).<br  />
 </p>
-<h1><a class="anchor" id="autotoc_md116"></a>
+<h1><a class="anchor" id="autotoc_md119"></a>
 Correlation coefficient</h1>
 <p >A correlation coefficient is a numerical measure of some type of correlation, meaning a statistical relationship between two variables.<br  />
  The variables may be two columns of a given data set of observations, often called a sample, or two components of a multivariate random variable with a known distribution.<br  />
 </p>
 <p >This module contains generic algorithms for computing the following popular sample correlation coefficients.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md117"></a>
+<h2><a class="anchor" id="autotoc_md120"></a>
 Pearson correlation coefficient</h2>
 <p >The Pearson product-moment correlation coefficient, also known as \(r\), \(R\), or the Pearson \(r\), is a measure of the strength and direction of the linear relationship between two variables that is defined as the covariance of the variables divided by the product of their standard deviations.<br  />
  This is the best-known and most commonly used type of <b>correlation coefficient</b>.<br  />
@@ -362,7 +363,7 @@ Pearson correlation coefficient</h2>
 <li>
 \(\textstyle {\bar{x}} = {\frac{1}{n}} \sum_{i=1}^{n}x_{i}\) (the sample mean); and analogously for \(\bar{y}\). </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md118"></a>
+<h2><a class="anchor" id="autotoc_md121"></a>
 Spearman rank correlation coefficient</h2>
 <p >The Spearman correlation coefficient is defined as the Pearson correlation coefficient between the <b>rank variables</b>.<br  />
  For a sample of size \(n\), the \(n\) raw scores \(X_{i}, Y_{i}\) are converted to ranks \(\up{R}({X_{i}}), \up{R}({Y_{i}})\), and \(r_{s}\) is computed as  </p><p class="formulaDsp">
@@ -390,7 +391,7 @@ Spearman rank correlation coefficient</h2>
 <li>
 \(n\) is the number of observations. </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md119"></a>
+<h2><a class="anchor" id="autotoc_md122"></a>
 Kendall rank correlation coefficient</h2>
 <p >The Kendall rank correlation coefficient, commonly referred to as the Kendall \(\tau\) coefficient, is a statistic used to measure the ordinal association between two measured quantities.<br  />
  It is a measure of <b>rank correlation</b>: the similarity of the orderings of the data when ranked by each of the quantities.<br  />
@@ -469,8 +470,8 @@ Kendall rank correlation coefficient</h2>
  <a class="el" href="namespacepm__sampleVar.html">pm_sampleVar</a><br  />
  <a href="https://en.wikipedia.org/wiki/Correlation_coefficient">Correlation coefficient</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000825">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__sampleCor.html">test_pm_sampleCor</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000382">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: The procedures of this module should be extended to support samples of type <code>complex</code> of arbitrary kind type parameter, similar to procedures of <a class="el" href="namespacepm__sampleVar.html">pm_sampleVar</a>.<br  />
+<dl class="test"><dt><b><a class="el" href="test.html#_test000855">Test:</a></b></dt><dd>test_pm_sampleCor</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000389">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: The procedures of this module should be extended to support samples of type <code>complex</code> of arbitrary kind type parameter, similar to procedures of <a class="el" href="namespacepm__sampleVar.html">pm_sampleVar</a>.<br  />
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="final-pm_sampleCor"></a><b>Final Remarks</b> <a href="#final-pm_sampleCor">⛓</a> </p><hr  />
@@ -489,7 +490,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001196">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Tuesday 01:45 AM, August 21, 2018, Dallas, TX </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001242">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Tuesday 01:45 AM, August 21, 2018, Dallas, TX </dd></dl>
 </div><h2 class="groupheader">Variable Documentation</h2>
 <a id="a287df31b769e9eed28a821bf0bc60ed3" name="a287df31b769e9eed28a821bf0bc60ed3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a287df31b769e9eed28a821bf0bc60ed3">&#9670;&nbsp;</a></span>kendall</h2>
@@ -532,7 +533,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001199">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001245">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00372">372</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
 
@@ -583,7 +584,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001201">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001247">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00437">437</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
 
@@ -634,7 +635,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001203">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001249">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00502">502</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
 
@@ -697,7 +698,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001205">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001251">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00560">560</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
 
@@ -744,7 +745,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001207">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001253">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__sampleCor_8F90_source.html#l00617">617</a> of file <a class="el" href="pm__sampleCor_8F90_source.html">pm_sampleCor.F90</a>.</p>
 
@@ -756,7 +757,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__sampleCor.html">pm_sampleCor</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 14:42:03 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:57 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

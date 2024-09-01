@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -309,8 +310,8 @@ a vector of size <code>nmix</code> <b>if and only if</b> the dimensionality of t
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="fortran_statement">end program </span>example</div>
 <div class="ttc" id="ainterfacepm__arraySpace_1_1getLinSpace_html"><div class="ttname"><a href="interfacepm__arraySpace_1_1getLinSpace.html">pm_arraySpace::getLinSpace</a></div><div class="ttdoc">Generate count evenly spaced points over the interval [x1, x2] if x1 &lt; x2, or [x2,...</div><div class="ttdef"><b>Definition:</b> <a href="pm__arraySpace_8F90_source.html#l00108">pm_arraySpace.F90:108</a></div></div>
-<div class="ttc" id="ainterfacepm__arraySpace_1_1setLinSpace_html"><div class="ttname"><a href="interfacepm__arraySpace_1_1setLinSpace.html">pm_arraySpace::setLinSpace</a></div><div class="ttdoc">Return the linSpace output argument with size(linSpace) elements of evenly-spaced values over the int...</div><div class="ttdef"><b>Definition:</b> <a href="pm__arraySpace_8F90_source.html#l00327">pm_arraySpace.F90:327</a></div></div>
-<div class="ttc" id="ainterfacepm__arraySpace_1_1setLogSpace_html"><div class="ttname"><a href="interfacepm__arraySpace_1_1setLogSpace.html">pm_arraySpace::setLogSpace</a></div><div class="ttdoc">Return the logSpace output argument with size(logSpace) elements of logarithmically-evenly-spaced val...</div><div class="ttdef"><b>Definition:</b> <a href="pm__arraySpace_8F90_source.html#l00768">pm_arraySpace.F90:768</a></div></div>
+<div class="ttc" id="ainterfacepm__arraySpace_1_1setLinSpace_html"><div class="ttname"><a href="interfacepm__arraySpace_1_1setLinSpace.html">pm_arraySpace::setLinSpace</a></div><div class="ttdoc">Return the linSpace output argument with size(linSpace) elements of evenly-spaced values over the int...</div><div class="ttdef"><b>Definition:</b> <a href="pm__arraySpace_8F90_source.html#l00324">pm_arraySpace.F90:324</a></div></div>
+<div class="ttc" id="ainterfacepm__arraySpace_1_1setLogSpace_html"><div class="ttname"><a href="interfacepm__arraySpace_1_1setLogSpace.html">pm_arraySpace::setLogSpace</a></div><div class="ttdoc">Return the logSpace output argument with size(logSpace) elements of logarithmically-evenly-spaced val...</div><div class="ttdef"><b>Definition:</b> <a href="pm__arraySpace_8F90_source.html#l00765">pm_arraySpace.F90:765</a></div></div>
 <div class="ttc" id="ainterfacepm__io_1_1show_html"><div class="ttname"><a href="interfacepm__io_1_1show.html">pm_io::show</a></div><div class="ttdoc">This is a generic method of the derived type display_type with pass attribute.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11726">pm_io.F90:11726</a></div></div>
 <div class="ttc" id="ainterfacepm__io_1_1skip_html"><div class="ttname"><a href="interfacepm__io_1_1skip.html">pm_io::skip</a></div><div class="ttdoc">This is a generic method of the derived type display_type with pass attribute.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11508">pm_io.F90:11508</a></div></div>
 <div class="ttc" id="ainterfacepm__mathLogSumExp_1_1getLogSumExp_html"><div class="ttname"><a href="interfacepm__mathLogSumExp_1_1getLogSumExp.html">pm_mathLogSumExp::getLogSumExp</a></div><div class="ttdoc">Generate and return the natural logarithm of the sum of the exponential of the input array robustly (...</div><div class="ttdef"><b>Definition:</b> <a href="pm__mathLogSumExp_8F90_source.html#l00147">pm_mathLogSumExp.F90:147</a></div></div>
@@ -479,7 +480,7 @@ a vector of size <code>nmix</code> <b>if and only if</b> the dimensionality of t
 <img src="getNormShellLogUDF.D2.RK.png" alt="" width="700"/>
 </div>
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000422">Test:</a></b></dt><dd>test_pm_distNormShell</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000432">Test:</a></b></dt><dd>test_pm_distNormShell</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-getNormShellLogUDF"></a><b>Final Remarks</b> <a href="#final-getNormShellLogUDF">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distNormShell.F90#L157 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -497,7 +498,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000534">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000552">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__distNormShell_8F90_source.html#l00161">161</a> of file <a class="el" href="pm__distNormShell_8F90_source.html">pm_distNormShell.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
@@ -509,7 +510,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distNormShell.html">pm_distNormShell</a></li><li class="navelem"><a class="el" href="interfacepm__distNormShell_1_1getNormShellLogUDF.html">getNormShellLogUDF</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 13:03:38 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:53 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

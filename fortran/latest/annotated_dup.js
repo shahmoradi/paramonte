@@ -1,5 +1,20 @@
 var annotated_dup =
 [
+    [ "Partition_mod", "namespacePartition__mod.html", [
+      [ "BaseProp_type", "structPartition__mod_1_1BaseProp__type.html", "structPartition__mod_1_1BaseProp__type" ],
+      [ "getPartition_proc", "interfacePartition__mod_1_1getPartition__proc.html", "interfacePartition__mod_1_1getPartition__proc" ],
+      [ "KmeansTry_type", "structPartition__mod_1_1KmeansTry__type.html", "structPartition__mod_1_1KmeansTry__type" ],
+      [ "Method_type", "structPartition__mod_1_1Method__type.html", "structPartition__mod_1_1Method__type" ],
+      [ "ParProp_type", "structPartition__mod_1_1ParProp__type.html", "structPartition__mod_1_1ParProp__type" ],
+      [ "ParPropTry_type", "structPartition__mod_1_1ParPropTry__type.html", "structPartition__mod_1_1ParPropTry__type" ],
+      [ "ParPropTryDen_type", "structPartition__mod_1_1ParPropTryDen__type.html", "structPartition__mod_1_1ParPropTryDen__type" ],
+      [ "ParPropTryVol_type", "structPartition__mod_1_1ParPropTryVol__type.html", "structPartition__mod_1_1ParPropTryVol__type" ],
+      [ "Partition_type", "structPartition__mod_1_1Partition__type.html", "structPartition__mod_1_1Partition__type" ],
+      [ "PartitionBase_type", "structPartition__mod_1_1PartitionBase__type.html", "structPartition__mod_1_1PartitionBase__type" ],
+      [ "PartitionMaxDen_type", "structPartition__mod_1_1PartitionMaxDen__type.html", "structPartition__mod_1_1PartitionMaxDen__type" ],
+      [ "PartitionMinVol_type", "structPartition__mod_1_1PartitionMinVol__type.html", "structPartition__mod_1_1PartitionMinVol__type" ],
+      [ "write_proc", "interfacePartition__mod_1_1write__proc.html", "interfacePartition__mod_1_1write__proc" ]
+    ] ],
     [ "pm_array", "namespacepm__array.html", [
       [ "action_type", "structpm__array_1_1action__type.html", null ],
       [ "adjacent_type", "structpm__array_1_1adjacent__type.html", null ],
@@ -51,6 +66,10 @@ var annotated_dup =
     [ "pm_arrayCopy", "namespacepm__arrayCopy.html", [
       [ "setCopyIndexed", "interfacepm__arrayCopy_1_1setCopyIndexed.html", null ],
       [ "setCopyStrided", "interfacepm__arrayCopy_1_1setCopyStrided.html", null ]
+    ] ],
+    [ "pm_arrayDiff", "namespacepm__arrayDiff.html", [
+      [ "getDiff", "interfacepm__arrayDiff_1_1getDiff.html", null ],
+      [ "setDiff", "interfacepm__arrayDiff_1_1setDiff.html", null ]
     ] ],
     [ "pm_arrayFill", "namespacepm__arrayFill.html", [
       [ "getFilled", "interfacepm__arrayFill_1_1getFilled.html", null ]
@@ -405,6 +424,7 @@ var annotated_dup =
       [ "euclid_type", "structpm__distanceEuclid_1_1euclid__type.html", null ],
       [ "euclidsq_type", "structpm__distanceEuclid_1_1euclidsq__type.html", null ],
       [ "euclidu_type", "structpm__distanceEuclid_1_1euclidu__type.html", null ],
+      [ "euclidv_type", "structpm__distanceEuclid_1_1euclidv__type.html", null ],
       [ "getDisEuclid", "interfacepm__distanceEuclid_1_1getDisEuclid.html", null ],
       [ "getDisMatEuclid", "interfacepm__distanceEuclid_1_1getDisMatEuclid.html", null ],
       [ "setDisEuclid", "interfacepm__distanceEuclid_1_1setDisEuclid.html", null ],
@@ -446,6 +466,13 @@ var annotated_dup =
       [ "setBetaCDF", "interfacepm__distBeta_1_1setBetaCDF.html", null ],
       [ "setBetaLogPDF", "interfacepm__distBeta_1_1setBetaLogPDF.html", null ],
       [ "setBetaRand", "interfacepm__distBeta_1_1setBetaRand.html", null ]
+    ] ],
+    [ "pm_distBinom", "namespacepm__distBinom.html", [
+      [ "distBinom_type", "structpm__distBinom_1_1distBinom__type.html", null ],
+      [ "getBinomCDF", "interfacepm__distBinom_1_1getBinomCDF.html", null ],
+      [ "getBinomLogPMF", "interfacepm__distBinom_1_1getBinomLogPMF.html", null ],
+      [ "setBinomCDF", "interfacepm__distBinom_1_1setBinomCDF.html", null ],
+      [ "setBinomLogPMF", "interfacepm__distBinom_1_1setBinomLogPMF.html", null ]
     ] ],
     [ "pm_distCosRaised", "namespacepm__distCosRaised.html", [
       [ "distCosRaised_type", "structpm__distCosRaised_1_1distCosRaised__type.html", null ],
@@ -504,7 +531,8 @@ var annotated_dup =
       [ "getGenGammaLogPDF", "interfacepm__distGenGamma_1_1getGenGammaLogPDF.html", null ],
       [ "getGenGammaLogPDFNF", "interfacepm__distGenGamma_1_1getGenGammaLogPDFNF.html", null ],
       [ "setGenGammaCDF", "interfacepm__distGenGamma_1_1setGenGammaCDF.html", null ],
-      [ "setGenGammaLogPDF", "interfacepm__distGenGamma_1_1setGenGammaLogPDF.html", null ]
+      [ "setGenGammaLogPDF", "interfacepm__distGenGamma_1_1setGenGammaLogPDF.html", null ],
+      [ "setGenGammaRand", "interfacepm__distGenGamma_1_1setGenGammaRand.html", null ]
     ] ],
     [ "pm_distGeom", "namespacepm__distGeom.html", [
       [ "distGeom_type", "structpm__distGeom_1_1distGeom__type.html", null ],
@@ -687,8 +715,10 @@ var annotated_dup =
       [ "getCountMemberEll", "interfacepm__ellipsoid_1_1getCountMemberEll.html", null ],
       [ "getLogVolEll", "interfacepm__ellipsoid_1_1getLogVolEll.html", null ],
       [ "getLogVolUnitBall", "interfacepm__ellipsoid_1_1getLogVolUnitBall.html", null ],
+      [ "getVolUnitBall", "interfacepm__ellipsoid_1_1getVolUnitBall.html", null ],
       [ "isMemberEll", "interfacepm__ellipsoid_1_1isMemberEll.html", null ],
-      [ "setLogVolUnitBall", "interfacepm__ellipsoid_1_1setLogVolUnitBall.html", null ]
+      [ "setLogVolUnitBall", "interfacepm__ellipsoid_1_1setLogVolUnitBall.html", null ],
+      [ "setVolUnitBall", "interfacepm__ellipsoid_1_1setVolUnitBall.html", null ]
     ] ],
     [ "pm_err", "namespacepm__err.html", [
       [ "err_type", "structpm__err_1_1err__type.html", "structpm__err_1_1err__type" ],
@@ -846,10 +876,26 @@ var annotated_dup =
     [ "pm_mathGamma", "namespacepm__mathGamma.html", [
       [ "getGammaIncLow", "interfacepm__mathGamma_1_1getGammaIncLow.html", null ],
       [ "getGammaIncUpp", "interfacepm__mathGamma_1_1getGammaIncUpp.html", null ],
-      [ "setGammaIncLow", "interfacepm__mathGamma_1_1setGammaIncLow.html", null ],
-      [ "setGammaIncLowSeries", "interfacepm__mathGamma_1_1setGammaIncLowSeries.html", null ],
-      [ "setGammaIncUpp", "interfacepm__mathGamma_1_1setGammaIncUpp.html", null ],
-      [ "setGammaIncUppContFrac", "interfacepm__mathGamma_1_1setGammaIncUppContFrac.html", null ]
+      [ "setGammaInc", "interfacepm__mathGamma_1_1setGammaInc.html", null ]
+    ] ],
+    [ "pm_mathGammaAM", "namespacepm__mathGammaAM.html", [
+      [ "getGammaIncLowAM", "interfacepm__mathGammaAM_1_1getGammaIncLowAM.html", null ],
+      [ "getGammaIncUppAM", "interfacepm__mathGammaAM_1_1getGammaIncUppAM.html", null ],
+      [ "setGammaIncLowAM", "interfacepm__mathGammaAM_1_1setGammaIncLowAM.html", null ],
+      [ "setGammaIncUppAM", "interfacepm__mathGammaAM_1_1setGammaIncUppAM.html", null ]
+    ] ],
+    [ "pm_mathGammaGil", "namespacepm__mathGammaGil.html", [
+      [ "getGammaIncLowGil", "interfacepm__mathGammaGil_1_1getGammaIncLowGil.html", null ],
+      [ "getGammaIncUppGil", "interfacepm__mathGammaGil_1_1getGammaIncUppGil.html", null ],
+      [ "setGammaIncGil", "interfacepm__mathGammaGil_1_1setGammaIncGil.html", null ]
+    ] ],
+    [ "pm_mathGammaNR", "namespacepm__mathGammaNR.html", [
+      [ "getGammaIncLowNR", "interfacepm__mathGammaNR_1_1getGammaIncLowNR.html", null ],
+      [ "getGammaIncUppNR", "interfacepm__mathGammaNR_1_1getGammaIncUppNR.html", null ],
+      [ "setGammaIncLowNR", "interfacepm__mathGammaNR_1_1setGammaIncLowNR.html", null ],
+      [ "setGammaIncLowSeriesNR", "interfacepm__mathGammaNR_1_1setGammaIncLowSeriesNR.html", null ],
+      [ "setGammaIncUppContFracNR", "interfacepm__mathGammaNR_1_1setGammaIncUppContFracNR.html", null ],
+      [ "setGammaIncUppNR", "interfacepm__mathGammaNR_1_1setGammaIncUppNR.html", null ]
     ] ],
     [ "pm_mathLog1p", "namespacepm__mathLog1p.html", [
       [ "getLog1p", "interfacepm__mathLog1p_1_1getLog1p.html", null ]
@@ -894,11 +940,22 @@ var annotated_dup =
       [ "func_type", "structpm__mathRootTest_1_1func__type.html", "structpm__mathRootTest_1_1func__type" ],
       [ "get_proc", "interfacepm__mathRootTest_1_1get__proc.html", "interfacepm__mathRootTest_1_1get__proc" ]
     ] ],
+    [ "pm_mathRound", "namespacepm__mathRound.html", [
+      [ "pnint", "interfacepm__mathRound_1_1pnint.html", null ]
+    ] ],
     [ "pm_mathSqrt", "namespacepm__mathSqrt.html", [
       [ "getSqrt", "interfacepm__mathSqrt_1_1getSqrt.html", null ]
     ] ],
     [ "pm_mathSubAdd", "namespacepm__mathSubAdd.html", [
       [ "operator(.subadd.)", "interfacepm__mathSubAdd_1_1operator_07_8subadd_8_08.html", null ]
+    ] ],
+    [ "pm_mathSum", "namespacepm__mathSum.html", [
+      [ "fablocked_type", "structpm__mathSum_1_1fablocked__type.html", null ],
+      [ "getDot", "interfacepm__mathSum_1_1getDot.html", null ],
+      [ "getSum", "interfacepm__mathSum_1_1getSum.html", null ],
+      [ "kahanbabu_type", "structpm__mathSum_1_1kahanbabu__type.html", null ],
+      [ "nablocked_type", "structpm__mathSum_1_1nablocked__type.html", null ],
+      [ "sum_type", "structpm__mathSum_1_1sum__type.html", null ]
     ] ],
     [ "pm_mathUnsigned", "namespacepm__mathUnsigned.html", [
       [ "operator(.uadd.)", "interfacepm__mathUnsigned_1_1operator_07_8uadd_8_08.html", null ]
@@ -1075,7 +1132,8 @@ var annotated_dup =
       [ "setPolyMul", "interfacepm__polynomial_1_1setPolyMul.html", null ],
       [ "setPolyRoot", "interfacepm__polynomial_1_1setPolyRoot.html", null ],
       [ "setPolyRootPolished", "interfacepm__polynomial_1_1setPolyRootPolished.html", null ],
-      [ "setPolySub", "interfacepm__polynomial_1_1setPolySub.html", null ]
+      [ "setPolySub", "interfacepm__polynomial_1_1setPolySub.html", null ],
+      [ "skgo_type", "structpm__polynomial_1_1skgo__type.html", "structpm__polynomial_1_1skgo__type" ]
     ] ],
     [ "pm_quadPack", "namespacepm__quadPack.html", [
       [ "getQuadErr", "interfacepm__quadPack_1_1getQuadErr.html", null ],
@@ -1404,18 +1462,5 @@ var annotated_dup =
     ] ],
     [ "pm_ziggurat", "namespacepm__ziggurat.html", [
       [ "getZig", "interfacepm__ziggurat_1_1getZig.html", null ]
-    ] ],
-    [ "test_pm_clustering", "namespacetest__pm__clustering.html", [
-      [ "TestData_type", "structtest__pm__clustering_1_1TestData__type.html", "structtest__pm__clustering_1_1TestData__type" ]
-    ] ],
-    [ "test_pm_distBand", "namespacetest__pm__distBand.html", [
-      [ "BandSpec_type", "structtest__pm__distBand_1_1BandSpec__type.html", "structtest__pm__distBand_1_1BandSpec__type" ]
-    ] ],
-    [ "test_pm_knn", "namespacetest__pm__knn.html", [
-      [ "TestData_type", "structtest__pm__knn_1_1TestData__type.html", "structtest__pm__knn_1_1TestData__type" ]
-    ] ],
-    [ "test_pm_optimization", "namespacetest__pm__optimization.html", [
-      [ "TestFuncRosenBrock1D_type", "structtest__pm__optimization_1_1TestFuncRosenBrock1D__type.html", "structtest__pm__optimization_1_1TestFuncRosenBrock1D__type" ],
-      [ "TestFuncRosenBrock2D_type", "structtest__pm__optimization_1_1TestFuncRosenBrock2D__type.html", "structtest__pm__optimization_1_1TestFuncRosenBrock2D__type" ]
     ] ]
 ];

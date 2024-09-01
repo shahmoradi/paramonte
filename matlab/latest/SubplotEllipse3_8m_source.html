@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -960,103 +961,110 @@ $(document).ready(function(){initNavTree('SubplotEllipse3_8m_source.html',''); i
 <div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>            %%%% Generate ellipse self.workspace.</div>
 <div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>            %%%%</div>
 <div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span> </div>
-<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>            bcrd = zeros(size(self.workspace.zval, 1), length(fields) * length(self.workspace.ellindex) * numel(self.workspace.dimx));</div>
-<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>            for idim = 1 : numel(self.workspace.dimx)</div>
-<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>                for iell = 1 : length(self.workspace.ellindex)</div>
-<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>                    jell = self.workspace.ellindex(iell);</div>
-<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>                    icol = (iell - 1) * length(fields) + 1;</div>
-<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>                    iset = (idim - 1) * length(fields) * length(self.workspace.ellindex);</div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>                    dimxy = [self.workspace.dimx(idim), self.workspace.dimy(idim)];</div>
-<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>                    bcrd(:, iset + icol : iset + icol + 1) = pm.geom.ell2.<a class="code hl_function" href="getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9">getBorder</a> ( self.workspace.gramian(dimxy, dimxy, jell) ...</div>
-<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>                                                                                    , self.workspace.center(dimxy, jell) ...</div>
-<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>                                                                                    , size(self.workspace.zval, 1) ...</div>
-<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>                                                                                    );</div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>                    bcrd(:, iset + icol + 2) = self.workspace.zval(:, jell);</div>
-<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>                    if  3 &lt; length(fields)</div>
-<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>                        bcrd(:, iset + icol + 3) = self.workspace.cval(:, jell);</div>
-<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>                    end</div>
-<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>                end</div>
-<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>            end</div>
-<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span> </div>
-<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>            %%%%</div>
-<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>            %%%% Generate the dataframe.</div>
-<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>            %%%%</div>
-<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span> </div>
-<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>            self.df = pm.data.<a class="code hl_class" href="classDataFrame.html">DataFrame</a>(bcrd);</div>
-<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span> </div>
-<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>        end</div>
-<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span> </div>
-<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>    end</div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span> </div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span> </div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>    methods(Access = public)</div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span> </div>
-<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>        %&gt;  \brief</div>
-<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>        %&gt;  Generate a plot from the selected dimensions</div>
-<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>        %&gt;  of the input ellipsoid data to the <span class="keywordtype">object</span> constructor.&lt;br&gt;</div>
-<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>        %&gt;</div>
-<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>        %&gt;  \note</div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>        %&gt;  This method is pure, except for the changes in ``fout`` component.&lt;br&gt;</div>
-<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>        %&gt;</div>
-<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>        %&gt;  \param[inout]   self        :   The input/output parent <span class="keywordtype">object</span> of class [pm.vis.<a class="code hl_class" href="classSubplotEllipse3.html">SubplotEllipse3</a>](@ref <a class="code hl_class" href="classSubplotEllipse3.html">SubplotEllipse3</a>)</div>
-<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>        %&gt;                                  <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> is **implicitly** passed to this dynamic method (not by the user).&lt;br&gt;</div>
-<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>        %&gt;  \param[in]      varargin    :   Any ``property, value`` pair of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
-<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>        %&gt;                                  If the property is a ``struct()``, then its value must be given as a cell array,</div>
-<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>        %&gt;                                  with consecutive elements representing the struct ``property-<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>, property-value`` pairs.&lt;br&gt;</div>
-<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>        %&gt;                                  Note that all of these property-value pairs can be also directly set via the</div>
-<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>        %&gt;                                  parent <span class="keywordtype">object</span> attributes, before calling the ``make()`` method.&lt;br&gt;</div>
-<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>        %&gt;</div>
-<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>        %&gt;  \interface{make}</div>
-<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>        %&gt;  \code{.m}</div>
-<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>        %&gt;</div>
-<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>        %&gt;      pm.vis.SubplotEllipse3.make();</div>
-<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>        %&gt;      pm.vis.SubplotEllipse3.make(varargin);</div>
-<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>        %&gt;</div>
-<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>        %&gt;  \endcode</div>
-<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>        %&gt;</div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>        %&gt;  \example{make}</div>
-<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>        %&gt;  \include{lineno} example/vis/<a class="code hl_class" href="classSubplotEllipse3.html">SubplotEllipse3</a>/main.m</div>
-<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>        %&gt;  \vis{make}</div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classSubplotEllipse3.html">SubplotEllipse3</a>/<a class="code hl_class" href="classSubplotEllipse3.html">SubplotEllipse3</a>.1.png width=700</div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>            gramtmp = zeros(2, 2);</div>
+<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>            bcrd = zeros(size(self.workspace.zval, 1), length(fields) * length(self.workspace.ellindex) * numel(self.workspace.dimx));</div>
+<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>            for idim = 1 : numel(self.workspace.dimx)</div>
+<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>                for iell = 1 : length(self.workspace.ellindex)</div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>                    jell = self.workspace.ellindex(iell);</div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>                    icol = (iell - 1) * length(fields) + 1;</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>                    iset = (idim - 1) * length(fields) * length(self.workspace.ellindex);</div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>                    dimxy = [self.workspace.dimx(idim), self.workspace.dimy(idim)];</div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>                    if  self.workspace.dimx(idim) ~= self.workspace.dimy(idim)</div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>                        gramtmp(:, :) = self.workspace.gramian(dimxy, dimxy, jell);</div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>                    else</div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>                        sigmasq = self.workspace.gramian(self.workspace.dimx(idim), self.workspace.dimx(idim), jell);</div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>                        gramtmp(:, :) = [sigmasq, 0; 0, sigmasq];</div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>                    end</div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>                    bcrd(:, iset + icol : iset + icol + 1) = pm.geom.ell2.<a class="code hl_function" href="getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9">getBorder</a> ( gramtmp ...</div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>                                                                                    , self.workspace.center(dimxy, jell) ...</div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>                                                                                    , size(self.workspace.zval, 1) ...</div>
+<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>                                                                                    );</div>
+<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>                    bcrd(:, iset + icol + 2) = self.workspace.zval(:, jell);</div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>                    if  3 &lt; length(fields)</div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>                        bcrd(:, iset + icol + 3) = self.workspace.cval(:, jell);</div>
+<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>                    end</div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>                end</div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>            end</div>
+<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span> </div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>            %%%%</div>
+<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>            %%%% Generate the dataframe.</div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>            %%%%</div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span> </div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>            self.df = pm.data.<a class="code hl_class" href="classDataFrame.html">DataFrame</a>(bcrd);</div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span> </div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>        end</div>
+<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span> </div>
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>    end</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span> </div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span> </div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    methods(Access = public)</div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span> </div>
+<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>        %&gt;  \brief</div>
+<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>        %&gt;  Generate a plot from the selected dimensions</div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>        %&gt;  of the input ellipsoid data to the <span class="keywordtype">object</span> constructor.&lt;br&gt;</div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>        %&gt;</div>
+<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>        %&gt;  \note</div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>        %&gt;  This method is pure, except for the changes in ``fout`` component.&lt;br&gt;</div>
+<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>        %&gt;</div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>        %&gt;  \param[inout]   self        :   The input/output parent <span class="keywordtype">object</span> of class [pm.vis.<a class="code hl_class" href="classSubplotEllipse3.html">SubplotEllipse3</a>](@ref <a class="code hl_class" href="classSubplotEllipse3.html">SubplotEllipse3</a>)</div>
+<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>        %&gt;                                  <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> is **implicitly** passed to this dynamic method (not by the user).&lt;br&gt;</div>
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>        %&gt;  \param[in]      varargin    :   Any ``property, value`` pair of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>        %&gt;                                  If the property is a ``struct()``, then its value must be given as a cell array,</div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>        %&gt;                                  with consecutive elements representing the struct ``property-<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>, property-value`` pairs.&lt;br&gt;</div>
+<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>        %&gt;                                  Note that all of these property-value pairs can be also directly set via the</div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>        %&gt;                                  parent <span class="keywordtype">object</span> attributes, before calling the ``make()`` method.&lt;br&gt;</div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>        %&gt;</div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>        %&gt;  \interface{make}</div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>        %&gt;  \code{.m}</div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>        %&gt;</div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>        %&gt;      pm.vis.SubplotEllipse3.make();</div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>        %&gt;      pm.vis.SubplotEllipse3.make(varargin);</div>
 <div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>        %&gt;</div>
-<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>        %&gt;  \final{make}</div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>        %&gt;  \endcode</div>
 <div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>        %&gt;</div>
-<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>        %&gt;  \author</div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>        %&gt;  \JoshuaOsborne, May 22 2024, 5:46 PM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>        %&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>        %&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>        function make(self, varargin)</div>
-<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span> </div>
-<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>            make@pm.vis.SubplotLineScatter3(self, varargin{:});</div>
-<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span> </div>
-<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>            %%%% RULE 0: No component of ``self`` is allowed to appear to the left of assignment <span class="keyword">operator</span>, except ``fout``.</div>
-<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span>            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span> </div>
-<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>            <span class="keywordflow">if</span>  self.colormap.enabled &amp;&amp; self.colorbar.enabled</div>
-<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>                <span class="keywordflow">if</span>  prod(self.workspace.shape.cval) &lt; 1</div>
-<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span>                    % input cval is empty</div>
-<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>                    %self.fout.colorbar.Ticks = self.fout.axes.ZTick;</div>
-<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>                    %%self.fout.colorbar.Limits = self.fout.axes.ZLim;</div>
-<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>                    ylabel(self.fout.colorbar, <span class="stringliteral">&quot;Ellipsoid Index&quot;</span>);</div>
-<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>                <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>                    ylabel(self.fout.colorbar, <span class="stringliteral">&quot;Color Data&quot;</span>);</div>
-<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>                end</div>
-<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>            end</div>
-<div class="line"><a id="l00905" name="l00905"></a><span class="lineno"><a class="line" href="classSubplotEllipse3.html#a1033de58d901890d1bef05b85245542d">  905</a></span> </div>
-<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>        end</div>
-<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span> </div>
-<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>    end</div>
-<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span> </div>
-<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span> </div>
-<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>end</div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>        %&gt;  \example{make}</div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>        %&gt;  \include{lineno} example/vis/<a class="code hl_class" href="classSubplotEllipse3.html">SubplotEllipse3</a>/main.m</div>
+<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>        %&gt;  \vis{make}</div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>        %&gt;  &lt;br&gt;\image html example/vis/<a class="code hl_class" href="classSubplotEllipse3.html">SubplotEllipse3</a>/<a class="code hl_class" href="classSubplotEllipse3.html">SubplotEllipse3</a>.1.png width=700</div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>        %&gt;</div>
+<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>        %&gt;  \final{make}</div>
+<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>        %&gt;</div>
+<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>        %&gt;  \author</div>
+<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>        %&gt;  \JoshuaOsborne, May 22 2024, 5:46 PM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>        %&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span>        %&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>        function make(self, varargin)</div>
+<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span> </div>
+<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>            make@pm.vis.SubplotLineScatter3(self, varargin{:});</div>
+<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span> </div>
+<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>            %%%% RULE 0: No component of ``self`` is allowed to appear to the left of assignment <span class="keyword">operator</span>, except ``fout``.</div>
+<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span> </div>
+<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>            <span class="keywordflow">if</span>  self.colormap.enabled &amp;&amp; self.colorbar.enabled</div>
+<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>                <span class="keywordflow">if</span>  prod(self.workspace.shape.cval) &lt; 1</div>
+<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>                    % input cval is empty</div>
+<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>                    %self.fout.colorbar.Ticks = self.fout.axes.ZTick;</div>
+<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>                    %%self.fout.colorbar.Limits = self.fout.axes.ZLim;</div>
+<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>                    ylabel(self.fout.colorbar, <span class="stringliteral">&quot;Ellipsoid Index&quot;</span>);</div>
+<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>                    ylabel(self.fout.colorbar, <span class="stringliteral">&quot;Color Data&quot;</span>);</div>
+<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>                end</div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>            end</div>
+<div class="line"><a id="l00912" name="l00912"></a><span class="lineno"><a class="line" href="classSubplotEllipse3.html#a1033de58d901890d1bef05b85245542d">  912</a></span> </div>
+<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>        end</div>
+<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span> </div>
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>    end</div>
+<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span> </div>
+<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span> </div>
+<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>end</div>
 <div class="ttc" id="a_09introspection_2verify_8m_html_ae339f0f4a1b7dbc72c7481f34b9555cc"><div class="ttname"><a href="_09introspection_2verify_8m.html#ae339f0f4a1b7dbc72c7481f34b9555cc">verify</a></div><div class="ttdeci">function verify(in varval, in vartype, in varsize, in varname)</div><div class="ttdoc">Verify the type and number of elements of the input varval match the specified input vartype and vars...</div></div>
 <div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div><div class="ttdoc">Return the MPI library name as used in naming the ParaMonte MATLAB shared libraries.</div></div>
 <div class="ttc" id="a_09os_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div><div class="ttdoc">Return a list of MATLAB strings containing the names of OS platforms supported by the ParaMonte MATLA...</div></div>
 <div class="ttc" id="aclassCascade_html"><div class="ttname"><a href="classCascade.html">Cascade</a></div><div class="ttdoc">This is the abstract class for generating instances of objects that contain the specifications of a c...</div><div class="ttdef"><b>Definition:</b> <a href="Cascade_8m_source.html#l00031">Cascade.m:32</a></div></div>
-<div class="ttc" id="aclassCorner_html"><div class="ttname"><a href="classCorner.html">Corner</a></div><div class="ttdoc">This is the abstract class for generating instances of figures containing a symmetric grid (corners) ...</div><div class="ttdef"><b>Definition:</b> <a href="Corner_8m_source.html#l00004">Corner.m:5</a></div></div>
+<div class="ttc" id="aclassCorner_html"><div class="ttname"><a href="classCorner.html">Corner</a></div><div class="ttdoc">This is the base class for generating instances of figures containing a symmetric square grid or corn...</div><div class="ttdef"><b>Definition:</b> <a href="Corner_8m_source.html#l00018">Corner.m:19</a></div></div>
 <div class="ttc" id="aclassDataFrame_html"><div class="ttname"><a href="classDataFrame.html">DataFrame</a></div><div class="ttdoc">This is the abstract class for generating instances of objects that can contain basic attributes requ...</div><div class="ttdef"><b>Definition:</b> <a href="DataFrame_8m_source.html#l00024">DataFrame.m:25</a></div></div>
 <div class="ttc" id="aclassDataRef_html"><div class="ttname"><a href="classDataRef.html">DataRef</a></div><div class="ttdoc">This is the abstract class for generating instances of objects that can contain basic attributes requ...</div><div class="ttdef"><b>Definition:</b> <a href="DataRef_8m_source.html#l00026">DataRef.m:27</a></div></div>
 <div class="ttc" id="aclassFigure_html"><div class="ttname"><a href="classFigure.html">Figure</a></div><div class="ttdoc">This is the abstract class for generating instances of objects that contain the specifications of var...</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8m_source.html#l00026">Figure.m:27</a></div></div>
@@ -1096,7 +1104,7 @@ $(document).ready(function(){initNavTree('SubplotEllipse3_8m_source.html',''); i
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_77a461de7b91f32df8032085d9a00b9a.html">+vis</a></li><li class="navelem"><a class="el" href="SubplotEllipse3_8m.html">SubplotEllipse3.m</a></li>
-        <li class="footer">Generated on Fri Jul 12 2024 15:48:24 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 21:18:30 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

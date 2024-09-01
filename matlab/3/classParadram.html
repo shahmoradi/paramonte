@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -198,7 +199,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000118">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000119">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Paradram_8m_source.html#l00013">13</a> of file <a class="el" href="Paradram_8m_source.html">Paradram.m</a>.</p>
@@ -400,9 +401,9 @@ This will generate a <code>main_mpi.m</code> MATLAB script file in the current w
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>restart = sampler.readRestart();</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>restart = restart{1};</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>p = pm.vis.PlotEllipse3(restart.proposalCov, restart.proposalMean, restart.uniqueStateVisitCount<span class="stringliteral">&#39;);</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="stringliteral">p.make(&quot;axes&quot;, {&quot;zscale&quot;, &quot;log&quot;});</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="stringliteral">p.savefig(&quot;Paradram.himmelblau.proposalCov.png&quot;, &quot;-m3&quot;);</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>p = pm.vis.PlotEllipse3(restart.proposalCov, restart.proposalMean, transpose(restart.uniqueStateVisitCount));</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>p.make(<span class="stringliteral">&quot;axes&quot;</span>, {<span class="stringliteral">&quot;zscale&quot;</span>, <span class="stringliteral">&quot;log&quot;</span>});</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>p.savefig(<span class="stringliteral">&quot;Paradram.himmelblau.proposalCov.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
 <div class="ttc" id="aparallel_8m_html_a01b198603048be87b719ba0cbd8b3864"><div class="ttname"><a href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a></div><div class="ttdeci">function parallel()</div><div class="ttdoc">Return a scalar MATLAB logical that is true if and only if the current installation of MATLAB contain...</div></div>
 <div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
 </div><!-- fragment --> <br  />
@@ -608,7 +609,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000119">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000120">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
 </div>
@@ -853,7 +854,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000120">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 12:06 AM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000121">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 12:06 AM, University of Texas at Arlington<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
@@ -935,7 +936,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000121">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2012, 12:00 AM, National Institute for Fusion Studies, The University of Texas at Austin%&gt; </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000122">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2012, 12:00 AM, National Institute for Fusion Studies, The University of Texas at Austin%&gt; </dd></dl>
 
 </div>
 </div>
@@ -948,7 +949,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classParadram.html">Paradram</a></li>
-        <li class="footer">Generated on Fri Jul 12 2024 15:48:25 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 21:18:31 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

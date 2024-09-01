@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -231,7 +232,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        count<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__arrayRange_1_1getRange.html">getRange</a>(<span class="fortran_numeric_literal">1_IK</span>,<span class="fortran_numeric_literal"> 1</span><span class="fortran_numeric_literal">0_IK</span>)</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="fortran_statement">        open</span>(newunit<span class="fortran_operator_symbols"> = </span>fileUnit, file<span class="fortran_operator_symbols"> = </span><span class="fortran_string">&quot;getGeomLogPMF.IK.txt&quot;</span>)</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="fortran_keywordflow">do</span> i<span class="fortran_operator_symbols"> = </span><span class="fortran_numeric_literal">1</span>,<span class="fortran_function"> size</span>(count)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="fortran_statement">            write</span>(fileUnit, <span class="fortran_string">&quot;(*(g0,:,&#39; &#39;))&quot;</span> )<span class="fortran_function"> count</span>(i),<span class="fortran_function"> exp</span>(<a class="code hl_interface" href="interfacepm__distGeom_1_1getGeomLogPMF.html">getGeomLogPMF</a>(<span class="fortran_function">count</span>(i), [.<span class="fortran_numeric_literal">1_RKG</span>, .<span class="fortran_numeric_literal">2_RKG</span>, .<span class="fortran_numeric_literal">5_RKG</span>, .<span class="fortran_numeric_literal">8_RKG</span>]))</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="fortran_statement">            write</span>(fileUnit, <span class="fortran_string">&quot;(*(g0,:,&#39; &#39;))&quot;</span>)<span class="fortran_function"> count</span>(i),<span class="fortran_function"> exp</span>(<a class="code hl_interface" href="interfacepm__distGeom_1_1getGeomLogPMF.html">getGeomLogPMF</a>(<span class="fortran_function">count</span>(i), [.<span class="fortran_numeric_literal">1_RKG</span>, .<span class="fortran_numeric_literal">2_RKG</span>, .<span class="fortran_numeric_literal">5_RKG</span>, .<span class="fortran_numeric_literal">8_RKG</span>]))</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="fortran_keywordflow">        end do</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="fortran_statement">        close</span>(fileUnit)</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
@@ -305,7 +306,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        , <span class="stringliteral">r&quot;probSuccess = .8&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        ]</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>pattern = <span class="stringliteral">&quot;*.&quot;</span>+kind+<span class="stringliteral">&quot;.txt&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>pattern = <span class="stringliteral">&quot;*.&quot;</span> + kind + <span class="stringliteral">&quot;.txt&quot;</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>fileList = glob.glob(pattern)</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordflow">if</span> len(fileList) == 1:</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
@@ -347,7 +348,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <img src="getGeomLogPMF.IK.png" alt="" width="700"/>
 </div>
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000348">Test:</a></b></dt><dd>test_pm_distGeom</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000358">Test:</a></b></dt><dd>test_pm_distGeom</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-getGeomLogPMF"></a><b>Final Remarks</b> <a href="#final-getGeomLogPMF">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distGeom.F90#L198 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -365,7 +366,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000460">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000478">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__distGeom_8F90_source.html#l00202">202</a> of file <a class="el" href="pm__distGeom_8F90_source.html">pm_distGeom.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
@@ -377,7 +378,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distGeom.html">pm_distGeom</a></li><li class="navelem"><a class="el" href="interfacepm__distGeom_1_1getGeomLogPMF.html">getGeomLogPMF</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 14:42:00 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:53 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

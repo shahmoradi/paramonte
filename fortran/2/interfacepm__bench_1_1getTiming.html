@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -166,11 +167,10 @@ $(document).ready(function(){initNavTree('interfacepm__bench_1_1getTiming.html',
 <div class="line"><span class="fortran_statement">type</span>(bench_type) :: bench</div>
 <div class="line"><span class="fortran_statement">real</span>(RKD) :: minsec</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a><span class="fortran_operator_symbols"> = </span>bench_type(name, exec, overhead<span class="fortran_operator_symbols"> = </span>overhead, minsec<span class="fortran_operator_symbols"> = </span>minsec, timer<span class="fortran_operator_symbols"> = </span>timer)</div>
-<div class="line"><a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a><span class="fortran_operator_symbols">%</span>timing<span class="fortran_operator_symbols"> = </span><a class="code hl_function" href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a><span class="fortran_operator_symbols">%</span>getTiming(minsec<span class="fortran_operator_symbols"> = </span>minsec, miniter<span class="fortran_operator_symbols"> = </span>miniter)</div>
+<div class="line">bench<span class="fortran_operator_symbols"> = </span>bench_type(name, exec, overhead<span class="fortran_operator_symbols"> = </span>overhead, minsec<span class="fortran_operator_symbols"> = </span>minsec, timer<span class="fortran_operator_symbols"> = </span>timer)</div>
+<div class="line">bench<span class="fortran_operator_symbols">%</span>timing<span class="fortran_operator_symbols"> = </span>bench<span class="fortran_operator_symbols">%</span>getTiming(minsec<span class="fortran_operator_symbols"> = </span>minsec, miniter<span class="fortran_operator_symbols"> = </span>miniter)</div>
 <div class="ttc" id="anamespacepm__kind_html"><div class="ttname"><a href="namespacepm__kind.html">pm_kind</a></div><div class="ttdoc">This module defines the relevant Fortran kind type-parameters frequently used in the ParaMonte librar...</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00268">pm_kind.F90:268</a></div></div>
 <div class="ttc" id="anamespacepm__kind_html_ac0a1a3a5068faea709591110db2efad4"><div class="ttname"><a href="namespacepm__kind.html#ac0a1a3a5068faea709591110db2efad4">pm_kind::RKD</a></div><div class="ttdeci">integer, parameter RKD</div><div class="ttdoc">The double precision real kind in Fortran mode. On most platforms, this is an 64-bit real kind.</div><div class="ttdef"><b>Definition:</b> <a href="pm__kind_8F90_source.html#l00568">pm_kind.F90:568</a></div></div>
-<div class="ttc" id="atest__pm__arraySort_8F90_html_a6c0c71b215d516f677316f817252eb18"><div class="ttname"><a href="test__pm__arraySort_8F90.html#a6c0c71b215d516f677316f817252eb18">bench</a></div><div class="ttdeci">subroutine bench(sort, arraySize)</div><div class="ttdef"><b>Definition:</b> <a href="test__pm__arraySort_8F90_source.html#l04216">test_pm_arraySort.F90:4217</a></div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This <code>function</code> method of type <a class="el" href="structpm__bench_1_1bench__type.html">bench_type</a> has the same functionality as the <code>subroutine</code> interface <a class="el" href="interfacepm__bench_1_1setTiming.html">setTiming</a> with the only difference that the output is explicit.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If the specified benchmark routine is to be called certain number of times, set <code>minsec = 0.</code> and <code>miniter</code> to desired number of times the routine must be timed.<br  />
@@ -180,7 +180,7 @@ $(document).ready(function(){initNavTree('interfacepm__bench_1_1getTiming.html',
 </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>See <a class="el" href="structpm__bench_1_1bench__type.html">bench_type</a> for example usage.</dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000116">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: The computation of the median, skewness, and kurtosis of the timing vector in the <code>stat</code> component must be implemented.</dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000138">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__bench.html">test_pm_bench</a></dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000141">Test:</a></b></dt><dd>test_pm_bench</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-getTiming"></a><b>Final Remarks</b> <a href="#final-getTiming">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_bench.F90#L570 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -198,7 +198,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000190">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Wednesday 4:13 AM, August 13, 2016, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000199">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Wednesday 4:13 AM, August 13, 2016, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__bench_8F90_source.html#l00574">574</a> of file <a class="el" href="pm__bench_8F90_source.html">pm_bench.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
@@ -210,7 +210,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__bench.html">pm_bench</a></li><li class="navelem"><a class="el" href="interfacepm__bench_1_1getTiming.html">getTiming</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 14:41:59 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:51 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

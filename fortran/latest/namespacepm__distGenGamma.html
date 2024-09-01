@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -168,6 +169,9 @@ Data Types</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacepm__distGenGamma_1_1setGenGammaLogPDF.html">setGenGammaLogPDF</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the natural logarithm of the Probability Density Function (PDF) of the GenGamma distribution.  <a href="interfacepm__distGenGamma_1_1setGenGammaLogPDF.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacepm__distGenGamma_1_1setGenGammaRand.html">setGenGammaRand</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a scalar or array of arbitrary rank of GenGamma-distributed random values with the specified shape and scale parameters \((\kappa, \omega, \sigma)\) of the Generalized Gamma distribution corresponding to the procedure arguments <code>(kappa, omega, sigma)</code>.  <a href="interfacepm__distGenGamma_1_1setGenGammaRand.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -233,27 +237,53 @@ When \(\omega = 1\), the GenGamma PDF reduces to the PDF of the <a class="el" hr
 When \(\kappa = 1, \omega = 1\), the GenGamma PDF reduces to the PDF of the <a class="el" href="namespacepm__distExp.html">Exponential distribution</a>.<br  />
  </li>
 </ol>
-<p >The <b>CDF</b> of the Generalized Gamma distribution over a strictly-positive support \(x \in (0, +\infty)\) with the three (shape, shape, scale) parameters \((\kappa &gt; 0, \omega &gt; 0, \sigma &gt; 0)\) is defined by the <b>regularized</b> Lower Incomplete Gamma function as,  </p><p class="formulaDsp">
+<p >The <b>CDF</b> of the Generalized Gamma distribution over a strictly-positive support \(x \in (0, +\infty)\) with the three (shape, shape, scale) parameters \((\kappa &gt; 0, \omega &gt; 0, \sigma &gt; 0)\) is defined by the <b>regularized</b> <a class="el" href="namespacepm__mathGamma.html">Lower Incomplete Gamma function</a> as,  </p><p class="formulaDsp">
 \begin{eqnarray}
       \large
-      \mathrm{CDF}(x | \kappa, \sigma)
+      \mathrm{CDF}(x | \kappa, \omega, \sigma)
       &amp; = &amp; P\bigg(\kappa, \big(\frac{x}{\sigma}\big)^{\frac{1}{\omega}} \bigg) \\
       &amp; = &amp; \frac{1}{\Gamma(\kappa)} \int_0^{\big(\frac{x}{\sigma}\big)^{\frac{1}{\omega}}} ~ t^{\kappa - 1}{\mathrm e}^{-t} ~ dt ~,
   \end{eqnarray}
 </p>
 <p >where \(\Gamma(\kappa)\) represents the Gamma function.<br  />
 </p>
+<p >The distribution mean is given by,</p>
+<p class="formulaDsp">
+\begin{equation}
+      \large
+      \overline{x} = \frac{\Gamma\left(\kappa + \omega\right)}{\Gamma(\kappa)} \sigma ~.
+  \end{equation}
+</p>
+<p >The distribution mode is given by,</p>
+<p class="formulaDsp">
+\begin{equation}
+      \large
+      \widehat{x} =
+      \begin{cases}
+          \sigma \left( \kappa - \omega \right)^\omega ~~~ , ~~~ \omega &lt; \kappa ~, \nonumber \\
+          0 ~~~ , ~~~ \kappa \leq \omega ~.
+      \end{cases}
+  \end{equation}
+</p>
+<p >The distribution variance is given by,</p>
+<p class="formulaDsp">
+\begin{equation}
+      \large
+      \mathrm{VAR}(x) = \sigma^2 \left[ \frac{\Gamma(\kappa + 2\omega)}{\Gamma(\kappa)} - \left( \frac{\Gamma(\kappa + \omega)}{\Gamma(\kappa)} \right)^2 \right] ~.
+  \end{equation}
+</p>
 <dl class="section note"><dt>Note</dt><dd>The relationship between the <a class="el" href="namespacepm__distGenExpGamma.html">GenExpGamma</a> and <a class="el" href="namespacepm__distGenGamma.html">GenGamma</a> distributions is similar to that of the <a class="el" href="namespacepm__distNorm.html">Normal</a> and <a class="el" href="namespacepm__distLogNorm.html">LogNormal</a> distributions.<br  />
  In other words, a better more consistent naming for the GenExpGamma and GenGamma distributions could have been <em>GenGamma</em> and <em>GenLogGamma</em> distributions, respectively, similar to <a class="el" href="namespacepm__distNorm.html">Normal</a> and <a class="el" href="namespacepm__distLogNorm.html">LogNormal</a> distributions.<br  />
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacepm__distGamma.html">pm_distGamma</a><br  />
  <a class="el" href="namespacepm__distGenExpGamma.html">pm_distGenExpGamma</a><br  />
+ Stacy, E. W. (1962). A generalization of the gamma distribution. The Annals of mathematical statistics, 33(3), 1187-1192.<br  />
  Wolfram Research (2010), GenGammaDistribution, Wolfram Language function, <a href="https://reference.wolfram.com/language/ref/GenGammaDistribution.html">https://reference.wolfram.com/language/ref/GenGammaDistribution.html</a> (updated 2016)<br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000339">Test:</a></b></dt><dd>test_pm_distGenGamma</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000348">Test:</a></b></dt><dd>test_pm_distGenGamma</dd></dl>
 <p ><br  />
 <a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distGenGamma.F90#L96 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distGenGamma.F90#L122 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -268,7 +298,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000451">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000468">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 </div><h2 class="groupheader">Variable Documentation</h2>
 <a id="a94bc149ee3ca44eee513f0075867897b" name="a94bc149ee3ca44eee513f0075867897b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a94bc149ee3ca44eee513f0075867897b">&#9670;&nbsp;</a></span>MODULE_NAME</h2>
@@ -282,7 +312,7 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pm__distGenGamma_8F90_source.html#l00109">109</a> of file <a class="el" href="pm__distGenGamma_8F90_source.html">pm_distGenGamma.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__distGenGamma_8F90_source.html#l00137">137</a> of file <a class="el" href="pm__distGenGamma_8F90_source.html">pm_distGenGamma.F90</a>.</p>
 
 </div>
 </div>
@@ -292,7 +322,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distGenGamma.html">pm_distGenGamma</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 13:03:38 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:53 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

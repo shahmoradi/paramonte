@@ -8,7 +8,7 @@ var searchData=
   ['adjacent_5',['adjacent',['../namespacepm__array.html#ac096eb6777bbd4eccfc95c14b9ef8807',1,'pm_array']]],
   ['advance_6',['advance',['../structpm__io_1_1display__type.html#a68fa47d975beb7aefcd67be6b693f11c',1,'pm_io::display_type']]],
   ['allocatable_7',['allocatable',['../namespacepm__array.html#adb2de8fa3040c81a495534461d613a75',1,'pm_array']]],
-  ['alpha_8',['alpha',['../structpm__quadTest_1_1intGamUpp__type.html#af2fbe861774b17ad535aa47abd70f28f',1,'pm_quadTest::intGamUpp_type::alpha()'],['../structtest__pm__distBand_1_1BandSpec__type.html#ab64df853f648f7645fe8a783c7813f43',1,'test_pm_distBand::BandSpec_type::alpha()']]],
+  ['alpha_8',['alpha',['../structpm__quadTest_1_1intGamUpp__type.html#af2fbe861774b17ad535aa47abd70f28f',1,'pm_quadTest::intGamUpp_type']]],
   ['alpha_5flower_5fstr_5fsk_9',['ALPHA_LOWER_STR_SK',['../namespacepm__strASCII.html#a964bab3dc6faedb563cafe415785f499',1,'pm_strASCII']]],
   ['alpha_5flower_5fvec_5fsk_10',['ALPHA_LOWER_VEC_SK',['../namespacepm__strASCII.html#a7757230c7a77158fbae677e98d0d97f4',1,'pm_strASCII']]],
   ['alpha_5fstr_5fsk_11',['ALPHA_STR_SK',['../namespacepm__strASCII.html#a3d6f3c8c95189ed44a9cc9001ad15354',1,'pm_strASCII']]],

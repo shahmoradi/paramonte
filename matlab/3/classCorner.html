@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -144,15 +145,16 @@ $(document).ready(function(){initNavTree('classCorner.html',''); initResizable()
 </div><!--header-->
 <div class="contents">
 
-<p>This is the abstract class for generating instances of figures containing a symmetric grid (corners) of subplots.  
+<p>This is the base class for generating instances of figures containing a symmetric square grid or corner of subplots.<br  />
+  
  <a href="classCorner.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Corner:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCorner__inherit__graph.png" border="0" usemap="#aCorner_inherit__map" alt="Inheritance graph"/></div>
 <map name="aCorner_inherit__map" id="aCorner_inherit__map">
-<area shape="rect" title="This is the abstract class for generating instances of figures containing a symmetric grid (corners) ..." alt="" coords="52,80,117,107"/>
-<area shape="rect" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" title="This is the base class for generating instances of figures containing a symmetric square grid or corn..." alt="" coords="30,80,95,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,120,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -160,15 +162,30 @@ Collaboration diagram for Corner:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCorner__coll__graph.png" border="0" usemap="#aCorner_coll__map" alt="Collaboration graph"/></div>
 <map name="aCorner_coll__map" id="aCorner_coll__map">
-<area shape="rect" title="This is the abstract class for generating instances of figures containing a symmetric grid (corners) ..." alt="" coords="52,80,117,107"/>
-<area shape="rect" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" title="This is the base class for generating instances of figures containing a symmetric square grid or corn..." alt="" coords="30,80,95,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,120,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a00c350d25566a4d09f325d99119065ea"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCorner.html#a00c350d25566a4d09f325d99119065ea">Corner</a> (in <a class="el" href="classCorner.html#a32f29c98815f0bacc9c272ab67134c86">diag</a>, in <a class="el" href="classCorner.html#a88d148e74ce285846c6272edd432d46e">lower</a>, in <a class="el" href="classCorner.html#a637216e2c98930e5ff3ec8db17cf9cba">upper</a>, in varargin)</td></tr>
-<tr class="separator:a00c350d25566a4d09f325d99119065ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adafba269d345936153d195a5bd1401cf"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCorner.html#adafba269d345936153d195a5bd1401cf">Corner</a> (in df, in varargin)</td></tr>
+<tr class="memdesc:adafba269d345936153d195a5bd1401cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an return an object of class <a class="el" href="classCorner.html">pm.vis.Corner</a>.<br  />
+  <a href="classCorner.html#adafba269d345936153d195a5bd1401cf">More...</a><br /></td></tr>
+<tr class="separator:adafba269d345936153d195a5bd1401cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf16699a16b6ef7a42b8b22dd0dc4cd1"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1">make</a> (in self, in varargin)</td></tr>
+<tr class="memdesc:abf16699a16b6ef7a42b8b22dd0dc4cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the figure settings and specifications, make the figure and the subplots, and return nothing. The subplots are made by calling their <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> methods.  <a href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1">More...</a><br /></td></tr>
+<tr class="separator:abf16699a16b6ef7a42b8b22dd0dc4cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab94fab61db22d6dd664d0c137761ee6c"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCorner.html#ab94fab61db22d6dd664d0c137761ee6c">reset</a> (in self, in varargin)</td></tr>
+<tr class="memdesc:ab94fab61db22d6dd664d0c137761ee6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the properties of the figure to the original default settings. Use this method when you change many attributes of the plot and you want to clean up and go back to the default settings.  <a href="classCorner.html#ab94fab61db22d6dd664d0c137761ee6c">More...</a><br /></td></tr>
+<tr class="separator:ab94fab61db22d6dd664d0c137761ee6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4020816b006c6161b077c7aab2c550a4"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCorner.html#a4020816b006c6161b077c7aab2c550a4">premake</a> (in self, in varargin)</td></tr>
+<tr class="memdesc:a4020816b006c6161b077c7aab2c550a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare the corner plot specs for subsequent visualization by <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code>.  <a href="classCorner.html#a4020816b006c6161b077c7aab2c550a4">More...</a><br /></td></tr>
+<tr class="separator:a4020816b006c6161b077c7aab2c550a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adafba269d345936153d195a5bd1401cf"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCorner.html#adafba269d345936153d195a5bd1401cf">Corner</a> (in df, in varargin)</td></tr>
+<tr class="memdesc:adafba269d345936153d195a5bd1401cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an return an object of class <a class="el" href="classCorner.html">pm.vis.Corner</a>.<br  />
+  <a href="classCorner.html#adafba269d345936153d195a5bd1401cf">More...</a><br /></td></tr>
+<tr class="separator:adafba269d345936153d195a5bd1401cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf16699a16b6ef7a42b8b22dd0dc4cd1"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1">make</a> (in self, in varargin)</td></tr>
 <tr class="memdesc:abf16699a16b6ef7a42b8b22dd0dc4cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the figure settings and specifications, make the figure and the subplots, and return nothing. The subplots are made by calling their <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> methods.  <a href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1">More...</a><br /></td></tr>
 <tr class="separator:abf16699a16b6ef7a42b8b22dd0dc4cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,63 +208,16 @@ Data Fields</h2></td></tr>
 <tr class="separator:a637216e2c98930e5ff3ec8db17cf9cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >This is the abstract class for generating instances of figures containing a symmetric grid (corners) of subplots. </p>
-
-<p class="definition">Definition at line <a class="el" href="Corner_8m_source.html#l00004">4</a> of file <a class="el" href="Corner_8m_source.html">Corner.m</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a00c350d25566a4d09f325d99119065ea" name="a00c350d25566a4d09f325d99119065ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00c350d25566a4d09f325d99119065ea">&#9670;&nbsp;</a></span>Corner()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">function Corner::Corner </td>
-          <td>(</td>
-          <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>diag</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>lower</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>upper</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>varargin</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object. If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs.<br  />
- Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.<br  />
-</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>self</code> : The output scalar object of class <a class="el" href="classCorner.html">pm.vis.corner.Corner</a>.</dd></dl>
+<div class="textblock"><p >This is the base class for generating instances of figures containing a symmetric square grid or corner of subplots.<br  />
+ </p>
+<dl class="section note"><dt>Note</dt><dd>See the list of class attributes below, also those of the superclass <a class="el" href="classTiling.html">pm.vis.Tiling</a>.<br  />
+</dd>
+<dd>
+See also the documentation of the constructor of the class <a class="el" href="classCorner.html#adafba269d345936153d195a5bd1401cf">pm.vis.Corner::Corner</a>.<br  />
+</dd></dl>
 <p><br  />
-<a class="anchor" id="interface-Corner"></a><b>Possible calling interfaces</b> <a href="#interface-Corner">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">plot = pm.vis.corner.Corner(subplot);</div>
-</div><!-- fragment --></dd></dl>
-<dl class="section note"><dt>Note</dt><dd>See the list of class attributes below, also those of the superclass <a class="el" href="classTiling.html">pm.vis.figure.Tiling</a>.</dd></dl>
-<p><br  />
-<a class="anchor" id="final-Corner"></a><b>Final Remarks</b> <a href="#final-Corner">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+corner/Corner.m#L120 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Corner.m#L12 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -262,14 +232,178 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000224">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 9:39 PM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000273">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 9:20 AM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
+ <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, July 7 2024, 12:53 AM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
+ </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>See the list of class attributes below, also those of the superclass <a class="el" href="classTiling.html">pm.vis.Tiling</a>.<br  />
+</dd>
+<dd>
+See also the documentation of the constructor of the class <a class="el" href="classCorner.html#adafba269d345936153d195a5bd1401cf">pm.vis.Corner::Corner</a>.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/TilingSymm.m#L12 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+</p><ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+<p>This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000376">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 9:20 AM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
+ <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, July 7 2024, 12:53 AM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
+ </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Corner_8m_source.html#l00018">18</a> of file <a class="el" href="Corner_8m_source.html">Corner.m</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="adafba269d345936153d195a5bd1401cf" name="adafba269d345936153d195a5bd1401cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adafba269d345936153d195a5bd1401cf">&#9670;&nbsp;</a></span>Corner() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">function Corner::Corner </td>
+          <td>(</td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>df</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>varargin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate an return an object of class <a class="el" href="classCorner.html">pm.vis.Corner</a>.<br  />
+ </p>
+<p >This is the constructor of the class <a class="el" href="classCorner.html">pm.vis.Corner</a>.<br  />
+</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dfref</td><td>: See the documentation of the corresponding input argument of the class <a class="el" href="classSubplot.html">pm.vis.Subplot</a>.<br  />
+ (<b>optional</b>. default = <code>table(zeros(0, 0))</code>)</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
+ If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs.<br  />
+ Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.<br  />
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>self</code> : The output scalar object of class <a class="el" href="classCorner.html">pm.vis.Corner</a>.</dd></dl>
+<p><br  />
+<a class="anchor" id="interface-Corner"></a><b>Possible calling interfaces</b> <a href="#interface-Corner">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">plot = pm.vis.Corner(subplot);</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>See the list of class attributes below, also those of the superclass <a class="el" href="classTiling.html">pm.vis.Tiling</a>.</dd></dl>
+<p><br  />
+<a class="anchor" id="final-Corner"></a><b>Final Remarks</b> <a href="#final-Corner">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Corner.m#L151 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+</p><ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+<p>This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000274">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 9:39 PM, University of Texas at Arlington<br  />
+ </dd></dl>
+
+</div>
+</div>
+<a id="adafba269d345936153d195a5bd1401cf" name="adafba269d345936153d195a5bd1401cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adafba269d345936153d195a5bd1401cf">&#9670;&nbsp;</a></span>Corner() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">function Corner::Corner </td>
+          <td>(</td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>df</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>varargin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate an return an object of class <a class="el" href="classCorner.html">pm.vis.Corner</a>.<br  />
+ </p>
+<p >This is the constructor of the class <a class="el" href="classCorner.html">pm.vis.Corner</a>.<br  />
+</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dfref</td><td>: See the documentation of the corresponding input argument of the class <a class="el" href="classSubplot.html">pm.vis.Subplot</a>.<br  />
+ (<b>optional</b>. default = <code>table(zeros(0, 0))</code>)</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
+ If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs.<br  />
+ Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.<br  />
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>self</code> : The output scalar object of class <a class="el" href="classCorner.html">pm.vis.Corner</a>.</dd></dl>
+<p><br  />
+<a class="anchor" id="interface-Corner"></a><b>Possible calling interfaces</b> <a href="#interface-Corner">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">plot = pm.vis.Corner(subplot);</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>See the list of class attributes below, also those of the superclass <a class="el" href="classTiling.html">pm.vis.Tiling</a>.</dd></dl>
+<p><br  />
+<a class="anchor" id="final-Corner"></a><b>Final Remarks</b> <a href="#final-Corner">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/TilingSymm.m#L151 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+</p><ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+<p>This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000377">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 9:39 PM, University of Texas at Arlington<br  />
  </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="abf16699a16b6ef7a42b8b22dd0dc4cd1" name="abf16699a16b6ef7a42b8b22dd0dc4cd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf16699a16b6ef7a42b8b22dd0dc4cd1">&#9670;&nbsp;</a></span>make()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abf16699a16b6ef7a42b8b22dd0dc4cd1">&#9670;&nbsp;</a></span>make() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -298,19 +432,20 @@ Help us justify its continued development and maintenance by acknowledging its b
 <dl class="section warning"><dt>Warning</dt><dd>This method has side-effects by manipulating the existing attributes of the parent object.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object. If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
+ If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.</td></tr>
   </table>
   </dd>
 </dl>
 <p><br  />
-<a class="anchor" id="interface-make"></a><b>Possible calling interfaces</b> <a href="#interface-make">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">f = pm.vis.corner.Corner.make(varargin);</div>
+<a class="anchor" id="interface-make"></a><b>Possible calling interfaces</b> <a href="#interface-make">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">f = pm.vis.Corner.make(varargin);</div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
-<a class="anchor" id="example-make"></a><b>Example usage</b> <a href="#example-make">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">f = pm.vis.corner.Corner();
+<a class="anchor" id="example-make"></a><b>Example usage</b> <a href="#example-make">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">f = pm.vis.Corner();
 f.make()
 </pre> <br  />
 <a class="anchor" id="final-make"></a><b>Final Remarks</b> <a href="#final-make">⛓</a> <hr  />
- If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+corner/Corner.m#L168 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Corner.m#L198 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -326,7 +461,73 @@ This software is available to the public under a highly permissive license.<br  
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000225">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 7:56 AM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000275">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 7:56 AM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
+ <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
+ </dd></dl>
+
+</div>
+</div>
+<a id="abf16699a16b6ef7a42b8b22dd0dc4cd1" name="abf16699a16b6ef7a42b8b22dd0dc4cd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf16699a16b6ef7a42b8b22dd0dc4cd1">&#9670;&nbsp;</a></span>make() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">function Corner::make </td>
+          <td>(</td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>varargin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure the figure settings and specifications, make the figure and the subplots, and return nothing. The subplots are made by calling their <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> methods. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This method has side-effects by manipulating the existing attributes of the parent object.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
+ If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+<a class="anchor" id="interface-make"></a><b>Possible calling interfaces</b> <a href="#interface-make">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">f = pm.vis.Corner.make(varargin);</div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
+<a class="anchor" id="example-make"></a><b>Example usage</b> <a href="#example-make">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">f = pm.vis.Corner();
+f.make()
+</pre> <br  />
+<a class="anchor" id="final-make"></a><b>Final Remarks</b> <a href="#final-make">⛓</a> <hr  />
+ If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/TilingSymm.m#L198 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+<ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000378">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 7:56 AM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -334,7 +535,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 </div>
 </div>
 <a id="a4020816b006c6161b077c7aab2c550a4" name="a4020816b006c6161b077c7aab2c550a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4020816b006c6161b077c7aab2c550a4">&#9670;&nbsp;</a></span>premake()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4020816b006c6161b077c7aab2c550a4">&#9670;&nbsp;</a></span>premake() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -363,7 +564,8 @@ Help us justify its continued development and maintenance by acknowledging its b
 <dl class="section warning"><dt>Warning</dt><dd>This method causes side-effects by manipulating the existing attributes of the object.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object. If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
+ If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.</td></tr>
   </table>
   </dd>
 </dl>
@@ -373,7 +575,7 @@ axis of the figure to provide room for lengthy variable names.
 Then call the ``self.update()`` method to reflect the changes.
 </pre> <br  />
 <a class="anchor" id="final-premake"></a><b>Final Remarks</b> <a href="#final-premake">⛓</a> <hr  />
- If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+corner/Corner.m#L360 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Corner.m#L390 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -389,13 +591,75 @@ This software is available to the public under a highly permissive license.<br  
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000227">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 8:00 AM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000277">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 8:00 AM, University of Texas at Arlington<br  />
+ </dd></dl>
+
+</div>
+</div>
+<a id="a4020816b006c6161b077c7aab2c550a4" name="a4020816b006c6161b077c7aab2c550a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4020816b006c6161b077c7aab2c550a4">&#9670;&nbsp;</a></span>premake() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">function Corner::premake </td>
+          <td>(</td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>varargin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prepare the corner plot specs for subsequent visualization by <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code>. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This method causes side-effects by manipulating the existing attributes of the object.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
+ If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+<a class="anchor" id="example-premake"></a><b>Example usage</b> <a href="#example-premake">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">For example, change the left/bottom margin of the main
+axis of the figure to provide room for lengthy variable names.
+Then call the ``self.update()`` method to reflect the changes.
+</pre> <br  />
+<a class="anchor" id="final-premake"></a><b>Final Remarks</b> <a href="#final-premake">⛓</a> <hr  />
+ If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/TilingSymm.m#L390 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+<ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000380">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 8:00 AM, University of Texas at Arlington<br  />
  </dd></dl>
 
 </div>
 </div>
 <a id="ab94fab61db22d6dd664d0c137761ee6c" name="ab94fab61db22d6dd664d0c137761ee6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab94fab61db22d6dd664d0c137761ee6c">&#9670;&nbsp;</a></span>reset()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab94fab61db22d6dd664d0c137761ee6c">&#9670;&nbsp;</a></span>reset() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -423,17 +687,18 @@ Help us justify its continued development and maintenance by acknowledging its b
 <p>Reset the properties of the figure to the original default settings. Use this method when you change many attributes of the plot and you want to clean up and go back to the default settings. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object. If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
+ If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.</td></tr>
   </table>
   </dd>
 </dl>
 <p><br  />
-<a class="anchor" id="interface-reset"></a><b>Possible calling interfaces</b> <a href="#interface-reset">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">pm.vis.corner.Corner.reset() % <a class="code hl_function" href="classCorner.html#ab94fab61db22d6dd664d0c137761ee6c">reset</a> all <span class="keywordtype">object</span> properties to the <span class="keywordflow">default</span> settings.</div>
+<a class="anchor" id="interface-reset"></a><b>Possible calling interfaces</b> <a href="#interface-reset">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">pm.vis.Corner.reset() % <a class="code hl_function" href="classCorner.html#ab94fab61db22d6dd664d0c137761ee6c">reset</a> all <span class="keywordtype">object</span> properties to the <span class="keywordflow">default</span> settings.</div>
 <div class="ttc" id="aclassCorner_html_ab94fab61db22d6dd664d0c137761ee6c"><div class="ttname"><a href="classCorner.html#ab94fab61db22d6dd664d0c137761ee6c">Corner::reset</a></div><div class="ttdeci">function reset(in self, in varargin)</div><div class="ttdoc">Reset the properties of the figure to the original default settings. Use this method when you change ...</div></div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-reset"></a><b>Final Remarks</b> <a href="#final-reset">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/+corner/Corner.m#L307 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Corner.m#L337 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -448,7 +713,68 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000226">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 7:58 AM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000276">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 7:58 AM, University of Texas at Arlington<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
+ <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
+ </dd></dl>
+
+</div>
+</div>
+<a id="ab94fab61db22d6dd664d0c137761ee6c" name="ab94fab61db22d6dd664d0c137761ee6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab94fab61db22d6dd664d0c137761ee6c">&#9670;&nbsp;</a></span>reset() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">function Corner::reset </td>
+          <td>(</td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>varargin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset the properties of the figure to the original default settings. Use this method when you change many attributes of the plot and you want to clean up and go back to the default settings. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
+ If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+<a class="anchor" id="interface-reset"></a><b>Possible calling interfaces</b> <a href="#interface-reset">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">pm.vis.Corner.reset() % <a class="code hl_function" href="classCorner.html#ab94fab61db22d6dd664d0c137761ee6c">reset</a> all <span class="keywordtype">object</span> properties to the <span class="keywordflow">default</span> settings.</div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
+<a class="anchor" id="final-reset"></a><b>Final Remarks</b> <a href="#final-reset">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/TilingSymm.m#L337 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+</p><ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+<p>This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000379">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 7:58 AM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -467,10 +793,9 @@ Help us justify its continued development and maintenance by acknowledging its b
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">cols</td><td>(standing for columns): The vector of MATLAB integers or names of of the input dataframe columns that determines the columns of the specified dataframe to visualize. It can have multiple forms:<br  />
-<ol type="1">
+<p ><code>cols</code> (standing for columns)</p>
+<p >The vector of MATLAB integers or names of of the input dataframe columns that determines the columns of the specified dataframe to visualize. It can have multiple forms:<br  />
+</p><ol type="1">
 <li>a numeric or cell array of column indices in the input <code>dfref</code>.</li>
 <li>a string or cell array of column names in <code>dfref.Properties.VariableNames</code>.</li>
 <li>a cell array of a mix of the above two.</li>
@@ -483,25 +808,23 @@ Help us justify its continued development and maintenance by acknowledging its b
 <li>self.cols = ["sampleLogFunc", "sampleVariable1"]</li>
 <li>self.cols = {"sampleLogFunc", 9, "sampleVariable1"}</li>
 <li>self.cols = 7:9 # every column in the data frame starting from column #7 to #9</li>
-<li>self.cols = 7:2:20 # every other column in the data frame starting from column #7 to #20<br  />
- The <code>i</code>th element of the specified <code>cols</code> will be used as value for:<br  />
+<li>self.cols = 7:2:20 # every other column in the data frame starting from column #7 to #20 The <code>i</code>th element of the specified <code>cols</code> will be used as value for:<br  />
 </li>
 </ol>
 <ol type="1">
-<li>the <code>i</code>th column of data to visualize on the x-axis in subplot <code>subplot{i, i}.</code></li>
+<li>the <code>i</code>th column of data to visualize on the x-axis in subplot <code>subplot{i, i}</code>.<br  />
+</li>
 </ol>
 <ol type="1">
-<li><code> the</code>i<code>th column of data to visualize on the x-axis in subplot</code>subplot{i, :}.</li>
+<li>the <code>i</code>th column of data to visualize on the x-axis in subplot <code>subplot{i, :}</code>.<br  />
+</li>
 </ol>
 <ol type="1">
-<li>the <code>i</code>th column of data to visualize on the y-axis in subplot <code>subplot{:, i}.&lt;br&gt; If</code>cols`` is empty, no visualizations will be made. </li>
+<li>the <code>i</code>th column of data to visualize on the y-axis in subplot <code>subplot{:, i}</code>.<br  />
+ If <code>cols</code> is empty, no visualizations will be made. </li>
 </ol>
-</td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="Corner_8m_source.html#l00065">65</a> of file <a class="el" href="Corner_8m_source.html">Corner.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Corner_8m_source.html#l00081">81</a> of file <a class="el" href="Corner_8m_source.html">Corner.m</a>.</p>
 
 </div>
 </div>
@@ -516,17 +839,13 @@ Help us justify its continued development and maintenance by acknowledging its b
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">diag</td><td>: The scalar object of superclass <a class="el" href="classSubplot.html">pm.vis.Subplot</a> representing the template of the diagonal subplots to display.<br  />
+<p ><code>diag</code></p>
+<p >The scalar object of superclass <a class="el" href="classSubplot.html">pm.vis.Subplot</a> representing the template of the diagonal subplots to display.<br  />
  Note that only the visualization properties of the template are used.<br  />
  The data properties of the template are set by the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.<br  />
- (<b>optional</b>. The default value is <a class="el" href="classSubplotHistogram.html">pm.vis.SubplotHistogram</a>.) </td></tr>
-  </table>
-  </dd>
-</dl>
+ (<b>optional</b>. The default value is <a class="el" href="classSubplotHistogram.html">pm.vis.SubplotHistogram</a>.) </p>
 
-<p class="definition">Definition at line <a class="el" href="Corner_8m_source.html#l00074">74</a> of file <a class="el" href="Corner_8m_source.html">Corner.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Corner_8m_source.html#l00092">92</a> of file <a class="el" href="Corner_8m_source.html">Corner.m</a>.</p>
 
 </div>
 </div>
@@ -541,16 +860,12 @@ Help us justify its continued development and maintenance by acknowledging its b
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">lower</td><td>: The scalar object of superclass <a class="el" href="classSubplot.html">pm.vis.Subplot</a> representing the template of the lower-triangle subplots to display.<br  />
+<p ><code>lower</code></p>
+<p >The scalar object of superclass <a class="el" href="classSubplot.html">pm.vis.Subplot</a> representing the template of the lower-triangle subplots to display.<br  />
  The data properties of the template are set by the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.<br  />
- (<b>optional</b>. The default value is <a class="el" href="classSubplotContour.html">pm.vis.SubplotContour</a>.) </td></tr>
-  </table>
-  </dd>
-</dl>
+ (<b>optional</b>. The default value is <a class="el" href="classSubplotContour.html">pm.vis.SubplotContour</a>.) </p>
 
-<p class="definition">Definition at line <a class="el" href="Corner_8m_source.html#l00082">82</a> of file <a class="el" href="Corner_8m_source.html">Corner.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Corner_8m_source.html#l00102">102</a> of file <a class="el" href="Corner_8m_source.html">Corner.m</a>.</p>
 
 </div>
 </div>
@@ -565,21 +880,18 @@ Help us justify its continued development and maintenance by acknowledging its b
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">upper</td><td>: The scalar object of superclass <a class="el" href="classSubplot.html">pm.vis.Subplot</a> representing the template of the upper-triangle subplots to display.<br  />
+<p ><code>upper</code></p>
+<p >The scalar object of superclass <a class="el" href="classSubplot.html">pm.vis.Subplot</a> representing the template of the upper-triangle subplots to display.<br  />
  The data properties of the template are set by the <code><a class="el" href="classCorner.html#abf16699a16b6ef7a42b8b22dd0dc4cd1" title="Configure the figure settings and specifications, make the figure and the subplots,...">make()</a></code> method.<br  />
- (<b>optional</b>. The default value is <a class="el" href="classSubplotLineScatter.html">pm.vis.SubplotLineScatter</a>.) </td></tr>
-  </table>
-  </dd>
-</dl>
+ (<b>optional</b>. The default value is <a class="el" href="classSubplotLineScatter.html">pm.vis.SubplotLineScatter</a>.) </p>
 
-<p class="definition">Definition at line <a class="el" href="Corner_8m_source.html#l00090">90</a> of file <a class="el" href="Corner_8m_source.html">Corner.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Corner_8m_source.html#l00112">112</a> of file <a class="el" href="Corner_8m_source.html">Corner.m</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/matlab/main/+pm/+vis/+corner/<a class="el" href="Corner_8m_source.html">Corner.m</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/matlab/main/+pm/+vis/<a class="el" href="Corner_8m_source.html">Corner.m</a></li>
+<li>src/matlab/main/+pm/+vis/<a class="el" href="TilingSymm_8m_source.html">TilingSymm.m</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -587,7 +899,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classCorner.html">Corner</a></li>
-        <li class="footer">Generated on Fri Jul 12 2024 15:48:24 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 21:18:31 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

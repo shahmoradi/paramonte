@@ -6,5 +6,6 @@ var searchData=
   ['euclid_5ftype_3',['euclid_type',['../structpm__distanceEuclid_1_1euclid__type.html',1,'pm_distanceEuclid']]],
   ['euclidsq_5ftype_4',['euclidsq_type',['../structpm__distanceEuclid_1_1euclidsq__type.html',1,'pm_distanceEuclid']]],
   ['euclidu_5ftype_5',['euclidu_type',['../structpm__distanceEuclid_1_1euclidu__type.html',1,'pm_distanceEuclid']]],
-  ['exec_5fproc_6',['exec_proc',['../interfacepm__bench_1_1exec__proc.html',1,'pm_bench']]]
+  ['euclidv_5ftype_6',['euclidv_type',['../structpm__distanceEuclid_1_1euclidv__type.html',1,'pm_distanceEuclid']]],
+  ['exec_5fproc_7',['exec_proc',['../interfacepm__bench_1_1exec__proc.html',1,'pm_bench']]]
 ];

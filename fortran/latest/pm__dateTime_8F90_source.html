@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -1653,7 +1654,7 @@ $(document).ready(function(){initNavTree('pm__dateTime_8F90_source.html',''); in
 <div class="line"><a id="l04282" name="l04282"></a><span class="lineno"> 4282</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l04283" name="l04283"></a><span class="lineno"> 4283</span><span class="preprocessor"></span>        <span class="fortran_statement">integer</span>(IK),<span class="fortran_attribute"> intent(in)</span> :: year</div>
 <div class="line"><a id="l04284" name="l04284"></a><span class="lineno"> 4284</span><span class="fortran_statement">        logical</span>(LK)             :: leapYear</div>
-<div class="line"><a id="l04285" name="l04285"></a><span class="lineno"> 4285</span>        <span class="fortran_comment">!CHECK_ASSERTION(__LINE__, year /= 0_IK, SK_&quot;@isLeapYear(): The input year must be non-zero.&quot;) ! fpp</span></div>
+<div class="line"><a id="l04285" name="l04285"></a><span class="lineno"> 4285</span>        <span class="fortran_comment">!check_assertion(__LINE__, year /= 0_IK, SK_&quot;@isLeapYear(): The input year must be non-zero.&quot;) ! fpp</span></div>
 <div class="line"><a id="l04286" name="l04286"></a><span class="lineno"> 4286</span>        leapYear<span class="fortran_operator_symbols"> = </span><span class="fortran_function">mod</span>(year,<span class="fortran_numeric_literal"> 4</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0_IK</span>)<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">= </span><span class="fortran_numeric_literal">0_IK</span> <span class="fortran_operator_logical">.or.</span> (<span class="fortran_function">mod</span>(year,<span class="fortran_numeric_literal"> 4_IK</span>)<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">= </span><span class="fortran_numeric_literal">0_IK</span> <span class="fortran_operator_logical">.and.</span><span class="fortran_function"> mod</span>(year,<span class="fortran_numeric_literal"> 1</span><span class="fortran_numeric_literal">0</span><span class="fortran_numeric_literal">0_IK</span>)<span class="fortran_operator_symbols"> /</span><span class="fortran_operator_symbols">= </span><span class="fortran_numeric_literal">0_IK</span>)</div>
 <div class="line"><a id="l04287" name="l04287"></a><span class="lineno"> 4287</span>        <span class="fortran_comment">!if (year &gt; 0_IK) then</span></div>
 <div class="line"><a id="l04288" name="l04288"></a><span class="lineno"> 4288</span>        <span class="fortran_comment">!    leapYear = mod(year, 400_IK) == 0_IK .or. (mod(year, 4_IK) == 0_IK .and. mod(year, 100_IK) /= 0_IK)</span></div>
@@ -1717,7 +1718,7 @@ $(document).ready(function(){initNavTree('pm__dateTime_8F90_source.html',''); in
 <div class="line"><a id="l04540" name="l04540"></a><span class="lineno"> 4540</span>        <span class="fortran_keywordflow">else</span></div>
 <div class="line"><a id="l04541" name="l04541"></a><span class="lineno"> 4541</span>            values<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__dateTime_1_1getDateTime.html">getDateTime</a>()</div>
 <div class="line"><a id="l04542" name="l04542"></a><span class="lineno"> 4542</span><span class="fortran_keywordflow">        end if</span></div>
-<div class="line"><a id="l04543" name="l04543"></a><span class="lineno"> 4543</span>        <span class="fortran_comment">!CHECK_ASSERTION(__LINE__, all(values /= -huge(values)), SK_&quot;@getHour(): The processor does not provide date and time.&quot;) ! fpp</span></div>
+<div class="line"><a id="l04543" name="l04543"></a><span class="lineno"> 4543</span>        <span class="fortran_comment">!check_assertion(__LINE__, all(values /= -huge(values)), SK_&quot;@getHour(): The processor does not provide date and time.&quot;) ! fpp</span></div>
 <div class="line"><a id="l04544" name="l04544"></a><span class="lineno"> 4544</span>        hour<span class="fortran_operator_symbols"> = </span>values(<span class="fortran_numeric_literal">5</span>)</div>
 <div class="line"><a id="l04545" name="l04545"></a><span class="lineno"> 4545</span>    <span class="fortran_statement">end function</span></div>
 <div class="line"><a id="l04546" name="l04546"></a><span class="lineno"> 4546</span> </div>
@@ -1871,7 +1872,7 @@ $(document).ready(function(){initNavTree('pm__dateTime_8F90_source.html',''); in
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_23395307b1b7d12df5db6f58c451dcdf.html">fortran</a></li><li class="navelem"><a class="el" href="dir_acc2146ae7e18e9f4b01d04597c074ce.html">main</a></li><li class="navelem"><a class="el" href="pm__dateTime_8F90.html">pm_dateTime.F90</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 13:03:31 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:47 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

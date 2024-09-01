@@ -1,7 +1,7 @@
 var searchData=
 [
   ['backward_5ftype_0',['backward_type',['../structpm__array_1_1backward__type.html',1,'pm_array']]],
-  ['bandspec_5ftype_1',['BandSpec_type',['../structtest__pm__distBand_1_1BandSpec__type.html',1,'test_pm_distBand']]],
+  ['baseprop_5ftype_1',['BaseProp_type',['../structPartition__mod_1_1BaseProp__type.html',1,'Partition_mod']]],
   ['batchmeans_5ftype_2',['batchMeans_type',['../structpm__sampleACT_1_1batchMeans__type.html',1,'pm_sampleACT']]],
   ['batchmeansmax_5ftype_3',['batchMeansMax_type',['../structpm__sampleACT_1_1batchMeansMax__type.html',1,'pm_sampleACT']]],
   ['bench_5ftype_4',['bench_type',['../structpm__bench_1_1bench__type.html',1,'pm_bench']]],

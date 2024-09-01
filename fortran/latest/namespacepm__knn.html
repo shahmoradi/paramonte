@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -151,7 +152,7 @@ $(document).ready(function(){initNavTree('namespacepm__knn.html',''); initResiza
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Types</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacepm__knn_1_1setKnnSorted.html">setKnnSorted</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the input distance matrix whose columns are sorted in ascending order on output, optionally only up to the <code>k</code>th row of each column, such that the <code>k</code>th row in the <code>i</code>th column is the <code>k</code>th nearest neighbor to the \(i^{th}\) point.<br  />
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the input distance matrix whose columns are sorted in ascending order on output, optionally only up to the <code>k</code>th row of each column, such that the <code>k</code>th row in the <code>i</code>th column is the <code>k</code>th nearest neighbor to the \(i^{th}\) reference point.<br  />
   <a href="interfacepm__knn_1_1setKnnSorted.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -181,7 +182,7 @@ In k-NN regression, the output is the property value for the object.<br  />
 <p>k-NN is a type of classification where the function is only approximated locally and all computation is deferred until function evaluation.<br  />
  Since this algorithm relies on distance for classification, if the features represent different physical units or come in vastly different scales then normalizing the training data can improve its accuracy dramatically.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md50"></a>
+<h2><a class="anchor" id="autotoc_md53"></a>
 Algorithm</h2>
 <p >The training examples are vectors in a multidimensional feature space, each with a class label.<br  />
  The training phase of the algorithm consists only of storing the feature vectors and class labels of the training samples.<br  />
@@ -191,7 +192,7 @@ Algorithm</h2>
  In the context of gene expression microarray data, for example, k-NN has been employed with correlation coefficients, such as Pearson and Spearman, as a metric.<br  />
  Often, the classification accuracy of k-NN can be improved significantly if the distance metric is learned with specialized algorithms such as Large Margin Nearest Neighbor or Neighborhood components analysis.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md51"></a>
+<h2><a class="anchor" id="autotoc_md54"></a>
 Drawbacks</h2>
 <p >A major drawback of the basic <em>majority voting</em> classification occurs when the class distribution is skewed.<br  />
  That is, examples of a more frequent class tend to dominate the prediction of the new example, because they tend to be common among the <code>k</code> nearest neighbors due to their large number.<br  />
@@ -206,7 +207,7 @@ Drawbacks</h2>
  pm_distanceManhattan<br  />
  pm_distanceMinkowski<br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000577">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__distanceEuclid.html">test_pm_distanceEuclid</a><br  />
+<dl class="test"><dt><b><a class="el" href="test.html#_test000589">Test:</a></b></dt><dd>test_pm_distanceEuclid<br  />
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
@@ -225,7 +226,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000771">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, Thursday 8:40 PM, July 20, 2023, Dallas, TX <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Saturday 1:00 AM, September, 1, 2018, Dallas, TX </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000791">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, Thursday 8:40 PM, July 20, 2023, Dallas, TX <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Saturday 1:00 AM, September, 1, 2018, Dallas, TX </dd></dl>
 </div><h2 class="groupheader">Variable Documentation</h2>
 <a id="a5b3fff0b2991943c475ce09b7285959b" name="a5b3fff0b2991943c475ce09b7285959b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5b3fff0b2991943c475ce09b7285959b">&#9670;&nbsp;</a></span>MODULE_NAME</h2>
@@ -249,7 +250,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__knn.html">pm_knn</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 13:03:39 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:55 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

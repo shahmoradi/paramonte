@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -261,7 +262,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="ttc" id="ainterfacepm__cosmology_1_1getVolComDiffNormed_html"><div class="ttname"><a href="interfacepm__cosmology_1_1getVolComDiffNormed.html">pm_cosmology::getVolComDiffNormed</a></div><div class="ttdoc">Generate and return the cosmological Comoving Volume Element per unit solid angle of the sky (i....</div><div class="ttdef"><b>Definition:</b> <a href="pm__cosmology_8F90_source.html#l03323">pm_cosmology.F90:3323</a></div></div>
 <div class="ttc" id="ainterfacepm__io_1_1show_html"><div class="ttname"><a href="interfacepm__io_1_1show.html">pm_io::show</a></div><div class="ttdoc">This is a generic method of the derived type display_type with pass attribute.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11726">pm_io.F90:11726</a></div></div>
 <div class="ttc" id="ainterfacepm__io_1_1skip_html"><div class="ttname"><a href="interfacepm__io_1_1skip.html">pm_io::skip</a></div><div class="ttdoc">This is a generic method of the derived type display_type with pass attribute.</div><div class="ttdef"><b>Definition:</b> <a href="pm__io_8F90_source.html#l11508">pm_io.F90:11508</a></div></div>
-<div class="ttc" id="ainterfacepm__sampling_1_1getErrSampling_html"><div class="ttname"><a href="interfacepm__sampling_1_1getErrSampling.html">pm_sampling::getErrSampling</a></div><div class="ttdoc">Generate and return .true. if the procedure fails to fully accomplish the task of generating a Monte ...</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampling_8F90_source.html#l00652">pm_sampling.F90:652</a></div></div>
+<div class="ttc" id="ainterfacepm__sampling_1_1getErrSampling_html"><div class="ttname"><a href="interfacepm__sampling_1_1getErrSampling.html">pm_sampling::getErrSampling</a></div><div class="ttdoc">Generate and return .true. if the procedure fails to fully accomplish the task of Monte Carlo samplin...</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampling_8F90_source.html#l00652">pm_sampling.F90:652</a></div></div>
 <div class="ttc" id="anamespacepm__arraySpace_html"><div class="ttname"><a href="namespacepm__arraySpace.html">pm_arraySpace</a></div><div class="ttdoc">This module contains procedures and generic interfaces for generating arrays with linear or logarithm...</div><div class="ttdef"><b>Definition:</b> <a href="pm__arraySpace_8F90_source.html#l00033">pm_arraySpace.F90:33</a></div></div>
 <div class="ttc" id="anamespacepm__cosmology_html"><div class="ttname"><a href="namespacepm__cosmology.html">pm_cosmology</a></div><div class="ttdoc">This module contains procedures and generic interfaces and constants for cosmological calculations.</div><div class="ttdef"><b>Definition:</b> <a href="pm__cosmology_8F90_source.html#l00078">pm_cosmology.F90:78</a></div></div>
 <div class="ttc" id="anamespacepm__err_html"><div class="ttname"><a href="namespacepm__err.html">pm_err</a></div><div class="ttdoc">This module contains classes and procedures for reporting and handling errors.</div><div class="ttdef"><b>Definition:</b> <a href="pm__err_8F90_source.html#l00052">pm_err.F90:52</a></div></div>
@@ -405,7 +406,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <img src="getLogRateDensityB10.logzplus1.sample.png" alt="" width="700"/>
 </div>
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000201">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__cosmicRate.html">test_pm_cosmicRate</a></dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000204">Test:</a></b></dt><dd>test_pm_cosmicRate</dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000134">Todo:</a></b></dt><dd>This generic interface can be extended to higher-rank input arrays.<br  />
 </dd></dl>
 <p ><br  />
@@ -425,7 +426,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000286">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000295">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__cosmicRate_8F90_source.html#l01039">1039</a> of file <a class="el" href="pm__cosmicRate_8F90_source.html">pm_cosmicRate.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
@@ -437,7 +438,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__cosmicRate.html">pm_cosmicRate</a></li><li class="navelem"><a class="el" href="interfacepm__cosmicRate_1_1getLogRateDensityB10.html">getLogRateDensityB10</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 14:41:59 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:52 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

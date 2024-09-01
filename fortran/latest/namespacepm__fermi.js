@@ -1,0 +1,25 @@
+var namespacepm__fermi =
+[
+    [ "getCorrectionLogEffPPF", "interfacepm__fermi_1_1getCorrectionLogEffPPF.html", null ],
+    [ "getLog10PF53", "interfacepm__fermi_1_1getLog10PF53.html", null ],
+    [ "getLogEffPPF", "interfacepm__fermi_1_1getLogEffPPF.html", null ],
+    [ "getLogPbol", "interfacepm__fermi_1_1getLogPbol.html", null ],
+    [ "getLogPF53", "interfacepm__fermi_1_1getLogPF53.html", null ],
+    [ "grb_type", "structpm__fermi_1_1grb__type.html", "structpm__fermi_1_1grb__type" ],
+    [ "DIF_LOGPH53_4_LOGPBOLZERO", "namespacepm__fermi.html#ab53340999ee76ab90c623401d5446e78", null ],
+    [ "LOG10PF53_MINUS_LOG10PBOL", "namespacepm__fermi.html#a0c7a189a9f7ec051b3f26379a93ed7e8", null ],
+    [ "LOG_TEN", "namespacepm__fermi.html#ae5246c5f54e399531cd25580059d4cfc", null ],
+    [ "LOGPF53_MINUS_LOGPBOL", "namespacepm__fermi.html#a3747aa85de7955f53e4beabedc7215bb", null ],
+    [ "MAX_LOG10PH53_4_LOGPBOLZERO", "namespacepm__fermi.html#aec6d142b613274199efd6a0dfe723280", null ],
+    [ "MAX_LOGPH53_4_LOGPBOLZERO", "namespacepm__fermi.html#a443d2a17719bfc79ee6cb294a9bb7c02", null ],
+    [ "MIN_LOG10PH53_4_LOGPBOLZERO", "namespacepm__fermi.html#a520fea14b217740135ab96ff6366af32", null ],
+    [ "MIN_LOGPH53_4_LOGPBOLZERO", "namespacepm__fermi.html#a587cac1119c7c3a88718830b9c5243ab", null ],
+    [ "MODULE_NAME", "namespacepm__fermi.html#a058725799c31690cb5b9bd5f34857c01", null ],
+    [ "THRESH_ERFC_AMP", "namespacepm__fermi.html#a06c953d1d87cc6ae93844423bd5ff7ed", null ],
+    [ "THRESH_ERFC_AVG", "namespacepm__fermi.html#ac24fa9ea5e05da572843c245ab423ce9", null ],
+    [ "THRESH_ERFC_BASE", "namespacepm__fermi.html#aabac63046a23f18132b6cd59a58699b3", null ],
+    [ "THRESH_ERFC_HEIGHT", "namespacepm__fermi.html#a47e0ffdfd9cb26e297f78508ef89c664", null ],
+    [ "THRESH_ERFC_STD", "namespacepm__fermi.html#a5fbb084d01e757efe891cbee1c8fdb9b", null ],
+    [ "THRESH_ERFC_STD_INV", "namespacepm__fermi.html#aa3bddb119b97a08bbc8fea9596c01228", null ],
+    [ "THRESH_LOGPBOL64_CORRECTION", "namespacepm__fermi.html#a16e6f2695a0beebfbd68a81533dac16c", null ]
+];

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte MATLAB 3.0.0: src/matlab/main/+pm/+vis/+figure/Tiling.m Source File</title>
+    <title>ParaMonte MATLAB 3.0.0: src/matlab/main/+pm/+vis/Tiling.m Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -149,7 +150,7 @@ $(document).ready(function(){initNavTree('Tiling_8m_source.html',''); initResiza
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;  also those of the superclass [pm.vis.figure.Figure](@ref <a class="code hl_class" href="classFigure.html">Figure</a>).&lt;br&gt;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  \note</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;  See also the documentation of the constructor of the <span class="keyword">class</span> [pm.vis.figure.Tiling::Tiling](@ref <a class="code hl_function" href="classTiling.html#aeac1d2a387b45e2a32b00c7393ec44df">Tiling::Tiling</a>).&lt;br&gt;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;  See also the documentation of the constructor of the <span class="keyword">class</span> [pm.vis.Tiling::Tiling](@ref <a class="code hl_function" href="classTiling.html#aeac1d2a387b45e2a32b00c7393ec44df">Tiling::Tiling</a>).&lt;br&gt;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;  \final</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;</div>
@@ -185,10 +186,10 @@ $(document).ready(function(){initNavTree('Tiling_8m_source.html',''); initResiza
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        %&gt;  \brief</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        %&gt;  Construct and <span class="keywordflow">return</span> an <span class="keywordtype">object</span> of <span class="keyword">class </span>[pm.vis.figure.Tiling](@ref <a class="code hl_class" href="classTiling.html">Tiling</a>).&lt;br&gt;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        %&gt;  Construct and <span class="keywordflow">return</span> an <span class="keywordtype">object</span> of <span class="keyword">class </span>[pm.vis.Tiling](@ref <a class="code hl_class" href="classTiling.html">Tiling</a>).&lt;br&gt;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        %&gt;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        %&gt;  \details</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        %&gt;  This is the constructor of the <span class="keyword">class </span>[pm.vis.figure.Tiling](@ref <a class="code hl_class" href="classTiling.html">Tiling</a>).&lt;br&gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        %&gt;  This is the constructor of the <span class="keyword">class </span>[pm.vis.Tiling](@ref <a class="code hl_class" href="classTiling.html">Tiling</a>).&lt;br&gt;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        %&gt;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        %&gt;  \param[in]  subplot     :   The input cell matrix of MATLAB objects of superclass [pm.vis.Subplot](@ref <a class="code hl_class" href="classSubplot.html">Subplot</a>).&lt;br&gt;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        %&gt;  \param[in]  varargin    :   Any ``property, value`` pair of the parent <span class="keywordtype">object</span>.&lt;br&gt;</div>
@@ -198,13 +199,13 @@ $(document).ready(function(){initNavTree('Tiling_8m_source.html',''); initResiza
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        %&gt;                              parent <span class="keywordtype">object</span> attributes, before calling the ``make()`` method.&lt;br&gt;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        %&gt;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        %&gt;  \return</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        %&gt;  ``self``                :   The output scalar <span class="keywordtype">object</span> of <span class="keyword">class </span>[pm.vis.figure.Tiling](@ref <a class="code hl_class" href="classTiling.html">Tiling</a>).&lt;br&gt;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        %&gt;  ``self``                :   The output scalar <span class="keywordtype">object</span> of <span class="keyword">class </span>[pm.vis.Tiling](@ref <a class="code hl_class" href="classTiling.html">Tiling</a>).&lt;br&gt;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        %&gt;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        %&gt;  \interface{<a class="code hl_class" href="classTiling.html">Tiling</a>}</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        %&gt;  \code{.m}</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        %&gt;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        %&gt;      t = pm.vis.figure.<a class="code hl_function" href="classTiling.html#aeac1d2a387b45e2a32b00c7393ec44df">Tiling</a>(subplot);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        %&gt;      t = pm.vis.figure.Tiling(subplot, varargin);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        %&gt;      t = pm.vis.<a class="code hl_function" href="classTiling.html#aeac1d2a387b45e2a32b00c7393ec44df">Tiling</a>(subplot);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        %&gt;      t = pm.vis.Tiling(subplot, varargin);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        %&gt;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        %&gt;  \endcode</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        %&gt;</div>
@@ -237,7 +238,7 @@ $(document).ready(function(){initNavTree('Tiling_8m_source.html',''); initResiza
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">if</span> ~failed</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                varargin = {<span class="stringliteral">&quot;subplot&quot;</span>, subplot, varargin{:}};</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                help(<span class="stringliteral">&quot;[pm.vis.figure.Tiling](@ref Tiling)&quot;</span>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                help(<span class="stringliteral">&quot;pm.vis.Tiling&quot;</span>);</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                error   ( newline ...</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                        + <span class="stringliteral">&quot;The input argument ``subplot`` must be a MATLAB cell matrix of &quot;</span> + newline ...</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                        + <span class="stringliteral">&quot;empty objects or objects of superclass [pm.vis.Subplot](@ref Subplot).&quot;</span> + newline ...</div>
@@ -270,7 +271,7 @@ $(document).ready(function(){initNavTree('Tiling_8m_source.html',''); initResiza
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        %&gt;  \interface{make}</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        %&gt;  \code{.m}</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        %&gt;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        %&gt;      t = pm.vis.figure.Tiling(subplot, varargin);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        %&gt;      t = pm.vis.Tiling(subplot, varargin);</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        %&gt;      t.make(varargin);</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        %&gt;</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        %&gt;  \endcode</div>
@@ -356,7 +357,7 @@ $(document).ready(function(){initNavTree('Tiling_8m_source.html',''); initResiza
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        %&gt;  \interface{reset}</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        %&gt;  \code{.m}</div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        %&gt;</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        %&gt;      t = pm.vis.figure.Tiling(subplot, varargin) % reset all <span class="keywordtype">object</span> properties to the <span class="keywordflow">default</span> settings.</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        %&gt;      t = pm.vis.Tiling(subplot, varargin) % reset all <span class="keywordtype">object</span> properties to the <span class="keywordflow">default</span> settings.</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        %&gt;      t.reset(varargin);</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        %&gt;</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        %&gt;  \endcode</div>
@@ -405,7 +406,7 @@ $(document).ready(function(){initNavTree('Tiling_8m_source.html',''); initResiza
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        %&gt;  \interface{premake}</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        %&gt;  \code{.m}</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        %&gt;</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        %&gt;      t = pm.vis.figure.Tiling(subplot, varargin);</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        %&gt;      t = pm.vis.Tiling(subplot, varargin);</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        %&gt;      t.premake(varargin);</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        %&gt;</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        %&gt;  \endcode</div>
@@ -448,7 +449,7 @@ $(document).ready(function(){initNavTree('Tiling_8m_source.html',''); initResiza
 <div class="ttc" id="aclassTiling_html_aab4c1e2d70e2058a26d4c71517b1e785"><div class="ttname"><a href="classTiling.html#aab4c1e2d70e2058a26d4c71517b1e785">Tiling::premake</a></div><div class="ttdeci">function premake(in self, in varargin)</div><div class="ttdoc">Preset the tiling settings before making it.</div></div>
 <div class="ttc" id="aclassTiling_html_ace57a80cf08fec960ecd196d246f396a"><div class="ttname"><a href="classTiling.html#ace57a80cf08fec960ecd196d246f396a">Tiling::subplot</a></div><div class="ttdeci">Property subplot</div><div class="ttdef"><b>Definition:</b> <a href="Tiling_8m_source.html#l00040">Tiling.m:40</a></div></div>
 <div class="ttc" id="aclassTiling_html_acf0a64a865a9870b80248110be835acd"><div class="ttname"><a href="classTiling.html#acf0a64a865a9870b80248110be835acd">Tiling::tiledlayout</a></div><div class="ttdeci">Property tiledlayout</div><div class="ttdef"><b>Definition:</b> <a href="Tiling_8m_source.html#l00032">Tiling.m:32</a></div></div>
-<div class="ttc" id="aclassTiling_html_aeac1d2a387b45e2a32b00c7393ec44df"><div class="ttname"><a href="classTiling.html#aeac1d2a387b45e2a32b00c7393ec44df">Tiling::Tiling</a></div><div class="ttdeci">function Tiling(in subplot, in varargin)</div><div class="ttdoc">Construct and return an object of class pm.vis.figure.Tiling.</div></div>
+<div class="ttc" id="aclassTiling_html_aeac1d2a387b45e2a32b00c7393ec44df"><div class="ttname"><a href="classTiling.html#aeac1d2a387b45e2a32b00c7393ec44df">Tiling::Tiling</a></div><div class="ttdeci">function Tiling(in subplot, in varargin)</div><div class="ttdoc">Construct and return an object of class pm.vis.Tiling.</div></div>
 <div class="ttc" id="aclassTiling_html_aec8322cae237d3ebc41c2c0a23c1676a"><div class="ttname"><a href="classTiling.html#aec8322cae237d3ebc41c2c0a23c1676a">Tiling::reset</a></div><div class="ttdeci">function reset(in self, in varargin)</div><div class="ttdoc">Reset the properties of the figure to the original default settings.</div></div>
 <div class="ttc" id="aclean_8m_html_a6facc6381d5f76b76fa90c6175ab00ca"><div class="ttname"><a href="clean_8m.html#a6facc6381d5f76b76fa90c6175ab00ca">clean</a></div><div class="ttdeci">function clean()</div><div class="ttdoc">Remove all paths that contain the ParaMonte lib directory from the MATLAB path variable.</div></div>
 <div class="ttc" id="aistype_8m_html_a2c12c7b7101bbce83956059fb4de8da3"><div class="ttname"><a href="istype_8m.html#a2c12c7b7101bbce83956059fb4de8da3">istype</a></div><div class="ttdeci">function istype(in varval, in vartype, in varsize)</div><div class="ttdoc">Return true if and only if the input varval conforms with the specified input type vartype and the sp...</div></div>
@@ -458,8 +459,8 @@ $(document).ready(function(){initNavTree('Tiling_8m_source.html',''); initResiza
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_77a461de7b91f32df8032085d9a00b9a.html">+vis</a></li><li class="navelem"><a class="el" href="dir_71b9da55d4f4009145fe80947fd39cfd.html">+figure</a></li><li class="navelem"><a class="el" href="Tiling_8m.html">Tiling.m</a></li>
-        <li class="footer">Generated on Fri Jul 12 2024 15:48:23 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_77a461de7b91f32df8032085d9a00b9a.html">+vis</a></li><li class="navelem"><a class="el" href="Tiling_8m.html">Tiling.m</a></li>
+        <li class="footer">Generated on Sat Aug 31 2024 21:18:30 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

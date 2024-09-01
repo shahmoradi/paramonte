@@ -45,6 +45,7 @@ MathJax.Hub.Config({
     kev: "{{\\ms{keV}}}",
     det: "{{\\ms{det}}}",
     var: "{{\\ms{var}}}",
+    binom: ["{\\Bigl(\\begin{array}{@{}c@{}}#1\\\\#2\\end{array}\\Bigr)}",2],
   } }
 });
 </script>
@@ -267,7 +268,7 @@ Variables</h2></td></tr>
  They require one or more initial guesses of the root as starting values, then each iteration of the algorithm produces a successively more accurate approximation to the root.<br  />
  Since the iteration must be stopped at some point, these methods produce an approximation to the root, not an exact solution.<br  />
 </p>
-<h1><a class="anchor" id="autotoc_md53"></a>
+<h1><a class="anchor" id="autotoc_md56"></a>
 Bracketing methods</h1>
 <p >Bracketing methods determine successively smaller intervals (brackets) that contain a root.<br  />
  When the interval is small enough, then a root has been found.<br  />
@@ -275,7 +276,7 @@ Bracketing methods</h1>
  Therefore, they <em>require to start with an interval such that the function takes opposite signs at the end points of the interval</em>.<br  />
  There are <a href="https://en.wikipedia.org/wiki/Descartes%27_rule_of_signs">other methods</a> for getting information on the number of roots of polynomials in an interval.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md54"></a>
+<h2><a class="anchor" id="autotoc_md57"></a>
 Bisection method</h2>
 <p >The Bisection method consists of repeatedly bisecting a pre-specified interval known to contain at least one root.<br  />
  The method selects the subinterval in which the function changes sign, and therefore must contain a root.<br  />
@@ -309,7 +310,7 @@ Bisection method</h2>
  Additionally, the difference between the search interval limits cannot be less than the floating point precision of the computer.<br  />
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The Bisection method is also known as the <b>Interval-Halving method</b>, the <b>Binary Search method</b>, or the <b>Dichotomy method</b>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md55"></a>
+<h2><a class="anchor" id="autotoc_md58"></a>
 False position (regula falsi) method</h2>
 <p >The False Position method is a root-finding algorithm is a very old method for solving an equation with one unknown.<br  />
  In simple terms, the method is the trial and error technique of using test (<em>false</em>) values for the variable and then adjusting the test value according to the outcome.<br  />
@@ -371,9 +372,9 @@ False position (regula falsi) method</h2>
  Although \(f\) is continuous, the finite precision of computer can preclude a function value ever being zero.<br  />
  Additionally, the difference between the search interval limits cannot be less than the floating point precision of the computer.<br  />
 </dd></dl>
-<h1><a class="anchor" id="autotoc_md56"></a>
+<h1><a class="anchor" id="autotoc_md59"></a>
 Iterative methods</h1>
-<h2><a class="anchor" id="autotoc_md57"></a>
+<h2><a class="anchor" id="autotoc_md60"></a>
 The Secant method</h2>
 <p >The Secant method is a root-finding algorithm that uses a succession of roots of secant lines to better approximate a root of a function.<br  />
  The Secant method can be thought of as a finite-difference approximation of the <a class="el" href="namespacepm__mathRoot.html">Newton method</a>.<br  />
@@ -414,7 +415,7 @@ The Secant method</h2>
  Although \(f\) is continuous, the finite precision of computer can preclude a function value ever being zero.<br  />
  Additionally, the difference between the search interval limits cannot be less than the floating point precision of the computer.<br  />
 </dd></dl>
-<h2><a class="anchor" id="autotoc_md58"></a>
+<h2><a class="anchor" id="autotoc_md61"></a>
 The Newton method</h2>
 <p >The Newton method, also known as the Newton–Raphson method, named after Isaac Newton and Joseph Raphson, is a root-finding algorithm which produces successively better approximations to the roots (or zeroes) of a real-valued function.<br  />
 </p>
@@ -516,7 +517,7 @@ The finite precision of computers can cause problems for convergence of the Newt
  Although \(f\) is continuous, the finite precision of computer can preclude a function value ever being zero.<br  />
  Additionally, the difference between the search interval limits cannot be less than the floating point precision of the computer.<br  />
 </dd></dl>
-<h2><a class="anchor" id="autotoc_md59"></a>
+<h2><a class="anchor" id="autotoc_md62"></a>
 The Halley method</h2>
 <p >In numerical analysis, the Halley method is a root-finding algorithm used for functions of one real variable <b>with a continuous second derivative</b>.<br  />
  It is named after its inventor <a href="https://en.wikipedia.org/wiki/Edmond_Halley">Edmond Halley</a>.<br  />
@@ -551,7 +552,7 @@ The Halley method</h2>
  he current implementation of the Halley method in this module resolves over-compensations by the second derivative (leading to wrong search directions) by reverting the search method to a Newton-Raphson step.<br  />
  If the method sends the search out of the initial user-specified bracket of the root, then the algorithm falls back to the bisection method to correct the search.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md60"></a>
+<h2><a class="anchor" id="autotoc_md63"></a>
 The Schroder method</h2>
 <p >Similar to the Halley method, the Schroder method solves the nonlinear equation \(f(x) = 0\) using the second derivative.<br  />
  However, unlike the Newton and the Halley methods, the Schroder method is known to work well in the presence of multiple roots.<br  />
@@ -564,9 +565,9 @@ The Schroder method</h2>
 <p> beginning with an initial guess \(x_0\).<br  />
  See <a href="http://drum.lib.umd.edu/handle/1903/577">Stewart, 1993, G. W. On Infinitely Many Algorithms for Solving Equations</a> for the English translation of the original paper of Schroder and the derivation of the above equation on page 13.<br  />
 </p>
-<h1><a class="anchor" id="autotoc_md61"></a>
+<h1><a class="anchor" id="autotoc_md64"></a>
 Hybrid methods</h1>
-<h2><a class="anchor" id="autotoc_md62"></a>
+<h2><a class="anchor" id="autotoc_md65"></a>
 The Brent method</h2>
 <p >The Brent method is a <b>hybrid</b> root-finding algorithm combining<br  />
  </p><ul>
@@ -600,7 +601,7 @@ the <b>inverse quadratic interpolation</b>.<br  />
  Although \(f\) is continuous, the finite precision of computer can preclude a function value ever being zero.<br  />
  Additionally, the difference between the search interval limits cannot be less than the floating point precision of the computer.<br  />
 </dd></dl>
-<h2><a class="anchor" id="autotoc_md63"></a>
+<h2><a class="anchor" id="autotoc_md66"></a>
 The Ridders method</h2>
 <p >The Ridders method is a root-finding algorithm based on the False-Position method and the use of an exponential function to successively approximate a root of a continuous function.<br  />
  The method is due to C. Ridders.<br  />
@@ -639,7 +640,7 @@ The Ridders method</h2>
  Although \(f\) is continuous, the finite precision of computer can preclude a function value ever being zero.<br  />
  Additionally, the difference between the search interval limits cannot be less than the floating point precision of the computer.<br  />
 </dd></dl>
-<h2><a class="anchor" id="autotoc_md64"></a>
+<h2><a class="anchor" id="autotoc_md67"></a>
 The TOMS748 method</h2>
 <p >The <a href="https://na.math.kit.edu/alefeld/download/1995_Algorithm_748_Enclosing_Zeros_of_Continuous_Functions.pdf">TOMS748 algorithm</a> is a hybrid root-finding algorithm introduced in,<br  />
  </p><ul>
@@ -649,7 +650,7 @@ Alefeld, G. E., Potra, F. A., Shi, Yixun (1995). "Algorithm 748: Enclosing Zeros
 <p>that uses a mixture of cubic, quadratic and linear (secant) interpolation to locate the root of a function.<br  />
  While there is widespread claims of the superior performance of this algorithm compared to the Brent method, there are <a href="https://www.nongnu.org/lmi/toms_748.html">counter arguments</a> for such benchmarks.<br  />
 </p>
-<h1><a class="anchor" id="autotoc_md65"></a>
+<h1><a class="anchor" id="autotoc_md68"></a>
 The optimal root-finding method</h1>
 <p >The best root-finding algorithm depends on the problem being solved:<br  />
  </p><ol>
@@ -678,8 +679,8 @@ The <a class="el" href="namespacepm__mathRoot.html">Newton-Raphson method</a> is
  <a href="https://netlib.org/slatec/src/">SLATEC cdzro.f</a><br  />
  <a href="https://www.boost.org/doc/libs/1_82_0/libs/math/doc/html/root_finding.html">Boost library</a><br  />
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000642">Test:</a></b></dt><dd><a class="el" href="namespacetest__pm__mathRoot.html">test_pm_mathRoot</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000333">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: The <a href="https://en.wikipedia.org/wiki/Muller%27s_method">Muller method</a> of root-finding should be implemented.<br  />
+<dl class="test"><dt><b><a class="el" href="test.html#_test000667">Test:</a></b></dt><dd>test_pm_mathRoot</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000338">Todo:</a></b></dt><dd><span class="pmed">Normal Priority</span>: The <a href="https://en.wikipedia.org/wiki/Muller%27s_method">Muller method</a> of root-finding should be implemented.<br  />
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
@@ -698,7 +699,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000851">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000884">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 </div><h2 class="groupheader">Variable Documentation</h2>
 <a id="a5504dde0cb89575fd6f0882739a0d7b7" name="a5504dde0cb89575fd6f0882739a0d7b7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5504dde0cb89575fd6f0882739a0d7b7">&#9670;&nbsp;</a></span>bisection</h2>
@@ -757,7 +758,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000873">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000906">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01413">1413</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
@@ -820,7 +821,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000857">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000890">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l00709">709</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
@@ -883,7 +884,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000861">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000894">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l00885">885</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
@@ -946,7 +947,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000867">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000900">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01149">1149</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
@@ -1025,7 +1026,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000865">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000898">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01061">1061</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
@@ -1088,7 +1089,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000871">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000904">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01325">1325</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
@@ -1151,7 +1152,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000869">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000902">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l01237">1237</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
@@ -1214,7 +1215,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000863">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000896">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l00973">973</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
@@ -1277,7 +1278,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000859">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000892">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2017, 12:00 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__mathRoot_8F90_source.html#l00797">797</a> of file <a class="el" href="pm__mathRoot_8F90_source.html">pm_mathRoot.F90</a>.</p>
 
@@ -1289,7 +1290,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__mathRoot.html">pm_mathRoot</a></li>
-        <li class="footer">Generated on Tue Jul 9 2024 14:42:02 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Sat Aug 31 2024 20:01:55 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

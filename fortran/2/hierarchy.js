@@ -14,7 +14,20 @@ var hierarchy =
     ] ],
     [ "pm_array::allocatable_type", "structpm__array_1_1allocatable__type.html", null ],
     [ "pm_container::assignment(=)", "interfacepm__container_1_1assignment_07_0a_08.html", null ],
-    [ "test_pm_distBand::BandSpec_type", "structtest__pm__distBand_1_1BandSpec__type.html", null ],
+    [ "Partition_mod::BaseProp_type", "structPartition__mod_1_1BaseProp__type.html", [
+      [ "Partition_mod::ParProp_type", "structPartition__mod_1_1ParProp__type.html", [
+        [ "Partition_mod::ParPropTry_type", "structPartition__mod_1_1ParPropTry__type.html", [
+          [ "Partition_mod::ParPropTryDen_type", "structPartition__mod_1_1ParPropTryDen__type.html", null ],
+          [ "Partition_mod::ParPropTryVol_type", "structPartition__mod_1_1ParPropTryVol__type.html", null ]
+        ] ]
+      ] ],
+      [ "Partition_mod::PartitionBase_type", "structPartition__mod_1_1PartitionBase__type.html", [
+        [ "Partition_mod::Partition_type", "structPartition__mod_1_1Partition__type.html", [
+          [ "Partition_mod::PartitionMaxDen_type", "structPartition__mod_1_1PartitionMaxDen__type.html", null ],
+          [ "Partition_mod::PartitionMinVol_type", "structPartition__mod_1_1PartitionMinVol__type.html", null ]
+        ] ]
+      ] ]
+    ] ],
     [ "pm_bench::bench_typer", "interfacepm__bench_1_1bench__typer.html", null ],
     [ "pm_bench::benchBase_type", "structpm__bench_1_1benchBase__type.html", [
       [ "pm_bench::bench_type", "structpm__bench_1_1bench__type.html", null ]
@@ -110,6 +123,7 @@ var hierarchy =
     [ "pm_distBand::distBand_type", "structpm__distBand_1_1distBand__type.html", null ],
     [ "pm_distBern::distBern_type", "structpm__distBern_1_1distBern__type.html", null ],
     [ "pm_distBeta::distBeta_type", "structpm__distBeta_1_1distBeta__type.html", null ],
+    [ "pm_distBinom::distBinom_type", "structpm__distBinom_1_1distBinom__type.html", null ],
     [ "pm_distCosRaised::distCosRaised_type", "structpm__distCosRaised_1_1distCosRaised__type.html", null ],
     [ "pm_distExp::distExp_type", "structpm__distExp_1_1distExp__type.html", null ],
     [ "pm_distExpGamma::distExpGamma_type", "structpm__distExpGamma_1_1distExpGamma__type.html", null ],
@@ -138,6 +152,7 @@ var hierarchy =
     [ "pm_distanceEuclid::euclid_type", "structpm__distanceEuclid_1_1euclid__type.html", null ],
     [ "pm_distanceEuclid::euclidsq_type", "structpm__distanceEuclid_1_1euclidsq__type.html", null ],
     [ "pm_distanceEuclid::euclidu_type", "structpm__distanceEuclid_1_1euclidu__type.html", null ],
+    [ "pm_distanceEuclid::euclidv_type", "structpm__distanceEuclid_1_1euclidv__type.html", null ],
     [ "pm_bench::exec_proc", "interfacepm__bench_1_1exec__proc.html", null ],
     [ "pm_io::field_type", "structpm__io_1_1field__type.html", null ],
     [ "pm_test::file_type", "structpm__test_1_1file__type.html", null ],
@@ -174,6 +189,8 @@ var hierarchy =
     [ "pm_distBeta::getBetaLogPDF", "interfacepm__distBeta_1_1getBetaLogPDF.html", null ],
     [ "pm_distBeta::getBetaPDF", "interfacepm__distBeta_1_1getBetaPDF.html", null ],
     [ "pm_arraySearch::getBin", "interfacepm__arraySearch_1_1getBin.html", null ],
+    [ "pm_distBinom::getBinomCDF", "interfacepm__distBinom_1_1getBinomCDF.html", null ],
+    [ "pm_distBinom::getBinomLogPMF", "interfacepm__distBinom_1_1getBinomLogPMF.html", null ],
     [ "pm_sampleCCF::getCCF", "interfacepm__sampleCCF_1_1getCCF.html", null ],
     [ "pm_arrayCenter::getCentered", "interfacepm__arrayCenter_1_1getCentered.html", null ],
     [ "pm_arrayChange::getChange", "interfacepm__arrayChange_1_1getChange.html", null ],
@@ -213,6 +230,7 @@ var hierarchy =
     [ "pm_dateTime::getDateTimeShifted", "interfacepm__dateTime_1_1getDateTimeShifted.html", null ],
     [ "pm_dateTime::getDateTimeUTC", "interfacepm__dateTime_1_1getDateTimeUTC.html", null ],
     [ "pm_mathNumSys::getDecimal", "interfacepm__mathNumSys_1_1getDecimal.html", null ],
+    [ "pm_arrayDiff::getDiff", "interfacepm__arrayDiff_1_1getDiff.html", null ],
     [ "pm_sysPath::getDirCurrent", "interfacepm__sysPath_1_1getDirCurrent.html", null ],
     [ "pm_sysPath::getDirHome", "interfacepm__sysPath_1_1getDirHome.html", null ],
     [ "pm_sysPath::getDirName", "interfacepm__sysPath_1_1getDirName.html", null ],
@@ -231,6 +249,7 @@ var hierarchy =
     [ "pm_distanceMahal::getDisMahalSq", "interfacepm__distanceMahal_1_1getDisMahalSq.html", null ],
     [ "pm_distanceEuclid::getDisMatEuclid", "interfacepm__distanceEuclid_1_1getDisMatEuclid.html", null ],
     [ "pm_complexDiv::getDiv", "interfacepm__complexDiv_1_1getDiv.html", null ],
+    [ "pm_mathSum::getDot", "interfacepm__mathSum_1_1getDot.html", null ],
     [ "pm_distEggBox::getEggBoxLogUDF", "interfacepm__distEggBox_1_1getEggBoxLogUDF.html", null ],
     [ "pm_mathErf::getErfInv", "interfacepm__mathErf_1_1getErfInv.html", null ],
     [ "pm_sampling::getErrSampling", "interfacepm__sampling_1_1getErrSampling.html", null ],
@@ -265,7 +284,13 @@ var hierarchy =
     [ "pm_io::getFormat", "interfacepm__io_1_1getFormat.html", null ],
     [ "pm_distGamma::getGammaCDF", "interfacepm__distGamma_1_1getGammaCDF.html", null ],
     [ "pm_mathGamma::getGammaIncLow", "interfacepm__mathGamma_1_1getGammaIncLow.html", null ],
+    [ "pm_mathGammaAM::getGammaIncLowAM", "interfacepm__mathGammaAM_1_1getGammaIncLowAM.html", null ],
+    [ "pm_mathGammaGil::getGammaIncLowGil", "interfacepm__mathGammaGil_1_1getGammaIncLowGil.html", null ],
+    [ "pm_mathGammaNR::getGammaIncLowNR", "interfacepm__mathGammaNR_1_1getGammaIncLowNR.html", null ],
     [ "pm_mathGamma::getGammaIncUpp", "interfacepm__mathGamma_1_1getGammaIncUpp.html", null ],
+    [ "pm_mathGammaAM::getGammaIncUppAM", "interfacepm__mathGammaAM_1_1getGammaIncUppAM.html", null ],
+    [ "pm_mathGammaGil::getGammaIncUppGil", "interfacepm__mathGammaGil_1_1getGammaIncUppGil.html", null ],
+    [ "pm_mathGammaNR::getGammaIncUppNR", "interfacepm__mathGammaNR_1_1getGammaIncUppNR.html", null ],
     [ "pm_distGamma::getGammaLogPDF", "interfacepm__distGamma_1_1getGammaLogPDF.html", null ],
     [ "pm_distGamma::getGammaLogPDFNF", "interfacepm__distGamma_1_1getGammaLogPDFNF.html", null ],
     [ "pm_distGenExpGamma::getGenExpGammaCDF", "interfacepm__distGenExpGamma_1_1getGenExpGammaCDF.html", null ],
@@ -378,6 +403,7 @@ var hierarchy =
     [ "pm_distPareto::getParetoLogPDFNF", "interfacepm__distPareto_1_1getParetoLogPDFNF.html", null ],
     [ "pm_distPareto::getParetoLogQuan", "interfacepm__distPareto_1_1getParetoLogQuan.html", null ],
     [ "pm_distPareto::getParetoLogRand", "interfacepm__distPareto_1_1getParetoLogRand.html", null ],
+    [ "Partition_mod::getPartition_proc", "interfacePartition__mod_1_1getPartition__proc.html", null ],
     [ "pm_sysPath::getPathAbs", "interfacepm__sysPath_1_1getPathAbs.html", null ],
     [ "pm_sysPath::getPathExpandedUser", "interfacepm__sysPath_1_1getPathExpandedUser.html", null ],
     [ "pm_sysPath::getPathHostNameIndex", "interfacepm__sysPath_1_1getPathHostNameIndex.html", null ],
@@ -458,6 +484,7 @@ var hierarchy =
     [ "pm_matrixSubset::getSubComp", "interfacepm__matrixSubset_1_1getSubComp.html", null ],
     [ "pm_matrixSubset::getSubSymm", "interfacepm__matrixSubset_1_1getSubSymm.html", null ],
     [ "pm_matrixSubset::getSubUnion", "interfacepm__matrixSubset_1_1getSubUnion.html", null ],
+    [ "pm_mathSum::getSum", "interfacepm__mathSum_1_1getSum.html", null ],
     [ "pm_sysInfo::getSysInfo", "interfacepm__sysInfo_1_1getSysInfo.html", null ],
     [ "pm_timer::getTime_proc", "interfacepm__timer_1_1getTime__proc.html", null ],
     [ "pm_bench::getTiming", "interfacepm__bench_1_1getTiming.html", null ],
@@ -479,6 +506,7 @@ var hierarchy =
     [ "pm_arrayVerbose::getVerbose", "interfacepm__arrayVerbose_1_1getVerbose.html", null ],
     [ "pm_cosmology::getVolComDiffNormed", "interfacepm__cosmology_1_1getVolComDiffNormed.html", null ],
     [ "pm_cosmology::getVolComNormed", "interfacepm__cosmology_1_1getVolComNormed.html", null ],
+    [ "pm_ellipsoid::getVolUnitBall", "interfacepm__ellipsoid_1_1getVolUnitBall.html", null ],
     [ "pm_dateTime::getWeekDate", "interfacepm__dateTime_1_1getWeekDate.html", null ],
     [ "pm_dateTime::getWeekDay", "interfacepm__dateTime_1_1getWeekDay.html", null ],
     [ "pm_dateTime::getWeekDayISO", "interfacepm__dateTime_1_1getWeekDayISO.html", null ],
@@ -611,6 +639,7 @@ var hierarchy =
     [ "pm_os::isWindows", "interfacepm__os_1_1isWindows.html", null ],
     [ "pm_sysInfo::kernel_type", "structpm__sysInfo_1_1kernel__type.html", null ],
     [ "pm_sysInfo::kernelis_type", "structpm__sysInfo_1_1kernelis__type.html", null ],
+    [ "Partition_mod::KmeansTry_type", "structPartition__mod_1_1KmeansTry__type.html", null ],
     [ "pm_lapack::lapackGETRF", "interfacepm__lapack_1_1lapackGETRF.html", null ],
     [ "pm_quadRomb::lbis_type", "structpm__quadRomb_1_1lbis__type.html", null ],
     [ "pm_sysPath::ls", "interfacepm__sysPath_1_1ls.html", null ],
@@ -658,6 +687,7 @@ var hierarchy =
       [ "pm_err::stop_type", "structpm__err_1_1stop__type.html", null ],
       [ "pm_err::warn_type", "structpm__err_1_1warn__type.html", null ]
     ] ],
+    [ "Partition_mod::Method_type", "structPartition__mod_1_1Method__type.html", null ],
     [ "pm_mathRoot::method_type", "structpm__mathRoot_1_1method__type.html", [
       [ "pm_mathRoot::bracket_type", "structpm__mathRoot_1_1bracket__type.html", [
         [ "pm_mathRoot::bisection_type", "structpm__mathRoot_1_1bisection__type.html", null ],
@@ -678,7 +708,8 @@ var hierarchy =
     [ "pm_polynomial::method_type", "structpm__polynomial_1_1method__type.html", [
       [ "pm_polynomial::eigen_type", "structpm__polynomial_1_1eigen__type.html", null ],
       [ "pm_polynomial::jenkins_type", "structpm__polynomial_1_1jenkins__type.html", null ],
-      [ "pm_polynomial::laguerre_type", "structpm__polynomial_1_1laguerre__type.html", null ]
+      [ "pm_polynomial::laguerre_type", "structpm__polynomial_1_1laguerre__type.html", null ],
+      [ "pm_polynomial::skgo_type", "structpm__polynomial_1_1skgo__type.html", null ]
     ] ],
     [ "pm_complexMinMax::min", "interfacepm__complexMinMax_1_1min.html", null ],
     [ "pm_complexMinMax::minloc", "interfacepm__complexMinMax_1_1minloc.html", null ],
@@ -770,6 +801,7 @@ var hierarchy =
     [ "pm_mathConst::pinf_type", "structpm__mathConst_1_1pinf__type.html", null ],
     [ "pm_polation::piwilin_type", "structpm__polation_1_1piwilin__type.html", null ],
     [ "pm_polation::piwipol_type", "structpm__polation_1_1piwipol__type.html", null ],
+    [ "pm_mathRound::pnint", "interfacepm__mathRound_1_1pnint.html", null ],
     [ "pm_quadRomb::pwrl_type", "structpm__quadRomb_1_1pwrl__type.html", null ],
     [ "pm_arrayRank::rank_type", "structpm__arrayRank_1_1rank__type.html", [
       [ "pm_arrayRank::dense_type", "structpm__arrayRank_1_1dense__type.html", null ],
@@ -818,6 +850,8 @@ var hierarchy =
     [ "pm_mathBeta::setBetaInv", "interfacepm__mathBeta_1_1setBetaInv.html", null ],
     [ "pm_distBeta::setBetaLogPDF", "interfacepm__distBeta_1_1setBetaLogPDF.html", null ],
     [ "pm_distBeta::setBetaRand", "interfacepm__distBeta_1_1setBetaRand.html", null ],
+    [ "pm_distBinom::setBinomCDF", "interfacepm__distBinom_1_1setBinomCDF.html", null ],
+    [ "pm_distBinom::setBinomLogPMF", "interfacepm__distBinom_1_1setBinomLogPMF.html", null ],
     [ "pm_optimization::setBracketMax", "interfacepm__optimization_1_1setBracketMax.html", null ],
     [ "pm_optimization::setBracketMin", "interfacepm__optimization_1_1setBracketMin.html", null ],
     [ "pm_sampleCCF::setCCF", "interfacepm__sampleCCF_1_1setCCF.html", null ],
@@ -849,6 +883,7 @@ var hierarchy =
     [ "pm_sampleCov::setCovUpdated", "interfacepm__sampleCov_1_1setCovUpdated.html", null ],
     [ "pm_mathCumPropExp::setCumPropExp", "interfacepm__mathCumPropExp_1_1setCumPropExp.html", null ],
     [ "pm_mathCumSum::setCumSum", "interfacepm__mathCumSum_1_1setCumSum.html", null ],
+    [ "pm_arrayDiff::setDiff", "interfacepm__arrayDiff_1_1setDiff.html", null ],
     [ "pm_distanceEuclid::setDisEuclid", "interfacepm__distanceEuclid_1_1setDisEuclid.html", null ],
     [ "pm_distanceKolm::setDisKolm", "interfacepm__distanceKolm_1_1setDisKolm.html", null ],
     [ "pm_distanceMahal::setDisMahalSq", "interfacepm__distanceMahal_1_1setDisMahalSq.html", null ],
@@ -871,16 +906,21 @@ var hierarchy =
     [ "pm_io::setFileClosed", "interfacepm__io_1_1setFileClosed.html", null ],
     [ "pm_parallelism::setForkJoinScaling", "interfacepm__parallelism_1_1setForkJoinScaling.html", null ],
     [ "pm_distGamma::setGammaCDF", "interfacepm__distGamma_1_1setGammaCDF.html", null ],
-    [ "pm_mathGamma::setGammaIncLow", "interfacepm__mathGamma_1_1setGammaIncLow.html", null ],
-    [ "pm_mathGamma::setGammaIncLowSeries", "interfacepm__mathGamma_1_1setGammaIncLowSeries.html", null ],
-    [ "pm_mathGamma::setGammaIncUpp", "interfacepm__mathGamma_1_1setGammaIncUpp.html", null ],
-    [ "pm_mathGamma::setGammaIncUppContFrac", "interfacepm__mathGamma_1_1setGammaIncUppContFrac.html", null ],
+    [ "pm_mathGamma::setGammaInc", "interfacepm__mathGamma_1_1setGammaInc.html", null ],
+    [ "pm_mathGammaGil::setGammaIncGil", "interfacepm__mathGammaGil_1_1setGammaIncGil.html", null ],
+    [ "pm_mathGammaAM::setGammaIncLowAM", "interfacepm__mathGammaAM_1_1setGammaIncLowAM.html", null ],
+    [ "pm_mathGammaNR::setGammaIncLowNR", "interfacepm__mathGammaNR_1_1setGammaIncLowNR.html", null ],
+    [ "pm_mathGammaNR::setGammaIncLowSeriesNR", "interfacepm__mathGammaNR_1_1setGammaIncLowSeriesNR.html", null ],
+    [ "pm_mathGammaAM::setGammaIncUppAM", "interfacepm__mathGammaAM_1_1setGammaIncUppAM.html", null ],
+    [ "pm_mathGammaNR::setGammaIncUppContFracNR", "interfacepm__mathGammaNR_1_1setGammaIncUppContFracNR.html", null ],
+    [ "pm_mathGammaNR::setGammaIncUppNR", "interfacepm__mathGammaNR_1_1setGammaIncUppNR.html", null ],
     [ "pm_distGamma::setGammaLogPDF", "interfacepm__distGamma_1_1setGammaLogPDF.html", null ],
     [ "pm_distGamma::setGammaRand", "interfacepm__distGamma_1_1setGammaRand.html", null ],
     [ "pm_distGenExpGamma::setGenExpGammaCDF", "interfacepm__distGenExpGamma_1_1setGenExpGammaCDF.html", null ],
     [ "pm_distGenExpGamma::setGenExpGammaLogPDF", "interfacepm__distGenExpGamma_1_1setGenExpGammaLogPDF.html", null ],
     [ "pm_distGenGamma::setGenGammaCDF", "interfacepm__distGenGamma_1_1setGenGammaCDF.html", null ],
     [ "pm_distGenGamma::setGenGammaLogPDF", "interfacepm__distGenGamma_1_1setGenGammaLogPDF.html", null ],
+    [ "pm_distGenGamma::setGenGammaRand", "interfacepm__distGenGamma_1_1setGenGammaRand.html", null ],
     [ "pm_distGeom::setGeomCDF", "interfacepm__distGeom_1_1setGeomCDF.html", null ],
     [ "pm_distGeomCyclic::setGeomCyclicLogCDF", "interfacepm__distGeomCyclic_1_1setGeomCyclicLogCDF.html", null ],
     [ "pm_distGeomCyclic::setGeomCyclicLogPMF", "interfacepm__distGeomCyclic_1_1setGeomCyclicLogPMF.html", null ],
@@ -1024,6 +1064,7 @@ var hierarchy =
     [ "pm_sampleVar::setVarMeanMerged", "interfacepm__sampleVar_1_1setVarMeanMerged.html", null ],
     [ "pm_sampleVar::setVarMerged", "interfacepm__sampleVar_1_1setVarMerged.html", null ],
     [ "pm_cosmology::setVolComDiffNormed", "interfacepm__cosmology_1_1setVolComDiffNormed.html", null ],
+    [ "pm_ellipsoid::setVolUnitBall", "interfacepm__ellipsoid_1_1setVolUnitBall.html", null ],
     [ "pm_err::setWarned", "interfacepm__err_1_1setWarned.html", null ],
     [ "pm_sysShell::shell_type", "structpm__sysShell_1_1shell__type.html", null ],
     [ "pm_sysShell::shellis_type", "structpm__sysShell_1_1shellis__type.html", null ],
@@ -1068,13 +1109,14 @@ var hierarchy =
       [ "pm_matrixSubset::uppLow_type", "structpm__matrixSubset_1_1uppLow__type.html", null ],
       [ "pm_matrixSubset::upp_type", "structpm__matrixSubset_1_1upp__type.html", null ]
     ] ],
+    [ "pm_mathSum::sum_type", "structpm__mathSum_1_1sum__type.html", [
+      [ "pm_mathSum::fablocked_type", "structpm__mathSum_1_1fablocked__type.html", null ],
+      [ "pm_mathSum::kahanbabu_type", "structpm__mathSum_1_1kahanbabu__type.html", null ],
+      [ "pm_mathSum::nablocked_type", "structpm__mathSum_1_1nablocked__type.html", null ]
+    ] ],
     [ "pm_quadTest::test_getQuadErr", "interfacepm__quadTest_1_1test__getQuadErr.html", null ],
     [ "pm_quadTest::test_isFailedQuad", "interfacepm__quadTest_1_1test__isFailedQuad.html", null ],
     [ "pm_test::test_type", "structpm__test_1_1test__type.html", null ],
-    [ "test_pm_clustering::TestData_type", "structtest__pm__clustering_1_1TestData__type.html", null ],
-    [ "test_pm_knn::TestData_type", "structtest__pm__knn_1_1TestData__type.html", null ],
-    [ "test_pm_optimization::TestFuncRosenBrock1D_type", "structtest__pm__optimization_1_1TestFuncRosenBrock1D__type.html", null ],
-    [ "test_pm_optimization::TestFuncRosenBrock2D_type", "structtest__pm__optimization_1_1TestFuncRosenBrock2D__type.html", null ],
     [ "pm_timer::timer_type", "structpm__timer_1_1timer__type.html", [
       [ "pm_timer::timerCPU_type", "structpm__timer_1_1timerCPU__type.html", null ],
       [ "pm_timer::timerDAT_type", "structpm__timer_1_1timerDAT__type.html", null ],
@@ -1106,6 +1148,7 @@ var hierarchy =
     [ "pm_quadPack::weps_type", "structpm__quadPack_1_1weps__type.html", null ],
     [ "pm_io::wrap", "interfacepm__io_1_1wrap.html", null ],
     [ "pm_io::wrap_type", "structpm__io_1_1wrap__type.html", null ],
+    [ "Partition_mod::write_proc", "interfacePartition__mod_1_1write__proc.html", null ],
     [ "pm_quadPack::wsin_type", "structpm__quadPack_1_1wsin__type.html", null ],
     [ "pm_distUnif::xoshiro256ssg_typer", "interfacepm__distUnif_1_1xoshiro256ssg__typer.html", null ],
     [ "pm_distUnif::xoshiro256ssw_typer", "interfacepm__distUnif_1_1xoshiro256ssw__typer.html", null ],
