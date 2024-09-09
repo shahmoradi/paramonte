@@ -32,8 +32,9 @@ var searchData=
   ['rmfile_2em_29',['rmfile.m',['../rmfile_8m.html',1,'']]],
   ['root_30',['root',['../root_8m.html#a89008b0d9aee9934beddaed8433fec4d',1,'root.m']]],
   ['root_2em_31',['root.m',['../root_8m.html',1,'']]],
-  ['rows_32',['rows',['../classSubplot.html#aaf6e5ee395a3d84a0f249971143b4013',1,'Subplot']]],
-  ['rowslog_33',['rowslog',['../classDataFrame.html#a88d1577f1c8bcee5e3dea37137e1e1e2',1,'DataFrame']]],
-  ['run_34',['run',['../classSampler.html#a05facc7b19d55723b4b9b7f5754c8ae6',1,'Sampler::run()'],['../classParadram.html#aa386416992b6113574a6d1ad0034fb13',1,'Paradram::run()']]],
-  ['run_2em_35',['run.m',['../_0dSampler_2run_8m.html',1,'(Global Namespace)'],['../_0dParadram_2run_8m.html',1,'(Global Namespace)']]]
+  ['rotateaxeslabels_32',['rotateAxesLabels',['../classTriplex.html#aac217571f0804d4cb9fb9550648b8a01',1,'Triplex']]],
+  ['rows_33',['rows',['../classSubplot.html#aaf6e5ee395a3d84a0f249971143b4013',1,'Subplot']]],
+  ['rowslog_34',['rowslog',['../classDataFrame.html#a88d1577f1c8bcee5e3dea37137e1e1e2',1,'DataFrame']]],
+  ['run_35',['run',['../classSampler.html#a05facc7b19d55723b4b9b7f5754c8ae6',1,'Sampler::run()'],['../classParadram.html#aa386416992b6113574a6d1ad0034fb13',1,'Paradram::run()']]],
+  ['run_2em_36',['run.m',['../_0dSampler_2run_8m.html',1,'(Global Namespace)'],['../_0dParadram_2run_8m.html',1,'(Global Namespace)']]]
 ];

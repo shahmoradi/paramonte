@@ -709,7 +709,7 @@ var hierarchy =
       [ "pm_polynomial::eigen_type", "structpm__polynomial_1_1eigen__type.html", null ],
       [ "pm_polynomial::jenkins_type", "structpm__polynomial_1_1jenkins__type.html", null ],
       [ "pm_polynomial::laguerre_type", "structpm__polynomial_1_1laguerre__type.html", null ],
-      [ "pm_polynomial::skgo_type", "structpm__polynomial_1_1skgo__type.html", null ]
+      [ "pm_polynomial::sgl_type", "structpm__polynomial_1_1sgl__type.html", null ]
     ] ],
     [ "pm_complexMinMax::min", "interfacepm__complexMinMax_1_1min.html", null ],
     [ "pm_complexMinMax::minloc", "interfacepm__complexMinMax_1_1minloc.html", null ],

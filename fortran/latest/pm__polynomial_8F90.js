@@ -12,7 +12,7 @@ var pm__polynomial_8F90 =
     [ "pm_polynomial::setPolyDiff", "interfacepm__polynomial_1_1setPolyDiff.html", null ],
     [ "pm_polynomial::getPolyStr", "interfacepm__polynomial_1_1getPolyStr.html", null ],
     [ "pm_polynomial::method_type", "structpm__polynomial_1_1method__type.html", null ],
-    [ "pm_polynomial::skgo_type", "structpm__polynomial_1_1skgo__type.html", "structpm__polynomial_1_1skgo__type" ],
+    [ "pm_polynomial::sgl_type", "structpm__polynomial_1_1sgl__type.html", "structpm__polynomial_1_1sgl__type" ],
     [ "pm_polynomial::eigen_type", "structpm__polynomial_1_1eigen__type.html", null ],
     [ "pm_polynomial::jenkins_type", "structpm__polynomial_1_1jenkins__type.html", null ],
     [ "pm_polynomial::laguerre_type", "structpm__polynomial_1_1laguerre__type.html", null ],
@@ -23,5 +23,5 @@ var pm__polynomial_8F90 =
     [ "jenkins", "pm__polynomial_8F90.html#ac1f657eba9f64f4e251a5f1b67f0ba02", null ],
     [ "laguerre", "pm__polynomial_8F90.html#ad7a9b1776fa3670d5b3cb401d91026e3", null ],
     [ "MODULE_NAME", "pm__polynomial_8F90.html#a7ed954ba0101852d40ea302341567ac1", null ],
-    [ "skgo", "pm__polynomial_8F90.html#aa393f8d8859f85bdae1b527db42c5118", null ]
+    [ "sgl", "pm__polynomial_8F90.html#ae8978c710d4c519370bc12d6f7cb6088", null ]
 ];

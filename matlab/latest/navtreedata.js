@@ -93,8 +93,8 @@ var NAVTREEINDEX =
 "_09matlab_2_09hashmap_2Contents_8m_source.html",
 "classFileContentsRestart.html#a08921888a8aafb43b35dba919568e672",
 "classTileHeatmap.html#a6de19d8c2258ce4bb40349b6e445efab",
-"im2gif_8m.html#af4749aaaa8b2da99a97d3f94be3a67cb",
-"using__hg2_8m_source.html"
+"hyperlink_8m_source.html",
+"usergroup3.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

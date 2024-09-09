@@ -6,7 +6,7 @@ var searchData=
   ['setcolorlim_3',['setColorLim',['../classSubplotHeatmap.html#ae278eeb496ba35d4fc53b6dcbfa96c35',1,'SubplotHeatmap']]],
   ['setkeyval_4',['setKeyVal',['../classHandle.html#ad00db1b8e25e4ea7dbb4458bb9dc1690',1,'Handle']]],
   ['setlayout_5',['setLayout',['../classTriplex.html#a3022336d32b222b7a1d782a3fc4ec7e0',1,'Triplex']]],
-  ['show_6',['show',['../show_8m.html#a1dd7d7719e0c40b6784084cb5ff75456',1,'show.m']]],
+  ['show_6',['show',['../classTriplex.html#a49b1c6eb0ca114496bfc91a6cb3ba7c5',1,'Triplex::show()'],['../show_8m.html#a1dd7d7719e0c40b6784084cb5ff75456',1,'show(in obj, in name, in hidden):&#160;show.m']]],
   ['simbio_7',['simbio',['../simbio_8m.html#a3735d44df1e7dafd4a22309f307794d2',1,'simbio.m']]],
   ['skipfull_8',['skipFull',['../classFileContentsReport.html#a72f0e3a815218d16ef7e841878c08dec',1,'FileContentsReport']]],
   ['skipnull_9',['skipNull',['../classFileContentsReport.html#a462ddc2e32114e80ed8adcfc069fe549',1,'FileContentsReport']]],

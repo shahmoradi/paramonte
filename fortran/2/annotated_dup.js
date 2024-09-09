@@ -1133,7 +1133,7 @@ var annotated_dup =
       [ "setPolyRoot", "interfacepm__polynomial_1_1setPolyRoot.html", null ],
       [ "setPolyRootPolished", "interfacepm__polynomial_1_1setPolyRootPolished.html", null ],
       [ "setPolySub", "interfacepm__polynomial_1_1setPolySub.html", null ],
-      [ "skgo_type", "structpm__polynomial_1_1skgo__type.html", "structpm__polynomial_1_1skgo__type" ]
+      [ "sgl_type", "structpm__polynomial_1_1sgl__type.html", "structpm__polynomial_1_1sgl__type" ]
     ] ],
     [ "pm_quadPack", "namespacepm__quadPack.html", [
       [ "getQuadErr", "interfacepm__quadPack_1_1getQuadErr.html", null ],

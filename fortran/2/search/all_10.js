@@ -433,7 +433,7 @@ var searchData=
   ['pointindex_430',['PointIndex',['../structPartition__mod_1_1Partition__type.html#aecef4b3475e48c6ebdfb1ff578e6cfbc',1,'Partition_mod::Partition_type']]],
   ['pointlogvolnormed_431',['pointLogVolNormed',['../structPartition__mod_1_1Partition__type.html#a5f98ed20ed70353bd18a7ca1ac165b00',1,'Partition_mod::Partition_type']]],
   ['pole_432',['Pole',['../structpm__quadTest_1_1intCauchy2__type.html#ab599cd38b8e4abce18fa3c77fbe3d8ac',1,'pm_quadTest::intCauchy2_type']]],
-  ['polished_433',['polished',['../structpm__polynomial_1_1skgo__type.html#a9b4032157f6fe6648826901afcf1d517',1,'pm_polynomial::skgo_type']]],
+  ['polished_433',['polished',['../structpm__polynomial_1_1sgl__type.html#ad053d2967ac8c24017ffc717315100f3',1,'pm_polynomial::sgl_type']]],
   ['pos_434',['pos',['../structpm__distUnif_1_1xoshiro256ssg__type.html#a59e76638f4bed45e089e56b69221fc50',1,'pm_distUnif::xoshiro256ssg_type']]],
   ['posdefmat_435',['posdefmat',['../namespacepm__matrixClass.html#a3871e75b0a0578b302ad561ff0fdcbf4',1,'pm_matrixClass']]],
   ['posdefmat_5ftype_436',['posdefmat_type',['../structpm__matrixClass_1_1posdefmat__type.html',1,'pm_matrixClass']]],
