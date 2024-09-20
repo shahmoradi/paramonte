@@ -208,25 +208,25 @@ Functions</h2></td></tr>
 <a class="anchor" id="output-inv"></a><b>Example output</b> <a href="#output-inv">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>covmat = pm.stats.dist.cov.getRand(3)</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>covmat =</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>   1.000000000000000   0.077052548809473  -0.727777315590733</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>   0.077052548809473   1.000000000000000  -0.154680741941813</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>  -0.727777315590733  -0.154680741941813   1.000000000000000</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>   1.000000000000000   0.639727310732842   0.806646266412048</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>   0.639727310732842   1.000000000000000   0.662419765081143</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>   0.806646266412048   0.662419765081143   1.000000000000000</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>cholow = chol(covmat, <span class="stringliteral">&quot;lower&quot;</span>)</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>cholow =</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>   1.000000000000000                   0                   0</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>   0.077052548809473   0.997027033094872                   0</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  -0.727777315590733  -0.098897664292768   0.678645290935539</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>   0.639727310732842   0.768601956738678                   0</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>   0.806646266412048   0.190457644653703   0.559506645605276</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>invmat = pm.matrix.<a class="code hl_function" href="inv_8m.html#ac509bb38155c4ae02d2d4eec7017af73">inv</a>(cholow)</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>invmat =</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>   2.131980059345103   0.077585502735575   1.563607707610218</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>   0.077585502735575   1.027336060669866   0.215374072997648</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>   1.563607707610218   0.215374072997648   2.171272441487850</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>   3.034619433453406  -0.569877251219465  -2.070366481098747</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  -0.569877251219465   1.888914151677041  -0.791564711603009</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  -2.070366481098747  -0.791564711603009   3.194401502389541</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>invmat - <a class="code hl_function" href="inv_8m.html#ac509bb38155c4ae02d2d4eec7017af73">inv</a>(covmat)</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>ans =</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>   1.0e-15 *</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  -0.888178419700125                   0  -0.222044604925031</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                   0                   0   0.027755575615629</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  -0.222044604925031   0.027755575615629                   0</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>   0.444089209850063                   0                   0</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                   0  -0.222044604925031   0.111022302462516</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                   0   0.111022302462516                   0</div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-inv"></a><b>Final Remarks</b> <a href="#final-inv">⛓</a> </p><hr  />
@@ -260,7 +260,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_d22bc94e83486d739c3841c1ed42a928.html">+matrix</a></li><li class="navelem"><a class="el" href="inv_8m.html">inv.m</a></li>
-        <li class="footer">Generated on Fri Sep 20 2024 05:26:20 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Fri Sep 20 2024 05:45:38 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
