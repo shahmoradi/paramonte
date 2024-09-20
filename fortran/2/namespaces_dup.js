@@ -1,9 +1,5 @@
 var namespaces_dup =
 [
-    [ "Partition_mod", "namespacePartition__mod.html", "namespacePartition__mod" ],
-    [ "PartitionMaxDen_mod", "namespacePartitionMaxDen__mod.html", null ],
-    [ "PartitionRecursiveMaxDen_mod", "namespacePartitionRecursiveMaxDen__mod.html", null ],
-    [ "PartitionRecursiveMinVol_mod", "namespacePartitionRecursiveMinVol__mod.html", null ],
     [ "pm_array", "namespacepm__array.html", "namespacepm__array" ],
     [ "pm_arrayCenter", "namespacepm__arrayCenter.html", "namespacepm__arrayCenter" ],
     [ "pm_arrayChange", "namespacepm__arrayChange.html", "namespacepm__arrayChange" ],
@@ -12,7 +8,6 @@ var namespaces_dup =
     [ "pm_arrayCompareLex", "namespacepm__arrayCompareLex.html", "namespacepm__arrayCompareLex" ],
     [ "pm_arrayComplement", "namespacepm__arrayComplement.html", "namespacepm__arrayComplement" ],
     [ "pm_arrayCopy", "namespacepm__arrayCopy.html", "namespacepm__arrayCopy" ],
-    [ "pm_arrayDiff", "namespacepm__arrayDiff.html", "namespacepm__arrayDiff" ],
     [ "pm_arrayFill", "namespacepm__arrayFill.html", "namespacepm__arrayFill" ],
     [ "pm_arrayFind", "namespacepm__arrayFind.html", "namespacepm__arrayFind" ],
     [ "pm_arrayInit", "namespacepm__arrayInit.html", "namespacepm__arrayInit" ],

@@ -17,6 +17,5 @@ var searchData=
   ['cascadescatter_14',['CascadeScatter',['../classCascadeScatter.html',1,'']]],
   ['cascadescatter3_15',['CascadeScatter3',['../classCascadeScatter3.html',1,'']]],
   ['cor_16',['Cor',['../classCor.html',1,'']]],
-  ['corner_17',['Corner',['../classCorner.html',1,'']]],
-  ['cov_18',['Cov',['../classCov.html',1,'']]]
+  ['cov_17',['Cov',['../classCov.html',1,'']]]
 ];

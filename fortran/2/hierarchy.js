@@ -14,20 +14,6 @@ var hierarchy =
     ] ],
     [ "pm_array::allocatable_type", "structpm__array_1_1allocatable__type.html", null ],
     [ "pm_container::assignment(=)", "interfacepm__container_1_1assignment_07_0a_08.html", null ],
-    [ "Partition_mod::BaseProp_type", "structPartition__mod_1_1BaseProp__type.html", [
-      [ "Partition_mod::ParProp_type", "structPartition__mod_1_1ParProp__type.html", [
-        [ "Partition_mod::ParPropTry_type", "structPartition__mod_1_1ParPropTry__type.html", [
-          [ "Partition_mod::ParPropTryDen_type", "structPartition__mod_1_1ParPropTryDen__type.html", null ],
-          [ "Partition_mod::ParPropTryVol_type", "structPartition__mod_1_1ParPropTryVol__type.html", null ]
-        ] ]
-      ] ],
-      [ "Partition_mod::PartitionBase_type", "structPartition__mod_1_1PartitionBase__type.html", [
-        [ "Partition_mod::Partition_type", "structPartition__mod_1_1Partition__type.html", [
-          [ "Partition_mod::PartitionMaxDen_type", "structPartition__mod_1_1PartitionMaxDen__type.html", null ],
-          [ "Partition_mod::PartitionMinVol_type", "structPartition__mod_1_1PartitionMinVol__type.html", null ]
-        ] ]
-      ] ]
-    ] ],
     [ "pm_bench::bench_typer", "interfacepm__bench_1_1bench__typer.html", null ],
     [ "pm_bench::benchBase_type", "structpm__bench_1_1benchBase__type.html", [
       [ "pm_bench::bench_type", "structpm__bench_1_1bench__type.html", null ]
@@ -230,7 +216,6 @@ var hierarchy =
     [ "pm_dateTime::getDateTimeShifted", "interfacepm__dateTime_1_1getDateTimeShifted.html", null ],
     [ "pm_dateTime::getDateTimeUTC", "interfacepm__dateTime_1_1getDateTimeUTC.html", null ],
     [ "pm_mathNumSys::getDecimal", "interfacepm__mathNumSys_1_1getDecimal.html", null ],
-    [ "pm_arrayDiff::getDiff", "interfacepm__arrayDiff_1_1getDiff.html", null ],
     [ "pm_sysPath::getDirCurrent", "interfacepm__sysPath_1_1getDirCurrent.html", null ],
     [ "pm_sysPath::getDirHome", "interfacepm__sysPath_1_1getDirHome.html", null ],
     [ "pm_sysPath::getDirName", "interfacepm__sysPath_1_1getDirName.html", null ],
@@ -403,7 +388,6 @@ var hierarchy =
     [ "pm_distPareto::getParetoLogPDFNF", "interfacepm__distPareto_1_1getParetoLogPDFNF.html", null ],
     [ "pm_distPareto::getParetoLogQuan", "interfacepm__distPareto_1_1getParetoLogQuan.html", null ],
     [ "pm_distPareto::getParetoLogRand", "interfacepm__distPareto_1_1getParetoLogRand.html", null ],
-    [ "Partition_mod::getPartition_proc", "interfacePartition__mod_1_1getPartition__proc.html", null ],
     [ "pm_sysPath::getPathAbs", "interfacepm__sysPath_1_1getPathAbs.html", null ],
     [ "pm_sysPath::getPathExpandedUser", "interfacepm__sysPath_1_1getPathExpandedUser.html", null ],
     [ "pm_sysPath::getPathHostNameIndex", "interfacepm__sysPath_1_1getPathHostNameIndex.html", null ],
@@ -639,7 +623,6 @@ var hierarchy =
     [ "pm_os::isWindows", "interfacepm__os_1_1isWindows.html", null ],
     [ "pm_sysInfo::kernel_type", "structpm__sysInfo_1_1kernel__type.html", null ],
     [ "pm_sysInfo::kernelis_type", "structpm__sysInfo_1_1kernelis__type.html", null ],
-    [ "Partition_mod::KmeansTry_type", "structPartition__mod_1_1KmeansTry__type.html", null ],
     [ "pm_lapack::lapackGETRF", "interfacepm__lapack_1_1lapackGETRF.html", null ],
     [ "pm_quadRomb::lbis_type", "structpm__quadRomb_1_1lbis__type.html", null ],
     [ "pm_sysPath::ls", "interfacepm__sysPath_1_1ls.html", null ],
@@ -687,7 +670,6 @@ var hierarchy =
       [ "pm_err::stop_type", "structpm__err_1_1stop__type.html", null ],
       [ "pm_err::warn_type", "structpm__err_1_1warn__type.html", null ]
     ] ],
-    [ "Partition_mod::Method_type", "structPartition__mod_1_1Method__type.html", null ],
     [ "pm_mathRoot::method_type", "structpm__mathRoot_1_1method__type.html", [
       [ "pm_mathRoot::bracket_type", "structpm__mathRoot_1_1bracket__type.html", [
         [ "pm_mathRoot::bisection_type", "structpm__mathRoot_1_1bisection__type.html", null ],
@@ -883,7 +865,6 @@ var hierarchy =
     [ "pm_sampleCov::setCovUpdated", "interfacepm__sampleCov_1_1setCovUpdated.html", null ],
     [ "pm_mathCumPropExp::setCumPropExp", "interfacepm__mathCumPropExp_1_1setCumPropExp.html", null ],
     [ "pm_mathCumSum::setCumSum", "interfacepm__mathCumSum_1_1setCumSum.html", null ],
-    [ "pm_arrayDiff::setDiff", "interfacepm__arrayDiff_1_1setDiff.html", null ],
     [ "pm_distanceEuclid::setDisEuclid", "interfacepm__distanceEuclid_1_1setDisEuclid.html", null ],
     [ "pm_distanceKolm::setDisKolm", "interfacepm__distanceKolm_1_1setDisKolm.html", null ],
     [ "pm_distanceMahal::setDisMahalSq", "interfacepm__distanceMahal_1_1setDisMahalSq.html", null ],
@@ -1148,7 +1129,6 @@ var hierarchy =
     [ "pm_quadPack::weps_type", "structpm__quadPack_1_1weps__type.html", null ],
     [ "pm_io::wrap", "interfacepm__io_1_1wrap.html", null ],
     [ "pm_io::wrap_type", "structpm__io_1_1wrap__type.html", null ],
-    [ "Partition_mod::write_proc", "interfacePartition__mod_1_1write__proc.html", null ],
     [ "pm_quadPack::wsin_type", "structpm__quadPack_1_1wsin__type.html", null ],
     [ "pm_distUnif::xoshiro256ssg_typer", "interfacepm__distUnif_1_1xoshiro256ssg__typer.html", null ],
     [ "pm_distUnif::xoshiro256ssw_typer", "interfacepm__distUnif_1_1xoshiro256ssw__typer.html", null ],

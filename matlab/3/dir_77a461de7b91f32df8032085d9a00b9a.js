@@ -53,9 +53,6 @@ var dir_77a461de7b91f32df8032085d9a00b9a =
       [ "CascadeScatter3", "classCascadeScatter3.html", "classCascadeScatter3" ]
     ] ],
     [ "Contents.m", "_09vis_2Contents_8m.html", null ],
-    [ "Corner.m", "Corner_8m.html", [
-      [ "Corner", "classCorner.html", "classCorner" ]
-    ] ],
     [ "Plot.m", "Plot_8m.html", [
       [ "Plot", "classPlot.html", "classPlot" ]
     ] ],
@@ -203,8 +200,8 @@ var dir_77a461de7b91f32df8032085d9a00b9a =
     [ "Tiling.m", "Tiling_8m.html", [
       [ "Tiling", "classTiling.html", "classTiling" ]
     ] ],
-    [ "TilingSymm.m", "TilingSymm_8m.html", [
-      [ "Corner", "classCorner.html", "classCorner" ]
+    [ "TilingLayout.m", "TilingLayout_8m.html", [
+      [ "TilingLayout", "classTilingLayout.html", "classTilingLayout" ]
     ] ],
     [ "Triplex.m", "Triplex_8m.html", [
       [ "Triplex", "classTriplex.html", "classTriplex" ]

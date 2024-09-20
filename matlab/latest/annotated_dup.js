@@ -19,7 +19,6 @@ var annotated_dup =
     [ "CascadeScatter", "classCascadeScatter.html", "classCascadeScatter" ],
     [ "CascadeScatter3", "classCascadeScatter3.html", "classCascadeScatter3" ],
     [ "Cor", "classCor.html", "classCor" ],
-    [ "Corner", "classCorner.html", "classCorner" ],
     [ "Cov", "classCov.html", "classCov" ],
     [ "DataFrame", "classDataFrame.html", "classDataFrame" ],
     [ "DataRef", "classDataRef.html", "classDataRef" ],
@@ -89,6 +88,7 @@ var annotated_dup =
     [ "TileScatter", "classTileScatter.html", "classTileScatter" ],
     [ "TileScatter3", "classTileScatter3.html", "classTileScatter3" ],
     [ "Tiling", "classTiling.html", "classTiling" ],
+    [ "TilingLayout", "classTilingLayout.html", "classTilingLayout" ],
     [ "Timer", "classTimer.html", "classTimer" ],
     [ "Triplex", "classTriplex.html", "classTriplex" ]
 ];

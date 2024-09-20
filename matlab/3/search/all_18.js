@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zval_0',['zval',['../classEllipse3.html#a06a70d058c0f00b7127ecfdd95d6ac7e',1,'Ellipse3']]]
+  ['zval_0',['zval',['../classSubplotEllipse3.html#a37f950dcadd5609e114c515b8b99bc5f',1,'SubplotEllipse3']]]
 ];

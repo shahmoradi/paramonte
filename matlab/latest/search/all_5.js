@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['figure_0',['figure',['../classFigure.html#aab67a96e44d461b4544d3e4b5c191c34',1,'Figure']]],
-  ['figure_1',['Figure',['../classFigure.html',1,'Figure'],['../classFigure.html#a2f74484b92e6cc44b0a358c473b382f9',1,'Figure::Figure()']]],
+  ['figure_0',['Figure',['../classFigure.html#a2f74484b92e6cc44b0a358c473b382f9',1,'Figure::Figure()'],['../classFigure.html',1,'Figure']]],
+  ['figure_1',['figure',['../classFigure.html#aab67a96e44d461b4544d3e4b5c191c34',1,'Figure']]],
   ['figure_2em_2',['Figure.m',['../Figure_8m.html',1,'']]],
   ['file_3',['file',['../classFileContents.html#a381949408db3538ebef1cc6860e2aa3e',1,'FileContents']]],
   ['filecontents_4',['FileContents',['../classFileContents.html',1,'FileContents'],['../classFileContents.html#a7e22f8bc509a70a25759c6cd2980526c',1,'FileContents::FileContents()']]],

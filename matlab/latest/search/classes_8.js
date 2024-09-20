@@ -17,6 +17,7 @@ var searchData=
   ['tilescatter_14',['TileScatter',['../classTileScatter.html',1,'']]],
   ['tilescatter3_15',['TileScatter3',['../classTileScatter3.html',1,'']]],
   ['tiling_16',['Tiling',['../classTiling.html',1,'']]],
-  ['timer_17',['Timer',['../classTimer.html',1,'']]],
-  ['triplex_18',['Triplex',['../classTriplex.html',1,'']]]
+  ['tilinglayout_17',['TilingLayout',['../classTilingLayout.html',1,'']]],
+  ['timer_18',['Timer',['../classTimer.html',1,'']]],
+  ['triplex_19',['Triplex',['../classTriplex.html',1,'']]]
 ];

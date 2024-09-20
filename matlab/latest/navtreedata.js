@@ -44,6 +44,7 @@ var NAVTREE =
     [ "ParaMonte MATLAB Documentation Troubleshooting", "index.html#ParaMonteLangDocumentationTroubleshooting", null ],
     [ "Authors", "authors.html", null ],
     [ "Developer Remarks", "DEVNOTE.html", null ],
+    [ "Todo List", "todo.html", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -90,11 +91,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "../../c/2/index.html",
-"_09matlab_2_09hashmap_2Contents_8m_source.html",
-"classFileContentsRestart.html#a08921888a8aafb43b35dba919568e672",
-"classTileHeatmap.html#a6de19d8c2258ce4bb40349b6e445efab",
-"hyperlink_8m_source.html",
-"usergroup3.html"
+"_09matlab_2_09struct_2Contents_8m_source.html",
+"classFileContentsRestartDRAM.html#ac10719b172705a10babb5818d0fb9513",
+"classTileScatter.html",
+"index.html#ParaMonteDocumentation",
+"verbose_8m_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

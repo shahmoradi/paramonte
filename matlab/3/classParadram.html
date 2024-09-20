@@ -258,14 +258,15 @@ Example Usage: Serial</h2>
 <p >Here is a MATLAB script <code>main.m</code> for a serial ParaDRAM simulation.<br  />
  Copy and paste the following code into your MATLAB session:<br  />
 </p>
-<div class="fragment"><div class="line">sampler = pm.sampling.Paradram();</div>
+<div class="fragment"><div class="line">ndim = 4;</div>
+<div class="line">sampler = pm.sampling.Paradram();</div>
 <div class="line">sampler.run ( @(x) - sum(x.^2)  ... <a class="code hl_function" href="getLogFunc_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b">getLogFunc</a>: the natural log of the objective function.</div>
-<div class="line">            , 4                 ... ndim:       the number of dimensions of the objective function.</div>
+<div class="line">            , ndim              ... ndim: the number of dimensions of the objective function.</div>
 <div class="line">            );</div>
 <div class="line">samples = sampler.readSample();</div>
 <div class="line">sample = samples{1};</div>
 <div class="line">tile = pm.vis.TileLine(sample.df);</div>
-<div class="line">tile.make(<span class="stringliteral">&quot;coly&quot;</span>, sample.sampleLogFuncColIndex + 1 : sample.sampleLogFuncColIndex + 4, <span class="stringliteral">&quot;colc&quot;</span>, <span class="stringliteral">&quot;sampleLogFunc&quot;</span>);</div>
+<div class="line">tile.make(<span class="stringliteral">&quot;coly&quot;</span>, sample.slfc + 1 : sample.slfc + ndim, <span class="stringliteral">&quot;colc&quot;</span>, <span class="stringliteral">&quot;sampleLogFunc&quot;</span>);</div>
 <div class="ttc" id="agetLogFunc_8m_html_a77e1a6b154cc75d50b224f2e00cc6b8b"><div class="ttname"><a href="getLogFunc_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b">getLogFunc</a></div><div class="ttdeci">function getLogFunc(in point)</div></div>
 </div><!-- fragment --><p >The mathematical objective function in the above example is a is a multivariate Normal distribution centered at the origin, whose natural logarithm is returned by the lambda (<code>Anonymous</code>) function defined as a function handle input to the ParaDRAM sampler.<br  />
 </p>
@@ -390,12 +391,12 @@ This will generate a <code>main_mpi.m</code> MATLAB script file in the current w
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>p.make(<span class="stringliteral">&quot;axes&quot;</span>, {<span class="stringliteral">&quot;yscale&quot;</span>, <span class="stringliteral">&quot;log&quot;</span>});</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>p.savefig(<span class="stringliteral">&quot;Paradram.himmelblau.proposalAdaptation.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>p = pm.vis.PlotLineScatter(chain.df, <span class="stringliteral">&quot;colx&quot;</span>, chain.sampleLogFuncColIndex + 1, <span class="stringliteral">&quot;coly&quot;</span>, chain.sampleLogFuncColIndex + 2);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>p = pm.vis.PlotLineScatter(chain.df, <span class="stringliteral">&quot;colx&quot;</span>, chain.slfc + 1, <span class="stringliteral">&quot;coly&quot;</span>, chain.slfc + 2);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>p.make(<span class="stringliteral">&quot;colc&quot;</span>, <span class="stringliteral">&quot;sampleLogFunc&quot;</span>);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>p.savefig(<span class="stringliteral">&quot;Paradram.himmelblau.domain.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>p = pm.vis.TileLine(chain.df, <span class="stringliteral">&quot;tileshape&quot;</span>, [2, 1]);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>p.make(<span class="stringliteral">&quot;coly&quot;</span>, chain.sampleLogFuncColIndex + [1 : 2], <span class="stringliteral">&quot;colc&quot;</span>, <span class="stringliteral">&quot;sampleLogFunc&quot;</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>p.make(<span class="stringliteral">&quot;coly&quot;</span>, chain.slfc + [1 : 2], <span class="stringliteral">&quot;colc&quot;</span>, <span class="stringliteral">&quot;sampleLogFunc&quot;</span>);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>p.savefig(<span class="stringliteral">&quot;Paradram.himmelblau.traceplot.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>restart = sampler.readRestart();</div>
@@ -594,7 +595,7 @@ This will generate a <code>main_mpi.m</code> MATLAB script file in the current w
 </dd></dl>
 <p><br  />
 <a class="anchor" id="final-Paradram"></a><b>Final Remarks</b> <a href="#final-Paradram">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L252 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L253 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -697,12 +698,12 @@ This method is to be only used for post-processing of the output chain file(s) o
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>p.make(&quot;axes&quot;, {<span class="stringliteral">&quot;yscale&quot;</span>, <span class="stringliteral">&quot;log&quot;</span>});</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>p.savefig(<span class="stringliteral">&quot;readChainMarkov.proposalAdaptation.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>p = pm.vis.PlotLineScatter(chain.df, <span class="stringliteral">&quot;colx&quot;</span>, chain.sampleLogFuncColIndex + 1, <span class="stringliteral">&quot;coly&quot;</span>, chain.sampleLogFuncColIndex + 2);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>p = pm.vis.PlotLineScatter(chain.df, <span class="stringliteral">&quot;colx&quot;</span>, chain.slfc + 1, <span class="stringliteral">&quot;coly&quot;</span>, chain.slfc + 2);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>p.make(<span class="stringliteral">&quot;colc&quot;</span>, <span class="stringliteral">&quot;sampleLogFunc&quot;</span>);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>p.savefig(<span class="stringliteral">&quot;readChainMarkov.domain.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>p = pm.vis.TileLine(chain.df, <span class="stringliteral">&quot;tileshape&quot;</span>, [2, 1]);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>p.make(<span class="stringliteral">&quot;coly&quot;</span>, chain.sampleLogFuncColIndex + [1 : 2], <span class="stringliteral">&quot;colc&quot;</span>, <span class="stringliteral">&quot;sampleLogFunc&quot;</span>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>p.make(<span class="stringliteral">&quot;coly&quot;</span>, chain.slfc + [1 : 2], <span class="stringliteral">&quot;colc&quot;</span>, <span class="stringliteral">&quot;sampleLogFunc&quot;</span>);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>p.savefig(<span class="stringliteral">&quot;readChainMarkov.traceplot.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
 <div class="ttc" id="aclassPlotScatter_html"><div class="ttname"><a href="classPlotScatter.html">PlotScatter</a></div><div class="ttdoc">This is the PlotScatter class for generating instances of 2-dimensional Scatter Plot visualizations b...</div><div class="ttdef"><b>Definition:</b> <a href="PlotScatter_8m_source.html#l00029">PlotScatter.m:30</a></div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>    ParaDRAM - NOTE: Setting up the MATLAB programming language environment <span class="keywordflow">for</span> a ParaDRAM simulation...</div>
@@ -839,7 +840,7 @@ This method is to be only used for post-processing of the output chain file(s) o
 </dd></dl>
 <p><br  />
 <a class="anchor" id="final-readChainMarkov"></a><b>Final Remarks</b> <a href="#final-readChainMarkov">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L323 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L324 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -921,7 +922,7 @@ the output argument <code>logFunc</code> is a scalar of the same type as the inp
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-run"></a><b>Final Remarks</b> <a href="#final-run">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L376 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L377 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -949,7 +950,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classParadram.html">Paradram</a></li>
-        <li class="footer">Generated on Sat Aug 31 2024 23:59:17 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Fri Sep 20 2024 05:26:20 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

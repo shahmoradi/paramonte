@@ -26,7 +26,7 @@ var searchData=
   ['logspaceint_2em_23',['logspaceint.m',['../logspaceint_8m.html',1,'']]],
   ['logsubexp_24',['logsubexp',['../logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0',1,'logsubexp.m']]],
   ['logsubexp_2em_25',['logsubexp.m',['../logsubexp_8m.html',1,'']]],
-  ['lower_26',['lower',['../classCorner.html#a88d148e74ce285846c6272edd432d46e',1,'Corner']]],
+  ['lower_26',['lower',['../classTriplex.html#a3631fcae43508cf785dc3d355df8850b',1,'Triplex']]],
   ['ls_5fregexp_27',['ls_regexp',['../glob_8m.html#a8e49c9970024381269a21db17e985871',1,'glob.m']]],
   ['ls_5fregexp_5ftree_28',['ls_regexp_tree',['../glob_8m.html#ad2bae39cc635583ae1988041ee4af9fd',1,'glob.m']]]
 ];

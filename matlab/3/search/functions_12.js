@@ -20,8 +20,9 @@ var searchData=
   ['tilescatter_17',['TileScatter',['../classTileScatter.html#a6abbed6fc6984d6f0ab9a6e3b5bc40fa',1,'TileScatter']]],
   ['tilescatter3_18',['TileScatter3',['../classTileScatter3.html#a52884de7dd843c07e9f8f215234c382d',1,'TileScatter3']]],
   ['tiling_19',['Tiling',['../classTiling.html#aeac1d2a387b45e2a32b00c7393ec44df',1,'Tiling']]],
-  ['timer_20',['Timer',['../classTimer.html#ac94b3d24dca0f844f24deece2ebff24c',1,'Timer']]],
-  ['toc_21',['toc',['../classTimer.html#aa39d99c37317a6bb405a108817b50fbd',1,'Timer']]],
-  ['touch_22',['touch',['../touch_8m.html#a478e3168a07b178b461fc45b566085db',1,'touch.m']]],
-  ['triplex_23',['Triplex',['../classTriplex.html#a7b491c20734cbe3053a6286daf1c5056',1,'Triplex']]]
+  ['tilinglayout_20',['TilingLayout',['../classTilingLayout.html#affe21a0ed115bceefff10192d701dfcf',1,'TilingLayout']]],
+  ['timer_21',['Timer',['../classTimer.html#ac94b3d24dca0f844f24deece2ebff24c',1,'Timer']]],
+  ['toc_22',['toc',['../classTimer.html#aa39d99c37317a6bb405a108817b50fbd',1,'Timer']]],
+  ['touch_23',['touch',['../touch_8m.html#a478e3168a07b178b461fc45b566085db',1,'touch.m']]],
+  ['triplex_24',['Triplex',['../classTriplex.html#a658ad0c42dfb719e8aa0b63afd912ed6',1,'Triplex']]]
 ];

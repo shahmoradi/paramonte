@@ -17,7 +17,7 @@ var searchData=
   ['timezone_14',['timeZone',['../namespacepm__dateTime.html#ad0d97d011d4c95ca60abbc7c02ea627d',1,'pm_dateTime']]],
   ['timing_15',['timing',['../structpm__bench_1_1benchBase__type.html#a351f4aece7494d4dae988e873d6d3b4b',1,'pm_bench::benchBase_type']]],
   ['tiny_16',['tiny',['../structpm__kind_1_1modelr__type.html#a1bf461c26a42064513e6683ca956e4cc',1,'pm_kind::modelr_type']]],
-  ['tmsize_17',['tmsize',['../structpm__io_1_1display__type.html#a3e66a4ca7f6c5cf39d1d86467376a562',1,'pm_io::display_type::tmsize()'],['../structpm__io_1_1wrap__type.html#a0903e08033d7632b8aa286bb678b2b73',1,'pm_io::wrap_type::tmsize()'],['../structpm__err_1_1message__type.html#a887d736308907d9f15c91bd0310979ad',1,'pm_err::message_type::tmsize()']]],
+  ['tmsize_17',['tmsize',['../structpm__err_1_1message__type.html#a887d736308907d9f15c91bd0310979ad',1,'pm_err::message_type::tmsize()'],['../structpm__io_1_1display__type.html#a3e66a4ca7f6c5cf39d1d86467376a562',1,'pm_io::display_type::tmsize()'],['../structpm__io_1_1wrap__type.html#a0903e08033d7632b8aa286bb678b2b73',1,'pm_io::wrap_type::tmsize()']]],
   ['tolerance_18',['tolerance',['../structpm__sampling_1_1paranest__type.html#aa62a7e481fca818f5bd678023c12aa1a',1,'pm_sampling::paranest_type']]],
   ['toms748_19',['toms748',['../namespacepm__mathRoot.html#a471263361906d447d3ec06b1bf3eef0b',1,'pm_mathRoot']]],
   ['traceable_20',['traceable',['../structpm__test_1_1test__type.html#a55a01c41033cc25cbba76b6615df504a',1,'pm_test::test_type']]],
@@ -29,8 +29,7 @@ var searchData=
   ['transsymmskew_26',['transSymmSkew',['../namespacepm__matrixTrans.html#a34d5e15b78653510d21fcb825d45f24d',1,'pm_matrixTrans']]],
   ['transunit_27',['transUnit',['../namespacepm__matrixTrans.html#ab2d345ff10ab287b3771f9386962937d',1,'pm_matrixTrans']]],
   ['triang_28',['triang',['../namespacepm__matrixClass.html#a9d45cbb7d27735e30230fd2d4c72894c',1,'pm_matrixClass']]],
-  ['try_29',['Try',['../structPartition__mod_1_1PartitionMaxDen__type.html#abac1dfd7ad9a0f0fa3a9b356255b8e0d',1,'Partition_mod::PartitionMaxDen_type::Try()'],['../structPartition__mod_1_1PartitionMinVol__type.html#a2fe66e9af6f0ba78f81c48c2abef22d6',1,'Partition_mod::PartitionMinVol_type::Try()']]],
-  ['twfill_30',['twfill',['../structpm__io_1_1wrap__type.html#afa89d1141ec16dc3991dc21fea03a553',1,'pm_io::wrap_type']]],
-  ['two_5fpi_31',['TWO_PI',['../namespacepm__mathConst.html#a4f7f541c1bb14d1e53266b201a7f5373',1,'pm_mathConst']]],
-  ['twsize_32',['twsize',['../structpm__io_1_1wrap__type.html#a70638e6033d0e08e58711dc4f275b41c',1,'pm_io::wrap_type']]]
+  ['twfill_29',['twfill',['../structpm__io_1_1wrap__type.html#afa89d1141ec16dc3991dc21fea03a553',1,'pm_io::wrap_type']]],
+  ['two_5fpi_30',['TWO_PI',['../namespacepm__mathConst.html#a4f7f541c1bb14d1e53266b201a7f5373',1,'pm_mathConst']]],
+  ['twsize_31',['twsize',['../structpm__io_1_1wrap__type.html#a70638e6033d0e08e58711dc4f275b41c',1,'pm_io::wrap_type']]]
 ];

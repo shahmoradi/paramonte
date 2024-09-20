@@ -1,20 +1,16 @@
 var classTriplex =
 [
-    [ "Triplex", "classTriplex.html#a7b491c20734cbe3053a6286daf1c5056", null ],
-    [ "adjustAxesTicks", "classTriplex.html#a73ee0c361090503ac53b8d8a9f454db3", null ],
-    [ "getAxesPositionColorbar", "classTriplex.html#ae569b4c0f9b622d55ce43dad63bc144c", null ],
-    [ "getAxesPositionMain", "classTriplex.html#ac230a45ebc7be76efd8ba32ec83a96f5", null ],
-    [ "getAxesPositionSubplot", "classTriplex.html#abe471c45f3914e219f16dae1d127e376", null ],
-    [ "hide", "classTriplex.html#a96b64bd0ff6d2478747a5a81756a37cf", null ],
-    [ "hideShow", "classTriplex.html#a53e1554f5f1c9393fb3b54c0bec01db2", null ],
+    [ "Triplex", "classTriplex.html#a658ad0c42dfb719e8aa0b63afd912ed6", null ],
     [ "hideShowAxesLabels", "classTriplex.html#a84294e8c274adc2eb7f117aff442c1fa", null ],
     [ "make", "classTriplex.html#aa531263999fa79a545c16b45dc46eb54", null ],
     [ "premake", "classTriplex.html#a1a4039242a744f05f313cbcf948d2db9", null ],
     [ "reset", "classTriplex.html#a5d0461e10e9af7da5f6db4fe6262cf4d", null ],
     [ "rotateAxesLabels", "classTriplex.html#aac217571f0804d4cb9fb9550648b8a01", null ],
-    [ "setLayout", "classTriplex.html#a3022336d32b222b7a1d782a3fc4ec7e0", null ],
-    [ "show", "classTriplex.html#a49b1c6eb0ca114496bfc91a6cb3ba7c5", null ],
-    [ "colorbared", "classTriplex.html#ad1012cfe9fcc7b4f1f57eefbaf70df2a", null ],
+    [ "setDiagoTicksY", "classTriplex.html#a0654f52c3afbcfc673b22f44e38bf0de", null ],
+    [ "diago", "classTriplex.html#a3d704e2b8a6549c1b86a19921375315b", null ],
+    [ "diagYTick", "classTriplex.html#afde082eb4950fbd80c6f2c9ba556e10f", null ],
     [ "layout", "classTriplex.html#a4f6a6cea1618716c4419cef7d039b21f", null ],
-    [ "subplot", "classTriplex.html#a2d8893b56a79bad4322a9ef64a7e046d", null ]
+    [ "lower", "classTriplex.html#a3631fcae43508cf785dc3d355df8850b", null ],
+    [ "tile", "classTriplex.html#af815cbb6bd261e4f2aac451e5f5c2392", null ],
+    [ "upper", "classTriplex.html#afac7df321b1342c17289e57813ab28a1", null ]
 ];

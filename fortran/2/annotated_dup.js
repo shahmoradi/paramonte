@@ -1,20 +1,5 @@
 var annotated_dup =
 [
-    [ "Partition_mod", "namespacePartition__mod.html", [
-      [ "BaseProp_type", "structPartition__mod_1_1BaseProp__type.html", "structPartition__mod_1_1BaseProp__type" ],
-      [ "getPartition_proc", "interfacePartition__mod_1_1getPartition__proc.html", "interfacePartition__mod_1_1getPartition__proc" ],
-      [ "KmeansTry_type", "structPartition__mod_1_1KmeansTry__type.html", "structPartition__mod_1_1KmeansTry__type" ],
-      [ "Method_type", "structPartition__mod_1_1Method__type.html", "structPartition__mod_1_1Method__type" ],
-      [ "ParProp_type", "structPartition__mod_1_1ParProp__type.html", "structPartition__mod_1_1ParProp__type" ],
-      [ "ParPropTry_type", "structPartition__mod_1_1ParPropTry__type.html", "structPartition__mod_1_1ParPropTry__type" ],
-      [ "ParPropTryDen_type", "structPartition__mod_1_1ParPropTryDen__type.html", "structPartition__mod_1_1ParPropTryDen__type" ],
-      [ "ParPropTryVol_type", "structPartition__mod_1_1ParPropTryVol__type.html", "structPartition__mod_1_1ParPropTryVol__type" ],
-      [ "Partition_type", "structPartition__mod_1_1Partition__type.html", "structPartition__mod_1_1Partition__type" ],
-      [ "PartitionBase_type", "structPartition__mod_1_1PartitionBase__type.html", "structPartition__mod_1_1PartitionBase__type" ],
-      [ "PartitionMaxDen_type", "structPartition__mod_1_1PartitionMaxDen__type.html", "structPartition__mod_1_1PartitionMaxDen__type" ],
-      [ "PartitionMinVol_type", "structPartition__mod_1_1PartitionMinVol__type.html", "structPartition__mod_1_1PartitionMinVol__type" ],
-      [ "write_proc", "interfacePartition__mod_1_1write__proc.html", "interfacePartition__mod_1_1write__proc" ]
-    ] ],
     [ "pm_array", "namespacepm__array.html", [
       [ "action_type", "structpm__array_1_1action__type.html", null ],
       [ "adjacent_type", "structpm__array_1_1adjacent__type.html", null ],
@@ -66,10 +51,6 @@ var annotated_dup =
     [ "pm_arrayCopy", "namespacepm__arrayCopy.html", [
       [ "setCopyIndexed", "interfacepm__arrayCopy_1_1setCopyIndexed.html", null ],
       [ "setCopyStrided", "interfacepm__arrayCopy_1_1setCopyStrided.html", null ]
-    ] ],
-    [ "pm_arrayDiff", "namespacepm__arrayDiff.html", [
-      [ "getDiff", "interfacepm__arrayDiff_1_1getDiff.html", null ],
-      [ "setDiff", "interfacepm__arrayDiff_1_1setDiff.html", null ]
     ] ],
     [ "pm_arrayFill", "namespacepm__arrayFill.html", [
       [ "getFilled", "interfacepm__arrayFill_1_1getFilled.html", null ]

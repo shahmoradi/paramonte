@@ -27,7 +27,7 @@ var searchData=
   ['tilescatter_2em_24',['TileScatter.m',['../TileScatter_8m.html',1,'']]],
   ['tilescatter3_2em_25',['TileScatter3.m',['../TileScatter3_8m.html',1,'']]],
   ['tiling_2em_26',['Tiling.m',['../Tiling_8m.html',1,'']]],
-  ['tilingsymm_2em_27',['TilingSymm.m',['../TilingSymm_8m.html',1,'']]],
+  ['tilinglayout_2em_27',['TilingLayout.m',['../TilingLayout_8m.html',1,'']]],
   ['timer_2em_28',['Timer.m',['../Timer_8m.html',1,'']]],
   ['touch_2em_29',['touch.m',['../touch_8m.html',1,'']]],
   ['triplex_2em_30',['Triplex.m',['../Triplex_8m.html',1,'']]]

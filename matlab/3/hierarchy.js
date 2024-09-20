@@ -58,6 +58,7 @@ var hierarchy =
       [ "Sampler", "classSampler.html", null ],
       [ "SpecBase", "classSpecBase.html", null ],
       [ "Spinner", "classSpinner.html", null ],
+      [ "TilingLayout", "classTilingLayout.html", null ],
       [ "Timer", "classTimer.html", null ]
     ] ],
     [ "pm::vis::Plot", null, [
@@ -125,8 +126,6 @@ var hierarchy =
       [ "TileScatter3", "classTileScatter3.html", null ]
     ] ],
     [ "pm::vis::Tiling", null, [
-      [ "Corner", "classCorner.html", null ],
-      [ "Corner", "classCorner.html", null ],
       [ "Tile", "classTile.html", null ]
     ] ],
     [ "Transferable", null, [
