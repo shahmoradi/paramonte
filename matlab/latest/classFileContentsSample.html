@@ -178,12 +178,14 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a066325d68be358f1a58ab66cc7c2dd4e"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileContentsSample.html#a066325d68be358f1a58ab66cc7c2dd4e">stats</a></td></tr>
-<tr class="separator:a066325d68be358f1a58ab66cc7c2dd4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34b7233f0b92a23f3652937a716d7818"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileContentsSample.html#a34b7233f0b92a23f3652937a716d7818">ndim</a></td></tr>
 <tr class="separator:a34b7233f0b92a23f3652937a716d7818"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52ede51c44ab5ef2c691ff7f93caac68"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileContentsSample.html#a52ede51c44ab5ef2c691ff7f93caac68">slfc</a></td></tr>
 <tr class="separator:a52ede51c44ab5ef2c691ff7f93caac68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a066325d68be358f1a58ab66cc7c2dd4e"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileContentsSample.html#a066325d68be358f1a58ab66cc7c2dd4e">stats</a></td></tr>
+<tr class="separator:a066325d68be358f1a58ab66cc7c2dd4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6326f9eca4fe90fac298159a376a42ca"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileContentsSample.html#a6326f9eca4fe90fac298159a376a42ca">vis</a></td></tr>
+<tr class="separator:a6326f9eca4fe90fac298159a376a42ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac08e03e7988ff6d307bf184f62d7abbb"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileContentsSample.html#ac08e03e7988ff6d307bf184f62d7abbb">slfcname</a></td></tr>
 <tr class="separator:ac08e03e7988ff6d307bf184f62d7abbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -216,7 +218,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000144">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 3:32 AM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000143">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 3:32 AM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -281,8 +283,354 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line">contents = pm.sampling.FileContentsSample(file, silent, sep)</div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
+<a class="anchor" id="example-FileContentsSample"></a><b>Example usage</b> <a href="#example-FileContentsSample">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>close all</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>clear all</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>addpath(<span class="stringliteral">&#39;../../../&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory to the search path.</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>url = <span class="stringliteral">&quot;https://raw.githubusercontent.com/cdslaborg/paramontex/fbeca6745684c798ff28c1bf57cfae0c190db478/MATLAB/mlx/&quot;</span>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>file = <span class="stringliteral">&quot;regression_powerlaw_data_paradram/out/regression_powerlaw_process_1_sample.txt&quot;</span>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>sampler = pm.sampling.Paradram();</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>sample = sampler.readSample(url + file);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>sample = sample{1};</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keywordflow">for</span> vistype = string(fields(sample.vis))<span class="stringliteral">&#39;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="stringliteral">    disp(&quot;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&quot;)</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral">    for plottype = string(fields(sample.vis.(vistype)))&#39;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        sample.vis.(vistype).(plottype).make(<span class="stringliteral">&quot;figure&quot;</span>, {<span class="stringliteral">&quot;visible&quot;</span>, <span class="stringliteral">&quot;off&quot;</span>});</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        figname = join([<span class="stringliteral">&quot;FileContentsSample&quot;</span>, vistype, plottype], <span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">if</span>  strcmpi(vistype, <span class="stringliteral">&quot;cascade&quot;</span>)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            figname = [figname + &quot;.&quot; + <span class="keywordtype">string</span>(1 : numel(sample.<a class="code hl_variable" href="classFileContentsSample.html#a6326f9eca4fe90fac298159a376a42ca">vis</a>.(vistype).(plottype).window))];</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        end</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        disp(&quot;figname&quot;)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        disp( figname )</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        sample.<a class="code hl_variable" href="classFileContentsSample.html#a6326f9eca4fe90fac298159a376a42ca">vis</a>.(vistype).(plottype).<a class="code hl_function" href="savefig_8m.html#ab0f7c7e07bc0a440eee76153cda628f8">savefig</a>( figname + &quot;.png&quot;, &quot;-m3&quot;);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    end</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    disp(&quot;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&quot;)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>end</div>
+<div class="ttc" id="aclassFileContentsSample_html_a6326f9eca4fe90fac298159a376a42ca"><div class="ttname"><a href="classFileContentsSample.html#a6326f9eca4fe90fac298159a376a42ca">FileContentsSample::vis</a></div><div class="ttdeci">Property vis</div><div class="ttdef"><b>Definition:</b> <a href="FileContentsSample_8m_source.html#l00064">FileContentsSample.m:64</a></div></div>
+<div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
+<div class="ttc" id="asavefig_8m_html_ab0f7c7e07bc0a440eee76153cda628f8"><div class="ttname"><a href="savefig_8m.html#ab0f7c7e07bc0a440eee76153cda628f8">savefig</a></div><div class="ttdeci">function savefig(in varargin)</div><div class="ttdoc">Export figures in a publication-quality format.</div></div>
+</div><!-- fragment --> <br  />
+<a class="anchor" id="vis-FileContentsSample"></a><b>Visualization of the example output</b> <a href="#vis-FileContentsSample">⛓</a> <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.contour.1.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.contour.2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.contour.3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.contour3.1.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.contour3.2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.contour3.3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.contourf.1.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.contourf.2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.contourf.3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.histfit.1.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.histfit.2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.histfit.3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.histogram.1.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.histogram.2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.histogram.3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.histogram2.1.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.histogram2.2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.histogram2.3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.line.1.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.line.2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.line.3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.line3.1.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.line3.2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.line3.3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.lineScatter.1.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.lineScatter.2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.lineScatter.3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.lineScatter3.1.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.lineScatter3.2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.lineScatter3.3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.scatter.1.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.scatter.2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.scatter.3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.scatter3.1.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.scatter3.2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.cascade.scatter3.3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.plot.contour.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.plot.contour3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.plot.contourf.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.plot.histfit.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.plot.histogram.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.plot.histogram2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.plot.line.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.plot.line3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.plot.lineScatter.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.plot.lineScatter3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.plot.scatter.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.plot.scatter3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.tile.contour.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.tile.contour3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.tile.contourf.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.tile.histfit.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.tile.histogram.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.tile.histogram2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.tile.line.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.tile.line3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.tile.lineScatter.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.tile.lineScatter3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.tile.scatter.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.tile.scatter3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.triplex.lshc2.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.triplex.lshc3.png" alt="" width="700"/>
+</div>
+ <br  />
+<br  />
+ <div class="image">
+<img src="FileContentsSample.triplex.lshcf.png" alt="" width="700"/>
+</div>
+</dd></dl>
+<p><br  />
 <a class="anchor" id="final-FileContentsSample"></a><b>Final Remarks</b> <a href="#final-FileContentsSample">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/FileContentsSample.m#L100 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/FileContentsSample.m#L236 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -297,7 +645,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000145">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 3:36 AM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000144">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 3:36 AM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -320,7 +668,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  This integer is also the number of columns in the file that correspond that contain the sampled states from the domain of the mathematical objective function.<br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="FileContentsSample_8m_source.html#l00042">42</a> of file <a class="el" href="FileContentsSample_8m_source.html">FileContentsSample.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FileContentsSample_8m_source.html#l00036">36</a> of file <a class="el" href="FileContentsSample_8m_source.html">FileContentsSample.m</a>.</p>
 
 </div>
 </div>
@@ -338,12 +686,12 @@ Help us justify its continued development and maintenance by acknowledging its b
 <p ><code>slfc</code> : The scalar MATLAB integer representing the column index of the dataframe component <code>df</code> that contains the natural logarithm of the objective function values corresponding to the sampled states next to this column, such that the following relationship holds.<br  />
  </p><div class="fragment"><div class="line"><a class="code hl_class" href="classFileContentsSample.html">FileContentsSample</a>.<a class="code hl_variable" href="classFileContentsSample.html#a34b7233f0b92a23f3652937a716d7818">ndim</a> = <a class="code hl_class" href="classFileContentsSample.html">FileContentsSample</a>.ncol - <a class="code hl_class" href="classFileContentsSample.html">FileContentsSample</a>.<a class="code hl_variable" href="classFileContentsSample.html#a52ede51c44ab5ef2c691ff7f93caac68">slfc</a>;</div>
 <div class="ttc" id="aclassFileContentsSample_html"><div class="ttname"><a href="classFileContentsSample.html">FileContentsSample</a></div><div class="ttdoc">This is the base class for generating objects that contain the contents of a sample/chain file genera...</div><div class="ttdef"><b>Definition:</b> <a href="FileContentsSample_8m_source.html#l00023">FileContentsSample.m:24</a></div></div>
-<div class="ttc" id="aclassFileContentsSample_html_a34b7233f0b92a23f3652937a716d7818"><div class="ttname"><a href="classFileContentsSample.html#a34b7233f0b92a23f3652937a716d7818">FileContentsSample::ndim</a></div><div class="ttdeci">Property ndim</div><div class="ttdef"><b>Definition:</b> <a href="FileContentsSample_8m_source.html#l00042">FileContentsSample.m:42</a></div></div>
-<div class="ttc" id="aclassFileContentsSample_html_a52ede51c44ab5ef2c691ff7f93caac68"><div class="ttname"><a href="classFileContentsSample.html#a52ede51c44ab5ef2c691ff7f93caac68">FileContentsSample::slfc</a></div><div class="ttdeci">Property slfc</div><div class="ttdef"><b>Definition:</b> <a href="FileContentsSample_8m_source.html#l00058">FileContentsSample.m:58</a></div></div>
+<div class="ttc" id="aclassFileContentsSample_html_a34b7233f0b92a23f3652937a716d7818"><div class="ttname"><a href="classFileContentsSample.html#a34b7233f0b92a23f3652937a716d7818">FileContentsSample::ndim</a></div><div class="ttdeci">Property ndim</div><div class="ttdef"><b>Definition:</b> <a href="FileContentsSample_8m_source.html#l00036">FileContentsSample.m:36</a></div></div>
+<div class="ttc" id="aclassFileContentsSample_html_a52ede51c44ab5ef2c691ff7f93caac68"><div class="ttname"><a href="classFileContentsSample.html#a52ede51c44ab5ef2c691ff7f93caac68">FileContentsSample::slfc</a></div><div class="ttdeci">Property slfc</div><div class="ttdef"><b>Definition:</b> <a href="FileContentsSample_8m_source.html#l00052">FileContentsSample.m:52</a></div></div>
 </div><!-- fragment --><p> While this column index can be readily inferred by exploring the contents of the dataframe component, this column index is also computed and explicitly offered to conveniently slice the values of the sampled states and their corresponding log-function values.<br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="FileContentsSample_8m_source.html#l00058">58</a> of file <a class="el" href="FileContentsSample_8m_source.html">FileContentsSample.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FileContentsSample_8m_source.html#l00052">52</a> of file <a class="el" href="FileContentsSample_8m_source.html">FileContentsSample.m</a>.</p>
 
 </div>
 </div>
@@ -361,7 +709,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <p ><code>slfcname</code> : The scalar MATLAB string representing the column name of the dataframe component <code>df</code> that contains the natural logarithm of the objective function values corresponding to the sampled states next to this column.<br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="FileContentsSample_8m_source.html#l00069">69</a> of file <a class="el" href="FileContentsSample_8m_source.html">FileContentsSample.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FileContentsSample_8m_source.html#l00075">75</a> of file <a class="el" href="FileContentsSample_8m_source.html">FileContentsSample.m</a>.</p>
 
 </div>
 </div>
@@ -379,7 +727,25 @@ Help us justify its continued development and maintenance by acknowledging its b
 <p ><code>stats</code> : The scalar MATLAB object containing the set of computed properties of the contents of the file.<br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="FileContentsSample_8m_source.html#l00033">33</a> of file <a class="el" href="FileContentsSample_8m_source.html">FileContentsSample.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FileContentsSample_8m_source.html#l00058">58</a> of file <a class="el" href="FileContentsSample_8m_source.html">FileContentsSample.m</a>.</p>
+
+</div>
+</div>
+<a id="a6326f9eca4fe90fac298159a376a42ca" name="a6326f9eca4fe90fac298159a376a42ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6326f9eca4fe90fac298159a376a42ca">&#9670;&nbsp;</a></span>vis</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Property FileContentsSample::vis</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p ><code>vis</code> : The scalar MATLAB <code>struct</code> containing the set of predefined visualizations for the output data.<br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="FileContentsSample_8m_source.html#l00064">64</a> of file <a class="el" href="FileContentsSample_8m_source.html">FileContentsSample.m</a>.</p>
 
 </div>
 </div>
@@ -392,7 +758,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classFileContentsSample.html">FileContentsSample</a></li>
-        <li class="footer">Generated on Fri Sep 20 2024 05:45:38 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Mon Sep 23 2024 08:12:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

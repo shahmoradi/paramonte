@@ -32,7 +32,7 @@ var searchData=
   ['comp2hash_29',['comp2hash',['../classFigure.html#acbf19ae54f93694de2ad00d332a17c3e',1,'Figure::comp2hash()'],['../classAxes.html#aa948643bde5d3772f331580ae4ddd0c2',1,'Axes::comp2hash()']]],
   ['compiler_30',['compiler',['../compiler_8m.html#a97012960b56e67629c96f09b91cd7ec8',1,'compiler.m']]],
   ['concat_31',['concat',['../classFileContentsReport.html#a760221e5ef98ee0e5e0334468713a045',1,'FileContentsReport']]],
-  ['copy_32',['copy',['../copy_8m.html#a3718abda67edd88f029c9887fa20489a',1,'copy():&#160;copy.m'],['../classDataRef.html#a39a07e96c92272882327e0311ab0baad',1,'DataRef::copy()'],['../classDataFrame.html#a0d792a8347ad678520c0fc28397b21fc',1,'DataFrame::copy()']]],
+  ['copy_32',['copy',['../copy_8m.html#ab633577f583e18a523fef5b3b2295eee',1,'copy():&#160;copy.m'],['../classDataRef.html#a39a07e96c92272882327e0311ab0baad',1,'DataRef::copy()'],['../classDataFrame.html#a0d792a8347ad678520c0fc28397b21fc',1,'DataFrame::copy()']]],
   ['copyfig_33',['copyfig',['../copyfig_8m.html#afc97c9d7f5431eb28ca277c67fb49cf5',1,'copyfig.m']]],
   ['cor_34',['Cor',['../classCor.html#a54b29b51507a1155cbaf8e98641438d0',1,'Cor']]],
   ['cov_35',['Cov',['../classCov.html#ad735f0d90e7b56379eedc79f6e248c0d',1,'Cov']]],

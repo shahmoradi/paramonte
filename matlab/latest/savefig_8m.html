@@ -172,10 +172,10 @@ Functions</h2></td></tr>
 
 <p>Export figures in a publication-quality format.<br  />
  </p>
-<p >This function saves a figure or single axes to one or more vector and/or bitmap file formats, and/or outputs a rasterized version to the workspace, with the following properties:<br  />
+<p >This function saves a figure or single axes to one or more vectors and/or bitmap file formats and/or outputs a rasterized version to the workspace, with the following properties:<br  />
  </p><ol>
 <li>
-Figure/axes reproduced as it appears on screen. </li>
+Figure/axes reproduced as it appears on the screen. </li>
 <li>
 Cropped/padded borders (optional). </li>
 <li>
@@ -191,7 +191,7 @@ Transparent background supported (pdf, eps, png, tif, gif). </li>
 <li>
 Semi-transparent patch objects supported (png, tif). </li>
 <li>
-RGB, CMYK or grayscale output (CMYK only with pdf, eps, tif). </li>
+RGB, CMYK, or grayscale output (CMYK only with pdf, eps, tif). </li>
 <li>
 Variable image compression, including lossless (pdf, eps, jpg). </li>
 <li>
@@ -203,26 +203,26 @@ Vector formats: pdf, eps, emf, svg. </li>
 <li>
 Bitmap formats: png, tif, jpg, bmp, gif, clipboard, export to workspace. </li>
 </ol>
-<p >This function is especially suited to exporting figures for use in publications and presentations, because of the high quality and portability of media produced.<br  />
+<p >This function is especially suited to exporting figures for use in publications and presentations because of the high quality and portability of media produced.<br  />
 </p>
 <p >Note that the background color and figure dimensions are reproduced (the latter approximately, and ignoring cropping &amp; magnification) in the output file.<br  />
  For transparent background (and semi-transparent patch objects), use the <code>-transparent</code> option or set the figure <code>'Color'</code> property to <code>'none'</code>.<br  />
  To make axes transparent set the axes <code>'Color'</code> property to <code>'none'</code>.<br  />
  PDF, EPS, TIF, and PNG are the only formats that support a transparent background.<br  />
- Only TIF and PNG formats support transparency of patch objects.<br  />
+ Only TIF and PNG formats support the transparency of patch objects.<br  />
 </p>
-<p >The choice of renderer (opengl/zbuffer/painters) has a large impact on the output quality.<br  />
- The default value (opengl for bitmaps, painters for vector formats) generally gives good results, but if you are not satisfied then try another renderer.<br  />
+<p >The choice of renderer (opengl/zbuffer/painters) greatly impacts the output quality.<br  />
+ The default value (opengl for bitmaps, painters for vector formats) generally gives good results, but if you are not satisfied, then try another renderer.<br  />
 </p>
 <dl class="section note"><dt>Note</dt><dd><ol>
 <li>
-For vector formats (EPS,PDF), only painters generates vector graphics.<br  />
+For vector formats (EPS, PDF), only painters generate vector graphics.<br  />
  </li>
 <li>
-For bitmap formats, only opengl correctly renders transparent patches.<br  />
+For bitmap formats, only OPENGL correctly renders transparent patches.<br  />
  </li>
 <li>
-For bitmap formats, only painters correctly scales line dash and dot lengths when magnifying or anti-aliasing.<br  />
+For bitmap formats, only painters correctly scale line dash and dot lengths when magnifying or anti-aliasing.<br  />
  </li>
 <li>
 Fonts may be substitued with Courier when using painters.<br  />
@@ -231,7 +231,7 @@ Fonts may be substitued with Courier when using painters.<br  />
 </dd></dl>
 <p>When exporting to vector format (PDF &amp; EPS) and bitmap format using the painters renderer, this function requires that ghostscript is installed on your system.<br  />
  You can download this from: <a href="http://www.ghostscript.com">http://www.ghostscript.com</a><br  />
- When exporting to EPS it additionally requires pdftops, from the Xpdf suite of functions.<br  />
+ When exporting to EPS, pdftops from the Xpdf function suite are also required.<br  />
  You can download this from: <a href="http://xpdfreader.com">http://xpdfreader.com</a><br  />
 </p>
 <p >SVG output uses MATLAB's built-in SVG export if available, or otherwise the fig2svg (<a href="https://github.com/kupiqu/fig2svg">https://github.com/kupiqu/fig2svg</a>) or plot2svg (<a href="https://github.com/jschwizer99/plot2svg">https://github.com/jschwizer99/plot2svg</a>) utilities, if available.<br  />
@@ -243,63 +243,63 @@ Fonts may be substitued with Courier when using painters.<br  />
     <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the following set:<br  />
  <ol>
 <li>
-<p class="startli"><code>filename</code> - string containing the name (optionally including full or relative path) of the file the figure is to be saved as.<br  />
+<p class="startli">The option <code>filename</code> - string containing the name (optionally including full or relative path) of the file, the figure is to be saved as.<br  />
  If no path is specified, the figure is saved in the current folder.<br  />
- If no name and no output arguments are specified, the figure <code>FileName</code> property is used.<br  />
+ If no name and output arguments are specified, the figure <code>FileName</code> property is used.<br  />
  If this property is empty, then the default name <code>'export_fig_out'</code> is used.<br  />
- If neither file extension nor a format parameter are specified, a <code>".png"</code> is added to the filename and the figure saved in PNG format.<br  />
+ If neither file extension nor a format parameter is specified, a <code>".png"</code> is added to the filename, and the figure is saved in PNG format.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-&lt;format&gt;</code> - string(s) containing the output file extension(s).<br  />
+<p class="startli">The option <code>-&lt;format&gt;</code> - string(s) containing the output file extension(s).<br  />
  Options are <code>'-pdf'</code>, <code>'-eps'</code>, <code>'emf'</code>, <code>'-svg'</code>, <code>'-png'</code>, <code>'-tif'</code>, <code>'-jpg'</code>, <code>'-gif'</code>, <code>'-bmp'</code>.<br  />
- Multiple formats can be specified, without restriction.<br  />
+ Multiple formats can be specified without restriction.<br  />
  For example: <code>savefig('-jpg', '-pdf', '-png', ...)</code>.<br  />
  Note that <code>'-tif'</code>, <code>'-tiff'</code> are equivalent, and so are '-jpg'<code>,</code>'-jpeg'.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-transparent</code> - option indicating that the figure background is to be made transparent (PNG, PDF, TIF, EPS, EMF formats only). Implies <code>-noinvert</code>.<br  />
+<p class="startli">The option <code>-transparent</code> indicating that the figure background is to be made transparent (PNG, PDF, TIF, EPS, EMF formats only). Implies <code>-noinvert</code>.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-nocrop</code> - option indicating that empty margins should not be cropped.<br  />
+<p class="startli">The option <code>-nocrop</code> indicating that empty margins should not be cropped.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-c[&lt;val&gt;,&lt;val&gt;,&lt;val&gt;,&lt;val&gt;]</code> - option indicating crop amounts.<br  />
+<p class="startli">The option <code>-c[&lt;val&gt;,&lt;val&gt;,&lt;val&gt;,&lt;val&gt;]</code> indicating crop amounts.<br  />
  It must be a 4-element vector of numeric values: <code>[top, right, bottom, left]</code>.<br  />
- where NaN/Inf indicates auto-cropping, 0 means no cropping, any other value means cropping in pixel amounts. e.g. <code>'-c7,15,0,NaN'</code> Note: this option is not supported by SVG and EMF formats.<br  />
+ where NaN/Inf indicates auto-cropping, 0 means no cropping, any other value means cropping in pixel amounts. e.g. <code>'-c7,15,0,NaN'</code> Note that SVG and EMF formats do not support this option.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-p&lt;val&gt;</code> - option to pad a border of width val to exported files, where <code>val</code> is either a relative size with respect to cropped image size (i.e. <code>p=0.01</code> adds a <code>1%</code> border).<br  />
+<p class="startli">The option <code>-p&lt;val&gt;</code> to pad a border of width val to exported files, where <code>val</code> is either a relative size with respect to the cropped image size (i.e. <code>p=0.01</code> adds a <code>1%</code> border).<br  />
  For EPS and PDF formats, <code>val</code> can also be integer in units of <code>1/72</code> points (<code>abs(val)&gt;1</code>).<br  />
  The input <code>val</code> can be positive (padding) or negative (extra cropping).<br  />
  If used, the <code>-nocrop</code> flag will be ignored, i.e. the image will always be cropped and then padded. Default: 0 (i.e. no padding).<br  />
- Note: this option is not supported by SVG and EMF formats.<br  />
+ Note that SVG and EMF formats do not support this option.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-m&lt;val&gt;</code> - option val indicates the factor to magnify the figure dimensions when generating bitmap outputs (does not affect vector formats).<br  />
+<p class="startli">The option <code>-m&lt;val&gt;</code> where <code>val</code> indicates the factor to magnify the figure dimensions when generating bitmap outputs (does not affect vector formats).<br  />
  Default: <code>'-m1'</code> (i.e. <code>val=1</code>). Note: <code>val~=1</code> slows down savefig.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-r&lt;val&gt;</code> - option val indicates the resolution (in pixels per inch) to export bitmap and vector outputs, without changing dimensions of the on-screen figure. Default: <code>'-r864'</code> (for vector output only).<br  />
+<p class="startli">The option <code>-r&lt;val&gt;</code> where <code>val</code> indicates the resolution (in pixels per inch) to export bitmap and vector outputs, without changing the dimensions of the on-screen figure. Default: <code>'-r864'</code> (for vector output only).<br  />
  Note: <code>-m</code> option overrides <code>-r</code> option for bitmap exports only.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-native</code> - option indicating that the output resolution (when outputting a bitmap format) should be such that the vertical resolution of the first suitable image found in the figure is at the native resolution of that image.<br  />
+<p class="startli">The option <code>-native</code> indicating that the output resolution (when outputting a bitmap format) should be such that the vertical resolution of the first suitable image found in the figure is at the native resolution of that image.<br  />
  To specify a particular image to use, give it the tag <code>'export_fig_native'</code>.<br  />
  Notes: This overrides any value set with the -m and -r options.<br  />
  It also assumes that the image is displayed front-to-parallel with the screen.<br  />
@@ -309,26 +309,26 @@ Fonts may be substitued with Courier when using painters.<br  />
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-a1, -a2, -a3, -a4</code> - option indicating the amount of anti-aliasing (AA) to use for bitmap outputs, when GraphicsSmoothing is not available.<br  />
+<p class="startli">The option <code>-a1, -a2, -a3, -a4</code> indicating the amount of anti-aliasing (AA) to use for bitmap outputs when GraphicsSmoothing is not available.<br  />
  <code>'-a1'=no AA; '-a4'=max</code>.<br  />
  Default: 3 for HG1, 1 for HG2.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-&lt;renderer&gt;</code> - option to force a particular renderer (painters, opengl or [in R2014a or older] zbuffer).<br  />
+<p class="startli">The option <code>-&lt;renderer&gt;</code> to force a particular renderer (painters, opengl or [in R2014a or older] zbuffer).<br  />
  Default value: opengl for bitmap formats or figures with patches and/or transparent annotations and painters for vector formats without patches/transparencies.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-&lt;colorspace&gt;</code> - option indicating which colorspace color figures should be saved in: RGB (default), CMYK or gray. Usage example: <code>'-gray'</code>.<br  />
+<p class="startli">The option <code>-&lt;colorspace&gt;</code> indicating which colorspace color figures should be saved in: RGB (default), CMYK or gray. Usage example: <code>'-gray'</code>.<br  />
  Note: CMYK is only supported in PDF, EPS and TIF formats.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-q&lt;val&gt;</code> - option to vary bitmap image quality (PDF, EPS, JPG formats only).<br  />
+<p class="startli">The option <code>-q&lt;val&gt;</code> to vary bitmap image quality (PDF, EPS, JPG formats only).<br  />
  A larger val, in the range <code>0-100</code>, produces higher quality and lower compression. <code>val &gt; 100</code> results in lossless compression.<br  />
  Default: '-q95' for JPG, ghostscript prepress default for PDF,EPS.<br  />
  Note: lossless compression can sometimes give a smaller file size than the default lossy compression, depending on the image type.<br  />
@@ -336,160 +336,160 @@ Fonts may be substitued with Courier when using painters.<br  />
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-n&lt;val&gt;</code> - option to set minimum output image size (bitmap formats only).<br  />
+<p class="startli">The option <code>-n&lt;val&gt;</code> to set minimum output image size (bitmap formats only).<br  />
  The output size can be specified as a single value (for both rows and cols, e.g. <code>-n200</code>) or comma-separated values (e.g. <code>-n300,400</code>).<br  />
- Use an Inf value to keep a dimension unchanged (e.g. <code>-n50,inf</code>).<br  />
- Use a NaN value to keep aspect ratio unchanged (e.g. <code>-n50,nan</code>).<br  />
+ Use an Inf value to keep a dimension unchanged (e.g., <code>-n50,inf</code>).<br  />
+ Use a <code>NaN</code> value to keep the aspect ratio unchanged (e.g., <code>-n50, nan</code>).<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-x&lt;val&gt;</code> - option to set maximum output image size (bitmap formats only).<br  />
- The output size can be specified as a single value (for both rows and cols, e.g. <code>-x200</code>) or comma-separated values (e.g. <code>-x300,400</code>).<br  />
+<p class="startli">The option <code>-x&lt;val&gt;</code> to set maximum output image size (bitmap formats only).<br  />
+ The output size can be specified as a single value (for both rows and cols, e.g. <code>-x200</code>) or comma-separated values (e.g. <code>-x300, 400</code>).<br  />
  Use an <code>Inf</code> value to keep a dimension unchanged (e.g. <code>-x50,inf</code>).<br  />
  Use a <code>NaN</code> value to keep aspect ratio unchanged (e.g. <code>-x50,nan</code>).<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-s&lt;val&gt;</code> - option to scale output image to specific size (bitmap formats only).<br  />
+<p class="startli">The option <code>-s&lt;val&gt;</code> to scale output image to a specific size (bitmap formats only).<br  />
  The fixed size can be specified as a single value (for rows=cols) or comma-separated values (e.g. <code>-s300,400</code>).<br  />
- Each value can be a scalar integer (signifying pixels) or percentage (e.g. <code>-s125%</code>).<br  />
+ Each value can be a scalar integer (signifying pixels) or percentage (e.g., <code>-s125%</code>).<br  />
  The scaling is done last, after any other cropping/rescaling due to other params.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-append</code> - option indicating that if the file already exists the figure is to be appended as a new page, instead of being overwritten (default).<br  />
+<p class="startli">The option <code>-append</code> indicates that if the file already exists the figure is to be appended as a new page, instead of being overwritten (default).<br  />
  PDF, TIF &amp; GIF output formats only (multi-image GIF = animated).<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-bookmark</code> - option to indicate that a bookmark with the name of the figure is to be created in the output file (PDF format only).<br  />
+<p class="startli">The option <code>-bookmark</code> to indicate that a bookmark with the name of the figure is to be created in the output file (PDF format only).<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-clipboard</code> - option to save output as an image on the system clipboard.<br  />
+<p class="startli">The option <code>-clipboard</code> to save the output as an image on the system clipboard.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-clipboard&lt;:format&gt;</code> - copies to clipboard in the specified format: image (default), bitmap, emf, or pdf.<br  />
- Note that Only <code>-clipboard</code> (or <code>-clipboard:image</code>, which is the same) applies savefig parameters such as cropping, padding etc:<br  />
+<p class="startli">The option <code>-clipboard&lt;:format&gt;</code> - copies to clipboard in the specified format: image (default), bitmap, emf, or pdf.<br  />
+ Note that Only <code>-clipboard</code> (or <code>-clipboard:image</code>, which is the same) applies <code>savefig</code> parameters such as cropping, padding, etc:<br  />
  </p><ol>
 <li>
-<code>-clipboard:image</code> create a bitmap image using savefig processing.<br  />
+The option <code>-clipboard:image</code> creates a bitmap image using savefig processing.<br  />
  </li>
 <li>
-<code>-clipboard:bitmap</code> create a bitmap image as-is (no auto-cropping etc.).<br  />
+The option <code>-clipboard:bitmap</code> creates a bitmap image as-is (no auto-cropping etc.).<br  />
  </li>
 <li>
-<code>-clipboard:emf</code> is vector format without auto-cropping; Windows-only.<br  />
+The option <code>-clipboard:emf</code> is vector format without auto-cropping; Windows-only.<br  />
  </li>
 <li>
-<code>-clipboard:pdf</code> is vector format without cropping; not universally supported.<br  />
+The option <code>-clipboard:pdf</code> is vector format without cropping; not universally supported.<br  />
  </li>
 </ol>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-d&lt;gs_option&gt;</code> - option to indicate a ghostscript setting. For example, <code>-dMaxBitmap=0</code> or <code>-dNoOutputFonts</code> (Ghostscript 9.15+).<br  />
+<p class="startli">The option <code>-d&lt;gs_option&gt;</code> to indicate a ghostscript setting. For example, <code>-dMaxBitmap=0</code> or <code>-dNoOutputFonts</code> (Ghostscript 9.15+).<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-depsc</code> - option to use EPS level-3 rather than the default level-2 print device. This solves some bugs with MATLAB's default <code>-depsc2</code> device such as discolored subplot lines on images (vector formats only).<br  />
+<p class="startli">The option <code>-depsc</code> - option to use EPS level-3 rather than the default level-2 print device. This solves some bugs with MATLAB's default <code>-depsc2</code> device such as discolored subplot lines on images (vector formats only).<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-metadata &lt;metaDataInfo&gt;</code> - adds the specified meta-data information to the exported file (PDF format only). metaDataInfo must be either a struct or a cell array with pairs of values: {<code>'fieldName'</code>, <code>fieldValue</code>, ...}.<br  />
+<p class="startli">The option <code>-metadata &lt;metaDataInfo&gt;</code> - adds the specified meta-data information to the exported file (PDF format only). metaDataInfo must be either a struct or a cell array with pairs of values: {<code>'fieldName'</code>, <code>fieldValue</code>, ...}.<br  />
  Common metadata fields: Title, Author, Creator, Producer, Subject, Keywords.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-update</code> - option to download and install the latest version of savefig.<br  />
+<p class="startli">The option <code>-update</code> - downloads and installs the latest version of <code>savefig</code>.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-version</code> - return the current savefig version, without any figure export.<br  />
+<p class="startli">The option <code>-version</code> returns the current savefig version without any figure export.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-nofontswap</code> - option to avoid font swapping. Font swapping is automatically done in vector formats (only): 11 standard MATLAB fonts are replaced by the original figure fonts. This option prevents this.<br  />
+<p class="startli">The option <code>-nofontswap</code> - avoids font swapping. Font swapping is automatically done in vector formats (only): 11 standard MATLAB fonts are replaced by the original figure fonts. This option prevents this.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-font_space &lt;char&gt;</code> - option to set a spacer character for font-names that contain spaces, used by EPS/PDF. Default: <code>''</code>.<br  />
+<p class="startli">The option <code>-font_space &lt;char&gt;</code> sets a spacer character for font-names that contain spaces used by EPS/PDF. Default: <code>''</code>.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-linecaps</code> - option to create rounded line-caps (vector formats only).<br  />
+<p class="startli">The option <code>-linecaps</code> creates rounded line-caps (vector formats only).<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-noinvert</code> - option to avoid setting figure's InvertHardcopy property to 'off' during output (this solves some problems of empty outputs).<br  />
+<p class="startli">The option <code>-noinvert</code> avoids setting figure's InvertHardcopy property to 'off' during output (this solves some problems of empty outputs).<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-preserve_size</code> - option to preserve the figure's PaperSize property in output file (PDF/EPS formats only; default is to not preserve it).<br  />
+<p class="startli">The option <code>-preserve_size</code> preserves the figure's PaperSize property in output file (PDF/EPS formats only; default is to not preserve it).<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-options &lt;optionsStruct&gt;</code> - format-specific parameters as defined in MATLAB documentation of the <code>imwrite</code> function, contained in a struct under the format name. For example to specify the JPG Comment parameter, pass a struct such as this: <code>options.JPG.Comment='abc'</code>. Similarly, <code>options.PNG.BitDepth=4</code>. Only used by PNG,TIF,JPG,GIF output formats.<br  />
- Options can also be specified as a cell array of name-value pairs, e.g. <code>{'BitDepth',4, 'Author','Yair'}</code> - these options will be used by all supported output formats of the savefig command.<br  />
+<p class="startli">The option <code>-options &lt;optionsStruct&gt;</code> - format-specific parameters as defined in MATLAB documentation of the <code>imwrite</code> function, contained in a struct under the format name. For example, to specify the JPG Comment parameter, pass a struct such as this: <code>options.JPG.Comment='abc'</code>. Similarly, <code>options.PNG.BitDepth=4</code>. Only used by PNG, TIF, JPG, and GIF output formats.<br  />
+ Options can also be specified as a cell array of name-value pairs, e.g., <code>{'BitDepth', 4, 'Author', 'Yair'}</code> - these options will be used by all supported output formats of the savefig command.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-silent</code> - option to avoid various warning and informational messages, such as version update checks, transparency or renderer issues, etc.<br  />
+<p class="startli">The option <code>-silent</code> to avoid various warning and informational messages, such as version update checks, transparency or renderer issues, etc.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-notify</code> - option to notify the user when export is done, in both a console message and a popup dialog (allow opening the exported file/folder).<br  />
+<p class="startli">The option <code>-notify</code> to notify the user when export is done, in both a console message and a popup dialog (allow opening the exported file/folder).<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-regexprep &lt;old&gt; &lt;new&gt;</code> - replaces all occurances of &lt;old&gt; (a regular expression string or array of strings; case-sensitive), with the corresponding &lt;new&gt; string(s), in EPS/PDF files (only). See regexp function doc.<br  />
+<p class="startli">The option <code>-regexprep &lt;old&gt; &lt;new&gt;</code> - replaces all occurrences of <code>&lt;old&gt;</code> (a regular expression string or array of strings; case-sensitive), with the corresponding <code>&lt;new&gt;</code> string(s), in EPS/PDF files (only). See <code>regexp</code> function doc.<br  />
  Warning: invalid replacement can make your EPS/PDF file unreadable!<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-toolbar</code> - adds an interactive export button to the figure toolbar.<br  />
+<p class="startli">The option <code>-toolbar</code> - adds an interactive export button to the figure toolbar.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-menubar</code> - adds an interactive export menu to the figure menubar.<br  />
+<p class="startli">The option <code>-menubar</code> - adds an interactive export menu to the figure menubar.<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>-contextmenu</code> - adds interactive export menu to figure context-menu (right-click)<br  />
+<p class="startli">The option <code>-contextmenu</code> - adds interactive export menu to figure context-menu (right-click)<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><code>handle</code> - handle of the figure, axes or uipanels (can be an array of handles but all the objects must be in the same figure) to be exported.<br  />
- Default: <code>gcf</code> (handle of current figure).<br  />
+<p class="startli">The option <code>handle</code> - handle of the figure, axes, or uipanels (can be an array of handles but all the objects must be in the same figure) to be exported.<br  />
+ Default: <code>gcf</code> (handle of the current figure).<br  />
 </p>
 <p class="endli"></p>
 </li>
 <li>
-<code>figName</code> - name (title) of the figure to export (e.g. <code>'<a class="el" href="classFigure.html" title="This is the abstract class for generating instances of objects that contain the specifications of var...">Figure</a> 1'</code> or <code>'My fig'</code>).<br  />
+The option <code>figName</code> - name (title) of the figure to export (e.g., <code>'<a class="el" href="classFigure.html" title="This is the abstract class for generating instances of objects that contain the specifications of var...">Figure</a> 1'</code> or <code>'My fig'</code>).<br  />
  Overridden by handle (if specified); Default: current figure.<br  />
  </li>
 </ol>
@@ -543,7 +543,7 @@ Fonts may be substitued with Courier when using painters.<br  />
 <div class="line">pm.vis.figure.savefig(..., figName)</div>
 <div class="ttc" id="a_09update_2version_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
 </div><!-- fragment --></dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This function is a reimplementation of the MATLAB package export_fig.<br  />
+<dl class="section note"><dt>Note</dt><dd>This function is a reimplementation of the MATLAB package <a href="https://github.com/altmany/export_fig">export_fig</a>.<br  />
 </dd></dl>
 <p><br  />
 <a class="anchor" id="example-savefig"></a><b>Example usage</b> <a href="#example-savefig">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">pm.vis.figure.savefig(); % export the current figure with the <span class="keywordflow">default</span> <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a>.</div>
@@ -711,7 +711,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 ///  29/11/23: (3.41) Fixed error when no filename is specified nor available in the exported figure (issue #381)
 ///  05/12/23: (3.42) Fixed unintended cropping of colorbar title in PDF export with -transparent (issues #382, #383)
 ///  07/12/23: (3.43) Fixed unintended modification of colorbar in bitmap export (issue #385)
-///  </pre> <dl class="authors"><dt><b><a class="el" href="authors.html#_authors000235">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
+///  </pre> <dl class="authors"><dt><b><a class="el" href="authors.html#_authors000234">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
 
@@ -723,7 +723,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_77a461de7b91f32df8032085d9a00b9a.html">+vis</a></li><li class="navelem"><a class="el" href="dir_71b9da55d4f4009145fe80947fd39cfd.html">+figure</a></li><li class="navelem"><a class="el" href="savefig_8m.html">savefig.m</a></li>
-        <li class="footer">Generated on Fri Sep 20 2024 05:45:38 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Mon Sep 23 2024 08:12:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

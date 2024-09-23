@@ -1,7 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"index.html#ParaMonteDocumentation":[3],
-"index.html#ParaMonteLangAbbreviationGuidlines":[8],
 "index.html#ParaMonteLangBenchmarks":[12],
 "index.html#ParaMonteLangDeveloperWarnings":[9],
 "index.html#ParaMonteLangDocumentation":[4],
@@ -249,5 +247,7 @@ var NAVTREEINDEX4 =
 "vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa":[18,0,0,0,0,0,14,2,0,2,0],
 "vendor_8m_source.html":[18,0,0,0,0,0,14,2,0,2],
 "verbose_8m.html":[18,0,0,0,0,0,0,5],
-"verbose_8m.html#a7889d099c84d6d2a63aab5abda8940af":[18,0,0,0,0,0,0,5,0]
+"verbose_8m.html#a7889d099c84d6d2a63aab5abda8940af":[18,0,0,0,0,0,0,5,0],
+"verbose_8m_source.html":[18,0,0,0,0,0,0,5],
+"version_8m.html":[18,0,0,0,0,0,5,11]
 };

@@ -172,7 +172,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a12758ae279b359412b43164a4a75d5ff"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTile.html#a12758ae279b359412b43164a4a75d5ff">Tile</a> (in <a class="el" href="classTile.html#a44232cfea1841a200710bbd579769a22">template</a>, in varargin)</td></tr>
 <tr class="separator:a12758ae279b359412b43164a4a75d5ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93bbea68b380655fc32571f718878f75"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTile.html#a93bbea68b380655fc32571f718878f75">reset</a> (in self, in varargin)</td></tr>
-<tr class="memdesc:a93bbea68b380655fc32571f718878f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the properties of the tile to the original default settings. Use this method when you change many attributes of the tile and you want to clean up and go back to the default settings.  <a href="classTile.html#a93bbea68b380655fc32571f718878f75">More...</a><br /></td></tr>
+<tr class="memdesc:a93bbea68b380655fc32571f718878f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the properties of the tile to the original default settings.  <a href="classTile.html#a93bbea68b380655fc32571f718878f75">More...</a><br /></td></tr>
 <tr class="separator:a93bbea68b380655fc32571f718878f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f9093564760dc1792a79241a589317d"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTile.html#a0f9093564760dc1792a79241a589317d">make</a> (in self, in varargin)</td></tr>
 <tr class="memdesc:a0f9093564760dc1792a79241a589317d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the tile settings and specifications, make the tile, and return nothing.  <a href="classTile.html#a0f9093564760dc1792a79241a589317d">More...</a><br /></td></tr>
@@ -220,12 +220,6 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tileindex</td><td>: The MATLAB vector of size <code>0</code> or <code>prod(tileshape)</code> containing the list of indices of the tiling to fill with subplots, starting </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section note"><dt>Note</dt><dd>This class is not meant to be used directly by the end users. Instead, use the subclasses of this abstract class for visualizations.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -259,7 +253,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000347">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:39 PM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000346">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:39 PM, University of Texas at Arlington<br  />
  </dd></dl>
 
 </div>
@@ -293,26 +287,28 @@ Help us justify its continued development and maintenance by acknowledging its b
 
 <p>Configure the tile settings and specifications, make the tile, and return nothing. </p>
 <p >In making the figure, this method we call the <code><a class="el" href="classTile.html#a0f9093564760dc1792a79241a589317d" title="Configure the tile settings and specifications, make the tile, and return nothing.">make()</a></code> methods of each of the subplot objects stored in the <code>subplot</code> component.</p>
-<dl class="section warning"><dt>Warning</dt><dd>This method has side-effects by manipulating the existing attributes of the parent object.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>: The <b>implicitly-passed</b> input argument representing the parent object of the method.<br  />
+ </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
  If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classTile.html#a0f9093564760dc1792a79241a589317d" title="Configure the tile settings and specifications, make the tile, and return nothing.">make()</a></code> method.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>The input <code>varargin</code> can also contain the components of the <code>subplot</code> component of the parent object.</dd></dl>
 <p><br  />
 <a class="anchor" id="interface-make"></a><b>Possible calling interfaces</b> <a href="#interface-make">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">tile = pm.vis.Tile(<span class="keyword">template</span>, varargin);</div>
 <div class="line">tile.make(varargin);</div>
 <div class="line">tile.make();</div>
 </div><!-- fragment --></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This method has side-effects by manipulating the existing attributes of the parent object.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The input <code>varargin</code> can also contain the components of the <code>subplot</code> component of the parent object.</dd></dl>
 <p><br  />
 <a class="anchor" id="example-make"></a><b>Example usage</b> <a href="#example-make">⛓</a> </p><dl class="section user"><dt></dt><dd><pre class="fragment">t = pm.vis.Tile(pm.vis.SubplotLine());
 t.make()
 </pre> <br  />
 <a class="anchor" id="final-make"></a><b>Final Remarks</b> <a href="#final-make">⛓</a> <hr  />
- If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Tile.m#L178 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Tile.m#L182 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -328,7 +324,7 @@ This software is available to the public under a highly permissive license.<br  
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000349">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:44 PM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000348">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:44 PM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -365,6 +361,8 @@ Help us justify its continued development and maintenance by acknowledging its b
 <dl class="section warning"><dt>Warning</dt><dd>This method has side-effects by manipulating the existing attributes of the parent object.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>: The <b>implicitly-passed</b> input argument representing the parent object of the method.<br  />
+ </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
  If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classTile.html#aac58d0f5c9c54dd22fd926e6bbc975b2" title="Configure the tile settings and specifications and return nothing.">premake()</a></code> method.</td></tr>
   </table>
@@ -380,7 +378,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 f.premake("figure", {"color", "none"})
 </pre> <br  />
 <a class="anchor" id="final-premake"></a><b>Final Remarks</b> <a href="#final-premake">⛓</a> <hr  />
- If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Tile.m#L402 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Tile.m#L413 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -396,7 +394,7 @@ This software is available to the public under a highly permissive license.<br  
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000350">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:46 PM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000349">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:46 PM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -429,9 +427,12 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
-<p>Reset the properties of the tile to the original default settings. Use this method when you change many attributes of the tile and you want to clean up and go back to the default settings. </p>
+<p>Reset the properties of the tile to the original default settings. </p>
+<p >Use this method when you change many attributes of the tile and you want to clean up and go back to the default settings.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>: The <b>implicitly-passed</b> input argument representing the parent object of the method.<br  />
+ </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any <code>property, value</code> pair of the parent object.<br  />
  If the property is a <code>struct()</code>, then its value must be given as a cell array, with consecutive elements representing the struct <code>property-name, property-value</code> pairs. Note that all of these property-value pairs can be also directly set via the parent object attributes, before calling the <code><a class="el" href="classTile.html#a0f9093564760dc1792a79241a589317d" title="Configure the tile settings and specifications, make the tile, and return nothing.">make()</a></code> method.</td></tr>
   </table>
@@ -442,11 +443,11 @@ Help us justify its continued development and maintenance by acknowledging its b
 <a class="anchor" id="interface-reset"></a><b>Possible calling interfaces</b> <a href="#interface-reset">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">tile = pm.vis.Tile(<span class="keyword">template</span>, varargin);</div>
 <div class="line">tile.reset(varargin)</div>
 <div class="line">tile.reset() % <a class="code hl_function" href="classTile.html#a93bbea68b380655fc32571f718878f75">reset</a> the tile to the <span class="keywordflow">default</span> settings.</div>
-<div class="ttc" id="aclassTile_html_a93bbea68b380655fc32571f718878f75"><div class="ttname"><a href="classTile.html#a93bbea68b380655fc32571f718878f75">Tile::reset</a></div><div class="ttdeci">function reset(in self, in varargin)</div><div class="ttdoc">Reset the properties of the tile to the original default settings. Use this method when you change ma...</div></div>
+<div class="ttc" id="aclassTile_html_a93bbea68b380655fc32571f718878f75"><div class="ttname"><a href="classTile.html#a93bbea68b380655fc32571f718878f75">Tile::reset</a></div><div class="ttdeci">function reset(in self, in varargin)</div><div class="ttdoc">Reset the properties of the tile to the original default settings.</div></div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-reset"></a><b>Final Remarks</b> <a href="#final-reset">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Tile.m#L116 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+vis/Tile.m#L119 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -461,7 +462,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000348">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:42 PM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000347">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 22 2024, 7:42 PM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -522,7 +523,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classTile.html">Tile</a></li>
-        <li class="footer">Generated on Fri Sep 20 2024 05:45:38 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Mon Sep 23 2024 08:12:51 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

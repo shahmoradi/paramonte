@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"classTileScatter.html":[17,0,85],
 "classTileScatter.html#a6abbed6fc6984d6f0ab9a6e3b5bc40fa":[17,0,85,0],
 "classTileScatter3.html":[17,0,86],
 "classTileScatter3.html#a52884de7dd843c07e9f8f215234c382d":[17,0,86,0],
@@ -53,9 +52,9 @@ var NAVTREEINDEX3 =
 "compiler_8m.html":[18,0,0,0,0,0,7,0,1],
 "compiler_8m.html#a97012960b56e67629c96f09b91cd7ec8":[18,0,0,0,0,0,7,0,1,0],
 "compiler_8m_source.html":[18,0,0,0,0,0,7,0,1],
-"copy_8m.html":[18,0,0,0,0,0,7,2,1],
-"copy_8m.html#a3718abda67edd88f029c9887fa20489a":[18,0,0,0,0,0,7,2,1,0],
-"copy_8m_source.html":[18,0,0,0,0,0,7,2,1],
+"copy_8m.html":[18,0,0,0,0,0,7,3],
+"copy_8m.html#ab633577f583e18a523fef5b3b2295eee":[18,0,0,0,0,0,7,3,0],
+"copy_8m_source.html":[18,0,0,0,0,0,7,3],
 "copyfig_8m.html":[18,0,0,0,0,0,16,3,0,1],
 "copyfig_8m.html#afc97c9d7f5431eb28ca277c67fb49cf5":[18,0,0,0,0,0,16,3,0,1,0],
 "copyfig_8m_source.html":[18,0,0,0,0,0,16,3,0,1],
@@ -91,7 +90,6 @@ var NAVTREEINDEX3 =
 "dir_529b7572393d110e7adef20dde644233.html":[18,0,0,0,0,0,9],
 "dir_593316b30ad2c3f7953738ffbba366ad.html":[18,0,0,0,0,0,14,0],
 "dir_5b73a3e06bfeb4f39bbdd96088c5cf8e.html":[18,0,0,0,0,0,12,0,1],
-"dir_5f17e5ea309befc745766b62e26d0138.html":[18,0,0,0,0,0,7,2],
 "dir_5f2ea114d2e8401892a7eda9e51589e0.html":[18,0,0,0,0,0],
 "dir_5f2f7d6d6a421f083844944f36109908.html":[18,0,0,0,0,0,12],
 "dir_65aa69a0c9cb3679b6450dce0a5cdc12.html":[18,0,0,0,0,0,7],
@@ -117,10 +115,10 @@ var NAVTREEINDEX3 =
 "dir_bfdaa8953ddda54ce2936e3fd364f697.html":[18,0,0,0,1],
 "dir_d22bc94e83486d739c3841c1ed42a928.html":[18,0,0,0,0,0,8],
 "dir_d694f06def73710f7681c1701584508c.html":[18,0,0,0,0,0,12,0],
+"dir_e87da907e65ff588124fd695324577b6.html":[18,0,0,0,0,0,1],
 "dir_edf9f7db31bc108d61f6578ef1ac1d79.html":[18,0,0,0,0,0,9,0],
 "dir_f0597b781a051147ed388dfa8b0c4ee9.html":[18,0,0,0,0,0,12,1],
 "dir_f4fae3778f63b529e884c4841ad7b1f2.html":[18,0,0,0,0,0,12,0,4],
-"dir_f52c1e74ea44b46933de48ddc06bec7f.html":[18,0,0,0,0,0,1],
 "dir_f9605479ce94a868b8c276b182b85c2e.html":[18,0,0,0,0,0,3],
 "dir_fe17b5fa8411b6baf3217cfaff561b17.html":[18,0,0,0,0,0,14,2,0],
 "econometrics_8m.html":[18,0,0,0,0,0,7,0,5],
@@ -249,5 +247,7 @@ var NAVTREEINDEX3 =
 "imageproc_8m.html#a1b6b817ac751a69fb9ced8cdedffaa16":[18,0,0,0,0,0,7,0,10,0],
 "imageproc_8m_source.html":[18,0,0,0,0,0,7,0,10],
 "index.html":[],
-"index.html#ParaMonte":[0]
+"index.html#ParaMonte":[0],
+"index.html#ParaMonteDocumentation":[3],
+"index.html#ParaMonteLangAbbreviationGuidlines":[8]
 };
