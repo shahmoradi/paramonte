@@ -20,7 +20,7 @@ var hierarchy =
       [ "CascadeScatter", "classCascadeScatter.html", null ],
       [ "CascadeScatter3", "classCascadeScatter3.html", null ]
     ] ],
-    [ "pm::data::DataRef", null, [
+    [ "pm::container::DataRef", null, [
       [ "DataFrame", "classDataFrame.html", null ]
     ] ],
     [ "dynamicprops", null, [
