@@ -157,15 +157,15 @@ type <a class="el" href="structpm__distUnif_1_1xoshiro256ssw__type.html">xoshiro
  </li>
 </ol>
 (<b>optional</b>, default = <a class="el" href="structpm__distUnif_1_1rngf__type.html">rngf_type</a>.) </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">rand</td><td>: The output <code>contiguous</code> array of rank <code>1</code> of length <code>ndim</code> of <br  />
- <ul>
+    <tr><td class="paramdir">[out]</td><td class="paramname">rand</td><td>: The output <code>contiguous</code> vector of shape <code>(1:ndim)</code> or matrix of shape <code>(1:ndim, 1:nsam)</code> of<br  />
+ <ol>
 <li>
 type <code>real</code> of kind any supported by the processor (e.g., <a class="el" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a>, <a class="el" href="namespacepm__kind.html#a609d23b0915ea97e6a89e9bef7c743bd">RK32</a>, <a class="el" href="namespacepm__kind.html#aa3a66a01e440da406e627e6e4e6e3908">RK64</a>, or <a class="el" href="namespacepm__kind.html#adf0fd3c248f14b733bc8cd7876f75bef">RK128</a>),<br  />
  </li>
-</ul>
+</ol>
 containing the Multivariate Normal distributed random output vector.<br  />
  </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mean</td><td>: The input <code>contiguous</code> vector of the same type, kind, rank, and size as <code>rand</code>, representing the mean of the Multivariate Normal distribution.<br  />
+    <tr><td class="paramdir">[in]</td><td class="paramname">mean</td><td>: The input <code>contiguous</code> vector of shape <code>(1:ndim)</code>, of the same type and kind as the output <code>rand</code>, representing the mean of the Multivariate Normal distribution.<br  />
  (<b>optional</b>, default = <code>[(0., i = 1, size(rand))]</code>. It must be present if the input argument <code>chol</code> is missing.) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">chol</td><td>: The input <code>contiguous</code> matrix of shape <code>(ndim, ndim)</code> whose specified triangular <code>subset</code> contains the <a class="el" href="namespacepm__matrixChol.html">Cholesky Factorization</a> of the covariance matrix of the MVN distribution.<br  />
  (<b>optional</b>, the default is the Identity matrix of rank <code>ndim</code>. It must be present <b>if and only if</b> the input argument <code>subset</code> is also present.) </td></tr>
@@ -212,14 +212,14 @@ This argument is merely a convenience to differentiate the different procedure f
 <div class="ttc" id="ainterfacepm__distMultiNorm_1_1setMultiNormRand_html"><div class="ttname"><a href="interfacepm__distMultiNorm_1_1setMultiNormRand.html">pm_distMultiNorm::setMultiNormRand</a></div><div class="ttdoc">Return a (collection) of random vector(s) of size ndim from the ndim-dimensional MultiVariate Normal ...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distMultiNorm_8F90_source.html#l03264">pm_distMultiNorm.F90:3264</a></div></div>
 <div class="ttc" id="anamespacepm__distMultiNorm_html"><div class="ttname"><a href="namespacepm__distMultiNorm.html">pm_distMultiNorm</a></div><div class="ttdoc">This module contains classes and procedures for computing various statistical quantities related to t...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distMultiNorm_8F90_source.html#l00060">pm_distMultiNorm.F90:60</a></div></div>
 </div><!-- fragment --></dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>The condition <code>all(shape(chol) == size(rand, 1))</code> must hold for the corresponding input arguments.<br  />
- The condition <code>size(mean, 1, IK) == size(rand)</code> must hold for the corresponding input arguments.<br  />
+<dl class="section warning"><dt>Warning</dt><dd>The condition <code>size(mean, 1) == size(rand, 1)</code> must hold for the corresponding input arguments.<br  />
+ The condition <code>all(shape(chol) == size(rand, 1))</code> must hold for the corresponding input arguments.<br  />
  These conditions are verified only if the library is built with the preprocessor macro <code>CHECK_ENABLED=1</code>.</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The procedures under discussion are <code>impure</code>. The procedures of this generic interface are <code>pure</code> when the input argument <code>rng</code> is set to <a class="el" href="structpm__distUnif_1_1xoshiro256ssw__type.html">xoshiro256ssw_type</a> and the compile-time macro <code>CHECK_ENABLED</code> is set to <code>0</code> or is undefined.<br  />
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacepm__distNorm_1_1getNormRand.html">getNormRand</a><br  />
  <a class="el" href="interfacepm__distNorm_1_1setNormRand.html">setNormRand</a><br  />
- <a class="el" href="interfacepm__distMultiNorm_1_1getMultiNormLogPDF.html">getNormLogPDF</a><br  />
+ <a class="el" href="interfacepm__distMultiNorm_1_1getMultiNormLogPDF.html">getMultiNormLogPDF</a><br  />
 </dd></dl>
 <p><br  />
 <a class="anchor" id="example-setMultiNormRand"></a><b>Example usage</b> <a href="#example-setMultiNormRand">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="fortran_statement">program</span> example</div>
@@ -495,13 +495,13 @@ This argument is merely a convenience to differentiate the different procedure f
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="comment"># the scatter plot:</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        ax.scatter  ( df.values[:, 0]</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                    , df.values[:,1]</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                    , df.values[:, 1]</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                    , s = 8</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                    , zorder = 1000</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                    )</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        ax_histx.hist(df.values[:, 0], bins = 50, zorder = 1000)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        ax_histy.hist(df.values[:,1], bins = 50, orientation = <span class="stringliteral">&quot;horizontal&quot;</span>, zorder= 1000)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        ax_histy.hist(df.values[:, 1], bins = 50, orientation = <span class="stringliteral">&quot;horizontal&quot;</span>, zorder = 1000)</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        ax.set_xlabel(<span class="stringliteral">&quot;X&quot;</span>, fontsize = 17)</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        ax.set_ylabel(<span class="stringliteral">&quot;Y&quot;</span>, fontsize = 17)</div>
@@ -521,7 +521,7 @@ This argument is merely a convenience to differentiate the different procedure f
 <img src="setMultiNormRandMeanChol.RK.png" alt="" width="700"/>
 </div>
 </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000402">Test:</a></b></dt><dd>test_pm_distMultiNorm</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000405">Test:</a></b></dt><dd>test_pm_distMultiNorm</dd></dl>
 <dl class="naming"><dt><b><a class="el" href="naming.html#_naming000005">Internal naming convention:</a></b></dt><dd>The following illustrates the internal naming convention used for the procedures within this generic interface.<br  />
  </dd></dl>
 <div class="fragment"><div class="line">setMNR_RNGD_DM_DC_XXX_D1_RK5()</div>
@@ -555,7 +555,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000516">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, April 23, 2017, 12:36 AM, Institute for Computational Engineering and Sciences (ICES), University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000520">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, April 23, 2017, 12:36 AM, Institute for Computational Engineering and Sciences (ICES), University of Texas at Austin </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__distMultiNorm_8F90_source.html#l03264">3264</a> of file <a class="el" href="pm__distMultiNorm_8F90_source.html">pm_distMultiNorm.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
@@ -567,7 +567,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distMultiNorm.html">pm_distMultiNorm</a></li><li class="navelem"><a class="el" href="interfacepm__distMultiNorm_1_1setMultiNormRand.html">setMultiNormRand</a></li>
-        <li class="footer">Generated on Sun Oct 6 2024 11:55:15 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Oct 10 2024 22:04:54 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -33,7 +33,8 @@ var searchData=
   ['distpoweto_5ftype_30',['distPoweto_type',['../structpm__distPoweto_1_1distPoweto__type.html',1,'pm_distPoweto']]],
   ['distunif_5ftype_31',['distUnif_type',['../structpm__distUnif_1_1distUnif__type.html',1,'pm_distUnif']]],
   ['distunifell_5ftype_32',['distUnifEll_type',['../structpm__distUnifEll_1_1distUnifEll__type.html',1,'pm_distUnifEll']]],
-  ['distunifpar_5ftype_33',['distUnifPar_type',['../structpm__distUnifPar_1_1distUnifPar__type.html',1,'pm_distUnifPar']]],
-  ['distunifsphere_5ftype_34',['distUnifSphere_type',['../structpm__distUnifSphere_1_1distUnifSphere__type.html',1,'pm_distUnifSphere']]],
-  ['dvine_5ftype_35',['dvine_type',['../structpm__distCov_1_1dvine__type.html',1,'pm_distCov']]]
+  ['distunifells_5ftype_33',['distUnifElls_type',['../structpm__distUnifElls_1_1distUnifElls__type.html',1,'pm_distUnifElls']]],
+  ['distunifpar_5ftype_34',['distUnifPar_type',['../structpm__distUnifPar_1_1distUnifPar__type.html',1,'pm_distUnifPar']]],
+  ['distunifsphere_5ftype_35',['distUnifSphere_type',['../structpm__distUnifSphere_1_1distUnifSphere__type.html',1,'pm_distUnifSphere']]],
+  ['dvine_5ftype_36',['dvine_type',['../structpm__distCov_1_1dvine__type.html',1,'pm_distCov']]]
 ];

@@ -247,11 +247,17 @@ var annotated_dup =
       [ "blasTRSM", "interfacepm__blas_1_1blasTRSM.html", "interfacepm__blas_1_1blasTRSM" ],
       [ "blasTRSV", "interfacepm__blas_1_1blasTRSV.html", "interfacepm__blas_1_1blasTRSV" ]
     ] ],
-    [ "pm_clustering", "namespacepm__clustering.html", [
-      [ "setCenter", "interfacepm__clustering_1_1setCenter.html", null ],
-      [ "setKmeans", "interfacepm__clustering_1_1setKmeans.html", null ],
-      [ "setKmeansPP", "interfacepm__clustering_1_1setKmeansPP.html", null ],
-      [ "setMember", "interfacepm__clustering_1_1setMember.html", null ]
+    [ "pm_clusDensity", "namespacepm__clusDensity.html", [
+      [ "KmeansTry_type", "structpm__clusDensity_1_1KmeansTry__type.html", "structpm__clusDensity_1_1KmeansTry__type" ],
+      [ "KvolTry_type", "structpm__clusDensity_1_1KvolTry__type.html", "structpm__clusDensity_1_1KvolTry__type" ],
+      [ "partition_type", "structpm__clusDensity_1_1partition__type.html", "structpm__clusDensity_1_1partition__type" ],
+      [ "ParTry_type", "structpm__clusDensity_1_1ParTry__type.html", "structpm__clusDensity_1_1ParTry__type" ]
+    ] ],
+    [ "pm_clusKmeans", "namespacepm__clusKmeans.html", [
+      [ "setCenter", "interfacepm__clusKmeans_1_1setCenter.html", null ],
+      [ "setKmeans", "interfacepm__clusKmeans_1_1setKmeans.html", null ],
+      [ "setKmeansPP", "interfacepm__clusKmeans_1_1setKmeansPP.html", null ],
+      [ "setMember", "interfacepm__clusKmeans_1_1setMember.html", null ]
     ] ],
     [ "pm_complexAbs", "namespacepm__complexAbs.html", [
       [ "abs", "interfacepm__complexAbs_1_1abs.html", null ]
@@ -454,6 +460,10 @@ var annotated_dup =
       [ "getBinomLogPMF", "interfacepm__distBinom_1_1getBinomLogPMF.html", null ],
       [ "setBinomCDF", "interfacepm__distBinom_1_1setBinomCDF.html", null ],
       [ "setBinomLogPMF", "interfacepm__distBinom_1_1setBinomLogPMF.html", null ]
+    ] ],
+    [ "pm_distChol", "namespacepm__distChol.html", [
+      [ "getCholRand", "interfacepm__distChol_1_1getCholRand.html", null ],
+      [ "setCholRand", "interfacepm__distChol_1_1setCholRand.html", null ]
     ] ],
     [ "pm_distCosRaised", "namespacepm__distCosRaised.html", [
       [ "distCosRaised_type", "structpm__distCosRaised_1_1distCosRaised__type.html", null ],
@@ -679,6 +689,11 @@ var annotated_dup =
       [ "getUnifEllLogPDF", "interfacepm__distUnifEll_1_1getUnifEllLogPDF.html", null ],
       [ "getUnifEllRand", "interfacepm__distUnifEll_1_1getUnifEllRand.html", null ],
       [ "setUnifEllRand", "interfacepm__distUnifEll_1_1setUnifEllRand.html", null ]
+    ] ],
+    [ "pm_distUnifElls", "namespacepm__distUnifElls.html", [
+      [ "distUnifElls_type", "structpm__distUnifElls_1_1distUnifElls__type.html", null ],
+      [ "getUnifEllsLogPDF", "interfacepm__distUnifElls_1_1getUnifEllsLogPDF.html", null ],
+      [ "setUnifEllsRand", "interfacepm__distUnifElls_1_1setUnifEllsRand.html", null ]
     ] ],
     [ "pm_distUnifPar", "namespacepm__distUnifPar.html", [
       [ "distUnifPar_type", "structpm__distUnifPar_1_1distUnifPar__type.html", null ],

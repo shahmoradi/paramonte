@@ -151,7 +151,8 @@ $(document).ready(function(){initNavTree('interfacepm__distUnifEll_1_1getUnifEll
 <p >See the documentation of <a class="el" href="namespacepm__distUnifEll.html">pm_distUnifEll</a> for details of the definition of the PDF.<br  />
 </p>
 <dl class="section note"><dt>Note</dt><dd>Note that the procedures of this generic interface do not require an input <code>X</code> value representing a location within the domain of the density function.<br  />
- This is fine and intentional by design because the PDF is uniform across the entire support of the PDF.</dd></dl>
+ This is fine and intentional by design because the PDF is uniform across the entire support of the PDF.<br  />
+</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">logChoDia</td><td>: The input scalar or <code>contiguous</code> vector of shape <code>(1:ndim)</code> of the same type and kind as the output <code>logPDF</code>.<br  />
@@ -164,7 +165,7 @@ If <code>logChoDia</code> is vector, it must contain the natural logarithm of th
  </li>
 </ol>
 (<b>optional</b>. It must be present <b>if and only if</b> the input <code>gramian</code> is missing.) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ndim</td><td>: The input positive scalar of type <code>integer</code> of default kind <a class="el" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, containing the number of dimensions of the distribution.<br  />
+    <tr><td class="paramdir">[in]</td><td class="paramname">ndim</td><td>: The input positive scalar of type <code>integer</code> of default kind <a class="el" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a>, containing the number of dimensions of the domain of the distribution.<br  />
  (<b>optional</b>. It must be present <b>if and only if</b> the input <code>logChoDia</code> is present and is a scalar.) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">gramian</td><td>: The input square matrix of shape <code>(1:ndim, 1:ndim)</code> of the same type and kind as the output <code>logPDF</code>, containing the <b>upper</b> triangle and diagonal elements of the <a class="el" href="namespacepm__distUnifEll.html">representative Gramian matrix</a> \(\gramian_\ell\) of the ellipsoid.<br  />
  (<b>optional</b>. It must be present <b>if and only if</b> the input <code>logChoDia</code> is missing.)</td></tr>
@@ -277,7 +278,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000501">Test:</a></b></dt><dd>test_pm_distUnifEll</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000504">Test:</a></b></dt><dd>test_pm_distUnifEll</dd></dl>
 <p ><br  />
 <a class="anchor" id="final-getUnifEllLogPDF"></a><b>Final Remarks</b> <a href="#final-getUnifEllLogPDF">⛓</a> </p><hr  />
 <p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distUnifEll.F90#L267 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
@@ -295,7 +296,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000621">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Monday March 6, 2017, 3:22 pm, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000625">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Monday March 6, 2017, 3:22 pm, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin.<br  />
  </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pm__distUnifEll_8F90_source.html#l00271">271</a> of file <a class="el" href="pm__distUnifEll_8F90_source.html">pm_distUnifEll.F90</a>.</p>
@@ -308,7 +309,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distUnifEll.html">pm_distUnifEll</a></li><li class="navelem"><a class="el" href="interfacepm__distUnifEll_1_1getUnifEllLogPDF.html">getUnifEllLogPDF</a></li>
-        <li class="footer">Generated on Sun Oct 6 2024 11:55:16 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Oct 10 2024 22:04:55 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

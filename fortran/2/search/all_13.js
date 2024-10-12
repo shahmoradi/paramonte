@@ -59,7 +59,8 @@ var searchData=
   ['transunit_5ftype_56',['transUnit_type',['../structpm__matrixTrans_1_1transUnit__type.html',1,'pm_matrixTrans']]],
   ['triang_57',['triang',['../namespacepm__matrixClass.html#a9d45cbb7d27735e30230fd2d4c72894c',1,'pm_matrixClass']]],
   ['triang_5ftype_58',['triang_type',['../structpm__matrixClass_1_1triang__type.html',1,'pm_matrixClass']]],
-  ['twfill_59',['twfill',['../structpm__io_1_1wrap__type.html#afa89d1141ec16dc3991dc21fea03a553',1,'pm_io::wrap_type']]],
-  ['two_5fpi_60',['TWO_PI',['../namespacepm__mathConst.html#a4f7f541c1bb14d1e53266b201a7f5373',1,'pm_mathConst']]],
-  ['twsize_61',['twsize',['../structpm__io_1_1wrap__type.html#a70638e6033d0e08e58711dc4f275b41c',1,'pm_io::wrap_type']]]
+  ['try_59',['Try',['../structpm__clusDensity_1_1partition__type.html#ab612595108c3abb336a0354190312175',1,'pm_clusDensity::partition_type']]],
+  ['twfill_60',['twfill',['../structpm__io_1_1wrap__type.html#afa89d1141ec16dc3991dc21fea03a553',1,'pm_io::wrap_type']]],
+  ['two_5fpi_61',['TWO_PI',['../namespacepm__mathConst.html#a4f7f541c1bb14d1e53266b201a7f5373',1,'pm_mathConst']]],
+  ['twsize_62',['twsize',['../structpm__io_1_1wrap__type.html#a70638e6033d0e08e58711dc4f275b41c',1,'pm_io::wrap_type']]]
 ];

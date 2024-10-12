@@ -9,12 +9,14 @@ var searchData=
   ['paramcmc_5ftype_6',['paramcmc_type',['../structpm__sampling_1_1paramcmc__type.html',1,'pm_sampling']]],
   ['paramonte_5ftype_7',['paramonte_type',['../structpm__paramonte_1_1paramonte__type.html',1,'pm_paramonte']]],
   ['paranest_5ftype_8',['paranest_type',['../structpm__sampling_1_1paranest__type.html',1,'pm_sampling']]],
-  ['pearson_5ftype_9',['pearson_type',['../structpm__sampleCor_1_1pearson__type.html',1,'pm_sampleCor']]],
-  ['pexp_5ftype_10',['pexp_type',['../structpm__quadRomb_1_1pexp__type.html',1,'pm_quadRomb']]],
-  ['pinf_5ftype_11',['pinf_type',['../structpm__mathConst_1_1pinf__type.html',1,'pm_mathConst']]],
-  ['piwilin_5ftype_12',['piwilin_type',['../structpm__polation_1_1piwilin__type.html',1,'pm_polation']]],
-  ['piwipol_5ftype_13',['piwipol_type',['../structpm__polation_1_1piwipol__type.html',1,'pm_polation']]],
-  ['pnint_14',['pnint',['../interfacepm__mathRound_1_1pnint.html',1,'pm_mathRound']]],
-  ['posdefmat_5ftype_15',['posdefmat_type',['../structpm__matrixClass_1_1posdefmat__type.html',1,'pm_matrixClass']]],
-  ['pwrl_5ftype_16',['pwrl_type',['../structpm__quadRomb_1_1pwrl__type.html',1,'pm_quadRomb']]]
+  ['partition_5ftype_9',['partition_type',['../structpm__clusDensity_1_1partition__type.html',1,'pm_clusDensity']]],
+  ['partry_5ftype_10',['ParTry_type',['../structpm__clusDensity_1_1ParTry__type.html',1,'pm_clusDensity']]],
+  ['pearson_5ftype_11',['pearson_type',['../structpm__sampleCor_1_1pearson__type.html',1,'pm_sampleCor']]],
+  ['pexp_5ftype_12',['pexp_type',['../structpm__quadRomb_1_1pexp__type.html',1,'pm_quadRomb']]],
+  ['pinf_5ftype_13',['pinf_type',['../structpm__mathConst_1_1pinf__type.html',1,'pm_mathConst']]],
+  ['piwilin_5ftype_14',['piwilin_type',['../structpm__polation_1_1piwilin__type.html',1,'pm_polation']]],
+  ['piwipol_5ftype_15',['piwipol_type',['../structpm__polation_1_1piwipol__type.html',1,'pm_polation']]],
+  ['pnint_16',['pnint',['../interfacepm__mathRound_1_1pnint.html',1,'pm_mathRound']]],
+  ['posdefmat_5ftype_17',['posdefmat_type',['../structpm__matrixClass_1_1posdefmat__type.html',1,'pm_matrixClass']]],
+  ['pwrl_5ftype_18',['pwrl_type',['../structpm__quadRomb_1_1pwrl__type.html',1,'pm_quadRomb']]]
 ];

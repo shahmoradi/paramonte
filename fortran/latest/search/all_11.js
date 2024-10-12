@@ -82,13 +82,14 @@ var searchData=
   ['rrh_79',['RRH',['../namespacepm__kind.html#a745af871703ee211887c14297063bb73',1,'pm_kind']]],
   ['rrl_80',['RRL',['../namespacepm__kind.html#a716b3420fde2b16a7985dc779e3f9e2b',1,'pm_kind']]],
   ['rs_81',['RS',['../namespacepm__strASCII.html#ae1f86bf6e480e84ae9b8e5cc92f73416',1,'pm_strASCII']]],
-  ['run_82',['run',['../structpm__test_1_1test__type.html#a77955939fef417b575034cae0beaa73f',1,'pm_test::test_type']]],
+  ['run_82',['run',['../structpm__clusDensity_1_1partition__type.html#a282c11c258f1692e352ebf62d48d33a1',1,'pm_clusDensity::partition_type::run()'],['../structpm__test_1_1test__type.html#a77955939fef417b575034cae0beaa73f',1,'pm_test::test_type::run()']]],
   ['runparadramd_83',['runParaDRAMD',['../namespacepm__sampling.html#ace901062cc3b1f73596a4decd0ed64f2',1,'pm_sampling']]],
   ['runparadramf_84',['runParaDRAMF',['../namespacepm__sampling.html#a58da2abb72e1484354b806200bda4816',1,'pm_sampling']]],
   ['runparadraml_85',['runParaDRAML',['../namespacepm__sampling.html#a467c4e5e118b23be51c8e2c0a245667f',1,'pm_sampling']]],
-  ['rust_86',['rust',['../structpm__io_1_1filext__type.html#a3f3fed807fdd54fd698cd0c32bb9d780',1,'pm_io::filext_type::rust()'],['../structpm__paramonte_1_1envis__type.html#a4af11b141d36c97ac82b88fe4ea9f6ed',1,'pm_paramonte::envis_type::rust()']]],
-  ['rweight_87',['rweight',['../namespacepm__sampleWeight.html#a0cca11b9f19634e7e79d96f456eba3ee',1,'pm_sampleWeight']]],
-  ['rweight_5ftype_88',['rweight_type',['../structpm__sampleWeight_1_1rweight__type.html',1,'pm_sampleWeight']]],
-  ['rwfill_89',['rwfill',['../structpm__io_1_1wrap__type.html#a4aebff955f89b5b65f096217088f443d',1,'pm_io::wrap_type']]],
-  ['rwsize_90',['rwsize',['../structpm__io_1_1wrap__type.html#a865fe6b0d20dda7daeda69245309f0ba',1,'pm_io::wrap_type']]]
+  ['runpartition_86',['runPartition',['../namespacepm__clusDensity.html#a5ccd3a5f4ef7e579b9ea462601302bd7',1,'pm_clusDensity']]],
+  ['rust_87',['rust',['../structpm__io_1_1filext__type.html#a3f3fed807fdd54fd698cd0c32bb9d780',1,'pm_io::filext_type::rust()'],['../structpm__paramonte_1_1envis__type.html#a4af11b141d36c97ac82b88fe4ea9f6ed',1,'pm_paramonte::envis_type::rust()']]],
+  ['rweight_88',['rweight',['../namespacepm__sampleWeight.html#a0cca11b9f19634e7e79d96f456eba3ee',1,'pm_sampleWeight']]],
+  ['rweight_5ftype_89',['rweight_type',['../structpm__sampleWeight_1_1rweight__type.html',1,'pm_sampleWeight']]],
+  ['rwfill_90',['rwfill',['../structpm__io_1_1wrap__type.html#a4aebff955f89b5b65f096217088f443d',1,'pm_io::wrap_type']]],
+  ['rwsize_91',['rwsize',['../structpm__io_1_1wrap__type.html#a865fe6b0d20dda7daeda69245309f0ba',1,'pm_io::wrap_type']]]
 ];
