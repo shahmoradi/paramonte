@@ -29,8 +29,7 @@ var searchData=
   ['transsymmskew_26',['transSymmSkew',['../namespacepm__matrixTrans.html#a34d5e15b78653510d21fcb825d45f24d',1,'pm_matrixTrans']]],
   ['transunit_27',['transUnit',['../namespacepm__matrixTrans.html#ab2d345ff10ab287b3771f9386962937d',1,'pm_matrixTrans']]],
   ['triang_28',['triang',['../namespacepm__matrixClass.html#a9d45cbb7d27735e30230fd2d4c72894c',1,'pm_matrixClass']]],
-  ['try_29',['Try',['../structpm__clusDensity_1_1partition__type.html#ab612595108c3abb336a0354190312175',1,'pm_clusDensity::partition_type']]],
-  ['twfill_30',['twfill',['../structpm__io_1_1wrap__type.html#afa89d1141ec16dc3991dc21fea03a553',1,'pm_io::wrap_type']]],
-  ['two_5fpi_31',['TWO_PI',['../namespacepm__mathConst.html#a4f7f541c1bb14d1e53266b201a7f5373',1,'pm_mathConst']]],
-  ['twsize_32',['twsize',['../structpm__io_1_1wrap__type.html#a70638e6033d0e08e58711dc4f275b41c',1,'pm_io::wrap_type']]]
+  ['twfill_29',['twfill',['../structpm__io_1_1wrap__type.html#afa89d1141ec16dc3991dc21fea03a553',1,'pm_io::wrap_type']]],
+  ['two_5fpi_30',['TWO_PI',['../namespacepm__mathConst.html#a4f7f541c1bb14d1e53266b201a7f5373',1,'pm_mathConst']]],
+  ['twsize_31',['twsize',['../structpm__io_1_1wrap__type.html#a70638e6033d0e08e58711dc4f275b41c',1,'pm_io::wrap_type']]]
 ];

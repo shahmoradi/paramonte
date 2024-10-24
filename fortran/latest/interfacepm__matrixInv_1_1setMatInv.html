@@ -237,11 +237,13 @@ This argument is merely a convenience to differentiate the different procedure f
 </dl>
 <p><br  />
 <a class="anchor" id="interface-setMatInv"></a><b>Possible calling interfaces</b> <a href="#interface-setMatInv">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__matrixInv.html">pm_matrixInv</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__matrixInv_1_1setMatInv.html">setMatInv</a></div>
+<div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__matrixInv.html">pm_matrixInv</a>, <span class="fortran_statement">only</span>: choLow, choUpp</div>
+<div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__matrixInv.html">pm_matrixInv</a>, <span class="fortran_statement">only</span>: upperDiag, lowerDiag</div>
 <div class="line"> </div>
 <div class="line"><span class="fortran_statement">call</span> <a class="code hl_interface" href="interfacepm__matrixInv_1_1setMatInv.html">setMatInv</a>(inv(<span class="fortran_numeric_literal">1</span>:ndim,<span class="fortran_numeric_literal"> 1</span>:ndim), mat(<span class="fortran_numeric_literal">1</span>:ndim,<span class="fortran_numeric_literal"> 1</span>:ndim), auxil)</div>
 <div class="line"><span class="fortran_statement">call</span> <a class="code hl_interface" href="interfacepm__matrixInv_1_1setMatInv.html">setMatInv</a>(inv(<span class="fortran_numeric_literal">1</span>:ndim,<span class="fortran_numeric_literal"> 1</span>:ndim), mat(<span class="fortran_numeric_literal">1</span>:ndim,<span class="fortran_numeric_literal"> 1</span>:ndim), auxil, subset) <span class="fortran_comment">! only if subset = choLow, choUpp.</span></div>
 <div class="line">!</div>
-<div class="ttc" id="ainterfacepm__matrixInv_1_1setMatInv_html"><div class="ttname"><a href="interfacepm__matrixInv_1_1setMatInv.html">pm_matrixInv::setMatInv</a></div><div class="ttdoc">Generate and return the full inverse of a general or triangular matrix or a subset of the inverse of ...</div><div class="ttdef"><b>Definition:</b> <a href="pm__matrixInv_8F90_source.html#l01786">pm_matrixInv.F90:1786</a></div></div>
+<div class="ttc" id="ainterfacepm__matrixInv_1_1setMatInv_html"><div class="ttname"><a href="interfacepm__matrixInv_1_1setMatInv.html">pm_matrixInv::setMatInv</a></div><div class="ttdoc">Generate and return the full inverse of a general or triangular matrix or a subset of the inverse of ...</div><div class="ttdef"><b>Definition:</b> <a href="pm__matrixInv_8F90_source.html#l01788">pm_matrixInv.F90:1788</a></div></div>
 <div class="ttc" id="anamespacepm__matrixInv_html"><div class="ttname"><a href="namespacepm__matrixInv.html">pm_matrixInv</a></div><div class="ttdoc">This module contains abstract and concrete derived types and procedures related to the inversion of s...</div><div class="ttdef"><b>Definition:</b> <a href="pm__matrixInv_8F90_source.html#l00212">pm_matrixInv.F90:212</a></div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The condition <code>size(mat, 1) == size(mat, 2))</code> must hold for the corresponding input arguments.<br  />
@@ -5343,13 +5345,13 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line"><a id="l04256" name="l04256"></a><span class="lineno"> 4256</span> </div>
 <div class="line"><a id="l04257" name="l04257"></a><span class="lineno"> 4257</span> </div>
 </div><!-- fragment --></dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000706">Test:</a></b></dt><dd>test_pm_matrixInv<br  />
+<dl class="test"><dt><b><a class="el" href="test.html#_test000711">Test:</a></b></dt><dd>test_pm_matrixInv<br  />
 </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000365">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: The functionality of this generic interface must be extended to fully dispatch to LAPACK inverse matrix routines where appropriate.<br  />
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000366">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: The functionality of this generic interface must be extended to fully dispatch to LAPACK inverse matrix routines where appropriate.<br  />
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="final-setMatInv"></a><b>Final Remarks</b> <a href="#final-setMatInv">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_matrixInv.F90#L1779 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_matrixInv.F90#L1781 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -5364,9 +5366,9 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000999">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Apr 21, 2017, 1:54 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001003">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Apr 21, 2017, 1:54 AM, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__matrixInv_8F90_source.html#l01786">1786</a> of file <a class="el" href="pm__matrixInv_8F90_source.html">pm_matrixInv.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__matrixInv_8F90_source.html#l01788">1788</a> of file <a class="el" href="pm__matrixInv_8F90_source.html">pm_matrixInv.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
 <li>src/fortran/main/<a class="el" href="pm__matrixInv_8F90_source.html">pm_matrixInv.F90</a></li>
 </ul>
@@ -5376,7 +5378,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__matrixInv.html">pm_matrixInv</a></li><li class="navelem"><a class="el" href="interfacepm__matrixInv_1_1setMatInv.html">setMatInv</a></li>
-        <li class="footer">Generated on Thu Oct 10 2024 22:04:58 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Wed Oct 23 2024 23:58:39 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

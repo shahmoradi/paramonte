@@ -6,6 +6,5 @@ var searchData=
   ['varenv_5fdirtemp_5fwindows_3',['VARENV_DIRTEMP_WINDOWS',['../namespacepm__sysShell.html#a4d7363565c10cf47f5e4668f7f82fe1a',1,'pm_sysShell']]],
   ['verbatim_4',['verbatim',['../namespacepm__sysPath.html#a2c637ff13b084822c7f5e2f6dd19dd67',1,'pm_sysPath']]],
   ['verbatim_5ftype_5',['verbatim_type',['../structpm__sysPath_1_1verbatim__type.html',1,'pm_sysPath']]],
-  ['volnormedcdf_6',['VolNormedCDF',['../structpm__clusDensity_1_1partition__type.html#a97f5dfcb8d712893abd1cffd6ab03fff',1,'pm_clusDensity::partition_type']]],
-  ['vt_7',['VT',['../namespacepm__strASCII.html#a0036e148410abec4df05cc09c153c0ae',1,'pm_strASCII']]]
+  ['vt_6',['VT',['../namespacepm__strASCII.html#a0036e148410abec4df05cc09c153c0ae',1,'pm_strASCII']]]
 ];

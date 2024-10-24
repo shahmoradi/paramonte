@@ -1,5 +1,9 @@
 var NAVTREEINDEX7 =
 {
+"namespacemembers_vars_i.html":[22,1,2,8],
+"namespacemembers_vars_j.html":[22,1,2,9],
+"namespacemembers_vars_k.html":[22,1,2,10],
+"namespacemembers_vars_l.html":[22,1,2,11],
 "namespacemembers_vars_m.html":[22,1,2,12],
 "namespacemembers_vars_n.html":[22,1,2,13],
 "namespacemembers_vars_o.html":[22,1,2,14],
@@ -151,17 +155,10 @@ var NAVTREEINDEX7 =
 "namespacepm__bit.html#a1ad5a6f6f1a0ef7ae1adea056c42d12d":[22,0,38,0],
 "namespacepm__blas.html":[22,0,39],
 "namespacepm__blas.html#a77e32bc4a58af6659a3dc49d8c44f2b7":[22,0,39,15],
-"namespacepm__clusDensity.html":[22,0,40],
-"namespacepm__clusDensity.html#a274f05adcf4a1c9100fc92f6b3a761f9":[22,0,40,11],
-"namespacepm__clusDensity.html#a41972ba4eb0733ecccba9901125c47b3":[22,0,40,6],
-"namespacepm__clusDensity.html#a5ccd3a5f4ef7e579b9ea462601302bd7":[22,0,40,7],
-"namespacepm__clusDensity.html#a7b602151ef50129adce9af52278df623":[22,0,40,10],
-"namespacepm__clusDensity.html#aa324844abf44468bec78210e06ea5819":[22,0,40,5],
-"namespacepm__clusDensity.html#ac84d8ffc1a1e87b90ecd61bf13b2e8fe":[22,0,40,8],
-"namespacepm__clusDensity.html#af02e295a6fb2cdeaf76bcdd9c1f77a80":[22,0,40,9],
-"namespacepm__clusDensity.html#afd014532e8dd98481462d94c319bde38":[22,0,40,4],
-"namespacepm__clusKmeans.html":[22,0,41],
-"namespacepm__clusKmeans.html#a00fa2c4565da16bef172aeecb8f10ef5":[22,0,41,4],
+"namespacepm__clusKmeans.html":[22,0,40],
+"namespacepm__clusKmeans.html#a00fa2c4565da16bef172aeecb8f10ef5":[22,0,40,4],
+"namespacepm__clusTest.html":[22,0,41],
+"namespacepm__clusTest.html#a97f283885e2630c35147f504876eac3b":[22,0,41,4],
 "namespacepm__complexAbs.html":[22,0,42],
 "namespacepm__complexAbs.html#a0fa03db736b8a9a7843f77d20ed03633":[22,0,42,1],
 "namespacepm__complexCompareAll.html":[22,0,43],
@@ -249,5 +246,8 @@ var NAVTREEINDEX7 =
 "namespacepm__dateTime.html#af3d4f556500982fd65c75aa74c8f1207":[22,0,52,29],
 "namespacepm__distBand.html":[22,0,58],
 "namespacepm__distBand.html#a5a09169570a145e4052d8cd786440051":[22,0,58,11],
-"namespacepm__distBand.html#abe261ea8b673152237382e96a6c552f1":[22,0,58,9]
+"namespacepm__distBand.html#abe261ea8b673152237382e96a6c552f1":[22,0,58,9],
+"namespacepm__distBand.html#ac65e88f6cedd1f541923cefb457cfb7d":[22,0,58,10],
+"namespacepm__distBern.html":[22,0,59],
+"namespacepm__distBern.html#aa146e4e0cd0b3bbd25bba995c30c1d05":[22,0,59,4]
 };

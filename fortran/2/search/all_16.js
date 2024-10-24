@@ -36,7 +36,6 @@ var searchData=
   ['windows_5freserved_5fstr_33',['WINDOWS_RESERVED_STR',['../namespacepm__sysPath.html#a97aa0d09c9a9bf2b4fa4d691643976f5',1,'pm_sysPath']]],
   ['wrap_34',['wrap',['../interfacepm__io_1_1wrap.html',1,'pm_io']]],
   ['wrap_5ftype_35',['wrap_type',['../structpm__io_1_1wrap__type.html',1,'pm_io']]],
-  ['write_36',['write',['../structpm__clusDensity_1_1partition__type.html#a9aac467c6d6dc33493b560ffee27b1ab',1,'pm_clusDensity::partition_type']]],
-  ['writepartition_37',['writePartition',['../namespacepm__clusDensity.html#ac84d8ffc1a1e87b90ecd61bf13b2e8fe',1,'pm_clusDensity']]],
-  ['wsin_5ftype_38',['wsin_type',['../structpm__quadPack_1_1wsin__type.html',1,'pm_quadPack']]]
+  ['write_36',['write',['../structpm__clusTest_1_1mmvue__type.html#a08c9fa841e536f458bb8e942d873fa81',1,'pm_clusTest::mmvue_type']]],
+  ['wsin_5ftype_37',['wsin_type',['../structpm__quadPack_1_1wsin__type.html',1,'pm_quadPack']]]
 ];

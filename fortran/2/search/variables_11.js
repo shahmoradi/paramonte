@@ -3,7 +3,7 @@ var searchData=
   ['r_0',['r',['../structpm__paramonte_1_1envis__type.html#a877e71a84ba617f5bbbceb4836c0935e',1,'pm_paramonte::envis_type::r()'],['../structpm__io_1_1filext__type.html#afdb3197bbcbf64d555b593ac368ef184',1,'pm_io::filext_type::r()']]],
   ['radix_1',['radix',['../structpm__kind_1_1modeln__type.html#a58d7eb641c54c931e9d630055f1b0234',1,'pm_kind::modeln_type']]],
   ['randomseed_2',['randomSeed',['../structpm__sampling_1_1sampler__type.html#a5bd5ee2f7ea69e87dbcde9804d31a9ab',1,'pm_sampling::sampler_type']]],
-  ['range_3',['range',['../structpm__kind_1_1modeln__type.html#ab03e6268468df68f0c202a1b9389f4bd',1,'pm_kind::modeln_type']]],
+  ['range_3',['range',['../structpm__clusTest_1_1mmvue__type.html#af08e044bc37cd16faa350e1ebef54b6c',1,'pm_clusTest::mmvue_type::range()'],['../structpm__kind_1_1modeln__type.html#ab03e6268468df68f0c202a1b9389f4bd',1,'pm_kind::modeln_type::range()']]],
   ['rdpack_4',['rdpack',['../namespacepm__matrixPack.html#a728eefa5b33437d9f9832a72fed0b173',1,'pm_matrixPack']]],
   ['real_5',['real',['../structpm__io_1_1field__type.html#ae51437be2b7353e970597ca6bd1f78dd',1,'pm_io::field_type']]],
   ['real_5fkinds_5fprecision_6',['real_kinds_precision',['../namespacepm__kind.html#a50eab501b336485ef4b63ce23c420254',1,'pm_kind']]],

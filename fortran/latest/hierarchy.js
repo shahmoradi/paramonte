@@ -626,10 +626,6 @@ var hierarchy =
     [ "pm_os::isWindows", "interfacepm__os_1_1isWindows.html", null ],
     [ "pm_sysInfo::kernel_type", "structpm__sysInfo_1_1kernel__type.html", null ],
     [ "pm_sysInfo::kernelis_type", "structpm__sysInfo_1_1kernelis__type.html", null ],
-    [ "pm_clusDensity::KmeansTry_type", "structpm__clusDensity_1_1KmeansTry__type.html", null ],
-    [ "pm_clusDensity::KvolTry_type", "structpm__clusDensity_1_1KvolTry__type.html", [
-      [ "pm_clusDensity::ParTry_type", "structpm__clusDensity_1_1ParTry__type.html", null ]
-    ] ],
     [ "pm_lapack::lapackGETRF", "interfacepm__lapack_1_1lapackGETRF.html", null ],
     [ "pm_quadRomb::lbis_type", "structpm__quadRomb_1_1lbis__type.html", null ],
     [ "pm_sysPath::ls", "interfacepm__sysPath_1_1ls.html", null ],
@@ -703,6 +699,9 @@ var hierarchy =
     [ "pm_complexMinMax::min", "interfacepm__complexMinMax_1_1min.html", null ],
     [ "pm_complexMinMax::minloc", "interfacepm__complexMinMax_1_1minloc.html", null ],
     [ "pm_complexMinMax::minval", "interfacepm__complexMinMax_1_1minval.html", null ],
+    [ "pm_clusTest::mmvue_type", "structpm__clusTest_1_1mmvue__type.html", null ],
+    [ "pm_clusTest::mmvue_type_write", "interfacepm__clusTest_1_1mmvue__type__write.html", null ],
+    [ "pm_clusTest::mmvue_typer", "interfacepm__clusTest_1_1mmvue__typer.html", null ],
     [ "pm_kind::model_type", "structpm__kind_1_1model__type.html", [
       [ "pm_kind::modeln_type", "structpm__kind_1_1modeln__type.html", [
         [ "pm_kind::modeli_type", "structpm__kind_1_1modeli__type.html", [
@@ -786,13 +785,13 @@ var hierarchy =
     [ "pm_arrayPad::padl_type", "structpm__arrayPad_1_1padl__type.html", null ],
     [ "pm_arrayPad::padr_type", "structpm__arrayPad_1_1padr__type.html", null ],
     [ "pm_paramonte::paramonte_type", "structpm__paramonte_1_1paramonte__type.html", null ],
-    [ "pm_clusDensity::partition_type", "structpm__clusDensity_1_1partition__type.html", null ],
     [ "pm_quadRomb::pexp_type", "structpm__quadRomb_1_1pexp__type.html", null ],
     [ "pm_mathConst::pinf_type", "structpm__mathConst_1_1pinf__type.html", null ],
     [ "pm_polation::piwilin_type", "structpm__polation_1_1piwilin__type.html", null ],
     [ "pm_polation::piwipol_type", "structpm__polation_1_1piwipol__type.html", null ],
     [ "pm_mathRound::pnint", "interfacepm__mathRound_1_1pnint.html", null ],
     [ "pm_quadRomb::pwrl_type", "structpm__quadRomb_1_1pwrl__type.html", null ],
+    [ "pm_clusTest::range_type", "structpm__clusTest_1_1range__type.html", null ],
     [ "pm_arrayRank::rank_type", "structpm__arrayRank_1_1rank__type.html", [
       [ "pm_arrayRank::dense_type", "structpm__arrayRank_1_1dense__type.html", null ],
       [ "pm_arrayRank::fractional_type", "structpm__arrayRank_1_1fractional__type.html", null ],

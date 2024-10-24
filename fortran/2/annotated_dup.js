@@ -247,17 +247,17 @@ var annotated_dup =
       [ "blasTRSM", "interfacepm__blas_1_1blasTRSM.html", "interfacepm__blas_1_1blasTRSM" ],
       [ "blasTRSV", "interfacepm__blas_1_1blasTRSV.html", "interfacepm__blas_1_1blasTRSV" ]
     ] ],
-    [ "pm_clusDensity", "namespacepm__clusDensity.html", [
-      [ "KmeansTry_type", "structpm__clusDensity_1_1KmeansTry__type.html", "structpm__clusDensity_1_1KmeansTry__type" ],
-      [ "KvolTry_type", "structpm__clusDensity_1_1KvolTry__type.html", "structpm__clusDensity_1_1KvolTry__type" ],
-      [ "partition_type", "structpm__clusDensity_1_1partition__type.html", "structpm__clusDensity_1_1partition__type" ],
-      [ "ParTry_type", "structpm__clusDensity_1_1ParTry__type.html", "structpm__clusDensity_1_1ParTry__type" ]
-    ] ],
     [ "pm_clusKmeans", "namespacepm__clusKmeans.html", [
       [ "setCenter", "interfacepm__clusKmeans_1_1setCenter.html", null ],
       [ "setKmeans", "interfacepm__clusKmeans_1_1setKmeans.html", null ],
       [ "setKmeansPP", "interfacepm__clusKmeans_1_1setKmeansPP.html", null ],
       [ "setMember", "interfacepm__clusKmeans_1_1setMember.html", null ]
+    ] ],
+    [ "pm_clusTest", "namespacepm__clusTest.html", [
+      [ "mmvue_type", "structpm__clusTest_1_1mmvue__type.html", "structpm__clusTest_1_1mmvue__type" ],
+      [ "mmvue_type_write", "interfacepm__clusTest_1_1mmvue__type__write.html", null ],
+      [ "mmvue_typer", "interfacepm__clusTest_1_1mmvue__typer.html", null ],
+      [ "range_type", "structpm__clusTest_1_1range__type.html", "structpm__clusTest_1_1range__type" ]
     ] ],
     [ "pm_complexAbs", "namespacepm__complexAbs.html", [
       [ "abs", "interfacepm__complexAbs_1_1abs.html", null ]

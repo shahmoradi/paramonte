@@ -42,8 +42,8 @@ var namespaces_dup =
       [ "IS_BIG_ENDIAN", "namespacepm__bit.html#a1ad5a6f6f1a0ef7ae1adea056c42d12d", null ]
     ] ],
     [ "pm_blas", "namespacepm__blas.html", "namespacepm__blas" ],
-    [ "pm_clusDensity", "namespacepm__clusDensity.html", "namespacepm__clusDensity" ],
     [ "pm_clusKmeans", "namespacepm__clusKmeans.html", "namespacepm__clusKmeans" ],
+    [ "pm_clusTest", "namespacepm__clusTest.html", "namespacepm__clusTest" ],
     [ "pm_complexAbs", "namespacepm__complexAbs.html", "namespacepm__complexAbs" ],
     [ "pm_complexCompareAll", "namespacepm__complexCompareAll.html", "namespacepm__complexCompareAll" ],
     [ "pm_complexCompareAny", "namespacepm__complexCompareAny.html", "namespacepm__complexCompareAny" ],
