@@ -1,5 +1,11 @@
 var NAVTREEINDEX3 =
 {
+"classTileLine3.html#ac18c34c36f403ca7dbd8efbb6e86a442":[17,0,82,0],
+"classTileLineScatter.html":[17,0,83],
+"classTileLineScatter.html#a145aac6726c017a5552262ba0d289560":[17,0,83,0],
+"classTileLineScatter3.html":[17,0,84],
+"classTileLineScatter3.html#aa0773ec29a7e9ff9a9ef699ba9eca6a3":[17,0,84,0],
+"classTileScatter.html":[17,0,85],
 "classTileScatter.html#a6abbed6fc6984d6f0ab9a6e3b5bc40fa":[17,0,85,0],
 "classTileScatter3.html":[17,0,86],
 "classTileScatter3.html#a52884de7dd843c07e9f8f215234c382d":[17,0,86,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX3 =
 "im2gif_8m.html#ab6f56a8da156412dd37091b4a16912e1":[18,0,0,0,0,0,16,3,0,7,1],
 "im2gif_8m.html#af4749aaaa8b2da99a97d3f94be3a67cb":[18,0,0,0,0,0,16,3,0,7,0],
 "im2gif_8m_source.html":[18,0,0,0,0,0,16,3,0,7],
-"imageproc_8m.html":[18,0,0,0,0,0,7,0,10],
-"imageproc_8m.html#a1b6b817ac751a69fb9ced8cdedffaa16":[18,0,0,0,0,0,7,0,10,0],
-"imageproc_8m_source.html":[18,0,0,0,0,0,7,0,10],
-"index.html":[],
-"index.html#ParaMonte":[0],
-"index.html#ParaMonteDocumentation":[3],
-"index.html#ParaMonteLangAbbreviationGuidlines":[8]
+"imageproc_8m.html":[18,0,0,0,0,0,7,0,10]
 };

@@ -5,6 +5,7 @@ var classSampler =
     [ "findfile", "classSampler.html#ad1e47e4d1c58f13f9d6468dc28488144", null ],
     [ "getLogFuncConcurrent", "classSampler.html#a1863d9371c47d3adefe212b340f15507", null ],
     [ "getLogFuncWrapped", "classSampler.html#abff971dc236c62019bbe6aa280817260", null ],
+    [ "getppm", "classSampler.html#a84bea6181cfd13549dc7b5a4dbc91ff9", null ],
     [ "readChain", "classSampler.html#a81e0970bfb647fe928db20cdd9d8caaf", null ],
     [ "readProgress", "classSampler.html#ae3f0f62c32f8da4d9f4c882f9cc39c6e", null ],
     [ "readReport", "classSampler.html#a753ccd6a5b6734db44952de25be7e002", null ],

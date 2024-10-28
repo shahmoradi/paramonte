@@ -726,22 +726,65 @@ in tiers sorted by their relevance and importance to the end users.</p>
   <li><a href="#TIER-4-ParaMonte-library-build-configuration-flags">TIER-4 ParaMonte library build configuration flags</a></li>
 </ol>
 
+<h2 id="usage">Usage</h2>
+
+<h3 id="usage-with-installsh">Usage with <code>install.sh</code></h3>
+
+<p>The general usage syntax of the flags with the <code>install.sh</code> installation script is the following:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh flag value
+</code></pre></div></div>
+
+<p>where <code>flag</code> can be any of the following installation flags and <code>value</code> is the user-specified value for the flag.</p>
+
+<blockquote>
+  <p><strong>NOTE</strong> Some flags below may not require a <code>value</code> to be specified.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>NOTE</strong> If the installation script <code>install.sh</code> is non-executable,
+you can make it executable using the Bash command <code>chmod +x install.sh</code>.</p>
+</blockquote>
+
+<h3 id="usage-with-installbat">Usage with <code>install.bat</code></h3>
+
+<p>The general usage syntax of the flags with the <code>install.bat</code> installation script is the following:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.bat flag value
+</code></pre></div></div>
+
+<p>where <code>flag</code> can be any of the following installation flags and <code>value</code> is the user-specified value for the flag.</p>
+
+<blockquote>
+  <p><strong>NOTE</strong> Some flags below may not require a <code>value</code> to be specified.</p>
+</blockquote>
+
 <h2 id="tier-1-paramonte-library-build-configuration-flags">TIER-1 ParaMonte library build configuration flags</h2>
 
 <p>The ParaMonte TIER-1 build flags set the most important and useful build configurations.
 Assuming the required compilers and external (e.g., Coarray, MPI parallel) libraries are
 available on the system, these flags can readily customized the library build.</p>
 
+<h3 id="help"><code>help</code></h3>
+
+<p>Displays all contents of this file and available installation flags on the command line.</p>
+
+<ul>
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--help</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage with <code>cmake</code> binary executable: <strong>Not Available.</strong></li>
+</ul>
+
 <h3 id="build"><code>build</code></h3>
 
 <p>Specifies the library build type for which the library will be built.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--build</span> <span class="s2">"build_type"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dbuild=<span class="s2">"build_type"</span>
 </code></pre></div>    </div>
   </li>
@@ -815,11 +858,11 @@ compilers, they are automatically converted to <code>release</code>.</p>
 which the library will be built and accessed from.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--lang</span> <span class="s2">"programming_language"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dlang=<span class="s2">"programming_language"</span>
 </code></pre></div>    </div>
   </li>
@@ -902,11 +945,11 @@ list of programming languages for which the library will be built in the specifi
 <p>Specifies the library file type for which the library will be built.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--lib</span> <span class="s2">"library_type"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dlib=<span class="s2">"library_type"</span>
 </code></pre></div>    </div>
   </li>
@@ -945,11 +988,11 @@ list of possible values for which the library will be built in the specified ord
 <p>Specifies the library memory usage type for which the library will be built.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--mem</span> <span class="s2">"memory_allocation_type"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dmem=<span class="s2">"memory_allocation_type"</span>
 </code></pre></div>    </div>
   </li>
@@ -1002,11 +1045,11 @@ list of possible values for which the library will be built in the specified ord
 <p>Specifies the library parallelization paradigm for which the library will be built.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--par</span> <span class="s2">"parallelization_type"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dpar=<span class="s2">"parallelization_type"</span>
 </code></pre></div>    </div>
   </li>
@@ -1083,7 +1126,7 @@ before outputting the final product to the
 specified deployment directory via <code>ddir</code>.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--bdir</span> <span class="s2">"cmake_build_directory_path"</span>
 </code></pre></div>    </div>
   </li>
@@ -1177,11 +1220,11 @@ Relative paths currently result in library build failure.</p>
 <p>Specifies the library benchmarks to build and run after building library.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--bench</span> <span class="s2">"benchmark_list"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dbench=<span class="s2">"benchmark_list"</span>
 </code></pre></div>    </div>
   </li>
@@ -1248,11 +1291,11 @@ Where unavailable, this option should not be specified.</p>
 <p>Specifies the BLAS implementation against which certain ParaMonte library routines will be linked.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--blas</span> <span class="s2">"cmake_blas_vendor"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dblas=<span class="s2">"cmake_blas_vendor"</span>
 </code></pre></div>    </div>
   </li>
@@ -1307,11 +1350,11 @@ built without any BLAS dependency.</p>
 <p>Specifies the library runtime checking policy for which the library will be built.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--checking</span> <span class="s2">"checking_type"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dchecking=<span class="s2">"checking_type"</span>
 </code></pre></div>    </div>
   </li>
@@ -1361,11 +1404,11 @@ degrades the runtime performance and increases the library size.</p>
 which the full ParaMonte package will be copied.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--ddir</span> <span class="s2">"deploy_directory_path"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dddir=<span class="s2">"deploy_directory_path"</span>
 </code></pre></div>    </div>
   </li>
@@ -1383,11 +1426,11 @@ of the project where the main <code>CMakeLists.txt</code> file exists.</p>
 <p>Specifies the library examples to build and run after building library.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--exam</span> <span class="s2">"example_list"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dexam=<span class="s2">"example_list"</span>
 </code></pre></div>    </div>
   </li>
@@ -1455,11 +1498,11 @@ and running the corresponding ParaMonte library examples on the command line.</p
 executable file with which the library will be built.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--fc</span> <span class="s2">"fortran_compiler_executable_path"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dfc=<span class="s2">"fortran_compiler_executable_path"</span>
 </code></pre></div>    </div>
   </li>
@@ -1486,11 +1529,11 @@ is automatically determined by CMake or the build scripts.</p>
 <p>Specifies the LAPACK implementation against which certain ParaMonte library routines will be linked.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--lapack</span> <span class="s2">"cmake_lapack_vendor"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dlapack=<span class="s2">"cmake_lapack_vendor"</span>
 </code></pre></div>    </div>
   </li>
@@ -1540,18 +1583,19 @@ built without any LAPACK dependency.</p>
 
 <p><strong>optional</strong>. The default value for <code>cmake_lapack_vendor</code> is <code>none</code>.</p>
 
-<h3 id="matlabdir"><code>matlabdir</code></h3>
+<h3 id="matlabroot"><code>matlabroot</code></h3>
 
-<p>Specifies the path to the root <strong>directory</strong> of MATLAB against which the library will be linked.
-Within a MATLAB session, this directory path is returned by the MATLAB intrinsic function <code>matlabroot</code>.</p>
+<p>Specifies the path to the <strong>root directory</strong> of MATLAB against which the library will be linked.
+Within a MATLAB session, this directory path is returned by the MATLAB intrinsic function <code>matlabroot</code>.
+An example such path returned in MATLAB 2024a environment is: <code>'C:\Program Files\MATLAB\R2024a'</code> on Windows platforms.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--matlabdir</span> <span class="s2">"matlab_root_dir_path"</span>
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--matlabroot</span> <span class="s2">"matlab_root_dir_path"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
-    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dmatlabdir=<span class="s2">"matlab_root_dir_path"</span>
+  <li>Usage with <code>cmake</code> binary executable:
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dmatlabroot=<span class="s2">"matlab_root_dir_path"</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -1581,6 +1625,14 @@ a particular installation of MATLAB among multiple installations.</p>
 as CMake often has difficultly choosing the right MATLAB version among several options.</p>
 </blockquote>
 
+<blockquote>
+  <p><strong>NOTE</strong>
+If you are a ParaMonte developer and aim to specify a MATLAB installation against which you intend to build the library,
+always ensure to install the oldest possible compatible MATLAB version. This ensures the generated MEX files are compatible
+with all newer MATLAB version. The opposite does not generally hold. For example, MATLAB 2024a MEX files are not compatible with
+MATLAB 2020b environment and libraries.</p>
+</blockquote>
+
 <p><strong>optional</strong>. The default value for <code>matlab_root_dir_path</code> is set automatically by CMake.</p>
 
 <h3 id="me"><code>me</code></h3>
@@ -1589,11 +1641,11 @@ as CMake often has difficultly choosing the right MATLAB version among several o
 binary executable file for MPI-parallel applications.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--me</span> <span class="s2">"mpiexec_path"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dme=<span class="s2">"mpiexec_path"</span>
 </code></pre></div>    </div>
   </li>
@@ -1623,11 +1675,11 @@ is automatically determined by CMake or the build scripts.</p>
 <p>Specifies the library testing mode for which the library will be built.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--test</span> <span class="s2">"testing_type"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dtest=<span class="s2">"testing_type"</span>
 </code></pre></div>    </div>
   </li>
@@ -1684,11 +1736,11 @@ Some of the available options with intricate implications require careful attent
 <p>Specifies the library benchmarks postprocessing scripts to run after building the library.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--benchpp</span> <span class="s2">"benchmark_postprocessing_list"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dbenchpp=<span class="s2">"benchmark_postprocessing_list"</span>
 </code></pre></div>    </div>
   </li>
@@ -1767,11 +1819,11 @@ is the same as the value set for the option <code>bench</code>.</p>
 <p>Specifies whether the library must be built with C-Fortran interoperable types and kinds.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--cfi</span> <span class="s2">"c_fortran_interoperability_list"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dcfi=<span class="s2">"c_fortran_interoperability_list"</span>
 </code></pre></div>    </div>
   </li>
@@ -1817,11 +1869,11 @@ is the same as the value set for the option <code>bench</code>.</p>
 <p>Determines whether Code Coverage report must be generated.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--codecov</span> <span class="s2">"code_coverage_type"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dcodecov=<span class="s2">"code_coverage_type"</span>
 </code></pre></div>    </div>
   </li>
@@ -1872,11 +1924,11 @@ The coverage report generation is bound to fail if the compiler and GCOV softwar
 <p>Specifies the library dependencies to copy to the final deployment directory.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--deps</span> <span class="s2">"dependencies_list"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Ddeps=<span class="s2">"dependencies_list"</span>
 </code></pre></div>    </div>
   </li>
@@ -1907,18 +1959,73 @@ The coverage report generation is bound to fail if the compiler and GCOV softwar
   <p>This is a low level option and mostly useful to the developers of the ParaMonte library.</p>
 </blockquote>
 
+<blockquote>
+  <p><strong>NOTE</strong> This flag is currently non-functional on Windows platforms possibly due to a CMake bug related to <code>TARGET_SONAME_FILE</code>.</p>
+</blockquote>
+
 <p><strong>optional</strong>. The default value for <code>dependencies_list</code> is <code>none</code>.</p>
+
+<h3 id="dev"><code>dev</code></h3>
+
+<p>Prevents the creation of the deployment (<code>bin</code>) directory for the final binary products and
+further avoids the duplicate CMake build which is currently required to properly generate
+all preprocessed Fortran source files in the final package.</p>
+
+<ul>
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--dev</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usage with <code>cmake</code> binary executable:
+    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Ddev_enabled=value
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>where <code>value</code> can be any of the following values.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>0</code></td>
+      <td>The development mode is disabled.</td>
+    </tr>
+    <tr>
+      <td><code>1</code></td>
+      <td>The development mode is enabled.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>This is a low level option and mostly useful to the developers of the ParaMonte library.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>NOTE</strong> 
+The primary goal of this flag is to bypass an implementation bug in the current CMake scripts of the ParaMonte library
+and enhance the library development experience by reducing the redundant builds and file and folder copies, 
+thus, speeding up the library development and testing.</p>
+</blockquote>
+
+<p><strong>optional</strong>. The default value for <code>value</code> is <code>0</code>.</p>
 
 <h3 id="exampp"><code>exampp</code></h3>
 
 <p>Specifies the library examples postprocessing scripts to run after building the library.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--exampp</span> <span class="s2">"example_postprocessing_list"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dexampp=<span class="s2">"example_postprocessing_list"</span>
 </code></pre></div>    </div>
   </li>
@@ -1993,11 +2100,11 @@ is the same as the value set for the option <code>exam</code>.</p>
 the Fortran compiler with which the library is built.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--fcf</span> <span class="s2">"additional_fortran_compiler_flags"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dfcf=<span class="s2">"additional_fortran_compiler_flags"</span>
 </code></pre></div>    </div>
   </li>
@@ -2026,11 +2133,11 @@ separated by semicolon <code>;</code> that are added to library default compiler
 the Fortran linker with which the library object files are linked.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--flf</span> <span class="s2">"additional_fortran_linker_flags"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dflf=<span class="s2">"additional_fortran_linker_flags"</span>
 </code></pre></div>    </div>
   </li>
@@ -2054,11 +2161,11 @@ separated by semicolon <code>;</code> that are added to library default linker f
 <p>Specifies the preprocessing style of the Fortran source files before building the library.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--fpp</span> <span class="s2">"fortran_preprocessing_style"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dfpp=<span class="s2">"fortran_preprocessing_style"</span>
 </code></pre></div>    </div>
   </li>
@@ -2124,11 +2231,11 @@ then <code>fortran_preprocessing_style</code> is set to <code>none</code>.</li>
 that must be deleted before starting the new CMake configuration and build.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--fresh</span> <span class="s2">"subdirectories_to_delete"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dfresh=<span class="s2">"subdirectories_to_delete"</span>
 </code></pre></div>    </div>
   </li>
@@ -2167,6 +2274,14 @@ that must be deleted before starting the new CMake configuration and build.</p>
   <p>This option is simplifies the task of cleaning CMake build directory when library for a given build is being built repeatedly.</p>
 </blockquote>
 
+<blockquote>
+  <p><strong>NOTE</strong>
+Beware that the specified values for all flags (including <code>--fresh</code> are sticky and have to be unset for the next builds, if desired.
+For example, the value is set to <code>all</code>, any subsequent CMake reconfigurations will use this value even if the flag <code>--fresh</code> is not specified
+in the subsequent configurations. This sticky behavior can lead to complete rebuilds of the library, which may be time consuming.
+To change the sticky behavior, one has to reset the value of <code>--fresh</code> explicitly.</p>
+</blockquote>
+
 <p><strong>optional</strong>. The default value for <code>subdirectories_to_delete</code> is <code>none</code>.</p>
 
 <h3 id="g"><code>G</code></h3>
@@ -2174,11 +2289,11 @@ that must be deleted before starting the new CMake configuration and build.</p>
 <p>Specifies the CMake build generator.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">-G</span> <span class="s2">"cmake_build_generator"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-G <span class="s2">"cmake_build_generator"</span>
 </code></pre></div>    </div>
   </li>
@@ -2211,6 +2326,10 @@ that must be deleted before starting the new CMake configuration and build.</p>
       <td>Generates standard UNIX makefiles.</td>
     </tr>
     <tr>
+      <td><code>Ninja</code></td>
+      <td>Generates a <code>build.ninja</code> file into the build tree.</td>
+    </tr>
+    <tr>
       <td>other</td>
       <td>Any build generator supported by CMake.</td>
     </tr>
@@ -2241,11 +2360,11 @@ The default value for <code>cmake_build_generator</code> is</p>
 <p>Specifies the number parallel threads to be used by the Make software for parallel library build.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">-j</span> <span class="s2">"num_parallel_threads"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-j <span class="s2">"num_parallel_threads"</span>
 </code></pre></div>    </div>
     <p>or</p>
@@ -2275,11 +2394,11 @@ The default value for <code>cmake_build_generator</code> is</p>
 <p>Specifies the binary name of the output library built.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--libname</span> <span class="s2">"desired_paramonte_library_name"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dlibname=<span class="s2">"desired_paramonte_library_name"</span>
 </code></pre></div>    </div>
   </li>
@@ -2296,11 +2415,11 @@ specific name to be used for generating the output library.</p>
 to compile and add to the final output library file.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--mod</span> <span class="s2">"module_list"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dmod=<span class="s2">"module_list"</span>
 </code></pre></div>    </div>
   </li>
@@ -2353,11 +2472,11 @@ and <code>pm_sampling</code> when <code>lang</code> is set to any other possible
 of the ParaMonte library should be considered or dropped in the build.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--pdt</span> <span class="s2">"pdt_list"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dpdt=<span class="s2">"pdt_list"</span>
 </code></pre></div>    </div>
   </li>
@@ -2407,11 +2526,11 @@ and their implementations within the ParaMonte library.</p>
 <p>Specifies whether the library should be compiled for performance profiling.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--perfprof</span> <span class="s2">"perfprof_list"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dperfprof=<span class="s2">"perfprof_list"</span>
 </code></pre></div>    </div>
   </li>
@@ -2455,11 +2574,11 @@ This option has no effects on the build for all other compiler choices.</p>
 <p>Specifies whether (designated) procedures should be compiled with <code>pure</code> or <code>impure</code> attribute.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--purity</span> <span class="s2">"purity_type"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dpurity=<span class="s2">"purity_type"</span>
 </code></pre></div>    </div>
   </li>
@@ -2584,11 +2703,11 @@ Additionally, the standard requires minimal support for at least one <code>logic
 for which the ParaMonte library must be built.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--ski</span> <span class="s2">"character_kinds_indices"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dski=<span class="s2">"character_kinds_indices"</span>
 </code></pre></div>    </div>
   </li>
@@ -2622,11 +2741,11 @@ for which the ParaMonte library must be built.</p>
 the Fortran linker with which the library object files are linked.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--cki</span> <span class="s2">"complex_kinds_indices"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dcki=<span class="s2">"complex_kinds_indices"</span>
 </code></pre></div>    </div>
   </li>
@@ -2671,11 +2790,11 @@ for which the ParaMonte library must be built.</p>
 the Fortran linker with which the library object files are linked.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--iki</span> <span class="s2">"integer_kinds_indices"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Diki=<span class="s2">"integer_kinds_indices"</span>
 </code></pre></div>    </div>
   </li>
@@ -2716,11 +2835,11 @@ for which the ParaMonte library must be built.</p>
 the Fortran linker with which the library object files are linked.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--lki</span> <span class="s2">"logical_kinds_indices"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dlki=<span class="s2">"logical_kinds_indices"</span>
 </code></pre></div>    </div>
   </li>
@@ -2757,11 +2876,11 @@ for which the ParaMonte library must be built.</p>
 the Fortran linker with which the library object files are linked.</p>
 
 <ul>
-  <li>Usage (with <code>install.bat</code> or <code>install.sh</code>)
+  <li>Usage with <code>install.bat</code> or <code>install.sh</code>:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--rki</span> <span class="s2">"real_kinds_indices"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Usage (with <code>cmake</code> binary executable)
+  <li>Usage with <code>cmake</code> binary executable:
     <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Drki=<span class="s2">"real_kinds_indices"</span>
 </code></pre></div>    </div>
   </li>
@@ -2902,7 +3021,7 @@ all other programming languages.</p>
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on August 31, 2024<br/>
+            Last updated on October 28, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/latest/images/logo.png" }}" alt="cdslab.org" /></a>
