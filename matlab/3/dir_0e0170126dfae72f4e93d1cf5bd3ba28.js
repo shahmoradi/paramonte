@@ -3,7 +3,7 @@ var dir_0e0170126dfae72f4e93d1cf5bd3ba28 =
     [ "finalize.m", "finalize_8m.html", null ],
     [ "findfile.m", "findfile_8m.html", null ],
     [ "getppm.m", "_0dSampler_2getppm_8m.html", null ],
-    [ "readChain.m", "readChain_8m.html", null ],
+    [ "readChain.m", "_0dSampler_2readChain_8m.html", null ],
     [ "readProgress.m", "readProgress_8m.html", null ],
     [ "readReport.m", "readReport_8m.html", null ],
     [ "readRestart.m", "readRestart_8m.html", null ],

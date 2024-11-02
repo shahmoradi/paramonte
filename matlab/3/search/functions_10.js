@@ -1,7 +1,7 @@
 var searchData=
 [
   ['read_5fwrite_5fentire_5ftextfile_0',['read_write_entire_textfile',['../read__write__entire__textfile_8m.html#ad6731c3b0a0c4ac289173fcae4f0a8da',1,'read_write_entire_textfile.m']]],
-  ['readchain_1',['readChain',['../classSampler.html#a81e0970bfb647fe928db20cdd9d8caaf',1,'Sampler']]],
+  ['readchain_1',['readChain',['../classSampler.html#a81e0970bfb647fe928db20cdd9d8caaf',1,'Sampler::readChain()'],['../classParadram.html#aab562c1b7be4a71fd3c1e0227e64b32e',1,'Paradram::readChain(in self, in pattern, in sep)']]],
   ['readchainmarkov_2',['readChainMarkov',['../classParadram.html#acc579eeadd6bc0d96adbeb5f03595219',1,'Paradram']]],
   ['readprogress_3',['readProgress',['../classSampler.html#ae3f0f62c32f8da4d9f4c882f9cc39c6e',1,'Sampler']]],
   ['readreport_4',['readReport',['../classSampler.html#a753ccd6a5b6734db44952de25be7e002',1,'Sampler']]],

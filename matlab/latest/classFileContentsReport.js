@@ -13,5 +13,6 @@ var classFileContentsReport =
     [ "lineListLen", "classFileContentsReport.html#a5a5ddde7bc0273d13df0c23aaa77fe0c", null ],
     [ "method", "classFileContentsReport.html#a780338dec09702ef418c1fd40276d895", null ],
     [ "prefix", "classFileContentsReport.html#a9d8972aae6900999c16545cb1d2cb8ae", null ],
-    [ "stats", "classFileContentsReport.html#a1f396882acba553f560252bb0e02c569", null ]
+    [ "stats", "classFileContentsReport.html#a1f396882acba553f560252bb0e02c569", null ],
+    [ "vis", "classFileContentsReport.html#ac104d7aafb3a00be13bc15fca0d412b5", null ]
 ];

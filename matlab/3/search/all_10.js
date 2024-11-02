@@ -3,8 +3,8 @@ var searchData=
   ['randomseed_0',['randomSeed',['../classSpecBase.html#afde5461d39f137ed498f1b1ab6b7b308',1,'SpecBase']]],
   ['read_5fwrite_5fentire_5ftextfile_1',['read_write_entire_textfile',['../read__write__entire__textfile_8m.html#ad6731c3b0a0c4ac289173fcae4f0a8da',1,'read_write_entire_textfile.m']]],
   ['read_5fwrite_5fentire_5ftextfile_2em_2',['read_write_entire_textfile.m',['../read__write__entire__textfile_8m.html',1,'']]],
-  ['readchain_3',['readChain',['../classSampler.html#a81e0970bfb647fe928db20cdd9d8caaf',1,'Sampler']]],
-  ['readchain_2em_4',['readChain.m',['../readChain_8m.html',1,'']]],
+  ['readchain_3',['readChain',['../classSampler.html#a81e0970bfb647fe928db20cdd9d8caaf',1,'Sampler::readChain()'],['../classParadram.html#aab562c1b7be4a71fd3c1e0227e64b32e',1,'Paradram::readChain()']]],
+  ['readchain_2em_4',['readChain.m',['../_0dParadram_2readChain_8m.html',1,'(Global Namespace)'],['../_0dSampler_2readChain_8m.html',1,'(Global Namespace)']]],
   ['readchainmarkov_5',['readChainMarkov',['../classParadram.html#acc579eeadd6bc0d96adbeb5f03595219',1,'Paradram']]],
   ['readchainmarkov_2em_6',['readChainMarkov.m',['../readChainMarkov_8m.html',1,'']]],
   ['readprogress_7',['readProgress',['../classSampler.html#ae3f0f62c32f8da4d9f4c882f9cc39c6e',1,'Sampler']]],
@@ -23,7 +23,7 @@ var searchData=
   ['release_2em_20',['release.m',['../release_8m.html',1,'']]],
   ['repkeyval_21',['repKeyVal',['../repKeyVal_8m.html#acd6e02478529e8f19c91b04f86cb69ee',1,'repKeyVal.m']]],
   ['repkeyval_2em_22',['repKeyVal.m',['../repKeyVal_8m.html',1,'']]],
-  ['reset_23',['reset',['../classAxes.html#ae3c10d54343f0edc838bd80126b28afb',1,'Axes::reset()'],['../classTriplex.html#a5d0461e10e9af7da5f6db4fe6262cf4d',1,'Triplex::reset()'],['../classTilingLayout.html#a9c92ca7aab76bc28cdbd25da55ec1830',1,'TilingLayout::reset()'],['../classTiling.html#aec8322cae237d3ebc41c2c0a23c1676a',1,'Tiling::reset()'],['../classTile.html#a93bbea68b380655fc32571f718878f75',1,'Tile::reset()'],['../classSubplotEllipse3.html#a58f4859b12bfdbfbd0f708f27910101b',1,'SubplotEllipse3::reset()'],['../classPlot.html#a4961f1b6ad1954d5003d0473b0ac4dac',1,'Plot::reset()'],['../classCascade.html#abb2cf47c067e54403c408275bd646f06',1,'Cascade::reset()'],['../classFigure.html#ad7e32c48161b0b9a864405856cf18520',1,'Figure::reset()'],['../classSubplot.html#a70e03eec50ebbc5072032f9013d4a144',1,'Subplot::reset()']]],
+  ['reset_23',['reset',['../classSubplotEllipse3.html#a58f4859b12bfdbfbd0f708f27910101b',1,'SubplotEllipse3::reset()'],['../classTriplex.html#a5d0461e10e9af7da5f6db4fe6262cf4d',1,'Triplex::reset()'],['../classTilingLayout.html#a9c92ca7aab76bc28cdbd25da55ec1830',1,'TilingLayout::reset()'],['../classTiling.html#aec8322cae237d3ebc41c2c0a23c1676a',1,'Tiling::reset()'],['../classTile.html#a93bbea68b380655fc32571f718878f75',1,'Tile::reset()'],['../classSubplot.html#a70e03eec50ebbc5072032f9013d4a144',1,'Subplot::reset()'],['../classPlot.html#a4961f1b6ad1954d5003d0473b0ac4dac',1,'Plot::reset()'],['../classCascade.html#abb2cf47c067e54403c408275bd646f06',1,'Cascade::reset()'],['../classFigure.html#ad7e32c48161b0b9a864405856cf18520',1,'Figure::reset()'],['../classAxes.html#ae3c10d54343f0edc838bd80126b28afb',1,'Axes::reset()']]],
   ['rgb_24',['rgb',['../rgb_8m.html#a5bf52092f6437dfb37d3161760328054',1,'rgb.m']]],
   ['rgb_2em_25',['rgb.m',['../rgb_8m.html',1,'']]],
   ['riskman_26',['riskman',['../riskman_8m.html#a1695131c2aa5bf808cd6192b13c23338',1,'riskman.m']]],
@@ -36,5 +36,5 @@ var searchData=
   ['rows_33',['rows',['../classSubplot.html#aaf6e5ee395a3d84a0f249971143b4013',1,'Subplot']]],
   ['rowslog_34',['rowslog',['../classDataFrame.html#a88d1577f1c8bcee5e3dea37137e1e1e2',1,'DataFrame']]],
   ['run_35',['run',['../classSampler.html#a05facc7b19d55723b4b9b7f5754c8ae6',1,'Sampler::run()'],['../classParadram.html#aa386416992b6113574a6d1ad0034fb13',1,'Paradram::run()']]],
-  ['run_2em_36',['run.m',['../_0dSampler_2run_8m.html',1,'(Global Namespace)'],['../_0dParadram_2run_8m.html',1,'(Global Namespace)']]]
+  ['run_2em_36',['run.m',['../_0dParadram_2run_8m.html',1,'(Global Namespace)'],['../_0dSampler_2run_8m.html',1,'(Global Namespace)']]]
 ];
