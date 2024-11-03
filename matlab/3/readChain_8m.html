@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte MATLAB 3.0.0: src/matlab/main/+pm/+sampling/@Sampler/readChain.m File Reference</title>
+    <title>ParaMonte MATLAB 3.0.0: src/matlab/main/+pm/+sampling/readChain.m File Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -138,18 +138,149 @@ $(document).ready(function(){initNavTree('readChain_8m.html',''); initResizable(
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">readChain.m File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><a href="readChain_8m_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:acd72b9f22d15291ea2d0af874fe5d540"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="readChain_8m.html#acd72b9f22d15291ea2d0af874fe5d540">readChain</a> (in sampler, in pattern, in sep)</td></tr>
+<tr class="memdesc:acd72b9f22d15291ea2d0af874fe5d540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a list of objects of superclass <a class="el" href="classFileContentsChain.html">pm.sampling.FileContentsChain</a> containing the contents of a (set of) ParaMonte simulation output chain file(s) whose paths match the specified input <code>pattern</code> or the simulation specification <code>sampler.spec.outputFileName</code>.<br  />
+  <a href="readChain_8m.html#acd72b9f22d15291ea2d0af874fe5d540">More...</a><br /></td></tr>
+<tr class="separator:acd72b9f22d15291ea2d0af874fe5d540"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="acd72b9f22d15291ea2d0af874fe5d540" name="acd72b9f22d15291ea2d0af874fe5d540"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd72b9f22d15291ea2d0af874fe5d540">&#9670;&nbsp;</a></span>readChain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">function readChain </td>
+          <td>(</td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>sampler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>pattern</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">in&#160;</td>
+          <td class="paramname"><em>sep</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return a list of objects of superclass <a class="el" href="classFileContentsChain.html">pm.sampling.FileContentsChain</a> containing the contents of a (set of) ParaMonte simulation output chain file(s) whose paths match the specified input <code>pattern</code> or the simulation specification <code>sampler.spec.outputFileName</code>.<br  />
+ </p>
+<dl class="section warning"><dt>Warning</dt><dd>This function is to be only used for post-processing of the output chain file(s) of an already finished simulation.<br  />
+ Although possible, this method is NOT meant to be called by all processes in MPI-parallel simulations.<br  />
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sampler</td><td>: The input object of superclass <a class="el" href="classSampler.html">pm.sampling.Sampler</a> whose type and properties determine the type of the output object(s).<br  />
+ (<b>optional</b>. If empty, it is set to <a class="el" href="classSampler.html">pm.sampling.Sampler()</a>.) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pattern</td><td>: The input scalar MATLAB string containing the pattern matching the desired chain file(s) whose contents is to be read.<br  />
+ The specified <code>pattern</code> only needs to partially identify the name of the simulation to which the chain file belongs.<br  />
+ For example, specifying <code>"./mydir/mysim"</code> as input will lead to a search for file(s) beginning with "mysim" and ending with <code>"_chain.txt"</code> inside the directory <code>"./mydir/"</code>.<br  />
+ If there are multiple files matching in the input <code>pattern</code>, then all such files will be read and returned as elements of a list.<br  />
+ If the specified pattern is a valid existing URL, the file will be downloaded as a temporary file to the local system, its contents shall be parsed and the file will be subsequently removed.<br  />
+ If the input <code>pattern</code> is empty, then the method will search for any possible candidate files with the appropriate suffix in the current working directory.<br  />
+ (<b>optional</b>. If empty, it is set to <code>sampler.spec.outputFileName</code> or if empty, it is set to <code>"./"</code>.) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sep</td><td>: The input MATLAB string containing the field separator used in the file(s).<br  />
+ (<b>optional</b>. If empty, it is set to <code>sampler.spec.outputSeparator</code> or if empty, it is automatically inferred.)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>chainList</code> : The output MATLAB cell array of objects of superclass <a class="el" href="classFileContentsChain.html">pm.sampling.FileContentsChain</a>, each of which corresponds to the contents of a unique ParaMonte sampler chain file.<br  />
+ <ol>
+<li>
+If the input argument <code>sampler</code> is of type <a class="el" href="classSampler.html">pm.sampling.Sampler</a>, then the output array elements are of type <a class="el" href="classFileContentsChain.html">pm.sampling.FileContentsChain</a>.<br  />
+ </li>
+<li>
+If the input argument <code>sampler</code> is of type <a class="el" href="classParadram.html">pm.sampling.Paradram</a>, then the output array elements are of type <a class="el" href="classFileContentsChainDRAM.html">pm.sampling.FileContentsChainDRAM</a>.<br  />
+ </li>
+</ol>
+</dd></dl>
+<p><br  />
+<a class="anchor" id="interface-readChain"></a><b>Possible calling interfaces</b> <a href="#interface-readChain">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">chainList = pm.sampling.readChain();</div>
+<div class="line">chainList = pm.sampling.readChain([]);</div>
+<div class="line">chainList = pm.sampling.readChain([], []);</div>
+<div class="line">chainList = pm.sampling.readChain([], [], []);</div>
+<div class="line">chainList = pm.sampling.readChain([], pattern);</div>
+<div class="line">chainList = pm.sampling.readChain([], [], sep);</div>
+<div class="line">chainList = pm.sampling.readChain([], pattern, sep);</div>
+<div class="line">chainList = pm.sampling.readChain(sampler, pattern, sep);</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>See the documentation of the ParaMonte MATLAB samplers (e.g., <a class="el" href="classParadram.html">pm.sampling.Paradram</a>) for example usage.<br  />
+</dd></dl>
+<p><br  />
+<a class="anchor" id="example-readChain"></a><b>Example usage</b> <a href="#example-readChain">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">sampler = pm.sampling.Sampler();</div>
+<div class="line"> </div>
+<div class="line">chainList = pm.sampling.readChain([], <span class="stringliteral">&quot;./out/test_run_&quot;</span>);</div>
+<div class="line">chainList = pm.sampling.readChain(sampler, <span class="stringliteral">&quot;./out/test_run_&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">sampler.spec.outputFileName = <span class="stringliteral">&quot;./out/test_run_&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">chainList = pm.sampling.readChain(sampler, [], <span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line">chainList = pm.sampling.readChain(sampler);</div>
+<div class="line"> </div>
+<div class="line">chainList = pm.sampling.readChain(<span class="stringliteral">&quot;./out/test_run_&quot;</span>, <span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">sampler.spec.outputSeparator = <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">chainList = pm.sampling.readChain(sampler, <span class="stringliteral">&quot;./out/test_run_&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">sampler.spec.outputFileName = <span class="stringliteral">&quot;./out/test_run_&quot;</span>;</div>
+<div class="line">sampler.spec.outputSeparator = <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">chainList = pm.sampling.readChain(sampler);</div>
+</div><!-- fragment --></dd></dl>
+<p><br  />
+<a class="anchor" id="final-readChain"></a><b>Final Remarks</b> <a href="#final-readChain">⛓</a> </p><hr  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/readChain.m#L86 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+ For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
+ For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
+ This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
+</p><ol>
+<li>
+If you use any parts or concepts from this library to any extent, <b>please acknowledge the usage by citing the relevant</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>publications of the ParaMonte library</b></a>.<br  />
+</li>
+<li>
+If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), <b>please also ask the end users to</b> <a href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work" target="_blank"><b>cite this original ParaMonte library</b></a>.<br  />
+</li>
+</ol>
+<p>This software is available to the public under a highly permissive license.<br  />
+Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
+ </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000149">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Saturday Nov 2 2024, 10:32 PM, Dallas, TX.<br  />
+ <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
+ </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_870970980bbbd119e0b6d78557b3d4cb.html">+sampling</a></li><li class="navelem"><a class="el" href="dir_0e0170126dfae72f4e93d1cf5bd3ba28.html">@Sampler</a></li><li class="navelem"><a class="el" href="readChain_8m.html">readChain.m</a></li>
-        <li class="footer">Generated on Fri Nov 1 2024 21:33:56 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_870970980bbbd119e0b6d78557b3d4cb.html">+sampling</a></li><li class="navelem"><a class="el" href="readChain_8m.html">readChain.m</a></li>
+        <li class="footer">Generated on Sun Nov 3 2024 13:19:44 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

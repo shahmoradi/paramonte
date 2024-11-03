@@ -36,6 +36,9 @@ var hierarchy =
       [ "FileContentsRestart", "classFileContentsRestart.html", null ],
       [ "FileContentsTabular", "classFileContentsTabular.html", null ]
     ] ],
+    [ "pm::sampling::FileContentsChain", null, [
+      [ "FileContentsChainDRAM", "classFileContentsChainDRAM.html", null ]
+    ] ],
     [ "pm::sampling::FileContentsRestart", null, [
       [ "FileContentsRestartDRAM", "classFileContentsRestartDRAM.html", null ]
     ] ],

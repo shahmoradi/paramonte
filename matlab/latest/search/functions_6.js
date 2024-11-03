@@ -18,7 +18,7 @@ var searchData=
   ['getlogfuncwrapped_15',['getLogFuncWrapped',['../classSampler.html#abff971dc236c62019bbe6aa280817260',1,'Sampler']]],
   ['getlogpdf_16',['getLogPDF',['../_09mvn_2getLogPDF_8m.html#ad3cff463c6f056880a797f5b8bd81743',1,'getLogPDF(in x, in mean, in invcov):&#160;getLogPDF.m'],['../_09gengamma_2getLogPDF_8m.html#a9c9e3f110b2cb90e2703101c35c7a8b3',1,'getLogPDF(in x, in kappa, in invOmega, in invSigma):&#160;getLogPDF.m']]],
   ['getlogudf_17',['getLogUDF',['../getLogUDF_8m.html#a236a995cbbb8abe88727027b7bfb62e9',1,'getLogUDF.m']]],
-  ['getppm_18',['getppm',['../classParadram.html#a3a2f2ccbe307286ac86df4e88406c317',1,'Paradram::getppm()'],['../classSampler.html#a84bea6181cfd13549dc7b5a4dbc91ff9',1,'Sampler::getppm()']]],
+  ['getppm_18',['getppm',['../classSampler.html#a84bea6181cfd13549dc7b5a4dbc91ff9',1,'Sampler::getppm()'],['../classParadram.html#a3a2f2ccbe307286ac86df4e88406c317',1,'Paradram::getppm()']]],
   ['getprintimage_19',['getPrintImage',['../print2array_8m.html#aaea0f9ea758f9ae9beb9da5f0de69956',1,'print2array.m']]],
   ['getrand_20',['getRand',['../_09cov_2getRand_8m.html#a735a7bba401b85521214a15ae127865a',1,'getRand(in ndim, in scale):&#160;getRand.m'],['../_09mvn_2getRand_8m.html#ab7d5a41157c4609d0db943055ce7b4dc',1,'getRand(in mean, in cholow, in s1):&#160;getRand.m'],['../_09mvu_2getRand_8m.html#ab7d5a41157c4609d0db943055ce7b4dc',1,'getRand(in mean, in cholow, in s1):&#160;getRand.m']]],
   ['gettransferdata_21',['getTransferData',['../classImageSelection.html#a6f15fd833df17c959d77dc3b876fbef0',1,'ImageSelection']]],

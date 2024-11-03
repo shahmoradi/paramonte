@@ -1,5 +1,10 @@
 var NAVTREEINDEX5 =
 {
+"usergroup0.html":[20],
+"usergroup1.html":[21],
+"usergroup2.html":[22],
+"usergroup3.html":[23],
+"usergroup4.html":[24],
 "using__hg2_8m.html":[18,0,0,0,0,0,16,3,0,16],
 "using__hg2_8m.html#a54d6ede409f48c279dc31dd2f5a2036f":[18,0,0,0,0,0,16,3,0,16,0],
 "using__hg2_8m_source.html":[18,0,0,0,0,0,16,3,0,16],

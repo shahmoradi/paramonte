@@ -25,6 +25,7 @@ var annotated_dup =
     [ "Figure", "classFigure.html", "classFigure" ],
     [ "FileContents", "classFileContents.html", "classFileContents" ],
     [ "FileContentsChain", "classFileContentsChain.html", "classFileContentsChain" ],
+    [ "FileContentsChainDRAM", "classFileContentsChainDRAM.html", "classFileContentsChainDRAM" ],
     [ "FileContentsProgress", "classFileContentsProgress.html", "classFileContentsProgress" ],
     [ "FileContentsReport", "classFileContentsReport.html", "classFileContentsReport" ],
     [ "FileContentsRestart", "classFileContentsRestart.html", "classFileContentsRestart" ],
