@@ -7,5 +7,6 @@ var classFigure =
     [ "reset", "classFigure.html#ad7e32c48161b0b9a864405856cf18520", null ],
     [ "savefig", "classFigure.html#afc956d36d6beeeaf9b7b358b916f1939", null ],
     [ "figure", "classFigure.html#aab67a96e44d461b4544d3e4b5c191c34", null ],
-    [ "fout", "classFigure.html#aa0e5a4db87478d8a9a9b2e635879d6fc", null ]
+    [ "fout", "classFigure.html#aa0e5a4db87478d8a9a9b2e635879d6fc", null ],
+    [ "silent", "classFigure.html#ad37d88549c87c65da26e56d9715899e7", null ]
 ];

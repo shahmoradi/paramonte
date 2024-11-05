@@ -1,7 +1,7 @@
 var searchData=
 [
   ['sep_0',['sep',['../classFileContentsTabular.html#a1065f2c4676f57d8e71a4a5a6501175e',1,'FileContentsTabular']]],
-  ['silent_1',['silent',['../classFileContents.html#a3ad6f14aff85bf5d9e222dc4a92b146e',1,'FileContents::silent()'],['../classSampler.html#ac5a72d9797fc1bb96b84601276d4bd33',1,'Sampler::silent()'],['../classSpecBase.html#a10de6f012eeb1bf9a39687f8ca6736e7',1,'SpecBase::silent()'],['../classTiling.html#aca2f5e50e48e7b3043edc3f7f49a543b',1,'Tiling::silent()'],['../classTriplex.html#a3f9404cc0bf3928cdcff97319eef7fe7',1,'Triplex::silent()']]],
+  ['silent_1',['silent',['../classFileContents.html#a3ad6f14aff85bf5d9e222dc4a92b146e',1,'FileContents::silent()'],['../classSampler.html#ac5a72d9797fc1bb96b84601276d4bd33',1,'Sampler::silent()'],['../classSpecBase.html#a10de6f012eeb1bf9a39687f8ca6736e7',1,'SpecBase::silent()'],['../classAxes.html#a1a655c8c7dfd6cfebf0d48e378958f17',1,'Axes::silent()'],['../classFigure.html#ad37d88549c87c65da26e56d9715899e7',1,'Figure::silent()']]],
   ['slfc_2',['slfc',['../classFileContentsSample.html#a52ede51c44ab5ef2c691ff7f93caac68',1,'FileContentsSample']]],
   ['slfcname_3',['slfcname',['../classFileContentsSample.html#ac08e03e7988ff6d307bf184f62d7abbb',1,'FileContentsSample']]],
   ['spec_4',['spec',['../classSampler.html#a82cff287f10efc0233740053268b1848',1,'Sampler']]],

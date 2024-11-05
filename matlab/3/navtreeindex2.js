@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"classFileContentsRestart.html#aa95e21e785e65bf4005030382bea9829":[18,0,28,6],
+"classFileContentsRestart.html#abc20294ce79cf10a36ab0665a9a71bef":[18,0,28,1],
 "classFileContentsRestart.html#adb9a76d72d4d7dd04bd39a025e11dcff":[18,0,28,4],
 "classFileContentsRestart.html#adcf71e267b91e443d0f8727c5cff3e1f":[18,0,28,2],
 "classFileContentsRestart.html#aebab22b40a7dfa05e600126337065597":[18,0,28,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "classTileEllipse.html#ac9518de09b09a3bb81c0f4330b9a9593":[18,0,76,0],
 "classTileEllipse3.html":[18,0,77],
 "classTileEllipse3.html#a3a04fec0e70d2ce26d963153fff19a4d":[18,0,77,0],
-"classTileHeatmap.html":[18,0,78],
-"classTileHeatmap.html#a6de19d8c2258ce4bb40349b6e445efab":[18,0,78,0],
-"classTileHistfit.html":[18,0,79]
+"classTileHeatmap.html":[18,0,78]
 };

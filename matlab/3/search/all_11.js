@@ -10,7 +10,7 @@ var searchData=
   ['setkeyval_7',['setKeyVal',['../classHandle.html#a9decf01ac27430b19c877e0fe8b8073f',1,'Handle']]],
   ['show_8',['show',['../show_8m.html#a1dd7d7719e0c40b6784084cb5ff75456',1,'show.m']]],
   ['show_2em_9',['show.m',['../show_8m.html',1,'']]],
-  ['silent_10',['silent',['../classTriplex.html#a3f9404cc0bf3928cdcff97319eef7fe7',1,'Triplex::silent()'],['../classTiling.html#aca2f5e50e48e7b3043edc3f7f49a543b',1,'Tiling::silent()'],['../classSpecBase.html#a10de6f012eeb1bf9a39687f8ca6736e7',1,'SpecBase::silent()'],['../classSampler.html#ac5a72d9797fc1bb96b84601276d4bd33',1,'Sampler::silent()'],['../classFileContents.html#a3ad6f14aff85bf5d9e222dc4a92b146e',1,'FileContents::silent()']]],
+  ['silent_10',['silent',['../classFigure.html#ad37d88549c87c65da26e56d9715899e7',1,'Figure::silent()'],['../classAxes.html#a1a655c8c7dfd6cfebf0d48e378958f17',1,'Axes::silent()'],['../classSpecBase.html#a10de6f012eeb1bf9a39687f8ca6736e7',1,'SpecBase::silent()'],['../classSampler.html#ac5a72d9797fc1bb96b84601276d4bd33',1,'Sampler::silent()'],['../classFileContents.html#a3ad6f14aff85bf5d9e222dc4a92b146e',1,'FileContents::silent()']]],
   ['simbio_11',['simbio',['../simbio_8m.html#a3735d44df1e7dafd4a22309f307794d2',1,'simbio.m']]],
   ['simbio_2em_12',['simbio.m',['../simbio_8m.html',1,'']]],
   ['skipfull_13',['skipFull',['../classFileContentsReport.html#a72f0e3a815218d16ef7e841878c08dec',1,'FileContentsReport']]],

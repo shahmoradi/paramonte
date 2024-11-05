@@ -11,7 +11,6 @@ var classTriplex =
     [ "diagYTick", "classTriplex.html#afde082eb4950fbd80c6f2c9ba556e10f", null ],
     [ "layout", "classTriplex.html#a4f6a6cea1618716c4419cef7d039b21f", null ],
     [ "lower", "classTriplex.html#a3631fcae43508cf785dc3d355df8850b", null ],
-    [ "silent", "classTriplex.html#a3f9404cc0bf3928cdcff97319eef7fe7", null ],
     [ "tile", "classTriplex.html#af815cbb6bd261e4f2aac451e5f5c2392", null ],
     [ "upper", "classTriplex.html#afac7df321b1342c17289e57813ab28a1", null ]
 ];

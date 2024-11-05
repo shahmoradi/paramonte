@@ -93,8 +93,8 @@ var NAVTREEINDEX =
 [
 "../../c/2/index.html",
 "_09matlab_2_09hashmap_2Contents_8m_source.html",
-"classFileContentsRestart.html#adb9a76d72d4d7dd04bd39a025e11dcff",
-"classTileHistfit.html#a599513ee2ee6507061da975b00df9cea",
+"classFileContentsRestart.html#aa95e21e785e65bf4005030382bea9829",
+"classTileHeatmap.html#a6de19d8c2258ce4bb40349b6e445efab",
 "hyperlink_8m_source.html",
 "touch_8m_source.html"
 ];
