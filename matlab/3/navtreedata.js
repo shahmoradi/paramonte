@@ -32,6 +32,7 @@ var NAVTREE =
     [ "ParaMonte MATLAB Documentation Website", "index.html#ParaMonteLangDocumentation", null ],
     [ "ParaMonte MATLAB QuickStart", "index.html#ParaMonteUsage", null ],
     [ "ParaMonte MATLAB Library Modules", "index.html#ParaMonteLangModules", null ],
+    [ "ParaMonte MATLAB Library Samplers", "index.html#ParaMonteLangModulesSamplers", null ],
     [ "ParaMonte MATLAB Naming Conventions", "index.html#ParaMonteLangNamingConventions", [
       [ "ParaMonte MATLAB Naming Conventions: Variables", "index.html#ParaMonteLangNamingConventionsVariables", null ],
       [ "ParaMonte MATLAB Naming Conventions: Procedures", "index.html#ParaMonteLangNamingConventionsProcedures", null ]
@@ -93,9 +94,9 @@ var NAVTREEINDEX =
 "../../c/2/index.html",
 "_09matlab_2_09hashmap_2Contents_8m_source.html",
 "classFileContentsRestart.html#adb9a76d72d4d7dd04bd39a025e11dcff",
-"classTileHistogram.html",
-"im2gif_8m.html#ab6f56a8da156412dd37091b4a16912e1",
-"usergroup0.html"
+"classTileHistfit.html#a599513ee2ee6507061da975b00df9cea",
+"hyperlink_8m_source.html",
+"touch_8m_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
