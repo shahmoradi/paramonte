@@ -151,23 +151,23 @@ $(document).ready(function(){initNavTree('interfacepm__distUnif_1_1setUnifCDF.ht
     <tr><td class="paramdir">[out]</td><td class="paramname">cdf</td><td>: The output scalar or <code>contiguous</code> array of rank <code>1</code> of either <br  />
  <ol>
 <li>
-type <code>complex</code> of kind any supported by the processor (e.g., <a class="el" href="namespacepm__kind.html#a6a4292ea7d7dedae1f114de9cc0ed20b">CK</a>, <a class="el" href="namespacepm__kind.html#a73e198457ef2c7e8921b8059eb00c975">CK32</a>, <a class="el" href="namespacepm__kind.html#a6e08be6833ba19635498f5d08078ddf6">CK64</a>, or <a class="el" href="namespacepm__kind.html#a70f0c9725c2bad845677a5ad7d4f8e3d">CK128</a>) (if the input value <code>X</code> is of type <code>complex</code>) or, <br  />
+type <code>complex</code> of kind any supported by the processor (e.g., <a class="el" href="namespacepm__kind.html#a6a4292ea7d7dedae1f114de9cc0ed20b">CK</a>, <a class="el" href="namespacepm__kind.html#a73e198457ef2c7e8921b8059eb00c975">CK32</a>, <a class="el" href="namespacepm__kind.html#a6e08be6833ba19635498f5d08078ddf6">CK64</a>, or <a class="el" href="namespacepm__kind.html#a70f0c9725c2bad845677a5ad7d4f8e3d">CK128</a>) (if the input value <code>x</code> is of type <code>complex</code>) or, <br  />
  </li>
 <li>
-type <code>real</code> of kind any supported by the processor (e.g., <a class="el" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a>, <a class="el" href="namespacepm__kind.html#a609d23b0915ea97e6a89e9bef7c743bd">RK32</a>, <a class="el" href="namespacepm__kind.html#aa3a66a01e440da406e627e6e4e6e3908">RK64</a>, or <a class="el" href="namespacepm__kind.html#adf0fd3c248f14b733bc8cd7876f75bef">RK128</a>) (if the input value <code>X</code> is of type <code>integer</code> or <code>real</code>), <br  />
+type <code>real</code> of kind any supported by the processor (e.g., <a class="el" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a>, <a class="el" href="namespacepm__kind.html#a609d23b0915ea97e6a89e9bef7c743bd">RK32</a>, <a class="el" href="namespacepm__kind.html#aa3a66a01e440da406e627e6e4e6e3908">RK64</a>, or <a class="el" href="namespacepm__kind.html#adf0fd3c248f14b733bc8cd7876f75bef">RK128</a>) (if the input value <code>x</code> is of type <code>integer</code> or <code>real</code>), <br  />
  </li>
 </ol>
 containing the CDF of the specified discrete or continuous Uniform distribution. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">X</td><td>: The input scalar or <code>contiguous</code> array of the same shape as <code>cdf</code>, containing the values at which the CDF must be computed.<br  />
- If <code>X</code> is of type <code>integer</code>, the CDF of the discrete Uniform distribution with support <code>[lower, upper]</code> will be returned.<br  />
- If <code>X</code> is of type <code>integer</code>, the output argument <code>CDF</code> must be of type <code>real</code> of kind any supported by the processor (e.g., <a class="el" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a>, <a class="el" href="namespacepm__kind.html#a609d23b0915ea97e6a89e9bef7c743bd">RK32</a>, <a class="el" href="namespacepm__kind.html#aa3a66a01e440da406e627e6e4e6e3908">RK64</a>, or <a class="el" href="namespacepm__kind.html#adf0fd3c248f14b733bc8cd7876f75bef">RK128</a>).<br  />
- If <code>X</code> is of type <code>real</code>, the output argument <code>CDF</code> must have the same type, kind, and rank as <code>X</code>, and will contain the CDF of the continuous Uniform distribution with support <code>[lower, upper)</code>.<br  />
- If <code>X</code> is of type <code>complex</code>, the output argument <code>CDF</code> must have the same type, kind, and rank as <code>X</code>.<br  />
- If <code>X</code> is of type <code>complex</code>, the two real and imaginary components of <code>CDF</code> will correspond to two independent distributions.<br  />
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>: The input scalar or <code>contiguous</code> array of the same shape as <code>cdf</code>, containing the values at which the CDF must be computed.<br  />
+ If <code>x</code> is of type <code>integer</code>, the CDF of the discrete Uniform distribution with support <code>[lower, upper]</code> will be returned.<br  />
+ If <code>x</code> is of type <code>integer</code>, the output argument <code>CDF</code> must be of type <code>real</code> of kind any supported by the processor (e.g., <a class="el" href="namespacepm__kind.html#a2dc41eb9ccbb460b3b6af8f356d3e962">RK</a>, <a class="el" href="namespacepm__kind.html#a609d23b0915ea97e6a89e9bef7c743bd">RK32</a>, <a class="el" href="namespacepm__kind.html#aa3a66a01e440da406e627e6e4e6e3908">RK64</a>, or <a class="el" href="namespacepm__kind.html#adf0fd3c248f14b733bc8cd7876f75bef">RK128</a>).<br  />
+ If <code>x</code> is of type <code>real</code>, the output argument <code>CDF</code> must have the same type, kind, and rank as <code>x</code>, and will contain the CDF of the continuous Uniform distribution with support <code>[lower, upper)</code>.<br  />
+ If <code>x</code> is of type <code>complex</code>, the output argument <code>CDF</code> must have the same type, kind, and rank as <code>x</code>.<br  />
+ If <code>x</code> is of type <code>complex</code>, the two real and imaginary components of <code>CDF</code> will correspond to two independent distributions.<br  />
  </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">lower</td><td>: The input scalar of the same type and kind as <code>X</code>, representing the lower bound of the Uniform distribution.<br  />
+    <tr><td class="paramdir">[in]</td><td class="paramname">lower</td><td>: The input scalar of the same type and kind as <code>x</code>, representing the lower bound of the Uniform distribution.<br  />
  (<b>optional</b>, default = <code>0</code>. If present, then <code>upper</code> must also be present.) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">upper</td><td>: The input scalar of the same type and kind as <code>X</code>, representing the upper bound of the Uniform distribution.<br  />
+    <tr><td class="paramdir">[in]</td><td class="paramname">upper</td><td>: The input scalar of the same type and kind as <code>x</code>, representing the upper bound of the Uniform distribution.<br  />
  (<b>optional</b>, default = <code>1</code>. If present, then <code>lower</code> must also be present.)</td></tr>
   </table>
   </dd>
@@ -175,8 +175,8 @@ containing the CDF of the specified discrete or continuous Uniform distribution.
 <p><br  />
 <a class="anchor" id="interface-setUnifCDF"></a><b>Possible calling interfaces</b> <a href="#interface-setUnifCDF">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><span class="fortran_statement">use </span><a class="code hl_namespace" href="namespacepm__distUnif.html">pm_distUnif</a>, <span class="fortran_statement">only</span>: <a class="code hl_interface" href="interfacepm__distUnif_1_1setUnifCDF.html">setUnifCDF</a></div>
 <div class="line"> </div>
-<div class="line"><span class="fortran_statement">call</span> <a class="code hl_interface" href="interfacepm__distUnif_1_1setUnifCDF.html">setUnifCDF</a>(cdf, X)</div>
-<div class="line"><span class="fortran_statement">call</span> <a class="code hl_interface" href="interfacepm__distUnif_1_1setUnifCDF.html">setUnifCDF</a>(cdf, X, lower, upper)</div>
+<div class="line"><span class="fortran_statement">call</span> <a class="code hl_interface" href="interfacepm__distUnif_1_1setUnifCDF.html">setUnifCDF</a>(cdf, x)</div>
+<div class="line"><span class="fortran_statement">call</span> <a class="code hl_interface" href="interfacepm__distUnif_1_1setUnifCDF.html">setUnifCDF</a>(cdf, x, lower, upper)</div>
 <div class="ttc" id="ainterfacepm__distUnif_1_1setUnifCDF_html"><div class="ttname"><a href="interfacepm__distUnif_1_1setUnifCDF.html">pm_distUnif::setUnifCDF</a></div><div class="ttdoc">Return the Cumulative Distribution Function (CDF) of a univariate Standard Uniform distribution or a ...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distUnif_8F90_source.html#l00835">pm_distUnif.F90:835</a></div></div>
 <div class="ttc" id="anamespacepm__distUnif_html"><div class="ttname"><a href="namespacepm__distUnif.html">pm_distUnif</a></div><div class="ttdoc">This module contains classes and procedures for computing various statistical quantities related to t...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distUnif_8F90_source.html#l00274">pm_distUnif.F90:274</a></div></div>
 </div><!-- fragment --></dd></dl>
@@ -524,7 +524,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distUnif.html">pm_distUnif</a></li><li class="navelem"><a class="el" href="interfacepm__distUnif_1_1setUnifCDF.html">setUnifCDF</a></li>
-        <li class="footer">Generated on Mon Oct 28 2024 00:56:53 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Nov 7 2024 10:39:40 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

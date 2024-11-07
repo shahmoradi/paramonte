@@ -228,7 +228,7 @@ If <code>rand</code> is of type <code>logical</code>, then <code>lb</code> must 
 <div class="line"><span class="fortran_statement">call</span> <a class="code hl_interface" href="interfacepm__distUnif_1_1setUnifRand.html">setUnifRand</a>(rng, rand) <span class="fortran_comment">! `rand` can be any intrinsic type: character, complex, logical, integer, real.</span></div>
 <div class="line"><span class="fortran_statement">call</span> <a class="code hl_interface" href="interfacepm__distUnif_1_1setUnifRand.html">setUnifRand</a>(rng, rand, lb, ub) <span class="fortran_comment">! `rand` can be any intrinsic type: character, complex, logical, integer, real.</span></div>
 <div class="line">!</div>
-<div class="ttc" id="ainterfacepm__distUnif_1_1setUnifRand_html"><div class="ttname"><a href="interfacepm__distUnif_1_1setUnifRand.html">pm_distUnif::setUnifRand</a></div><div class="ttdoc">Return a uniform random scalar or contiguous array of arbitrary rank of randomly uniformly distribute...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distUnif_8F90_source.html#l11061">pm_distUnif.F90:11061</a></div></div>
+<div class="ttc" id="ainterfacepm__distUnif_1_1setUnifRand_html"><div class="ttname"><a href="interfacepm__distUnif_1_1setUnifRand.html">pm_distUnif::setUnifRand</a></div><div class="ttdoc">Return a uniform random scalar or contiguous array of arbitrary rank of randomly uniformly distribute...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distUnif_8F90_source.html#l11083">pm_distUnif.F90:11083</a></div></div>
 <div class="ttc" id="anamespacepm__distUnif_html"><div class="ttname"><a href="namespacepm__distUnif.html">pm_distUnif</a></div><div class="ttdoc">This module contains classes and procedures for computing various statistical quantities related to t...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distUnif_8F90_source.html#l00274">pm_distUnif.F90:274</a></div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The condition <code>len(lb) == len(ub) .or. len(lb) == 1 .or. len(ub) == 1</code> for the corresponding input arguments of type <code>character</code>.<br  />
@@ -975,9 +975,22 @@ It is expected that the condition <code>lb &lt;= ub</code> if the two input argu
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the expression is replaced with <code>rand = int(0.5d0 + temp, kind = IKG)</code>.<br  />
 </dd></dl>
-<p ><br  />
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000047">Bug:</a></b></dt><dd><br  />
+<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
+<b>Source:</b> Intel LLVM Fortran Compiler <code>ifx</code> version 2025.0.0 20241008 <br  />
+<b>Description:</b> Intel LLVM Fortran Compiler <code>ifx</code> version 2025.0.0 20241008 cannot compile the following two lines of code in the include file <code><a class="el" href="namespacepm__distUnif.html" title="This module contains classes and procedures for computing various statistical quantities related to t...">pm_distUnif</a>@routines.inc.F90</code>.<br  />
+ </dd></dl>
+<div class="fragment"><div class="line"><span class="fortran_statement">call</span> <a class="code hl_interface" href="interfacepm__distUnif_1_1setUnifRand.html">setUnifRand</a>(RNG rand<span class="fortran_operator_symbols">%</span>re, lb<span class="fortran_operator_symbols">%</span>re, ub<span class="fortran_operator_symbols">%</span>re)</div>
+<div class="line"><span class="fortran_statement">call</span> <a class="code hl_interface" href="interfacepm__distUnif_1_1setUnifRand.html">setUnifRand</a>(RNG rand<span class="fortran_operator_symbols">%</span>im, lb<span class="fortran_operator_symbols">%</span>im, ub<span class="fortran_operator_symbols">%</span>im)</div>
+</div><!-- fragment --><p> Note that <code>ifort</code> can readily compile the above lines of code.<br  />
+ Uncomment the above two lines to regenerate the compile-time error.<br  />
+ <br  />
+<b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, these two lines are commented out for Intel compilers and replaced with the following.<br  />
+ </p><div class="fragment"><div class="line"><span class="fortran_statement">call</span> <a class="code hl_interface" href="interfacepm__distUnif_1_1setUnifRand.html">setUnifRand</a>(RNG rand<span class="fortran_operator_symbols">%</span>re,<span class="fortran_function"> real</span>(lb, CKG),<span class="fortran_function"> real</span>(ub, CKG))</div>
+<div class="line"><span class="fortran_statement">call</span> <a class="code hl_interface" href="interfacepm__distUnif_1_1setUnifRand.html">setUnifRand</a>(RNG rand<span class="fortran_operator_symbols">%</span>im,<span class="fortran_function"> aimag</span>(lb),<span class="fortran_function"> aimag</span>(ub))</div>
+</div><!-- fragment --><p ><br  />
 <a class="anchor" id="final-setUnifRand"></a><b>Final Remarks</b> <a href="#final-setUnifRand">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distUnif.F90#L11054 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distUnif.F90#L11076 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -994,7 +1007,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
 <dl class="authors"><dt><b><a class="el" href="authors.html#_authors000626">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Oct 16, 2009, 11:14 AM, Michigan </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__distUnif_8F90_source.html#l11061">11061</a> of file <a class="el" href="pm__distUnif_8F90_source.html">pm_distUnif.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__distUnif_8F90_source.html#l11083">11083</a> of file <a class="el" href="pm__distUnif_8F90_source.html">pm_distUnif.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
 <li>src/fortran/main/<a class="el" href="pm__distUnif_8F90_source.html">pm_distUnif.F90</a></li>
 </ul>
@@ -1004,7 +1017,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distUnif.html">pm_distUnif</a></li><li class="navelem"><a class="el" href="interfacepm__distUnif_1_1setUnifRand.html">setUnifRand</a></li>
-        <li class="footer">Generated on Mon Oct 28 2024 00:56:53 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Nov 7 2024 10:39:40 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

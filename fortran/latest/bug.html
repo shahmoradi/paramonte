@@ -477,15 +477,21 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
 <b>Description:</b> Intel Classic Fortran Compiler <code>ifort</code> cannot handle the creation of a module constant of type <a class="el" href="structpm__distUnif_1_1rngf__type.html">rngf_type</a> as done for this object, yielding the following error.<br  />
   </dd>
 <dt>Type <a class="el" href="interfacepm__distUnif_1_1setUnifRand.html">pm_distUnif::setUnifRand</a>  </dt>
-<dd><a class="anchor" id="_bug000046"></a> <br  />
+<dd><p class="startdd"><a class="anchor" id="_bug000046"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 10.3 <br  />
 <b>Description:</b> GNU Fortran Compiler <code>gfortran</code> yields an internal compiler error with the expression <code>rand = nint(temp, kind = IKG)</code> in <code><a class="el" href="namespacepm__distUnif.html" title="This module contains classes and procedures for computing various statistical quantities related to t...">pm_distUnif</a>@routines[IK](@ref <a class="el" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35" title="The default integer kind in the ParaMonte library: int32 in Fortran, c_int32_t in C-Fortran Interoper...">pm_kind::IK</a>).inc.F90</code> file when <code>IKG =&gt; integer_kinds(5)</code> on WSL OS.<br  />
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the expression is replaced with <code>rand = int(0.5d0 + temp, kind = IKG)</code>.<br  />
- </dd>
+</p>
+<p class="enddd"><a class="anchor" id="_bug000047"></a> <br  />
+<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
+<b>Source:</b> Intel LLVM Fortran Compiler <code>ifx</code> version 2025.0.0 20241008 <br  />
+<b>Description:</b> Intel LLVM Fortran Compiler <code>ifx</code> version 2025.0.0 20241008 cannot compile the following two lines of code in the include file <code><a class="el" href="namespacepm__distUnif.html" title="This module contains classes and procedures for computing various statistical quantities related to t...">pm_distUnif</a>@routines.inc.F90</code>.<br  />
+  </p>
+</dd>
 <dt>Type <a class="el" href="structpm__err_1_1mark__type.html">pm_err::mark_type</a>  </dt>
-<dd><a class="anchor" id="_bug000047"></a> <br  />
+<dd><a class="anchor" id="_bug000048"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 11-13 <br  />
 <b>Description:</b> GNU Fortran Compiler <code>gfortran</code> cannot properly construct the <code>allocatable</code> scalar non-<code>character</code> components of objects of type <a class="el" href="structpm__err_1_1warn__type.html">warn_type</a> using the default constructor.<br  />
@@ -494,7 +500,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the custom constructor bypasses GNU Fortran Compiler <code>gfortran</code> bug.<br  />
  </dd>
 <dt>Type <a class="el" href="structpm__err_1_1note__type.html">pm_err::note_type</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_bug000048"></a> <br  />
+<dd><p class="startdd"><a class="anchor" id="_bug000049"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 11-13 <br  />
 <b>Description:</b> GNU Fortran Compiler <code>gfortran</code> cannot properly construct the <code>allocatable</code> scalar non-<code>character</code> components of objects of type <a class="el" href="structpm__err_1_1mark__type.html">mark_type</a> using the default constructor.<br  />
@@ -502,7 +508,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the custom constructor bypasses GNU Fortran Compiler <code>gfortran</code> bug.<br  />
 </p>
-<p class="enddd"><a class="anchor" id="_bug000049"></a> <br  />
+<p class="enddd"><a class="anchor" id="_bug000050"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 11-13 <br  />
 <b>Description:</b> GNU Fortran Compiler <code>gfortran</code> cannot properly construct the <code>allocatable</code> scalar non-<code>character</code> components of objects of type <a class="el" href="structpm__err_1_1warn__type.html">warn_type</a> using the default constructor.<br  />
@@ -512,7 +518,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  </p>
 </dd>
 <dt>Type <a class="el" href="interfacepm__err_1_1show.html">pm_err::show</a>  </dt>
-<dd><a class="anchor" id="_bug000054"></a> <br  />
+<dd><a class="anchor" id="_bug000055"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 11-13 <br  />
 <b>Description:</b> GNU Fortran Compiler <code>gfortran</code> cannot properly construct the <code>allocatable</code> scalar non-<code>character</code> components of objects of type <a class="el" href="structpm__err_1_1stop__type.html">stop_type</a> using the default constructor.<br  />
@@ -521,7 +527,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the custom constructor bypasses GNU Fortran Compiler <code>gfortran</code> bug.<br  />
  </dd>
 <dt>Type <a class="el" href="structpm__err_1_1stop__type.html">pm_err::stop_type</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_bug000052"></a> <br  />
+<dd><p class="startdd"><a class="anchor" id="_bug000053"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 11-13 <br  />
 <b>Description:</b> GNU Fortran Compiler <code>gfortran</code> cannot properly construct the <code>allocatable</code> scalar non-<code>character</code> components of objects of type <a class="el" href="structpm__err_1_1warn__type.html">warn_type</a> using the default constructor.<br  />
@@ -529,7 +535,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the custom constructor bypasses GNU Fortran Compiler <code>gfortran</code> bug.<br  />
 </p>
-<p class="enddd"><a class="anchor" id="_bug000053"></a> <br  />
+<p class="enddd"><a class="anchor" id="_bug000054"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 11-13 <br  />
 <b>Description:</b> GNU Fortran Compiler <code>gfortran</code> cannot properly construct the <code>allocatable</code> scalar non-<code>character</code> components of objects of type <a class="el" href="structpm__err_1_1stop__type.html">stop_type</a> using the default constructor.<br  />
@@ -539,7 +545,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  </p>
 </dd>
 <dt>Type <a class="el" href="structpm__err_1_1warn__type.html">pm_err::warn_type</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_bug000050"></a> <br  />
+<dd><p class="startdd"><a class="anchor" id="_bug000051"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 11-13 <br  />
 <b>Description:</b> GNU Fortran Compiler <code>gfortran</code> cannot properly construct the <code>allocatable</code> scalar non-<code>character</code> components of objects of type <a class="el" href="structpm__err_1_1note__type.html">note_type</a> using the default constructor.<br  />
@@ -547,7 +553,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the custom constructor bypasses GNU Fortran Compiler <code>gfortran</code> bug.<br  />
 </p>
-<p class="enddd"><a class="anchor" id="_bug000051"></a> <br  />
+<p class="enddd"><a class="anchor" id="_bug000052"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 11-13 <br  />
 <b>Description:</b> GNU Fortran Compiler <code>gfortran</code> cannot properly construct the <code>allocatable</code> scalar non-<code>character</code> components of objects of type <a class="el" href="structpm__err_1_1warn__type.html">warn_type</a> using the default constructor.<br  />
@@ -557,22 +563,22 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  </p>
 </dd>
 <dt>Type <a class="el" href="structpm__io_1_1display__type.html">pm_io::display_type</a>  </dt>
-<dd><a class="anchor" id="_bug000057"></a> <br  />
+<dd><a class="anchor" id="_bug000058"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel LLVM Fortran Compiler <code>ifx</code> version 2024.0.0 <br  />
 <b>Description:</b> The Intel LLVM Fortran Compiler <code>ifx</code> version 2024.0.0 memory sanitizer in debug compilation (with heap memory, serial shared library generation) reports an uninitialized heap memory allocation usage where the constructor opens the specified input file.<br  />
   </dd>
 <dt>Type <a class="el" href="interfacepm__io_1_1getFormat.html">pm_io::getFormat</a>  </dt>
-<dd><a class="anchor" id="_bug000059"></a> <br  />
+<dd><a class="anchor" id="_bug000060"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021.8.0 20221119 <br  />
 <b>Description:</b> The Intel Classic Fortran Compiler <code>ifort</code> version 2021.8.0 20221119 cannot run the following function call within the implementation of the procedures,  </dd>
 <dt>Type <a class="el" href="structpm__io_1_1openArg__type.html">pm_io::openArg_type</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_bug000055"></a> <br  />
+<dd><p class="startdd"><a class="anchor" id="_bug000056"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version &lt; 2021.10.0 20230609 <br  />
 <b>Description:</b> The Intel Classic Fortran Compiler <code>ifort</code> returns a runtime error in Microsoft WSL, </p>
-<p class="enddd"><a class="anchor" id="_bug000056"></a> <br  />
+<p class="enddd"><a class="anchor" id="_bug000057"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version &lt; 12 <br  />
 <b>Description:</b> The GNU Fortran Compiler <code>gfortran</code> cannot compile interfaces with dummy arguments <code>character(:), intent(out), allocatable, optional</code>.<br  />
@@ -583,23 +589,23 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  </p>
 </dd>
 <dt>Type <a class="el" href="interfacepm__io_1_1show.html">pm_io::show</a>  </dt>
-<dd><a class="anchor" id="_bug000058"></a> <br  />
+<dd><a class="anchor" id="_bug000059"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021.5 <br  />
 <b>Description:</b> The Intel Classic Fortran Compiler <code>ifort</code> version 2021.5 cannot not compile the following interface specification for the procedures, yielding "ambiguous interface" error.<br  />
   </dd>
 <dt>Type <a class="el" href="interfacepm__mathNumSys_1_1getNumeral.html">pm_mathNumSys::getNumeral</a>  </dt>
-<dd><a class="anchor" id="_bug000060"></a> <br  />
+<dd><a class="anchor" id="_bug000061"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021.8.0 20221119 <br  />
 <b>Description:</b> The Intel Classic Fortran Compiler <code>ifort</code> version 2021.8.0 20221119 cannot run the following function call in the examples of <a class="el" href="interfacepm__mathNumSys_1_1getDecimal.html">getDecimal</a>,  </dd>
 <dt>Type <a class="el" href="interfacepm__matrixDet_1_1getMatDet.html">pm_matrixDet::getMatDet</a>  </dt>
-<dd><a class="anchor" id="_bug000061"></a> <br  />
+<dd><a class="anchor" id="_bug000062"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 11.2 <br  />
 <b>Description:</b> The GNU Fortran Compiler <code>gfortran</code> version 11.2 cannot compile the following code,  </dd>
 <dt>Type <a class="el" href="interfacepm__matrixInit_1_1getMatInit.html">pm_matrixInit::getMatInit</a>  </dt>
-<dd><a class="anchor" id="_bug000062"></a> <br  />
+<dd><a class="anchor" id="_bug000063"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021.8.0 20221119 <br  />
 <b>Description:</b> Intel Classic Fortran Compiler <code>ifort</code> thows a strange error for compiling this module when <a class="el" href="namespacepm__matrixSubset.html#af4c58113577a9bf8d3e922924e82950c">dia</a> constant is <code>use</code>d within this module.<br  />
@@ -610,7 +616,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  As such, the argument names <code>upp, low, dia</code> were renamed to <code>vupp, vlow, vdia</code> to emphasize the <code>value</code> attribute of these arguments and to resolve the Intel name-conflict bug.<br  />
  </dd>
 <dt>Type <a class="el" href="interfacepm__quadTest_1_1test__isFailedQuad.html">pm_quadTest::test_isFailedQuad</a>  </dt>
-<dd><a class="anchor" id="_bug000063"></a> <br  />
+<dd><a class="anchor" id="_bug000064"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 11 <br  />
 <b>Description:</b> The GNU Fortran Compiler <code>gfortran</code> cannot handle <b>submodule</b> procedures with implicit procedures whose interfaces are <b>solely</b> declared in the parent module.<br  />
@@ -618,7 +624,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  For example, gfortran fails to compile the following submodule procedure interface,<br  />
  For example, gfortran returns the following error code,  </dd>
 <dt>Module <a class="el" href="namespacepm__sampleCov.html">pm_sampleCov</a>  </dt>
-<dd><a class="anchor" id="_bug000064"></a> <br  />
+<dd><a class="anchor" id="_bug000065"></a> <br  />
 <b>Status:</b> See <span style="color:red"><b>Unresolved</b></span>, See <a href="https://groups.google.com/g/comp.lang.fortran/c/NDE6JKTFbNU">this page</a> for more information.<br  />
  <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> <br  />
@@ -630,7 +636,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  Once the GNU Fortran Compiler <code>gfortran</code> PDT bugs are resolved, the <a class="el" href="interfacepm__sampleVar_1_1getVar.html">getVar</a> generic interface can be extended to serve as a high-level wrapper for the weight-specific generic interfaces in this module.<br  />
  </dd>
 <dt>Type <a class="el" href="interfacepm__sampleCov_1_1getCov.html">pm_sampleCov::getCov</a>  </dt>
-<dd><a class="anchor" id="_bug000065"></a> <br  />
+<dd><a class="anchor" id="_bug000066"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021.8 <br  />
 <b>Description:</b> Intel ifort (possibly only with heap memory allocation) yields a segfault error in OpenMP parallel code at <code><a class="el" href="namespacepm__sampleCov.html" title="This module contains classes and procedures for computing the properties related to the covariance ma...">pm_sampleCov</a>@routines.inc.F90:238</code>.<br  />
@@ -639,7 +645,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, all do concurrent statements are converted back to normal do loops.<br  />
  </dd>
 <dt>Module <a class="el" href="namespacepm__sampleVar.html">pm_sampleVar</a>  </dt>
-<dd><a class="anchor" id="_bug000066"></a> <br  />
+<dd><a class="anchor" id="_bug000067"></a> <br  />
 <b>Status:</b> See <span style="color:red"><b>Unresolved</b></span>, See <a href="https://groups.google.com/g/comp.lang.fortran/c/NDE6JKTFbNU">this page</a> for more information.<br  />
  <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> <br  />
@@ -650,14 +656,20 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): Given that the importance of GNU Fortran Compiler <code>gfortran</code> support, separate generic interfaces were instead developed for different sample weight types.<br  />
  Once the GNU Fortran Compiler <code>gfortran</code> PDT bugs are resolved, the <a class="el" href="interfacepm__sampleVar_1_1getVar.html">getVar</a> generic interface can be extended to serve as a high-level wrapper for the weight-specific generic interfaces in this module.<br  />
  </dd>
+<dt>Type <a class="el" href="interfacepm__sampling_1_1getErrSampling.html">pm_sampling::getErrSampling</a>  </dt>
+<dd><a class="anchor" id="_bug000068"></a> <br  />
+<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
+<b>Source:</b> Intel LLVM Fortran Compiler <code>ifx</code> version 2024.0.2 20231213 <br  />
+<b>Description:</b> Intel LLVM Fortran Compiler <code>ifx</code> cannot handle compilation of the <code><a class="el" href="namespacepm__sampling.html" title="This module contains procedures and generic interfaces for the ParaMonte library sampler routines.">pm_sampling</a></code> implementation include file.<br  />
+  </dd>
 <dt>Type <a class="el" href="interfacepm__str_1_1isEndedWith.html">pm_str::isEndedWith</a>  </dt>
-<dd><a class="anchor" id="_bug000069"></a> <br  />
+<dd><a class="anchor" id="_bug000071"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021.11.1 Build 20231117_000000 <br  />
 <b>Description:</b> The following example fails on Windows and Linux with Intel Classic Fortran Compiler <code>ifort</code> version 2021.11.1 Build 20231117_000000.  </dd>
 <dt>Module <a class="el" href="namespacepm__strANSI.html">pm_strANSI</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_bug000070"></a> ESC should be ideally and portably defined as <code>achar(27, kind)</code>, once the gfortran 11 bug is resolved. </p>
-<p class="enddd"><a class="anchor" id="_bug000071"></a> <br  />
+<dd><p class="startdd"><a class="anchor" id="_bug000072"></a> ESC should be ideally and portably defined as <code>achar(27, kind)</code>, once the gfortran 11 bug is resolved. </p>
+<p class="enddd"><a class="anchor" id="_bug000073"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 10-12 <br  />
 <b>Description:</b> The character <code>ESC</code> should be ideally and portably defined as <code>achar(27, kind)</code>.<br  />
@@ -666,8 +678,14 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): The character <code>ESC</code> is defined a direct copy of the actual character via a preprocessor macro.<br  />
  </p>
 </dd>
+<dt>Type <a class="el" href="interfacepm__sysInfo_1_1getSysInfo.html">pm_sysInfo::getSysInfo</a>  </dt>
+<dd><a class="anchor" id="_bug000074"></a> <br  />
+<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
+<b>Source:</b> Intel LLVM Fortran Compiler <code>ifx</code> version 2025.0.0 20241008 <br  />
+<b>Description:</b> Intel LLVM Fortran Compiler <code>ifx</code> version 2025.0.0 20241008 yields the following segfault error at runtime for using the <a class="el" href="structpm__container_1_1css__type.html">css_type</a> array constructor syntax.<br  />
+ deallocate the array of origin in a call to intrinsic <code>move_alloc</code>:  </dd>
 <dt>Type <a class="el" href="interfacepm__val2str_1_1getStr.html">pm_val2str::getStr</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_bug000072"></a> <br  />
+<dd><p class="startdd"><a class="anchor" id="_bug000075"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 10.3-11 <br  />
 <b>Description:</b> The GNU Fortran Compiler <code>gfortran</code> cannot handle IO of string arrays of zero-length of non-zero size in <code>getStr()</code> in assertion check blocks.<br  />
@@ -675,10 +693,10 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  The Intel Classic Fortran Compiler <code>ifort</code> can handle this properly.<br  />
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): Avoid deferred-length strings where GNU Fortran Compiler <code>gfortran</code> cannot compile.</p>
-<p class="enddd"><a class="anchor" id="_bug000073"></a> </p>
+<p class="enddd"><a class="anchor" id="_bug000076"></a> </p>
 </dd>
 <dt>Type <a class="el" href="interfacepm__val2str_1_1setStr.html">pm_val2str::setStr</a>  </dt>
-<dd><a class="anchor" id="_bug000074"></a> <br  />
+<dd><a class="anchor" id="_bug000077"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> GNU Fortran Compiler <code>gfortran</code> version 10.3-11 <br  />
 <b>Description:</b> The GNU Fortran Compiler <code>gfortran</code> cannot handle IO of string arrays of zero-length of non-zero size in <code>getStr()</code> in assertion check blocks.<br  />
@@ -687,14 +705,14 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): Avoid deferred-length strings where GNU Fortran Compiler <code>gfortran</code> cannot compile. </dd>
 <dt>Module <a class="el" href="namespacepm__sampling.html#amgrp73c54a80faa8fa99f0f89890a016924c">runParaDRAM</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_bug000067"></a> <br  />
+<dd><p class="startdd"><a class="anchor" id="_bug000069"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel LLVM Fortran Compiler <code>ifx</code> version 2024.0.0 20231017 <br  />
 <b>Description:</b> Intel LLVM Fortran Compiler <code>ifx</code> This interface yields a segmentation fault error for all <code>real</code> types supported when linked with the ParaMonte library built with Intel LLVM Fortran Compiler <code>ifx</code>.<br  />
  <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, only Intel Classic Fortran Compiler <code>ifort</code> will be used.<br  />
 </p>
-<p class="enddd"><a class="anchor" id="_bug000068"></a> <br  />
+<p class="enddd"><a class="anchor" id="_bug000070"></a> <br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021.11.0 20231010 <br  />
 <b>Description:</b> The <code>runParaDRAML</code> interface for <code>long double</code> yields a segmentation fault error. <br  />
@@ -708,7 +726,7 @@ $(document).ready(function(){initNavTree('bug.html',''); initResizable(); });
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="footer">Generated on Mon Oct 28 2024 00:56:50 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Nov 7 2024 10:39:37 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
