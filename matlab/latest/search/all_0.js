@@ -13,7 +13,7 @@ var searchData=
   ['authors_10',['Authors',['../authors.html',1,'']]],
   ['authors_11',['authors',['../authors_8m.html#ad5933f73f67bbfe38c80ad2ac8cc9ddf',1,'authors.m']]],
   ['authors_2em_12',['authors.m',['../authors_8m.html',1,'']]],
-  ['autocorr_13',['AutoCorr',['../classAutoCorr.html#ab5476b1d48756287609e1bb9b95a307d',1,'AutoCorr::AutoCorr()'],['../classAutoCorr.html',1,'AutoCorr']]],
+  ['autocorr_13',['AutoCorr',['../classAutoCorr.html#ab0542cd98a1561c0f3d6424b8bc519a0',1,'AutoCorr::AutoCorr()'],['../classAutoCorr.html',1,'AutoCorr']]],
   ['autocorr_2em_14',['AutoCorr.m',['../AutoCorr_8m.html',1,'']]],
   ['auxil_15',['auxil',['../auxil_8m.html#a984acc59f890ee8926535f953f913eea',1,'auxil.m']]],
   ['auxil_2em_16',['auxil.m',['../auxil_8m.html',1,'']]],

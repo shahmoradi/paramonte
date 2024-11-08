@@ -34,8 +34,8 @@ var searchData=
   ['concat_31',['concat',['../classFileContentsReport.html#a760221e5ef98ee0e5e0334468713a045',1,'FileContentsReport']]],
   ['copy_32',['copy',['../copy_8m.html#ab633577f583e18a523fef5b3b2295eee',1,'copy():&#160;copy.m'],['../classDataRef.html#a39a07e96c92272882327e0311ab0baad',1,'DataRef::copy()'],['../classDataFrame.html#a0d792a8347ad678520c0fc28397b21fc',1,'DataFrame::copy()']]],
   ['copyfig_33',['copyfig',['../copyfig_8m.html#afc97c9d7f5431eb28ca277c67fb49cf5',1,'copyfig.m']]],
-  ['cor_34',['Cor',['../classCor.html#a54b29b51507a1155cbaf8e98641438d0',1,'Cor']]],
-  ['cov_35',['Cov',['../classCov.html#ad735f0d90e7b56379eedc79f6e248c0d',1,'Cov']]],
+  ['cor_34',['Cor',['../classCor.html#a6a118f1fe280ed997128d32bf8921502',1,'Cor']]],
+  ['cov_35',['Cov',['../classCov.html#acaa60a49c0153a4fc97c603c2b5a9581',1,'Cov']]],
   ['credits_36',['credits',['../credits_8m.html#ad922d80af3007a2ca33c26e89c77fbee',1,'credits.m']]],
   ['crop_5fborders_37',['crop_borders',['../crop__borders_8m.html#a0b5568512ef21430092459ba3ac1e274',1,'crop_borders.m']]],
   ['curvefitting_38',['curvefitting',['../curvefitting_8m.html#a33e7f2c116918277c5355d12340af9d6',1,'curvefitting.m']]]

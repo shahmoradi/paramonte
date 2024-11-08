@@ -2,7 +2,7 @@ var searchData=
 [
   ['gads_0',['gads',['../gads_8m.html#a27a09d5e29fab293638e956a8531e2ff',1,'gads.m']]],
   ['gads_2em_1',['gads.m',['../gads_8m.html',1,'']]],
-  ['get_2',['get',['../classCov.html#ad510605b455bd314743187ee8cbbea25',1,'Cov::get()'],['../classCor.html#a073f0726795dd828acaa504536ec2e56',1,'Cor::get()'],['../classAutoCorr.html#ae0e59d3c3e0f778362b1b42e03945ef5',1,'AutoCorr::get()']]],
+  ['get_2',['get',['../classCov.html#aac2ac7e2e47d10585dcd0a6f7f99dd19',1,'Cov::get()'],['../classCor.html#a3fbf43a6dff00fe6e083ce1673c8b3cc',1,'Cor::get()'],['../classAutoCorr.html#aeecf7268ee9cd9be54e851cff7634a34',1,'AutoCorr::get()']]],
   ['getaxes_3',['getAxes',['../getAxes_8m.html#a950d613e300cefe3e40f8ceb67c3e43d',1,'getAxes.m']]],
   ['getaxes_2em_4',['getAxes.m',['../getAxes_8m.html',1,'']]],
   ['getborder_5',['getBorder',['../getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9',1,'getBorder.m']]],

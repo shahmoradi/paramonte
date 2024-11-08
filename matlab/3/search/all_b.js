@@ -10,7 +10,7 @@ var searchData=
   ['medimage_7',['medimage',['../medimage_8m.html#a3c27fa8a3a6b47c4a334345066b89f0e',1,'medimage.m']]],
   ['medimage_2em_8',['medimage.m',['../medimage_8m.html',1,'']]],
   ['memtype_9',['memtype',['../classSampler.html#aff3b3a560e37699428dbcb4b445e0d5a',1,'Sampler']]],
-  ['method_10',['method',['../classSampler.html#a2aecf3fc3f3e679765fc34414a7c387e',1,'Sampler::method()'],['../classFileContentsReport.html#a780338dec09702ef418c1fd40276d895',1,'FileContentsReport::method()'],['../classFileContentsRestart.html#aebab22b40a7dfa05e600126337065597',1,'FileContentsRestart::method()'],['../classSpecBase.html#abe5c76c70b8bdc708e8e495099e5c078',1,'SpecBase::method()'],['../classCor.html#adc89b459da8289c6f2a5fc3416543f2f',1,'Cor::method()'],['../classCov.html#a2d25f316c27c004247825b624b988cc1',1,'Cov::method()']]],
+  ['method_10',['method',['../classSampler.html#a2aecf3fc3f3e679765fc34414a7c387e',1,'Sampler::method()'],['../classFileContentsReport.html#a780338dec09702ef418c1fd40276d895',1,'FileContentsReport::method()'],['../classFileContentsRestart.html#aebab22b40a7dfa05e600126337065597',1,'FileContentsRestart::method()'],['../classSpecBase.html#abe5c76c70b8bdc708e8e495099e5c078',1,'SpecBase::method()'],['../classCov.html#a2d25f316c27c004247825b624b988cc1',1,'Cov::method()']]],
   ['mex_11',['mex',['../mex_8m.html#afbd3ce0a6d28b7d13813025e98c43feb',1,'mex.m']]],
   ['mex_2em_12',['mex.m',['../mex_8m.html',1,'']]],
   ['mexdir_13',['mexdir',['../mexdir_8m.html#afe14acaa5deaa1ac6ce46094ac8019ad',1,'mexdir.m']]],

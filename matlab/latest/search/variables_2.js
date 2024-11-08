@@ -1,14 +1,14 @@
 var searchData=
 [
   ['description_0',['description',['../classSpecBase.html#a036165261abe521af6fdf410d369b852',1,'SpecBase']]],
-  ['df_1',['df',['../classFileContentsTabular.html#af1c8b4db015d79352e9953826c0f3910',1,'FileContentsTabular::df()'],['../classSubplot.html#a362e88405084d1b1fe0711554f2009ca',1,'Subplot::df()']]],
+  ['df_1',['df',['../classFileContentsTabular.html#af1c8b4db015d79352e9953826c0f3910',1,'FileContentsTabular::df()'],['../classAutoCorr.html#af931c329224b1439e5a916c1bad8471b',1,'AutoCorr::df()'],['../classCov.html#ab2b737e45bea8f75d414af56d9d36235',1,'Cov::df()'],['../classSubplot.html#a362e88405084d1b1fe0711554f2009ca',1,'Subplot::df()']]],
   ['dfref_2',['dfref',['../classDataRef.html#a1d6948665a35f6a3ff963831d35858a3',1,'DataRef']]],
   ['diago_3',['diago',['../classTriplex.html#a3d704e2b8a6549c1b86a19921375315b',1,'Triplex']]],
   ['diagytick_4',['diagYTick',['../classTriplex.html#afde082eb4950fbd80c6f2c9ba556e10f',1,'Triplex']]],
   ['dimx_5',['dimx',['../classSubplotEllipse3.html#a613ea401dbb972393ebb5b2c8117b2f2',1,'SubplotEllipse3']]],
   ['dimy_6',['dimy',['../classSubplotEllipse3.html#a3900e59f7b8b5d036d883453f25307d8',1,'SubplotEllipse3']]],
   ['domain_7',['domain',['../classSpecBase.html#af7c7e770df4031408b38332a5a844526',1,'SpecBase']]],
-  ['domainaxisname_8',['domainAxisName',['../classSpecBase.html#ab860f26c7473f8f8a1ef7de1cca7579b',1,'SpecBase::domainAxisName()'],['../classFileContentsRestart.html#a08921888a8aafb43b35dba919568e672',1,'FileContentsRestart::domainAxisName()']]],
+  ['domainaxisname_8',['domainAxisName',['../classFileContentsRestart.html#a08921888a8aafb43b35dba919568e672',1,'FileContentsRestart::domainAxisName()'],['../classSpecBase.html#ab860f26c7473f8f8a1ef7de1cca7579b',1,'SpecBase::domainAxisName()']]],
   ['domainballavg_9',['domainBallAvg',['../classSpecBase.html#a84196f2d6d8f47cd0b547472ae5a61f1',1,'SpecBase']]],
   ['domainballcor_10',['domainBallCor',['../classSpecBase.html#a26f5ccae9b0dad02b32ca3e57171d219',1,'SpecBase']]],
   ['domainballcov_11',['domainBallCov',['../classSpecBase.html#a63790db567fa9d76e2f6bc8bc803d088',1,'SpecBase']]],

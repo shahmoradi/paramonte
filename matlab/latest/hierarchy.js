@@ -20,6 +20,9 @@ var hierarchy =
       [ "CascadeScatter", "classCascadeScatter.html", null ],
       [ "CascadeScatter3", "classCascadeScatter3.html", null ]
     ] ],
+    [ "pm::stats::Cov", null, [
+      [ "Cor", "classCor.html", null ]
+    ] ],
     [ "pm::container::DataRef", null, [
       [ "DataFrame", "classDataFrame.html", null ]
     ] ],
@@ -53,7 +56,6 @@ var hierarchy =
       [ "AutoCorr", "classAutoCorr.html", null ],
       [ "Axes", "classAxes.html", null ],
       [ "Cascade", "classCascade.html", null ],
-      [ "Cor", "classCor.html", null ],
       [ "Cov", "classCov.html", null ],
       [ "DataRef", "classDataRef.html", null ],
       [ "Figure", "classFigure.html", null ],

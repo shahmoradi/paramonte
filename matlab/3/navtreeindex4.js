@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"home_8m_source.html":[19,0,0,0,0,0,14,2,4],
+"href_8m.html":[19,0,0,0,0,0,17,2],
+"href_8m.html#ab28e4ee901c69380281aa173544fa51b":[19,0,0,0,0,0,17,2,0],
+"href_8m_source.html":[19,0,0,0,0,0,17,2],
 "hyperlink_8m.html":[19,0,0,0,0,0,16,3,0,6],
 "hyperlink_8m.html#adbf38a9875ba9d157caf299f66138f8e":[19,0,0,0,0,0,16,3,0,6,0],
 "hyperlink_8m_source.html":[19,0,0,0,0,0,16,3,0,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX4 =
 "testParaMonte__testing_8m_source.html":[19,0,0,0,1,7],
 "testParaMonte__testing__mpi_8m.html":[19,0,0,0,1,8],
 "testParaMonte__testing__mpi_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b":[19,0,0,0,1,8,0],
-"testParaMonte__testing__mpi_8m_source.html":[19,0,0,0,1,8],
-"textanal_8m.html":[19,0,0,0,0,0,7,0,21],
-"textanal_8m.html#a7aa528396b241be3256aed075923320e":[19,0,0,0,0,0,7,0,21,0],
-"textanal_8m_source.html":[19,0,0,0,0,0,7,0,21],
-"todo.html":[17]
+"testParaMonte__testing__mpi_8m_source.html":[19,0,0,0,1,8]
 };

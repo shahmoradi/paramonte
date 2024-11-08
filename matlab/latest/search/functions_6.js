@@ -1,7 +1,7 @@
 var searchData=
 [
   ['gads_0',['gads',['../gads_8m.html#a27a09d5e29fab293638e956a8531e2ff',1,'gads.m']]],
-  ['get_1',['get',['../classCor.html#a073f0726795dd828acaa504536ec2e56',1,'Cor::get()'],['../classCov.html#ad510605b455bd314743187ee8cbbea25',1,'Cov::get()'],['../classAutoCorr.html#ae0e59d3c3e0f778362b1b42e03945ef5',1,'AutoCorr::get()']]],
+  ['get_1',['get',['../classCor.html#a3fbf43a6dff00fe6e083ce1673c8b3cc',1,'Cor::get()'],['../classCov.html#aac2ac7e2e47d10585dcd0a6f7f99dd19',1,'Cov::get()'],['../classAutoCorr.html#aeecf7268ee9cd9be54e851cff7634a34',1,'AutoCorr::get()']]],
   ['getaxes_2',['getAxes',['../getAxes_8m.html#a950d613e300cefe3e40f8ceb67c3e43d',1,'getAxes.m']]],
   ['getborder_3',['getBorder',['../getBorder_8m.html#a6ec0cec943dde2125d78bb3cfb88d0b9',1,'getBorder.m']]],
   ['getborders_4',['getBorders',['../getBorders_8m.html#a5c7b2b04ed3effb3fcc23a5179ca18c2',1,'getBorders.m']]],

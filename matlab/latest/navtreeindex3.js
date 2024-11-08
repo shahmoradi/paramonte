@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"classTileEllipse.html":[18,0,76],
+"classTileEllipse.html#ac9518de09b09a3bb81c0f4330b9a9593":[18,0,76,0],
+"classTileEllipse3.html":[18,0,77],
+"classTileEllipse3.html#a3a04fec0e70d2ce26d963153fff19a4d":[18,0,77,0],
 "classTileHeatmap.html":[18,0,78],
 "classTileHeatmap.html#a6de19d8c2258ce4bb40349b6e445efab":[18,0,78,0],
 "classTileHistfit.html":[18,0,79],
@@ -245,9 +249,5 @@ var NAVTREEINDEX3 =
 "hash2comp_8m_source.html":[19,0,0,0,0,0,7,1,3],
 "hierarchy.html":[18,2],
 "home_8m.html":[19,0,0,0,0,0,14,2,4],
-"home_8m.html#a339d3746582110c322f94831b08d1715":[19,0,0,0,0,0,14,2,4,0],
-"home_8m_source.html":[19,0,0,0,0,0,14,2,4],
-"href_8m.html":[19,0,0,0,0,0,17,2],
-"href_8m.html#ab28e4ee901c69380281aa173544fa51b":[19,0,0,0,0,0,17,2,0],
-"href_8m_source.html":[19,0,0,0,0,0,17,2]
+"home_8m.html#a339d3746582110c322f94831b08d1715":[19,0,0,0,0,0,14,2,4,0]
 };
