@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('classCov.html',''); initResizable(); }
 </div><!--header-->
 <div class="contents">
 
-<p>This is the base class for generating objects with methods and storage components for computing and storing the covariance matrix of an input data.<br  />
+<p>This is the base class for generating objects with methods and storage components for computing and storing and visualizing the covariance matrix of an input data.<br  />
   
  <a href="classCov.html#details">More...</a></p>
 <div class="dynheader">
@@ -184,18 +184,20 @@ Data Fields</h2></td></tr>
 <tr class="separator:a2d25f316c27c004247825b624b988cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ff7e81a41cd8654d27896b158974acb"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCov.html#a5ff7e81a41cd8654d27896b158974acb">val</a></td></tr>
 <tr class="separator:a5ff7e81a41cd8654d27896b158974acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90111f71d2de307947267cbe87c472d7"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCov.html#a90111f71d2de307947267cbe87c472d7">vis</a></td></tr>
+<tr class="separator:a90111f71d2de307947267cbe87c472d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >This is the base class for generating objects with methods and storage components for computing and storing the covariance matrix of an input data.<br  />
+<div class="textblock"><p >This is the base class for generating objects with methods and storage components for computing and storing and visualizing the covariance matrix of an input data.<br  />
  </p>
-<p >This is convenience class for easy computation of covariance and its storage all in one place.<br  />
+<p >This is merely a convenience class for easy computation of covariance and its storage all in one place.<br  />
  The primary advantage of this class over the MATLAB intrinsic functions is in the ability of this class to compute the result for input dataframe table and return the results always in MATLAB <code>table</code> format.<br  />
 </p>
 <dl class="section note"><dt>Note</dt><dd>See the documentation of the class constructor <a class="el" href="classCov.html#ad735f0d90e7b56379eedc79f6e248c0d">pm.stats.Cov</a> below.<br  />
 </dd></dl>
 <p><br  />
 <a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/Cov.m#L17 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/Cov.m#L14 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -215,7 +217,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, July 5 2024, 1:07 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Cov_8m_source.html#l00023">23</a> of file <a class="el" href="Cov_8m_source.html">Cov.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cov_8m_source.html#l00020">20</a> of file <a class="el" href="Cov_8m_source.html">Cov.m</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad735f0d90e7b56379eedc79f6e248c0d" name="ad735f0d90e7b56379eedc79f6e248c0d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad735f0d90e7b56379eedc79f6e248c0d">&#9670;&nbsp;</a></span>Cov()</h2>
@@ -264,7 +266,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <a class="anchor" id="interface-Cov"></a><b>Possible calling interfaces</b> <a href="#interface-Cov">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">mat = pm.stats.Cov()</div>
 <div class="line">mat = pm.stats.Cov(df)</div>
 <div class="line">mat = pm.stats.Cov(df, <a class="code hl_variable" href="classCov.html#a2d25f316c27c004247825b624b988cc1">method</a>)</div>
-<div class="ttc" id="aclassCov_html_a2d25f316c27c004247825b624b988cc1"><div class="ttname"><a href="classCov.html#a2d25f316c27c004247825b624b988cc1">Cov::method</a></div><div class="ttdeci">Property method</div><div class="ttdef"><b>Definition:</b> <a href="Cov_8m_source.html#l00041">Cov.m:41</a></div></div>
+<div class="ttc" id="aclassCov_html_a2d25f316c27c004247825b624b988cc1"><div class="ttname"><a href="classCov.html#a2d25f316c27c004247825b624b988cc1">Cov::method</a></div><div class="ttdeci">Property method</div><div class="ttdef"><b>Definition:</b> <a href="Cov_8m_source.html#l00038">Cov.m:38</a></div></div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="example-Cov"></a><b>Example usage</b> <a href="#example-Cov">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
@@ -357,7 +359,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 </dd></dl>
 <p><br  />
 <a class="anchor" id="final-Cov"></a><b>Final Remarks</b> <a href="#final-Cov">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/Cov.m#L92 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/Cov.m#L95 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -440,7 +442,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-get"></a><b>Final Remarks</b> <a href="#final-get">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/Cov.m#L140 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+stats/Cov.m#L143 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -486,7 +488,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <code>"spearman"</code> : for computing the Spearman rank covariance matrix of the input data. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="Cov_8m_source.html#l00041">41</a> of file <a class="el" href="Cov_8m_source.html">Cov.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cov_8m_source.html#l00038">38</a> of file <a class="el" href="Cov_8m_source.html">Cov.m</a>.</p>
 
 </div>
 </div>
@@ -507,7 +509,25 @@ Help us justify its continued development and maintenance by acknowledging its b
  It must be populated manually at all other times.<br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="Cov_8m_source.html#l00052">52</a> of file <a class="el" href="Cov_8m_source.html">Cov.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cov_8m_source.html#l00049">49</a> of file <a class="el" href="Cov_8m_source.html">Cov.m</a>.</p>
+
+</div>
+</div>
+<a id="a90111f71d2de307947267cbe87c472d7" name="a90111f71d2de307947267cbe87c472d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90111f71d2de307947267cbe87c472d7">&#9670;&nbsp;</a></span>vis</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Property Cov::vis</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p ><code>vis</code> : The scalar MATLAB <code>struct</code> containing the set of predefined visualizations for the output data.<br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="Cov_8m_source.html#l00055">55</a> of file <a class="el" href="Cov_8m_source.html">Cov.m</a>.</p>
 
 </div>
 </div>
@@ -520,7 +540,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classCov.html">Cov</a></li>
-        <li class="footer">Generated on Wed Nov 6 2024 10:58:22 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Nov 7 2024 19:55:27 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

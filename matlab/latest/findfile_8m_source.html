@@ -285,56 +285,55 @@ $(document).ready(function(){initNavTree('findfile_8m_source.html',''); initResi
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                    warning ( newline ...</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                            + <span class="keywordtype">string</span>(me.identifier) + &quot; : &quot; + <span class="keywordtype">string</span>(me.message) + newline ...</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                            + &quot;Failed to read data from the specified URL:&quot; + newline ...</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                            + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + newline ...</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                            + newline ...</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                            );</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                end</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            end</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        end</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        if  isempty(fileList)</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            msg = newline ...</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                + &quot;Failed to detect any &quot; + ftype + &quot; files with the requested pattern:&quot; + newline ...</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                + newline ...</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + pattern + newline ...</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                + newline ...</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                + &quot;Specify an input ``pattern`` that either&quot; + newline ...</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                + newline ...</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;1.   points to one or more &quot; + ftype + &quot; files, or,&quot; + newline ...</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;2.   represents the unique part of the names of a simulation.&quot; + newline ...</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;     This unique-<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> is the common prefix in the names of&quot; + newline ...</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;     the output files of a given sampling simulation.&quot; + newline ...</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                + newline ...</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                + &quot;Note that binary files ending with the suffix &quot;&quot;*.bin&quot;&quot; cannot be currently parsed.&quot; + newline ...</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                ;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            if contains(ftype, &quot;restart&quot;)</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                msg = msg ...</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                    + &quot;For restart files, you can set the simulation specification ``restartFileFormat`` to&quot; + newline ...</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                    + newline ...</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                    + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;spec.restartFileFormat = &quot;&quot;ascii&quot;&quot;;&quot; + newline ...</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                    + newline ...</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                    + &quot;to generate ASCII-format MATLAB-readable &quot; + ftype + &quot; files.&quot; ...</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                    + newline ...</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                    ;</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            elseif contains(ftype, &quot;chain&quot;)</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                msg = msg ...</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                    + &quot;For chain files, you can set the simulation specification ``chainFileFormat`` to&quot; + newline ...</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                    + newline ...</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                    + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;spec.chainFileFormat = &quot;&quot;ascii&quot;&quot;;&quot; + newline ...</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                    + newline ...</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                    + &quot;to generate ASCII-format MATLAB-readable &quot; + ftype + &quot; files.&quot; ...</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                    + newline ...</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                    ;</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            end</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            error(msg);</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        end</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    end</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    if ~self.silent</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        disp(<span class="keywordtype">string</span>(length(fileList)) + &quot; files were detected matching pattern: &quot;&quot;&quot; +  pattern + &quot;&quot;&quot;&quot;);</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    end</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>end</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                            + newline ...</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                            );</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                end</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            end</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        end</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        if  isempty(fileList)</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            msg = newline ...</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                + &quot;Failed to detect any &quot; + ftype + &quot; files with the requested pattern:&quot; + newline ...</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                + newline ...</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + pattern + newline ...</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                + newline ...</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                + &quot;Specify an input ``pattern`` that either&quot; + newline ...</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                + newline ...</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;1.   points to one or more &quot; + ftype + &quot; files, or,&quot; + newline ...</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;2.   represents the unique part of the names of a simulation.&quot; + newline ...</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;     This unique-<a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> is the common prefix in the names of&quot; + newline ...</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;     the output files of a given sampling simulation.&quot; + newline ...</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                + newline ...</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                + &quot;Note that binary files ending with the suffix &quot;&quot;*.bin&quot;&quot; cannot be currently parsed.&quot; + newline ...</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                ;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            if contains(ftype, &quot;restart&quot;)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                msg = msg ...</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                    + &quot;For restart files, you can set the simulation specification ``restartFileFormat`` to&quot; + newline ...</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                    + newline ...</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                    + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;spec.restartFileFormat = &quot;&quot;ascii&quot;&quot;;&quot; + newline ...</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                    + newline ...</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                    + &quot;to generate ASCII-format MATLAB-readable &quot; + ftype + &quot; files.&quot; ...</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                    + newline ...</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                    ;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            elseif contains(ftype, &quot;chain&quot;)</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                msg = msg ...</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                    + &quot;For chain files, you can set the simulation specification ``chainFileFormat`` to&quot; + newline ...</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                    + newline ...</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                    + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;spec.chainFileFormat = &quot;&quot;ascii&quot;&quot;;&quot; + newline ...</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                    + newline ...</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                    + &quot;to generate ASCII-format MATLAB-readable &quot; + ftype + &quot; files.&quot; ...</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                    + newline ...</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                    ;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            end</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            error(msg);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        end</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    end</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    if ~self.silent</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        disp(<span class="keywordtype">string</span>(length(fileList)) + &quot; files were detected matching pattern: &quot;&quot;&quot; +  pattern + &quot;&quot;&quot;&quot;);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    end</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>end</div>
 <div class="ttc" id="a_09lib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div><div class="ttdoc">Return the MPI library name as used in naming the ParaMonte MATLAB shared libraries.</div></div>
 <div class="ttc" id="abasename_8m_html_a137fdd2b9612fdff95e0da62c9bf87cd"><div class="ttname"><a href="basename_8m.html#a137fdd2b9612fdff95e0da62c9bf87cd">basename</a></div><div class="ttdeci">function basename(in url)</div><div class="ttdoc">Return a scalar MATLAB string containing the basename part of an input url, defined as the segment of...</div></div>
 <div class="ttc" id="aclassSampler_html"><div class="ttname"><a href="classSampler.html">Sampler</a></div><div class="ttdoc">This is the base class for the ParaMonte sampler routines.</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00020">Sampler.m:21</a></div></div>
@@ -349,7 +348,7 @@ $(document).ready(function(){initNavTree('findfile_8m_source.html',''); initResi
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_870970980bbbd119e0b6d78557b3d4cb.html">+sampling</a></li><li class="navelem"><a class="el" href="dir_0e0170126dfae72f4e93d1cf5bd3ba28.html">@Sampler</a></li><li class="navelem"><a class="el" href="findfile_8m.html">findfile.m</a></li>
-        <li class="footer">Generated on Wed Nov 6 2024 10:58:20 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Nov 7 2024 19:55:25 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

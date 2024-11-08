@@ -214,19 +214,19 @@ $(document).ready(function(){initNavTree('getLogUDF_8m_source.html',''); initRes
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="stringliteral">%&gt;  \final{getLogUDF}</span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="stringliteral">%&gt;</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="stringliteral">%&gt;  \author</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="stringliteral">%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="stringliteral">%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</span></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="getLogUDF_8m.html#a236a995cbbb8abe88727027b7bfb62e9">   75</a></span><span class="stringliteral">function logFunc = getLogUDF(x, y, epsilon)</span></div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="stringliteral">    if  nargin &lt; 3</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="stringliteral">        epsilon = 1;</span></div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="stringliteral">    end</span></div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="stringliteral">    logFunc = -log(pm.math.func.himmelblau.getFunc(x, y) + epsilon);</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="stringliteral">    %if false</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="stringliteral">    %    nsim = 100000;</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="stringliteral">    %    for i = 1 : nsim</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="stringliteral">    %        logFunc = logFunc - log((state(1)^2 + state(2) - 11)^2 + (state(1) + state(2)^2 - 7)^2 + 0.1);</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="stringliteral">    %    end</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="stringliteral">    %    logFunc = logFunc / (nsim + 1);</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="stringliteral">    %end</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="stringliteral">    if false</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="stringliteral">        nsim = 100000;</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="stringliteral">        for i = 1 : nsim</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="stringliteral">            logFunc = logFunc - log((x^2 + y - 11)^2 + (x + y^2 - 7)^2 + 0.1);</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="stringliteral">        end</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="stringliteral">        logFunc = logFunc / (nsim + 1);</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="stringliteral">    end</span></div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="stringliteral">end</span></div>
 <div class="ttc" id="agetLogUDF_8m_html_a236a995cbbb8abe88727027b7bfb62e9"><div class="ttname"><a href="getLogUDF_8m.html#a236a995cbbb8abe88727027b7bfb62e9">getLogUDF</a></div><div class="ttdeci">function getLogUDF(in x, in y, in epsilon)</div><div class="ttdoc">Return the natural logarithm of the Unnormalized Density Function (UDF) of the inverse of the 2-dimen...</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -235,7 +235,7 @@ $(document).ready(function(){initNavTree('getLogUDF_8m_source.html',''); initRes
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_5f2f7d6d6a421f083844944f36109908.html">+stats</a></li><li class="navelem"><a class="el" href="dir_d694f06def73710f7681c1701584508c.html">+dist</a></li><li class="navelem"><a class="el" href="dir_4e9ef727557d6a2857b27b6e8c436c49.html">+himmelblau</a></li><li class="navelem"><a class="el" href="getLogUDF_8m.html">getLogUDF.m</a></li>
-        <li class="footer">Generated on Wed Nov 6 2024 10:58:20 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Nov 7 2024 19:55:26 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

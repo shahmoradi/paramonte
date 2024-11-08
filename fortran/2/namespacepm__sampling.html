@@ -180,7 +180,8 @@ Functions/Subroutines</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">runParaDRAM</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p >C-Fortran Interoperation</p>
 <p >Generate and return a non-zero value (<code>1</code>) if the procedure fails to fully accomplish the task of Monte Carlo sampling of the specified input mathematical objective function, otherwise, return <code>0</code>.</p>
-<p >This interface group is the entry point to all <b>C-style interfaces</b> to the ParaDRAM samplers of mathematical density functions.<br  />
+<p >See the documentation of <a class="el" href="interfacepm__sampling_1_1getErrSampling.html">getErrSampling</a> for example usage in Fortran programming language.<br  />
+ This interface group is the entry point to all <b>C-style interfaces</b> to the ParaDRAM samplers of mathematical density functions.<br  />
  Although the procedures of this generic interface return a single scalar of type <code>int32_t</code>, the procedures generate massive amounts of information about each simulation which are stored in appropriate external hard drive files.<br  />
 </p>
 <p >See, </p><ol>
@@ -269,8 +270,8 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="fortran_spcifier">    stat</span><span class="fortran_operator_symbols"> = </span><a class="code hl_function" href="namespacepm__sampling.html#ace901062cc3b1f73596a4decd0ed64f2">runParaDRAMD</a>(<span class="fortran_function">c_funloc</span>(getLogFunc), NDIM, SK_<span class="fortran_string">&quot;&amp;paradram outputFileName = &#39;./out/runParaDRAM&#39;, outputStatus = &#39;retry&#39;, outputChainSize = 30000 /&quot;</span><span class="fortran_operator_symbols">/</span><span class="fortran_operator_symbols">/</span>NUL)</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="fortran_keywordflow">if</span> (stat<span class="fortran_operator_symbols"> /</span><span class="fortran_operator_symbols">= </span><span class="fortran_numeric_literal">0</span>)<span class="fortran_statement"> error stop</span> <span class="fortran_string">&quot;sampler failed.&quot;</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="fortran_statement">end</span></div>
-<div class="ttc" id="anamespacepm__sampling_html"><div class="ttname"><a href="namespacepm__sampling.html">pm_sampling</a></div><div class="ttdoc">This module contains procedures and generic interfaces for the ParaMonte library sampler routines.</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampling_8F90_source.html#l00030">pm_sampling.F90:30</a></div></div>
-<div class="ttc" id="anamespacepm__sampling_html_ace901062cc3b1f73596a4decd0ed64f2"><div class="ttname"><a href="namespacepm__sampling.html#ace901062cc3b1f73596a4decd0ed64f2">pm_sampling::runParaDRAMD</a></div><div class="ttdeci">integer(IK) function runParaDRAMD(getLogFunc, ndim, input)</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampling_8F90_source.html#l00934">pm_sampling.F90:935</a></div></div>
+<div class="ttc" id="anamespacepm__sampling_html"><div class="ttname"><a href="namespacepm__sampling.html">pm_sampling</a></div><div class="ttdoc">This module contains procedures and generic interfaces for the ParaMonte library sampler routines.</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampling_8F90_source.html#l00033">pm_sampling.F90:33</a></div></div>
+<div class="ttc" id="anamespacepm__sampling_html_ace901062cc3b1f73596a4decd0ed64f2"><div class="ttname"><a href="namespacepm__sampling.html#ace901062cc3b1f73596a4decd0ed64f2">pm_sampling::runParaDRAMD</a></div><div class="ttdeci">integer(IK) function runParaDRAMD(getLogFunc, ndim, input)</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampling_8F90_source.html#l00943">pm_sampling.F90:944</a></div></div>
 </div><!-- fragment --> <br  />
  <a class="anchor" id="compile-unix-intel-runParaDRAM"></a><b>Example Unix compile command via Intel <code>ifort</code> compiler</b> <a href="#compile-unix-intel-runParaDRAM">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>rm main.exe</div>
@@ -410,7 +411,7 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="final-runParaDRAM"></a><b>Final Remarks</b> <a href="#final-runParaDRAM">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampling.F90#L915 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampling.F90#L924 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -425,7 +426,8 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001317">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001317">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
+ </dd></dl>
 </div></td></tr>
 <tr class="memitem:a467c4e5e118b23be51c8e2c0a245667f"><td class="memItemLeft" align="right" valign="top">integer(IK) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepm__sampling.html#a467c4e5e118b23be51c8e2c0a245667f">runParaDRAML</a> (getLogFunc, ndim, input)</td></tr>
 <tr class="separator:a467c4e5e118b23be51c8e2c0a245667f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -441,11 +443,13 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This module contains procedures and generic interfaces for the ParaMonte library sampler routines. </p>
+<p >See the documentation of <a class="el" href="interfacepm__sampling_1_1getErrSampling.html">getErrSampling</a> for example usage.<br  />
+</p>
 <dl class="test"><dt><b><a class="el" href="test.html#_test000910">Test:</a></b></dt><dd>test_pm_sampling<br  />
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="final"></a><b>Final Remarks</b> <a href="#final">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampling.F90#L23 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampling.F90#L26 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -460,7 +464,8 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001310">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Monday 00:01 AM, January 1, 2018, Institute for Computational Engineering and Sciences, University of Texas Austin </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors001310">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Monday 00:01 AM, January 1, 2018, Institute for Computational Engineering and Sciences, University of Texas Austin<br  />
+ </dd></dl>
 </div><h2 class="groupheader">Function/Subroutine Documentation</h2>
 <a id="ace901062cc3b1f73596a4decd0ed64f2" name="ace901062cc3b1f73596a4decd0ed64f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ace901062cc3b1f73596a4decd0ed64f2">&#9670;&nbsp;</a></span>runParaDRAMD()</h2>
@@ -494,7 +499,7 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pm__sampling_8F90_source.html#l00934">934</a> of file <a class="el" href="pm__sampling_8F90_source.html">pm_sampling.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__sampling_8F90_source.html#l00943">943</a> of file <a class="el" href="pm__sampling_8F90_source.html">pm_sampling.F90</a>.</p>
 
 </div>
 </div>
@@ -530,7 +535,7 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pm__sampling_8F90_source.html#l00949">949</a> of file <a class="el" href="pm__sampling_8F90_source.html">pm_sampling.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__sampling_8F90_source.html#l00958">958</a> of file <a class="el" href="pm__sampling_8F90_source.html">pm_sampling.F90</a>.</p>
 
 <p class="reference">References <a class="el" href="pm__kind_8F90_source.html#l00540">pm_kind::IK</a>, <a class="el" href="pm__kind_8F90_source.html#l00636">pm_kind::RKALL</a>, and <a class="el" href="pm__kind_8F90_source.html#l00539">pm_kind::SK</a>.</p>
 
@@ -568,7 +573,7 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pm__sampling_8F90_source.html#l00919">919</a> of file <a class="el" href="pm__sampling_8F90_source.html">pm_sampling.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__sampling_8F90_source.html#l00928">928</a> of file <a class="el" href="pm__sampling_8F90_source.html">pm_sampling.F90</a>.</p>
 
 </div>
 </div>
@@ -585,7 +590,7 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pm__sampling_8F90_source.html#l00040">40</a> of file <a class="el" href="pm__sampling_8F90_source.html">pm_sampling.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__sampling_8F90_source.html#l00043">43</a> of file <a class="el" href="pm__sampling_8F90_source.html">pm_sampling.F90</a>.</p>
 
 </div>
 </div>
@@ -595,7 +600,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__sampling.html">pm_sampling</a></li>
-        <li class="footer">Generated on Thu Nov 7 2024 10:39:44 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Thu Nov 7 2024 13:50:06 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

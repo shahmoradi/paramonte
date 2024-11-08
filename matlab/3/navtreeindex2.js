@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"classFileContentsRestart.html#a5fece043b2cdb223f3e6620971c57754":[18,0,28,5],
 "classFileContentsRestart.html#aa95e21e785e65bf4005030382bea9829":[18,0,28,6],
 "classFileContentsRestart.html#abc20294ce79cf10a36ab0665a9a71bef":[18,0,28,1],
 "classFileContentsRestart.html#adb9a76d72d4d7dd04bd39a025e11dcff":[18,0,28,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "classTileEllipse.html":[18,0,76],
 "classTileEllipse.html#ac9518de09b09a3bb81c0f4330b9a9593":[18,0,76,0],
 "classTileEllipse3.html":[18,0,77],
-"classTileEllipse3.html#a3a04fec0e70d2ce26d963153fff19a4d":[18,0,77,0],
-"classTileHeatmap.html":[18,0,78]
+"classTileEllipse3.html#a3a04fec0e70d2ce26d963153fff19a4d":[18,0,77,0]
 };
