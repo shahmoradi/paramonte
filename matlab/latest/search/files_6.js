@@ -13,8 +13,9 @@ var searchData=
   ['getlogfunc_2em_10',['getLogFunc.m',['../getLogFunc_8m.html',1,'']]],
   ['getlogpdf_2em_11',['getLogPDF.m',['../_09gengamma_2getLogPDF_8m.html',1,'(Global Namespace)'],['../_09mvn_2getLogPDF_8m.html',1,'(Global Namespace)']]],
   ['getlogudf_2em_12',['getLogUDF.m',['../getLogUDF_8m.html',1,'']]],
-  ['getrand_2em_13',['getRand.m',['../_09mvu_2getRand_8m.html',1,'(Global Namespace)'],['../_09mvn_2getRand_8m.html',1,'(Global Namespace)'],['../_09cov_2getRand_8m.html',1,'(Global Namespace)']]],
-  ['ghostscript_2em_14',['ghostscript.m',['../ghostscript_8m.html',1,'']]],
-  ['glob_2em_15',['glob.m',['../glob_8m.html',1,'']]],
-  ['gpucoder_2em_16',['gpucoder.m',['../gpucoder_8m.html',1,'']]]
+  ['getppm_2em_13',['getppm.m',['../_0dSampler_2getppm_8m.html',1,'(Global Namespace)'],['../_0dParadram_2getppm_8m.html',1,'(Global Namespace)']]],
+  ['getrand_2em_14',['getRand.m',['../_09mvu_2getRand_8m.html',1,'(Global Namespace)'],['../_09mvn_2getRand_8m.html',1,'(Global Namespace)'],['../_09cov_2getRand_8m.html',1,'(Global Namespace)']]],
+  ['ghostscript_2em_15',['ghostscript.m',['../ghostscript_8m.html',1,'']]],
+  ['glob_2em_16',['glob.m',['../glob_8m.html',1,'']]],
+  ['gpucoder_2em_17',['gpucoder.m',['../gpucoder_8m.html',1,'']]]
 ];

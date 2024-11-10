@@ -1,8 +1,8 @@
 var searchData=
 [
   ['description_0',['description',['../classSpecBase.html#a036165261abe521af6fdf410d369b852',1,'SpecBase']]],
-  ['df_1',['df',['../classFileContentsTabular.html#af1c8b4db015d79352e9953826c0f3910',1,'FileContentsTabular::df()'],['../classAutoCorr.html#af931c329224b1439e5a916c1bad8471b',1,'AutoCorr::df()'],['../classCov.html#ab2b737e45bea8f75d414af56d9d36235',1,'Cov::df()'],['../classSubplot.html#a362e88405084d1b1fe0711554f2009ca',1,'Subplot::df()']]],
-  ['dfref_2',['dfref',['../classDataRef.html#a1d6948665a35f6a3ff963831d35858a3',1,'DataRef']]],
+  ['df_1',['df',['../classFileContentsTabular.html#af1c8b4db015d79352e9953826c0f3910',1,'FileContentsTabular']]],
+  ['dfref_2',['dfref',['../classDataRef.html#a1d6948665a35f6a3ff963831d35858a3',1,'DataRef::dfref()'],['../classAutoCorr.html#ab8432a7bd4be9b39e26f25731763e99f',1,'AutoCorr::dfref()'],['../classCov.html#a64c1717f878af31ce690b640999a4a81',1,'Cov::dfref()'],['../classSubplot.html#ad138c8146cb97271b0ae3acc842ecdb5',1,'Subplot::dfref()']]],
   ['diago_3',['diago',['../classTriplex.html#a3d704e2b8a6549c1b86a19921375315b',1,'Triplex']]],
   ['diagytick_4',['diagYTick',['../classTriplex.html#afde082eb4950fbd80c6f2c9ba556e10f',1,'Triplex']]],
   ['dimx_5',['dimx',['../classSubplotEllipse3.html#a613ea401dbb972393ebb5b2c8117b2f2',1,'SubplotEllipse3']]],

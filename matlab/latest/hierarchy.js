@@ -40,13 +40,17 @@ var hierarchy =
       [ "FileContentsTabular", "classFileContentsTabular.html", null ]
     ] ],
     [ "pm::sampling::FileContentsChain", null, [
+      [ "FileContentsChainMCMC", "classFileContentsChainMCMC.html", null ]
+    ] ],
+    [ "pm::sampling::FileContentsChainMCMC", null, [
       [ "FileContentsChainDRAM", "classFileContentsChainDRAM.html", null ]
     ] ],
     [ "pm::sampling::FileContentsRestart", null, [
       [ "FileContentsRestartDRAM", "classFileContentsRestartDRAM.html", null ]
     ] ],
     [ "pm::sampling::FileContentsSample", null, [
-      [ "FileContentsChain", "classFileContentsChain.html", null ]
+      [ "FileContentsChain", "classFileContentsChain.html", null ],
+      [ "FileContentsSampleDRAM", "classFileContentsSampleDRAM.html", null ]
     ] ],
     [ "pm::io::FileContentsTabular", null, [
       [ "FileContentsProgress", "classFileContentsProgress.html", null ],

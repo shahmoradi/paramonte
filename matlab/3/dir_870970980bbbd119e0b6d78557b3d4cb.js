@@ -1,5 +1,6 @@
 var dir_870970980bbbd119e0b6d78557b3d4cb =
 [
+    [ "@Paradram", "dir_402a553b8efbef9857276df0f51a8f12.html", "dir_402a553b8efbef9857276df0f51a8f12" ],
     [ "@Sampler", "dir_0e0170126dfae72f4e93d1cf5bd3ba28.html", "dir_0e0170126dfae72f4e93d1cf5bd3ba28" ],
     [ "Contents.m", "_09sampling_2Contents_8m.html", null ],
     [ "FileContentsChain.m", "FileContentsChain_8m.html", [
@@ -7,6 +8,9 @@ var dir_870970980bbbd119e0b6d78557b3d4cb =
     ] ],
     [ "FileContentsChainDRAM.m", "FileContentsChainDRAM_8m.html", [
       [ "FileContentsChainDRAM", "classFileContentsChainDRAM.html", "classFileContentsChainDRAM" ]
+    ] ],
+    [ "FileContentsChainMCMC.m", "FileContentsChainMCMC_8m.html", [
+      [ "FileContentsChainMCMC", "classFileContentsChainMCMC.html", "classFileContentsChainMCMC" ]
     ] ],
     [ "FileContentsProgress.m", "FileContentsProgress_8m.html", [
       [ "FileContentsProgress", "classFileContentsProgress.html", "classFileContentsProgress" ]
@@ -23,8 +27,8 @@ var dir_870970980bbbd119e0b6d78557b3d4cb =
     [ "FileContentsSample.m", "FileContentsSample_8m.html", [
       [ "FileContentsSample", "classFileContentsSample.html", "classFileContentsSample" ]
     ] ],
-    [ "Paradram.m", "Paradram_8m.html", [
-      [ "Paradram", "classParadram.html", "classParadram" ]
+    [ "FileContentsSampleDRAM.m", "FileContentsSampleDRAM_8m.html", [
+      [ "FileContentsSampleDRAM", "classFileContentsSampleDRAM.html", "classFileContentsSampleDRAM" ]
     ] ],
     [ "readChain.m", "readChain_8m.html", "readChain_8m" ],
     [ "readProgress.m", "readProgress_8m.html", "readProgress_8m" ],

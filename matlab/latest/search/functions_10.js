@@ -1,7 +1,7 @@
 var searchData=
 [
   ['read_5fwrite_5fentire_5ftextfile_0',['read_write_entire_textfile',['../read__write__entire__textfile_8m.html#ad6731c3b0a0c4ac289173fcae4f0a8da',1,'read_write_entire_textfile.m']]],
-  ['readchain_1',['readChain',['../readChain_8m.html#acd72b9f22d15291ea2d0af874fe5d540',1,'readChain():&#160;readChain.m'],['../classSampler.html#a81e0970bfb647fe928db20cdd9d8caaf',1,'Sampler::readChain()']]],
+  ['readchain_1',['readChain',['../readChain_8m.html#a02c1e4df43ef8ef8be223257f32c9069',1,'readChain():&#160;readChain.m'],['../classSampler.html#a81bed7a49a0c8cdf247c378498f6cf5e',1,'Sampler::readChain()']]],
   ['readchainmarkov_2',['readChainMarkov',['../classParadram.html#acc579eeadd6bc0d96adbeb5f03595219',1,'Paradram']]],
   ['readprogress_3',['readProgress',['../classSampler.html#ae3f0f62c32f8da4d9f4c882f9cc39c6e',1,'Sampler::readProgress()'],['../readProgress_8m.html#a0c68f3834c22a5b4fd3d32873cc82fa6',1,'readProgress():&#160;readProgress.m']]],
   ['readreport_4',['readReport',['../classSampler.html#a753ccd6a5b6734db44952de25be7e002',1,'Sampler::readReport()'],['../readReport_8m.html#a2449dde15c2f5b7b317e9b43732cb383',1,'readReport():&#160;readReport.m']]],
@@ -18,5 +18,5 @@ var searchData=
   ['root_15',['root',['../root_8m.html#a89008b0d9aee9934beddaed8433fec4d',1,'root.m']]],
   ['rotateaxeslabels_16',['rotateAxesLabels',['../classTriplex.html#aac217571f0804d4cb9fb9550648b8a01',1,'Triplex']]],
   ['rowslog_17',['rowslog',['../classDataFrame.html#a88d1577f1c8bcee5e3dea37137e1e1e2',1,'DataFrame']]],
-  ['run_18',['run',['../classParadram.html#aa386416992b6113574a6d1ad0034fb13',1,'Paradram::run()'],['../classSampler.html#a05facc7b19d55723b4b9b7f5754c8ae6',1,'Sampler::run()']]]
+  ['run_18',['run',['../classSampler.html#a05facc7b19d55723b4b9b7f5754c8ae6',1,'Sampler::run()'],['../classParadram.html#aa386416992b6113574a6d1ad0034fb13',1,'Paradram::run()']]]
 ];
