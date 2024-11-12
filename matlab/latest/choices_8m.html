@@ -169,25 +169,27 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return the ParaMonte-preferred MPI library vendor name(s) as used in naming the ParaMonte MATLAB shared libraries in the order of preference on the current platform. </p>
-<dl class="section note"><dt>Note</dt><dd>Only the default (first) MPI library name is guaranteed to be supported in any pre-built distribution of the ParaMonte library.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>names : The output vector of MATLAB strings containing the the ParaMonte-preferred MPI library vendor names as used in naming the ParaMonte MATLAB shared libraries. in the default order of preference.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>names</code> : The output vector of MATLAB strings containing the the ParaMonte-preferred MPI library vendor names as used in naming the ParaMonte MATLAB shared libraries.<br  />
+</dd></dl>
 <p><br  />
 <a class="anchor" id="interface-choices"></a><b>Possible calling interfaces</b> <a href="#interface-choices">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">names = pm.lib.mpi.choices()</div>
 </div><!-- fragment --></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Beware that this function only verifies the existence of the relevant MPI-parallel ParaMonte libraries on the system.<br  />
+ It does not detect the existence of the relevant MPI runtime library installations on the system.<br  />
+</dd></dl>
 <p><br  />
 <a class="anchor" id="example-choices"></a><b>Example usage</b> <a href="#example-choices">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>addpath(<span class="stringliteral">&#39;../../../../&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory to the search path.</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>disp(<span class="stringliteral">&#39;pm.lib.mpi.choices()&#39;</span>)</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>disp(<span class="stringliteral">&quot;pm.lib.mpi.choices()&quot;</span>)</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>disp( pm.lib.mpi.choices() )</div>
 <div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="output-choices"></a><b>Example output</b> <a href="#output-choices">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>pm.lib.mpi.choices()</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>    <span class="stringliteral">&quot;impi&quot;</span>    <span class="stringliteral">&quot;mpich&quot;</span>    <span class="stringliteral">&quot;openmpi&quot;</span></div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-choices"></a><b>Final Remarks</b> <a href="#final-choices">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+lib/+mpi/choices.m#L28 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+lib/+mpi/choices.m#L29 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -215,7 +217,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_0c006b8a7b0a63b87b86162ded07c4ff.html">+lib</a></li><li class="navelem"><a class="el" href="dir_70c09309fbe4c9f4702fb6d49307c743.html">+mpi</a></li><li class="navelem"><a class="el" href="choices_8m.html">choices.m</a></li>
-        <li class="footer">Generated on Sat Nov 9 2024 22:22:30 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Nov 12 2024 15:18:06 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

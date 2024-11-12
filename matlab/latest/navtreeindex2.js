@@ -1,5 +1,17 @@
 var NAVTREEINDEX2 =
 {
+"classFileContents.html#ae50ed9b4d5f9ac5825eea0e58a59ca7d":[18,0,23,2],
+"classFileContentsChain.html":[18,0,24],
+"classFileContentsChain.html#ab2bf66131e5acb3a9d94624fdb5a428f":[18,0,24,0],
+"classFileContentsChainDRAM.html":[18,0,25],
+"classFileContentsChainDRAM.html#afff34baad69c0fa2d3d5686a47d5d789":[18,0,25,0],
+"classFileContentsChainMCMC.html":[18,0,26],
+"classFileContentsChainMCMC.html#a3599dd54cc52ebedcf3cddee2e69b70a":[18,0,26,0],
+"classFileContentsChainMCMC.html#a36893bef02eaac4c5f6fa68d0f6e319e":[18,0,26,1],
+"classFileContentsChainMCMC.html#ae47c7a6e02bc9e0eb44bb76df0407995":[18,0,26,2],
+"classFileContentsProgress.html":[18,0,27],
+"classFileContentsProgress.html#a1922ca0678c7a16640149c30c3845d1a":[18,0,27,0],
+"classFileContentsReport.html":[18,0,28],
 "classFileContentsReport.html#a10026a36035fff5bf1d9ec96a4ccb75f":[18,0,28,5],
 "classFileContentsReport.html#a1f396882acba553f560252bb0e02c569":[18,0,28,13],
 "classFileContentsReport.html#a462ddc2e32114e80ed8adcfc069fe549":[18,0,28,3],
@@ -237,17 +249,5 @@ var NAVTREEINDEX2 =
 "classSubplotEllipse3.html#ab00dc25b99f25c4076552e514b532b8e":[18,0,63,12],
 "classSubplotHeatmap.html":[18,0,64],
 "classSubplotHeatmap.html#a3de58cc3bc947920bbdb6155b45edcbb":[18,0,64,0],
-"classSubplotHeatmap.html#ae278eeb496ba35d4fc53b6dcbfa96c35":[18,0,64,1],
-"classSubplotHistfit.html":[18,0,65],
-"classSubplotHistfit.html#af2f1581584d9ffb0019c2cc7fa135596":[18,0,65,0],
-"classSubplotHistogram.html":[18,0,66],
-"classSubplotHistogram.html#a8077609c4c881c26617d156bf7819173":[18,0,66,0],
-"classSubplotHistogram2.html":[18,0,67],
-"classSubplotHistogram2.html#a9275d59b18888717c6b4d40eeb1f685e":[18,0,67,0],
-"classSubplotLine.html":[18,0,68],
-"classSubplotLine.html#a0c5c4924ba96828005d21e66dfba2b0c":[18,0,68,0],
-"classSubplotLine3.html":[18,0,69],
-"classSubplotLine3.html#ab7700e2f5974efc8a48122639f291d2c":[18,0,69,0],
-"classSubplotLineScatter.html":[18,0,70],
-"classSubplotLineScatter.html#a1b350b73f2e06f578881fb9a2f4c9bd8":[18,0,70,0]
+"classSubplotHeatmap.html#ae278eeb496ba35d4fc53b6dcbfa96c35":[18,0,64,1]
 };

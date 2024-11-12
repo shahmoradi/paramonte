@@ -238,7 +238,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000145">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 1:13 AM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000151">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 1:13 AM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -323,42 +323,33 @@ Help us justify its continued development and maintenance by acknowledging its b
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>sampler = pm.sampling.Paradram();</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>sampler.spec.outputStatus = <span class="stringliteral">&quot;retry&quot;</span>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>% Set ``mpiname`` to ``pm.lib.mpi.choice()`` or your <a class="code hl_function" href="choice_8m.html#ad6ebd2e3ca4b3f6315f1e52a3cc195a6">choice</a> of MPI</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>% library (<span class="stringliteral">&quot;intel&quot;</span>, <span class="stringliteral">&quot;openmpi&quot;</span>, <span class="stringliteral">&quot;mpich&quot;</span>, ...) for MPI-<a class="code hl_function" href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a> applications.</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>sampler.mpiname = &#39;&#39;; %pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="choice_8m.html#ad6ebd2e3ca4b3f6315f1e52a3cc195a6">choice</a>();</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%%%%</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%%%% Run the sampler.</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%%%%</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>sampler.run ( @(x) pm.<a class="code hl_variable" href="classFileContentsReport.html#a1f396882acba553f560252bb0e02c569">stats</a>.dist.himmelblau.<a class="code hl_function" href="getLogUDF_8m.html#a236a995cbbb8abe88727027b7bfb62e9">getLogUDF</a>(x(1), x(2)) ...</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            , 2 ...</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            );</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>if  pm.array.<a class="code hl_function" href="len_8m.html#a3e234d11d9d845036a6be6752d1f80ec">len</a>(sampler.mpiname) &gt; 0</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    % We do not want to do any post-processing in distributed MPI-<a class="code hl_function" href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a> mode.</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    % It would be at least redundant but more importantly, potentially troubling.</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    return;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>end</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%%%%</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%%%% Postprocess the output report file.</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%%%%</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%%%%</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%%%% Run the sampler.</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%%%%</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>sampler.run ( @(x) pm.stats.dist.himmelblau.getLogUDF(x(1), x(2)) ...</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            , 2 ...</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            );</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordflow">if</span>  pm.array.len(sampler.mpiname) &gt; 0</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    % We <span class="keywordflow">do</span> not want to <span class="keywordflow">do</span> any post-processing in distributed MPI-<a class="code hl_function" href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a> mode.</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    % It would be at least redundant but more importantly, potentially troubling.</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>end</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%%%%</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%%%% Postprocess the output report file.</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%%%%</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>report = sampler.readReport();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>report = report{1};</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>report = sampler.<a class="code hl_function" href="readReport_8m.html#a2449dde15c2f5b7b317e9b43732cb383">readReport</a>();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>report = report{1};</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keywordflow">for</span> parcond = [<span class="stringliteral">&quot;sameeff&quot;</span>, <span class="stringliteral">&quot;zeroeff&quot;</span>]</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    report.stats.parallelism.speedup.scaling.strong.(parcond).<a class="code hl_variable" href="classFileContentsReport.html#ac104d7aafb3a00be13bc15fca0d412b5">vis</a>.lineScatter.make();</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    report.stats.parallelism.speedup.scaling.strong.(parcond).<a class="code hl_variable" href="classFileContentsReport.html#ac104d7aafb3a00be13bc15fca0d412b5">vis</a>.lineScatter.savefig(<span class="stringliteral">&quot;Paradram.himmelblau.parallelism.speedup.scaling.strong.&quot;</span> + parcond + <span class="stringliteral">&quot;.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>end</div>
-<div class="ttc" id="achoice_8m_html_ad6ebd2e3ca4b3f6315f1e52a3cc195a6"><div class="ttname"><a href="choice_8m.html#ad6ebd2e3ca4b3f6315f1e52a3cc195a6">choice</a></div><div class="ttdeci">function choice()</div><div class="ttdoc">Return the ParaMonte-preferred MPI library vendor name as used in naming the ParaMonte MATLAB shared ...</div></div>
-<div class="ttc" id="aclassFileContentsReport_html_a1f396882acba553f560252bb0e02c569"><div class="ttname"><a href="classFileContentsReport.html#a1f396882acba553f560252bb0e02c569">FileContentsReport::stats</a></div><div class="ttdeci">Property stats</div><div class="ttdef"><b>Definition:</b> <a href="FileContentsReport_8m_source.html#l00035">FileContentsReport.m:35</a></div></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordflow">for</span> parcond = [<span class="stringliteral">&quot;sameeff&quot;</span>, <span class="stringliteral">&quot;zeroeff&quot;</span>]</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    report.stats.parallelism.speedup.scaling.strong.(parcond).<a class="code hl_variable" href="classFileContentsReport.html#ac104d7aafb3a00be13bc15fca0d412b5">vis</a>.lineScatter.make();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    report.stats.parallelism.speedup.scaling.strong.(parcond).<a class="code hl_variable" href="classFileContentsReport.html#ac104d7aafb3a00be13bc15fca0d412b5">vis</a>.lineScatter.savefig(<span class="stringliteral">&quot;Paradram.himmelblau.parallelism.speedup.scaling.strong.&quot;</span> + parcond + <span class="stringliteral">&quot;.png&quot;</span>, <span class="stringliteral">&quot;-m3&quot;</span>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>end</div>
 <div class="ttc" id="aclassFileContentsReport_html_ac104d7aafb3a00be13bc15fca0d412b5"><div class="ttname"><a href="classFileContentsReport.html#ac104d7aafb3a00be13bc15fca0d412b5">FileContentsReport::vis</a></div><div class="ttdeci">Property vis</div><div class="ttdef"><b>Definition:</b> <a href="FileContentsReport_8m_source.html#l00061">FileContentsReport.m:61</a></div></div>
-<div class="ttc" id="agetLogUDF_8m_html_a236a995cbbb8abe88727027b7bfb62e9"><div class="ttname"><a href="getLogUDF_8m.html#a236a995cbbb8abe88727027b7bfb62e9">getLogUDF</a></div><div class="ttdeci">function getLogUDF(in x, in y, in epsilon)</div><div class="ttdoc">Return the natural logarithm of the Unnormalized Density Function (UDF) of the inverse of the 2-dimen...</div></div>
-<div class="ttc" id="alen_8m_html_a3e234d11d9d845036a6be6752d1f80ec"><div class="ttname"><a href="len_8m.html#a3e234d11d9d845036a6be6752d1f80ec">len</a></div><div class="ttdeci">function len(in obj)</div><div class="ttdoc">Return a scalar MATLAB whole-number containing the length of the input scalar or vector object.</div></div>
-<div class="ttc" id="alib_8m_html_a3d11053ebcdfc6f0bef7af9c8d14fa13"><div class="ttname"><a href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a></div><div class="ttdeci">function lib()</div><div class="ttdoc">Return a scalar MATLAB string containing the path to the lib directory of the ParaMonte library packa...</div></div>
 <div class="ttc" id="aparallel_8m_html_a01b198603048be87b719ba0cbd8b3864"><div class="ttname"><a href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a></div><div class="ttdeci">function parallel()</div><div class="ttdoc">Return a scalar MATLAB logical that is true if and only if the current installation of MATLAB contain...</div></div>
-<div class="ttc" id="areadReport_8m_html_a2449dde15c2f5b7b317e9b43732cb383"><div class="ttname"><a href="readReport_8m.html#a2449dde15c2f5b7b317e9b43732cb383">readReport</a></div><div class="ttdeci">function readReport(in sampler, in pattern)</div><div class="ttdoc">Return a list of objects of superclass pm.sampling.FileContentsReport containing the contents of a (s...</div></div>
 <div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="vis-FileContentsReport"></a><b>Visualization of the example output</b> <a href="#vis-FileContentsReport">⛓</a> <br  />
@@ -389,7 +380,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000146">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 1:30 AM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000152">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 1:30 AM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -731,7 +722,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classFileContentsReport.html">FileContentsReport</a></li>
-        <li class="footer">Generated on Sat Nov 9 2024 22:22:30 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Nov 12 2024 15:18:07 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

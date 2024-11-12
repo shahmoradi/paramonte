@@ -196,21 +196,22 @@ $(document).ready(function(){initNavTree('info_8m_source.html',''); initResizabl
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        if isunix &amp;&amp; ~ismac</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            cmd = &quot;uname -a; lscpu&quot;;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        end</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        [errorOccurred, str] = system(cmd);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        if errorOccurred</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            warning ( newline ...</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                    + &quot;Failed to fetch the system information on the current system. skipping...&quot; ...</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                    + newline ...</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                    );</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        end</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        fid = fopen(cache, &#39;wt&#39;);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        fprintf(fid, &quot;%s&quot;, str);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        fclose(fid);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    else</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        str = fileread(cache);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    end</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    str = <span class="keywordtype">string</span>(str);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>end</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        [failed, str] = system(cmd);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        failed = failed ~= 0;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        if  failed</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            warning ( newline ...</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                    + &quot;Failed to fetch the system information on the current system. skipping...&quot; ...</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                    + newline ...</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                    );</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        end</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        fid = fopen(cache, &#39;wt&#39;);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        fprintf(fid, &quot;%s&quot;, str);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        fclose(fid);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    else</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        str = fileread(cache);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    end</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    str = <span class="keywordtype">string</span>(str);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>end</div>
 <div class="ttc" id="ainfo_8m_html_a87faef413694ac4a58dd4890b2b59f8c"><div class="ttname"><a href="info_8m.html#a87faef413694ac4a58dd4890b2b59f8c">info</a></div><div class="ttdeci">function info()</div><div class="ttdoc">Return a MATLAB string containing the current system information.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -218,7 +219,7 @@ $(document).ready(function(){initNavTree('info_8m_source.html',''); initResizabl
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_1a54d7f1a807380c05b535e170b3b863.html">+sys</a></li><li class="navelem"><a class="el" href="info_8m.html">info.m</a></li>
-        <li class="footer">Generated on Sat Nov 9 2024 22:22:29 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Nov 12 2024 15:18:06 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

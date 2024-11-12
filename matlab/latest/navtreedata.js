@@ -92,11 +92,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "../../c/2/index.html",
-"_09matlab_2Contents_8m_source.html",
-"classFileContentsReport.html#a10026a36035fff5bf1d9ec96a4ccb75f",
-"classSubplotLineScatter3.html",
-"ghostscript_8m.html#a9c96f99e68263285a5cd6b7f26dde873",
-"testParaMonte_8m_source.html"
+"_09math_2Contents_8m_source.html",
+"classFileContents.html#ae50ed9b4d5f9ac5825eea0e58a59ca7d",
+"classSubplotHistfit.html",
+"getFunc_8m.html#a64af94ae04daee963903f90460f94f86",
+"root_8m_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
