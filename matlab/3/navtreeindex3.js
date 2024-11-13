@@ -1,8 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"classSubplotHistfit.html":[18,0,65],
-"classSubplotHistfit.html#af2f1581584d9ffb0019c2cc7fa135596":[18,0,65,0],
-"classSubplotHistogram.html":[18,0,66],
 "classSubplotHistogram.html#a8077609c4c881c26617d156bf7819173":[18,0,66,0],
 "classSubplotHistogram2.html":[18,0,67],
 "classSubplotHistogram2.html#a9275d59b18888717c6b4d40eeb1f685e":[18,0,67,0],
@@ -124,9 +121,9 @@ var NAVTREEINDEX3 =
 "database_8m.html":[19,0,0,0,0,0,7,0,4],
 "database_8m.html#a648efe3de6b0caa9a8c76ed9a807276e":[19,0,0,0,0,0,7,0,4,0],
 "database_8m_source.html":[19,0,0,0,0,0,7,0,4],
-"detect_8m.html":[19,0,0,0,0,0,5,0,3],
-"detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90":[19,0,0,0,0,0,5,0,3,0],
-"detect_8m_source.html":[19,0,0,0,0,0,5,0,3],
+"detect_8m.html":[19,0,0,0,0,0,5,0,0,0],
+"detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90":[19,0,0,0,0,0,5,0,0,0,0],
+"detect_8m_source.html":[19,0,0,0,0,0,5,0,0,0],
 "dir_05729935b8d7cc9b82d9efdbe5fea313.html":[19,0,0,0,0,0,2],
 "dir_0c006b8a7b0a63b87b86162ded07c4ff.html":[19,0,0,0,0,0,5],
 "dir_0e0170126dfae72f4e93d1cf5bd3ba28.html":[19,0,0,0,0,0,10,1],
@@ -158,6 +155,7 @@ var NAVTREEINDEX3 =
 "dir_78114897adc1db71b3350b5c91828ac7.html":[19,0,0,0,0,0,16,0],
 "dir_854d52beedff43dae06452a3ce5eadab.html":[19,0,0,0,0,0,4],
 "dir_870970980bbbd119e0b6d78557b3d4cb.html":[19,0,0,0,0,0,10],
+"dir_8cdf86f768849c5b010340a04eae7601.html":[19,0,0,0,0,0,5,0,0],
 "dir_92b82a48e546f16814df4630051690f9.html":[19,0,0,0,0,0,16,3,0],
 "dir_95cf40ee0b095ce667d66c91ca3f11ae.html":[19,0,0,0,0,0,14,2],
 "dir_98d2fce6d7141ba32838da4524baa07b.html":[19,0,0,0,0,0,7,1],
@@ -201,8 +199,8 @@ var NAVTREEINDEX3 =
 "fix__lines_8m.html":[19,0,0,0,0,0,16,3,0,4],
 "fix__lines_8m.html#a03b23f1f3c52b4ac3bcf759eb29fd9a5":[19,0,0,0,0,0,16,3,0,4,0],
 "fix__lines_8m_source.html":[19,0,0,0,0,0,16,3,0,4],
-"functions.html":[18,3,0],
 "functions.html":[18,3,0,0],
+"functions.html":[18,3,0],
 "functions_b.html":[18,3,0,1],
 "functions_c.html":[18,3,0,2],
 "functions_d.html":[18,3,0,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX3 =
 "getFileName_8m.html":[19,0,0,0,0,0,4,3],
 "getFileName_8m.html#a312354c4d4331723132042679ee9c1b3":[19,0,0,0,0,0,4,3,0],
 "getFileName_8m_source.html":[19,0,0,0,0,0,4,3],
-"getFunc_8m.html":[19,0,0,0,0,0,6,0,0,1]
+"getFunc_8m.html":[19,0,0,0,0,0,6,0,0,1],
+"getFunc_8m.html#a64af94ae04daee963903f90460f94f86":[19,0,0,0,0,0,6,0,0,1,0],
+"getFunc_8m_source.html":[19,0,0,0,0,0,6,0,0,1]
 };

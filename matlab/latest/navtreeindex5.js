@@ -1,6 +1,16 @@
 var NAVTREEINDEX5 =
 {
-"root_8m_source.html":[19,0,0,0,0,0,5,1,7],
+"rgb_8m.html#a5bf52092f6437dfb37d3161760328054":[19,0,0,0,0,0,16,2,0,0],
+"rgb_8m_source.html":[19,0,0,0,0,0,16,2,0],
+"riskman_8m.html":[19,0,0,0,0,0,7,0,18],
+"riskman_8m.html#a1695131c2aa5bf808cd6192b13c23338":[19,0,0,0,0,0,7,0,18,0],
+"riskman_8m_source.html":[19,0,0,0,0,0,7,0,18],
+"rmfile_8m.html":[19,0,0,0,0,0,14,2,6],
+"rmfile_8m.html#a187144d1a1f8d4a89214be107be88a48":[19,0,0,0,0,0,14,2,6,0],
+"rmfile_8m_source.html":[19,0,0,0,0,0,14,2,6],
+"root_8m.html":[19,0,0,0,0,0,5,1,6],
+"root_8m.html#a89008b0d9aee9934beddaed8433fec4d":[19,0,0,0,0,0,5,1,6,0],
+"root_8m_source.html":[19,0,0,0,0,0,5,1,6],
 "savefig_8m.html":[19,0,0,0,0,0,16,3,2],
 "savefig_8m.html#ab0f7c7e07bc0a440eee76153cda628f8":[19,0,0,0,0,0,16,3,2,0],
 "savefig_8m_source.html":[19,0,0,0,0,0,16,3,2],

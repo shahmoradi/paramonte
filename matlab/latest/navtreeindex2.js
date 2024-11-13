@@ -1,8 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classFileContents.html#ae50ed9b4d5f9ac5825eea0e58a59ca7d":[18,0,23,2],
-"classFileContentsChain.html":[18,0,24],
-"classFileContentsChain.html#ab2bf66131e5acb3a9d94624fdb5a428f":[18,0,24,0],
 "classFileContentsChainDRAM.html":[18,0,25],
 "classFileContentsChainDRAM.html#afff34baad69c0fa2d3d5686a47d5d789":[18,0,25,0],
 "classFileContentsChainMCMC.html":[18,0,26],
@@ -249,5 +246,8 @@ var NAVTREEINDEX2 =
 "classSubplotEllipse3.html#ab00dc25b99f25c4076552e514b532b8e":[18,0,63,12],
 "classSubplotHeatmap.html":[18,0,64],
 "classSubplotHeatmap.html#a3de58cc3bc947920bbdb6155b45edcbb":[18,0,64,0],
-"classSubplotHeatmap.html#ae278eeb496ba35d4fc53b6dcbfa96c35":[18,0,64,1]
+"classSubplotHeatmap.html#ae278eeb496ba35d4fc53b6dcbfa96c35":[18,0,64,1],
+"classSubplotHistfit.html":[18,0,65],
+"classSubplotHistfit.html#af2f1581584d9ffb0019c2cc7fa135596":[18,0,65,0],
+"classSubplotHistogram.html":[18,0,66]
 };

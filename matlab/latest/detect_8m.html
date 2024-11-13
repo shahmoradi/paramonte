@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte MATLAB 3.0.0: src/matlab/main/+pm/+lib/+mpi/detect.m File Reference</title>
+    <title>ParaMonte MATLAB 3.0.0: src/matlab/main/+pm/+lib/+mpi/+runtime/detect.m File Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -149,7 +149,7 @@ $(document).ready(function(){initNavTree('detect_8m.html',''); initResizable(); 
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5901bf92e9e2fb965a99c71fd0f0fa90"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a> (in <a class="el" href="_09sys_2_09path_2_09mpiexec_2vendor_8m.html#afe63f699e7725dd68ec9e0a4c6975caa">vendor</a>)</td></tr>
-<tr class="memdesc:a5901bf92e9e2fb965a99c71fd0f0fa90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the MPI image count and current image ID (e.g., MPI rank + 1) and the MPI library name as it appears in the ParaMonte library path.<br  />
+<tr class="memdesc:a5901bf92e9e2fb965a99c71fd0f0fa90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the MPI image count and current image ID (e.g., MPI rank + 1) and the MPI library name as it appears in the ParaMonte library path and the corresponding MPI-parallel ParaMonte library path .<br  />
   <a href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">More...</a><br /></td></tr>
 <tr class="separator:a5901bf92e9e2fb965a99c71fd0f0fa90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -170,28 +170,29 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return the MPI image count and current image ID (e.g., MPI rank + 1) and the MPI library name as it appears in the ParaMonte library path.<br  />
+<p>Return the MPI image count and current image ID (e.g., MPI rank + 1) and the MPI library name as it appears in the ParaMonte library path and the corresponding MPI-parallel ParaMonte library path .<br  />
  </p>
-<p >This function attempts to detect the invocation of the current MATLAB session via an <code>mpiexec</code> binary MPI launcher instance.<br  />
+<p >This function attempts to detect the invocation of the current MATLAB session via checking the runtime behavior of the <code>mpiexec</code> binary MPI launcher instance.<br  />
 </p>
 <h2><a class="anchor" id="autotoc_md0"></a>
 Output values interpretation</h2>
 <ol>
 <li>
-If the output <code>mpiname</code> is set to an empty string <code>""</code>, meaning that <code>strcmp(mpiname, "")</code> yields <code>true</code>, then the algorithm has failed, possibly implying that the current system does not support any MPI parallelism supported by the Paraonte library. </li>
+If the output <code>mpiname</code> is set to an empty string <code>""</code>, meaning that <code>strcmp(mpiname, "")</code> yields <code>true</code>, then the algorithm has failed, implying that the current application is likely to have been launched by via an <code>mpiexec</code> binary whose MPI library is supported by the ParaMonte library.<br  />
+ </li>
 <li>
-If the output <code>mpiname</code> is set to an non-empty string <code>""</code>, which must be the name of the MPI library vendor used within ParaMonte, then,<br  />
- then an instance of the corresponding MPI library exists on the current system.<br  />
+If the output <code>mpiname</code> is set to an non-empty string, which must be the name of an MPI library vendor used within ParaMonte,<br  />
+ then an instance of the corresponding MPI library likely exists on the current system and its <code>mpiexec</code> binary has been used to launch the current application in parallel.<br  />
  If so,<br  />
  <ol>
 <li>
-A value of <code>0</code> for either of the output values <code>count</code> and <code>rankp1</code> implies the algorithm failed to infer the corresponding parameter.<br  />
+A value of <code>0</code> for either of the output values <code>nproc</code> and <code>rankp1</code> implies the algorithm failed to infer the corresponding parameters.<br  />
  </li>
 <li>
-A non-zero positive value for either or both of the output values <code>count</code> and <code>rankp1</code> implies that the <code>mpiexec</code> MPI launcher binary of the corresponding MPI library <b>might have been used</b> to launch MATLAB and its might have been used to launch MATLAB.<br  />
+A non-zero positive value for either or both of the output values <code>nproc</code> and <code>rankp1</code> implies that the <code>mpiexec</code> MPI launcher binary of the corresponding MPI library <b>might have been used</b> to launch MATLAB and its might have been used to launch MATLAB.<br  />
  <ol>
 <li>
-A non-zero positive value other than <code>1</code> for the output <code>count</code> guarantees that the <code>mpiexec</code> launcher has been used to launch MATLAB with the specified <code>count</code> number of MPI images (processes).<br  />
+A non-zero positive value other than <code>1</code> for the output <code>nproc</code> guarantees that the <code>mpiexec</code> launcher has been used to launch MATLAB with the specified <code>nproc</code> number of MPI images (processes).<br  />
  </li>
 </ol>
 </li>
@@ -221,10 +222,7 @@ or any other informal name returned by the ParaMonte MATLAB function <a class="e
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>mpiname</code> : The output scalar MATLAB string containing the MPI library name as it appears in the ParaMonte library path.<br  />
  An output value of <code>""</code> implies the algorithm failed to detect a ParaMonte-compatible MPI library invoked or installed on the system.<br  />
- <code>bindir</code> : The output scalar MATLAB string containing the directory of the binary within the ParaMonte library that succeeded in detecting the local MPI installation.<br  />
- This is the directory that contains the ParaMonte MATLAB shared libraries.<br  />
- An output value of <code>""</code> implies the algorithm failed to detect a ParaMonte-compatible MPI library invoked or installed on the system.<br  />
- <code>count</code> : The output scalar MATLAB non-negative whole number containing the number of MPI images in the current invocation of the <code>mpiexec</code> binary MPI launcher.<br  />
+ <code>nproc</code> : The output scalar MATLAB non-negative whole number containing the number of MPI images in the current invocation of the <code>mpiexec</code> binary MPI launcher.<br  />
  An output value of <code>0</code> implies the algorithm failed to detect a ParaMonte-compatible MPI library or failed to infer the image count.<br  />
  <code>rankp1</code> : The output scalar MATLAB non-negative whole number containing the image ID (e.g., MPI rank + 1) of the current MPI image in the current invocation of the <code>mpiexec</code> binary MPI launcher.<br  />
  An output value of <code>0</code> implies the algorithm failed to detect a ParaMonte-compatible MPI library or failed to infer the image count.<br  />
@@ -232,9 +230,10 @@ or any other informal name returned by the ParaMonte MATLAB function <a class="e
  The argument <code>rankp1</code> stands for <code>rank + 1</code>.<br  />
 </dd></dl>
 <p><br  />
-<a class="anchor" id="interface-detect"></a><b>Possible calling interfaces</b> <a href="#interface-detect">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.lib.mpi.detect();</div>
-<div class="line">[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.lib.mpi.detect(<a class="code hl_function" href="_09lib_2_09mpi_2vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a>);</div>
+<a class="anchor" id="interface-detect"></a><b>Possible calling interfaces</b> <a href="#interface-detect">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">[mpiname, <a class="code hl_function" href="nproc_8m.html#a7b75044cfa7bc052db0435ec377c41fe">nproc</a>, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.lib.mpi.runtime.detect();</div>
+<div class="line">[mpiname, <a class="code hl_function" href="nproc_8m.html#a7b75044cfa7bc052db0435ec377c41fe">nproc</a>, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.lib.mpi.runtime.detect(<a class="code hl_function" href="_09lib_2_09mpi_2vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a>);</div>
 <div class="ttc" id="a_09lib_2_09mpi_2vendor_8m_html_a49f012420ef4aa233acf94db3d3294c2"><div class="ttname"><a href="_09lib_2_09mpi_2vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a></div><div class="ttdeci">function vendor(in name)</div><div class="ttdoc">Return the MPI library vendor name from the input MPI name based on the internal ParaMonte shared lib...</div></div>
+<div class="ttc" id="anproc_8m_html_a7b75044cfa7bc052db0435ec377c41fe"><div class="ttname"><a href="nproc_8m.html#a7b75044cfa7bc052db0435ec377c41fe">nproc</a></div><div class="ttdeci">function nproc(in vendor)</div><div class="ttdoc">Return the runtime number of MPI processes with which the mpiexec launcher may have been invoked.</div></div>
 <div class="ttc" id="arankp1_8m_html_a6176af6ffdddda53803a61e549da5523"><div class="ttname"><a href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a></div><div class="ttdeci">function rankp1(in vendor)</div><div class="ttdoc">Return the ID (MPI rank + 1) of the current MPI image (process), starting from the number one.</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>This routine must be called before the MPI library is finalized by any other application.<br  />
@@ -252,38 +251,40 @@ or any other informal name returned by the ParaMonte MATLAB function <a class="e
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.lib.mpi.detect()</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>disp(<span class="stringliteral">&quot;&quot;</span>)</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;impi&quot;)&#39;)</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;impi&quot;)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;<a class="code hl_function" href="impi_8m.html#ab6aafeb74f7d96ab40d06b2db6b9c5ba">impi</a>&quot;)&#39;)</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;<a class="code hl_function" href="impi_8m.html#ab6aafeb74f7d96ab40d06b2db6b9c5ba">impi</a>&quot;)</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>disp(&quot;&quot;)</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;INTEL&quot;)&#39;)</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;INTEL&quot;)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;INTEL&quot;)&#39;)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;INTEL&quot;)</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>disp(&quot;&quot;)</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;intel&quot;)&#39;)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;intel&quot;)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;intel&quot;)&#39;)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;intel&quot;)</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>disp(&quot;&quot;)</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;ompi&quot;)&#39;)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;ompi&quot;)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;<a class="code hl_function" href="ompi_8m.html#a3527eb87768168efe0dbc0da904c00b4">ompi</a>&quot;)&#39;)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;<a class="code hl_function" href="ompi_8m.html#a3527eb87768168efe0dbc0da904c00b4">ompi</a>&quot;)</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>disp(&quot;&quot;)</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;openmpi&quot;)&#39;)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;openmpi&quot;)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;openmpi&quot;)&#39;)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;openmpi&quot;)</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>disp(&quot;&quot;)</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;open-mpi&quot;)&#39;)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;open-mpi&quot;)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;open-mpi&quot;)&#39;)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;open-mpi&quot;)</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>disp(&quot;&quot;)</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;mpich&quot;)&#39;)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;mpich&quot;)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;mpich&quot;)&#39;)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;mpich&quot;)</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>disp(&quot;&quot;)</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;mpi&quot;)&#39;)</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;mpi&quot;)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>disp(&#39;[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;mpi&quot;)&#39;)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      [mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>.mpi.<a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>(&quot;mpi&quot;)</div>
 <div class="ttc" id="adetect_8m_html_a5901bf92e9e2fb965a99c71fd0f0fa90"><div class="ttname"><a href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a></div><div class="ttdeci">function detect(in vendor)</div><div class="ttdoc">Return the MPI image count and current image ID (e.g., MPI rank + 1) and the MPI library name as it a...</div></div>
-<div class="ttc" id="alibroot_8m_html_a3d11053ebcdfc6f0bef7af9c8d14fa13"><div class="ttname"><a href="libroot_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a></div><div class="ttdeci">function lib()</div><div class="ttdoc">Return a scalar MATLAB string containing the path to the lib directory of the ParaMonte library packa...</div></div>
+<div class="ttc" id="aimpi_8m_html_ab6aafeb74f7d96ab40d06b2db6b9c5ba"><div class="ttname"><a href="impi_8m.html#ab6aafeb74f7d96ab40d06b2db6b9c5ba">impi</a></div><div class="ttdeci">function impi()</div><div class="ttdoc">Return the MPI image count and the current image ID (e.g., MPI rank + 1) if the application has been ...</div></div>
+<div class="ttc" id="alib_8m_html_a3d11053ebcdfc6f0bef7af9c8d14fa13"><div class="ttname"><a href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a></div><div class="ttdeci">function lib()</div><div class="ttdoc">Return a scalar MATLAB string containing the path to the lib directory of the ParaMonte library packa...</div></div>
+<div class="ttc" id="aompi_8m_html_a3527eb87768168efe0dbc0da904c00b4"><div class="ttname"><a href="ompi_8m.html#a3527eb87768168efe0dbc0da904c00b4">ompi</a></div><div class="ttdeci">function ompi()</div><div class="ttdoc">Return the MPI image count and the current image ID (e.g., MPI rank + 1) if the application has been ...</div></div>
 <div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="output-detect"></a><b>Example output</b> <a href="#output-detect">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>[mpiname, bindir, count, <a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a>] = pm.lib.mpi.detect()</div>
@@ -368,11 +369,11 @@ or any other informal name returned by the ParaMonte MATLAB function <a class="e
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><a class="code hl_function" href="rankp1_8m.html#a6176af6ffdddda53803a61e549da5523">rankp1</a> =</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>     0</div>
 </div><!-- fragment --></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: An optional <code>config</code> input argument can be added to this function to allow to narrow down the list of ParaMonte library paths to search for MPI's presence.<br  />
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><span class="phigh">High Priority</span>: The internals of this function can be improved for better efficiency and less redundancy.<br  />
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="final-detect"></a><b>Final Remarks</b> <a href="#final-detect">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+lib/+mpi/detect.m#L104 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+lib/+mpi/+runtime/detect.m#L101 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -387,7 +388,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000039">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, 2:27 AM Monday, November 11, 2024, Dallas, TX<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000036">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, 2:27 AM Monday, November 11, 2024, Dallas, TX<br  />
  </dd></dl>
 
 </div>
@@ -397,8 +398,8 @@ Help us justify its continued development and maintenance by acknowledging its b
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_0c006b8a7b0a63b87b86162ded07c4ff.html">+lib</a></li><li class="navelem"><a class="el" href="dir_70c09309fbe4c9f4702fb6d49307c743.html">+mpi</a></li><li class="navelem"><a class="el" href="detect_8m.html">detect.m</a></li>
-        <li class="footer">Generated on Tue Nov 12 2024 15:18:06 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_0c006b8a7b0a63b87b86162ded07c4ff.html">+lib</a></li><li class="navelem"><a class="el" href="dir_70c09309fbe4c9f4702fb6d49307c743.html">+mpi</a></li><li class="navelem"><a class="el" href="dir_8cdf86f768849c5b010340a04eae7601.html">+runtime</a></li><li class="navelem"><a class="el" href="detect_8m.html">detect.m</a></li>
+        <li class="footer">Generated on Wed Nov 13 2024 14:55:18 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
