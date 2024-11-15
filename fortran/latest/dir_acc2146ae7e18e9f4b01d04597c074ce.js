@@ -1,7 +1,6 @@
 var dir_acc2146ae7e18e9f4b01d04597c074ce =
 [
     [ "doxygen.F90", "doxygen_8F90.html", null ],
-    [ "getImageCountMPI.F90", "getImageCountMPI_8F90.html", "getImageCountMPI_8F90" ],
     [ "pm_array.F90", "pm__array_8F90.html", "pm__array_8F90" ],
     [ "pm_arrayCenter.F90", "pm__arrayCenter_8F90.html", "pm__arrayCenter_8F90" ],
     [ "pm_arrayChange.F90", "pm__arrayChange_8F90.html", "pm__arrayChange_8F90" ],
@@ -240,5 +239,6 @@ var dir_acc2146ae7e18e9f4b01d04597c074ce =
     [ "pm_val2logical.F90", "pm__val2logical_8F90.html", "pm__val2logical_8F90" ],
     [ "pm_val2real.F90", "pm__val2real_8F90.html", "pm__val2real_8F90" ],
     [ "pm_val2str.F90", "pm__val2str_8F90.html", "pm__val2str_8F90" ],
-    [ "pm_ziggurat.F90", "pm__ziggurat_8F90.html", "pm__ziggurat_8F90" ]
+    [ "pm_ziggurat.F90", "pm__ziggurat_8F90.html", "pm__ziggurat_8F90" ],
+    [ "xgetImageStatMPI.F90", "xgetImageStatMPI_8F90.html", "xgetImageStatMPI_8F90" ]
 ];

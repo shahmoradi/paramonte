@@ -269,6 +269,13 @@
                         
                                 
                                     
+                                        <li><a title="ParaMonte release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-release-notes/">ParaMonte release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
                                         <li><a title="ParaMonte C release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-c-release-notes/">ParaMonte C release notes</a></li>
                                     
                                     
@@ -400,6 +407,43 @@
                                 
                                     
                                         <li><a title="ParaMonte MATLAB API" href="https://www.cdslab.org/paramonte/generic/2/../../matlab/3/" target="_blank" rel="noopener">ParaMonte MATLAB API</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="usage :: examples" href="#"><b>usage :: examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM C examples" href="https://www.cdslab.org/paramonte/generic/2/usage/examples/c/">ParaDRAM C examples</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM C++ examples" href="https://www.cdslab.org/paramonte/generic/2/usage/examples/cpp/">ParaDRAM C++ examples</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM Fortran examples" href="https://www.cdslab.org/paramonte/generic/2/usage/examples/fortran/">ParaDRAM Fortran examples</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM MATLAB examples" href="https://www.cdslab.org/paramonte/generic/2/usage/examples/matlab/">ParaDRAM MATLAB examples</a></li>
                                     
                                     
                                 
@@ -698,20 +742,64 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
     
     
+        <a target="_blank" rel="noopener" href="https://github.com/cdslaborg/paramonted/tree/main/generic/2/installation/readme/index.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit this page</a>
+    
     
 <p><br /></p>
 
 <h2 id="naming-convention-used-for-paramonte-library-builds">Naming convention used for ParaMonte library builds</h2>
 
-<p>Across all supported Operating Systems (OS) and platforms/architectures, a universal naming convention is currently used to build the ParaMonte kernel libraries,</p>
+<p>The ParaMonte core library file in all programming languages is always named <code>libparamonte.&lt;suffix&gt;</code> where <code>&lt;suffix&gt;</code> is replaced with platform-specific suffix based on the library type determined by the compiler.<br />
+The following table illustrates the common library suffixes used on different platforms.</p>
 
-<pre><code>libparamonte_&lt;interface language: c/cpp/fortran/matlab/python/r/...&gt;_&lt;OS: windows/linux/darwin/...&gt;_&lt;architecture: amd64/arm64/...&gt;_&lt;compiler vendor and major version: intel2021/gnu13/...&gt;_&lt;build type: native/tuned/ipo/release/testing/debug&gt;_&lt;library type: shared/static&gt;_&lt;memory allocation type: stack/heap&gt;_&lt;parallelism library/type: serial/mpi/impi/mpich/openmpi/openmp/cafsingle/cafshared/cafdist/...&gt;_&lt;runtime checking mode: checked/nocheck&gt;.&lt;library file extension: dll/lib/so/a/dylib&gt;  
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Operating System</th>
+      <th style="text-align: center">Dynamic (Shared) Library</th>
+      <th style="text-align: center">Static (Archive) Library</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">Windows</td>
+      <td style="text-align: center"><code>dll</code></td>
+      <td style="text-align: center"><code>lib</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: right">macOS</td>
+      <td style="text-align: center"><code>dylib</code></td>
+      <td style="text-align: center"><code>a</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: right">Linux</td>
+      <td style="text-align: center"><code>so</code></td>
+      <td style="text-align: center"><code>a</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: right">FreeBSD</td>
+      <td style="text-align: center"><code>so</code></td>
+      <td style="text-align: center"><code>a</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The ParaMonte binary folder naming follows a universal naming convention across all programming languages and platforms.</p>
+<ul>
+  <li>The generated binary folders (containing the ParaMonte library and its examples) have the following pattern for compiled languages (C, C++, Fortran),
+    <pre><code>libparamonte_&lt;interface language: c/cpp/fortran/...&gt;_&lt;OS: windows/linux/darwin/...&gt;_&lt;architecture: amd64/arm64/...&gt;_&lt;compiler vendor and major version: intel2021/gnu13/...&gt;_&lt;build type: native/tuned/ipo/release/testing/debug&gt;_&lt;library type: shared/static&gt;_&lt;memory allocation type: stack/heap&gt;_&lt;parallelism library/type: serial/mpi/impi/mpich/openmpi/openmp/cafsingle/cafshared/cafdist/...&gt;_&lt;runtime checking mode: checked/nocheck&gt;  
 </code></pre>
+  </li>
+  <li>and the generated binary folders (containing the ParaMonte library and its examples) have the following pattern for interpreted languages (MATLAB, Python, R, etc.),
+    <pre><code>libparamonte_&lt;interface language: c/cpp/fortran/...&gt;_&lt;OS: windows/linux/darwin/...&gt;_&lt;architecture: amd64/arm64/...&gt;  
+</code></pre>
+  </li>
+</ul>
 
 <p>where,</p>
 
 <ul>
-  <li><strong>interface language</strong> can be either:
+  <li><strong>programming language</strong> can be either:
     <ul>
       <li><strong>c</strong>: indicating a library build meant to be called and used from C or C-complaint main applications.</li>
       <li><strong>cpp</strong>: indicating a library build meant to be called and used from C++ main applications.</li>
@@ -988,7 +1076,7 @@ The minimum GNU compiler versions required for building the ParaMonte library ar
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on October 28, 2024<br/>
+            Last updated on November 15, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/2/images/logo.png" }}" alt="cdslab.org" /></a>

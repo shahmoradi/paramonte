@@ -269,6 +269,13 @@
                         
                                 
                                     
+                                        <li><a title="ParaMonte release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-release-notes/">ParaMonte release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
                                         <li><a title="ParaMonte C release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-c-release-notes/">ParaMonte C release notes</a></li>
                                     
                                     
@@ -400,6 +407,43 @@
                                 
                                     
                                         <li><a title="ParaMonte MATLAB API" href="https://www.cdslab.org/paramonte/generic/latest/../../matlab/3/" target="_blank" rel="noopener">ParaMonte MATLAB API</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="usage :: examples" href="#"><b>usage :: examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM C examples" href="https://www.cdslab.org/paramonte/generic/latest/usage/examples/c/">ParaDRAM C examples</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM C++ examples" href="https://www.cdslab.org/paramonte/generic/latest/usage/examples/cpp/">ParaDRAM C++ examples</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM Fortran examples" href="https://www.cdslab.org/paramonte/generic/latest/usage/examples/fortran/">ParaDRAM Fortran examples</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM MATLAB examples" href="https://www.cdslab.org/paramonte/generic/latest/usage/examples/matlab/">ParaDRAM MATLAB examples</a></li>
                                     
                                     
                                 
@@ -698,6 +742,8 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
     
     
+        <a target="_blank" rel="noopener" href="https://github.com/cdslaborg/paramonted/tree/main/generic/2/installation/QUICKSTART.md.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit this page</a>
+    
     
 <p><br /></p>
 
@@ -711,8 +757,10 @@ the script runs before the sidebar code runs and the class never gets inserted.
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone <span class="nt">--recurse-submodules</span> https://github.com/cdslaborg/paramonte.git
 </code></pre></div>    </div>
   </li>
-  <li>Navigate to the root directory of the repository either in a Windows <code>CMD</code> command prompt or Unix <code>Bash</code> terminal.</li>
-  <li>Ensure you have a recent CMake software (<code>&gt;3.16</code>), and a recent Intel (<code>&gt;2021</code>) or GNU (<code>&gt;10</code>) C/Fortran compilers already installed in your terminal.</li>
+  <li>Navigate to the root directory of the repository 
+either in a Windows <code>CMD</code> command prompt or Unix <code>Bash</code> terminal.</li>
+  <li>Ensure you have a recent CMake software (<code>&gt;3.21</code>), and a recent 
+Intel (<code>&gt;2021</code>) or GNU (<code>&gt;10</code>) C/Fortran compilers already installed in your terminal.</li>
   <li>Using a Windows <code>CMD</code> command prompt, type,
     <ul>
       <li>For the ParaMonte C library build,
@@ -725,6 +773,10 @@ the script runs before the sidebar code runs and the class never gets inserted.
       </li>
       <li>For the ParaMonte Fortran library build,
         <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">install</span>.bat <span class="na">--lang </span><span class="kd">fortran</span>
+</code></pre></div>        </div>
+      </li>
+      <li>For the ParaMonte MATLAB library build,
+        <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">install</span>.bat <span class="na">--lang </span><span class="kd">matlab</span>
 </code></pre></div>        </div>
       </li>
     </ul>
@@ -752,10 +804,54 @@ the script runs before the sidebar code runs and the class never gets inserted.
       </li>
     </ul>
   </li>
+  <li>For MPI-parallel library builds, ensure you have the relevant MPI library installed on your system.<br />
+Then, merely add the extra build configuration flag <code>--par mpi</code> to the relevant install commands above.</li>
 </ol>
 
-<p>See <a href="./install.md">install.md</a>, <a href="./install.config.md">install.config.md</a>, <a href="./install.bat.md">install.bat.md</a>, <a href="./install.sh.md">install.sh.md</a>, and <a href="./CMakeLists.md">CMakeLists.md</a> 
-for more library build options and guidelines.</p>
+<p>See 
+<a href="./install.md">install.md</a>, 
+<a href="./install.config.md">install.config.md</a>, 
+<a href="./install.bat.md">install.bat.md</a>, 
+<a href="./install.sh.md">install.sh.md</a>, and 
+<a href="./CMakeLists.md">CMakeLists.md</a> 
+for more details on library build options and guidelines.</p>
+
+<h2 id="example-install-commands">Example install commands</h2>
+
+<ol>
+  <li>To build for the C, C++, and Fortran programming languages and build and run all their corresponding examples in serial, try,
+    <ul>
+      <li>On <strong>Windows</strong>,
+        <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">install</span>.bat <span class="na">--lang </span><span class="s2">"c;cpp;fortran"</span> <span class="na">--exam </span><span class="kd">all</span>
+</code></pre></div>        </div>
+      </li>
+      <li>On <strong>Linux</strong> and <strong>macOS</strong>,
+        <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh <span class="na">--lang </span><span class="s2">"c;cpp;fortran"</span> <span class="na">--exam </span><span class="kd">all</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>As of 2024, the following commands can be used to generate 
+minimal <code>serial</code>, <code>openmp</code> and <code>mpi</code> ParaMonte MATLAB binaries.
+    <ul>
+      <li>On <strong>Windows</strong>,
+        <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">install</span>.bat <span class="na">--lang </span><span class="kd">matlab</span> <span class="na">--par </span><span class="s2">"serial;openmp;mpi"</span> <span class="na">--ski </span><span class="m">1</span> <span class="na">--iki </span><span class="s2">"3;4"</span> <span class="na">--lki </span><span class="m">3</span> <span class="na">--rki </span><span class="s2">"1;2"</span> <span class="na">--cki </span><span class="s2">"1;2"</span> <span class="na">--matlabroot </span><span class="s2">"C:\Program Files\MATLAB\R2023a"</span>
+</code></pre></div>        </div>
+      </li>
+      <li>On <strong>Linux</strong>,
+        <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh <span class="na">--lang </span><span class="kd">matlab</span> <span class="na">--par </span><span class="kd">serial</span><span class="o">;</span><span class="kd">openmp</span><span class="o">;</span><span class="kd">mpi</span> <span class="na">--ski </span><span class="m">1</span> <span class="na">--iki </span><span class="s2">"3;4"</span> <span class="na">--lki </span><span class="m">3</span> <span class="na">--rki </span><span class="s2">"1;2"</span> <span class="na">--cki </span><span class="s2">"1;2"</span> <span class="na">--matlabroot </span><span class="s2">"/usr/local/MATLAB/R2023a"</span>
+</code></pre></div>        </div>
+      </li>
+      <li>On <strong>macOS</strong>,
+        <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh <span class="na">--lang </span><span class="kd">matlab</span> <span class="na">--par </span><span class="kd">serial</span><span class="o">;</span><span class="kd">openmp</span><span class="o">;</span><span class="kd">mpi</span> <span class="na">--ski </span><span class="m">1</span> <span class="na">--iki </span><span class="s2">"3;4"</span> <span class="na">--lki </span><span class="m">3</span> <span class="na">--rki </span><span class="s2">"1;2"</span> <span class="na">--cki </span><span class="s2">"1;2"</span> <span class="na">--matlabroot </span><span class="s2">"/Applications/MATLAB_R2023b.app"</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>See <a href="./install.config.md">install.config.md</a> for the meaning 
+of the flags used and many more possible configuration flags.</p>
 
 <p><br /></p>
 
@@ -860,7 +956,7 @@ for more library build options and guidelines.</p>
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on October 28, 2024<br/>
+            Last updated on November 15, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/latest/images/logo.png" }}" alt="cdslab.org" /></a>

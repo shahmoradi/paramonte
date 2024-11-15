@@ -100,7 +100,21 @@ echo >&2 "${pmnote} destin: ${destin}/${fname}"
 cp -arf "${origin}/${fname}" "${destin}/${fname}"
 
 ####
-#### Copy the CHANGES files.
+#### Copy the generic CHANGE file.
+####
+
+origin="${paramonte_src_dir}/CHANGES.md"
+destin="${doc_include_paramonte_dir}/CHANGES.md"
+if [ -f "${origin}" ]; then
+    echo >&2 "${pmnote} Copying the generic CHANGES.md file..."
+    echo >&2 "${pmnote} origin: ${origin}"
+    echo >&2 "${pmnote} destin: ${destin}"
+    cp -arf "${origin}" "${destin}"
+fi
+
+
+####
+#### Copy the lang-specific CHANGES files.
 ####
 
 for lang in ${paramonte_lang_list[@]}; do
@@ -110,9 +124,9 @@ for lang in ${paramonte_lang_list[@]}; do
     if ! [ -d "${doc_include_paramonte_src_lang_dir}" ]; then
         mkdir -p "${doc_include_paramonte_src_lang_dir}"
     fi
+
     origin="${paramonte_src_lang_dir}/CHANGES.md"
     destin="${doc_include_paramonte_src_lang_dir}/CHANGES.md"
-
     if [ -f "${origin}" ]; then
         echo >&2 "${pmnote} Copying ${lang} CHANGES.md file..."
         echo >&2 "${pmnote} origin: ${origin}"

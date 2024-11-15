@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" matlab Windows Linux macOS Darwin installation getting_started operating_system interoperation build OS MPI GNU Intel build MPICH OPENMPI OPEN-MPI">
+<meta name="keywords" content=" matlab Windows Linux macOS Darwin installation getting_started operating_system interoperation build OS MPI GNU Intel build MPICH OPENMPI OPEN-MPI AMD64 ARM64 X64 amd64 arm64 x64">
 <title>Installation instructions for the ParaMonte MATLAB library | ParaMonte: Parallel Monte Carlo and Machine Learning Library</title>
 <link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/latest/css/prismOkaidia.css">
 <script src="https://www.cdslab.org/paramonte/generic/latest/js/prismOkaidia.js"></script>
@@ -269,6 +269,13 @@
                         
                                 
                                     
+                                        <li><a title="ParaMonte release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-release-notes/">ParaMonte release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
                                         <li><a title="ParaMonte C release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-c-release-notes/">ParaMonte C release notes</a></li>
                                     
                                     
@@ -400,6 +407,43 @@
                                 
                                     
                                         <li><a title="ParaMonte MATLAB API" href="https://www.cdslab.org/paramonte/generic/latest/../../matlab/3/" target="_blank" rel="noopener">ParaMonte MATLAB API</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="usage :: examples" href="#"><b>usage :: examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM C examples" href="https://www.cdslab.org/paramonte/generic/latest/usage/examples/c/">ParaDRAM C examples</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM C++ examples" href="https://www.cdslab.org/paramonte/generic/latest/usage/examples/cpp/">ParaDRAM C++ examples</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM Fortran examples" href="https://www.cdslab.org/paramonte/generic/latest/usage/examples/fortran/">ParaDRAM Fortran examples</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM MATLAB examples" href="https://www.cdslab.org/paramonte/generic/latest/usage/examples/matlab/">ParaDRAM MATLAB examples</a></li>
                                     
                                     
                                 
@@ -698,36 +742,53 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
     
     
+        <a target="_blank" rel="noopener" href="https://github.com/cdslaborg/paramonted/tree/main/generic/2/installation/matlab/index.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit this page</a>
     
-<p><br /></p>
-
+    
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note: </b>
-The current pre-release of the ParaMonte MATLAB library has been tested only with the most recent versions of MATLAB:  
+The current pre-release of the ParaMonte MATLAB library has been tested only with the most recent versions of MATLAB (<b><code>&gt; R2023a</code></b>):  
 <br />
 <ul>
     <li>
-        <b>Fully compatible</b> and <b>tested</b> with <b>MATLAB 2024b, 2024a, 2023b, 2023a</b>
+        <b>Fully compatible</b> and <b>tested</b> with <b>MATLAB 2024b, 2024a, 2023b, 2023a</b> on all supported platforms (Linux, Darwin, Windows).
     </li>
     <li>
-        <b>Fully compatible</b> but <b>untested</b> with <b>MATLAB 2021b, 2021a, 2020b, 2020a, 2019b</b>
+        <b>Mostly compatible</b> but <b>untested</b> with <b>MATLAB 2022b, 2022a, 2021b, 2021a, 2020b, 2020a, 2019b</b>.<br />
+        Specifically, the functionalities that require MEX files (e.g., the ParaMonte samplers) 
+        may not work as the new compilers are incompatible with older MATLAB versions.<br />
+        Refer to the build instructions from source code if you need to rebuild the 
+        MEX files from source code for your specific older MATLAB installation.<br />
     </li>
     <li>
         <b>Partially compatible</b> but <b>untested</b> with <b>MATLAB 2019a, 2018b</b>:  
         The tiled visualization functionalities of <code>pm.vis</code> that rely on <code>tiledlayout</code> new functionality of MATLAB 2019 will not work.  
     </li>
     <li>
-        <b>incompatible</b> and <b>not tested</b> with <b>MATLAB &lt; 2018a</b>
+        Support for MATLAB R2018a on Windows is unstable. 
+        In particular, <a href="https://www.mathworks.com/downloads/" target="_blank">MATLAB R2018a Update 6</a> 
+        is required for the proper functioning of the ParaMonte sampler routines on Windows systems with MATLAB R2018a.<br />
+        If you encounter incompatibilities or bugs in the ParaMonte library with any of the supported MATLAB versions in the above, 
+        please report the issue on the <a href="https://github.com/cdslaborg/paramonte/issues" target="_blank">GitHub issues page of the library</a>.
+    </li>
+    <li>
+        <b>incompatible</b> and <b>untested</b> with <b>MATLAB &lt; 2018a</b>
     </li>
 </ul>
 
-Support for MATLAB R2018a on Windows is unstable. 
-In particular, <a href="https://www.mathworks.com/downloads/" target="_blank">MATLAB R2018a Update 6</a> 
-is required for the proper functioning of the ParaMonte sampler routines on Windows systems with MATLAB R2018a.<br />
-If you encounter incompatibilities or bugs in the ParaMonte library with any of the supported MATLAB versions in the above, 
-please report the issue on the <a href="https://github.com/cdslaborg/paramonte/issues" target="_blank">GitHub issues page of the library</a>.
+We strongly recommend to either upgrade your MATLAB software to most recent versions or use the 
+<a href="https://www.cdslab.org/paramonte/generic/1/installation/matlab/" _target="blank">binary releases and installation guidelines for ParaMonte 1</a>.
+
 </div>
 
-<p><br /></p>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> 
+    The term <strong><code>AMD64</code></strong> CPU architecture is synonymous with <strong><code>x86-64</code></strong>, <strong><code>x86_64</code></strong>, <strong><code>x64</code></strong>, and <strong><code>Intel 64</code></strong>,
+    all referring to the 64-bit processor that adds 64-bit computing capabilities to the x86 architecture. 
+    The <strong><code>AMD64</code></strong> architecture supports more virtual and physical memory than its 32-bit counterpart, which enables programs to store more data in memory.
+</div>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> 
+    The term <strong><code>ARM64</code></strong> CPU architecture is synonymous with <strong><code>AArch64</code></strong>, all referring to the 64-bit Execution state of the ARM architecture family. 
+    Examples of computers with <strong><code>ARM64</code></strong> processors are Apple’s desktop and laptop computers with M1, M2, M3, and M4 chips.
+</div>
 
 <h2 id="installation-methods">Installation methods</h2>
 
@@ -735,47 +796,35 @@ please report the issue on the <a href="https://github.com/cdslaborg/paramonte/i
 
 <h3 id="the-fast-way">The fast way</h3>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> This approach is currently unavailable in the latest pre-release of the library. Skip to the <a href="#the-long-way">second approach</a> below.</div>
+<p></p>
 
 <ol>
-  <li><strong>Download</strong> and unzip the prebuilt MATLAB package for ParaMonte from the project repository’s release page on GitHub:
+  <li><strong>Download</strong> and untar/unzip the prebuilt MATLAB package for ParaMonte from the project repository’s release page on GitHub:
     <ul>
-      <li>For <code>AMD64</code> architecture (also known as <code>x64</code> including Intel chips.)
-        <ul>
-          <li>For <strong>Windows</strong>: <a href="https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/libparamonte_matlab_windows_amd64.zip"><strong>libparamonte_matlab_windows_amd64.zip</strong></a>.</li>
-          <li>For <strong>Linux</strong>: <a href="https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/libparamonte_matlab_linux_amd64.tar.gz"><strong>libparamonte_matlab_linux_amd64.tar.gz</strong></a>.</li>
-          <li>For <strong>macOS</strong> (<strong>Darwin</strong>) for : Follow the instruction below to download this compressed file: 
-<a href="https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/libparamonte_matlab_darwin_amd64.tar.gz"><strong>libparamonte_matlab_darwin_amd64.tar.gz</strong></a> 
-(do <strong>NOT</strong> download this file by directly clicking on this link. Follow the instructions below).</li>
-        </ul>
+      <li>For <strong>Windows</strong> with <code>AMD64</code> (Intel) processor: <a href="https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/libparamonte_matlab_windows_amd64.zip"><strong>libparamonte_matlab_windows_amd64.zip</strong></a>.</li>
+      <li>For <strong>Linux</strong> with <code>AMD64</code> (Intel) processor: <a href="https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/libparamonte_matlab_linux_amd64.tar.gz"><strong>libparamonte_matlab_linux_amd64.tar.gz</strong></a>.</li>
+      <li>
+        <p>For <strong>macOS</strong> (<strong>Darwin</strong>) with <code>AMD64</code> (Intel) processor: Follow the instruction below to download the ParaMonte MATLAB prebuilt library.</p>
 
         <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important: </b>
 If you are a <b>macOS user</b>, we <b>strongly recommend you to NOT download</b> the library directly from the library's GitHub release page and <b>NOT by clicking directly on the above link</b>. Instead, <b>use the <code>curl</code> command line program in a Bash terminal to download the library from the GitHub release page</b>. For example, open a Bash or zsh terminal on your macOS and type the following,  
 <pre class="language-shell highlighter-rouge">
-libname=libparamonte_matlab_darwin_amd64
-curl -OL https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/$libname.tar.gz
-tar xvzf $libname.tar.gz &amp;&amp; cd $libname
+curl -OL https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/libparamonte_matlab_darwin_amd64.tar.gz
+tar xvzf libparamonte_matlab_darwin_amd64.tar.gz &amp;&amp; cd libparamonte_matlab_darwin_amd64
 </pre>
-<br />
 The <b><code>curl</code></b> application is automatically installed on all macOS. If not, you can install it via <a href="https://brew.sh/" target="_blank">Homebrew</a>,
 <pre class="language-shell highlighter-rouge">brew install curl</pre>
 </div>
       </li>
-      <li>For <code>ARM64</code> architecture (which currently only includes the new macOS <code>M1</code>, <code>M2</code>, and <code>M3</code> chips.)
-        <ul>
-          <li>For <strong>macOS</strong> (<strong>Darwin</strong>) for : Follow the instruction below to download this compressed file: 
-<a href="https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/libparamonte_matlab_darwin_arm64.tar.gz"><strong>libparamonte_matlab_darwin_arm64.tar.gz</strong></a> 
-(do <strong>NOT</strong> download this file by directly clicking on this link. Follow the instructions below).</li>
-        </ul>
+      <li>
+        <p>For <strong>macOS</strong> (<strong>Darwin</strong>) with <code>ARM64</code> processor (M1, M2, etc.): Follow the instruction below to download the ParaMonte MATLAB prebuilt library.</p>
 
         <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important: </b>
 If you are a <b>macOS user</b>, we <b>strongly recommend you to NOT download</b> the library directly from the library's GitHub release page and <b>NOT by clicking directly on the above link</b>. Instead, <b>use the <code>curl</code> command line program in a Bash terminal to download the library from the GitHub release page</b>. For example, open a Bash or zsh terminal on your macOS and type the following,  
 <pre class="language-shell highlighter-rouge">
-libname=libparamonte_matlab_darwin_arm64
-curl -OL https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/$libname.tar.gz
-tar xvzf $libname.tar.gz &amp;&amp; cd $libname
+curl -OL https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/libparamonte_matlab_darwin_arm64.tar.gz
+tar xvzf libparamonte_matlab_darwin_arm64.tar.gz &amp;&amp; cd libparamonte_matlab_darwin_arm64
 </pre>
-<br />
 The <b><code>curl</code></b> application is automatically installed on all macOS. If not, you can install it via <a href="https://brew.sh/" target="_blank">Homebrew</a>,
 <pre class="language-shell highlighter-rouge">brew install curl</pre>
 </div>
@@ -793,7 +842,7 @@ The <b><code>curl</code></b> application is automatically installed on all macOS
   <li>the ParaMonte prebuilt library is not available for your platform, or,</li>
   <li>your system’s architecture is other than those supported by the pre-built libraries, or,</li>
   <li>you are testing a ParaMonte library pre-release, or,</li>
-  <li>you are a professional programmer constantly challenging your computer programming knowledge and skills,</li>
+  <li>you are a professional programmer yearning to challenge your computer programming knowledge and skills,</li>
 </ul>
 
 <p>then the last resort to install the ParaMonte MATLAB library is to build the library from scratch on your system. 
@@ -805,6 +854,25 @@ In such a case, you will have to follow the special instructions given for your 
   <li><a href="../install.sh.md" target="_blank">Linux or similar operating systems</a>.</li>
 </ul>
 
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important: </b>
+Before proceeding to the platform-specific build instructions above, you must set up your <b>MATLAB MEX compiler</b>. 
+To do so, open a ParaMonte-compatible MATLAB session which you intend to use with ParaMonte application later. 
+Type the following command on the MATLAB command prompt:
+<br />
+<pre>
+mex -setup C
+</pre>
+This command will set up the MATLAB MEX compiler for the C programming language. 
+If necessary or desired, you can additionally set up the MATLAB MEX compiler for C++ and Fortran programming languages.
+<pre>
+mex -setup C++
+mex -setup Fortran
+</pre>
+
+Beware that each MATLAB version release is only compatible with a handful of C, C++, and Fortran compilers. 
+For information on this matter, consult the MATLAB documentation website for the MATLAB MEX compiler. 
+</div>
+
 <p>See also the <a href="../readme" target="_blank">pre-installation notes</a> and the <a href="../QUICKSTART.md" target="_blank">quick installation guidelines</a>.</p>
 
 <p>Once the library build and installation is complete, follow further instructions below for the <a href="#first-time-usage">first-time usage</a>.</p>
@@ -812,24 +880,26 @@ In such a case, you will have to follow the special instructions given for your 
 <h2 id="first-time-usage">First-time usage</h2>
 
 <ol>
-  <li>Depending on your operating system,
+  <li>Either,
     <ul>
-      <li>on <strong>Windows</strong>:<br />
-    -   Open a MATLAB session.</li>
-      <li>on <strong>Linux/macOS</strong>:
+      <li>open a ParaMonte-compatible MATLAB session as listed above from the Operating System’s search box, or,</li>
+      <li>open a MATLAB session from the command line:
         <ul>
-          <li>Open the Bash (in Linux) or zsh (in macOS) terminal.</li>
-          <li>then open MATLAB by calling it on the command line via,
+          <li>On <strong>Windows</strong>, open a <code>CMD</code> terminal that recognizes the MATLAB software.</li>
+          <li>On <strong>Linux</strong>, open a <code>bash</code> terminal or <code>zsh</code> terminal.</li>
+          <li>On <strong>macOS</strong>, open a <code>zsh</code> terminal.</li>
+          <li>Open a MATLAB session by calling it on the command line via,
             <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>matlab
 </code></pre></div>            </div>
-            <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If the <code>matlab</code> executable is not recognized by the Bash terminal, see <a href="../../troubleshooting/bash-matlab-command-not-found" target="_blank">this page</a> for a solution.</div>
+            <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If the <code>matlab</code> executable is not recognized by the <code>bash</code>/<code>zsh</code> terminal, 
+see <a href="../../troubleshooting/bash-matlab-command-not-found" target="_blank">this page</a> for a solution.</div>
           </li>
         </ul>
       </li>
     </ul>
   </li>
-  <li>Once the MATLAB interactive environment opens, change the current working of MATLAB to the <strong>root directory</strong> of the ParaMonte library 
-(<em>where the ParaMonte library license file exists</em>). You can do this on the MATLAB command prompt via,
+  <li>Once the MATLAB interactive environment opens, change the current working directory of MATLAB to the <strong>root directory</strong> of 
+the ParaMonte library (<em>where the ParaMonte library license file exists</em>). You can do this on the MATLAB command prompt as,
     <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="n">path_to_the_root_directory_of_paramonte</span>
 </code></pre></div>    </div>
     <p>where you will have to replace the <code>path_to_the_root_directory_of_paramonte</code> with the root path to the ParaMonte library on your system. 
@@ -837,13 +907,17 @@ The root path is the path to the directory where the ParaMonte <code>LICENSE.md<
   </li>
   <li>Call the ParaMonte library for the first time via the following commands (simply type the commands on the MATLAB command prompt),
     <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">addpath</span><span class="p">(</span><span class="s1">'./'</span><span class="p">,</span> <span class="s1">'-begin'</span><span class="p">);</span> <span class="c1">% add the ParaMonte library package root directory to MATLAB's list of search paths.</span>
-<span class="n">pm</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">verify</span><span class="p">();</span> <span class="c1">% verify the integrity of the ParaMonte library on your system (searches for the relevant MPI library on your system).</span>
+<span class="n">pm</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">verify</span><span class="p">();</span> <span class="c1">% verify the integrity of the ParaMonte library on your system (also searches for the relevant MPI library on your system).</span>
 </code></pre></div>    </div>
     <p>If needed, follow any extra instructions provided by the library on your MATLAB command prompt.</p>
   </li>
-  <li>You are all set! Enjoy the unification of simplicity, high-performance, parallelism, thoroughness, and advanced Monte Carlo algorithms, all in one place. 
-See the <a href="site.baseurl/../../matlab/site.pmvmmatlab" target="_blank">ParaMonte MATLAB documentation</a> for detailed functionalities and examples.
-    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important: </b>If you are a <b>macOS (Darwin)</b> user and you have downloaded the <b>prebuilt</b> ParaMonte libraries <b>directly via a web-browser</b> from the <a href="https://github.com/cdslaborg/paramonte/releases" target="_blank">GitHub release page</a> to use on your macOS system, read <a href="../../troubleshooting/macos-developer-cannot-be-verified/" target="_blank">this troubleshooting page</a> before attempting to run ParaMonte simulations.  </div>
+  <li>You are all set! Enjoy the unification of simplicity, high-performance, parallelism, thoroughness, 
+and advanced Monte Carlo algorithms and Machine Learning, all in one place. 
+See the <a href="site.baseurl/../../matlab/3" target="_blank">ParaMonte MATLAB documentation</a> 
+for detailed functionalities and examples.
+    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important: </b>
+If you are a <b>macOS (Darwin)</b> user and you have downloaded the <b>prebuilt</b> ParaMonte libraries <b>directly via a web-browser</b> from the <a href="https://github.com/cdslaborg/paramonte/releases" target="_blank">GitHub release page</a> to use on your macOS system, read <a href="../../troubleshooting/macos-developer-cannot-be-verified/" target="_blank">this troubleshooting page</a> before attempting to run ParaMonte simulations.  
+</div>
   </li>
 </ol>
 
@@ -950,7 +1024,7 @@ See the <a href="site.baseurl/../../matlab/site.pmvmmatlab" target="_blank">Para
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on October 28, 2024<br/>
+            Last updated on November 15, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/latest/images/logo.png" }}" alt="cdslab.org" /></a>

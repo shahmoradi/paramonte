@@ -269,6 +269,13 @@
                         
                                 
                                     
+                                        <li><a title="ParaMonte release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-release-notes/">ParaMonte release notes</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
                                         <li><a title="ParaMonte C release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-c-release-notes/">ParaMonte C release notes</a></li>
                                     
                                     
@@ -400,6 +407,43 @@
                                 
                                     
                                         <li><a title="ParaMonte MATLAB API" href="https://www.cdslab.org/paramonte/generic/2/../../matlab/3/" target="_blank" rel="noopener">ParaMonte MATLAB API</a></li>
+                                    
+                                    
+                                
+                        
+                    </ul>
+                </li>
+            
+        
+            
+                <li>
+                    <a title="usage :: examples" href="#"><b>usage :: examples</b></a>
+                    <ul>
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM C examples" href="https://www.cdslab.org/paramonte/generic/2/usage/examples/c/">ParaDRAM C examples</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM C++ examples" href="https://www.cdslab.org/paramonte/generic/2/usage/examples/cpp/">ParaDRAM C++ examples</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM Fortran examples" href="https://www.cdslab.org/paramonte/generic/2/usage/examples/fortran/">ParaDRAM Fortran examples</a></li>
+                                    
+                                    
+                                
+                        
+                                
+                                    
+                                        <li><a title="ParaDRAM MATLAB examples" href="https://www.cdslab.org/paramonte/generic/2/usage/examples/matlab/">ParaDRAM MATLAB examples</a></li>
                                     
                                     
                                 
@@ -698,6 +742,8 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
     
     
+        <a target="_blank" rel="noopener" href="https://github.com/cdslaborg/paramonted/tree/main/generic/2/installation/install.sh.md.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit this page</a>
+    
     
 <p><br /></p>
 
@@ -783,13 +829,53 @@ The Intel OneAPI can be freely downloaded and installed by anyone.</p>
 installation of GNU C and Fortran compilers.</p>
       </li>
       <li>
-        <p>Building for <strong>MPI-parallelism</strong> requires either,</p>
+        <p>Building for <strong>MPI-parallelism</strong> requires one of the following MPI libraries.</p>
 
         <ul>
-          <li>the Intel MPI library with Intel compilers, or</li>
-          <li>the MPICH MPI library with GNU compilers, or</li>
-          <li>the Open-MPI library with GNU compilers, or</li>
-          <li>the Microsoft MPI library with GNU compilers (on Windows).</li>
+          <li>The Intel MPI library with Intel compilers.
+The Intel MPI library can be downloaded as part of the 
+Intel OneAPI + HPC compiler suite from the Intel website.</li>
+          <li>The MPICH MPI library with GNU compilers. 
+For download instructions visit the MPICH library website.
+You can also install the MPICH library via your preferred package managers.
+For example,
+            <ul>
+              <li>on <strong>Linux Ubuntu</strong> operating systems using the APT package manager, 
+you can try the following command in a Bash terminal to install MPICH MPI library:
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>mpich
+</code></pre></div>                </div>
+              </li>
+              <li>on <strong>macOS (Darwin)</strong> operating systems using the <code>brew</code> package manager, 
+you can try the following command in a ZSH or Bash terminal to install MPICH MPI library:
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>mpich <span class="o">&amp;&amp;</span> brew <span class="nb">link </span>mpich
+</code></pre></div>                </div>
+              </li>
+            </ul>
+          </li>
+          <li>The Open-MPI library with GNU compilers.
+For download instructions visit the Open-MPI library website.
+You can also install the Open-MPI library via your preferred package managers.
+For example,
+            <ul>
+              <li>on <strong>Linux Ubuntu</strong> operating systems using the APT package manager, 
+you can try the following command in a Bash terminal to install Open-MPI MPI library:
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>openmpi-bin openmpi-common libopenmpi-dev
+</code></pre></div>                </div>
+              </li>
+              <li>on <strong>macOS (Darwin)</strong> operating systems using the <code>brew</code> package manager, 
+you can try the following command in a ZSH or Bash terminal to install Open-MPI MPI library:
+                <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>openmpi <span class="o">&amp;&amp;</span> brew <span class="nb">link </span>openmpi
+</code></pre></div>                </div>
+              </li>
+            </ul>
+          </li>
+          <li>The Microsoft MPI library with GNU compilers (on Windows).
+The ParaMonte library has never been tested against Microsoft MPI library.
+Microsoft claims full compatibility of their MPI library with the MPI standard.
+Yet, it is unclear whether their library has any Fortran bindings.
+If you have any luck building ParaMonte and linking it against 
+Microsoft MPI library, please share your success with us at
+<a href="https://github.com/cdslaborg/paramonte/discussions">ParaMonte GitHub Disussions Page</a>.</li>
         </ul>
       </li>
     </ul>
@@ -805,14 +891,14 @@ be found in the <code>PATH</code> environment variable).</p>
   <li>
     <p>Type <code>install.sh</code> with the desired build configuration flags. Example:</p>
 
-    <pre><code class="language-shch">./install.sh --lang c
-</code></pre>
+    <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh <span class="na">--lang </span><span class="kd">c</span>
+</code></pre></div>    </div>
 
-    <pre><code class="language-shch">./install.sh --lang c --build release --par mpi --checking nocheck
-</code></pre>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh <span class="nt">--lang</span> c <span class="nt">--build</span> release <span class="nt">--par</span> mpi <span class="nt">--checking</span> nocheck
+</code></pre></div>    </div>
 
-    <pre><code class="language-shch">./install.sh --lang c --build release --par "mpi;omp" --checking nocheck
-</code></pre>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./install.sh <span class="nt">--lang</span> c <span class="nt">--build</span> release <span class="nt">--par</span> <span class="s2">"mpi;omp"</span> <span class="nt">--checking</span> nocheck
+</code></pre></div>    </div>
 
     <p>Check out <a href="./install.config.md">install.config.md</a> file for a full list of build configuration flags.</p>
   </li>
@@ -921,7 +1007,7 @@ be found in the <code>PATH</code> environment variable).</p>
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on October 28, 2024<br/>
+            Last updated on November 15, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/2/images/logo.png" }}" alt="cdslab.org" /></a>
