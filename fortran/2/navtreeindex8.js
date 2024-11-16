@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"namespacepm__distBern.html":[22,0,59],
+"namespacepm__distBern.html#aa146e4e0cd0b3bbd25bba995c30c1d05":[22,0,59,4],
 "namespacepm__distBeta.html":[22,0,60],
 "namespacepm__distBeta.html#a948c7b596d508461b10d5f696eac181c":[22,0,60,7],
 "namespacepm__distBinom.html":[22,0,61],
@@ -247,7 +249,5 @@ var NAVTREEINDEX8 =
 "namespacepm__kind.html#ad15a51080f53546dd64c25bc0ba56481":[22,0,96,69],
 "namespacepm__kind.html#ad6a6fab63472c9546fcf711d6471799a":[22,0,96,133],
 "namespacepm__kind.html#adab7769635e281730edc8b1f2a9df779":[22,0,96,65],
-"namespacepm__kind.html#adabd01430efd4e73c79e72ddc81221d1":[22,0,96,116],
-"namespacepm__kind.html#adf0fd3c248f14b733bc8cd7876f75bef":[22,0,96,88],
-"namespacepm__kind.html#ae22f4874ac6c42fb2524cc11c2d1c9bb":[22,0,96,117]
+"namespacepm__kind.html#adabd01430efd4e73c79e72ddc81221d1":[22,0,96,116]
 };

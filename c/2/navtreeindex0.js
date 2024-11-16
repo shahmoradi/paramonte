@@ -11,6 +11,8 @@ var NAVTREEINDEX0 =
 "../../generic/latest/index.html":[23,0],
 "../../matlab/3/index.html":[24,1],
 "../../matlab/latest/index.html":[24,0],
+"../../python/3/index.html":[25,1],
+"../../python/latest/index.html":[25,0],
 "authors.html":[13],
 "bug.html":[15],
 "dir_3b19ecf29356981f494745fbef7e56bf.html":[18,0,0,0],
@@ -56,5 +58,6 @@ var NAVTREEINDEX0 =
 "usergroup1.html":[21],
 "usergroup2.html":[22],
 "usergroup3.html":[23],
-"usergroup4.html":[24]
+"usergroup4.html":[24],
+"usergroup5.html":[25]
 };

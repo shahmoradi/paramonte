@@ -74,6 +74,10 @@ var NAVTREE =
     [ "MATLAB", "usergroup4.html", [
       [ "latest", "../../matlab/latest/index.html", null ],
       [ "3", "../../matlab/3/index.html", null ]
+    ] ],
+    [ "Python", "usergroup5.html", [
+      [ "latest", "../../python/latest/index.html", null ],
+      [ "3", "../../python/3/index.html", null ]
     ] ]
   ] ]
 ];
