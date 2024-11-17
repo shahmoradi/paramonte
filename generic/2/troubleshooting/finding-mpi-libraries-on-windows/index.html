@@ -9,6 +9,7 @@
 <title>Finding the MPI libraries on Windows | ParaMonte: Parallel Monte Carlo and Machine Learning Library</title>
 <link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/prismOkaidia.css">
 <script src="https://www.cdslab.org/paramonte/generic/2/js/prismOkaidia.js"></script>
+<script src="/js/copyCode.js" defer></script>
 <!--
 <link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/syntax.css">
 -->
@@ -327,42 +328,42 @@
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation quickstart" href="https://www.cdslab.org/paramonte/generic/2/installation/QUICKSTART.md">ParaMonte installation quickstart</a></li>
+                                        <li><a title="ParaMonte installation quickstart" href="https://www.cdslab.org/paramonte/generic/2/installation/QUICKSTART.md.html">ParaMonte installation quickstart</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation guidelines" href="https://www.cdslab.org/paramonte/generic/2/installation/install.md">ParaMonte installation guidelines</a></li>
+                                        <li><a title="ParaMonte installation guidelines" href="https://www.cdslab.org/paramonte/generic/2/installation/install.md.html">ParaMonte installation guidelines</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation in Unix Bash" href="https://www.cdslab.org/paramonte/generic/2/installation/install.sh.md">ParaMonte installation in Unix Bash</a></li>
+                                        <li><a title="ParaMonte installation in Unix Bash" href="https://www.cdslab.org/paramonte/generic/2/installation/install.sh.md.html">ParaMonte installation in Unix Bash</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation in Windows CMD" href="https://www.cdslab.org/paramonte/generic/2/installation/install.bat.md">ParaMonte installation in Windows CMD</a></li>
+                                        <li><a title="ParaMonte installation in Windows CMD" href="https://www.cdslab.org/paramonte/generic/2/installation/install.bat.md.html">ParaMonte installation in Windows CMD</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation configuration" href="https://www.cdslab.org/paramonte/generic/2/installation/install.config.md">ParaMonte installation configuration</a></li>
+                                        <li><a title="ParaMonte installation configuration" href="https://www.cdslab.org/paramonte/generic/2/installation/install.config.md.html">ParaMonte installation configuration</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation via CMake" href="https://www.cdslab.org/paramonte/generic/2/installation/CMakeLists.md">ParaMonte installation via CMake</a></li>
+                                        <li><a title="ParaMonte installation via CMake" href="https://www.cdslab.org/paramonte/generic/2/installation/CMakeLists.md.html">ParaMonte installation via CMake</a></li>
                                     
                                     
                                 
@@ -533,14 +534,14 @@
                         
                                 
                                     
-                                        <li><a title="reporting defects" href="https://www.cdslab.org/paramonte/generic/2/contributing/defects">reporting defects</a></li>
+                                        <li><a title="reporting defects" href="https://www.cdslab.org/paramonte/generic/2/contributing/defects/">reporting defects</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="requesting enhancements" href="https://www.cdslab.org/paramonte/generic/2/contributing/enhancements">requesting enhancements</a></li>
+                                        <li><a title="requesting enhancements" href="https://www.cdslab.org/paramonte/generic/2/contributing/enhancements/">requesting enhancements</a></li>
                                     
                                     
                                 
@@ -554,7 +555,7 @@
                         
                                 
                                     
-                                        <li><a title="development guidelines - kernel" href="https://www.cdslab.org/paramonte/generic/2/contributing/development/kernel/">development guidelines - kernel</a></li>
+                                        <li><a title="development guidelines - Fortran" href="https://www.cdslab.org/paramonte/generic/2/contributing/development/fortran/">development guidelines - Fortran</a></li>
                                     
                                     
                                 
@@ -754,19 +755,19 @@ ERROR in the compiling/linking [2]
 </pre>
 This error implies that the path to your Intel MPI library installation files is not properly setup in your environment. You can fix the error by calling the Intel's dedicated Batch script <b><code>mpivars.bat</code></b> that Intel has developed solely for the purpose of setting up the MPI environmental variables and paths before using the Intel MPI library. For detailed instructions on how to set up your Intel MPI environment see <a href="https://software.intel.com/en-us/get-started-with-mpi-for-windows" target="_blank">Getting Started with Intel® MPI Library for Windows OS (Beta)</a>. In brief, this script normally lives in a directory like,  
 
-<pre>
-C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2019.4.245\windows\mpi\intel64\bin\mpivars.bat
-</pre>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2019.4.245\windows\mpi\intel64\bin\mpivars.bat</code></pre></figure>
+
 
 Locate this setup-script on your system and execute the contents of it on your command line, like the following,  
 
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">"C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2019.4.245\windows\mpi\intel64\bin\mpivars.bat"</code></pre></figure>
 
-<pre>
-Intel(R) MPI Library 2019 Update 4 for Windows* Target Build Environment for Intel(R) 64 applications
-Copyright 2007-2019 Intel Corporation.
-</pre>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Intel(R) MPI Library 2019 Update 4 for Windows* Target Build Environment for Intel(R) 64 applications
+Copyright 2007-2019 Intel Corporation.</code></pre></figure>
+
 
 Notice the use of double-quotations around the path to the script. This is ensure that any special <b>escape characters</b> in the path (such as the <b>white-space</b> characters) are properly taken care of.
 </div>
@@ -874,7 +875,7 @@ Notice the use of double-quotations around the path to the script. This is ensur
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on November 16, 2024<br/>
+            Last updated on November 17, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/2/images/logo.png" }}" alt="cdslab.org" /></a>

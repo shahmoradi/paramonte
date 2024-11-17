@@ -1534,7 +1534,45 @@ h4.panel-title {
 }
 
 /* add margin to the code boxes */
-.highlight {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+pre[class*="language-"] {
+  position: relative;
+  overflow: auto;
+
+  /* 
+  make space  
+  border-radius: 10px;
+  padding: 1.75rem 0 1.75rem 1rem;
+  margin: 5px 0;
+  */
+  padding: 3.5rem 0 1.5rem 1rem;
+}
+
+pre[class*="language-"] button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 0.3rem;
+  font-size: 1.2rem;
+  /* 
+    font-size: 0.9rem;
+  text-shadow: #c4c4c4 0 0 2px;
+    background-color: #828282; 
+  border: ridge 1px #7b7b7c;
+  */
+  background-color: #000000;
+  border-radius: 5px;
+  border: none;
+
+}
+
+pre[class*="language-"] button:hover {
+  cursor: pointer;
+  background-color: #bcbabb;
 }

@@ -9,6 +9,7 @@
 <title>Installation instructions for the ParaMonte MATLAB library | ParaMonte: Parallel Monte Carlo and Machine Learning Library</title>
 <link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/latest/css/prismOkaidia.css">
 <script src="https://www.cdslab.org/paramonte/generic/latest/js/prismOkaidia.js"></script>
+<script src="/js/copyCode.js" defer></script>
 <!--
 <link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/latest/css/syntax.css">
 -->
@@ -327,42 +328,42 @@
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation quickstart" href="https://www.cdslab.org/paramonte/generic/latest/installation/QUICKSTART.md">ParaMonte installation quickstart</a></li>
+                                        <li><a title="ParaMonte installation quickstart" href="https://www.cdslab.org/paramonte/generic/latest/installation/QUICKSTART.md.html">ParaMonte installation quickstart</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation guidelines" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.md">ParaMonte installation guidelines</a></li>
+                                        <li><a title="ParaMonte installation guidelines" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.md.html">ParaMonte installation guidelines</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation in Unix Bash" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.sh.md">ParaMonte installation in Unix Bash</a></li>
+                                        <li><a title="ParaMonte installation in Unix Bash" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.sh.md.html">ParaMonte installation in Unix Bash</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation in Windows CMD" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.bat.md">ParaMonte installation in Windows CMD</a></li>
+                                        <li><a title="ParaMonte installation in Windows CMD" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.bat.md.html">ParaMonte installation in Windows CMD</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation configuration" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.config.md">ParaMonte installation configuration</a></li>
+                                        <li><a title="ParaMonte installation configuration" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.config.md.html">ParaMonte installation configuration</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation via CMake" href="https://www.cdslab.org/paramonte/generic/latest/installation/CMakeLists.md">ParaMonte installation via CMake</a></li>
+                                        <li><a title="ParaMonte installation via CMake" href="https://www.cdslab.org/paramonte/generic/latest/installation/CMakeLists.md.html">ParaMonte installation via CMake</a></li>
                                     
                                     
                                 
@@ -533,14 +534,14 @@
                         
                                 
                                     
-                                        <li><a title="reporting defects" href="https://www.cdslab.org/paramonte/generic/latest/contributing/defects">reporting defects</a></li>
+                                        <li><a title="reporting defects" href="https://www.cdslab.org/paramonte/generic/latest/contributing/defects/">reporting defects</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="requesting enhancements" href="https://www.cdslab.org/paramonte/generic/latest/contributing/enhancements">requesting enhancements</a></li>
+                                        <li><a title="requesting enhancements" href="https://www.cdslab.org/paramonte/generic/latest/contributing/enhancements/">requesting enhancements</a></li>
                                     
                                     
                                 
@@ -554,7 +555,7 @@
                         
                                 
                                     
-                                        <li><a title="development guidelines - kernel" href="https://www.cdslab.org/paramonte/generic/latest/contributing/development/kernel/">development guidelines - kernel</a></li>
+                                        <li><a title="development guidelines - Fortran" href="https://www.cdslab.org/paramonte/generic/latest/contributing/development/fortran/">development guidelines - Fortran</a></li>
                                     
                                     
                                 
@@ -807,26 +808,26 @@ We strongly recommend to either upgrade your MATLAB software to most recent vers
         <p>For <strong>macOS</strong> (<strong>Darwin</strong>) with <code>AMD64</code> (Intel) processor: Follow the instruction below to download the ParaMonte MATLAB prebuilt library.</p>
 
         <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important: </b>
-If you are a <b>macOS user</b>, we <b>strongly recommend you to NOT download</b> the library directly from the library's GitHub release page and <b>NOT by clicking directly on the above link</b>. Instead, <b>use the <code>curl</code> command line program in a Bash terminal to download the library from the GitHub release page</b>. For example, open a Bash or zsh terminal on your macOS and type the following,  
-<pre class="language-shell highlighter-rouge">
-curl -OL https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/libparamonte_matlab_darwin_amd64.tar.gz
+If you are a <b>macOS user</b>, we <b>strongly recommend you to NOT download</b> the library directly from the library's GitHub release page and <b>NOT by clicking directly on the download links in web browsers</b>. Instead, <b>use the <code>curl</code> command line program in a Bash terminal to download the library from the GitHub release page</b>. For example, open a Bash or <code>zsh</code> terminal on your macOS and execute the following commands to both download and decompress the ParaMonte MATLAB library,  
+<pre class="language-bash highlighter-rouge"><code>curl -OL https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/libparamonte_matlab_darwin_amd64.tar.gz
 tar xvzf libparamonte_matlab_darwin_amd64.tar.gz &amp;&amp; cd libparamonte_matlab_darwin_amd64
-</pre>
+</code></pre>
 The <b><code>curl</code></b> application is automatically installed on all macOS. If not, you can install it via <a href="https://brew.sh/" target="_blank">Homebrew</a>,
-<pre class="language-shell highlighter-rouge">brew install curl</pre>
+<pre class="language-bash highlighter-rouge"><code>brew install curl
+</code></pre>
 </div>
       </li>
       <li>
         <p>For <strong>macOS</strong> (<strong>Darwin</strong>) with <code>ARM64</code> processor (M1, M2, etc.): Follow the instruction below to download the ParaMonte MATLAB prebuilt library.</p>
 
         <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important: </b>
-If you are a <b>macOS user</b>, we <b>strongly recommend you to NOT download</b> the library directly from the library's GitHub release page and <b>NOT by clicking directly on the above link</b>. Instead, <b>use the <code>curl</code> command line program in a Bash terminal to download the library from the GitHub release page</b>. For example, open a Bash or zsh terminal on your macOS and type the following,  
-<pre class="language-shell highlighter-rouge">
-curl -OL https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/libparamonte_matlab_darwin_arm64.tar.gz
+If you are a <b>macOS user</b>, we <b>strongly recommend you to NOT download</b> the library directly from the library's GitHub release page and <b>NOT by clicking directly on the download links in web browsers</b>. Instead, <b>use the <code>curl</code> command line program in a Bash terminal to download the library from the GitHub release page</b>. For example, open a Bash or <code>zsh</code> terminal on your macOS and execute the following commands to both download and decompress the ParaMonte MATLAB library,  
+<pre class="language-bash highlighter-rouge"><code>curl -OL https://github.com/cdslaborg/paramonte/releases/download/2024.04.29/libparamonte_matlab_darwin_arm64.tar.gz
 tar xvzf libparamonte_matlab_darwin_arm64.tar.gz &amp;&amp; cd libparamonte_matlab_darwin_arm64
-</pre>
+</code></pre>
 The <b><code>curl</code></b> application is automatically installed on all macOS. If not, you can install it via <a href="https://brew.sh/" target="_blank">Homebrew</a>,
-<pre class="language-shell highlighter-rouge">brew install curl</pre>
+<pre class="language-bash highlighter-rouge"><code>brew install curl
+</code></pre>
 </div>
       </li>
     </ul>
@@ -859,14 +860,12 @@ Before proceeding to the platform-specific build instructions above, you must se
 To do so, open a ParaMonte-compatible MATLAB session which you intend to use with ParaMonte application later. 
 Type the following command on the MATLAB command prompt:
 <br />
-<pre>
-mex -setup C
-</pre>
+<pre class="language-shell highlighter-rouge"><code>mex -setup C</code></pre>
 This command will set up the MATLAB MEX compiler for the C programming language. 
 If necessary or desired, you can additionally set up the MATLAB MEX compiler for C++ and Fortran programming languages.
-<pre>
-mex -setup C++
-mex -setup Fortran
+<pre class="language-shell highlighter-rouge">
+<code>mex -setup C++
+mex -setup Fortran</code>
 </pre>
 
 Beware that each MATLAB version release is only compatible with a handful of C, C++, and Fortran compilers. 
@@ -1024,7 +1023,7 @@ If you are a <b>macOS (Darwin)</b> user and you have downloaded the <b>prebuilt<
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on November 16, 2024<br/>
+            Last updated on November 17, 2024<br/>
             
         <p>
             <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/latest/images/logo.png" }}" alt="cdslab.org" /></a>

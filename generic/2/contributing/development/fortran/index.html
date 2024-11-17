@@ -5,27 +5,28 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="developmentguidelinesgeneralcontributioncontributing,  development, guidelines, kernel, contribution, contributing">
-<title>Kernel development guidelines | ParaMonte: Parallel Monte Carlo and Machine Learning Library</title>
-<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/latest/css/prismOkaidia.css">
-<script src="https://www.cdslab.org/paramonte/generic/latest/js/prismOkaidia.js"></script>
+<meta name="keywords" content="developmentguidelinesgeneralfortrancontributioncontributing,  development, guidelines, kernel, Fortran, contribution, contributing">
+<title>ParaMonte Fortran development guidelines | ParaMonte: Parallel Monte Carlo and Machine Learning Library</title>
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/prismOkaidia.css">
+<script src="https://www.cdslab.org/paramonte/generic/2/js/prismOkaidia.js"></script>
+<script src="/js/copyCode.js" defer></script>
 <!--
-<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/latest/css/syntax.css">
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/syntax.css">
 -->
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="https://www.cdslab.org/paramonte/generic/latest/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://www.cdslab.org/paramonte/generic/2/css/bootstrap.min.css">
 
 
 
-<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/latest/css/customstyles.css">
-<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/latest/css/boxshadowproperties.css">
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/customstyles.css">
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/boxshadowproperties.css">
 <!-- most color styles are extracted out to here -->
-<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/latest/css/theme-cdslab.css">
+<link rel="stylesheet" href="https://www.cdslab.org/paramonte/generic/2/css/theme-cdslab.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<script src="https://www.cdslab.org/paramonte/generic/latest/js/jquery.navgoco.min.js"></script>
+<script src="https://www.cdslab.org/paramonte/generic/2/js/jquery.navgoco.min.js"></script>
 <!-- make sidebar non-accordion -->
-<script src="https://www.cdslab.org/paramonte/generic/latest/js/lockScrollBarPosition.js"></script>
+<script src="https://www.cdslab.org/paramonte/generic/2/js/lockScrollBarPosition.js"></script>
 <!-- make sidebar non-accordion -->
 <script type="text/javascript">
     $(document).ready(function() {
@@ -52,16 +53,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 <!--
 -->
-<script src="https://www.cdslab.org/paramonte/generic/latest/js/toc.js"></script>
-<script src="https://www.cdslab.org/paramonte/generic/latest/js/customscripts.js"></script>
-<link rel="shortcut icon" href="https://www.cdslab.org/paramonte/generic/latest/images/favicon.ico">
+<script src="https://www.cdslab.org/paramonte/generic/2/js/toc.js"></script>
+<script src="https://www.cdslab.org/paramonte/generic/2/js/customscripts.js"></script>
+<link rel="shortcut icon" href="https://www.cdslab.org/paramonte/generic/2/images/favicon.ico">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-<link rel="alternate" type="application/rss+xml" title="" href="https://www.cdslab.org/paramonte/generic/latest/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://www.cdslab.org/paramonte/generic/2/feed.xml">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6JB9XNG83"></script>
 <script>
@@ -129,7 +130,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-book fa-lg navbar-brand" href="https://www.cdslab.org/paramonte/generic/latest/index.html">&nbsp;<span class="projectTitle"> ParaMonte 2</span></a>
+            <a class="fa fa-book fa-lg navbar-brand" href="https://www.cdslab.org/paramonte/generic/2/index.html">&nbsp;<span class="projectTitle"> ParaMonte 2</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -196,15 +197,15 @@
                             <ul class="dropdown-menu">
                                 
                                 
-                                <li><a href="https://www.cdslab.org/paramonte/generic/latest/../latest" target="_blank" rel="noopener">latest</a></li>
+                                <li><a href="https://www.cdslab.org/paramonte/generic/2/../latest" target="_blank" rel="noopener">latest</a></li>
                                 
                                 
                                 
-                                <li><a href="https://www.cdslab.org/paramonte/generic/latest/../2" target="_blank" rel="noopener">version 2</a></li>
+                                <li><a href="https://www.cdslab.org/paramonte/generic/2/../2" target="_blank" rel="noopener">version 2</a></li>
                                 
                                 
                                 
-                                <li><a href="https://www.cdslab.org/paramonte/generic/latest/../1" target="_blank" rel="noopener">version 1</a></li>
+                                <li><a href="https://www.cdslab.org/paramonte/generic/2/../1" target="_blank" rel="noopener">version 1</a></li>
                                 
                                 
                             </ul>
@@ -219,13 +220,13 @@
                         <input type="text" id="search-input" placeholder="keyword search...">
                         <ul id="results-container"></ul>
                     </div>
-                    <script src="https://www.cdslab.org/paramonte/generic/latest/js/jekyll-search.js" type="text/javascript"></script>
+                    <script src="https://www.cdslab.org/paramonte/generic/2/js/jekyll-search.js" type="text/javascript"></script>
                     <script type="text/javascript">
                             SimpleJekyllSearch.init({
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
-                                dataSource: "https://www.cdslab.org/paramonte/generic/latest/search.json",
-                                searchResultTemplate: '<li><a href="https://www.cdslab.org/paramonte/generic/latest{url}" title="Kernel development guidelines">{title}</a></li>',
+                                dataSource: "https://www.cdslab.org/paramonte/generic/2/search.json",
+                                searchResultTemplate: '<li><a href="https://www.cdslab.org/paramonte/generic/2{url}" title="ParaMonte Fortran development guidelines">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -262,49 +263,49 @@
                         
                                 
                                     
-                                        <li><a title="preface" href="https://www.cdslab.org/paramonte/generic/latest/overview/preface/">preface</a></li>
+                                        <li><a title="preface" href="https://www.cdslab.org/paramonte/generic/2/overview/preface/">preface</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-release-notes/">ParaMonte release notes</a></li>
+                                        <li><a title="ParaMonte release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-release-notes/">ParaMonte release notes</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte C release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-c-release-notes/">ParaMonte C release notes</a></li>
+                                        <li><a title="ParaMonte C release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-c-release-notes/">ParaMonte C release notes</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte C++ release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-cpp-release-notes/">ParaMonte C++ release notes</a></li>
+                                        <li><a title="ParaMonte C++ release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-cpp-release-notes/">ParaMonte C++ release notes</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte Fortran release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-fortran-release-notes/">ParaMonte Fortran release notes</a></li>
+                                        <li><a title="ParaMonte Fortran release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-fortran-release-notes/">ParaMonte Fortran release notes</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte MATLAB release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-matlab-release-notes/">ParaMonte MATLAB release notes</a></li>
+                                        <li><a title="ParaMonte MATLAB release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-matlab-release-notes/">ParaMonte MATLAB release notes</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte Python release notes" href="https://www.cdslab.org/paramonte/generic/latest/overview/paramonte-python-release-notes/">ParaMonte Python release notes</a></li>
+                                        <li><a title="ParaMonte Python release notes" href="https://www.cdslab.org/paramonte/generic/2/overview/paramonte-python-release-notes/">ParaMonte Python release notes</a></li>
                                     
                                     
                                 
@@ -320,56 +321,56 @@
                         
                                 
                                     
-                                        <li><a title="ParaMonte pre-installation notes" href="https://www.cdslab.org/paramonte/generic/latest/installation/readme/">ParaMonte pre-installation notes</a></li>
+                                        <li><a title="ParaMonte pre-installation notes" href="https://www.cdslab.org/paramonte/generic/2/installation/readme/">ParaMonte pre-installation notes</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation quickstart" href="https://www.cdslab.org/paramonte/generic/latest/installation/QUICKSTART.md">ParaMonte installation quickstart</a></li>
+                                        <li><a title="ParaMonte installation quickstart" href="https://www.cdslab.org/paramonte/generic/2/installation/QUICKSTART.md.html">ParaMonte installation quickstart</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation guidelines" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.md">ParaMonte installation guidelines</a></li>
+                                        <li><a title="ParaMonte installation guidelines" href="https://www.cdslab.org/paramonte/generic/2/installation/install.md.html">ParaMonte installation guidelines</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation in Unix Bash" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.sh.md">ParaMonte installation in Unix Bash</a></li>
+                                        <li><a title="ParaMonte installation in Unix Bash" href="https://www.cdslab.org/paramonte/generic/2/installation/install.sh.md.html">ParaMonte installation in Unix Bash</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation in Windows CMD" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.bat.md">ParaMonte installation in Windows CMD</a></li>
+                                        <li><a title="ParaMonte installation in Windows CMD" href="https://www.cdslab.org/paramonte/generic/2/installation/install.bat.md.html">ParaMonte installation in Windows CMD</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation configuration" href="https://www.cdslab.org/paramonte/generic/latest/installation/install.config.md">ParaMonte installation configuration</a></li>
+                                        <li><a title="ParaMonte installation configuration" href="https://www.cdslab.org/paramonte/generic/2/installation/install.config.md.html">ParaMonte installation configuration</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation via CMake" href="https://www.cdslab.org/paramonte/generic/latest/installation/CMakeLists.md">ParaMonte installation via CMake</a></li>
+                                        <li><a title="ParaMonte installation via CMake" href="https://www.cdslab.org/paramonte/generic/2/installation/CMakeLists.md.html">ParaMonte installation via CMake</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte installation for MATLAB" href="https://www.cdslab.org/paramonte/generic/latest/installation/matlab/">ParaMonte installation for MATLAB</a></li>
+                                        <li><a title="ParaMonte installation for MATLAB" href="https://www.cdslab.org/paramonte/generic/2/installation/matlab/">ParaMonte installation for MATLAB</a></li>
                                     
                                     
                                 
@@ -385,28 +386,28 @@
                         
                                 
                                     
-                                        <li><a title="ParaMonte C API" href="https://www.cdslab.org/paramonte/generic/latest/../../c/2/" target="_blank" rel="noopener">ParaMonte C API</a></li>
+                                        <li><a title="ParaMonte C API" href="https://www.cdslab.org/paramonte/generic/2/../../c/2/" target="_blank" rel="noopener">ParaMonte C API</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte C++ API" href="https://www.cdslab.org/paramonte/generic/latest/../../cpp/2/" target="_blank" rel="noopener">ParaMonte C++ API</a></li>
+                                        <li><a title="ParaMonte C++ API" href="https://www.cdslab.org/paramonte/generic/2/../../cpp/2/" target="_blank" rel="noopener">ParaMonte C++ API</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte Fortran API" href="https://www.cdslab.org/paramonte/generic/latest/../../fortran/2/" target="_blank" rel="noopener">ParaMonte Fortran API</a></li>
+                                        <li><a title="ParaMonte Fortran API" href="https://www.cdslab.org/paramonte/generic/2/../../fortran/2/" target="_blank" rel="noopener">ParaMonte Fortran API</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaMonte MATLAB API" href="https://www.cdslab.org/paramonte/generic/latest/../../matlab/3/" target="_blank" rel="noopener">ParaMonte MATLAB API</a></li>
+                                        <li><a title="ParaMonte MATLAB API" href="https://www.cdslab.org/paramonte/generic/2/../../matlab/3/" target="_blank" rel="noopener">ParaMonte MATLAB API</a></li>
                                     
                                     
                                 
@@ -422,28 +423,28 @@
                         
                                 
                                     
-                                        <li><a title="ParaDRAM C examples" href="https://www.cdslab.org/paramonte/generic/latest/usage/examples/c/">ParaDRAM C examples</a></li>
+                                        <li><a title="ParaDRAM C examples" href="https://www.cdslab.org/paramonte/generic/2/usage/examples/c/">ParaDRAM C examples</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaDRAM C++ examples" href="https://www.cdslab.org/paramonte/generic/latest/usage/examples/cpp/">ParaDRAM C++ examples</a></li>
+                                        <li><a title="ParaDRAM C++ examples" href="https://www.cdslab.org/paramonte/generic/2/usage/examples/cpp/">ParaDRAM C++ examples</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaDRAM Fortran examples" href="https://www.cdslab.org/paramonte/generic/latest/usage/examples/fortran/">ParaDRAM Fortran examples</a></li>
+                                        <li><a title="ParaDRAM Fortran examples" href="https://www.cdslab.org/paramonte/generic/2/usage/examples/fortran/">ParaDRAM Fortran examples</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaDRAM MATLAB examples" href="https://www.cdslab.org/paramonte/generic/latest/usage/examples/matlab/">ParaDRAM MATLAB examples</a></li>
+                                        <li><a title="ParaDRAM MATLAB examples" href="https://www.cdslab.org/paramonte/generic/2/usage/examples/matlab/">ParaDRAM MATLAB examples</a></li>
                                     
                                     
                                 
@@ -459,42 +460,42 @@
                         
                                 
                                     
-                                        <li><a title="ParaDRAM quick start" href="https://www.cdslab.org/paramonte/generic/latest/usage/sampling/paradram/interface/">ParaDRAM quick start</a></li>
+                                        <li><a title="ParaDRAM quick start" href="https://www.cdslab.org/paramonte/generic/2/usage/sampling/paradram/interface/">ParaDRAM quick start</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaDRAM optional input file" href="https://www.cdslab.org/paramonte/generic/latest/usage/sampling/paradram/input/">ParaDRAM optional input file</a></li>
+                                        <li><a title="ParaDRAM optional input file" href="https://www.cdslab.org/paramonte/generic/2/usage/sampling/paradram/input/">ParaDRAM optional input file</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaDRAM simulation specifications" href="https://www.cdslab.org/paramonte/generic/latest/usage/sampling/paradram/specifications/">ParaDRAM simulation specifications</a></li>
+                                        <li><a title="ParaDRAM simulation specifications" href="https://www.cdslab.org/paramonte/generic/2/usage/sampling/paradram/specifications/">ParaDRAM simulation specifications</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaDRAM simulation output files" href="https://www.cdslab.org/paramonte/generic/latest/usage/sampling/paradram/output/">ParaDRAM simulation output files</a></li>
+                                        <li><a title="ParaDRAM simulation output files" href="https://www.cdslab.org/paramonte/generic/2/usage/sampling/paradram/output/">ParaDRAM simulation output files</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaDRAM simulation restart" href="https://www.cdslab.org/paramonte/generic/latest/usage/sampling/paradram/restart/">ParaDRAM simulation restart</a></li>
+                                        <li><a title="ParaDRAM simulation restart" href="https://www.cdslab.org/paramonte/generic/2/usage/sampling/paradram/restart/">ParaDRAM simulation restart</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="ParaDRAM parallelization tips" href="https://www.cdslab.org/paramonte/generic/latest/usage/sampling/paradram/parallelization/">ParaDRAM parallelization tips</a></li>
+                                        <li><a title="ParaDRAM parallelization tips" href="https://www.cdslab.org/paramonte/generic/2/usage/sampling/paradram/parallelization/">ParaDRAM parallelization tips</a></li>
                                     
                                     
                                 
@@ -510,14 +511,14 @@
                         
                                 
                                     
-                                        <li><a title="guidelines" href="https://www.cdslab.org/paramonte/generic/latest/codecov/">guidelines</a></li>
+                                        <li><a title="guidelines" href="https://www.cdslab.org/paramonte/generic/2/codecov/">guidelines</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="code coverage :: Fortran" href="https://www.cdslab.org/paramonte/generic/latest/codecov/fortran/">code coverage :: Fortran</a></li>
+                                        <li><a title="code coverage :: Fortran" href="https://www.cdslab.org/paramonte/generic/2/codecov/fortran/">code coverage :: Fortran</a></li>
                                     
                                     
                                 
@@ -533,28 +534,28 @@
                         
                                 
                                     
-                                        <li><a title="reporting defects" href="https://www.cdslab.org/paramonte/generic/latest/contributing/defects">reporting defects</a></li>
+                                        <li><a title="reporting defects" href="https://www.cdslab.org/paramonte/generic/2/contributing/defects/">reporting defects</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="requesting enhancements" href="https://www.cdslab.org/paramonte/generic/latest/contributing/enhancements">requesting enhancements</a></li>
+                                        <li><a title="requesting enhancements" href="https://www.cdslab.org/paramonte/generic/2/contributing/enhancements/">requesting enhancements</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="development guidelines - general" href="https://www.cdslab.org/paramonte/generic/latest/contributing/development/general/">development guidelines - general</a></li>
+                                        <li><a title="development guidelines - general" href="https://www.cdslab.org/paramonte/generic/2/contributing/development/general/">development guidelines - general</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li class="active"><a title="development guidelines - kernel" href="https://www.cdslab.org/paramonte/generic/latest/contributing/development/kernel/">development guidelines - kernel</a></li>
+                                        <li class="active"><a title="development guidelines - Fortran" href="https://www.cdslab.org/paramonte/generic/2/contributing/development/fortran/">development guidelines - Fortran</a></li>
                                     
                                     
                                 
@@ -570,119 +571,119 @@
                         
                                 
                                     
-                                        <li><a title="enhancement-requests and bug-reports" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/issues/">enhancement-requests and bug-reports</a></li>
+                                        <li><a title="enhancement-requests and bug-reports" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/issues/">enhancement-requests and bug-reports</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="-bash: Permission denied" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/bash-permission-denied/">-bash: Permission denied</a></li>
+                                        <li><a title="-bash: Permission denied" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/bash-permission-denied/">-bash: Permission denied</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="bash: matlab: command not found" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/bash-matlab-command-not-found/">bash: matlab: command not found</a></li>
+                                        <li><a title="bash: matlab: command not found" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/bash-matlab-command-not-found/">bash: matlab: command not found</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Catastrophic error: could not set locale" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/catastrophic-error-could-not-set-locale/">Catastrophic error: could not set locale</a></li>
+                                        <li><a title="Catastrophic error: could not set locale" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/catastrophic-error-could-not-set-locale/">Catastrophic error: could not set locale</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="changing directory on Windows CMD" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/windows-drive-change/">changing directory on Windows CMD</a></li>
+                                        <li><a title="changing directory on Windows CMD" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/windows-drive-change/">changing directory on Windows CMD</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="error while loading shared libraries" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/error-while-loading-shared-libraries/">error while loading shared libraries</a></li>
+                                        <li><a title="error while loading shared libraries" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/error-while-loading-shared-libraries/">error while loading shared libraries</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="finding the MPI libraries on Windows" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/finding-mpi-libraries-on-windows/">finding the MPI libraries on Windows</a></li>
+                                        <li><a title="finding the MPI libraries on Windows" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/finding-mpi-libraries-on-windows/">finding the MPI libraries on Windows</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Fortran runtime error: End of file" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/fortran-runtime-error-end-of-file/">Fortran runtime error: End of file</a></li>
+                                        <li><a title="Fortran runtime error: End of file" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/fortran-runtime-error-end-of-file/">Fortran runtime error: End of file</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="libgfortran not found" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/libgfortran-not-found/">libgfortran not found</a></li>
+                                        <li><a title="libgfortran not found" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/libgfortran-not-found/">libgfortran not found</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="macOS: catastrophic error: cannot open source" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/macos-catastrophic-error-cannot-open-source/">macOS: catastrophic error: cannot open source</a></li>
+                                        <li><a title="macOS: catastrophic error: cannot open source" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/macos-catastrophic-error-cannot-open-source/">macOS: catastrophic error: cannot open source</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="macOS: developer cannot be verified" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/macos-developer-cannot-be-verified/">macOS: developer cannot be verified</a></li>
+                                        <li><a title="macOS: developer cannot be verified" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/macos-developer-cannot-be-verified/">macOS: developer cannot be verified</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="macOS: ld: library not found" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/macos-ld-library-not-found/">macOS: ld: library not found</a></li>
+                                        <li><a title="macOS: ld: library not found" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/macos-ld-library-not-found/">macOS: ld: library not found</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="macOS: unsupported tapi file type" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/macos-unsupported-tapi-file-type/">macOS: unsupported tapi file type</a></li>
+                                        <li><a title="macOS: unsupported tapi file type" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/macos-unsupported-tapi-file-type/">macOS: unsupported tapi file type</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="macOS: xcrun: unable to find utility "clang"" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/macos-xcrun-error-unable-to-find-utility-clang/">macOS: xcrun: unable to find utility "clang"</a></li>
+                                        <li><a title="macOS: xcrun: unable to find utility "clang"" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/macos-xcrun-error-unable-to-find-utility-clang/">macOS: xcrun: unable to find utility "clang"</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Python: could not find module" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/python-could-not-find-module/">Python: could not find module</a></li>
+                                        <li><a title="Python: could not find module" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/python-could-not-find-module/">Python: could not find module</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Python: module object is not callable" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/python-module-object-is-not-callable/">Python: module object is not callable</a></li>
+                                        <li><a title="Python: module object is not callable" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/python-module-object-is-not-callable/">Python: module object is not callable</a></li>
                                     
                                     
                                 
                         
                                 
                                     
-                                        <li><a title="Python: segmentation-fault error" href="https://www.cdslab.org/paramonte/generic/latest/troubleshooting/python-segmentation-fault/">Python: segmentation-fault error</a></li>
+                                        <li><a title="Python: segmentation-fault error" href="https://www.cdslab.org/paramonte/generic/2/troubleshooting/python-segmentation-fault/">Python: segmentation-fault error</a></li>
                                     
                                     
                                 
@@ -713,7 +714,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
                     <!-- Content Column -->
                     <div class="col-md-9" id="tg-sb-content">
                         <div class="post-header">
-   <h1 class="post-title-main">Kernel development guidelines</h1>
+   <h1 class="post-title-main">ParaMonte Fortran development guidelines</h1>
 </div>
 
 <div class="post-content">
@@ -742,7 +743,7 @@ the script runs before the sidebar code runs and the class never gets inserted.
 
     
     
-        <a target="_blank" rel="noopener" href="https://github.com/cdslaborg/paramonted/tree/main/generic/2/contributing/development/kernel/index.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit this page</a>
+        <a target="_blank" rel="noopener" href="https://github.com/cdslaborg/paramonted/tree/main/generic/2/contributing/development/fortran/index.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit this page</a>
     
     
 <div id="toc"></div>
@@ -763,14 +764,14 @@ the script runs before the sidebar code runs and the class never gets inserted.
 <p><br /></p>
 
 <p>Thank you for your interest in contributing to ParaMonte! Your help is very much appreciated. 
-Below are some tips and guidelines to get started with <strong>contributing to the ParaMonte kernel routines</strong>.</p>
+Below are some tips and guidelines to get started with <strong>contributing to the ParaMonte Fortran routines</strong>.</p>
 
 <h2 id="initial-steps">Initial steps</h2>
 
 <ul>
   <li>First, read the <a href="../general/" target="_blank">general development guidelines</a>.</li>
   <li>Take a look at the <a href="https://github.com/cdslaborg/paramonte/issues" target="_blank">issues</a> page. 
-Make sure you find an open issue <strong>about the kernel routines</strong> and that you do not duplicate someone else’s work.</li>
+Make sure you find an open issue <strong>about the Fortran routines</strong> and that you do not duplicate someone else’s work.</li>
   <li>If your contribution does not exist as an issue, post a <a href="https://github.com/cdslaborg/paramonte/issues/new/choose" target="_blank">new issue</a> discussing the changes you’re proposing to implement, 
 whether bug fix(es) or enhancement/feature request(s), or give the rest of developers a heads up that you are going to start work on <a href="https://github.com/cdslaborg/paramonte/issues" target="_blank">an open issue</a>.</li>
   <li><a href="https://help.github.com/articles/fork-a-repo/" target="_blank">Fork the ParaMonte git project</a> to your private account.</li>
@@ -778,13 +779,13 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 
 <h2 id="kernel-development-conventions">Kernel development conventions</h2>
 
-<p>Pay careful attention to the following conventions used in the development of the kernel routines.</p>
+<p>Pay careful attention to the following conventions used in the development of the Fortran routines.</p>
 
 <h3 id="preprocessor-directives">Preprocessor directives</h3>
 
-<p>The kernel routines of ParaMonte heavily rely on the compiler preprocessing directives to implement multiple completely different parallelism paradigms (serial, MPI, Coarray) that are specifically tailored for the needs of multiple completely different programming languages (C, C++, Fortran, Julia, MATLAB, Python, R, …) for different builds (<code>debug</code>, <code>testing</code>, <code>release</code>), for different operating systems (<code>Windows</code>, <code>Linux</code>, <code>macOS</code>, <code>WSL</code>), and many more.</p>
+<p>The Fortran routines of ParaMonte heavily rely on the compiler preprocessing directives to implement multiple completely different parallelism paradigms (serial, MPI, Coarray) that are specifically tailored for the needs of multiple completely different programming languages (C, C++, Fortran, Julia, MATLAB, Python, R, …) for different builds (<code>debug</code>, <code>testing</code>, <code>release</code>), for different operating systems (<code>Windows</code>, <code>Linux</code>, <code>macOS</code>, <code>WSL</code>), and many more.</p>
 
-<p>Despite significant efforts to minimize the use of preprocessor directive in the kernel routines, their frequent usage is unavoidable as they greatly minimize the cost of development. Simultaneously, however, the preprocessor directive can increase confusion and and lead to implicit bugs that are hard to detect.</p>
+<p>Despite significant efforts to minimize the use of preprocessor directive in the Fortran routines, their frequent usage is unavoidable as they greatly minimize the cost of development. Simultaneously, however, the preprocessor directive can increase confusion and and lead to implicit bugs that are hard to detect.</p>
 
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Any code section that requires some specific operating system, platform, compiler, programming language, compiler settings, or parallelism paradigms must be fenced with the appropriate preprocessor macros such that it is executed only in the appropriate circumstances. Failure to do so, will lead to a non-portable codebase. In general, there must exist an <code>#else</code> preprocessor section for any fenced code section that appropriately handles other possible scenarios, if the other scenarios are not possible, it is followed by an <code>#error "error message"</code> preprocessor directive.</div>
 
@@ -840,21 +841,21 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 <p>There are currently two preprocessor directives that determine the type of parallelism to which the code section sandwiched by the preprocessor macro belongs.</p>
 
 <ol>
-  <li>The <code>MPI_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to MPI-parallelized versions of the kernel routines.</li>
-  <li>The <code>CAF_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to CAF-parallelized versions of the kernel routines (Coarray parallelism).</li>
-  <li>The <code>OMP_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to OMP-parallelized versions of the kernel routines (OpenMP parallelism). As of Dec 2020, there is no section of the kernel routines uses OpenMP parallelism.</li>
+  <li>The <code>MPI_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to MPI-parallelized versions of the Fortran routines.</li>
+  <li>The <code>CAF_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to CAF-parallelized versions of the Fortran routines (Coarray parallelism).</li>
+  <li>The <code>OMP_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any code section that exclusively belongs to OMP-parallelized versions of the Fortran routines (OpenMP parallelism). As of Dec 2020, there is no section of the Fortran routines uses OpenMP parallelism.</li>
 </ol>
 
 <p>For example, if a section is MPI-parallelized, it must be fenced with the following preprocessor directive,</p>
 
-<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#if defined MPI_ENABLED</span><span class="w">
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#if MPI_ENABLED</span><span class="w">
 </span><span class="k">call</span><span class="w"> </span><span class="n">mpi_initialized</span><span class="p">(</span><span class="w"> </span><span class="n">isInitialized</span><span class="p">,</span><span class="w"> </span><span class="n">ierrMPI</span><span class="w"> </span><span class="p">)</span><span class="w">
 </span><span class="cp">#endif</span><span class="w">
 </span></code></pre></div></div>
 
 <p>or, if a section must be executed in either MPI or Coarray parallelisms, it must be fenced via the following preprocessor directive,</p>
 
-<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#if defined CAF_ENABLED || defined MPI_ENABLED</span><span class="w">
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#if CAF_ENABLED || MPI_ENABLED</span><span class="w">
 </span><span class="kt">integer</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">imageID</span><span class="w">
 </span><span class="cp">#endif</span><span class="w">
 </span></code></pre></div></div>
@@ -882,7 +883,7 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 
 <h4 id="library-interface-preprocessor-directives">Library interface preprocessor directives</h4>
 
-<p>To make the ParaMonte an inter-operable cross-language library, it is necessary to tailor sections of code for the particular languages of interest. The kernel connection to all languages other than Fortran is provided via the <code>FCI_ENABLED</code> preprocessor macro in the ParaMonte library.</p>
+<p>To make the ParaMonte an inter-operable cross-language library, it is necessary to tailor sections of code for the particular languages of interest. The Fortran connection to all languages other than Fortran is provided via the <code>FCI_ENABLED</code> preprocessor macro in the ParaMonte library.</p>
 
 <ol>
   <li>The <code>CFI_ENABLED</code> preprocessor macro must be defined with value <code>1</code> for any section of the code that is meant to be accessible from any programming language other than Fortran, most importantly, the C programming language.</li>
@@ -903,12 +904,12 @@ whether bug fix(es) or enhancement/feature request(s), or give the rest of devel
 
 <h3 id="coding-style-conventions">Coding style conventions</h3>
 
-<p>The following coding style are enforced within the kernel files. 
+<p>The following coding style are enforced within the Fortran files. 
 If you do not follows these rules in your contribution, please provide an explanation and justification of the alternative approach that you have taken in your contribution.</p>
 
 <ul>
   <li>
-    <p><a href="../general/#general-coding-style-conventions" target="_blank">Strict naming conventions are enforced</a> within the entire library, including the kernel routines.</p>
+    <p><a href="../general/#general-coding-style-conventions" target="_blank">Strict naming conventions are enforced</a> within the entire library, including the Fortran routines.</p>
   </li>
   <li>
     <p>Strict semantic compliance with the latest Fortran standard (2018).</p>
@@ -935,29 +936,34 @@ Why? module variables are global, at least within the scope of the module, and a
   <li>
     <p>All constants (parameters) are upper-case separated by underscore. Example: <code>FILE_EXT = ".txt"</code>.</p>
   </li>
-  <li>All module names must begin with an uppercase letter and more importantly, must end with the prefix <code>_mod</code>. Example: <code>ParaMCMC_mod</code>.<br />
+  <li>All module names must begin with an uppercase letter and more importantly, must end with the prefix <code>pm_</code> standing for the <code>ParaMonte</code> library. Example: <code>pm_sampling</code>.<br />
 <strong>Why?</strong> This helps create multiple different entity names from a single base name. For example,
-    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span><span class="w"> </span><span class="n">String_mod</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">String_type</span><span class="w">
-</span><span class="k">type</span><span class="p">(</span><span class="n">String_type</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">string</span><span class="w">
+    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span><span class="w"> </span><span class="n">pm_str</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">str_type</span><span class="w">
+</span><span class="k">type</span><span class="p">(</span><span class="n">str_type</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">str</span><span class="w">
 </span></code></pre></div>    </div>
   </li>
   <li>
-    <p>Each module must be stored in a separate source file and the name of the source file must be the same as the module name, unless there is a good justification to do it otherwise. This is a strict rule to maintain the integrity of the library source file and the build scripts.</p>
+    <p>Each module must be stored in a separate source file and the name of the source file must be the same as the module name, 
+unless there is a good justification to do it otherwise. This is a strict rule to maintain the integrity of the library source file and the build scripts.</p>
   </li>
   <li>
-    <p>All submodule names must begin with an uppercase letter and more importantly, must end with the prefix <code>_smod</code>. Example: <code>Routines_smod</code>.</p>
+    <p>Modules should almost always contain only generic interfaces to functionalities.</p>
   </li>
-  <li>If a module has submodules, the name of the submodule file should follow the module name after <code>@</code>. For example the following submodule,
-    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">submodule</span><span class="w"> </span><span class="p">(</span><span class="n">Decoration_mod</span><span class="p">)</span><span class="w"> </span><span class="n">Routines_smod</span><span class="w">
+  <li>If a module has submodules, the name of the submodule should follow the module name after <code>@</code> in the actual file name containing the submodule. 
+For example the following submodule,
+    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">submodule</span><span class="w"> </span><span class="p">(</span><span class="n">pm_display</span><span class="p">)</span><span class="w"> </span><span class="n">routines</span><span class="w">
 </span><span class="err">...</span><span class="w">
-</span><span class="k">end</span><span class="w"> </span><span class="k">submodule</span><span class="w"> </span><span class="n">Routines_smod</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">submodule</span><span class="w"> </span><span class="n">routines</span><span class="w">
 </span></code></pre></div>    </div>
-    <p>will have to be stored in a source file with the name <code>Decoration_mod@Routines_smod.f90</code>.</p>
+    <p>will have to be stored in a source file with the name <code>pm_display@routines.f90</code>.</p>
   </li>
-  <li>All type and class names must begin with an uppercase letter and more importantly, must end with the prefix <code>_type</code>. Example: <code>ParaMCMC_type</code>.<br />
+  <li>
+    <p>Each module should generally associate with only one submodule named <code>routines</code> which contains the implementation of the generic interfaces in the parent module.</p>
+  </li>
+  <li>All type and class names must begin with an uppercase letter and more importantly, must end with the prefix <code>_type</code>. Example: <code>sampler_type</code>.<br />
 <strong>Why?</strong> This helps create multiple different entity names from a single base name. For example,
-    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span><span class="w"> </span><span class="n">String_mod</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">String_type</span><span class="w">
-</span><span class="k">type</span><span class="p">(</span><span class="n">String_type</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">string</span><span class="w">
+    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span><span class="w"> </span><span class="n">pm_str</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">str_type</span><span class="w">
+</span><span class="k">type</span><span class="p">(</span><span class="n">str_type</span><span class="p">)</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="n">str</span><span class="w">
 </span></code></pre></div>    </div>
   </li>
 </ul>
@@ -970,15 +976,25 @@ Why? module variables are global, at least within the scope of the module, and a
 However, when needed, comments are encouraged and should be kept informative and concise.</p>
   </li>
   <li>
-    <p>Use the <a href="">Doxygen</a> convention and style for code annotations and documentation. 
-See the ParaMonte kernel source code for samples of Doxygen documentations of the kernel routines.</p>
+    <p>Use the <a href="https://www.doxygen.nl/manual/docblocks.html">Doxygen</a> convention and style for code annotations and documentation. 
+See the ParaMonte Fortran source code for samples of Doxygen documentations of the Fortran routines.</p>
   </li>
   <li>
     <p>If there is any work or comment to be left for the future developer(s) including yourself, use the syntax of Doxygen 
 <code>\todo</code> (or less preferably <code>@todo</code>) to define future tasks and <code>\author</code> (or less preferably <code>@author</code>) to introduce yourself 
 to the future developer within the code comments. For example,</p>
-    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">! \todo: There is room for performance improvements here by pre-computing the following array in procedure xxx.</span><span class="w">
+    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">!&gt;  \todo</span><span class="w">
+</span><span class="c1">!&gt;  \pvhigh</span><span class="w">
+</span><span class="c1">!&gt;  There is room for performance improvements here by pre-computing the following array in procedure xxx.</span><span class="w">
 </span></code></pre></div>    </div>
+    <p>The ParaMonte Doxygen documentation contains five predefined commands that indicate the importance of the task to do.</p>
+    <ul>
+      <li><code>\pvhigh</code> : Priority Very High</li>
+      <li><code>\phigh</code> : Priority High</li>
+      <li><code>\pmed</code> : Priority Medium</li>
+      <li><code>\plow</code> : Priority Low</li>
+      <li><code>\pvlow</code> : Priority Very Low</li>
+    </ul>
   </li>
 </ul>
 
@@ -987,8 +1003,8 @@ to the future developer within the code comments. For example,</p>
 <p>Once you have implemented your contributions,</p>
 
 <ul>
-  <li>Do not forget to test your contributions by adding new kernel tests to the unit-testing framework of the library.</li>
-  <li>Also, generate code coverage report to ensure your contributions do not lower the overall code coverage of the kernel routines.</li>
+  <li>Do not forget to test your contributions by adding new Fortran tests to the unit-testing framework of the library.</li>
+  <li>Also, generate code coverage report to ensure your contributions do not lower the overall code coverage of the Fortran routines.</li>
   <li>Follow the <a href="../general/#all-contributors" target="_blank">generic contribution guidelines</a> to submit and merge your contributions with the main branch of the library on GitHub.</li>
 </ul>
 
@@ -1095,10 +1111,10 @@ to the future developer within the code comments. For example,</p>
 
         <div class="col-lg-12 footer">
             &copy;2024 <a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a><br />
-            Last updated on November 16, 2024<br/>
+            Last updated on November 17, 2024<br/>
             
         <p>
-            <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/latest/images/logo.png" }}" alt="cdslab.org" /></a>
+            <a href="https://www.cdslab.org" target="_blank"><img class="footerlogo" src="https://www.cdslab.org/paramonte/generic/2/images/logo.png" }}" alt="cdslab.org" /></a>
             <!-- hitwebcounter Code START -->
 
 <div style="text-align:right; float: none; width: 100%; font-size:0.9em; margin-top: -15px">
