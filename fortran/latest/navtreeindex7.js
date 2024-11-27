@@ -1,7 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"namespacemembers_vars_g.html":[22,1,2,6],
-"namespacemembers_vars_h.html":[22,1,2,7],
 "namespacemembers_vars_i.html":[22,1,2,8],
 "namespacemembers_vars_j.html":[22,1,2,9],
 "namespacemembers_vars_k.html":[22,1,2,10],
@@ -249,5 +247,7 @@ var NAVTREEINDEX7 =
 "namespacepm__distBand.html":[22,0,58],
 "namespacepm__distBand.html#a5a09169570a145e4052d8cd786440051":[22,0,58,11],
 "namespacepm__distBand.html#abe261ea8b673152237382e96a6c552f1":[22,0,58,9],
-"namespacepm__distBand.html#ac65e88f6cedd1f541923cefb457cfb7d":[22,0,58,10]
+"namespacepm__distBand.html#ac65e88f6cedd1f541923cefb457cfb7d":[22,0,58,10],
+"namespacepm__distBern.html":[22,0,59],
+"namespacepm__distBern.html#aa146e4e0cd0b3bbd25bba995c30c1d05":[22,0,59,4]
 };

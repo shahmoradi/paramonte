@@ -10,9 +10,11 @@ var structpm__io_1_1display__type =
     [ "height", "structpm__io_1_1display__type.html#ab41708c75679b902eeaa7d71cad86eed", null ],
     [ "mark", "structpm__io_1_1display__type.html#a29e7b8830049f2cd1d6ccfd68f5f6bd9", null ],
     [ "note", "structpm__io_1_1display__type.html#ae0ce3289321f14824f5dd8946178e6af", null ],
+    [ "sticky", "structpm__io_1_1display__type.html#a11fe8667792d67447c5c1c1a8f3747fa", null ],
     [ "stop", "structpm__io_1_1display__type.html#a377c615e86ce5bcb940a483056165299", null ],
     [ "text", "structpm__io_1_1display__type.html#a1ce0622e9bc44540044b26a00c2d7e44", null ],
     [ "tmsize", "structpm__io_1_1display__type.html#a3e66a4ca7f6c5cf39d1d86467376a562", null ],
+    [ "uninit", "structpm__io_1_1display__type.html#aa9672dde691be0e140bb791234ed51dd", null ],
     [ "unit", "structpm__io_1_1display__type.html#a51586aef506b1b42b849fc90bbc9a9bb", null ],
     [ "warn", "structpm__io_1_1display__type.html#a1bbb47a0aa0e36a7e6e5df932d5f38c5", null ],
     [ "width", "structpm__io_1_1display__type.html#a0dee01167dca3f5dfe032abc7a91396b", null ]

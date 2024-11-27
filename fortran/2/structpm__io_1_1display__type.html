@@ -140,6 +140,7 @@ $(document).ready(function(){initNavTree('structpm__io_1_1display__type.html',''
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="structpm__io_1_1display__type-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">pm_io::display_type Type Reference</div></div>
 </div><!--header-->
@@ -198,6 +199,18 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a377c615e86ce5bcb940a483056165299"><td class="memItemLeft" align="right" valign="top">type(<a class="el" href="structpm__err_1_1stop__type.html">stop_type</a>), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpm__io_1_1display__type.html#a377c615e86ce5bcb940a483056165299">stop</a></td></tr>
 <tr class="memdesc:a377c615e86ce5bcb940a483056165299"><td class="mdescLeft">&#160;</td><td class="mdescRight">The scalar of type <a class="el" href="structpm__err_1_1stop__type.html">stop_type</a> containing the runtime settings and a method to and stop the program and display program abortion messages.  <a href="structpm__io_1_1display__type.html#a377c615e86ce5bcb940a483056165299">More...</a><br /></td></tr>
 <tr class="separator:a377c615e86ce5bcb940a483056165299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a11fe8667792d67447c5c1c1a8f3747fa"><td class="memItemLeft" align="right" valign="top">logical(LK)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpm__io_1_1display__type.html#a11fe8667792d67447c5c1c1a8f3747fa">sticky</a> = .false._LK</td></tr>
+<tr class="memdesc:a11fe8667792d67447c5c1c1a8f3747fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The scalar <code>logical</code> of default kind <a class="el" href="namespacepm__kind.html#a3f17ea307d594843815ae49bcc6ffdac">LK</a>. If <code>.true.</code> the relevant properties of the current object can be later changed by its methods.  <a href="structpm__io_1_1display__type.html#a11fe8667792d67447c5c1c1a8f3747fa">More...</a><br /></td></tr>
+<tr class="separator:a11fe8667792d67447c5c1c1a8f3747fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9672dde691be0e140bb791234ed51dd"><td class="memItemLeft" align="right" valign="top">logical(LK)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpm__io_1_1display__type.html#aa9672dde691be0e140bb791234ed51dd">uninit</a> = .true._LK</td></tr>
+<tr class="memdesc:aa9672dde691be0e140bb791234ed51dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The scalar <code>logical</code> of default kind <a class="el" href="namespacepm__kind.html#a3f17ea307d594843815ae49bcc6ffdac">LK</a> that is internally set to <code>.false.</code> once the object is constructed.<br  />
+ The presence of this variable is to ensure seamless functioning of objects of <a class="el" href="structpm__io_1_1display__type.html">display_type</a> when the user forgets to call the type constructor.<br  />
+ The constructor call is critical for setting the allocatable components.<br  />
+  <a href="structpm__io_1_1display__type.html#aa9672dde691be0e140bb791234ed51dd">More...</a><br /></td></tr>
+<tr class="separator:aa9672dde691be0e140bb791234ed51dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Generate and return an object of type <a class="el" href="structpm__io_1_1display__type.html">display_type</a>. </p>
@@ -864,6 +877,32 @@ Help us justify its continued development and maintenance by acknowledging its b
 
 </div>
 </div>
+<a id="a11fe8667792d67447c5c1c1a8f3747fa" name="a11fe8667792d67447c5c1c1a8f3747fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11fe8667792d67447c5c1c1a8f3747fa">&#9670;&nbsp;</a></span>sticky</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">logical(LK) pm_io::display_type::sticky = .false._LK</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The scalar <code>logical</code> of default kind <a class="el" href="namespacepm__kind.html#a3f17ea307d594843815ae49bcc6ffdac">LK</a>. If <code>.true.</code> the relevant properties of the current object can be later changed by its methods. </p>
+
+<p class="definition">Definition at line <a class="el" href="pm__io_8F90_source.html#l10283">10283</a> of file <a class="el" href="pm__io_8F90_source.html">pm_io.F90</a>.</p>
+
+</div>
+</div>
 <a id="a377c615e86ce5bcb940a483056165299" name="a377c615e86ce5bcb940a483056165299"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a377c615e86ce5bcb940a483056165299">&#9670;&nbsp;</a></span>stop</h2>
 
@@ -915,6 +954,35 @@ Help us justify its continued development and maintenance by acknowledging its b
 <p>The scalar <code>integer</code> of default kind <a class="el" href="namespacepm__kind.html#aa8e76d653e681cfd34defa591f079f35">IK</a> containing the number of records to skip on top of the current record. </p>
 
 <p class="definition">Definition at line <a class="el" href="pm__io_8F90_source.html#l10290">10290</a> of file <a class="el" href="pm__io_8F90_source.html">pm_io.F90</a>.</p>
+
+</div>
+</div>
+<a id="aa9672dde691be0e140bb791234ed51dd" name="aa9672dde691be0e140bb791234ed51dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9672dde691be0e140bb791234ed51dd">&#9670;&nbsp;</a></span>uninit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">logical(LK) pm_io::display_type::uninit = .true._LK</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The scalar <code>logical</code> of default kind <a class="el" href="namespacepm__kind.html#a3f17ea307d594843815ae49bcc6ffdac">LK</a> that is internally set to <code>.false.</code> once the object is constructed.<br  />
+ The presence of this variable is to ensure seamless functioning of objects of <a class="el" href="structpm__io_1_1display__type.html">display_type</a> when the user forgets to call the type constructor.<br  />
+ The constructor call is critical for setting the allocatable components.<br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="pm__io_8F90_source.html#l10284">10284</a> of file <a class="el" href="pm__io_8F90_source.html">pm_io.F90</a>.</p>
 
 </div>
 </div>
@@ -981,7 +1049,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__io.html">pm_io</a></li><li class="navelem"><a class="el" href="structpm__io_1_1display__type.html">display_type</a></li>
-        <li class="footer">Generated on Tue Nov 19 2024 15:25:10 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Nov 26 2024 22:09:30 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

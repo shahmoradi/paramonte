@@ -277,7 +277,7 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="fortran_keywordflow">if</span> (stat<span class="fortran_operator_symbols"> /</span><span class="fortran_operator_symbols">= </span><span class="fortran_numeric_literal">0</span>)<span class="fortran_statement"> error stop</span> <span class="fortran_string">&quot;sampler failed.&quot;</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="fortran_statement">end</span></div>
 <div class="ttc" id="anamespacepm__sampling_html"><div class="ttname"><a href="namespacepm__sampling.html">pm_sampling</a></div><div class="ttdoc">This module contains procedures and generic interfaces for the ParaMonte library sampler routines.</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampling_8F90_source.html#l00033">pm_sampling.F90:33</a></div></div>
-<div class="ttc" id="anamespacepm__sampling_html_ace901062cc3b1f73596a4decd0ed64f2"><div class="ttname"><a href="namespacepm__sampling.html#ace901062cc3b1f73596a4decd0ed64f2">pm_sampling::runParaDRAMD</a></div><div class="ttdeci">integer(IK) function runParaDRAMD(getLogFunc, ndim, input)</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampling_8F90_source.html#l00943">pm_sampling.F90:944</a></div></div>
+<div class="ttc" id="anamespacepm__sampling_html_ace901062cc3b1f73596a4decd0ed64f2"><div class="ttname"><a href="namespacepm__sampling.html#ace901062cc3b1f73596a4decd0ed64f2">pm_sampling::runParaDRAMD</a></div><div class="ttdeci">integer(IK) function runParaDRAMD(getLogFunc, ndim, input)</div><div class="ttdef"><b>Definition:</b> <a href="pm__sampling_8F90_source.html#l01006">pm_sampling.F90:1007</a></div></div>
 </div><!-- fragment --> <br  />
  <a class="anchor" id="compile-unix-intel-runParaDRAM"></a><b>Example Unix compile command via Intel <code>ifort</code> compiler</b> <a href="#compile-unix-intel-runParaDRAM">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#!/usr/bin/env sh</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>rm main.exe</div>
@@ -407,8 +407,58 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 </dd></dl>
 <dl class="bug"><dt><b><a class="el" href="bug.html#_bug000070">Bug:</a></b></dt><dd><br  />
 <b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
+<b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021.11.1 20231117 <br  />
+<b>Description:</b> Intel Classic Fortran Compiler <code>ifort</code> returns an *already allocated error with the statement <code>call setResized(scaling, lenScaling)</code> which persists in both release and debug modes.<br  />
+ The full debug message is the following:<br  />
+ </dd></dl>
+<div class="fragment"><div class="line">forrtl: severe (151): allocatable array is already allocated</div>
+<div class="line">Image              PC                Routine            Line        Source</div>
+<div class="line">libparamonte.so    00007FCFBA641EB8  Unknown               Unknown  Unknown</div>
+<div class="line">libparamonte.so    00007FCFB6E6D4A3  pm_arrayresize_MP         170  pm_arrayResize@routines.inc.F90</div>
+<div class="line">libparamonte.so    00007FCFB72B5BD6  pm_parallelism_MP          77  pm_parallelism@routines.inc.F90</div>
+<div class="line">libparamonte.so    00007FCFB6263F43  pm_sampling_MP_ge         394  pm_sampling@routines.inc.F90</div>
+<div class="line">libparamonte.so    00007FCFB61F0194  runParaDRAMD              136  pm_sampling@routines.inc.F90</div>
+</div><!-- fragment --><p> Note that the line numbers for this file in the message above have changed because of code change in this file.<br  />
+ This error does not occur when the library is compiled with GNU Fortran Compiler <code>gfortran</code> version 13.<br  />
+ This error does not occur when the library is compiled with Intel LLVM Fortran Compiler <code>ifx</code> version 2025.0.0 20241008.<br  />
+ It seems like this error occurs because of placing the following typed variable <code>speedup</code> in the <code>forkjoin_parallelism_block</code> below.<br  />
+ <br  />
+<b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the type definition and the typed variable declaration are taken out of the block and placed below.<br  />
+ This must be checked with newer Intel compilers as Intel Classic Fortran Compiler <code>ifort</code> version 2021.11.1 20231117 is being phased out by Intel.<br  />
+</p>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000071">Bug:</a></b></dt><dd><br  />
+<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
+<b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021.11.1 20231117 <br  />
+<b>Description:</b> The following declarations belong to only parallel multichain modes within a nested <code>block</code>.<br  />
+ </dd></dl>
+<div class="fragment"><div class="line"><span class="fortran_statement">type</span> :: probKS_type</div>
+<div class="line"><span class="fortran_statement">    real</span>(RKG)       ,<span class="fortran_attribute"> allocatable</span>   :: values(:)</div>
+<div class="line"><span class="fortran_statement">    real</span>(RKG)                       :: minval</div>
+<div class="line">    <span class="fortran_statement">integeR</span>(IK)                     :: minloc</div>
+<div class="line">    <span class="fortran_statement">integeR</span>(IK)                     :: minpid</div>
+<div class="line"><span class="fortran_statement">end type</span></div>
+<div class="line"> </div>
+<div class="line"><span class="fortran_statement">type</span> :: sampleLogFuncState_type</div>
+<div class="line">    <span class="fortran_statement">character</span>(:, SK),<span class="fortran_attribute"> allocatable</span>   :: filePath</div>
+<div class="line"><span class="fortran_statement">    real</span>(RKG)       ,<span class="fortran_attribute"> allocatable</span>   :: thisImage(:,:)</div>
+<div class="line"><span class="fortran_statement">    real</span>(RKG)       ,<span class="fortran_attribute"> allocatable</span>   :: thatImage(:,:)</div>
+<div class="line">    <span class="fortran_statement">type</span>(probKS_type)               :: probKS</div>
+<div class="line"><span class="fortran_statement">end type</span></div>
+</div><!-- fragment --><p> But they had to be taken out of their local scope because Intel Classic Fortran Compiler <code>ifort</code> version 2021.11.1 20231117 cannot compile them with an ICE message as below.<br  />
+ </p><div class="fragment"><div class="line">pm_sampling@routines.inc.F90(1267): catastrophic error:</div>
+<div class="line">**Internal compiler error: internal abort** Please report this error along with the circumstances in which it occurred in a Software Problem Report.</div>
+<div class="line">Note: File and line given may not be explicit cause of this error.</div>
+<div class="line">compilation aborted for /home/amir/git/paramonte/src/fortran/main/pm_sampling@routines.F90 (code 1)</div>
+</div><!-- fragment --><p> <br  />
+<b>Remedy</b> (as of ParaMonte Library version 2.0.0): For now, the type definition and the typed variable declaration are taken out of the block and placed below.<br  />
+ This must be checked with newer Intel compilers as Intel Classic Fortran Compiler <code>ifort</code> version 2021.11.1 20231117 is being phased out by Intel.<br  />
+ This bug may have the same origins as the bug in the above.<br  />
+</p>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000072">Bug:</a></b></dt><dd><br  />
+<b>Status:</b> <span style="color:red"><b>Unresolved</b></span> <br  />
 <b>Source:</b> Intel Classic Fortran Compiler <code>ifort</code> version 2021.11.0 20231010 <br  />
-<b>Description:</b> The <code>runParaDRAML</code> interface for <code>long double</code> yields a segmentation fault error. <br  />
+<b>Description:</b> The <code>runParaDRAML</code> interface for <code>long double</code> yields a segmentation fault error.<br  />
+ <br  />
 <b>Remedy</b> (as of ParaMonte Library version 2.0.0): None as of today.<br  />
 </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000406">Todo:</a></b></dt><dd><span class="pvhigh">Critical Priority</span>: The current tests for <code>long double</code> interface fail with Intel LLVM Fortran Compiler <code>ifx</code> and Intel LLVM C/C++ Compiler <code>icx</code> compilers.<br  />
@@ -417,7 +467,7 @@ The condition <code>0 &lt; ndim</code> must hold for the corresponding input arg
 </dd></dl>
 <p ><br  />
 <a class="anchor" id="final-runParaDRAM"></a><b>Final Remarks</b> <a href="#final-runParaDRAM">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampling.F90#L924 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_sampling.F90#L987 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -453,7 +503,7 @@ Variables</h2></td></tr>
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_23395307b1b7d12df5db6f58c451dcdf.html">fortran</a></li><li class="navelem"><a class="el" href="dir_acc2146ae7e18e9f4b01d04597c074ce.html">main</a></li><li class="navelem"><a class="el" href="pm__sampling_8F90.html">pm_sampling.F90</a></li>
-        <li class="footer">Generated on Tue Nov 19 2024 15:25:06 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Nov 26 2024 22:09:26 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

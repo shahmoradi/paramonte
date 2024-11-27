@@ -1,4 +1,0 @@
-var index_8m =
-[
-    [ "index", "index_8m.html#a5e9da7e1ba3f2f6d159127bb7d902c6b", null ]
-];

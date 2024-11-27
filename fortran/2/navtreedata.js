@@ -99,10 +99,6 @@ var NAVTREE =
     [ "MATLAB", "usergroup4.html", [
       [ "latest", "../../matlab/latest/index.html", null ],
       [ "3", "../../matlab/3/index.html", null ]
-    ] ],
-    [ "Python", "usergroup5.html", [
-      [ "latest", "../../python/latest/index.html", null ],
-      [ "3", "../../python/3/index.html", null ]
     ] ]
   ] ]
 ];
@@ -110,29 +106,29 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "../../c/2/index.html",
-"interfacepm__arraySort_1_1isDescendingAll.html",
-"interfacepm__container_1_1operator_07_3_08.html",
-"interfacepm__distLogNorm_1_1getLogNormLogPDF.html",
-"interfacepm__except_1_1getInfNeg.html",
-"interfacepm__matrixInit_1_1getMatInit.html",
-"interfacepm__strASCII_1_1isStrDigit.html",
-"namespacemembers_vars_g.html",
-"namespacepm__distBern.html",
-"namespacepm__kind.html#adf0fd3c248f14b733bc8cd7876f75bef",
-"namespacepm__polation.html#a61719f8b38de9c4f23041192fae49b50",
-"namespacepm__sysShell.html#aa335b50b05af61734f795fddfeb714b0",
-"pm__control_8F90.html#a6f42c277ea7f14c4ede085b10f0dce5d",
-"pm__io_8F90.html#ab8a60cd6e22f74bec8e3303127d968c9",
-"pm__mathNumSys_8F90_source.html",
-"pm__sampleCor_8F90.html#ad05b7e49e523130e94e9f98edd0b3cec",
-"pm__val2real_8F90.html#aa303d77083353e115ac72aebe105cd13",
-"structpm__container_1_1ccr__pdt.html#adb311c239d3eb5ca52e6f2c181f1d476",
-"structpm__distCov_1_1onion__type.html",
-"structpm__io_1_1openArg__type.html#a869a030b8598af7b4d0f3851f6c5cdac",
-"structpm__parallelism_1_1image__type.html#a294503399055c8ad4163f1e0d730cc29",
-"structpm__quadTest_1_1intSinCos__type.html#a80c485f5ee38d06eef9a65b93e72c523",
-"structpm__strANSI_1_1styleSeq__type.html#a5492299631d76665fcc77da4c3d906d4",
-"structpm__timer_1_1timer__type.html#ae94ec0c721f25693d6faee82f950de1a"
+"interfacepm__arraySort_1_1isSorted.html",
+"interfacepm__container_1_1operator_07_3_0a_08.html",
+"interfacepm__distLogNorm_1_1setLogNormCDF.html",
+"interfacepm__except_1_1getInfPos.html",
+"interfacepm__matrixInit_1_1setMatInit.html",
+"interfacepm__strASCII_1_1isStrDigitAll.html",
+"namespacemembers_vars_i.html",
+"namespacepm__distBeta.html",
+"namespacepm__kind.html#ae32fc92c05533c10f032e592be876750",
+"namespacepm__polation.html#a9449a68dcfe5302a1e1533bfdc31f2a1",
+"namespacepm__test.html#a15487e9f824f33c4d5973503823cedba",
+"pm__control_8F90.html#abdd3a9b0ac7bf9c62a1b7e2618fcb351",
+"pm__io_8F90.html#ad2dffa45f986574cbd90b3ceef164d7c",
+"pm__mathRootTest_8F90.html#aae2b8aa5cb1ae92c8d48bcb0ea096f49",
+"pm__sampleCov_8F90.html",
+"pm__val2str_8F90.html",
+"structpm__container_1_1ccr__pdt.html#a0b49eaf8af006c30d6e2e1e96632dd6a",
+"structpm__distCov_1_1gram__type.html",
+"structpm__io_1_1openArg__type.html#a60bd65b469562ef399b1e5fcf45da441",
+"structpm__memory_1_1memory__type.html",
+"structpm__quadTest_1_1intPentaGammaInf__type.html#ad170c7c36d3eb1d151ccb9ec41a1d13d",
+"structpm__strANSI_1_1styleSeq__type.html#a408c4a6589a8c3accc6f5ea45b402542",
+"structpm__timer_1_1timer__type.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
