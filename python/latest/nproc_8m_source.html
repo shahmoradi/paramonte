@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/lib/+mpi/+runtime/nproc.m Source File</title>
+    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/lib/mpi/runtime/nproc.m Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -143,7 +143,7 @@ $(document).ready(function(){initNavTree('nproc_8m_source.html',''); initResizab
 <div class="contents">
 <a href="nproc_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>%&gt;  @brief</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Return the runtime number of MPI processes</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;  with <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> the `mpiexec` launcher may have been invoked.&lt;br&gt;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;  with <a class="code hl_function" href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">which</a> the `mpiexec` launcher may have been invoked.&lt;br&gt;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  @details</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  Otherwise, <span class="keywordflow">return</span> `1` <span class="keywordflow">if</span> no use of `mpiexec` launcher is</div>
@@ -152,7 +152,7 @@ $(document).ready(function(){initNavTree('nproc_8m_source.html',''); initResizab
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  An output value of ``&gt;1`` can be used as an indication of the use</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;  of the ``mpiexec`` launcher in launching the ParaMonte library.&lt;br&gt;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;  @param[in]  <a class="code hl_function" href="lib_2_09mpi_2vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a>  :   See the corresponding argument of [pm.lib.mpi.runtime.detect](@ref <a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>).&lt;br&gt;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;  @param[in]  <a class="code hl_function" href="vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a>  :   See the corresponding argument of [pm.lib.mpi.runtime.detect](@ref <a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>).&lt;br&gt;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;                          (**optional**. The <span class="keywordflow">default</span> is set by [pm.lib.mpi.runtime.detect](@ref <a class="code hl_function" href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a>).)</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;  @<span class="keywordflow">return</span></div>
@@ -167,7 +167,7 @@ $(document).ready(function(){initNavTree('nproc_8m_source.html',''); initResizab
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;      value = pm.lib.mpi.runtime.nproc()</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;      value = pm.lib.mpi.runtime.nproc([])</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;      value = pm.lib.mpi.runtime.nproc(<a class="code hl_function" href="lib_2_09mpi_2vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a>)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;      value = pm.lib.mpi.runtime.nproc(<a class="code hl_function" href="vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a>)</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;  <span class="keyword">@end</span>code</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;</div>
@@ -181,16 +181,16 @@ $(document).ready(function(){initNavTree('nproc_8m_source.html',''); initResizab
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;  @author</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;  @FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>%&gt;  @AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="nproc_8m.html#a7b75044cfa7bc052db0435ec377c41fe">   41</a></span>function value = <a class="code hl_function" href="nproc_8m.html#a7b75044cfa7bc052db0435ec377c41fe">nproc</a>(<a class="code hl_function" href="lib_2_09mpi_2vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a>)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="nproc_8m.html#a7b75044cfa7bc052db0435ec377c41fe">   41</a></span>function value = <a class="code hl_function" href="nproc_8m.html#a7b75044cfa7bc052db0435ec377c41fe">nproc</a>(<a class="code hl_function" href="vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a>)</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span>  nargin &lt; 1</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <a class="code hl_function" href="lib_2_09mpi_2vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a> = [];</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <a class="code hl_function" href="vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a> = [];</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    end</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    [~, value, ~] = pm.lib.mpi.runtime.detect(<a class="code hl_function" href="lib_2_09mpi_2vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    [~, value, ~] = pm.lib.mpi.runtime.detect(<a class="code hl_function" href="vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a>);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    value = max(1, value);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    %<span class="keywordflow">if</span>  nargin &lt; 1</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    %    vendorList = [];</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    %<span class="keywordflow">else</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    %    vendorList = string(<a class="code hl_function" href="lib_2_09mpi_2vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    %    vendorList = string(<a class="code hl_function" href="vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a>);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    %end</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    %<span class="keywordflow">if</span>  pm.array.len(vendorList) == 0</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    %    vendorList = pm.lib.mpi.choices();</div>
@@ -222,17 +222,17 @@ $(document).ready(function(){initNavTree('nproc_8m_source.html',''); initResizab
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    %end</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>end</div>
 <div class="ttc" id="adetect_8m_html_a5901bf92e9e2fb965a99c71fd0f0fa90"><div class="ttname"><a href="detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90">detect</a></div><div class="ttdeci">function detect(in vendor)</div><div class="ttdoc">Return the MPI image count and current image ID (e.g., MPI rank + 1) and the MPI library name as it a...</div></div>
-<div class="ttc" id="alib_2_09mpi_2vendor_8m_html_a49f012420ef4aa233acf94db3d3294c2"><div class="ttname"><a href="lib_2_09mpi_2vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a></div><div class="ttdeci">function vendor(in name)</div><div class="ttdoc">Return the MPI library vendor name from the input MPI name based on the internal ParaMonte shared lib...</div></div>
 <div class="ttc" id="alib_8m_html_a3d11053ebcdfc6f0bef7af9c8d14fa13"><div class="ttname"><a href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a></div><div class="ttdeci">function lib()</div><div class="ttdoc">Return a scalar MATLAB string containing the path to the lib directory of the ParaMonte library packa...</div></div>
+<div class="ttc" id="anamespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which_html_a1b834b4e4b89ed9f7aae0da42263af15"><div class="ttname"><a href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">paramonte.sys.path.mpiexec.which.which</a></div><div class="ttdeci">def which(vendor=&quot;&quot;)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div><div class="ttdef"><b>Definition:</b> <a href="which_8py_source.html#l00001">which.py:1</a></div></div>
 <div class="ttc" id="anproc_8m_html_a7b75044cfa7bc052db0435ec377c41fe"><div class="ttname"><a href="nproc_8m.html#a7b75044cfa7bc052db0435ec377c41fe">nproc</a></div><div class="ttdeci">function nproc(in vendor)</div><div class="ttdoc">Return the runtime number of MPI processes with which the mpiexec launcher may have been invoked.</div></div>
-<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div></div>
+<div class="ttc" id="avendor_8m_html_a49f012420ef4aa233acf94db3d3294c2"><div class="ttname"><a href="vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2">vendor</a></div><div class="ttdeci">function vendor(in name)</div><div class="ttdoc">Return the MPI library vendor name from the input MPI name based on the internal ParaMonte shared lib...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_59f3c8de11b54eaed8c0ed6dc945fb43.html">lib</a></li><li class="navelem"><a class="el" href="dir_a5caef1adfce22e0b8cf25cb0b633a73.html">+mpi</a></li><li class="navelem"><a class="el" href="dir_08b015248d2f567cbfa3ed7330b39c46.html">+runtime</a></li><li class="navelem"><a class="el" href="nproc_8m.html">nproc.m</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:28 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_59f3c8de11b54eaed8c0ed6dc945fb43.html">lib</a></li><li class="navelem"><a class="el" href="dir_59591ca3a03286fc2f6d44a8a97da953.html">mpi</a></li><li class="navelem"><a class="el" href="dir_03e0b158d2ba7ec148a800fbbeeb311c.html">runtime</a></li><li class="navelem"><a class="el" href="nproc_8m.html">nproc.m</a></li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:55 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/matlab/+hashmap/addKeyVal.m Source File</title>
+    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/python/hashmap/addKeyVal.m Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -142,28 +142,28 @@ $(document).ready(function(){initNavTree('addKeyVal_8m_source.html',''); initRes
 </div><!--header-->
 <div class="contents">
 <a href="addKeyVal_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>%&gt;  @brief</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Return the input hashmap with the <span class="keyword">new</span> (key, val) appended,</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Return the input hashmap with the <span class="keyword">new</span> (<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f">key</a>, val) appended,</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;  only <span class="keywordflow">if</span> the input pair does not exist in the input hashmap.</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  @param[in]  key     :   The input scalar MATLAB <span class="keywordtype">string</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;                          containing the key to add to the input pair <a class="code hl_function" href="os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a>.</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  @param[in]  <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f">key</a>     :   The input scalar MATLAB <span class="keywordtype">string</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;                          containing the <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f">key</a> to add to the input pair <a class="code hl_function" href="namespaceparamonte_1_1os_1_1list.html#a24bc26566d86b0d986f6f8caa397edae">list</a>.</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;  </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;  @param[in]  val     :   The input value to be appended to the </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;                          input hashmap after the input ``key``.</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;                          input hashmap after the input ``<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f">key</a>``.</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;  </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;  @param[in]  hashmap :   The input cell array of even number of elements</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;                          containing a set of ``(key, val)`` pairs of the hashmap.</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;                          containing <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> set of ``(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f">key</a>, val)`` pairs of the hashmap.</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;  </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;  @<span class="keywordflow">return</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;  `hashnew`           :   The output cell array of even number of elements</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                          containing the input pair <a class="code hl_function" href="os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> and ``(key, val)`` pair.</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                          If the input ``key`` exists in the input ``hashmap``,</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;                          the input ``(key, val)`` pair will not be added.</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                          containing the input pair <a class="code hl_function" href="namespaceparamonte_1_1os_1_1list.html#a24bc26566d86b0d986f6f8caa397edae">list</a> and ``(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f">key</a>, val)`` pair.</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                          If the input ``<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f">key</a>`` exists in the input ``hashmap``,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;                          the input ``(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f">key</a>, val)`` pair will not be added.</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;  <span class="keyword">@interface</span>{<a class="code hl_function" href="addKeyVal_8m.html#aec02755d4a8ea4db012c89b7066ed477">addKeyVal</a>}</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;  @code{.py}</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;      hashnew = pm.matlab.hashmap.addKeyVal(key, val, hashmap)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;      hashnew = pm.matlab.hashmap.addKeyVal(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f">key</a>, val, hashmap)</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;  <span class="keyword">@end</span>code</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;</div>
@@ -178,26 +178,29 @@ $(document).ready(function(){initNavTree('addKeyVal_8m_source.html',''); initRes
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;  @JoshuaOsborne, May 21 2024, 10:39 PM, University of Texas at Arlington&lt;br&gt;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;  @FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;  @AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="addKeyVal_8m.html#aec02755d4a8ea4db012c89b7066ed477">   38</a></span>function hashnew = <a class="code hl_function" href="addKeyVal_8m.html#aec02755d4a8ea4db012c89b7066ed477">addKeyVal</a>(key, val, hashmap)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="addKeyVal_8m.html#aec02755d4a8ea4db012c89b7066ed477">   38</a></span>function hashnew = <a class="code hl_function" href="addKeyVal_8m.html#aec02755d4a8ea4db012c89b7066ed477">addKeyVal</a>(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f">key</a>, val, hashmap)</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    hashnew = hashmap;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span>  2 &lt; nargin &amp;&amp; 0 &lt; length(hashnew)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        [currentVal, failed] = pm.matlab.hashmap.getKeyVal(key, hashmap);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">if</span>  failed</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            hashnew = {hashnew{:}, key, val};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        [currentVal, failed] = pm.matlab.hashmap.getKeyVal(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f">key</a>, hashmap);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">if</span>  <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a8c243a4f459ad113b02ee7bba809d22f">failed</a></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            hashnew = {hashnew{:}, <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f">key</a>, val};</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        end</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        hashnew = {key, val}; % XXX is <span class="keyword">this</span> correct behavior?</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        hashnew = {<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f">key</a>, val}; % XXX is <span class="keyword">this</span> correct behavior?</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    end</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>end</div>
 <div class="ttc" id="aaddKeyVal_8m_html_aec02755d4a8ea4db012c89b7066ed477"><div class="ttname"><a href="addKeyVal_8m.html#aec02755d4a8ea4db012c89b7066ed477">addKeyVal</a></div><div class="ttdeci">function addKeyVal(in key, in val, in hashmap)</div><div class="ttdoc">Return the input hashmap with the new (key, val) appended, only if the input pair does not exist in t...</div></div>
-<div class="ttc" id="aos_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div><div class="ttdoc">Return a list of MATLAB strings containing the names of OS platforms supported by the ParaMonte MATLA...</div></div>
+<div class="ttc" id="anamespaceparamonte_1_1os_1_1list_html_a24bc26566d86b0d986f6f8caa397edae"><div class="ttname"><a href="namespaceparamonte_1_1os_1_1list.html#a24bc26566d86b0d986f6f8caa397edae">paramonte.os.list.list</a></div><div class="ttdeci">def list()</div><div class="ttdoc">Return a list of Python strings containing the names of OS platforms supported by the ParaMonte Pytho...</div><div class="ttdef"><b>Definition:</b> <a href="list_8py_source.html#l00001">list.py:1</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1locname_html_a51c5ab89385a8bec24369d4c3113c54f"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f">paramonte.str.locname.key</a></div><div class="ttdeci">key</div><div class="ttdef"><b>Definition:</b> <a href="locname_8py_source.html#l00053">locname.py:53</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1locname_html_a8c243a4f459ad113b02ee7bba809d22f"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1locname.html#a8c243a4f459ad113b02ee7bba809d22f">paramonte.str.locname.failed</a></div><div class="ttdeci">failed</div><div class="ttdef"><b>Definition:</b> <a href="locname_8py_source.html#l00049">locname.py:49</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1locname_html_af2d5709535b74c084ca0ac75b027bee0"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">paramonte.str.locname.a</a></div><div class="ttdeci">a</div><div class="ttdef"><b>Definition:</b> <a href="locname_8py_source.html#l00069">locname.py:69</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_f7e582f137cd7e74e036dcf25588b222.html">matlab</a></li><li class="navelem"><a class="el" href="dir_eec633f4a7857a722cc68ff9ef1b7623.html">+hashmap</a></li><li class="navelem"><a class="el" href="addKeyVal_8m.html">addKeyVal.m</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:28 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_aa647ac4ac52e710f59779208b5ca71e.html">python</a></li><li class="navelem"><a class="el" href="dir_a1c24939716a4241d718da4e38382f2d.html">hashmap</a></li><li class="navelem"><a class="el" href="addKeyVal_8m.html">addKeyVal.m</a></li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:55 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

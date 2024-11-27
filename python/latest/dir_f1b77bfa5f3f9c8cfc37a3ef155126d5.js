@@ -1,7 +1,7 @@
 var dir_f1b77bfa5f3f9c8cfc37a3ef155126d5 =
 [
-    [ "@Paradram", "dir_5512d65af4a2d62103bf5a57c0bcdf89.html", "dir_5512d65af4a2d62103bf5a57c0bcdf89" ],
-    [ "@Sampler", "dir_9842b49ee1693974f37883fcd279d027.html", "dir_9842b49ee1693974f37883fcd279d027" ],
+    [ "paradram", "dir_7a6c1e4dc9c22d8455d74bbd7861b7e3.html", "dir_7a6c1e4dc9c22d8455d74bbd7861b7e3" ],
+    [ "sampler", "dir_9df6abbe034333da00e67b21069a43a8.html", "dir_9df6abbe034333da00e67b21069a43a8" ],
     [ "Contents.m", "sampling_2Contents_8m.html", null ],
     [ "FileContentsChain.m", "FileContentsChain_8m.html", [
       [ "FileContentsChain", "classFileContentsChain.html", "classFileContentsChain" ]

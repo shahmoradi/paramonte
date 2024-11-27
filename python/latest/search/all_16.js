@@ -1,18 +1,18 @@
 var searchData=
 [
-  ['warn_0',['warn',['../classFileContents.html#ae50ed9b4d5f9ac5825eea0e58a59ca7d',1,'FileContents::warn()'],['../classFileContentsRestartDRAM.html#ad9cb75895987bc4286b9d990185fc0d6',1,'FileContentsRestartDRAM::warn()']]],
-  ['wavelet_1',['wavelet',['../wavelet_8m.html#a54d8b95f8bad341b0ff4c8c8a8b6739b',1,'wavelet.m']]],
-  ['wavelet_2em_2',['wavelet.m',['../wavelet_8m.html',1,'']]],
-  ['webglob_3',['webglob',['../webglob_8m.html#a9f037a692e9bd5657fa30818f536b77f',1,'webglob.m']]],
-  ['webglob_2em_4',['webglob.m',['../webglob_8m.html',1,'']]],
-  ['weblink_5',['weblink',['../weblink_8m.html#a9e435e334dfd7c7783e058bd74708ff8',1,'weblink.m']]],
-  ['weblink_2em_6',['weblink.m',['../weblink_8m.html',1,'']]],
-  ['weblinks_7',['weblinks',['../weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea',1,'weblinks():&#160;weblinks.m'],['../classFileContents.html#a52bcb11a83adfbfbf99ffa51cd957c48',1,'FileContents::weblinks()'],['../classSampler.html#a3936123e51bf6cac36fd878ce285a69b',1,'Sampler::weblinks()']]],
-  ['weblinks_2em_8',['weblinks.m',['../weblinks_8m.html',1,'']]],
-  ['which_9',['which',['../which_8m.html#a81f39d8b2392cbed3b4536d64bf25952',1,'which.m']]],
-  ['which_2em_10',['which.m',['../which_8m.html',1,'']]],
-  ['win_11',['win',['../win_8m.html#a08bde0314846557f33356b49576914c5',1,'win.m']]],
-  ['win_2em_12',['win.m',['../win_8m.html',1,'']]],
-  ['window_13',['window',['../classCascade.html#af2a01d6e7f55f39db7f18e52e4445b75',1,'Cascade']]],
-  ['workspace_14',['workspace',['../classSubplotEllipse3.html#a52ab14da3133932e1a5aa075b6fa2bc1',1,'SubplotEllipse3']]]
+  ['val_0',['val',['../classCov.html#a5ff7e81a41cd8654d27896b158974acb',1,'Cov::val()'],['../classAutoCorr.html#afd63ea7ff2b4899ab64617385740970f',1,'AutoCorr::val()']]],
+  ['vendor_1',['vendor',['../namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1vendor.html#a845004a2806779e040ef0646a0072390',1,'paramonte.sys.path.mpiexec.vendor.vendor()'],['../vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2',1,'vendor(in name):&#160;vendor.m']]],
+  ['vendor_2em_2',['vendor.m',['../vendor_8m.html',1,'']]],
+  ['vendor_2epy_3',['vendor.py',['../vendor_8py.html',1,'']]],
+  ['verbose_4',['verbose',['../namespaceparamonte_1_1array_1_1verbose.html#a95a084f318ed2133279f066c1710f244',1,'paramonte::array::verbose']]],
+  ['verbose_2epy_5',['verbose.py',['../verbose_8py.html',1,'']]],
+  ['verify_6',['verify',['../namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1verify.html#ac146890ab7317dc2e536f9cbc33e451d',1,'paramonte.sys.path.mpiexec.verify.verify()'],['../namespaceparamonte_1_1lib_1_1verify.html#ad5b9dbda41906ecae6639aea1e284c57',1,'paramonte.lib.verify.verify()'],['../verify_8m.html#ae99fb244a8e43a13722b2caa9eaeafa9',1,'verify(in vendor):&#160;verify.m']]],
+  ['verify_2em_7',['verify.m',['../verify_8m.html',1,'']]],
+  ['verify_2epy_8',['verify.py',['../sys_2path_2mpiexec_2verify_8py.html',1,'(Global Namespace)'],['../lib_2verify_8py.html',1,'(Global Namespace)']]],
+  ['version_9',['version',['../namespaceparamonte_1_1lib_1_1version.html#a283e0230810666177700a09c2eac998f',1,'paramonte.lib.version.version()'],['../version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386',1,'version(in silent):&#160;version.m']]],
+  ['version_2em_10',['version.m',['../version_8m.html',1,'']]],
+  ['version_2epy_11',['version.py',['../version_8py.html',1,'']]],
+  ['versionmm_12',['versionmm',['../namespaceparamonte_1_1lib_1_1versionmm.html#aadfca559eef190c54a273c8bf134831b',1,'paramonte::lib::versionmm']]],
+  ['versionmm_2epy_13',['versionmm.py',['../versionmm_8py.html',1,'']]],
+  ['vis_14',['vis',['../classCov.html#a90111f71d2de307947267cbe87c472d7',1,'Cov::vis()'],['../classAutoCorr.html#a04eaea191f6996a1add3688fd4936440',1,'AutoCorr::vis()'],['../classFileContentsSample.html#a6326f9eca4fe90fac298159a376a42ca',1,'FileContentsSample::vis()'],['../classFileContentsRestartDRAM.html#a57c801b069e8c6a6c95d6fd9f61d4c23',1,'FileContentsRestartDRAM::vis()'],['../classFileContentsReport.html#ac104d7aafb3a00be13bc15fca0d412b5',1,'FileContentsReport::vis()']]]
 ];

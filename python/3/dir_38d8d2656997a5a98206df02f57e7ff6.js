@@ -1,9 +1,9 @@
 var dir_38d8d2656997a5a98206df02f57e7ff6 =
 [
-    [ "+axes", "dir_6b959e02ff611dd5bd564901ae3243c3.html", "dir_6b959e02ff611dd5bd564901ae3243c3" ],
-    [ "+cmap", "dir_abd0fdf57cdeb142b5daf94e0d1a3af5.html", "dir_abd0fdf57cdeb142b5daf94e0d1a3af5" ],
-    [ "+color", "dir_3ad7e746a8c73bead6f291672ab0137d.html", "dir_3ad7e746a8c73bead6f291672ab0137d" ],
-    [ "+figure", "dir_1351c9036bf629c75a97235f65e01313.html", "dir_1351c9036bf629c75a97235f65e01313" ],
+    [ "axes", "dir_59559d1563bc7b4ea9fb4ddf147717a0.html", "dir_59559d1563bc7b4ea9fb4ddf147717a0" ],
+    [ "cmap", "dir_9c4df20a5132d3d1681338574398e359.html", "dir_9c4df20a5132d3d1681338574398e359" ],
+    [ "color", "dir_ff31b83f9a8554846333437122215d50.html", "dir_ff31b83f9a8554846333437122215d50" ],
+    [ "figure", "dir_cb409ba0c1dbb49a3d1efefe96197279.html", "dir_cb409ba0c1dbb49a3d1efefe96197279" ],
     [ "Cascade.m", "Cascade_8m.html", [
       [ "Cascade", "classCascade.html", "classCascade" ]
     ] ],

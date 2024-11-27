@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['warn_0',['warn',['../classFileContents.html#ae50ed9b4d5f9ac5825eea0e58a59ca7d',1,'FileContents::warn()'],['../classFileContentsRestartDRAM.html#ad9cb75895987bc4286b9d990185fc0d6',1,'FileContentsRestartDRAM::warn()']]],
-  ['wavelet_1',['wavelet',['../wavelet_8m.html#a54d8b95f8bad341b0ff4c8c8a8b6739b',1,'wavelet.m']]],
-  ['webglob_2',['webglob',['../webglob_8m.html#a9f037a692e9bd5657fa30818f536b77f',1,'webglob.m']]],
-  ['weblink_3',['weblink',['../weblink_8m.html#a9e435e334dfd7c7783e058bd74708ff8',1,'weblink.m']]],
-  ['weblinks_4',['weblinks',['../weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea',1,'weblinks.m']]],
-  ['which_5',['which',['../which_8m.html#a81f39d8b2392cbed3b4536d64bf25952',1,'which.m']]],
-  ['win_6',['win',['../win_8m.html#a08bde0314846557f33356b49576914c5',1,'win.m']]]
+  ['vendor_0',['vendor',['../vendor_8m.html#a49f012420ef4aa233acf94db3d3294c2',1,'vendor():&#160;vendor.m'],['../namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1vendor.html#a845004a2806779e040ef0646a0072390',1,'paramonte.sys.path.mpiexec.vendor.vendor()']]],
+  ['verbose_1',['verbose',['../namespaceparamonte_1_1array_1_1verbose.html#a95a084f318ed2133279f066c1710f244',1,'paramonte::array::verbose']]],
+  ['verify_2',['verify',['../verify_8m.html#ae99fb244a8e43a13722b2caa9eaeafa9',1,'verify():&#160;verify.m'],['../namespaceparamonte_1_1lib_1_1verify.html#ad5b9dbda41906ecae6639aea1e284c57',1,'paramonte.lib.verify.verify()'],['../namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1verify.html#ac146890ab7317dc2e536f9cbc33e451d',1,'paramonte.sys.path.mpiexec.verify.verify()']]],
+  ['version_3',['version',['../version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386',1,'version():&#160;version.m'],['../namespaceparamonte_1_1lib_1_1version.html#a283e0230810666177700a09c2eac998f',1,'paramonte.lib.version.version()']]],
+  ['versionmm_4',['versionmm',['../namespaceparamonte_1_1lib_1_1versionmm.html#aadfca559eef190c54a273c8bf134831b',1,'paramonte::lib::versionmm']]]
 ];

@@ -1,13 +1,16 @@
 var searchData=
 [
-  ['targetacceptancerate_0',['targetAcceptanceRate',['../classSpecBase.html#a8547a2998d53f610f4805f9521c2513d',1,'SpecBase']]],
-  ['template_1',['template',['../classCascade.html#ae4f1b50ab0efd7edd95769c628a7cd9c',1,'Cascade::template()'],['../classTile.html#a44232cfea1841a200710bbd579769a22',1,'Tile::template()']]],
-  ['tickcount_2',['tickCount',['../classSpinner.html#a84c198e65af3fd61d48e07c13084b35e',1,'Spinner']]],
-  ['tickmarks_3',['tickmarks',['../classSpinner.html#ae6efbf9433d9a5f13f82b364a78592cf',1,'Spinner']]],
-  ['tile_4',['tile',['../classTriplex.html#af815cbb6bd261e4f2aac451e5f5c2392',1,'Triplex']]],
-  ['tiledlayout_5',['tiledlayout',['../classTiling.html#acf0a64a865a9870b80248110be835acd',1,'Tiling']]],
-  ['tileshape_6',['tileshape',['../classTile.html#a82d795ab74b110ba85262199b9e1f998',1,'Tile']]],
-  ['tiling_7',['tiling',['../classTilingLayout.html#af6fcf467b141cc1c1e2ed62399d34a59',1,'TilingLayout']]],
-  ['timer_8',['timer',['../classFileContents.html#a5098a250f479807f15fb9f44aa1a7e5f',1,'FileContents']]],
-  ['type_9',['type',['../classAxes.html#ab42b61658f77680fa1fc793199598c50',1,'Axes']]]
+  ['outputchainfileformat_0',['outputChainFileFormat',['../classSpecBase.html#a441dbc23a805b8ff00ddd73ac010a836',1,'SpecBase']]],
+  ['outputchainsize_1',['outputChainSize',['../classSpecMCMC.html#aa4ee4e0d3b8287709df431745d1bc7b3',1,'SpecMCMC']]],
+  ['outputcolumnwidth_2',['outputColumnWidth',['../classSpecBase.html#a435549afd58b6304fb41fc15fccace4d',1,'SpecBase']]],
+  ['outputfilename_3',['outputFileName',['../classSpecBase.html#a707e3e574af9eae67aded2a7d9c75de9',1,'SpecBase']]],
+  ['outputprecision_4',['outputPrecision',['../classSpecBase.html#ae1534d5223995f27d4c715768c17e188',1,'SpecBase']]],
+  ['outputreportperiod_5',['outputReportPeriod',['../classSpecBase.html#a00b9b92a55cd06b708c5706266c27dd1',1,'SpecBase']]],
+  ['outputrestartfileformat_6',['outputRestartFileFormat',['../classSpecBase.html#ae4f2d18835309e3fa674e360b7868bbc',1,'SpecBase']]],
+  ['outputsamplerefinementcount_7',['outputSampleRefinementCount',['../classSpecMCMC.html#a356f8ab7c66c6e7eaf39a812924f903d',1,'SpecMCMC']]],
+  ['outputsamplerefinementmethod_8',['outputSampleRefinementMethod',['../classSpecMCMC.html#a6b1b64ef99691d28f5eb880dd9d584c4',1,'SpecMCMC']]],
+  ['outputsamplesize_9',['outputSampleSize',['../classSpecBase.html#ab8f47399e2cc294c4ac2734a6d36fb8c',1,'SpecBase']]],
+  ['outputseparator_10',['outputSeparator',['../classSpecBase.html#a28df6d971856cafc09f9dc2f53e2c4c0',1,'SpecBase']]],
+  ['outputsplashmode_11',['outputSplashMode',['../classSpecBase.html#ad0b6df761745b332afac106c7c413ff1',1,'SpecBase']]],
+  ['outputstatus_12',['outputStatus',['../classSpecBase.html#ac0f500dac5c1560e55efaa280184c2dd',1,'SpecBase']]]
 ];

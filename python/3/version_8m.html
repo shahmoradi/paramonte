@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/lib/version.m File Reference</title>
+    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/lib/update/version.m File Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -148,13 +148,13 @@ $(document).ready(function(){initNavTree('version_8m.html',''); initResizable();
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a383808131a2553869b9db626d7c1856f"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="version_8m.html#a383808131a2553869b9db626d7c1856f">version</a> (in lang, in type)</td></tr>
-<tr class="memdesc:a383808131a2553869b9db626d7c1856f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a scalar MATLAB string containing the current ParaMonte generic or MATLAB library version numbers, or optionally, the major, minor, or the patch version number.  <a href="version_8m.html#a383808131a2553869b9db626d7c1856f">More...</a><br /></td></tr>
-<tr class="separator:a383808131a2553869b9db626d7c1856f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d6eeca989e5fc5e9a59f9269109c386"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> (in silent)</td></tr>
+<tr class="memdesc:a4d6eeca989e5fc5e9a59f9269109c386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the existing version on the current system.  <a href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">More...</a><br /></td></tr>
+<tr class="separator:a4d6eeca989e5fc5e9a59f9269109c386"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a383808131a2553869b9db626d7c1856f" name="a383808131a2553869b9db626d7c1856f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a383808131a2553869b9db626d7c1856f">&#9670;&nbsp;</a></span>version()</h2>
+<a id="a4d6eeca989e5fc5e9a59f9269109c386" name="a4d6eeca989e5fc5e9a59f9269109c386"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d6eeca989e5fc5e9a59f9269109c386">&#9670;&nbsp;</a></span>version()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,76 +163,33 @@ Functions</h2></td></tr>
           <td class="memname">function version </td>
           <td>(</td>
           <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>lang</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>silent</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>type</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return a scalar MATLAB string containing the current ParaMonte generic or MATLAB library version numbers, or optionally, the major, minor, or the patch version number. </p>
+<p>Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the existing version on the current system. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">lang</td><td>: The input scalar MATLAB string that can be either:<br  />
- <ol>
-<li>
-the value <code>"generic"</code>, indicating the generic library version found in the root directory of the <a href="https://github.com/cdslaborg/paramonte">ParaMonte library repository</a>.<br  />
- </li>
-<li>
-the value <code>"matlab"</code>, indicating the MATLAB library version found in the <code>src/matlab</code> subdirectory in the <a href="https://github.com/cdslaborg/paramonte">ParaMonte library repository</a>.<br  />
- </li>
-</ol>
-The input version must be in triplet format (e.g., <code>"1.2.3"</code>).<br  />
- If the input value is empty <code>[]</code>, the default value is used.<br  />
- (<b>optional</b>, default = <code>"matlab"</code>) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>: The input scalar MATLAB string that can be either:<br  />
- <ol>
-<li>
-the value <code>"all"</code>, indicating the full version number output in the format <code>"major.minor.patch"</code>.<br  />
- </li>
-<li>
-the value <code>"major"</code>, indicating the full version number output in the format <code>"major"</code>.<br  />
- </li>
-<li>
-the value <code>"minor"</code>, indicating the full version number output in the format <code>"minor"</code>.<br  />
- </li>
-<li>
-the value <code>"patch"</code>, indicating the full version number output in the format <code>"patch"</code>.<br  />
- </li>
-</ol>
-If the input value is empty <code>[]</code>, the default value is used.<br  />
- (<b>optional</b>, default = <code>"all"</code>)</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">silent</td><td>: The input scalar MATLAB logical.<br  />
+ If <code>true</code>, all descriptive messages on the MATLAB command line will be suppressed.<br  />
+ (<b>optional</b>, default = <code>false</code>)</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>vernum</code> : The output scalar MATLAB string containing the requested current generic or language-specific ParaMonte library version.<br  />
+<dl class="section return"><dt>Returns</dt><dd><code>str</code> : The output scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the existing version on the current system.<br  />
+ The output <code>str</code> will be set to empty string <code>""</code> if there is no newer version or the function fails.<br  />
 </dd></dl>
 <p><br  />
-<a class="anchor" id="interface-version"></a><b>Possible calling interfaces</b> <a href="#interface-version">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">vernum = pm.lib.version()</div>
-<div class="line">vernum = pm.lib.version([])</div>
-<div class="line">vernum = pm.lib.version(lang)</div>
-<div class="line"> </div>
-<div class="line">vernum = pm.lib.version([], [])</div>
-<div class="line">vernum = pm.lib.version([], type)</div>
-<div class="line">vernum = pm.lib.version(lang, [])</div>
-<div class="line">vernum = pm.lib.version(lang, type)</div>
+<a class="anchor" id="interface-version"></a><b>Possible calling interfaces</b> <a href="#interface-version">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">str = pm.lib.update.version()</div>
 </div><!-- fragment --></dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>If the routine fails to find the respective VERSION files within the local ParaMonte library, it will return the value <code>"UNKNOWN"</code> for the output <code>vernum</code>.</dd></dl>
 <p><br  />
 <a class="anchor" id="example-version"></a><b>Example usage</b> <a href="#example-version">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"></div><!-- fragment --> <br  />
 <a class="anchor" id="output-version"></a><b>Example output</b> <a href="#output-version">⛓</a> <div class="fragment"></div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-version"></a><b>Final Remarks</b> <a href="#final-version">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/python/main/paramonte/lib/version.m#L59 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/python/main/paramonte/lib/update/version.m#L30 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -247,7 +204,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000067">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 8:13 PM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000066">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 7:57 PM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -259,8 +216,8 @@ Help us justify its continued development and maintenance by acknowledging its b
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_59f3c8de11b54eaed8c0ed6dc945fb43.html">lib</a></li><li class="navelem"><a class="el" href="version_8m.html">version.m</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:30 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_59f3c8de11b54eaed8c0ed6dc945fb43.html">lib</a></li><li class="navelem"><a class="el" href="dir_8250d215ed9cd61aa87292f421633d6a.html">update</a></li><li class="navelem"><a class="el" href="version_8m.html">version.m</a></li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:55 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

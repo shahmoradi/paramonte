@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/lib/version.m Source File</title>
+    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/lib/update/version.m Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -142,137 +142,83 @@ $(document).ready(function(){initNavTree('version_8m_source.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <a href="version_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>%&gt;  @brief</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Return a scalar MATLAB <span class="keywordtype">string</span> containing</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;  the current ParaMonte <span class="keyword">generic</span> or MATLAB library <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> numbers,</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;  or optionally, the major, minor, or the patch <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> number.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Return <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> scalar MATLAB <span class="keywordtype">string</span> containing the latest</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;  available ParaMonte MATLAB <a class="code hl_function" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> newer than the</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;  existing <a class="code hl_function" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> on the current system.</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  @param[in]  lang    :   The input scalar MATLAB <span class="keywordtype">string</span> that can be either:&lt;br&gt;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;                          &lt;ol&gt;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;                              &lt;li&gt;    the value ``<span class="stringliteral">&quot;generic&quot;</span>``, indicating</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;                                      the <span class="keyword">generic</span> library <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> found in the <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory of</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;                                      the [ParaMonte library repository](https:<span class="comment">//github.com/cdslaborg/paramonte).&lt;br&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;                              &lt;li&gt;    the value ``<span class="stringliteral">&quot;matlab&quot;</span>``, indicating</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;                                      the MATLAB library <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> found in the ``src/matlab`` subdirectory in</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;                                      the [ParaMonte library repository](https:<span class="comment">//github.com/cdslaborg/paramonte).&lt;br&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;                          &lt;/ol&gt;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;                          The input <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> must be in triplet format (e.g., ``<span class="stringliteral">&quot;1.2.3&quot;</span>``).&lt;br&gt;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                          If the input value is empty ``[]``, the <span class="keywordflow">default</span> value is used.&lt;br&gt;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                          (**optional**, <span class="keywordflow">default</span> = ``<span class="stringliteral">&quot;matlab&quot;</span>``)</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;  @param[in]  type    :   The input scalar MATLAB <span class="keywordtype">string</span> that can be either:&lt;br&gt;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;                          &lt;ol&gt;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;                              &lt;li&gt;    the value ``<span class="stringliteral">&quot;all&quot;</span>``, indicating</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;                                      the full <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> number output in the format ``<span class="stringliteral">&quot;major.minor.patch&quot;</span>``.&lt;br&gt;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;                              &lt;li&gt;    the value ``<span class="stringliteral">&quot;major&quot;</span>``, indicating</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;                                      the full <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> number output in the format ``<span class="stringliteral">&quot;major&quot;</span>``.&lt;br&gt;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;                              &lt;li&gt;    the value ``<span class="stringliteral">&quot;minor&quot;</span>``, indicating</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;                                      the full <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> number output in the format ``<span class="stringliteral">&quot;minor&quot;</span>``.&lt;br&gt;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;                              &lt;li&gt;    the value ``<span class="stringliteral">&quot;patch&quot;</span>``, indicating</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;                                      the full <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> number output in the format ``<span class="stringliteral">&quot;patch&quot;</span>``.&lt;br&gt;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;                          &lt;/ol&gt;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;                          If the input value is empty ``[]``, the <span class="keywordflow">default</span> value is used.&lt;br&gt;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;                          (**optional**, <span class="keywordflow">default</span> = ``<span class="stringliteral">&quot;all&quot;</span>``)</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  @param[in]  silent  :   The input scalar MATLAB logical.&lt;br&gt;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;                          If ``<span class="keyword">true</span>``, all descriptive messages on</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;                          the MATLAB command line will be suppressed.&lt;br&gt;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;                          (**optional**, <span class="keywordflow">default</span> = ``<span class="keyword">false</span>``)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;  @<span class="keywordflow">return</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;  ``str``             :   The output scalar MATLAB <span class="keywordtype">string</span> containing the</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;                          latest available ParaMonte MATLAB <a class="code hl_function" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> newer</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;                          than the existing <a class="code hl_function" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> on the current system.&lt;br&gt;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;                          The output ``str`` will be set to empty <span class="keywordtype">string</span> ``<span class="stringliteral">&quot;&quot;</span>``</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                          <span class="keywordflow">if</span> there is no newer <a class="code hl_function" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> or the function fails.&lt;br&gt;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;  <span class="keyword">@interface</span>{<a class="code hl_function" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;  @code{.py}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;      str = pm.lib.update.version()</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;  <span class="keyword">@end</span>code</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;  @example{<a class="code hl_function" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;  @include{lineno} example/<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>/update/<a class="code hl_function" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>/main.py</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;  @output{<a class="code hl_function" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;  @include{lineno} example/<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>/update/<a class="code hl_function" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>/main.out.py</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;  @<span class="keyword">final</span>{<a class="code hl_function" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;  @<span class="keywordflow">return</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;  ``vernum``          :   The output scalar MATLAB <span class="keywordtype">string</span> containing the requested</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;                          current <span class="keyword">generic</span> or language-specific ParaMonte library <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>.&lt;br&gt;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;  <span class="keyword">@interface</span>{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;  @code{.py}</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;      vernum = pm.lib.version()</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>%&gt;      vernum = pm.lib.version([])</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>%&gt;      vernum = pm.lib.version(lang)</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>%&gt;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>%&gt;      vernum = pm.lib.version([], [])</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>%&gt;      vernum = pm.lib.version([], type)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>%&gt;      vernum = pm.lib.version(lang, [])</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>%&gt;      vernum = pm.lib.version(lang, type)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>%&gt;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>%&gt;  <span class="keyword">@end</span>code</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>%&gt;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>%&gt;  @warning</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>%&gt;  If the routine fails to <a class="code hl_function" href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">find</a> the respective VERSION files within the local ParaMonte library,</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>%&gt;  it will <span class="keywordflow">return</span> the value ``<span class="stringliteral">&quot;UNKNOWN&quot;</span>`` <span class="keywordflow">for</span> the output ``vernum``.</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>%&gt;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>%&gt;  @example{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>%&gt;  @include{lineno} example/<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>/<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>/main.py</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>%&gt;  @output{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>%&gt;  @include{lineno} example/<a class="code hl_function" href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a>/<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>/main.out.py</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>%&gt;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>%&gt;  @<span class="keyword">final</span>{<a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>}</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>%&gt;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>%&gt;  @author</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>%&gt;  @JoshuaOsborne, May 21 2024, 8:13 PM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>%&gt;  @FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>%&gt;  @AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="version_8m.html#a383808131a2553869b9db626d7c1856f">   65</a></span>function vernum = <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>(lang, type)</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span>  nargin &lt; 2</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        type = [];</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    end</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">if</span>  nargin &lt; 1</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        lang = [];</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    end</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">if</span> ~isempty(type)</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        type = string(lower(type));</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        type = <span class="stringliteral">&quot;all&quot;</span>;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    end</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">if</span> ~isempty(lang)</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        lang = string(lower(lang));</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        lang = <span class="stringliteral">&quot;matlab&quot;</span>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    end</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    % persistent vernum_persistent;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    % <span class="keywordflow">if</span>  isempty(vernum_persistent)</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    %     vernum_persistent = <span class="keyword">struct</span>();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    % end</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    %</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    % <span class="keywordflow">if</span> ~isfield(vernum_persistent, lang)</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    %     <span class="keywordflow">try</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    %         fid = fopen(fullfile(pm.lib.path.auxil(), <span class="stringliteral">&quot;VERSION.&quot;</span> + lang + <span class="stringliteral">&quot;.md&quot;</span>));</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    %         vernum_persistent.(lang) = <span class="keywordtype">string</span>(strip(fgetl(fid)));</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    %         fclose(fid);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    %     <span class="keywordflow">catch</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    %         vernum_persistent.(lang) = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    %     end</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    % end</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    %</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    % vernum = vernum_persistent.(lang);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">try</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        version_file = fullfile(pm.lib.path.auxil(), <span class="stringliteral">&quot;VERSION.&quot;</span> + lang + <span class="stringliteral">&quot;.md&quot;</span>);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        fid = fopen(version_file);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        vernum = string(strip(fgetl(fid)));</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        fclose(fid);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">catch</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        vernum = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    end</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">if</span> ~strcmp(type, <span class="stringliteral">&quot;all&quot;</span>)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        triplet = strsplit(vernum, &quot;.&quot;);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        if  strcmp(type, &quot;major&quot;)</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            vernum = <span class="keywordtype">string</span>(triplet(1));</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        elseif strcmp(type, &quot;minor&quot;) &amp;&amp; numel(triplet) &gt; 1</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            vernum = <span class="keywordtype">string</span>(triplet(2));</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        elseif strcmp(type, &quot;patch&quot;) &amp;&amp; numel(triplet) &gt; 2</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            vernum = <span class="keywordtype">string</span>(triplet(3));</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        end</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    end</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>end</div>
-<div class="ttc" id="a_09update_2version_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
-<div class="ttc" id="afind_8m_html_aa94df3e8e4e5c54cbfe8cfaa7ae6f94c"><div class="ttname"><a href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">find</a></div><div class="ttdeci">function find(in vendor)</div><div class="ttdoc">Return a list of scalar MATLAB strings containing the paths to all detected mpiexec binaries installe...</div></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;  @author</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;  @JoshuaOsborne, May 21 2024, 7:57 PM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;  @FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;  @AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">   36</a></span>function str = <a class="code hl_function" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>(silent)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span>  nargin &lt; 1</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        silent = [];</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    end</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span>  isempty(silent)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        silent = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    end</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_function" href="namespaceparamonte_1_1lib_1_1weblinks.html#a119da33be580aa4fe7b049c3fed177a8">weblinks</a> = pm.lib.weblinks();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    versionLink = <span class="stringliteral">&quot;https://raw.githubusercontent.com/cdslaborg/paramonte/main/src/matlab/VERSION.md&quot;</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        versionFileLineList = strsplit(webread(versionLink), newline);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        str = string(versionFileLineList{1});</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">catch</span> me</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        str = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span> ~silent</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            warning ( newline ...</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    + <span class="keywordtype">string</span>(me.identifier) + <span class="stringliteral">&quot; : &quot;</span> + <span class="keywordtype">string</span>(me.message) + newline ...</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                    + <span class="stringliteral">&quot;Failed to fetch the latest version number from the weblink:&quot;</span> + newline ...</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                    + newline ...</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                    + pm.io.tab() + versionLink + newline ...</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    + newline ...</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                    + <span class="stringliteral">&quot;Ensure MATLAB has access to the internet.&quot;</span> + newline ...</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                    + <span class="stringliteral">&quot;Otherwise, the structure of the ParaMonte library project on GitHub might have changed.&quot;</span> + newline ...</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                    + <span class="stringliteral">&quot;The current ParaMonte library on your system is &quot;</span> + pm.lib.version() + newline ...</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                    + <span class="stringliteral">&quot;You can check for any newer package releases on the ParaMonte GitHub repository release page:&quot;</span> + newline ...</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                    + newline ...</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                    + pm.io.tab() + <a class="code hl_function" href="namespaceparamonte_1_1lib_1_1weblinks.html#a119da33be580aa4fe7b049c3fed177a8">weblinks</a>.github.releases.url + newline ...</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                    + newline ...</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                    );</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        end</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    end</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>end</div>
 <div class="ttc" id="alib_8m_html_a3d11053ebcdfc6f0bef7af9c8d14fa13"><div class="ttname"><a href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a></div><div class="ttdeci">function lib()</div><div class="ttdoc">Return a scalar MATLAB string containing the path to the lib directory of the ParaMonte library packa...</div></div>
-<div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
+<div class="ttc" id="anamespaceparamonte_1_1lib_1_1weblinks_html_a119da33be580aa4fe7b049c3fed177a8"><div class="ttname"><a href="namespaceparamonte_1_1lib_1_1weblinks.html#a119da33be580aa4fe7b049c3fed177a8">paramonte.lib.weblinks.weblinks</a></div><div class="ttdeci">def weblinks()</div><div class="ttdoc">Return an object of class pm.container.Struct containing tree of weblinks for the ParaMonte MATLAB li...</div><div class="ttdef"><b>Definition:</b> <a href="weblinks_8py_source.html#l00001">weblinks.py:1</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1locname_html_af2d5709535b74c084ca0ac75b027bee0"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">paramonte.str.locname.a</a></div><div class="ttdeci">a</div><div class="ttdef"><b>Definition:</b> <a href="locname_8py_source.html#l00069">locname.py:69</a></div></div>
+<div class="ttc" id="aversion_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_59f3c8de11b54eaed8c0ed6dc945fb43.html">lib</a></li><li class="navelem"><a class="el" href="version_8m.html">version.m</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:28 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_59f3c8de11b54eaed8c0ed6dc945fb43.html">lib</a></li><li class="navelem"><a class="el" href="dir_8250d215ed9cd61aa87292f421633d6a.html">update</a></li><li class="navelem"><a class="el" href="version_8m.html">version.m</a></li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:55 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

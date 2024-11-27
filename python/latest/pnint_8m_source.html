@@ -142,11 +142,11 @@ $(document).ready(function(){initNavTree('pnint_8m_source.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <a href="pnint_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>%&gt;  @brief</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Generate and <span class="keywordflow">return</span> the **probabilistically-rounded** to the nearest integer value of the input real number.</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Generate and <span class="keywordflow">return</span> the **probabilistically-rounded** to the nearest integer value of the input <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1split2real.html#aa727314b5dc5cc010ce5652f5617393d">real</a> number.</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;  @details</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  Unlike the intrinsic Fortran `nint()` function, the procedures of <span class="keyword">this</span> <span class="keyword">generic</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  <span class="keyword">interface </span>round the input real number to the nearest integer value **probabilistically**.&lt;br&gt;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  <span class="keyword">interface </span>round the input <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1split2real.html#aa727314b5dc5cc010ce5652f5617393d">real</a> number to the nearest integer value **probabilistically**.&lt;br&gt;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;  The closer the input `val` is to its `nint(val)` result, the more likely it will be rounded to it.&lt;br&gt;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;  See below <span class="keywordflow">for</span> example usage.&lt;br&gt;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;</div>
@@ -179,15 +179,15 @@ $(document).ready(function(){initNavTree('pnint_8m_source.html',''); initResizab
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;  @AmirShahmoradi, April 23, 2017, 1:36 AM, Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), University of Texas at Austin</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="pnint_8m.html#a4eaf9ae839f9825b03966eb5d1506473">   37</a></span>function whole = <a class="code hl_function" href="pnint_8m.html#a4eaf9ae839f9825b03966eb5d1506473">pnint</a>(val)</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    whole = round(val);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    residual = val - whole; % <a class="code hl_function" href="abs_8m.html#aa5a18068d39642deefb2f500d14403db">abs</a>(residual) &lt; .5 always holds.</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    residual = val - whole; % abs(residual) &lt; .5 always holds.</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    urand = unifrnd(0, 1, size(val, 1), size(val, 2));</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    mask = 1 - <a class="code hl_function" href="abs_8m.html#aa5a18068d39642deefb2f500d14403db">abs</a>(residual) &lt; urand;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    mask = 1 - abs(residual) &lt; urand;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    mask1 = mask &amp; residual &lt; 0;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    mask2 = mask &amp; residual &gt;= 0;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    whole(mask1(:)) = whole(mask1(:)) - 1;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    whole(mask2(:)) = whole(mask2(:)) + 1;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>end</div>
-<div class="ttc" id="aabs_8m_html_aa5a18068d39642deefb2f500d14403db"><div class="ttname"><a href="abs_8m.html#aa5a18068d39642deefb2f500d14403db">abs</a></div><div class="ttdeci">function abs(in path, in style)</div><div class="ttdoc">Return the Get absolute canonical path of a file or folder.</div></div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1split2real_html_aa727314b5dc5cc010ce5652f5617393d"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1split2real.html#aa727314b5dc5cc010ce5652f5617393d">paramonte.str.split2real.real</a></div><div class="ttdeci">real</div><div class="ttdef"><b>Definition:</b> <a href="split2real_8py_source.html#l00024">split2real.py:24</a></div></div>
 <div class="ttc" id="apnint_8m_html_a4eaf9ae839f9825b03966eb5d1506473"><div class="ttname"><a href="pnint_8m.html#a4eaf9ae839f9825b03966eb5d1506473">pnint</a></div><div class="ttdeci">function pnint(in val)</div><div class="ttdoc">Generate and return the probabilistically-rounded to the nearest integer value of the input real numb...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -195,7 +195,7 @@ $(document).ready(function(){initNavTree('pnint_8m_source.html',''); initResizab
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_d3ef74805537be43c2fcb61f03ea6646.html">math</a></li><li class="navelem"><a class="el" href="pnint_8m.html">pnint.m</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:28 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:55 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

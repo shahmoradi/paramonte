@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/vis/+figure/private/copyfig.m Source File</title>
+    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/vis/figure/private/copyfig.m Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -142,12 +142,12 @@ $(document).ready(function(){initNavTree('copyfig_8m_source.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <a href="copyfig_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="copyfig_8m.html#afc97c9d7f5431eb28ca277c67fb49cf5">    1</a></span>function fh = <a class="code hl_function" href="copyfig_8m.html#afc97c9d7f5431eb28ca277c67fb49cf5">copyfig</a>(fh)</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%COPYFIG Create a <a class="code hl_function" href="copy_8m.html#ab633577f583e18a523fef5b3b2295eee">copy</a> of a figure, without changing the figure</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%COPYFIG Create <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> <a class="code hl_function" href="copy_8m.html#ab633577f583e18a523fef5b3b2295eee">copy</a> of <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> figure, without changing the figure</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>% Examples:</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%   fh_new = <a class="code hl_function" href="copyfig_8m.html#afc97c9d7f5431eb28ca277c67fb49cf5">copyfig</a>(fh_old)</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>% This function will create a <a class="code hl_function" href="copy_8m.html#ab633577f583e18a523fef5b3b2295eee">copy</a> of a figure, but not change the figure,</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>% This function will create <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> <a class="code hl_function" href="copy_8m.html#ab633577f583e18a523fef5b3b2295eee">copy</a> of <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> figure, but not change the figure,</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>% as copyobj sometimes does, e.g. by changing legends.</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>% IN:</div>
@@ -163,11 +163,11 @@ $(document).ready(function(){initNavTree('copyfig_8m_source.html',''); initResiz
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>% 15/04/15: Suppress warnings during copyobj (Dun Kirk comment on FEX page 2013-10-02)</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>% 09/09/18: Fix issue #252: Workaround <span class="keywordflow">for</span> cases where copyobj() fails for any reason</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    % Set the default</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    % Set the <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1split2real.html#ab54ab7b589a005c1a2f537b0af530de3">default</a></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    if nargin == 0</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        fh = gcf;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    end</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    % Is there a legend?</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    % Is there <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> legend?</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    useCopyobj = isempty(findall(fh, &#39;Type&#39;, &#39;axes&#39;, &#39;Tag&#39;, &#39;legend&#39;));</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    if useCopyobj</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        % Safe to <a class="code hl_function" href="copy_8m.html#ab633577f583e18a523fef5b3b2295eee">copy</a> using copyobj</div>
@@ -176,12 +176,12 @@ $(document).ready(function(){initNavTree('copyfig_8m_source.html',''); initResiz
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            fh = copyobj(fh, 0);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        catch</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            % Fix issue <span class="preprocessor">#252: Workaround for cases where copyobj() fails for any reason</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            useCopyobj = <span class="keyword">false</span>;  % <span class="keywordflow">if</span> copyobj() croaks, use file save/load below</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            useCopyobj = <span class="keyword">false</span>;  % <span class="keywordflow">if</span> copyobj() croaks, use file <a class="code hl_function" href="namespaceparamonte_1_1web_1_1save.html#aba6c94c4f70b3f4618a3ef9a789de59f">save</a>/load below</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        end</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        warning(oldWarn);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    end</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    if ~useCopyobj</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        % copyobj will change the figure, so save and then load it instead</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        % copyobj will change the figure, so <a class="code hl_function" href="namespaceparamonte_1_1web_1_1save.html#aba6c94c4f70b3f4618a3ef9a789de59f">save</a> and then load it instead</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        tmp_nam = [tempname &#39;.fig&#39;];</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        try</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            % Ensure that the temp dir is writable (Javier Paredes 26/2/15)</div>
@@ -203,13 +203,16 @@ $(document).ready(function(){initNavTree('copyfig_8m_source.html',''); initResiz
 <div class="ttc" id="aappend__pdfs_8m_html_af80b06337dad70c7ba84ab519a94e39c"><div class="ttname"><a href="append__pdfs_8m.html#af80b06337dad70c7ba84ab519a94e39c">cleanup</a></div><div class="ttdeci">function cleanup(in cmdfile)</div></div>
 <div class="ttc" id="acopy_8m_html_ab633577f583e18a523fef5b3b2295eee"><div class="ttname"><a href="copy_8m.html#ab633577f583e18a523fef5b3b2295eee">copy</a></div><div class="ttdeci">function copy(in from, in to, in field, in exclude)</div><div class="ttdoc">Copy the contents of the struct/object from to the struct/object to recursively and without destroyin...</div></div>
 <div class="ttc" id="acopyfig_8m_html_afc97c9d7f5431eb28ca277c67fb49cf5"><div class="ttname"><a href="copyfig_8m.html#afc97c9d7f5431eb28ca277c67fb49cf5">copyfig</a></div><div class="ttdeci">function copyfig(in fh)</div></div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1locname_html_af2d5709535b74c084ca0ac75b027bee0"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">paramonte.str.locname.a</a></div><div class="ttdeci">a</div><div class="ttdef"><b>Definition:</b> <a href="locname_8py_source.html#l00069">locname.py:69</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1split2real_html_ab54ab7b589a005c1a2f537b0af530de3"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1split2real.html#ab54ab7b589a005c1a2f537b0af530de3">paramonte.str.split2real.default</a></div><div class="ttdeci">default</div><div class="ttdef"><b>Definition:</b> <a href="split2real_8py_source.html#l00019">split2real.py:19</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1web_1_1save_html_aba6c94c4f70b3f4618a3ef9a789de59f"><div class="ttname"><a href="namespaceparamonte_1_1web_1_1save.html#aba6c94c4f70b3f4618a3ef9a789de59f">paramonte.web.save.save</a></div><div class="ttdeci">def save(url, path=None)</div><div class="ttdoc">Return the path to the downloaded file from the specified input url, or otherwise,...</div><div class="ttdef"><b>Definition:</b> <a href="save_8py_source.html#l00001">save.py:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_38d8d2656997a5a98206df02f57e7ff6.html">vis</a></li><li class="navelem"><a class="el" href="dir_1351c9036bf629c75a97235f65e01313.html">+figure</a></li><li class="navelem"><a class="el" href="dir_246122b6a87048e19363caac045aef36.html">private</a></li><li class="navelem"><a class="el" href="copyfig_8m.html">copyfig.m</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:29 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_38d8d2656997a5a98206df02f57e7ff6.html">vis</a></li><li class="navelem"><a class="el" href="dir_cb409ba0c1dbb49a3d1efefe96197279.html">figure</a></li><li class="navelem"><a class="el" href="dir_d7a7fc6cc2a16fb9bc395ab0454e45a2.html">private</a></li><li class="navelem"><a class="el" href="copyfig_8m.html">copyfig.m</a></li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:55 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

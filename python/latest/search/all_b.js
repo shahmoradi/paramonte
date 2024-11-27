@@ -1,29 +1,7 @@
 var searchData=
 [
-  ['layout_0',['layout',['../classTriplex.html#a4f6a6cea1618716c4419cef7d039b21f',1,'Triplex']]],
-  ['lib_1',['lib',['../lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13',1,'lib.m']]],
-  ['lib_2em_2',['lib.m',['../lib_8m.html',1,'']]],
-  ['libspec_3',['libspec',['../classSampler.html#aadb3b663b661dbff6fbce17264689d8d',1,'Sampler']]],
-  ['libtype_4',['libtype',['../classSampler.html#a7fa765a0d8864e7b81d4c0cd9b638fca',1,'Sampler']]],
-  ['lin_5',['lin',['../lin_8m.html#a51376849eef26a184229da7a38e8a5ac',1,'lin.m']]],
-  ['lin_2em_6',['lin.m',['../lin_8m.html',1,'']]],
-  ['linelist_7',['lineList',['../classFileContentsReport.html#af39ddcba73972c4f9439a2bdd21efd7f',1,'FileContentsReport::lineList()'],['../classFileContentsRestart.html#a5fece043b2cdb223f3e6620971c57754',1,'FileContentsRestart::lineList()']]],
-  ['linelistlen_8',['lineListLen',['../classFileContentsRestart.html#aa95e21e785e65bf4005030382bea9829',1,'FileContentsRestart::lineListLen()'],['../classFileContentsReport.html#a5a5ddde7bc0273d13df0c23aaa77fe0c',1,'FileContentsReport::lineListLen()']]],
-  ['list_9',['list',['../sys_2_09path_2list_8m.html#a00bf3dae9ea3cbc861beb81ecd975f8b',1,'list(in path):&#160;list.m'],['../os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b',1,'list():&#160;list.m']]],
-  ['list_2em_10',['list.m',['../os_2list_8m.html',1,'(Global Namespace)'],['../sys_2_09path_2list_8m.html',1,'(Global Namespace)']]],
-  ['listl_11',['listl',['../listl_8m.html#a0eee3b355c8c8ebb9ff5e239eace707c',1,'listl.m']]],
-  ['listl_2em_12',['listl.m',['../listl_8m.html',1,'']]],
-  ['locname_13',['locname',['../locname_8m.html#a233e300cf628fe0d16bec958ffb43b1e',1,'locname.m']]],
-  ['locname_2em_14',['locname.m',['../locname_8m.html',1,'']]],
-  ['logrange_15',['logrange',['../namespaceparamonte_1_1array_1_1logrange.html#a66c28c9b28aca0faa8b79044b7a68df0',1,'paramonte::array::logrange']]],
-  ['logrange_2epy_16',['logrange.py',['../logrange_8py.html',1,'']]],
-  ['logspace_17',['logspace',['../namespaceparamonte_1_1array_1_1logspace.html#aa6906090865332f4322759ee14026f42',1,'paramonte::array::logspace']]],
-  ['logspace_2epy_18',['logspace.py',['../logspace_8py.html',1,'']]],
-  ['logspaceint_19',['logspaceint',['../namespaceparamonte_1_1array_1_1logspaceint.html#a0b8eced6a76515e42d53321ae94d6236',1,'paramonte::array::logspaceint']]],
-  ['logspaceint_2epy_20',['logspaceint.py',['../logspaceint_8py.html',1,'']]],
-  ['logsubexp_21',['logsubexp',['../logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0',1,'logsubexp.m']]],
-  ['logsubexp_2em_22',['logsubexp.m',['../logsubexp_8m.html',1,'']]],
-  ['lower_23',['lower',['../classTriplex.html#a3631fcae43508cf785dc3d355df8850b',1,'Triplex']]],
-  ['ls_5fregexp_24',['ls_regexp',['../glob_8m.html#a8e49c9970024381269a21db17e985871',1,'glob.m']]],
-  ['ls_5fregexp_5ftree_25',['ls_regexp_tree',['../glob_8m.html#ad2bae39cc635583ae1988041ee4af9fd',1,'glob.m']]]
+  ['kde2d_0',['kde2d',['../kde2d_8m.html#ac3954bb5681cb9fd19f4acf85f39447c',1,'kde2d.m']]],
+  ['kde2d_2em_1',['kde2d.m',['../kde2d_8m.html',1,'']]],
+  ['key_2',['key',['../namespaceparamonte_1_1str_1_1locname.html#a51c5ab89385a8bec24369d4c3113c54f',1,'paramonte::str::locname']]],
+  ['keylistlen_3',['keylistLen',['../namespaceparamonte_1_1str_1_1locname.html#a1f3db7df1c367c83c36a16d6056f53e3',1,'paramonte::str::locname']]]
 ];

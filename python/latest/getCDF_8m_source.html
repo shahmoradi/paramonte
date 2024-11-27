@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/stats/+dist/+gengamma/getCDF.m Source File</title>
+    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/stats/dist/gengamma/getCDF.m Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -188,7 +188,7 @@ $(document).ready(function(){initNavTree('getCDF_8m_source.html',''); initResiza
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>%&gt;      &lt;li&gt;    When @f$\kappa = 1, \omega = 1@f$, the GenGamma PDF reduces to the PDF of the Exponential distribution.&lt;br&gt;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>%&gt;  &lt;/ol&gt;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>%&gt;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>%&gt;  The **CDF** of the Generalized Gamma distribution over a strictly-positive support @f$x \in (0, +\infty)\f$ with the three (shape, shape, scale)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>%&gt;  The **CDF** of the Generalized Gamma distribution over <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> strictly-positive support @f$x \in (0, +\infty)\f$ with the three (shape, shape, scale)</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>%&gt;  parameters @f$(\kappa &gt; 0, \omega &gt; 0, \sigma &gt; 0)\f$ is defined by the **regularized** Lower Incomplete Gamma function as,</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>%&gt;  @f{eqnarray}{</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>%&gt;      \large</div>
@@ -200,7 +200,7 @@ $(document).ready(function(){initNavTree('getCDF_8m_source.html',''); initResiza
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>%&gt;  where @f$\Gamma(\kappa)\f$ represents the Gamma function.&lt;br&gt;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>%&gt;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>%&gt;  @param[in]  x           :   The input scalar or array of the same shape as other array-valued arguments,</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>%&gt;                              containing the values at <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> the CDF must be computed.&lt;br&gt;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>%&gt;                              containing the values at <a class="code hl_function" href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">which</a> the CDF must be computed.&lt;br&gt;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>%&gt;  @param[in]  kappa       :   The input scalar or array of the same shape as other array-valued arguments,</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>%&gt;                              containing the shape parameter (\f$\kappa@f$) of the distribution.&lt;br&gt;</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>%&gt;  @param[in]  invOmega    :   The input scalar or array of the same shape as other array-valued arguments,</div>
@@ -239,14 +239,15 @@ $(document).ready(function(){initNavTree('getCDF_8m_source.html',''); initResiza
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    cdf = gammainc((x .* invSigma).^invOmega, kappa);</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>end</div>
 <div class="ttc" id="agetCDF_8m_html_a2c9db828a68185e10c4a0c33652d74fb"><div class="ttname"><a href="getCDF_8m.html#a2c9db828a68185e10c4a0c33652d74fb">getCDF</a></div><div class="ttdeci">function getCDF(in x, in kappa, in invOmega, in invSigma)</div><div class="ttdoc">Return the corresponding Cumulative Distribution Function (CDF) of the input random value(s) from the...</div></div>
-<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div></div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1locname_html_af2d5709535b74c084ca0ac75b027bee0"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">paramonte.str.locname.a</a></div><div class="ttdeci">a</div><div class="ttdef"><b>Definition:</b> <a href="locname_8py_source.html#l00069">locname.py:69</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which_html_a1b834b4e4b89ed9f7aae0da42263af15"><div class="ttname"><a href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">paramonte.sys.path.mpiexec.which.which</a></div><div class="ttdeci">def which(vendor=&quot;&quot;)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div><div class="ttdef"><b>Definition:</b> <a href="which_8py_source.html#l00001">which.py:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_1d06224e2bda5736edc0df9be1858358.html">stats</a></li><li class="navelem"><a class="el" href="dir_480a4af407f511b8ccd73cb81fa0deca.html">+dist</a></li><li class="navelem"><a class="el" href="dir_ff10ec73d59b2d0711f806be8257fa79.html">+gengamma</a></li><li class="navelem"><a class="el" href="getCDF_8m.html">getCDF.m</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:28 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_1d06224e2bda5736edc0df9be1858358.html">stats</a></li><li class="navelem"><a class="el" href="dir_f45d5316caf598d7ca1d131c84c05fc1.html">dist</a></li><li class="navelem"><a class="el" href="dir_ada93cad46be625eddf3130ce590289f.html">gengamma</a></li><li class="navelem"><a class="el" href="getCDF_8m.html">getCDF.m</a></li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:55 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

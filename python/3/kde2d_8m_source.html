@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/stats/+hist/kde2d.m Source File</title>
+    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/stats/hist/kde2d.m Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -145,41 +145,41 @@ $(document).ready(function(){initNavTree('kde2d_8m_source.html',''); initResizab
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%&gt;  Compute the Gaussian kernel density estimate of the input bivariate data.</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%&gt;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>%&gt;  @details</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  This function offers a fast and accurate bivariate</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;  This function offers <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> fast and accurate bivariate</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  kernel density estimator with diagonal bandwidth matrix.&lt;br&gt;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;  The kernel is assumed to be Gaussian.&lt;br&gt;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;  The two bandwidth parameters are chosen optimally without ever</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  <span class="keyword">using</span>/assuming a parametric model <span class="keywordflow">for</span> the data or any *rules of thumb*.&lt;br&gt;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  <span class="keyword">using</span>/assuming <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> parametric model <span class="keywordflow">for</span> the data or any *rules of thumb*.&lt;br&gt;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;  Particularly, <span class="keyword">this</span> algorithm is immune to accuracy failures in the estimation</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;  of multimodal densities with widely separated modes (see examples below).&lt;br&gt;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;  @param[in]  data    :   The input matrix of shape ``[nobs, 2]`` containing the</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;                          continuous data whose density estimate is to be returned.&lt;br&gt;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;  @param[in]  resol   :   The input scalar whole number representing the size of</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                          the ``resol`` by ``resol`` grid over <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> the density</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                          is computed where ``resol`` has to be a power of ``2``,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                          the ``resol`` by ``resol`` grid over <a class="code hl_function" href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">which</a> the density</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                          is computed where ``resol`` has to be <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> power of ``2``,</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;                          otherwise ``resol = 2 ^ ceil(log2(resol))`` will be used.&lt;br&gt;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;                          (**optional**. If missing or empty, it will be set to ``2^8``.)</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;  @param[in]  xymin   :   The input vector of size ``2`` containing the lower limits</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;                          of the bounding box over <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> the density is computed.&lt;br&gt;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;                          of the bounding box over <a class="code hl_function" href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">which</a> the density is computed.&lt;br&gt;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;                          (**optional**. If missing or empty, it will be set to an appropriate value as prescribed in the note below.)</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;  @param[in]  xymax   :   The input vector of size ``2`` containing the upper limits</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;                          of the bounding box over <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> the density is computed.&lt;br&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;                          of the bounding box over <a class="code hl_function" href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">which</a> the density is computed.&lt;br&gt;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;                          (**optional**. If missing or empty, it will be set to an appropriate value as prescribed in the note below.)</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;  @<span class="keywordflow">return</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;  ``bandwidth``       :   The output row vector with the two optimal bandwidths <span class="keywordflow">for</span> a bivaroate Gaussian kernel.&lt;br&gt;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;  ``bandwidth``       :   The output row vector with the two optimal bandwidths <span class="keywordflow">for</span> <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> bivaroate Gaussian kernel.&lt;br&gt;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;                          The format of the vector is ``bandwidth = [bandwidth_x, bandwidth_y]``.&lt;br&gt;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;                          &lt;br&gt;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;  ``density``         :   The output ``resol`` by ``resol`` matrix containing</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;                          the density values over the ``resol`` by ``resol`` grid.&lt;br&gt;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;                          This argument is not computed unless the output argument is present.&lt;br&gt;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;                          &lt;br&gt;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;  ``meshx``           :   The x-axis meshgrid over <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> the variable <span class="stringliteral">&quot;density&quot;</span> has been computed.&lt;br&gt;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;  ``meshx``           :   The x-axis meshgrid over <a class="code hl_function" href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">which</a> the variable <span class="stringliteral">&quot;density&quot;</span> has been computed.&lt;br&gt;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>%&gt;                          This output is particularly useful in combination with MATLAB intrinsic ``surf``.&lt;br&gt;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>%&gt;                          The intended usage is ``surf(meshx, meshy, density)``.&lt;br&gt;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>%&gt;                          &lt;br&gt;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;  ``meshy``           :   The y-axis meshgrid over <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> the variable <span class="stringliteral">&quot;density&quot;</span> has been computed.&lt;br&gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>%&gt;  ``meshy``           :   The y-axis meshgrid over <a class="code hl_function" href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">which</a> the variable <span class="stringliteral">&quot;density&quot;</span> has been computed.&lt;br&gt;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>%&gt;                          This output is particularly useful in combination with MATLAB intrinsic ``surf``.&lt;br&gt;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>%&gt;                          The intended usage is ``surf(meshx, meshy, density)``.&lt;br&gt;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>%&gt;</div>
@@ -245,17 +245,17 @@ $(document).ready(function(){initNavTree('kde2d_8m_source.html',''); initResizab
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>%&gt;  met:</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>%&gt;</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>%&gt;  * Redistributions of source code must retain the above copyright</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>%&gt;    notice, <span class="keyword">this</span> <a class="code hl_function" href="os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> of conditions and the following disclaimer.</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>%&gt;    notice, <span class="keyword">this</span> <a class="code hl_function" href="namespaceparamonte_1_1os_1_1list.html#a24bc26566d86b0d986f6f8caa397edae">list</a> of conditions and the following disclaimer.</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>%&gt;  * Redistributions in binary form must reproduce the above copyright</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>%&gt;    notice, <span class="keyword">this</span> <a class="code hl_function" href="os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a> of conditions and the following disclaimer in</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>%&gt;    notice, <span class="keyword">this</span> <a class="code hl_function" href="namespaceparamonte_1_1os_1_1list.html#a24bc26566d86b0d986f6f8caa397edae">list</a> of conditions and the following disclaimer in</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>%&gt;    the documentation and/or other materials provided with the distribution</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>%&gt;  * Neither the <a class="code hl_function" href="lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> of the The University of New South Wales nor the names</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>%&gt;  * Neither the <a class="code hl_function" href="name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> of the The University of New South Wales nor the names</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>%&gt;    of its contributors may be used to endorse or promote products derived</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>%&gt;    from <span class="keyword">this</span> software without specific prior written permission.</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>%&gt;</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>%&gt;  This software is provided by the copyright holders and contributors <span class="stringliteral">&quot;as is&quot;</span></div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>%&gt;  and any express or implied warranties, including, but not limited to, the</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>%&gt;  implied warranties of merchantability and fitness <span class="keywordflow">for</span> a particular purpose</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>%&gt;  implied warranties of merchantability and fitness <span class="keywordflow">for</span> <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> particular purpose</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>%&gt;  are disclaimed. In no <span class="keyword">event</span> shall the copyright owner or contributors be</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>%&gt;  liable <span class="keywordflow">for</span> any direct, indirect, incidental, special, exemplary, or</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>%&gt;  consequential damages (including, but not limited to, procurement of</div>
@@ -288,7 +288,7 @@ $(document).ready(function(){initNavTree('kde2d_8m_source.html',''); initResizab
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    end</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    scaling = xymax - xymin;</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordflow">if</span>  nobs &lt;= size(data, 2)</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        error(&#39;data has to be a ``nobs`` by ``2`` array where each row represents a two dimensional observation.&#39;);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        error(&#39;data has to be <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> ``nobs`` by ``2`` array where each row represents <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> two dimensional observation.&#39;);</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    end</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    transformed_data = (data - repmat(xymin, nobs, 1)) ./ repmat(scaling, nobs, 1);</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
@@ -298,11 +298,11 @@ $(document).ready(function(){initNavTree('kde2d_8m_source.html',''); initResizab
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    %%%% Discrete cosine transform of initial data.</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    a =  dct2d(initial_data);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> =  dct2d(initial_data);</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    %%%% Now compute the optimal bandwidth^2.</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    asq = a .^ 2;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    asq = <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> .^ 2;</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    rangesq = (0 : resol - 1) .^ 2;</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    t_star = getRoot(@(t)(t - evolve(t, nobs, asq, rangesq)), nobs);</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    p_02 = func([0,2], t_star, nobs, asq, rangesq);</div>
@@ -313,7 +313,7 @@ $(document).ready(function(){initNavTree('kde2d_8m_source.html',''); initResizab
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    %%%% Smooth the discrete cosine transform of initial data using t_star.</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    a_t = exp(-(0 : resol - 1)&#39; .^ 2 * pi ^ 2 * t_x / 2) * exp(-(0 : resol - 1) .^ 2 * pi ^ 2 * t_y / 2) .* a;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    a_t = exp(-(0 : resol - 1)&#39; .^ 2 * pi ^ 2 * t_x / 2) * exp(-(0 : resol - 1) .^ 2 * pi ^ 2 * t_y / 2) .* <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>;</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    %%%% Now apply the inverse discrete cosine transform.</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
@@ -358,7 +358,7 @@ $(document).ready(function(){initNavTree('kde2d_8m_source.html',''); initResizab
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>function out = psi(s, time, asq, rangesq)</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    %global asq rangesq</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    %%%% The input ``s`` is a vector.</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    %%%% The input ``s`` is <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> vector.</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    w = exp(-rangesq * pi ^ 2 * time) .* [1, .5 * ones(1, length(rangesq) - 1)];</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    wx = w .* (rangesq .^ s(1));</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    wy = w .* (rangesq .^ s(2));</div>
@@ -379,17 +379,17 @@ $(document).ready(function(){initNavTree('kde2d_8m_source.html',''); initResizab
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    %%%%</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    [nrow, ncol] =  size(data);</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    if  nrow ~= ncol</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        error(&#39;data is not a square array!&#39;)</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        error(&#39;data is not <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> square array!&#39;)</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    end</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    %%%% Compute weights to multiply DFT coefficients.</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    w = [1; 2 * (exp(-i * (1 : nrow - 1) * pi / (2 * nrow))).&#39;];</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    w = [1; 2 * (exp(-<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a3dff586d2788a00dcaa39c7b4ba08d33">i</a> * (1 : nrow - 1) * pi / (2 * nrow))).&#39;];</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    weight = w(:, ones(1, ncol));</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    data = dct1d(dct1d(data)&#39;)&#39;;</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    function transform1d = dct1d(x)</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        %%%% Re-order the elements of the columns of x.</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        x = [x(1 : 2 : end, :); x(end : -2 : 2, :)];</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        %%%% Multiply FFT by weights.</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        transform1d = real(weight .* fft(x));</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        transform1d = <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1split2real.html#aa727314b5dc5cc010ce5652f5617393d">real</a>(weight .* fft(x));</div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    end</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>end</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
@@ -399,11 +399,11 @@ $(document).ready(function(){initNavTree('kde2d_8m_source.html',''); initResizab
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    %%%% Computes the 2 dimensional inverse discrete cosine transform.</div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    [nrow, ncol] = size(data);</div>
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    % Compute weights.</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    w = exp(i * (0 : nrow - 1) * pi / (2 * nrow)).&#39;;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    w = exp(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#a3dff586d2788a00dcaa39c7b4ba08d33">i</a> * (0 : nrow - 1) * pi / (2 * nrow)).&#39;;</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    weights = w(:, ones(1, ncol));</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    data = idct1d(idct1d(data)&#39;);</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    function out = idct1d(x)</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        y = real(ifft(weights .* x));</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        y = <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1split2real.html#aa727314b5dc5cc010ce5652f5617393d">real</a>(ifft(weights .* x));</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        out = zeros(nrow, ncol);</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        out(1 : 2 : nrow, :) = y(1 : nrow / 2, :);</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        out(2 : 2 : nrow, :) = y(nrow : -1 : nrow / 2 + 1, :);</div>
@@ -416,14 +416,14 @@ $(document).ready(function(){initNavTree('kde2d_8m_source.html',''); initResizab
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    %%%%    This function computes the histogram of an ndim-dimensional data set.</div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    %%%%    &#39;data&#39; is ``ndat`` rows by ``ndim`` columns.</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    %%%%    The input ``nbin`` is the number of bins used in each dimension.</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    %%%%    The output ``binned_data`` is a hypercube of length ``nbin``.</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    %%%%    The output ``binned_data`` is <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> hypercube of length ``nbin``.</div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    [ndat, ncol] = size(data);</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    bins = zeros(ndat, ncol);</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    for icol = 1 : ncol</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        [dum, bins(:, icol)] = histc(data(:, icol), [0 : 1 / nbin : 1], 1);</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        bins(:, icol) = min(bins(:, icol), nbin);</div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    end</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    %%%% Combine the  vectors of 1D bin counts into a grid of ND bin counts.</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    %%%% Combine the  vectors of 1D bin counts into <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> grid of ND bin counts.</div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    binned_data = accumarray(bins(all(bins &gt; 0, 2), :), 1 / ndat, nbin(ones(1, ncol)));</div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>end</div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
@@ -444,7 +444,7 @@ $(document).ready(function(){initNavTree('kde2d_8m_source.html',''); initResizab
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        end</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        %%%% if all else fails:</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        if tol == .1</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>            <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> = fminbnd(@(x) <a class="code hl_function" href="abs_8m.html#aa5a18068d39642deefb2f500d14403db">abs</a>(<a class="code hl_function" href="getFunc_8m.html#a64af94ae04daee963903f90460f94f86">getFunc</a>(x)), 0, .1);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>            <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> = fminbnd(@(x) abs(<a class="code hl_function" href="getFunc_8m.html#a64af94ae04daee963903f90460f94f86">getFunc</a>(x)), 0, .1);</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            flag = 1;</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        end</div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    end</div>
@@ -453,7 +453,6 @@ $(document).ready(function(){initNavTree('kde2d_8m_source.html',''); initResizab
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
 <div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>%&gt;  @endcond</div>
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
-<div class="ttc" id="aabs_8m_html_aa5a18068d39642deefb2f500d14403db"><div class="ttname"><a href="abs_8m.html#aa5a18068d39642deefb2f500d14403db">abs</a></div><div class="ttdeci">function abs(in path, in style)</div><div class="ttdoc">Return the Get absolute canonical path of a file or folder.</div></div>
 <div class="ttc" id="aclassCascadeContour3_html"><div class="ttname"><a href="classCascadeContour3.html">CascadeContour3</a></div><div class="ttdoc">This is the CascadeContour3 class for generating instances of 3-dimensional Contour3 Cascade visualiz...</div><div class="ttdef"><b>Definition:</b> <a href="CascadeContour3_8m_source.html#l00024">CascadeContour3.m:25</a></div></div>
 <div class="ttc" id="aclassCascadeContour_html"><div class="ttname"><a href="classCascadeContour.html">CascadeContour</a></div><div class="ttdoc">This is the CascadeContour class for generating instances of 2-dimensional Contour Cascade visualizat...</div><div class="ttdef"><b>Definition:</b> <a href="CascadeContour_8m_source.html#l00024">CascadeContour.m:25</a></div></div>
 <div class="ttc" id="aclassCascadeContourf_html"><div class="ttname"><a href="classCascadeContourf.html">CascadeContourf</a></div><div class="ttdoc">This is the CascadeContourf class for generating instances of 2-dimensional Contourf Cascade visualiz...</div><div class="ttdef"><b>Definition:</b> <a href="CascadeContourf_8m_source.html#l00024">CascadeContourf.m:25</a></div></div>
@@ -468,18 +467,21 @@ $(document).ready(function(){initNavTree('kde2d_8m_source.html',''); initResizab
 <div class="ttc" id="aclassTileContourf_html"><div class="ttname"><a href="classTileContourf.html">TileContourf</a></div><div class="ttdoc">This is the pm.vis.TileContourf class for generating instances of 2-dimensional Contourf Tile visuali...</div><div class="ttdef"><b>Definition:</b> <a href="TileContourf_8m_source.html#l00019">TileContourf.m:20</a></div></div>
 <div class="ttc" id="agetFunc_8m_html_a64af94ae04daee963903f90460f94f86"><div class="ttname"><a href="getFunc_8m.html#a64af94ae04daee963903f90460f94f86">getFunc</a></div><div class="ttdeci">function getFunc(in x, in y)</div><div class="ttdoc">Return the value of the 2-dimensional Himmelblau function at the specified input value.</div></div>
 <div class="ttc" id="akde2d_8m_html_ac3954bb5681cb9fd19f4acf85f39447c"><div class="ttname"><a href="kde2d_8m.html#ac3954bb5681cb9fd19f4acf85f39447c">kde2d</a></div><div class="ttdeci">function kde2d(in data, in resol, in xymin, in xymax)</div><div class="ttdoc">Compute the Gaussian kernel density estimate of the input bivariate data.</div></div>
-<div class="ttc" id="alib_2_09mpi_2name_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div><div class="ttdoc">Return the MPI library name as used in naming the ParaMonte MATLAB shared library directories.</div></div>
-<div class="ttc" id="aos_2list_8m_html_a7e0597e15fc79693cc071bb0b8a33a0b"><div class="ttname"><a href="os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a></div><div class="ttdeci">function list()</div><div class="ttdoc">Return a list of MATLAB strings containing the names of OS platforms supported by the ParaMonte MATLA...</div></div>
+<div class="ttc" id="aname_8m_html_a19728dc6261fff6f3b0ec7810af5044c"><div class="ttname"><a href="name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a></div><div class="ttdeci">function name(in vendor)</div><div class="ttdoc">Return the MPI library name as used in naming the ParaMonte MATLAB shared library directories.</div></div>
+<div class="ttc" id="anamespaceparamonte_1_1os_1_1list_html_a24bc26566d86b0d986f6f8caa397edae"><div class="ttname"><a href="namespaceparamonte_1_1os_1_1list.html#a24bc26566d86b0d986f6f8caa397edae">paramonte.os.list.list</a></div><div class="ttdeci">def list()</div><div class="ttdoc">Return a list of Python strings containing the names of OS platforms supported by the ParaMonte Pytho...</div><div class="ttdef"><b>Definition:</b> <a href="list_8py_source.html#l00001">list.py:1</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1locname_html_a3dff586d2788a00dcaa39c7b4ba08d33"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1locname.html#a3dff586d2788a00dcaa39c7b4ba08d33">paramonte.str.locname.i</a></div><div class="ttdeci">i</div><div class="ttdef"><b>Definition:</b> <a href="locname_8py_source.html#l00051">locname.py:51</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1locname_html_af2d5709535b74c084ca0ac75b027bee0"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">paramonte.str.locname.a</a></div><div class="ttdeci">a</div><div class="ttdef"><b>Definition:</b> <a href="locname_8py_source.html#l00069">locname.py:69</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1split2real_html_aa727314b5dc5cc010ce5652f5617393d"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1split2real.html#aa727314b5dc5cc010ce5652f5617393d">paramonte.str.split2real.real</a></div><div class="ttdeci">real</div><div class="ttdef"><b>Definition:</b> <a href="split2real_8py_source.html#l00024">split2real.py:24</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which_html_a1b834b4e4b89ed9f7aae0da42263af15"><div class="ttname"><a href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">paramonte.sys.path.mpiexec.which.which</a></div><div class="ttdeci">def which(vendor=&quot;&quot;)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div><div class="ttdef"><b>Definition:</b> <a href="which_8py_source.html#l00001">which.py:1</a></div></div>
 <div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
 <div class="ttc" id="ashow_8m_html_a697b21ad16cea9f33b6f71bb3f665f2b"><div class="ttname"><a href="show_8m.html#a697b21ad16cea9f33b6f71bb3f665f2b">excluded</a></div><div class="ttdeci">excluded</div><div class="ttdef"><b>Definition:</b> <a href="show_8m_source.html#l00172">show.m:173</a></div></div>
-<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_1d06224e2bda5736edc0df9be1858358.html">stats</a></li><li class="navelem"><a class="el" href="dir_3563c56a3c8096d1ef7149d3da5af13f.html">+hist</a></li><li class="navelem"><a class="el" href="kde2d_8m.html">kde2d.m</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:29 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_1d06224e2bda5736edc0df9be1858358.html">stats</a></li><li class="navelem"><a class="el" href="dir_19b8ef89f97f3510e678d718f44057b2.html">hist</a></li><li class="navelem"><a class="el" href="kde2d_8m.html">kde2d.m</a></li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:55 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['econometrics_0',['econometrics',['../econometrics_8m.html#a0f34e2f8ca3b64f2a33db26abb86352d',1,'econometrics.m']]],
-  ['eps2pdf_1',['eps2pdf',['../eps2pdf_8m.html#aae7a92625a1b810944df6799863301a1',1,'eps2pdf.m']]],
-  ['eps_5fmaintainalpha_2',['eps_maintainAlpha',['../print2eps_8m.html#a736d7d0ea608f7309cfbd0fcc27a8ffb',1,'print2eps.m']]]
+  ['delta_0',['delta',['../classparamonte_1_1timing_1_1Timer_1_1Timer.html#a0afd87910f35285acc0a0a459a1c2b71',1,'paramonte::timing::Timer::Timer']]],
+  ['detect_1',['detect',['../detect_8m.html#a5901bf92e9e2fb965a99c71fd0f0fa90',1,'detect.m']]],
+  ['doc_2',['doc',['../classHandle.html#a480746b4c00fd36160dc00aff5c99377',1,'Handle::doc()'],['../classSpecBase.html#a681753a4a26fbeae1a501b127362d563',1,'SpecBase::doc()']]]
 ];

@@ -1,17 +1,6 @@
 var classSampler =
 [
     [ "Sampler", "classSampler.html#a203ff4b56b6248910944a745de505e82", null ],
-    [ "finalize", "classSampler.html#af102f0a6a2b1e59537a9045dd4799cf1", null ],
-    [ "findfile", "classSampler.html#ad1e47e4d1c58f13f9d6468dc28488144", null ],
-    [ "getLogFuncConcurrent", "classSampler.html#a1863d9371c47d3adefe212b340f15507", null ],
-    [ "getLogFuncWrapped", "classSampler.html#abff971dc236c62019bbe6aa280817260", null ],
-    [ "getppm", "classSampler.html#a84bea6181cfd13549dc7b5a4dbc91ff9", null ],
-    [ "readChain", "classSampler.html#a81bed7a49a0c8cdf247c378498f6cf5e", null ],
-    [ "readProgress", "classSampler.html#ae3f0f62c32f8da4d9f4c882f9cc39c6e", null ],
-    [ "readReport", "classSampler.html#a753ccd6a5b6734db44952de25be7e002", null ],
-    [ "readRestart", "classSampler.html#ad563aa53879139a7482e81eed36d68ac", null ],
-    [ "readSample", "classSampler.html#a04e65e54cdf2f48c07889ac0f8c1861a", null ],
-    [ "run", "classSampler.html#a05facc7b19d55723b4b9b7f5754c8ae6", null ],
     [ "bldtype", "classSampler.html#ab62fb4b958ab96f81a6b261448f4e72b", null ],
     [ "checked", "classSampler.html#ae1f73075258327f6911b4a302909fb9b", null ],
     [ "clstype", "classSampler.html#acd00278ba57e029073aba586e85d8ece", null ],

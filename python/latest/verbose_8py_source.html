@@ -188,42 +188,45 @@ $(document).ready(function(){initNavTree('verbose_8py_source.html',''); initResi
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="preprocessor">@final</span>{verbose}</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="preprocessor">@author</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="preprocessor">@JoshuaOsborne</span>, May 21 2024, 4:24 PM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="preprocessor">@FatemehBagheri</span>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="preprocessor">@AmirShahmoradi</span>, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering <span class="keywordflow">and</span> Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="stringliteral">    </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">if</span>  checked:</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">if</span>  np.any(weight &lt; 0) <span class="keywordflow">or</span> <span class="keywordflow">not</span> np.all(np.fmod(weight, 1) == 0):</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            help(<a class="code hl_namespace" href="namespaceparamonte_1_1array_1_1verbose.html">paramonte.array.verbose</a>)</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            print(<span class="stringliteral">&quot;weight&quot;</span>)</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            print( weight )</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&quot;The input ``weight`` argument displayed above must be all non-negative whole-numbers.&quot;</span>)</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">if</span>  len(weight) != np.size(cmat, dim):</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            help(<a class="code hl_namespace" href="namespaceparamonte_1_1array_1_1verbose.html">paramonte.array.verbose</a>)</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            print(<span class="stringliteral">&quot;[len(weight), np.size(cmat, dim), dim]&quot;</span>)</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            print( [len(weight), np.size(cmat, dim), dim] )</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&quot;The condition ``len(weight) == np.size(cmat, dim)`` must hold.&quot;</span>)</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    cumsumwei = np.cumsum(weight)</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    sumwei = cumsumwei[-1]</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    nrow = np.size(cmat, 0)</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    ncol = np.size(cmat, 1)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    istart = 0</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">if</span>  dim == 1:</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        vmat = np.zeros((sumwei, ncol))</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">for</span> ientry <span class="keywordflow">in</span> range(nrow):</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            iend = cumsumwei[ientry]</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">for</span> iwei <span class="keywordflow">in</span> range(istart, iend): </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                vmat[iwei, :] = cmat[ientry, :]</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            istart = iend</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">else</span>:</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        vmat = np.zeros((nrow, sumwei))</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">for</span> ientry <span class="keywordflow">in</span> range(ncol):</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            iend = cumsumwei(ientry)</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordflow">for</span> iwei <span class="keywordflow">in</span> range(istart, iend):</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                vmat[:, iwei] = cmat[:, ientry]</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            istart = iend</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">return</span> vmat</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="preprocessor">@FatemehBagheri</span>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="preprocessor">@AmirShahmoradi</span>, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering <span class="keywordflow">and</span> Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="stringliteral">    </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">if</span>  checked:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span>  np.any(np.array(weight) &lt; 0) <span class="keywordflow">or</span> <span class="keywordflow">not</span> np.all(np.fmod(weight, 1) == 0):</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            help(<a class="code hl_namespace" href="namespaceparamonte_1_1array_1_1verbose.html">paramonte.array.verbose</a>)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            print(<span class="stringliteral">&quot;weight&quot;</span>)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            print( weight )</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&quot;The input ``weight`` argument displayed above must be all non-negative whole-numbers.&quot;</span>)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">if</span>  len(weight) != np.size(cmat, dim):</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            help(<a class="code hl_namespace" href="namespaceparamonte_1_1array_1_1verbose.html">paramonte.array.verbose</a>)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            print(<span class="stringliteral">&quot;[len(weight), np.size(cmat, dim), dim]&quot;</span>)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            print( [len(weight), np.size(cmat, dim), dim] )</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&quot;The condition ``len(weight) == np.size(cmat, dim)`` must hold.&quot;</span>)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    cumsumwei = np.cumsum(weight)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    sumwei = cumsumwei[-1]</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    nrow = np.size(cmat, 0)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    ncol = np.size(cmat, 1)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    istart = 0</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">if</span>  dim == 0:</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        vmat = np.zeros((sumwei, ncol))</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">for</span> ientry <span class="keywordflow">in</span> range(nrow):</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            iend = cumsumwei[ientry]</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">for</span> iwei <span class="keywordflow">in</span> range(istart, iend): </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                vmat[iwei, :] = cmat[ientry, :]</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            istart = iend</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">elif</span> dim == 1:</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        vmat = np.zeros((nrow, sumwei))</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">for</span> ientry <span class="keywordflow">in</span> range(ncol):</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            iend = cumsumwei[ientry]</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">for</span> iwei <span class="keywordflow">in</span> range(istart, iend):</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                vmat[:, iwei] = cmat[:, ientry]</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            istart = iend</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">else</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keyword">import</span> paramonte <span class="keyword">as</span> pm</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        help(pm.array.verbose)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">raise</span> RuntimeError(<span class="stringliteral">&quot;Invalid user-specified value for the input ``dim`` argument: {}&quot;</span>.format(dim))</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">return</span> vmat</div>
 <div class="ttc" id="anamespaceparamonte_1_1array_1_1verbose_html"><div class="ttname"><a href="namespaceparamonte_1_1array_1_1verbose.html">paramonte.array.verbose</a></div><div class="ttdef"><b>Definition:</b> <a href="verbose_8py_source.html#l00001">verbose.py:1</a></div></div>
 <div class="ttc" id="anamespaceparamonte_1_1array_1_1verbose_html_a95a084f318ed2133279f066c1710f244"><div class="ttname"><a href="namespaceparamonte_1_1array_1_1verbose.html#a95a084f318ed2133279f066c1710f244">paramonte.array.verbose.verbose</a></div><div class="ttdeci">def verbose(cmat, dim, weight, checked=False)</div><div class="ttdoc">Return a Python double, cell, or table matrix whose rows or columns are unrolled according to a presp...</div><div class="ttdef"><b>Definition:</b> <a href="verbose_8py_source.html#l00001">verbose.py:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -232,7 +235,7 @@ $(document).ready(function(){initNavTree('verbose_8py_source.html',''); initResi
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_29db76637812eb7a685e15fbbf8c7a56.html">array</a></li><li class="navelem"><a class="el" href="verbose_8py.html">verbose.py</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:27 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:55 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -1,9 +1,11 @@
 var dir_04d35edbf6695f243ce60cc100d02910 =
 [
-    [ "+is", "dir_1e478d5778ad0e82acea8bc3ae00f207.html", "dir_1e478d5778ad0e82acea8bc3ae00f207" ],
-    [ "Contents.m", "os_2Contents_8m.html", null ],
-    [ "list.m", "os_2list_8m.html", "os_2list_8m" ],
-    [ "listl.m", "listl_8m.html", "listl_8m" ],
-    [ "name.m", "os_2name_8m.html", "os_2name_8m" ],
-    [ "namel.m", "namel_8m.html", "namel_8m" ]
+    [ "__init__.py", "os_2____init_____8py.html", null ],
+    [ "islin.py", "islin_8py.html", "islin_8py" ],
+    [ "ismac.py", "ismac_8py.html", "ismac_8py" ],
+    [ "iswin.py", "iswin_8py.html", "iswin_8py" ],
+    [ "list.py", "list_8py.html", "list_8py" ],
+    [ "listl.py", "listl_8py.html", "listl_8py" ],
+    [ "name.py", "name_8py.html", "name_8py" ],
+    [ "namel.py", "namel_8py.html", "namel_8py" ]
 ];

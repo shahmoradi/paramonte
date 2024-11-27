@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/vis/+figure/private/user_string.m Source File</title>
+    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/vis/figure/private/user_string.m Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -142,18 +142,18 @@ $(document).ready(function(){initNavTree('user__string_8m_source.html',''); init
 </div><!--header-->
 <div class="contents">
 <a href="user__string_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="user__string_8m.html#a494d42354cfb17ad69773052ba5d42ea">    1</a></span>function [string, file_name] = <a class="code hl_function" href="user__string_8m.html#a494d42354cfb17ad69773052ba5d42ea">user_string</a>(string_name, <span class="keywordtype">string</span>)</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%USER_STRING  Get/set a user specific <span class="keywordtype">string</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%USER_STRING  Get/set <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> user specific <span class="keywordtype">string</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>% Examples:</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%   <span class="keywordtype">string</span>  = <a class="code hl_function" href="user__string_8m.html#a494d42354cfb17ad69773052ba5d42ea">user_string</a>(string_name)</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%   isSaved = <a class="code hl_function" href="user__string_8m.html#a494d42354cfb17ad69773052ba5d42ea">user_string</a>(string_name, new_string)</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%   [value, file_name] = <a class="code hl_function" href="user__string_8m.html#a494d42354cfb17ad69773052ba5d42ea">user_string</a>(...)</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>% Function to get and set a <span class="keywordtype">string</span> in a system or user specific file. This</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>% Function to get and set <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> <span class="keywordtype">string</span> in <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> system or user specific file. This</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>% enables, <span class="keywordflow">for</span> example, system specific paths to binaries to be saved.</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>% The specified <span class="keywordtype">string</span> will be saved in a file named &lt;string_name&gt;.txt,</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>% either in a subfolder named .ignore under <span class="keyword">this</span> file<span class="stringliteral">&#39;s folder, or in the</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>% The specified <span class="keywordtype">string</span> will be saved in <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> file named &lt;string_name&gt;.txt,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>% either in <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> subfolder named .ignore under <span class="keyword">this</span> file<span class="stringliteral">&#39;s folder, or in the</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral">% user&#39;</span>s prefdir folder (in <span class="keywordflow">case</span> <span class="keyword">this</span> file<span class="stringliteral">&#39;s folder is non-writable).</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="stringliteral">%</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="stringliteral">% IN:</span></div>
@@ -181,7 +181,7 @@ $(document).ready(function(){initNavTree('user__string_8m_source.html',''); init
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="stringliteral">% 15/01/2020 - Added file_name output argument</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="stringliteral"></span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="stringliteral">    if ~ischar(string_name)</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="stringliteral">        error(&#39;</span>string_name must be a <span class="keywordtype">string</span>.<span class="stringliteral">&#39;);</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="stringliteral">        error(&#39;</span>string_name must be <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> <span class="keywordtype">string</span>.<span class="stringliteral">&#39;);</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="stringliteral">    end</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="stringliteral">    % Create the full filename</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="stringliteral">    fname = [string_name &#39;</span>.txt<span class="stringliteral">&#39;];</span></div>
@@ -191,7 +191,7 @@ $(document).ready(function(){initNavTree('user__string_8m_source.html',''); init
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="stringliteral">    if nargin &gt; 1</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="stringliteral">        % Set string</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="stringliteral">        if ~ischar(string)</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="stringliteral">            error(&#39;</span>new_string must be a <span class="keywordtype">string</span>.<span class="stringliteral">&#39;);</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="stringliteral">            error(&#39;</span>new_string must be <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> <span class="keywordtype">string</span>.<span class="stringliteral">&#39;);</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="stringliteral">        end</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="stringliteral">        % Make sure the save directory exists</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="stringliteral">        %dname = fileparts(file_name);</span></div>
@@ -216,7 +216,7 @@ $(document).ready(function(){initNavTree('user__string_8m_source.html',''); init
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="stringliteral">        fid = fopen(file_name, &#39;</span>wt<span class="stringliteral">&#39;);</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="stringliteral">        if fid == -1</span></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="stringliteral">            % file cannot be created/updated - use prefdir if file does not already exist</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="stringliteral">            % (if file exists but is simply not writable, don&#39;</span>t create a duplicate in prefdir)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="stringliteral">            % (if file exists but is simply not writable, don&#39;</span>t create <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> duplicate in prefdir)</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">if</span> ~exist(file_name,<span class="stringliteral">&#39;file&#39;</span>)</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                file_name = fullfile(prefdir, fname);</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                fid = fopen(file_name, &#39;wt&#39;);</div>
@@ -258,14 +258,15 @@ $(document).ready(function(){initNavTree('user__string_8m_source.html',''); init
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        end</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    end</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>end</div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1locname_html_af2d5709535b74c084ca0ac75b027bee0"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">paramonte.str.locname.a</a></div><div class="ttdeci">a</div><div class="ttdef"><b>Definition:</b> <a href="locname_8py_source.html#l00069">locname.py:69</a></div></div>
 <div class="ttc" id="auser__string_8m_html_a494d42354cfb17ad69773052ba5d42ea"><div class="ttname"><a href="user__string_8m.html#a494d42354cfb17ad69773052ba5d42ea">user_string</a></div><div class="ttdeci">function user_string(in string_name, in string)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_38d8d2656997a5a98206df02f57e7ff6.html">vis</a></li><li class="navelem"><a class="el" href="dir_1351c9036bf629c75a97235f65e01313.html">+figure</a></li><li class="navelem"><a class="el" href="dir_246122b6a87048e19363caac045aef36.html">private</a></li><li class="navelem"><a class="el" href="user__string_8m.html">user_string.m</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:29 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_38d8d2656997a5a98206df02f57e7ff6.html">vis</a></li><li class="navelem"><a class="el" href="dir_cb409ba0c1dbb49a3d1efefe96197279.html">figure</a></li><li class="navelem"><a class="el" href="dir_d7a7fc6cc2a16fb9bc395ab0454e45a2.html">private</a></li><li class="navelem"><a class="el" href="user__string_8m.html">user_string.m</a></li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:55 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

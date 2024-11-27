@@ -205,12 +205,34 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">array = pm.array.logspaceint(loglb, logub, logskip = <span class="keywordtype">None</span>, base = <span class="keywordtype">None</span>)</div>
 </div><!-- fragment --></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This function calls <a class="el" href="namespaceparamonte_1_1array_1_1logspace.html">pm.array.logspace</a> internally.<br  />
+ As such, all warnings and remarks associated with the function <a class="el" href="namespaceparamonte_1_1array_1_1logspace.html">pm.array.logspace</a> also apply here.<br  />
+</dd></dl>
 <p><br  />
-<a class="anchor" id="example-logspaceint"></a><b>Example usage</b> <a href="#example-logspaceint">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"></div><!-- fragment --> <br  />
+<a class="anchor" id="example-logspaceint"></a><b>Example usage</b> <a href="#example-logspaceint">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">#!/usr/bin/env python3</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> sys</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> os</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>srcdir = os.path.dirname(__file__)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>os.chdir(srcdir) <span class="comment"># Change working directory to source code directory.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>sys.path.append(os.path.join(srcdir, <span class="stringliteral">&quot;..&quot;</span>, <span class="stringliteral">&quot;..&quot;</span>, <span class="stringliteral">&quot;..&quot;</span>)) <span class="comment"># import paramonte module locally if available.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> paramonte <span class="keyword">as</span> pm</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">assert</span> np.all(pm.array.logspaceint(np.log(10), np.log(20)) == [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">assert</span> np.all(pm.array.logspaceint(np.log(10), np.log(100), np.log(1.5)) == [10, 15, 23, 34, 51, 76])</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">assert</span> np.all(pm.array.logspaceint(np.log(10), np.log(20), base = 2) == [5, 6, 7, 8])</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">assert</span> np.all(pm.array.logspaceint(np.log(10), np.log(20), np.log(1.5)) == [10, 15])</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>print(<span class="stringliteral">&quot;pm.array.logspaceint(np.log(10), np.log(100), np.log(1.5))&quot;</span>)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>print( pm.array.logspaceint(np.log(10), np.log(100), np.log(1.5)) )</div>
+</div><!-- fragment --> <br  />
 <a class="anchor" id="output-logspaceint"></a><b>Example output</b> <a href="#output-logspaceint">⛓</a> <div class="fragment"></div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-logspaceint"></a><b>Final Remarks</b> <a href="#final-logspaceint">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/python/main/paramonte/array/logspaceint.py#L32 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/python/main/paramonte/array/logspaceint.py#L37 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -225,8 +247,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000004">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 3:41 PM, University of Texas at Arlington<br  />
- <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000015">Author:</a></b></dt><dd><a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
 </dd></dl>
 
@@ -260,7 +281,7 @@ Here is the caller graph for this function:</div>
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespaceparamonte.html">paramonte</a></li><li class="navelem"><a class="el" href="namespaceparamonte_1_1array.html">array</a></li><li class="navelem"><a class="el" href="namespaceparamonte_1_1array_1_1logspaceint.html">logspaceint</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:30 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:56 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

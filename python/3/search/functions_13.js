@@ -1,6 +1,26 @@
 var searchData=
 [
-  ['update_0',['update',['../classTilingLayout.html#a445273771632466e52290e0e794316c3',1,'TilingLayout']]],
-  ['user_5fstring_1',['user_string',['../user__string_8m.html#a494d42354cfb17ad69773052ba5d42ea',1,'user_string.m']]],
-  ['using_5fhg2_2',['using_hg2',['../using__hg2_8m.html#a54d6ede409f48c279dc31dd2f5a2036f',1,'using_hg2.m']]]
+  ['tab_0',['tab',['../namespaceparamonte_1_1io_1_1tab.html#aa207a4bf1002b9c158844d29047d053e',1,'paramonte::io::tab']]],
+  ['tic_1',['tic',['../classparamonte_1_1timing_1_1Timer_1_1Timer.html#ac396ae0675a04423050d382db544ffb1',1,'paramonte::timing::Timer::Timer']]],
+  ['tile_2',['Tile',['../classTile.html#a12758ae279b359412b43164a4a75d5ff',1,'Tile']]],
+  ['tilecontour_3',['TileContour',['../classTileContour.html#a0d18a1de3e7641726ba50670a21e298e',1,'TileContour']]],
+  ['tilecontour3_4',['TileContour3',['../classTileContour3.html#ac33b6789405350fa2427337b6de1ab95',1,'TileContour3']]],
+  ['tilecontourf_5',['TileContourf',['../classTileContourf.html#a73f8c3113fbf582c9a5367a94f921df0',1,'TileContourf']]],
+  ['tileellipse_6',['TileEllipse',['../classTileEllipse.html#ac9518de09b09a3bb81c0f4330b9a9593',1,'TileEllipse']]],
+  ['tileellipse3_7',['TileEllipse3',['../classTileEllipse3.html#a3a04fec0e70d2ce26d963153fff19a4d',1,'TileEllipse3']]],
+  ['tileheatmap_8',['TileHeatmap',['../classTileHeatmap.html#a6de19d8c2258ce4bb40349b6e445efab',1,'TileHeatmap']]],
+  ['tilehistfit_9',['TileHistfit',['../classTileHistfit.html#a599513ee2ee6507061da975b00df9cea',1,'TileHistfit']]],
+  ['tilehistogram_10',['TileHistogram',['../classTileHistogram.html#aefbb289b25b869fb578924fd761655de',1,'TileHistogram']]],
+  ['tilehistogram2_11',['TileHistogram2',['../classTileHistogram2.html#a96abc47b7b01615d08d2a3557bd5a68f',1,'TileHistogram2']]],
+  ['tileline_12',['TileLine',['../classTileLine.html#ac070796ac91fd28f96fbec01d4f7fa6d',1,'TileLine']]],
+  ['tileline3_13',['TileLine3',['../classTileLine3.html#ac18c34c36f403ca7dbd8efbb6e86a442',1,'TileLine3']]],
+  ['tilelinescatter_14',['TileLineScatter',['../classTileLineScatter.html#a145aac6726c017a5552262ba0d289560',1,'TileLineScatter']]],
+  ['tilelinescatter3_15',['TileLineScatter3',['../classTileLineScatter3.html#aa0773ec29a7e9ff9a9ef699ba9eca6a3',1,'TileLineScatter3']]],
+  ['tilescatter_16',['TileScatter',['../classTileScatter.html#a6abbed6fc6984d6f0ab9a6e3b5bc40fa',1,'TileScatter']]],
+  ['tilescatter3_17',['TileScatter3',['../classTileScatter3.html#a52884de7dd843c07e9f8f215234c382d',1,'TileScatter3']]],
+  ['tiling_18',['Tiling',['../classTiling.html#aeac1d2a387b45e2a32b00c7393ec44df',1,'Tiling']]],
+  ['tilinglayout_19',['TilingLayout',['../classTilingLayout.html#affe21a0ed115bceefff10192d701dfcf',1,'TilingLayout']]],
+  ['toc_20',['toc',['../classparamonte_1_1timing_1_1Timer_1_1Timer.html#a3a39371cb738146e47284b11bd3603f6',1,'paramonte::timing::Timer::Timer']]],
+  ['touch_21',['touch',['../namespaceparamonte_1_1sys_1_1bash__profile_1_1touch.html#af7d399225f68fe8e327a3d73b753dc01',1,'paramonte::sys::bash_profile::touch']]],
+  ['triplex_22',['Triplex',['../classTriplex.html#a658ad0c42dfb719e8aa0b63afd912ed6',1,'Triplex']]]
 ];

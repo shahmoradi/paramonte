@@ -1,23 +1,5 @@
 var searchData=
 [
-  ['figure_0',['Figure',['../classFigure.html#a2f74484b92e6cc44b0a358c473b382f9',1,'Figure']]],
-  ['filecontents_1',['FileContents',['../classFileContents.html#a7e22f8bc509a70a25759c6cd2980526c',1,'FileContents']]],
-  ['filecontentschain_2',['FileContentsChain',['../classFileContentsChain.html#ab2bf66131e5acb3a9d94624fdb5a428f',1,'FileContentsChain']]],
-  ['filecontentschaindram_3',['FileContentsChainDRAM',['../classFileContentsChainDRAM.html#afff34baad69c0fa2d3d5686a47d5d789',1,'FileContentsChainDRAM']]],
-  ['filecontentschainmcmc_4',['FileContentsChainMCMC',['../classFileContentsChainMCMC.html#a3599dd54cc52ebedcf3cddee2e69b70a',1,'FileContentsChainMCMC']]],
-  ['filecontentsprogress_5',['FileContentsProgress',['../classFileContentsProgress.html#a1922ca0678c7a16640149c30c3845d1a',1,'FileContentsProgress']]],
-  ['filecontentsreport_6',['FileContentsReport',['../classFileContentsReport.html#aa773b47820842acffa49d122d9539e61',1,'FileContentsReport']]],
-  ['filecontentsrestart_7',['FileContentsRestart',['../classFileContentsRestart.html#a1db268e5b841872d64e0af3c9b14c576',1,'FileContentsRestart']]],
-  ['filecontentsrestartdram_8',['FileContentsRestartDRAM',['../classFileContentsRestartDRAM.html#a401e6880c61d11bf1ff99a39b2b3b1e7',1,'FileContentsRestartDRAM']]],
-  ['filecontentssample_9',['FileContentsSample',['../classFileContentsSample.html#afc9841fb7af9a8c3e987bf6abf7e9a4b',1,'FileContentsSample']]],
-  ['filecontentssampledram_10',['FileContentsSampleDRAM',['../classFileContentsSampleDRAM.html#affac76570bf7618bad208466b849abf8',1,'FileContentsSampleDRAM']]],
-  ['filecontentstabular_11',['FileContentsTabular',['../classFileContentsTabular.html#abd9bd07b8bb6503357f442344b85cbf6',1,'FileContentsTabular']]],
-  ['finalize_12',['finalize',['../classSampler.html#af102f0a6a2b1e59537a9045dd4799cf1',1,'Sampler']]],
-  ['financial_13',['financial',['../financial_8m.html#affc01d23e7952adbd5f866e18a3b2b15',1,'financial.m']]],
-  ['find_14',['find',['../find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c',1,'find.m']]],
-  ['findfile_15',['findfile',['../classSampler.html#ad1e47e4d1c58f13f9d6468dc28488144',1,'Sampler']]],
-  ['fitaxes_16',['fitAxes',['../fitAxes_8m.html#a6f5920b1a20da6523d042b79582de684',1,'fitAxes.m']]],
-  ['fix_5flines_17',['fix_lines',['../fix__lines_8m.html#a03b23f1f3c52b4ac3bcf759eb29fd9a5',1,'fix_lines.m']]],
-  ['font_5fpath_18',['font_path',['../eps2pdf_8m.html#a4289a51d03a8ce6ba80650a8704a4c8e',1,'font_path():&#160;eps2pdf.m'],['../print2array_8m.html#a4289a51d03a8ce6ba80650a8704a4c8e',1,'font_path():&#160;print2array.m']]],
-  ['fuzzy_19',['fuzzy',['../fuzzy_8m.html#a42a082d6a8083240b22f0661e7d470ff',1,'fuzzy.m']]]
+  ['eps2pdf_0',['eps2pdf',['../eps2pdf_8m.html#aae7a92625a1b810944df6799863301a1',1,'eps2pdf.m']]],
+  ['eps_5fmaintainalpha_1',['eps_maintainAlpha',['../print2eps_8m.html#a736d7d0ea608f7309cfbd0fcc27a8ffb',1,'print2eps.m']]]
 ];

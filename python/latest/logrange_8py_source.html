@@ -169,39 +169,40 @@ $(document).ready(function(){initNavTree('logrange_8py_source.html',''); initRes
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">import</span> paramonte <span class="keyword">as</span> pm</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        array = pm.array.logrange(start, stop)</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        array = pm.array.logrange(start, stop, [])</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        array = pm.array.logrange(start, stop, sizemax)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        array = pm.array.logrange(start, stop, sizemax = sizemax)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="preprocessor">@endcode</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="preprocessor">@endcode</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="preprocessor">@example</span>{logrange}</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="preprocessor">@include</span>{lineno} example/array/logrange/main.py</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="preprocessor">@output</span>{logrange}</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="preprocessor">@include</span>{lineno} example/array/logrange/main.out.py</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="preprocessor">@final</span>{logrange}</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="preprocessor">@author</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="preprocessor">@JoshuaOsborne</span>, May 21 2024, 4:29 PM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="preprocessor">@FatemehBagheri</span>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="preprocessor">@AmirShahmoradi</span>, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering <span class="keywordflow">and</span> Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="stringliteral">    </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    logub = np.log(stop)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    loglb = np.log(start)</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    logskip = (logub - loglb) / sizemax</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    array = np.unique(np.round(<a class="code hl_namespace" href="namespaceparamonte_1_1array_1_1logspace.html">paramonte.array.logspace</a>(loglb, logub, logskip)))</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> array</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="preprocessor">@warning</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    This function calls [pm.array.logspace](<span class="preprocessor">@ref</span> logspace) internally.&lt;br&gt;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    As such, all warnings <span class="keywordflow">and</span> remarks associated <span class="keyword">with</span> the function</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    [pm.array.logspace](<span class="preprocessor">@ref</span> logspace) also apply here.&lt;br&gt;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="preprocessor">@example</span>{logrange}</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="preprocessor">@include</span>{lineno} example/array/logrange/main.py</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="preprocessor">@output</span>{logrange}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="preprocessor">@include</span>{lineno} example/array/logrange/main.out.py</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="preprocessor">@final</span>{logrange}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="preprocessor">@author</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="preprocessor">@FatemehBagheri</span>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="preprocessor">@AmirShahmoradi</span>, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering <span class="keywordflow">and</span> Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="stringliteral">    </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">import</span> paramonte <span class="keyword">as</span> pm</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    logub = np.log(stop)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    loglb = np.log(start)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    logskip = (logub - loglb) / sizemax</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> np.unique(np.round(pm.array.logspace(loglb, logub, logskip)))</div>
 <div class="ttc" id="anamespaceparamonte_1_1array_1_1logrange_html_a66c28c9b28aca0faa8b79044b7a68df0"><div class="ttname"><a href="namespaceparamonte_1_1array_1_1logrange.html#a66c28c9b28aca0faa8b79044b7a68df0">paramonte.array.logrange.logrange</a></div><div class="ttdeci">def logrange(start, stop, sizemax=100)</div><div class="ttdoc">Return a set of maximum sizemax unique integer spacings almost linearly spaced in the natural logarit...</div><div class="ttdef"><b>Definition:</b> <a href="logrange_8py_source.html#l00001">logrange.py:1</a></div></div>
-<div class="ttc" id="anamespaceparamonte_1_1array_1_1logspace_html"><div class="ttname"><a href="namespaceparamonte_1_1array_1_1logspace.html">paramonte.array.logspace</a></div><div class="ttdef"><b>Definition:</b> <a href="logspace_8py_source.html#l00001">logspace.py:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_29db76637812eb7a685e15fbbf8c7a56.html">array</a></li><li class="navelem"><a class="el" href="logrange_8py.html">logrange.py</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:27 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:55 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

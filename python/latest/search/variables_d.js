@@ -1,12 +1,15 @@
 var searchData=
 [
-  ['sep_0',['sep',['../classFileContentsTabular.html#a1065f2c4676f57d8e71a4a5a6501175e',1,'FileContentsTabular']]],
-  ['silent_1',['silent',['../classFileContents.html#a3ad6f14aff85bf5d9e222dc4a92b146e',1,'FileContents::silent()'],['../classSampler.html#ac5a72d9797fc1bb96b84601276d4bd33',1,'Sampler::silent()'],['../classSpecBase.html#a10de6f012eeb1bf9a39687f8ca6736e7',1,'SpecBase::silent()'],['../classAxes.html#a1a655c8c7dfd6cfebf0d48e378958f17',1,'Axes::silent()'],['../classFigure.html#ad37d88549c87c65da26e56d9715899e7',1,'Figure::silent()']]],
-  ['slfc_2',['slfc',['../classFileContentsSample.html#a52ede51c44ab5ef2c691ff7f93caac68',1,'FileContentsSample']]],
-  ['slfcname_3',['slfcname',['../classFileContentsSample.html#ac08e03e7988ff6d307bf184f62d7abbb',1,'FileContentsSample']]],
-  ['spec_4',['spec',['../classSampler.html#a82cff287f10efc0233740053268b1848',1,'Sampler']]],
-  ['spinner_5',['spinner',['../classFileContents.html#a472e943ecd9c8a3119d35f2cdd293d9f',1,'FileContents']]],
-  ['start_6',['start',['../classTimer.html#affbd102caa6dd807ef730474364b21f4',1,'Timer']]],
-  ['stats_7',['stats',['../classFileContentsReport.html#a1f396882acba553f560252bb0e02c569',1,'FileContentsReport::stats()'],['../classFileContentsSample.html#a066325d68be358f1a58ab66cc7c2dd4e',1,'FileContentsSample::stats()']]],
-  ['subplot_8',['subplot',['../classPlot.html#a7013505fed5d8767a744a6b7a9cbd803',1,'Plot::subplot()'],['../classTiling.html#ace57a80cf08fec960ecd196d246f396a',1,'Tiling::subplot()']]]
+  ['name_0',['name',['../classSampler.html#ab4f4d5fc46d66e522d3cc2ec8d5fb0ef',1,'Sampler']]],
+  ['names_1',['names',['../classSubplotEllipse3.html#a46d8704445965c26604defb300bf1dd6',1,'SubplotEllipse3']]],
+  ['namlist_2',['namlist',['../namespaceparamonte_1_1str_1_1locname.html#ab0905c2178dda3e8e4a1546ed24c8e34',1,'paramonte::str::locname']]],
+  ['ncol_3',['ncol',['../classparamonte_1_1io_1_1FileContentsTabular_1_1FileContentsTabular.html#aed572f7b2285409de2d7619c8ce6e9cc',1,'paramonte::io::FileContentsTabular::FileContentsTabular']]],
+  ['ndim_4',['ndim',['../classFileContentsRestart.html#a13e0a59607215224a2be58e4c61a3346',1,'FileContentsRestart::ndim()'],['../classFileContentsSample.html#a34b7233f0b92a23f3652937a716d7818',1,'FileContentsSample::ndim()'],['../classSampler.html#aaf6eaedfc14499ba223ad75bb6405858',1,'Sampler::ndim()'],['../classSubplotEllipse3.html#a73782b3f952dd64e04cca1e926ebe9e5',1,'SubplotEllipse3::ndim()']]],
+  ['nell_5',['nell',['../classSubplotEllipse3.html#ab00dc25b99f25c4076552e514b532b8e',1,'SubplotEllipse3']]],
+  ['nml_6',['nml',['../classSampler.html#aaf4895178075a0d6aaacdd607fe80887',1,'Sampler']]],
+  ['nmlsep_7',['nmlsep',['../classSpecBase.html#a8396679c21a45a9d3a0ee138f416a978',1,'SpecBase']]],
+  ['npnt_8',['npnt',['../classSubplotEllipse3.html#a06a7992f9d72b224686650a920f73e06',1,'SubplotEllipse3']]],
+  ['nrow_9',['nrow',['../classparamonte_1_1io_1_1FileContentsTabular_1_1FileContentsTabular.html#a9a21fd348c1449c5bca223cf38d73340',1,'paramonte::io::FileContentsTabular::FileContentsTabular']]],
+  ['numlag_10',['numlag',['../classAutoCorr.html#ab83ebe3ae92086e67d4f033e0da0ebb1',1,'AutoCorr']]],
+  ['numstd_11',['numstd',['../classAutoCorr.html#a9e02e376c0a640655a6052af8c49bf1a',1,'AutoCorr']]]
 ];

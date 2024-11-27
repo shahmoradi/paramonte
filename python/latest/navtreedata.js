@@ -50,7 +50,8 @@ var NAVTREE =
       [ "Packages", "namespaces.html", "namespaces_dup" ],
       [ "Package Functions", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ]
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -103,11 +104,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "../../c/2/index.html",
-"addKeyVal_8m.html#aec02755d4a8ea4db012c89b7066ed477",
-"classPlotLineScatter3.html",
-"copyfig_8m.html#afc97c9d7f5431eb28ca277c67fb49cf5",
-"isolate__axes_8m_source.html",
-"stats_2_09dist_2_09mvu_2Contents_8m_source.html"
+"cite_8py_source.html",
+"classSpecBase.html#aeb8cc9b7971e152dac08004944322233",
+"dir_38d8d2656997a5a98206df02f57e7ff6.html",
+"logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0",
+"rmfailed_8py.html#a1ea72dfe10db4c0b2765654639b7f42c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

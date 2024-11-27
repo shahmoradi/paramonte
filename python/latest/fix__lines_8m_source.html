@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/vis/+figure/private/fix_lines.m Source File</title>
+    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/vis/figure/private/fix_lines.m Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -187,7 +187,7 @@ $(document).ready(function(){initNavTree('fix__lines_8m_source.html',''); initRe
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>% Issue #20: warn users <span class="keywordflow">if</span> <span class="keyword">using</span> <span class="keyword">this</span> function in HG2 (R2014b+)</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>if <a class="code hl_function" href="using__hg2_8m.html#a54d6ede409f48c279dc31dd2f5a2036f">using_hg2</a></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    warning(&#39;export_fig:hg2&#39;,&#39;The <a class="code hl_function" href="fix__lines_8m.html#a03b23f1f3c52b4ac3bcf759eb29fd9a5">fix_lines</a> function should not be used in this Matlab <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>.&#39;);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    warning(&#39;export_fig:hg2&#39;,&#39;The <a class="code hl_function" href="fix__lines_8m.html#a03b23f1f3c52b4ac3bcf759eb29fd9a5">fix_lines</a> function should not be used in this Matlab <a class="code hl_function" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a>.&#39;);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>end</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>if nargout == 0 || nargin &gt; 1</div>
@@ -225,9 +225,9 @@ $(document).ready(function(){initNavTree('fix__lines_8m_source.html',''); initRe
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>b = 1;</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>m = numel(ind);</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>n = numel(ind2);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>for a = 1:m</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>for <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> = 1:m</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    % Go forwards width commands until we pass the current line style</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    while b &lt;= n &amp;&amp; ind2(b) &lt; ind(a)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    while b &lt;= n &amp;&amp; ind2(b) &lt; ind(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>)</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        b = b + 1;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    end</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    if b &gt; n</div>
@@ -235,15 +235,15 @@ $(document).ready(function(){initNavTree('fix__lines_8m_source.html',''); initRe
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        break;</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    end</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    % Check we haven&#39;t gone past another line style (including SO!)</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    if a &lt; m &amp;&amp; ind2(b) &gt; ind(a+1)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    if <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> &lt; m &amp;&amp; ind2(b) &gt; ind(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>+1)</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        continue;</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    end</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    % Are the commands close enough to be confident we can swap them?</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    if (ind2(b) - ind(a)) &gt; 8</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    if (ind2(b) - ind(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>)) &gt; 8</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        continue;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    end</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    % Move the line style command below the line width command</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    fstrm(ind(a)+1:ind3(b)) = [fstrm(ind(a)+4:ind3(b)) fstrm(ind(a)+1:ind(a)+3)];</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    fstrm(ind(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>)+1:ind3(b)) = [fstrm(ind(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>)+4:ind3(b)) fstrm(ind(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>)+1:ind(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>)+3)];</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    b = b + 1;</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>end</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
@@ -254,7 +254,7 @@ $(document).ready(function(){initNavTree('fix__lines_8m_source.html',''); initRe
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    % Find all occurrences of what are believed to be axes and grid lines</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    ind2 = int32(regexp(fstrm, &#39;[\n\r] *\d* *\d* *mt *\d* *\d* *L[\n\r]&#39;));</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    if ~isempty(ind2)</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        % Now see <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> DO sections come just before axes and grid lines</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        % Now see <a class="code hl_function" href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">which</a> DO sections come just before axes and grid lines</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        ind2 = repmat(ind2&#39;, [1 numel(ind)]) - repmat(ind, [numel(ind2) 1]);</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        ind2 = any(ind2 &gt; 0 &amp; ind2 &lt; 12); % 12 chars seems about right</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        ind = ind(ind2);</div>
@@ -265,10 +265,10 @@ $(document).ready(function(){initNavTree('fix__lines_8m_source.html',''); initRe
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>end</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>% Define the new styles, including the new GR format</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>% Dot and dash lengths have two parts: a constant amount plus a line width</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>% Dot and dash lengths have two parts: <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> constant amount plus <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> line width</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>% variable amount. The constant amount comes after dpi2point, and the</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>% variable amount comes after currentlinewidth. If you want to change</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>% dot/dash lengths for a one particular line style only, edit the numbers</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>% dot/dash lengths for <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> one particular line style only, edit the numbers</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>% in the /DO (dotted lines), /DA (dashed lines), /DD (dot dash lines) and</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>% /GR (grid lines) lines for the style you want to change.</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>new_style = {<span class="stringliteral">&#39;/dom { dpi2point 1 currentlinewidth 0.08 mul add mul mul } bdef&#39;</span>,... % Dot length macro based on line width</div>
@@ -292,18 +292,19 @@ $(document).ready(function(){initNavTree('fix__lines_8m_source.html',''); initRe
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <a class="code hl_function" href="read__write__entire__textfile_8m.html#ad6731c3b0a0c4ac289173fcae4f0a8da">read_write_entire_textfile</a>(fname2, fstrm);</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>end</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>end</div>
-<div class="ttc" id="a_09update_2version_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
 <div class="ttc" id="afix__lines_8m_html_a03b23f1f3c52b4ac3bcf759eb29fd9a5"><div class="ttname"><a href="fix__lines_8m.html#a03b23f1f3c52b4ac3bcf759eb29fd9a5">fix_lines</a></div><div class="ttdeci">function fix_lines(in fstrm, in fname2)</div></div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1locname_html_af2d5709535b74c084ca0ac75b027bee0"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">paramonte.str.locname.a</a></div><div class="ttdeci">a</div><div class="ttdef"><b>Definition:</b> <a href="locname_8py_source.html#l00069">locname.py:69</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which_html_a1b834b4e4b89ed9f7aae0da42263af15"><div class="ttname"><a href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">paramonte.sys.path.mpiexec.which.which</a></div><div class="ttdeci">def which(vendor=&quot;&quot;)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div><div class="ttdef"><b>Definition:</b> <a href="which_8py_source.html#l00001">which.py:1</a></div></div>
 <div class="ttc" id="aread__write__entire__textfile_8m_html_ad6731c3b0a0c4ac289173fcae4f0a8da"><div class="ttname"><a href="read__write__entire__textfile_8m.html#ad6731c3b0a0c4ac289173fcae4f0a8da">read_write_entire_textfile</a></div><div class="ttdeci">function read_write_entire_textfile(in fname, in fstrm)</div></div>
 <div class="ttc" id="ausing__hg2_8m_html_a54d6ede409f48c279dc31dd2f5a2036f"><div class="ttname"><a href="using__hg2_8m.html#a54d6ede409f48c279dc31dd2f5a2036f">using_hg2</a></div><div class="ttdeci">function using_hg2(in fig)</div></div>
-<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div></div>
+<div class="ttc" id="aversion_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_38d8d2656997a5a98206df02f57e7ff6.html">vis</a></li><li class="navelem"><a class="el" href="dir_1351c9036bf629c75a97235f65e01313.html">+figure</a></li><li class="navelem"><a class="el" href="dir_246122b6a87048e19363caac045aef36.html">private</a></li><li class="navelem"><a class="el" href="fix__lines_8m.html">fix_lines.m</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:29 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_38d8d2656997a5a98206df02f57e7ff6.html">vis</a></li><li class="navelem"><a class="el" href="dir_cb409ba0c1dbb49a3d1efefe96197279.html">figure</a></li><li class="navelem"><a class="el" href="dir_d7a7fc6cc2a16fb9bc395ab0454e45a2.html">private</a></li><li class="navelem"><a class="el" href="fix__lines_8m.html">fix_lines.m</a></li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:55 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

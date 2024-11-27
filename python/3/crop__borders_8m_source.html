@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/vis/+figure/private/crop_borders.m Source File</title>
+    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/vis/figure/private/crop_borders.m Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -158,7 +158,7 @@ $(document).ready(function(){initNavTree('crop__borders_8m_source.html',''); ini
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%OUT:</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%   B - JxKxCxN cropped stack of images.</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%   vA     - coordinates in A that contain the cropped image</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%   vB     - coordinates in B where the cropped <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> of A is placed</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%   vB     - coordinates in B where the cropped <a class="code hl_function" href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> of A is placed</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%   bb_rel - relative bounding box (used <span class="keywordflow">for</span> eps-cropping)</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%{</div>
@@ -166,7 +166,7 @@ $(document).ready(function(){initNavTree('crop__borders_8m_source.html',''); ini
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>% 08/06/15: Fixed issue #76: <span class="keywordflow">case</span> of transparent figure bgcolor</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>% 21/02/16: Enabled specifying non-automated crop amounts</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>% 04/04/16: Fix per Luiz Carvalho <span class="keywordflow">for</span> old Matlab releases</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>% 23/10/16: Fixed issue #175: there used to be a 1px minimal padding in <span class="keywordflow">case</span> of crop, now removed</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>% 23/10/16: Fixed issue #175: there used to be <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> 1px minimal padding in <span class="keywordflow">case</span> of crop, now removed</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>% 15/05/22: Fixed EPS bounding box (issue #356)</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%}</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
@@ -190,8 +190,8 @@ $(document).ready(function(){initNavTree('crop__borders_8m_source.html',''); ini
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span> ~isfinite(crop_amounts(4))</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        bail = false;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        for l = 1:w</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            for a = 1:c</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                if ~all(<a class="code hl_function" href="crop__borders_8m.html#aac68f2e2fc9dcfff0e2b0a2baa4ec811">col</a>(A(:,l,a,:)) == bcol(a))</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            for <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> = 1:c</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                if ~all(<a class="code hl_function" href="crop__borders_8m.html#aac68f2e2fc9dcfff0e2b0a2baa4ec811">col</a>(A(:,l,<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>,:)) == bcol(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>))</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    bail = true;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                    break;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                end</div>
@@ -201,7 +201,7 @@ $(document).ready(function(){initNavTree('crop__borders_8m_source.html',''); ini
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            end</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        end</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    else</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        l = 1 + <a class="code hl_function" href="abs_8m.html#aa5a18068d39642deefb2f500d14403db">abs</a>(crop_amounts(4));</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        l = 1 + abs(crop_amounts(4));</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    end</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    % Crop margin from right</div>
@@ -209,8 +209,8 @@ $(document).ready(function(){initNavTree('crop__borders_8m_source.html',''); ini
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        bcol = A(ceil(end/2),w,:,1);</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        bail = false;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        for r = w:-1:l</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            for a = 1:c</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                if ~all(<a class="code hl_function" href="crop__borders_8m.html#aac68f2e2fc9dcfff0e2b0a2baa4ec811">col</a>(A(:,r,a,:)) == bcol(a))</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            for <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> = 1:c</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                if ~all(<a class="code hl_function" href="crop__borders_8m.html#aac68f2e2fc9dcfff0e2b0a2baa4ec811">col</a>(A(:,r,<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>,:)) == bcol(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>))</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                    bail = true;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                    break;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                end</div>
@@ -220,7 +220,7 @@ $(document).ready(function(){initNavTree('crop__borders_8m_source.html',''); ini
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            end</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        end</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    else</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        r = w - <a class="code hl_function" href="abs_8m.html#aa5a18068d39642deefb2f500d14403db">abs</a>(crop_amounts(2));</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        r = w - abs(crop_amounts(2));</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    end</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    % Crop margin from top</div>
@@ -228,8 +228,8 @@ $(document).ready(function(){initNavTree('crop__borders_8m_source.html',''); ini
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        bcol = A(1,ceil(end/2),:,1);</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        bail = false;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        for t = 1:h</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            for a = 1:c</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                if ~all(<a class="code hl_function" href="crop__borders_8m.html#aac68f2e2fc9dcfff0e2b0a2baa4ec811">col</a>(A(t,:,a,:)) == bcol(a))</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            for <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> = 1:c</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                if ~all(<a class="code hl_function" href="crop__borders_8m.html#aac68f2e2fc9dcfff0e2b0a2baa4ec811">col</a>(A(t,:,<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>,:)) == bcol(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>))</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                    bail = true;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                    break;</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                end</div>
@@ -239,7 +239,7 @@ $(document).ready(function(){initNavTree('crop__borders_8m_source.html',''); ini
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            end</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        end</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    else</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        t = 1 + <a class="code hl_function" href="abs_8m.html#aa5a18068d39642deefb2f500d14403db">abs</a>(crop_amounts(1));</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        t = 1 + abs(crop_amounts(1));</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    end</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    % Crop margin from bottom</div>
@@ -247,8 +247,8 @@ $(document).ready(function(){initNavTree('crop__borders_8m_source.html',''); ini
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    if ~isfinite(crop_amounts(3))</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        bail = false;</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        for b = h:-1:t</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            for a = 1:c</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                if ~all(<a class="code hl_function" href="crop__borders_8m.html#aac68f2e2fc9dcfff0e2b0a2baa4ec811">col</a>(A(b,:,a,:)) == bcol(a))</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            for <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> = 1:c</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                if ~all(<a class="code hl_function" href="crop__borders_8m.html#aac68f2e2fc9dcfff0e2b0a2baa4ec811">col</a>(A(b,:,<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>,:)) == bcol(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>))</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                    bail = true;</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                    break;</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                end</div>
@@ -258,7 +258,7 @@ $(document).ready(function(){initNavTree('crop__borders_8m_source.html',''); ini
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            end</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        end</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    else</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        b = h - <a class="code hl_function" href="abs_8m.html#aa5a18068d39642deefb2f500d14403db">abs</a>(crop_amounts(3));</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        b = h - abs(crop_amounts(3));</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    end</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    if padding == 0  % no padding</div>
@@ -302,17 +302,17 @@ $(document).ready(function(){initNavTree('crop__borders_8m_source.html',''); ini
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="crop__borders_8m.html#aac68f2e2fc9dcfff0e2b0a2baa4ec811">  159</a></span><span class="stringliteral">function A = col(A)</span></div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="stringliteral">    A = A(:);</span></div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="stringliteral">end</span></div>
-<div class="ttc" id="a_09update_2version_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
-<div class="ttc" id="aabs_8m_html_aa5a18068d39642deefb2f500d14403db"><div class="ttname"><a href="abs_8m.html#aa5a18068d39642deefb2f500d14403db">abs</a></div><div class="ttdeci">function abs(in path, in style)</div><div class="ttdoc">Return the Get absolute canonical path of a file or folder.</div></div>
 <div class="ttc" id="acrop__borders_8m_html_a0b5568512ef21430092459ba3ac1e274"><div class="ttname"><a href="crop__borders_8m.html#a0b5568512ef21430092459ba3ac1e274">crop_borders</a></div><div class="ttdeci">function crop_borders(in A, in bcol, in padding, in crop_amounts)</div></div>
 <div class="ttc" id="acrop__borders_8m_html_aac68f2e2fc9dcfff0e2b0a2baa4ec811"><div class="ttname"><a href="crop__borders_8m.html#aac68f2e2fc9dcfff0e2b0a2baa4ec811">col</a></div><div class="ttdeci">function col(in A)</div></div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1locname_html_af2d5709535b74c084ca0ac75b027bee0"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">paramonte.str.locname.a</a></div><div class="ttdeci">a</div><div class="ttdef"><b>Definition:</b> <a href="locname_8py_source.html#l00069">locname.py:69</a></div></div>
+<div class="ttc" id="aversion_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_38d8d2656997a5a98206df02f57e7ff6.html">vis</a></li><li class="navelem"><a class="el" href="dir_1351c9036bf629c75a97235f65e01313.html">+figure</a></li><li class="navelem"><a class="el" href="dir_246122b6a87048e19363caac045aef36.html">private</a></li><li class="navelem"><a class="el" href="crop__borders_8m.html">crop_borders.m</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:29 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_38d8d2656997a5a98206df02f57e7ff6.html">vis</a></li><li class="navelem"><a class="el" href="dir_cb409ba0c1dbb49a3d1efefe96197279.html">figure</a></li><li class="navelem"><a class="el" href="dir_d7a7fc6cc2a16fb9bc395ab0454e45a2.html">private</a></li><li class="navelem"><a class="el" href="crop__borders_8m.html">crop_borders.m</a></li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:55 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

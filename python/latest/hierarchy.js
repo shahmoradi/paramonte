@@ -23,9 +23,6 @@ var hierarchy =
     [ "pm::stats::Cov", null, [
       [ "Cor", "classCor.html", null ]
     ] ],
-    [ "pm::container::DataRef", null, [
-      [ "DataFrame", "classDataFrame.html", null ]
-    ] ],
     [ "dynamicprops", null, [
       [ "Handle", "classHandle.html", null ]
     ] ],
@@ -34,10 +31,11 @@ var hierarchy =
       [ "Tiling", "classTiling.html", null ],
       [ "Triplex", "classTriplex.html", null ]
     ] ],
+    [ "paramonte.io.FileContents.FileContents", "classparamonte_1_1io_1_1FileContents_1_1FileContents.html", null ],
     [ "pm::io::FileContents", null, [
       [ "FileContentsReport", "classFileContentsReport.html", null ],
       [ "FileContentsRestart", "classFileContentsRestart.html", null ],
-      [ "FileContentsTabular", "classFileContentsTabular.html", null ]
+      [ "paramonte.io.FileContentsTabular.FileContentsTabular", "classparamonte_1_1io_1_1FileContentsTabular_1_1FileContentsTabular.html", null ]
     ] ],
     [ "pm::sampling::FileContentsChain", null, [
       [ "FileContentsChainMCMC", "classFileContentsChainMCMC.html", null ]
@@ -61,14 +59,13 @@ var hierarchy =
       [ "Axes", "classAxes.html", null ],
       [ "Cascade", "classCascade.html", null ],
       [ "Cov", "classCov.html", null ],
-      [ "DataRef", "classDataRef.html", null ],
       [ "Figure", "classFigure.html", null ],
-      [ "FileContents", "classFileContents.html", null ],
       [ "Sampler", "classSampler.html", null ],
       [ "SpecBase", "classSpecBase.html", null ],
-      [ "Spinner", "classSpinner.html", null ],
-      [ "TilingLayout", "classTilingLayout.html", null ],
-      [ "Timer", "classTimer.html", null ]
+      [ "TilingLayout", "classTilingLayout.html", null ]
+    ] ],
+    [ "object", null, [
+      [ "FrozenClass.FrozenClass", "classFrozenClass_1_1FrozenClass.html", null ]
     ] ],
     [ "pm::vis::Plot", null, [
       [ "PlotContour", "classPlotContour.html", null ],
@@ -96,6 +93,8 @@ var hierarchy =
     [ "pm::sampling::SpecMCMC", null, [
       [ "SpecDRAM", "classSpecDRAM.html", null ]
     ] ],
+    [ "paramonte.timing.Spinner.Spinner", "classparamonte_1_1timing_1_1Spinner_1_1Spinner.html", null ],
+    [ "paramonte.container.Struct.Struct", "classparamonte_1_1container_1_1Struct_1_1Struct.html", null ],
     [ "pm::vis::Subplot", null, [
       [ "SubplotContour", "classSubplotContour.html", null ],
       [ "SubplotContour3", "classSubplotContour3.html", null ],
@@ -137,6 +136,7 @@ var hierarchy =
     [ "pm::vis::Tiling", null, [
       [ "Tile", "classTile.html", null ]
     ] ],
+    [ "paramonte.timing.Timer.Timer", "classparamonte_1_1timing_1_1Timer_1_1Timer.html", null ],
     [ "Transferable", null, [
       [ "ImageSelection", "classImageSelection.html", null ]
     ] ]

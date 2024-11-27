@@ -1,5 +1,31 @@
 var annotated_dup =
 [
+    [ "FrozenClass", "namespaceFrozenClass.html", [
+      [ "FrozenClass", "classFrozenClass_1_1FrozenClass.html", "classFrozenClass_1_1FrozenClass" ]
+    ] ],
+    [ "paramonte", "namespaceparamonte.html", [
+      [ "container", "namespaceparamonte_1_1container.html", [
+        [ "Struct", "namespaceparamonte_1_1container_1_1Struct.html", [
+          [ "Struct", "classparamonte_1_1container_1_1Struct_1_1Struct.html", null ]
+        ] ]
+      ] ],
+      [ "io", "namespaceparamonte_1_1io.html", [
+        [ "FileContents", "namespaceparamonte_1_1io_1_1FileContents.html", [
+          [ "FileContents", "classparamonte_1_1io_1_1FileContents_1_1FileContents.html", "classparamonte_1_1io_1_1FileContents_1_1FileContents" ]
+        ] ],
+        [ "FileContentsTabular", "namespaceparamonte_1_1io_1_1FileContentsTabular.html", [
+          [ "FileContentsTabular", "classparamonte_1_1io_1_1FileContentsTabular_1_1FileContentsTabular.html", "classparamonte_1_1io_1_1FileContentsTabular_1_1FileContentsTabular" ]
+        ] ]
+      ] ],
+      [ "timing", "namespaceparamonte_1_1timing.html", [
+        [ "Spinner", "namespaceparamonte_1_1timing_1_1Spinner.html", [
+          [ "Spinner", "classparamonte_1_1timing_1_1Spinner_1_1Spinner.html", "classparamonte_1_1timing_1_1Spinner_1_1Spinner" ]
+        ] ],
+        [ "Timer", "namespaceparamonte_1_1timing_1_1Timer.html", [
+          [ "Timer", "classparamonte_1_1timing_1_1Timer_1_1Timer.html", "classparamonte_1_1timing_1_1Timer_1_1Timer" ]
+        ] ]
+      ] ]
+    ] ],
     [ "AutoCorr", "classAutoCorr.html", "classAutoCorr" ],
     [ "Axes", "classAxes.html", "classAxes" ],
     [ "Cascade", "classCascade.html", "classCascade" ],
@@ -20,10 +46,7 @@ var annotated_dup =
     [ "CascadeScatter3", "classCascadeScatter3.html", "classCascadeScatter3" ],
     [ "Cor", "classCor.html", "classCor" ],
     [ "Cov", "classCov.html", "classCov" ],
-    [ "DataFrame", "classDataFrame.html", "classDataFrame" ],
-    [ "DataRef", "classDataRef.html", "classDataRef" ],
     [ "Figure", "classFigure.html", "classFigure" ],
-    [ "FileContents", "classFileContents.html", "classFileContents" ],
     [ "FileContentsChain", "classFileContentsChain.html", "classFileContentsChain" ],
     [ "FileContentsChainDRAM", "classFileContentsChainDRAM.html", "classFileContentsChainDRAM" ],
     [ "FileContentsChainMCMC", "classFileContentsChainMCMC.html", "classFileContentsChainMCMC" ],
@@ -33,7 +56,6 @@ var annotated_dup =
     [ "FileContentsRestartDRAM", "classFileContentsRestartDRAM.html", "classFileContentsRestartDRAM" ],
     [ "FileContentsSample", "classFileContentsSample.html", "classFileContentsSample" ],
     [ "FileContentsSampleDRAM", "classFileContentsSampleDRAM.html", "classFileContentsSampleDRAM" ],
-    [ "FileContentsTabular", "classFileContentsTabular.html", "classFileContentsTabular" ],
     [ "Handle", "classHandle.html", "classHandle" ],
     [ "ImageSelection", "classImageSelection.html", "classImageSelection" ],
     [ "Paradram", "classParadram.html", "classParadram" ],
@@ -57,7 +79,6 @@ var annotated_dup =
     [ "SpecBase", "classSpecBase.html", "classSpecBase" ],
     [ "SpecDRAM", "classSpecDRAM.html", "classSpecDRAM" ],
     [ "SpecMCMC", "classSpecMCMC.html", "classSpecMCMC" ],
-    [ "Spinner", "classSpinner.html", "classSpinner" ],
     [ "Subplot", "classSubplot.html", "classSubplot" ],
     [ "SubplotContour", "classSubplotContour.html", "classSubplotContour" ],
     [ "SubplotContour3", "classSubplotContour3.html", "classSubplotContour3" ],
@@ -92,6 +113,5 @@ var annotated_dup =
     [ "TileScatter3", "classTileScatter3.html", "classTileScatter3" ],
     [ "Tiling", "classTiling.html", "classTiling" ],
     [ "TilingLayout", "classTilingLayout.html", "classTilingLayout" ],
-    [ "Timer", "classTimer.html", "classTimer" ],
     [ "Triplex", "classTriplex.html", "classTriplex" ]
 ];

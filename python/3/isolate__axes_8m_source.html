@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/vis/+figure/private/isolate_axes.m Source File</title>
+    <title>ParaMonte Python 3.0.0: src/python/main/paramonte/vis/figure/private/isolate_axes.m Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -142,19 +142,19 @@ $(document).ready(function(){initNavTree('isolate__axes_8m_source.html',''); ini
 </div><!--header-->
 <div class="contents">
 <a href="isolate__axes_8m.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="isolate__axes_8m.html#a897b8fb9c2f3b417aa8262d3fda639f3">    1</a></span>function fh = <a class="code hl_function" href="isolate__axes_8m.html#a897b8fb9c2f3b417aa8262d3fda639f3">isolate_axes</a>(ah, vis)</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%ISOLATE_AXES Isolate the specified axes in a figure on their own</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>%ISOLATE_AXES Isolate the specified axes in <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> figure on their own</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>%</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>% Examples:</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%   fh = <a class="code hl_function" href="isolate__axes_8m.html#a897b8fb9c2f3b417aa8262d3fda639f3">isolate_axes</a>(ah)</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%   fh = <a class="code hl_function" href="isolate__axes_8m.html#a897b8fb9c2f3b417aa8262d3fda639f3">isolate_axes</a>(ah, vis)</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>% This function will create a <span class="keyword">new</span> figure containing the axes/uipanels</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>% This function will create <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> <span class="keyword">new</span> figure containing the axes/uipanels</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>% specified, and also their associated legends and colorbars. The objects</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>% specified must all be in the same figure, but they will generally only be</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>% a subset of the objects in the figure.</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>% <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> subset of the objects in the figure.</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>% IN:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%    ah - An array of axes and uipanel handles, <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> must come from the</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%    ah - An array of axes and uipanel handles, <a class="code hl_function" href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">which</a> must come from the</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%         same figure.</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%    vis - A <span class="keywordtype">boolean</span> indicating whether the <span class="keyword">new</span> figure should be visible.</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%          Default: <span class="keyword">false</span>.</div>
@@ -164,14 +164,14 @@ $(document).ready(function(){initNavTree('isolate__axes_8m_source.html',''); ini
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>% Copyright (C) Oliver Woodford 2011-2014, Yair Altman 2015-</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>% Thank you to Rosella Blatt <span class="keywordflow">for</span> reporting a bug to <span class="keywordflow">do</span> with axes in GUIs</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>% Thank you to Rosella Blatt <span class="keywordflow">for</span> reporting <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> bug to <span class="keywordflow">do</span> with axes in GUIs</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>% 16/03/12: Moved <a class="code hl_function" href="copyfig_8m.html#afc97c9d7f5431eb28ca277c67fb49cf5">copyfig</a> to its own function. Thanks to Bob Fratantonio</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%           <span class="keywordflow">for</span> pointing out that the function is also used in export_fig.py</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>% 12/12/12: Add support <span class="keywordflow">for</span> isolating uipanels. Thanks to michael <span class="keywordflow">for</span> suggesting it</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>% 08/10/13: Bug fix to <a class="code hl_function" href="isolate__axes_8m.html#ac2aa3deac5d574ce1f74717c8e3f9040">allchildren</a> suggested by Will Grant (many thanks!)</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>% 05/12/13: Bug fix to axes having different units. Thanks to Remington Reid <span class="keywordflow">for</span> reporting</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>% 21/04/15: Bug fix <span class="keywordflow">for</span> exporting uipanels with legend/colorbar on HG1 (reported by Alvaro</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%           on FEX page as a comment on 24-Apr-2014); standardized indentation &amp; help section</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%           on FEX page as <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> comment on 24-Apr-2014); standardized indentation &amp; help section</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>% 22/04/15: Bug fix: legends and colorbars were not exported when exporting axes handle in HG2</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>% 02/02/21: Fix axes, figure size to preserve input axes image resolution (thanks @Optecks)</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>% 25/10/21: Bug fix: subplots were not isolated properly leading to print error (issue #347)</div>
@@ -186,16 +186,16 @@ $(document).ready(function(){initNavTree('isolate__axes_8m_source.html',''); ini
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    % Check that the handles are all <span class="keywordflow">for</span> axes or uipanels, and are all in the same figure</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    fh = ancestor(ah(1), <span class="stringliteral">&#39;figure&#39;</span>);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    nAx = numel(ah);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">for</span> a = 1:nAx</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">if</span> ~ismember(get(ah(a), <span class="stringliteral">&#39;Type&#39;</span>), {<span class="stringliteral">&#39;axes&#39;</span>, <span class="stringliteral">&#39;uipanel&#39;</span>})</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">for</span> <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> = 1:nAx</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">if</span> ~ismember(get(ah(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>), <span class="stringliteral">&#39;Type&#39;</span>), {<span class="stringliteral">&#39;axes&#39;</span>, <span class="stringliteral">&#39;uipanel&#39;</span>})</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            error(<span class="stringliteral">&#39;All handles must be axes or uipanel handles.&#39;</span>);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        end</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span> ~isequal(ancestor(ah(a), <span class="stringliteral">&#39;figure&#39;</span>), fh)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span> ~isequal(ancestor(ah(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>), <span class="stringliteral">&#39;figure&#39;</span>), fh)</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            error(<span class="stringliteral">&#39;Axes must all come from the same figure.&#39;</span>);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        end</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    end</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    % Tag the objects so we can <a class="code hl_function" href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">find</a> them in the <a class="code hl_function" href="copy_8m.html#ab633577f583e18a523fef5b3b2295eee">copy</a></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    % Tag the objects so we can <a class="code hl_function" href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1find.html#a7ea2890f440ea143a4be87232126fb38">find</a> them in the <a class="code hl_function" href="copy_8m.html#ab633577f583e18a523fef5b3b2295eee">copy</a></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    old_tag = get(ah, <span class="stringliteral">&#39;Tag&#39;</span>);</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">if</span> nAx == 1</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        old_tag = {old_tag};</div>
@@ -203,7 +203,7 @@ $(document).ready(function(){initNavTree('isolate__axes_8m_source.html',''); ini
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    set(ah, <span class="stringliteral">&#39;Tag&#39;</span>, <span class="stringliteral">&#39;ObjectToCopy&#39;</span>);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    % Mark all non-legendable objects in the original figure (<span class="keywordflow">if</span> any legend shown)</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    % a workaround to the copyobj bug of not copying the ApplicationData <span class="keyword">property</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    % <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> workaround to the copyobj bug of not copying the ApplicationData <span class="keyword">property</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    lh = findall(fh, <span class="stringliteral">&#39;Tag&#39;</span>,<span class="stringliteral">&#39;legend&#39;</span>);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">if</span> ~isempty(lh)</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        ax = arrayfun(@(h) get(h,<span class="stringliteral">&#39;Axes&#39;</span>), lh);</div>
@@ -214,7 +214,7 @@ $(document).ready(function(){initNavTree('isolate__axes_8m_source.html',''); ini
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        set(c,<span class="stringliteral">&#39;Tag&#39;</span>,<span class="stringliteral">&#39;non-legendable!&#39;</span>)</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    end</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    % Create a new figure exactly the same as the old one</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    % Create <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> new figure exactly the same as the old one</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    fh = <a class="code hl_function" href="copyfig_8m.html#afc97c9d7f5431eb28ca277c67fb49cf5">copyfig</a>(fh); %copyobj(fh, 0);</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    % Fix <a class="code hl_class" href="classAxes.html">Axes</a> &amp; <a class="code hl_class" href="classFigure.html">Figure</a> size for image catpuring to have almost exact resolution</div>
@@ -234,11 +234,11 @@ $(document).ready(function(){initNavTree('isolate__axes_8m_source.html',''); ini
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    end</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    </div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    % Restore the axes tags in the original figure back to their original values</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    for a = 1:nAx</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        set(ah(a), &#39;Tag&#39;, old_tag{a});</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    for <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> = 1:nAx</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        set(ah(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>), &#39;Tag&#39;, old_tag{<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>});</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    end</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    % Find the objects to save</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    % Find the objects to <a class="code hl_function" href="namespaceparamonte_1_1web_1_1save.html#aba6c94c4f70b3f4618a3ef9a789de59f">save</a></div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    ah = findall(fh, <span class="stringliteral">&#39;Tag&#39;</span>, <span class="stringliteral">&#39;ObjectToCopy&#39;</span>);</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span> numel(ah) ~= nAx</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        close(fh);</div>
@@ -246,11 +246,11 @@ $(document).ready(function(){initNavTree('isolate__axes_8m_source.html',''); ini
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    end</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    % Set the axes tags in the <span class="keyword">new</span> figure to what they should be</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">for</span> a = 1:nAx</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        set(ah(a), <span class="stringliteral">&#39;Tag&#39;</span>, old_tag{a});</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">for</span> <a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a> = 1:nAx</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        set(ah(<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>), <span class="stringliteral">&#39;Tag&#39;</span>, old_tag{<a class="code hl_variable" href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">a</a>});</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    end</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    % Keep any legends and colorbars <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> overlap the subplots</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    % Keep any legends and colorbars <a class="code hl_function" href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">which</a> overlap the subplots</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    % Note: in HG1 these are axes objects; in HG2 they are separate objects, therefore we</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    %       don<span class="stringliteral">&#39;t test for the type, only the tag (hopefully nobody but Matlab uses them!)</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="stringliteral">    lh = findall(fh, &#39;</span>Tag<span class="charliteral">&#39;,&#39;</span>legend<span class="stringliteral">&#39;, &#39;</span>-or<span class="stringliteral">&#39;, &#39;</span>Tag<span class="charliteral">&#39;,&#39;</span>Colorbar<span class="stringliteral">&#39;);</span></div>
@@ -320,18 +320,20 @@ $(document).ready(function(){initNavTree('isolate__axes_8m_source.html',''); ini
 <div class="ttc" id="aclassFigure_html"><div class="ttname"><a href="classFigure.html">Figure</a></div><div class="ttdoc">This is the abstract class for generating instances of objects that contain the specifications of var...</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8m_source.html#l00026">Figure.m:27</a></div></div>
 <div class="ttc" id="acopy_8m_html_ab633577f583e18a523fef5b3b2295eee"><div class="ttname"><a href="copy_8m.html#ab633577f583e18a523fef5b3b2295eee">copy</a></div><div class="ttdeci">function copy(in from, in to, in field, in exclude)</div><div class="ttdoc">Copy the contents of the struct/object from to the struct/object to recursively and without destroyin...</div></div>
 <div class="ttc" id="acopyfig_8m_html_afc97c9d7f5431eb28ca277c67fb49cf5"><div class="ttname"><a href="copyfig_8m.html#afc97c9d7f5431eb28ca277c67fb49cf5">copyfig</a></div><div class="ttdeci">function copyfig(in fh)</div></div>
-<div class="ttc" id="afind_8m_html_aa94df3e8e4e5c54cbfe8cfaa7ae6f94c"><div class="ttname"><a href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">find</a></div><div class="ttdeci">function find(in vendor)</div><div class="ttdoc">Return a list of scalar MATLAB strings containing the paths to all detected mpiexec binaries installe...</div></div>
 <div class="ttc" id="aisolate__axes_8m_html_a4548e914f978367101428d268e5fe988"><div class="ttname"><a href="isolate__axes_8m.html#a4548e914f978367101428d268e5fe988">allancestors</a></div><div class="ttdeci">function allancestors(in ah)</div></div>
 <div class="ttc" id="aisolate__axes_8m_html_a897b8fb9c2f3b417aa8262d3fda639f3"><div class="ttname"><a href="isolate__axes_8m.html#a897b8fb9c2f3b417aa8262d3fda639f3">isolate_axes</a></div><div class="ttdeci">function isolate_axes(in ah, in vis)</div></div>
 <div class="ttc" id="aisolate__axes_8m_html_ac2aa3deac5d574ce1f74717c8e3f9040"><div class="ttname"><a href="isolate__axes_8m.html#ac2aa3deac5d574ce1f74717c8e3f9040">allchildren</a></div><div class="ttdeci">function allchildren(in ah)</div></div>
-<div class="ttc" id="awhich_8m_html_a81f39d8b2392cbed3b4536d64bf25952"><div class="ttname"><a href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a></div><div class="ttdeci">function which(in vendor)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div></div>
+<div class="ttc" id="anamespaceparamonte_1_1str_1_1locname_html_af2d5709535b74c084ca0ac75b027bee0"><div class="ttname"><a href="namespaceparamonte_1_1str_1_1locname.html#af2d5709535b74c084ca0ac75b027bee0">paramonte.str.locname.a</a></div><div class="ttdeci">a</div><div class="ttdef"><b>Definition:</b> <a href="locname_8py_source.html#l00069">locname.py:69</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1find_html_a7ea2890f440ea143a4be87232126fb38"><div class="ttname"><a href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1find.html#a7ea2890f440ea143a4be87232126fb38">paramonte.sys.path.mpiexec.find.find</a></div><div class="ttdeci">def find(vendor=&quot;&quot;)</div><div class="ttdoc">Return a list of scalar Python strings containing the paths to all detected mpiexec binaries installe...</div><div class="ttdef"><b>Definition:</b> <a href="find_8py_source.html#l00001">find.py:1</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which_html_a1b834b4e4b89ed9f7aae0da42263af15"><div class="ttname"><a href="namespaceparamonte_1_1sys_1_1path_1_1mpiexec_1_1which.html#a1b834b4e4b89ed9f7aae0da42263af15">paramonte.sys.path.mpiexec.which.which</a></div><div class="ttdeci">def which(vendor=&quot;&quot;)</div><div class="ttdoc">Return the a MATLAB string containing the path to the first mpiexec executable binary found in system...</div><div class="ttdef"><b>Definition:</b> <a href="which_8py_source.html#l00001">which.py:1</a></div></div>
+<div class="ttc" id="anamespaceparamonte_1_1web_1_1save_html_aba6c94c4f70b3f4618a3ef9a789de59f"><div class="ttname"><a href="namespaceparamonte_1_1web_1_1save.html#aba6c94c4f70b3f4618a3ef9a789de59f">paramonte.web.save.save</a></div><div class="ttdeci">def save(url, path=None)</div><div class="ttdoc">Return the path to the downloaded file from the specified input url, or otherwise,...</div><div class="ttdef"><b>Definition:</b> <a href="save_8py_source.html#l00001">save.py:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_38d8d2656997a5a98206df02f57e7ff6.html">vis</a></li><li class="navelem"><a class="el" href="dir_1351c9036bf629c75a97235f65e01313.html">+figure</a></li><li class="navelem"><a class="el" href="dir_246122b6a87048e19363caac045aef36.html">private</a></li><li class="navelem"><a class="el" href="isolate__axes_8m.html">isolate_axes.m</a></li>
-        <li class="footer">Generated on Sat Nov 16 2024 00:05:29 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5c0d64f70903e893b1efe571a4b8de29.html">python</a></li><li class="navelem"><a class="el" href="dir_e65b57eaaee3086cb909755f06d8d4b0.html">main</a></li><li class="navelem"><a class="el" href="dir_4a9eaf518e240c0eb50474b1fcea32b6.html">paramonte</a></li><li class="navelem"><a class="el" href="dir_38d8d2656997a5a98206df02f57e7ff6.html">vis</a></li><li class="navelem"><a class="el" href="dir_cb409ba0c1dbb49a3d1efefe96197279.html">figure</a></li><li class="navelem"><a class="el" href="dir_d7a7fc6cc2a16fb9bc395ab0454e45a2.html">private</a></li><li class="navelem"><a class="el" href="isolate__axes_8m.html">isolate_axes.m</a></li>
+        <li class="footer">Generated on Mon Nov 25 2024 22:20:55 for ParaMonte Python 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

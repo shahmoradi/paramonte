@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['val_0',['val',['../classAutoCorr.html#afd63ea7ff2b4899ab64617385740970f',1,'AutoCorr::val()'],['../classCov.html#a5ff7e81a41cd8654d27896b158974acb',1,'Cov::val()']]],
-  ['vis_1',['vis',['../classFileContentsReport.html#ac104d7aafb3a00be13bc15fca0d412b5',1,'FileContentsReport::vis()'],['../classFileContentsRestartDRAM.html#a57c801b069e8c6a6c95d6fd9f61d4c23',1,'FileContentsRestartDRAM::vis()'],['../classFileContentsSample.html#a6326f9eca4fe90fac298159a376a42ca',1,'FileContentsSample::vis()'],['../classAutoCorr.html#a04eaea191f6996a1add3688fd4936440',1,'AutoCorr::vis()'],['../classCov.html#a90111f71d2de307947267cbe87c472d7',1,'Cov::vis()']]]
+  ['randomseed_0',['randomSeed',['../classSpecBase.html#afde5461d39f137ed498f1b1ab6b7b308',1,'SpecBase']]],
+  ['real_1',['real',['../namespaceparamonte_1_1str_1_1split2real.html#aa727314b5dc5cc010ce5652f5617393d',1,'paramonte::str::split2real']]],
+  ['rows_2',['rows',['../classSubplot.html#aaf6e5ee395a3d84a0f249971143b4013',1,'Subplot']]]
 ];
