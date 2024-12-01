@@ -241,7 +241,7 @@ representing the Kolmogorov distance of <code>sample1</code> from <code>sample2<
 <div class="line"> </div>
 <div class="line">disKolm<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__distanceKolm_1_1getDisKolm.html">getDisKolm</a>(sample1(:), weight1(:), weisum1, sample2(:), weight2(:), weisum2)</div>
 <div class="line">disKolm<span class="fortran_operator_symbols"> = </span><a class="code hl_interface" href="interfacepm__distanceKolm_1_1getDisKolm.html">getDisKolm</a>(sample1(:), weight1(:), weisum1, sample2(:), weight2(:), weisum2, order)</div>
-<div class="ttc" id="ainterfacepm__distanceKolm_1_1getDisKolm_html"><div class="ttname"><a href="interfacepm__distanceKolm_1_1getDisKolm.html">pm_distanceKolm::getDisKolm</a></div><div class="ttdoc">Generate and return the Kolmogorov distance of a sample1 of size nsam1 from another sample sample2 of...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distanceKolm_8F90_source.html#l00212">pm_distanceKolm.F90:212</a></div></div>
+<div class="ttc" id="ainterfacepm__distanceKolm_1_1getDisKolm_html"><div class="ttname"><a href="interfacepm__distanceKolm_1_1getDisKolm.html">pm_distanceKolm::getDisKolm</a></div><div class="ttdoc">Generate and return the Kolmogorov distance of a sample1 of size nsam1 from another sample sample2 of...</div><div class="ttdef"><b>Definition:</b> <a href="pm__distanceKolm_8F90_source.html#l00216">pm_distanceKolm.F90:216</a></div></div>
 <div class="ttc" id="anamespacepm__distanceKolm_html"><div class="ttname"><a href="namespacepm__distanceKolm.html">pm_distanceKolm</a></div><div class="ttdoc">This module contains classes and procedures for computing the Kolmogorov statistical distance.</div><div class="ttdef"><b>Definition:</b> <a href="pm__distanceKolm_8F90_source.html#l00054">pm_distanceKolm.F90:54</a></div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The condition <code>all(0 &lt;= weight1)</code> must hold for the corresponding input arguments.<br  />
@@ -262,6 +262,9 @@ The returned distance is <code>0</code> if any of the two samples are empty.<br 
 <dd>
 The <code>pure</code> procedure(s) documented herein become <code>impure</code> when the ParaMonte library is compiled with preprocessor macro <code>CHECK_ENABLED=1</code>.<br  />
  By default, these procedures are <code>pure</code> in <code>release</code> build and <code>impure</code> in <code>debug</code> and <code>testing</code> builds.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacepm__statest_1_1getProbKS.html">getProbKS</a><br  />
+ <a class="el" href="interfacepm__statest_1_1setProbKS.html">setProbKS</a><br  />
+</dd></dl>
 <p><br  />
 <a class="anchor" id="example-getDisKolm"></a><b>Example usage</b> <a href="#example-getDisKolm">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="fortran_statement">program</span> example</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
@@ -1319,7 +1322,7 @@ The <code>pure</code> procedure(s) documented herein become <code>impure</code> 
 <div class="line">          The entities in the distance computation, S<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span>sample, X<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span>default(uniform) distribution, C<span class="fortran_operator_symbols"> =</span><span class="fortran_operator_symbols">&gt; </span>custom user<span class="fortran_operator_symbols">-</span>specified CDF.</div>
 </div><!-- fragment --><p ><br  />
 <a class="anchor" id="final-getDisKolm"></a><b>Final Remarks</b> <a href="#final-getDisKolm">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distanceKolm.F90#L205 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/fortran/main/pm_distanceKolm.F90#L209 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -1337,7 +1340,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <dl class="authors"><dt><b><a class="el" href="authors.html#_authors000381">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, Monday March 6, 2017, 3:22 pm, Institute for Computational Engineering and Sciences (ICES), The University of Texas at Austin.<br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pm__distanceKolm_8F90_source.html#l00212">212</a> of file <a class="el" href="pm__distanceKolm_8F90_source.html">pm_distanceKolm.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pm__distanceKolm_8F90_source.html#l00216">216</a> of file <a class="el" href="pm__distanceKolm_8F90_source.html">pm_distanceKolm.F90</a>.</p>
 </div><hr/>The documentation for this interface was generated from the following file:<ul>
 <li>src/fortran/main/<a class="el" href="pm__distanceKolm_8F90_source.html">pm_distanceKolm.F90</a></li>
 </ul>
@@ -1347,7 +1350,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="namespacepm__distanceKolm.html">pm_distanceKolm</a></li><li class="navelem"><a class="el" href="interfacepm__distanceKolm_1_1getDisKolm.html">getDisKolm</a></li>
-        <li class="footer">Generated on Tue Nov 26 2024 22:09:28 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Wed Nov 27 2024 01:18:34 for ParaMonte Fortran 2.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

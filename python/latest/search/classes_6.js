@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['sampler_0',['Sampler',['../classSampler.html',1,'']]],
+  ['specbase_1',['SpecBase',['../classSpecBase.html',1,'']]],
+  ['specdram_2',['SpecDRAM',['../classSpecDRAM.html',1,'']]],
+  ['specmcmc_3',['SpecMCMC',['../classSpecMCMC.html',1,'']]],
+  ['spinner_4',['Spinner',['../classparamonte_1_1timing_1_1Spinner_1_1Spinner.html',1,'paramonte::timing::Spinner']]],
+  ['struct_5',['Struct',['../classparamonte_1_1container_1_1Struct_1_1Struct.html',1,'paramonte::container::Struct']]],
+  ['subplot_6',['Subplot',['../classSubplot.html',1,'']]],
+  ['subplotcontour_7',['SubplotContour',['../classSubplotContour.html',1,'']]],
+  ['subplotcontour3_8',['SubplotContour3',['../classSubplotContour3.html',1,'']]],
+  ['subplotcontourf_9',['SubplotContourf',['../classSubplotContourf.html',1,'']]],
+  ['subplotellipse_10',['SubplotEllipse',['../classSubplotEllipse.html',1,'']]],
+  ['subplotellipse3_11',['SubplotEllipse3',['../classSubplotEllipse3.html',1,'']]],
+  ['subplotheatmap_12',['SubplotHeatmap',['../classSubplotHeatmap.html',1,'']]],
+  ['subplothistfit_13',['SubplotHistfit',['../classSubplotHistfit.html',1,'']]],
+  ['subplothistogram_14',['SubplotHistogram',['../classSubplotHistogram.html',1,'']]],
+  ['subplothistogram2_15',['SubplotHistogram2',['../classSubplotHistogram2.html',1,'']]],
+  ['subplotline_16',['SubplotLine',['../classSubplotLine.html',1,'']]],
+  ['subplotline3_17',['SubplotLine3',['../classSubplotLine3.html',1,'']]],
+  ['subplotlinescatter_18',['SubplotLineScatter',['../classSubplotLineScatter.html',1,'']]],
+  ['subplotlinescatter3_19',['SubplotLineScatter3',['../classSubplotLineScatter3.html',1,'']]],
+  ['subplotscatter_20',['SubplotScatter',['../classSubplotScatter.html',1,'']]],
+  ['subplotscatter3_21',['SubplotScatter3',['../classSubplotScatter3.html',1,'']]]
+];
