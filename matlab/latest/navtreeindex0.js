@@ -9,7 +9,8 @@ var NAVTREEINDEX0 =
 "../../generic/1/index.html":[24,2],
 "../../generic/2/index.html":[24,1],
 "../../generic/latest/index.html":[24,0],
-"../../matlab/3/index.html":[25,0],
+"../../matlab/3/index.html":[25,1],
+"../../matlab/latest/index.html":[25,0],
 "AutoCorr_8m.html":[19,0,0,0,0,0,12,2],
 "AutoCorr_8m_source.html":[19,0,0,0,0,0,12,2],
 "Axes_8m.html":[19,0,0,0,0,0,16,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "_09lib_2verify_8m.html":[19,0,0,0,0,0,5,10],
 "_09lib_2verify_8m.html#aecd3561a16d2a1bf1c53f2c77ec50af5":[19,0,0,0,0,0,5,10,0],
 "_09lib_2verify_8m_source.html":[19,0,0,0,0,0,5,10],
-"_09math_2Contents_8m.html":[19,0,0,0,0,0,6,1],
-"_09math_2Contents_8m_source.html":[19,0,0,0,0,0,6,1]
+"_09math_2Contents_8m.html":[19,0,0,0,0,0,6,1]
 };

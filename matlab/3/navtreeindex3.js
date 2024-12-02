@@ -1,7 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"classSubplotHistfit.html#af2f1581584d9ffb0019c2cc7fa135596":[18,0,65,0],
-"classSubplotHistogram.html":[18,0,66],
 "classSubplotHistogram.html#a8077609c4c881c26617d156bf7819173":[18,0,66,0],
 "classSubplotHistogram2.html":[18,0,67],
 "classSubplotHistogram2.html#a9275d59b18888717c6b4d40eeb1f685e":[18,0,67,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX3 =
 "getFileName_8m.html":[19,0,0,0,0,0,4,3],
 "getFileName_8m.html#a312354c4d4331723132042679ee9c1b3":[19,0,0,0,0,0,4,3,0],
 "getFileName_8m_source.html":[19,0,0,0,0,0,4,3],
-"getFunc_8m.html":[19,0,0,0,0,0,6,0,0,1]
+"getFunc_8m.html":[19,0,0,0,0,0,6,0,0,1],
+"getFunc_8m.html#a64af94ae04daee963903f90460f94f86":[19,0,0,0,0,0,6,0,0,1,0],
+"getFunc_8m_source.html":[19,0,0,0,0,0,6,0,0,1]
 };
