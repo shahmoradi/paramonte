@@ -94,9 +94,9 @@ var NAVTREEINDEX =
 "../../c/2/index.html",
 "_09math_2Contents_8m_source.html",
 "classFileContentsChainDRAM.html",
-"classSubplotHistogram.html#a8077609c4c881c26617d156bf7819173",
-"getKeyVal_8m.html",
-"rgb_8m.html#a5bf52092f6437dfb37d3161760328054"
+"classSubplotHistfit.html",
+"getFunc_8m.html",
+"repKeyVal_8m.html#acd6e02478529e8f19c91b04f86cb69ee"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
