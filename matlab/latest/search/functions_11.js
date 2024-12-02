@@ -16,7 +16,7 @@ var searchData=
   ['specdram_13',['SpecDRAM',['../classSpecDRAM.html#ac6836b538d05677a8029caa55a01a64d',1,'SpecDRAM']]],
   ['specmcmc_14',['SpecMCMC',['../classSpecMCMC.html#a269b6de621d439d51e00d896da2b8e40',1,'SpecMCMC']]],
   ['spin_15',['spin',['../classSpinner.html#a4ec28dd71135d25e88a1febc1a139284',1,'Spinner']]],
-  ['spinner_16',['Spinner',['../classSpinner.html#adce64a1087dfd2fa8739c657c7794450',1,'Spinner']]],
+  ['spinner_16',['Spinner',['../classSpinner.html#aa31d094e13048d6565d2beca3d71edc6',1,'Spinner']]],
   ['split2real_17',['split2real',['../split2real_8m.html#a64dbc1f5f181d273a2b9f88aaeeed966',1,'split2real.m']]],
   ['statistics_18',['statistics',['../statistics_8m.html#adfdc30479d2baa9a189e1138bdbeaa08',1,'statistics.m']]],
   ['str2char_19',['str2char',['../append__pdfs_8m.html#ad624c3176f1932132d50b44b04dd286a',1,'append_pdfs.m']]],

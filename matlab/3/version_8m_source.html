@@ -246,22 +246,21 @@ $(document).ready(function(){initNavTree('version_8m_source.html',''); initResiz
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        fid = fopen(version_file);</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        vernum = string(strip(fgetl(fid)));</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        fclose(fid);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">catch</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        vernum = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    end</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">if</span> ~strcmp(type, <span class="stringliteral">&quot;all&quot;</span>)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        triplet = strsplit(vernum, &quot;.&quot;);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        if  strcmp(type, &quot;major&quot;)</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            vernum = <span class="keywordtype">string</span>(triplet(1));</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        elseif strcmp(type, &quot;minor&quot;) &amp;&amp; numel(triplet) &gt; 1</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            vernum = <span class="keywordtype">string</span>(triplet(2));</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        elseif strcmp(type, &quot;patch&quot;) &amp;&amp; numel(triplet) &gt; 2</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            vernum = <span class="keywordtype">string</span>(triplet(3));</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        end</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    end</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>end</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">if</span> ~strcmp(type, <span class="stringliteral">&quot;all&quot;</span>)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            triplet = strsplit(vernum, &quot;.&quot;);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            if  strcmp(type, &quot;major&quot;)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                vernum = <span class="keywordtype">string</span>(triplet(1));</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            elseif strcmp(type, &quot;minor&quot;) &amp;&amp; numel(triplet) &gt; 1</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                vernum = <span class="keywordtype">string</span>(triplet(2));</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            elseif strcmp(type, &quot;patch&quot;) &amp;&amp; numel(triplet) &gt; 2</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                vernum = <span class="keywordtype">string</span>(triplet(3));</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            end</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        end</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    catch</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        vernum = &quot;UNKNOWN&quot;;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    end</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>end</div>
 <div class="ttc" id="a_09update_2version_8m_html_a4d6eeca989e5fc5e9a59f9269109c386"><div class="ttname"><a href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a></div><div class="ttdeci">function version(in silent)</div><div class="ttdoc">Return a scalar MATLAB string containing the latest available ParaMonte MATLAB version newer than the...</div></div>
 <div class="ttc" id="afind_8m_html_aa94df3e8e4e5c54cbfe8cfaa7ae6f94c"><div class="ttname"><a href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">find</a></div><div class="ttdeci">function find(in vendor)</div><div class="ttdoc">Return a list of scalar MATLAB strings containing the paths to all detected mpiexec binaries installe...</div></div>
 <div class="ttc" id="alib_8m_html_a3d11053ebcdfc6f0bef7af9c8d14fa13"><div class="ttname"><a href="lib_8m.html#a3d11053ebcdfc6f0bef7af9c8d14fa13">lib</a></div><div class="ttdeci">function lib()</div><div class="ttdoc">Return a scalar MATLAB string containing the path to the lib directory of the ParaMonte library packa...</div></div>
@@ -272,7 +271,7 @@ $(document).ready(function(){initNavTree('version_8m_source.html',''); initResiz
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_0c006b8a7b0a63b87b86162ded07c4ff.html">+lib</a></li><li class="navelem"><a class="el" href="version_8m.html">version.m</a></li>
-        <li class="footer">Generated on Fri Nov 15 2024 02:43:42 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Mon Dec 2 2024 01:07:41 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

@@ -1,5 +1,8 @@
 var NAVTREEINDEX4 =
 {
+"getFunc_8m.html":[19,0,0,0,0,0,6,0,0,1],
+"getFunc_8m.html#a64af94ae04daee963903f90460f94f86":[19,0,0,0,0,0,6,0,0,1,0],
+"getFunc_8m_source.html":[19,0,0,0,0,0,6,0,0,1],
 "getKeyVal_8m.html":[19,0,0,0,0,0,7,1,2],
 "getKeyVal_8m.html#a1f99eef53fdd4bba3f3c59b3ee9337ad":[19,0,0,0,0,0,7,1,2,0],
 "getKeyVal_8m_source.html":[19,0,0,0,0,0,7,1,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX4 =
 "release_8m.html":[19,0,0,0,0,0,7,7],
 "release_8m.html#a51df1f91ecccd6f14aa72471c11fb780":[19,0,0,0,0,0,7,7,0],
 "release_8m_source.html":[19,0,0,0,0,0,7,7],
-"repKeyVal_8m.html":[19,0,0,0,0,0,7,1,5],
-"repKeyVal_8m.html#acd6e02478529e8f19c91b04f86cb69ee":[19,0,0,0,0,0,7,1,5,0],
-"repKeyVal_8m_source.html":[19,0,0,0,0,0,7,1,5],
-"rgb_8m.html":[19,0,0,0,0,0,16,2,0]
+"repKeyVal_8m.html":[19,0,0,0,0,0,7,1,5]
 };

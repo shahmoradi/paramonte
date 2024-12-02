@@ -525,7 +525,17 @@ ParaMonte MATLAB Documentation Guidelines</h1>
 ///                  );
 ///      samples = sampler.readSample();
 ///      sample = samples{1};
-///      pm.vis.tile(sample.contents)
+///      sample.vis.tile.line.make();
+///
+///  \endcode
+///
+///  The statement ``sample.vis.tile.line.make();`` in
+///  the above is equivalent to the following set of lines:
+///
+///  \code{.m}
+///
+///      tile = pm.vis.TileLine(sample.df);
+///      tile.make("coly", sample.slfc + 1 : sample.slfc + 4, "colc", "sampleLogFunc");
 ///
 ///  \endcode
 ///
@@ -669,7 +679,7 @@ ParaMonte MATLAB Documentation Guidelines</h1>
 <p ><a href="#ParaMonteLangExamples">⛓</a> </p>
 <h1><a class="anchor" id="ParaMonteLangExamples"></a>
 ParaMonte MATLAB Language Examples</h1>
-<p >The ParaMonte MATLAB library ships with tens of thousands of example usage that are available in the <code>example/matlab</code> folder in the <a href="https://github.com/cdslaborg/paramonte">root directory of the project repository</a>.<br  />
+<p >The ParaMonte MATLAB library ships with hundreds of example usage that are available in the <code>example/matlab</code> folder in the <a href="https://github.com/cdslaborg/paramonte">root directory of the project repository</a>.<br  />
  These examples are also available and discussed in the documentations of individual modules and procedures of this this documentation website.<br  />
 </p>
 <p ><a href="#ParaMonteLangBenchmarks">⛓</a> </p>
@@ -695,7 +705,7 @@ ParaMonte MATLAB Documentation Troubleshooting</h1>
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="footer">Generated on Fri Nov 15 2024 02:43:45 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Mon Dec 2 2024 01:07:44 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

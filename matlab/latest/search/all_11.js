@@ -30,7 +30,7 @@ var searchData=
   ['spin_27',['spin',['../classSpinner.html#a4ec28dd71135d25e88a1febc1a139284',1,'Spinner']]],
   ['spinner_28',['Spinner',['../classSpinner.html',1,'']]],
   ['spinner_29',['spinner',['../classFileContents.html#a472e943ecd9c8a3119d35f2cdd293d9f',1,'FileContents']]],
-  ['spinner_30',['Spinner',['../classSpinner.html#adce64a1087dfd2fa8739c657c7794450',1,'Spinner']]],
+  ['spinner_30',['Spinner',['../classSpinner.html#aa31d094e13048d6565d2beca3d71edc6',1,'Spinner']]],
   ['spinner_2em_31',['Spinner.m',['../Spinner_8m.html',1,'']]],
   ['split2real_32',['split2real',['../split2real_8m.html#a64dbc1f5f181d273a2b9f88aaeeed966',1,'split2real.m']]],
   ['split2real_2em_33',['split2real.m',['../split2real_8m.html',1,'']]],

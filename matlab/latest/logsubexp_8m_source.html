@@ -149,35 +149,34 @@ $(document).ready(function(){initNavTree('logsubexp_8m_source.html',''); initRes
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;  \param[in]  logSmaller  :   The input scalar MATLAB ``real`` representing</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;                              the natural logarithm of the smaller value.</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;  \param[in]  logLarger   :   The input scalar MATLAB ``real`` representing</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;                              the natural logarithm of the larger value.</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;  \return</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;  ``logDiff``             :   The output scalar MATLAB ``real`` containing the</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;                              result of ``log(exp(logLarger) - exp(logSmaller))`` accurately.</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;  \interface{<a class="code hl_function" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a>}</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;  \code{.m}</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;      logDiff = pm.math.logsubexp(smaller, larger)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;  \endcode</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;  \example{<a class="code hl_function" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a>}</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;  \include{lineno} example/math/<a class="code hl_function" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a>/main.m</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;  \output{<a class="code hl_function" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a>}</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;  \include{lineno} example/math/<a class="code hl_function" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a>/main.out.m</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;  \final{<a class="code hl_function" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a>}</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;  \author</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;  \JoshuaOsborne, May 21 2024, 9:45 PM, University of Texas at Arlington&lt;br&gt;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">   35</a></span>function logDiff = <a class="code hl_function" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a>(logSmaller, logLarger)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    logDiff = logLarger + log(-expm1(logSmaller - logLarger));</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>end</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;  \param[in]  logLarger   :   The input scalar MATLAB ``real`` representing</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;                              the natural logarithm of the larger value.</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>%&gt;  \return</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>%&gt;  ``logDiff``             :   The output scalar MATLAB ``real`` containing the</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>%&gt;                              result of ``log(exp(logLarger) - exp(logSmaller))`` accurately.</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;  \interface{<a class="code hl_function" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a>}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;  \code{.m}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;      logDiff = pm.math.logsubexp(smaller, larger)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;  \endcode</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>%&gt;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>%&gt;  \example{<a class="code hl_function" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>%&gt;  \include{lineno} example/math/<a class="code hl_function" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a>/main.m</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>%&gt;  \output{<a class="code hl_function" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>%&gt;  \include{lineno} example/math/<a class="code hl_function" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a>/main.out.m</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>%&gt;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>%&gt;  \final{<a class="code hl_function" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a>}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;  \author</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;  \JoshuaOsborne, May 21 2024, 9:45 PM, University of Texas at Arlington&lt;br&gt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;  \AmirShahmoradi, May 16 2016, 9:03 AM, Oden Institute <span class="keywordflow">for</span> Computational Engineering and Sciences (ICES), UT Austin&lt;br&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">   34</a></span>function logDiff = <a class="code hl_function" href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a>(logSmaller, logLarger)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    logDiff = logLarger + log(-expm1(logSmaller - logLarger));</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>end</div>
 <div class="ttc" id="alogsubexp_8m_html_a5c9022cce003c48cfca37d8a338fdfe0"><div class="ttname"><a href="logsubexp_8m.html#a5c9022cce003c48cfca37d8a338fdfe0">logsubexp</a></div><div class="ttdeci">function logsubexp(in logSmaller, in logLarger)</div><div class="ttdoc">Return log(exp(logLarger) - exp(logSmaller)) more accurately.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -185,7 +184,7 @@ $(document).ready(function(){initNavTree('logsubexp_8m_source.html',''); initRes
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_50f4aa4d358155d60ba77656b75f520d.html">+math</a></li><li class="navelem"><a class="el" href="logsubexp_8m.html">logsubexp.m</a></li>
-        <li class="footer">Generated on Fri Nov 15 2024 02:43:42 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Mon Dec 2 2024 01:07:41 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

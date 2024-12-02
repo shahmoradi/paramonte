@@ -299,7 +299,11 @@ Example Usage: Thread-Parallel</h2>
 <div class="line">            );</div>
 <div class="line">samples = sampler.readSample();</div>
 <div class="line">sample = samples{1};</div>
-<div class="line">pm.vis.tile(sample.contents)</div>
+<div class="line">sample.vis.tile.line.make();</div>
+<div class="line">sample.vis.triplex.lshc2.make(); % Make a corner scatter/density-contour plot.</div>
+</div><!-- fragment --><p >The statement <code>sample.vis.tile.line.make();</code> in the above is equivalent to the following set of lines:</p>
+<div class="fragment"><div class="line">tile = pm.vis.TileLine(sample.df);</div>
+<div class="line">tile.make(<span class="stringliteral">&quot;coly&quot;</span>, sample.slfc + 1 : sample.slfc + 4, <span class="stringliteral">&quot;colc&quot;</span>, <span class="stringliteral">&quot;sampleLogFunc&quot;</span>);</div>
 </div><!-- fragment --><p >The mathematical objective function in the above example is a is a multivariate Normal distribution centered at the origin, whose natural logarithm is returned by the lambda (<code>Anonymous</code>) function defined as a function handle input to the ParaDRAM sampler.<br  />
 </p>
 <p >Running this code will generate a set of simulation output files (in the current working directory of MATLAB).<br  />
@@ -1023,7 +1027,7 @@ This will generate a <code>main_mpi.m</code> MATLAB script file in the current w
 </dd></dl>
 <p><br  />
 <a class="anchor" id="final-Paradram"></a><b>Final Remarks</b> <a href="#final-Paradram">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L282 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L293 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -1075,7 +1079,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <dl class="section note"><dt>Note</dt><dd>This is an internal method of the class <a class="el" href="classSampler.html">pm.sampling.Sampler</a>.</dd></dl>
 <p><br  />
 <a class="anchor" id="final-getppm"></a><b>Final Remarks</b> <a href="#final-getppm">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L332 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L343 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -1315,7 +1319,7 @@ This method is to be only used for post-processing of the output chain file(s) o
 </dd></dl>
 <p><br  />
 <a class="anchor" id="final-readChainMarkov"></a><b>Final Remarks</b> <a href="#final-readChainMarkov">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L407 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L418 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -1397,7 +1401,7 @@ the output argument <code>logFunc</code> is a scalar of the same type as the inp
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-run"></a><b>Final Remarks</b> <a href="#final-run">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L460 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Paradram/Paradram.m#L471 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -1425,7 +1429,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classParadram.html">Paradram</a></li>
-        <li class="footer">Generated on Fri Nov 15 2024 02:43:45 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Mon Dec 2 2024 01:07:44 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
