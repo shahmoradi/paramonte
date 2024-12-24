@@ -228,12 +228,12 @@ $(document).ready(function(){initNavTree('_09sys_2_09path_2_09mpiexec_2verify_8m
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        disp(&quot;Checking for the &quot; + mpiVendor + &quot; MPI library installations. This may take a bit...&quot;)</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        mpiPathList = pm.sys.path.mpiexec.<a class="code hl_function" href="find_8m.html#aa94df3e8e4e5c54cbfe8cfaa7ae6f94c">find</a>(mpiVendorLower);</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        if  isempty(mpiPathList)</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            disp(pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;None detected.&quot;)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            disp(pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a>() + &quot;None detected.&quot;)</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        else</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            mpiexecFound = true;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            disp(pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;The following &quot; + mpiVendor + &quot; ``mpiexec`` binaries were detected:&quot;)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            disp(pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a>() + &quot;The following &quot; + mpiVendor + &quot; ``mpiexec`` binaries were detected:&quot;)</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            for ipath = 1 : length(mpiPathList)</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                disp(pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + mpiPathList(ipath))</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                disp(pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a>() + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a>() + mpiPathList(ipath))</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            end</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        end</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    end</div>
@@ -262,12 +262,12 @@ $(document).ready(function(){initNavTree('_09sys_2_09path_2_09mpiexec_2verify_8m
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                    + <span class="keywordtype">string</span>(me.identifier) + &quot; : &quot; + <span class="keywordtype">string</span>(me.message) + newline ...</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                    + &quot;Failed to read the contents of the following file:&quot; + newline ...</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                    + newline ...</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                    + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + &quot;&quot;&quot;&quot; + msgfile + &quot;&quot;&quot;&quot; + newline ...</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                    + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a>() + &quot;&quot;&quot;&quot; + msgfile + &quot;&quot;&quot;&quot; + newline ...</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                    + newline ...</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                    + &quot;The ParaMonte MATLAB library integrity appears compromised.&quot; + newline ...</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                    + &quot;You can download the latest <a class="code hl_function" href="_09update_2version_8m.html#a4d6eeca989e5fc5e9a59f9269109c386">version</a> of the library from: &quot; + newline ...</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                    + newline ...</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                    + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a> + pm.web.<a class="code hl_function" href="href_8m.html#ab28e4ee901c69380281aa173544fa51b">href</a>(<a class="code hl_function" href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a>.github.releases.url) + newline ...</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                    + pm.io.<a class="code hl_function" href="tab_8m.html#a4095dcc55685eb8292558e335f0dab06">tab</a>() + pm.web.<a class="code hl_function" href="href_8m.html#ab28e4ee901c69380281aa173544fa51b">href</a>(<a class="code hl_function" href="weblinks_8m.html#abe2a936890c070a4b1d43fc8ea5bb4ea">weblinks</a>.github.releases.url) + newline ...</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                    + newline ...</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                    );</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        end</div>
@@ -291,7 +291,7 @@ $(document).ready(function(){initNavTree('_09sys_2_09path_2_09mpiexec_2verify_8m
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_1a54d7f1a807380c05b535e170b3b863.html">+sys</a></li><li class="navelem"><a class="el" href="dir_95cf40ee0b095ce667d66c91ca3f11ae.html">+path</a></li><li class="navelem"><a class="el" href="dir_fe17b5fa8411b6baf3217cfaff561b17.html">+mpiexec</a></li><li class="navelem"><a class="el" href="_09sys_2_09path_2_09mpiexec_2verify_8m.html">verify.m</a></li>
-        <li class="footer">Generated on Mon Dec 16 2024 23:24:35 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Dec 24 2024 15:18:39 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

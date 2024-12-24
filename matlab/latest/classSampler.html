@@ -317,11 +317,11 @@ Help us justify its continued development and maintenance by acknowledging its b
 <a class="anchor" id="interface-Sampler"></a><b>Possible calling interfaces</b> <a href="#interface-Sampler">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">sampler = pm.sampling.Sampler();</div>
 <div class="line">sampler = pm.sampling.Sampler([]);</div>
 <div class="line">sampler = pm.sampling.Sampler(<a class="code hl_variable" href="classSampler.html#a2aecf3fc3f3e679765fc34414a7c387e">method</a>);</div>
-<div class="ttc" id="aclassSampler_html_a2aecf3fc3f3e679765fc34414a7c387e"><div class="ttname"><a href="classSampler.html#a2aecf3fc3f3e679765fc34414a7c387e">Sampler::method</a></div><div class="ttdeci">Property method</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00241">Sampler.m:241</a></div></div>
+<div class="ttc" id="aclassSampler_html_a2aecf3fc3f3e679765fc34414a7c387e"><div class="ttname"><a href="classSampler.html#a2aecf3fc3f3e679765fc34414a7c387e">Sampler::method</a></div><div class="ttdeci">Property method</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00245">Sampler.m:245</a></div></div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-Sampler"></a><b>Final Remarks</b> <a href="#final-Sampler">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L308 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L312 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -373,7 +373,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 </dl>
 <p><br  />
 <a class="anchor" id="final-finalize"></a><b>Final Remarks</b> <a href="#final-finalize">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L382 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L383 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -389,7 +389,8 @@ If you regenerate any parts/ideas from this library in a programming environment
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
 <dl class="authors"><dt><b><a class="el" href="authors.html#_authors000138">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 12:10 AM, University of Texas at Arlington<br  />
- <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2012, 12:00 AM, National Institute for Fusion Studies, The University of Texas at Austin%&gt; </dd></dl>
+ <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2012, 12:00 AM, National Institute for Fusion Studies, The University of Texas at Austin<br  />
+ </dd></dl>
 
 </div>
 </div>
@@ -450,8 +451,13 @@ Help us justify its continued development and maintenance by acknowledging its b
 a pattern to search for paths on the current system.<br  />
  Wildcards may be used for basenames and for the directory parts.<br  />
  If pattern contains directory parts, then these will be included in the output <code>fileList</code>.<br  />
- Following wildcards can be used within the specified <code>pattern</code>: <code>*</code> : match zero or more characters.<br  />
+ The following wildcards can be used within the specified <code>pattern</code>:<br  />
+ <ol>
+<li>
+<code>*</code> : match zero or more characters.<br  />
  </li>
+</ol>
+</li>
 <li>
 a full weblink to download and save locally on the system temporary folder.<br  />
  (<b>optional</b>, default = <code>pwd()</code>) </li>
@@ -464,16 +470,13 @@ a full weblink to download and save locally on the system temporary folder.<br  
 </dd></dl>
 <p><br  />
 <a class="anchor" id="interface-findfile"></a><b>Possible calling interfaces</b> <a href="#interface-findfile">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">sampler = pm.sampling.Sampler();</div>
-<div class="line">fileList = sampler.findfile(ftype)</div>
-<div class="line">fileList = sampler.findfile(ftype, [], [])</div>
-<div class="line">fileList = sampler.findfile(ftype, [], <a class="code hl_variable" href="classSampler.html#ac5a72d9797fc1bb96b84601276d4bd33">silent</a>)</div>
-<div class="line">fileList = sampler.findfile(ftype, pattern, [])</div>
-<div class="line">fileList = sampler.findfile(ftype, pattern, <a class="code hl_variable" href="classSampler.html#ac5a72d9797fc1bb96b84601276d4bd33">silent</a>)</div>
-<div class="ttc" id="aclassSampler_html_ac5a72d9797fc1bb96b84601276d4bd33"><div class="ttname"><a href="classSampler.html#ac5a72d9797fc1bb96b84601276d4bd33">Sampler::silent</a></div><div class="ttdeci">Property silent</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00119">Sampler.m:119</a></div></div>
+<div class="line"> </div>
+<div class="line">fileList = sampler.findfile(ftype, []);</div>
+<div class="line">fileList = sampler.findfile(ftype, pattern);</div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-findfile"></a><b>Final Remarks</b> <a href="#final-findfile">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L451 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L452 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -562,7 +565,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <dl class="section note"><dt>Note</dt><dd>This is an internal method of the class <a class="el" href="classSampler.html">pm.sampling.Sampler</a>.</dd></dl>
 <p><br  />
 <a class="anchor" id="final-getppm"></a><b>Final Remarks</b> <a href="#final-getppm">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L611 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L612 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -577,7 +580,8 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000140">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2012, 12:00 AM, National Institute for Fusion Studies, The University of Texas at Austin%&gt; </dd></dl>
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000140">Author:</a></b></dt><dd><a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, September 1, 2012, 12:00 AM, National Institute for Fusion Studies, The University of Texas at Austin<br  />
+ </dd></dl>
 
 </div>
 </div>
@@ -621,7 +625,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 
 <p>Return a list of objects of superclass <a class="el" href="classFileContentsChain.html">pm.sampling.FileContentsChain</a> containing the content(s) of the ParaMonte simulation output chain file(s) whose path(s) match the specified input <code>pattern</code> or the simulation specification <code>sampler.spec.outputFileName</code>. </p>
 <dl class="section warning"><dt>Warning</dt><dd>This method is to be only used for post-processing of the output chain file(s) of an already finished simulation.<br  />
- Although possible, this method is NOT meant to be called by all processes in MPI-parallel simulations.<br  />
+ Although possible, this method is <b>not</b> meant to be called by all processes in MPI-parallel simulations.<br  />
 </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -629,7 +633,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pattern</td><td>: The input scalar MATLAB string containing the pattern matching the desired chain file(s) whose contents is to be read.<br  />
  The specified <code>pattern</code> only needs to partially identify the name of the simulation to which the chain file belongs.<br  />
- For example, specifying <code>"./mydir/mysim"</code> as input will lead to a search for file(s) beginning with "mysim" and ending with <code>"_chain.txt"</code> inside the directory <code>"./mydir/"</code>.<br  />
+ For example, specifying <code>"./mydir/mysim"</code> as input will lead to a search for file(s) beginning with <code>"mysim"</code> and ending with <code>"_chain.txt"</code> inside the directory <code>"./mydir/"</code>.<br  />
  If there are multiple files matching in the input <code>pattern</code>, then all such files will be read and returned as elements of a list.<br  />
  If the specified pattern is a valid existing URL, the file will be downloaded as a temporary file to the local system, its contents shall be parsed and the file will be subsequently removed.<br  />
  If the input <code>pattern</code> is empty, then the method will search for any possible candidate files with the appropriate suffix in the current working directory.<br  />
@@ -637,7 +641,7 @@ Help us justify its continued development and maintenance by acknowledging its b
     <tr><td class="paramdir">[in]</td><td class="paramname">sep</td><td>: The input MATLAB string containing the field separator used in the file(s).<br  />
  (<b>optional</b>, default = <code>sampler.spec.outputSeparator</code> or automatically inferred.) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">varargin</td><td>: Any set of arguments that must be directly passed to the relevant file contents parser class.<br  />
- (<b>optional</b>. default is empty, corresponding to no extra input arguments.)</td></tr>
+ (<b>optional</b>. The default is empty, corresponding to no extra input arguments.)</td></tr>
   </table>
   </dd>
 </dl>
@@ -671,7 +675,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-readChain"></a><b>Final Remarks</b> <a href="#final-readChain">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L699 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L700 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -727,7 +731,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 
 <p>Return a list of objects of class <a class="el" href="classFileContentsProgress.html">pm.sampling.FileContentsProgress</a> containing the content(s) of the ParaMonte simulation output progress file(s) whose path(s) match the specified input <code>pattern</code> or the simulation specification <code>sampler.spec.outputFileName</code>.<br  />
  </p>
-<dl class="section warning"><dt>Warning</dt><dd>This method is to be only used for post-processing of the output progress file(s) of an already finished simulation. Although possible, this method is NOT meant to be called by all processes in MPI-parallel simulations.<br  />
+<dl class="section warning"><dt>Warning</dt><dd>This method is to be only used for post-processing of the output progress file(s) of an already finished simulation. Although possible, this method is <b>not</b> meant to be called by all processes in MPI-parallel simulations.<br  />
 </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -735,7 +739,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pattern</td><td>: The input scalar MATLAB string containing the pattern matching the desired progress file(s) whose contents is to be read.<br  />
  The specified <code>pattern</code> only needs to partially identify the name of the simulation to which the progress file belongs.<br  />
- For example, specifying <code>"./mydir/mysim"</code> as input will lead to a search for file(s) beginning with "mysim" and ending with <code>"_progress.txt"</code> inside the directory <code>"./mydir/"</code>.<br  />
+ For example, specifying <code>"./mydir/mysim"</code> as input will lead to a search for file(s) beginning with <code>"mysim"</code> and ending with <code>"_progress.txt"</code> inside the directory <code>"./mydir/"</code>.<br  />
  If there are multiple files matching in the input <code>pattern</code>, then all such files will be read and returned as elements of a list.<br  />
  If the specified pattern is a valid existing URL, the file will be downloaded as a temporary file to the local system, its contents shall be parsed and the file will be subsequently removed.<br  />
  If the input <code>pattern</code> is empty, then the method will search for any possible candidate files with the appropriate suffix in the current working directory.<br  />
@@ -775,7 +779,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-readProgress"></a><b>Final Remarks</b> <a href="#final-readProgress">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L793 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L794 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -825,7 +829,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 
 <p>Return a list of objects of class <a class="el" href="classFileContentsReport.html">pm.sampling.FileContentsReport</a> containing the content(s) of the ParaMonte simulation output report file(s) whose path(s) match the specified input <code>pattern</code> or the simulation specification <code>sampler.spec.outputFileName</code>.<br  />
  </p>
-<dl class="section warning"><dt>Warning</dt><dd>This method is to be only used for post-processing of the output report file(s) of an already finished simulation. Although possible, this method is NOT meant to be called by all processes in MPI-parallel simulations.<br  />
+<dl class="section warning"><dt>Warning</dt><dd>This method is to be only used for post-processing of the output report file(s) of an already finished simulation. Although possible, this method is <b>not</b> meant to be called by all processes in MPI-parallel simulations.<br  />
 </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -833,7 +837,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pattern</td><td>: The input scalar MATLAB string containing the pattern matching the desired report file(s) whose contents is to be read.<br  />
  The specified <code>pattern</code> only needs to partially identify the name of the simulation to which the report file belongs.<br  />
- For example, specifying <code>"./mydir/mysim"</code> as input will lead to a search for file(s) beginning with "mysim" and ending with <code>"_report.txt"</code> inside the directory <code>"./mydir/"</code>.<br  />
+ For example, specifying <code>"./mydir/mysim"</code> as input will lead to a search for file(s) beginning with <code>"mysim"</code> and ending with <code>"_report.txt"</code> inside the directory <code>"./mydir/"</code>.<br  />
  If there are multiple files matching in the input <code>pattern</code>, then all such files will be read and returned as elements of a list.<br  />
  If the specified pattern is a valid existing URL, the file will be downloaded as a temporary file to the local system, its contents shall be parsed and the file will be subsequently removed.<br  />
  If the input <code>pattern</code> is empty, then the method will search for any possible candidate files with the appropriate suffix in the current working directory.<br  />
@@ -859,7 +863,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-readReport"></a><b>Final Remarks</b> <a href="#final-readReport">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L873 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L874 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -910,13 +914,13 @@ Help us justify its continued development and maintenance by acknowledging its b
 <p>Return a list of objects of class <a class="el" href="classFileContentsRestart.html">pm.sampling.FileContentsRestart</a> containing the content(s) of the ParaMonte simulation output restart file(s) whose path(s) match the specified input <code>pattern</code> or the simulation specification <code>sampler.spec.outputFileName</code>.<br  />
  </p>
 <dl class="section warning"><dt>Warning</dt><dd>This method is to be only used for post-processing of the output restart file(s) of an already finished simulation.<br  />
- Although possible, this method is NOT meant to be called by all processes in MPI-parallel simulations.<br  />
+ Although possible, this method is <b>not</b> meant to be called by all processes in MPI-parallel simulations.<br  />
 </dd>
 <dd>
 Currently, only the restart output files in ASCII format can be read via this method.<br  />
  The binary restart files are not meant to be parsed via this method.<br  />
  To request for ASCII restart output files in simulations, set the input simulation specification,</dd></dl>
-<div class="fragment"><div class="line">sampler.spec.restartFileFormat = <span class="stringliteral">&quot;ascii&quot;</span></div>
+<div class="fragment"><div class="line">sampler.spec.outputRestartFileFormat = <span class="stringliteral">&quot;ascii&quot;</span></div>
 </div><!-- fragment --><p >where <code>sampler</code> can be an instance of any one of the ParaMonte sampler classes, such as <a class="el" href="classParadram.html">pm.sampling.Paradram</a>.<br  />
 </p>
 <dl class="section warning"><dt>Warning</dt><dd>Avoid using this routine for very large long simulations.<br  />
@@ -928,7 +932,7 @@ Currently, only the restart output files in ASCII format can be read via this me
  </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pattern</td><td>: The input scalar MATLAB string containing the pattern matching the desired restart file(s) whose contents is to be read.<br  />
  The specified <code>pattern</code> only needs to partially identify the name of the simulation to which the restart file belongs.<br  />
- For example, specifying <code>"./mydir/mysim"</code> as input will lead to a search for file(s) beginning with "mysim" and ending with <code>"_restart.txt"</code> inside the directory <code>"./mydir/"</code>.<br  />
+ For example, specifying <code>"./mydir/mysim"</code> as input will lead to a search for file(s) beginning with <code>"mysim"</code> and ending with <code>"_restart.txt"</code> inside the directory <code>"./mydir/"</code>.<br  />
  If there are multiple files matching in the input <code>pattern</code>, then all such files will be read and returned as elements of a list.<br  />
  If the specified pattern is a valid existing URL, the file will be downloaded as a temporary file to the local system, its contents shall be parsed and the file will be subsequently removed.<br  />
  If the input <code>pattern</code> is empty, then the method will search for any possible candidate files with the appropriate suffix in the current working directory.<br  />
@@ -956,7 +960,7 @@ Currently, only the restart output files in ASCII format can be read via this me
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-readRestart"></a><b>Final Remarks</b> <a href="#final-readRestart">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L970 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+sampling/@Sampler/Sampler.m#L971 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -1013,7 +1017,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <p>Return a list of objects of superclass <a class="el" href="classFileContentsSample.html">pm.sampling.FileContentsSample</a> containing the content(s) of the ParaMonte simulation output sample file(s) whose path(s) match the specified input <code>pattern</code> or the simulation specification <code>sampler.spec.outputFileName</code>.<br  />
  </p>
 <dl class="section warning"><dt>Warning</dt><dd>This method is to be only used for post-processing of the output sample file(s) of an already finished simulation.<br  />
- Although possible, this method is NOT meant to be called by all processes in MPI-parallel simulations.<br  />
+ Although possible, this method is <b>not</b> meant to be called by all processes in MPI-parallel simulations.<br  />
 </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1021,11 +1025,11 @@ Help us justify its continued development and maintenance by acknowledging its b
  </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pattern</td><td>: The input scalar MATLAB string containing the pattern matching the desired sample file(s) whose contents is to be read.<br  />
  The specified <code>pattern</code> only needs to partially identify the name of the simulation to which the sample file belongs.<br  />
- For example, specifying <code>"./mydir/mysim"</code> as input will lead to a search for file(s) beginning with "mysim" and ending with <code>"_sample.txt"</code> inside the directory <code>"./mydir/"</code>.<br  />
+ For example, specifying <code>"./mydir/mysim"</code> as input will lead to a search for file(s) beginning with <code>"mysim"</code> and ending with <code>"_sample.txt"</code> inside the directory <code>"./mydir/"</code>.<br  />
  If there are multiple files matching in the input <code>pattern</code>, then all such files will be read and returned as elements of a list.<br  />
  If the specified pattern is a valid existing URL, the file will be downloaded as a temporary file to the local system, its contents shall be parsed and the file will be subsequently removed.<br  />
  If the input <code>pattern</code> is empty, then the method will search for any possible candidate files with the appropriate suffix in the current working directory.<br  />
- (<b>optional</b>, default = <code>sampler.spec.outputFileName</code> or <code>"./"</code>)</td></tr>
+ (<b>optional</b>, default = <code>sampler.spec.outputFileName</code> or <code>"./"</code>) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">sep</td><td>: The input MATLAB string containing the field separator used in the file(s).<br  />
  (<b>optional</b>, default = <code>sampler.spec.outputSeparator</code> or automatically inferred.)</td></tr>
   </table>
@@ -1144,7 +1148,7 @@ the output argument <code>logFunc</code> is a scalar of the same type as the inp
 <p><br  />
 <a class="anchor" id="interface-run"></a><b>Possible calling interfaces</b> <a href="#interface-run">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">sampler = pm.sampling.Sampler();</div>
 <div class="line">sampleList = sampler.run(<a class="code hl_function" href="getLogFunc_8m.html#a77e1a6b154cc75d50b224f2e00cc6b8b">getLogFunc</a>, <a class="code hl_variable" href="classSampler.html#aaf6eaedfc14499ba223ad75bb6405858">ndim</a>);</div>
-<div class="ttc" id="aclassSampler_html_aaf6eaedfc14499ba223ad75bb6405858"><div class="ttname"><a href="classSampler.html#aaf6eaedfc14499ba223ad75bb6405858">Sampler::ndim</a></div><div class="ttdeci">Property ndim</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00252">Sampler.m:252</a></div></div>
+<div class="ttc" id="aclassSampler_html_aaf6eaedfc14499ba223ad75bb6405858"><div class="ttname"><a href="classSampler.html#aaf6eaedfc14499ba223ad75bb6405858">Sampler::ndim</a></div><div class="ttdeci">Property ndim</div><div class="ttdef"><b>Definition:</b> <a href="Sampler_8m_source.html#l00256">Sampler.m:256</a></div></div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-run"></a><b>Final Remarks</b> <a href="#final-run">⛓</a> </p><hr  />
@@ -1233,9 +1237,11 @@ Help us justify its continued development and maintenance by acknowledging its b
  Although the default value is <code>serial</code>, the class methods will internally set this component to the right parallelization type at runtime.<br  />
 </p>
 <dl class="section warning"><dt>Warning</dt><dd>This <code>Hidden</code> class component must not be accessed by the end users of the library.<br  />
+</dd></dl>
+<dl class="DEVNOTE"><dt><b><a class="el" href="DEVNOTE.html#_DEVNOTE000005">Developer Remark:</a></b></dt><dd>The attribute name <code>clstype</code> stands for <em>Compiler/Linker Suit</em> type.<br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00200">200</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00203">203</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
 
 </div>
 </div>
@@ -1273,7 +1279,7 @@ Help us justify its continued development and maintenance by acknowledging its b
       </table>
 </div><div class="memdoc">
 <p ><code>libspec</code></p>
-<p >Optional scalar MATLAB string containing a list of colon-(:)-separated configurations of the kernel shared library to be used for the sampling task.<br  />
+<p >Optional scalar MATLAB string containing a list of colon-(<code>:</code>)-separated configurations of the kernel shared library to be used for the sampling task.<br  />
  The most important of all is the compiler suite with which the library is built.<br  />
 </p>
 <dl class="section warning"><dt>Warning</dt><dd><b>Use this optional argument only if you know what you are doing</b>.<br  />
@@ -1281,7 +1287,7 @@ Help us justify its continued development and maintenance by acknowledging its b
  The simulations will fail if no such directory can be found.<br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00277">277</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00281">281</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
 
 </div>
 </div>
@@ -1324,7 +1330,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <dl class="section warning"><dt>Warning</dt><dd>This <code>Hidden</code> class component must not be accessed by the end users of the library.<br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00231">231</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00235">235</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
 
 </div>
 </div>
@@ -1367,7 +1373,7 @@ Help us justify its continued development and maintenance by acknowledging its b
 <dl class="section warning"><dt>Warning</dt><dd>This <code>Hidden</code> class component must not be accessed by the end users of the library.<br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00241">241</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00245">245</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
 
 </div>
 </div>
@@ -1462,7 +1468,7 @@ On Darwin (macOS), the ParaMonte shared library builds with MPICH and OpenMPI li
 <dl class="section warning"><dt>Warning</dt><dd>This <code>Hidden</code> class component must not be accessed by the end users of the library.<br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00211">211</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00215">215</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
 
 </div>
 </div>
@@ -1483,7 +1489,7 @@ On Darwin (macOS), the ParaMonte shared library builds with MPICH and OpenMPI li
 <dl class="section warning"><dt>Warning</dt><dd>This <code>Hidden</code> class component must not be accessed by the end users of the library.<br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00252">252</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00256">256</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
 
 </div>
 </div>
@@ -1504,7 +1510,7 @@ On Darwin (macOS), the ParaMonte shared library builds with MPICH and OpenMPI li
 <dl class="section warning"><dt>Warning</dt><dd>This <code>Hidden</code> class component must not be accessed by the end users of the library.<br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00262">262</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00266">266</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
 
 </div>
 </div>
@@ -1590,7 +1596,7 @@ On Darwin (macOS), the ParaMonte shared library builds with MPICH and OpenMPI li
 <dl class="section warning"><dt>Warning</dt><dd>This <code>Hidden</code> class component must not be accessed by the end users of the library.<br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00221">221</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Sampler_8m_source.html#l00225">225</a> of file <a class="el" href="Sampler_8m_source.html">Sampler.m</a>.</p>
 
 </div>
 </div>
@@ -1603,7 +1609,7 @@ On Darwin (macOS), the ParaMonte shared library builds with MPICH and OpenMPI li
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="classSampler.html">Sampler</a></li>
-        <li class="footer">Generated on Mon Dec 16 2024 23:24:37 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Dec 24 2024 15:18:42 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

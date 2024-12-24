@@ -1,9 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"redblue_8m_source.html":[19,0,0,0,0,0,17,1,2],
-"reinflearning_8m.html":[19,0,0,0,0,0,8,0,17],
-"reinflearning_8m.html#a622a1eec8752c4ff64c653341da68a2e":[19,0,0,0,0,0,8,0,17,0],
-"reinflearning_8m_source.html":[19,0,0,0,0,0,8,0,17],
 "release_8m.html":[19,0,0,0,0,0,8,7],
 "release_8m.html#a51df1f91ecccd6f14aa72471c11fb780":[19,0,0,0,0,0,8,7,0],
 "release_8m_source.html":[19,0,0,0,0,0,8,7],
@@ -82,7 +78,6 @@ var NAVTREEINDEX5 =
 "usergroup2.html":[23],
 "usergroup3.html":[24],
 "usergroup4.html":[25],
-"usergroup5.html":[26],
 "using__hg2_8m.html":[19,0,0,0,0,0,17,3,0,16],
 "using__hg2_8m.html#a54d6ede409f48c279dc31dd2f5a2036f":[19,0,0,0,0,0,17,3,0,16,0],
 "using__hg2_8m_source.html":[19,0,0,0,0,0,17,3,0,16],

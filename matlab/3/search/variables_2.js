@@ -17,6 +17,5 @@ var searchData=
   ['domaincubelimitupper_14',['domainCubeLimitUpper',['../classSpecBase.html#aa65cc299508c59b2acd2d9d4f6ecb461',1,'SpecBase']]],
   ['domainerrcount_15',['domainErrCount',['../classSpecBase.html#a58b3b2a9bafb1b5cf8dc8eb1f354157f',1,'SpecBase']]],
   ['domainerrcountmax_16',['domainErrCountMax',['../classSpecBase.html#aeb8cc9b7971e152dac08004944322233',1,'SpecBase']]],
-  ['dsym_17',['dsym',['../classFileContentsReport.html#a8a8fd36506529cd89b3073202491b1e8',1,'FileContentsReport']]],
-  ['dsymlen_18',['dsymLen',['../classFileContentsReport.html#a86043b97bc189dbf31778c34ce71b49c',1,'FileContentsReport']]]
+  ['dsym_17',['dsym',['../classFileContentsReport.html#a8a8fd36506529cd89b3073202491b1e8',1,'FileContentsReport']]]
 ];

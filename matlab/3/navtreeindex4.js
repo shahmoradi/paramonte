@@ -1,9 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"getEntryNML_8m.html#aa5e30d1de7e1d1e03b63a5121f2ca578":[19,0,0,0,0,0,2,1,0],
-"getEntryNML_8m_source.html":[19,0,0,0,0,0,2,1],
-"getFileName_8m.html":[19,0,0,0,0,0,5,3],
-"getFileName_8m.html#a312354c4d4331723132042679ee9c1b3":[19,0,0,0,0,0,5,3,0],
 "getFileName_8m_source.html":[19,0,0,0,0,0,5,3],
 "getFunc_8m.html":[19,0,0,0,0,0,7,0,0,1],
 "getFunc_8m.html#a64af94ae04daee963903f90460f94f86":[19,0,0,0,0,0,7,0,0,1,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX4 =
 "read__write__entire__textfile_8m.html#ad6731c3b0a0c4ac289173fcae4f0a8da":[19,0,0,0,0,0,17,3,0,14,0],
 "read__write__entire__textfile_8m_source.html":[19,0,0,0,0,0,17,3,0,14],
 "redblue_8m.html":[19,0,0,0,0,0,17,1,2],
-"redblue_8m.html#a10f25c7434e453e671af5aec20aedb3a":[19,0,0,0,0,0,17,1,2,0]
+"redblue_8m.html#a10f25c7434e453e671af5aec20aedb3a":[19,0,0,0,0,0,17,1,2,0],
+"redblue_8m_source.html":[19,0,0,0,0,0,17,1,2],
+"reinflearning_8m.html":[19,0,0,0,0,0,8,0,17],
+"reinflearning_8m.html#a622a1eec8752c4ff64c653341da68a2e":[19,0,0,0,0,0,8,0,17,0],
+"reinflearning_8m_source.html":[19,0,0,0,0,0,8,0,17]
 };

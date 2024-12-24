@@ -168,7 +168,7 @@ $(document).ready(function(){initNavTree('testParaMonte_8m_source.html',''); ini
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>clear classes;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>format compact; format long;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>pmlibRootDir = <span class="stringliteral">&#39;./&#39;</span>; % set <span class="keyword">this</span> path to the paramonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> dir</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>addpath( genpath(pmlibRootDir) ) </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>addpath( genpath(pmlibRootDir) )</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>filePath = mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>[scriptPath,fileName,fileExt] = fileparts(filePath); cd(scriptPath); % Change working directory to source code directory.</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
@@ -216,9 +216,9 @@ $(document).ready(function(){initNavTree('testParaMonte_8m_source.html',''); ini
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>end</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>%-----------------------------------------------------------------------------------------------------------------------------------------------------------</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>%pmpd.spec.outputSeparator                       = <span class="stringliteral">&quot;|&quot;</span>;                          % Works</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>%pmpd.spec.chainFileFormat                       = <span class="stringliteral">&quot;compact&quot;</span>;                    % Works</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>%pmpd.spec.outputChainFileFormat                 = <span class="stringliteral">&quot;compact&quot;</span>;                    % Works</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>%pmpd.spec.variableNameList                      = [<span class="stringliteral">&quot;Variable-X&quot;</span>, <span class="stringliteral">&quot;Variable-Y&quot;</span>]; % Works</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>%pmpd.spec.restartFileFormat                     = <span class="stringliteral">&quot;ASCII&quot;</span>;                      % Works</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>%pmpd.spec.outputRestartFileFormat               = <span class="stringliteral">&quot;ASCII&quot;</span>;                      % Works</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>%pmpd.spec.outputColumnWidth                     = 25;                           % Works</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>%pmpd.spec.outputRealPrecision                   = 17;                           % Works</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>%pmpd.spec.silentModeRequested                   = 0;                            % Works</div>
@@ -265,14 +265,14 @@ $(document).ready(function(){initNavTree('testParaMonte_8m_source.html',''); ini
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>% plot3(pmpd.Chain.State(1,:),pmpd.Chain.State(2,:),pmpd.Chain.LogFunc);</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>% <span class="keywordflow">for</span> i = 1 : ndim</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>% </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>%</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>%     figure(<span class="stringliteral">&quot;color&quot;</span>, <span class="stringliteral">&quot;white&quot;</span>);</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>%     histfit(pmpd.Chain.State(i,:));</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>%     </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>%</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>%     figure(<span class="stringliteral">&quot;color&quot;</span>, <span class="stringliteral">&quot;white&quot;</span>);</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>%     plot(pmpd.Chain.State(i,:));</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>%     set(gca,<span class="stringliteral">&#39;xscale&#39;</span>,<span class="stringliteral">&#39;log&#39;</span>)</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>%   </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>%</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>% end</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
@@ -291,7 +291,7 @@ $(document).ready(function(){initNavTree('testParaMonte_8m_source.html',''); ini
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_bfdaa8953ddda54ce2936e3fd364f697.html">test</a></li><li class="navelem"><a class="el" href="testParaMonte_8m.html">testParaMonte.m</a></li>
-        <li class="footer">Generated on Mon Dec 16 2024 23:24:36 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Dec 24 2024 15:18:41 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

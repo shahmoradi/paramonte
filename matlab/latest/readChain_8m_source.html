@@ -148,7 +148,7 @@ $(document).ready(function(){initNavTree('readChain_8m_source.html',''); initRes
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>%&gt;</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>%&gt;  \warning</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>%&gt;  This function is to be only used <span class="keywordflow">for</span> post-processing of the output chain file(s) of an already finished simulation.&lt;br&gt;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;  Although possible, <span class="keyword">this</span> method is NOT meant to be called by all processes in MPI-<a class="code hl_function" href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a> simulations.&lt;br&gt;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>%&gt;  Although possible, <span class="keyword">this</span> method is **not** meant to be called by all processes in MPI-<a class="code hl_function" href="parallel_8m.html#a01b198603048be87b719ba0cbd8b3864">parallel</a> simulations.&lt;br&gt;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>%&gt;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>%&gt;  \param[in]  sampler     :   The input <span class="keywordtype">object</span> of superclass [pm.sampling.Sampler](@ref <a class="code hl_class" href="classSampler.html">Sampler</a>)</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>%&gt;                              whose type and properties determine the type of the output <span class="keywordtype">object</span>(s).&lt;br&gt;</div>
@@ -158,7 +158,7 @@ $(document).ready(function(){initNavTree('readChain_8m_source.html',''); initRes
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>%&gt;                              The specified ``pattern`` only needs to partially identify</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>%&gt;                              the <a class="code hl_function" href="_09lib_2_09mpi_2name_8m.html#a19728dc6261fff6f3b0ec7810af5044c">name</a> of the simulation to <a class="code hl_function" href="which_8m.html#a81f39d8b2392cbed3b4536d64bf25952">which</a> the chain file belongs.&lt;br&gt;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>%&gt;                              For example, specifying ``<span class="stringliteral">&quot;./mydir/mysim&quot;</span>`` as input will</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;                              lead to a search <span class="keywordflow">for</span> file(s) beginning with <span class="stringliteral">&quot;mysim&quot;</span> and</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>%&gt;                              lead to a search <span class="keywordflow">for</span> file(s) beginning with ``<span class="stringliteral">&quot;mysim&quot;</span>`` and</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>%&gt;                              ending with ``<span class="stringliteral">&quot;_chain.txt&quot;</span>`` inside the directory ``<span class="stringliteral">&quot;./mydir/&quot;</span>``.&lt;br&gt;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>%&gt;                              If there are multiple files matching in the input ``pattern``,</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>%&gt;                              then all such files will be read and returned as elements of a <a class="code hl_function" href="_09os_2list_8m.html#a7e0597e15fc79693cc071bb0b8a33a0b">list</a>.&lt;br&gt;</div>
@@ -172,7 +172,7 @@ $(document).ready(function(){initNavTree('readChain_8m_source.html',''); initRes
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>%&gt;  \param[in]  sep         :   The input MATLAB <span class="keywordtype">string</span> containing the field separator used in the file(s).&lt;br&gt;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>%&gt;                              (**optional**. If empty, it is set to ``sampler.spec.outputSeparator`` or <span class="keywordflow">if</span> empty, it is automatically inferred.)</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>%&gt;  \param[in]  varargin    :   Any set of arguments that must be directly passed to the relevant file contents parser <span class="keyword">class</span>.&lt;br&gt;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;                              (**optional**. <span class="keywordflow">default</span> is empty, corresponding to no extra input arguments.)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>%&gt;                              (**optional**. The <span class="keywordflow">default</span> is empty, corresponding to no extra input arguments.)</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>%&gt;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>%&gt;  \return</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>%&gt;  ``chainList``           :   The output MATLAB cell array of objects of superclass [pm.sampling.FileContentsChain](@ref <a class="code hl_class" href="classFileContentsChain.html">FileContentsChain</a>),</div>
@@ -235,27 +235,27 @@ $(document).ready(function(){initNavTree('readChain_8m_source.html',''); initRes
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>%&gt;  \FatemehBagheri, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.&lt;br&gt;</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="readChain_8m.html#a02c1e4df43ef8ef8be223257f32c9069">   93</a></span>function chainList = <a class="code hl_function" href="readChain_8m.html#a02c1e4df43ef8ef8be223257f32c9069">readChain</a>(sampler, pattern, sep, varargin)</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span>  nargin &lt; 3</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">if</span>  0 &lt; pm.array.len(sampler.spec.outputSeparator)</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            sep = string(sampler.spec.outputSeparator);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            sep = [];</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        end</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    end</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">if</span>  nargin &lt; 2</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">if</span>  0 &lt; pm.array.len(sampler.spec.outputFileName)</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            pattern = string(sampler.spec.outputFileName);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            pattern = [];</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        end</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    end</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">if</span>  nargin &lt; 1</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        sampler = [];</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    end</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">if</span>  isempty(sampler)</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        sampler = pm.sampling.Sampler();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span>  nargin &lt; 1</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        sampler = [];</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    end</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">if</span>  isempty(sampler)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        sampler = pm.sampling.Sampler();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    end</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">if</span>  nargin &lt; 2</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">if</span>  0 &lt; pm.array.len(sampler.spec.outputFileName)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            pattern = string(sampler.spec.outputFileName);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            pattern = [];</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        end</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    end</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">if</span>  nargin &lt; 3</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordflow">if</span>  0 &lt; pm.array.len(sampler.spec.outputSeparator)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            sep = string(sampler.spec.outputSeparator);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            sep = [];</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        end</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    end</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    pathList = sampler.findfile(<span class="stringliteral">&quot;chain&quot;</span>, pattern);</div>
@@ -301,7 +301,7 @@ $(document).ready(function(){initNavTree('readChain_8m_source.html',''); initRes
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
         <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_870970980bbbd119e0b6d78557b3d4cb.html">+sampling</a></li><li class="navelem"><a class="el" href="readChain_8m.html">readChain.m</a></li>
-        <li class="footer">Generated on Mon Dec 16 2024 23:24:35 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="footer">Generated on Tue Dec 24 2024 15:18:40 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">
