@@ -156,4 +156,7 @@ var menudata={children:[
 {text:"1",url:"../../generic/1/index.html"}]},
 {text:"MATLAB",url:"usergroup4.html",children:[
 {text:"latest",url:"../../matlab/latest/index.html"},
-{text:"3",url:"../../matlab/3/index.html"}]}]}
+{text:"3",url:"../../matlab/3/index.html"}]},
+{text:"Python",url:"usergroup5.html",children:[
+{text:"latest",url:"../../python/latest/index.html"},
+{text:"3",url:"../../python/3/index.html"}]}]}

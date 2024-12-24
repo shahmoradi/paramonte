@@ -11,9 +11,10 @@ var searchData=
   ['iscmd_2em_8',['iscmd.m',['../iscmd_8m.html',1,'']]],
   ['isgui_2em_9',['isgui.m',['../isgui_8m.html',1,'']]],
   ['isimpi_2em_10',['isimpi.m',['../isimpi_8m.html',1,'']]],
-  ['isnumeric_2em_11',['isnumeric.m',['../isnumeric_8m.html',1,'']]],
-  ['isolate_5faxes_2em_12',['isolate_axes.m',['../isolate__axes_8m.html',1,'']]],
-  ['istype_2em_13',['istype.m',['../istype_8m.html',1,'']]],
-  ['isurl_2em_14',['isurl.m',['../isurl_8m.html',1,'']]],
-  ['isyes_2em_15',['isyes.m',['../isyes_8m.html',1,'']]]
+  ['islenleq_2em_11',['islenleq.m',['../islenleq_8m.html',1,'']]],
+  ['isnumeric_2em_12',['isnumeric.m',['../isnumeric_8m.html',1,'']]],
+  ['isolate_5faxes_2em_13',['isolate_axes.m',['../isolate__axes_8m.html',1,'']]],
+  ['istype_2em_14',['istype.m',['../istype_8m.html',1,'']]],
+  ['isurl_2em_15',['isurl.m',['../isurl_8m.html',1,'']]],
+  ['isyes_2em_16',['isyes.m',['../isyes_8m.html',1,'']]]
 ];

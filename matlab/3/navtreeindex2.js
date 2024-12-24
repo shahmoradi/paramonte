@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"classFileContents.html#a7e22f8bc509a70a25759c6cd2980526c":[18,0,23,0],
+"classFileContents.html#ae50ed9b4d5f9ac5825eea0e58a59ca7d":[18,0,23,2],
+"classFileContentsChain.html":[18,0,24],
+"classFileContentsChain.html#ab2bf66131e5acb3a9d94624fdb5a428f":[18,0,24,0],
 "classFileContentsChainDRAM.html":[18,0,25],
 "classFileContentsChainDRAM.html#afff34baad69c0fa2d3d5686a47d5d789":[18,0,25,0],
 "classFileContentsChainMCMC.html":[18,0,26],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "classSubplotEllipse3.html#a73782b3f952dd64e04cca1e926ebe9e5":[18,0,63,11],
 "classSubplotEllipse3.html#a82a607a840645b3a2df690242ae428bc":[18,0,63,0],
 "classSubplotEllipse3.html#a82c71150241ed4adedf73d3b75801d73":[18,0,63,8],
-"classSubplotEllipse3.html#a9c858506cba346bb3a5aa3f22f4b1d9f":[18,0,63,4],
-"classSubplotEllipse3.html#ab00dc25b99f25c4076552e514b532b8e":[18,0,63,12],
-"classSubplotHeatmap.html":[18,0,64],
-"classSubplotHeatmap.html#a3de58cc3bc947920bbdb6155b45edcbb":[18,0,64,0],
-"classSubplotHeatmap.html#ae278eeb496ba35d4fc53b6dcbfa96c35":[18,0,64,1]
+"classSubplotEllipse3.html#a9c858506cba346bb3a5aa3f22f4b1d9f":[18,0,63,4]
 };

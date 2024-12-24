@@ -85,6 +85,10 @@ var NAVTREE =
     [ "MATLAB", "usergroup4.html", [
       [ "latest", "../../matlab/latest/index.html", null ],
       [ "3", "../../matlab/3/index.html", null ]
+    ] ],
+    [ "Python", "usergroup5.html", [
+      [ "latest", "../../python/latest/index.html", null ],
+      [ "3", "../../python/3/index.html", null ]
     ] ]
   ] ]
 ];
@@ -92,11 +96,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "../../c/2/index.html",
-"_09math_2Contents_8m_source.html",
-"classFileContentsChainDRAM.html",
-"classSubplotHistfit.html",
-"getFunc_8m.html",
-"repKeyVal_8m.html#acd6e02478529e8f19c91b04f86cb69ee"
+"_09lib_2verify_8m.html",
+"classFileContents.html#a7e22f8bc509a70a25759c6cd2980526c",
+"classSubplotEllipse3.html#ab00dc25b99f25c4076552e514b532b8e",
+"getEntryNML_8m.html#aa5e30d1de7e1d1e03b63a5121f2ca578",
+"redblue_8m_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

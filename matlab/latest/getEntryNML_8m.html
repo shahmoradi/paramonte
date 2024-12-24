@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte MATLAB 3.0.0: src/matlab/main/+pm/+introspection/getEntryNML.m File Reference</title>
+    <title>ParaMonte MATLAB 3.0.0: src/matlab/main/+pm/+fortran/getEntryNML.m File Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -148,14 +148,14 @@ $(document).ready(function(){initNavTree('getEntryNML_8m.html',''); initResizabl
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a31907aada26bcb9d3a39956e1b2c354f"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getEntryNML_8m.html#a31907aada26bcb9d3a39956e1b2c354f">getEntryNML</a> (in varname, in varval, in vartype, in varsize)</td></tr>
-<tr class="memdesc:a31907aada26bcb9d3a39956e1b2c354f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a Fortran-namelist-compatible conversion of the input <code>varval</code>.<br  />
-  <a href="getEntryNML_8m.html#a31907aada26bcb9d3a39956e1b2c354f">More...</a><br /></td></tr>
-<tr class="separator:a31907aada26bcb9d3a39956e1b2c354f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5e30d1de7e1d1e03b63a5121f2ca578"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getEntryNML_8m.html#aa5e30d1de7e1d1e03b63a5121f2ca578">getEntryNML</a> (in varname, in varval, in vartype, in maxlen)</td></tr>
+<tr class="memdesc:aa5e30d1de7e1d1e03b63a5121f2ca578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a Fortran-namelist-compatible conversion of the input <code>varval</code>.<br  />
+  <a href="getEntryNML_8m.html#aa5e30d1de7e1d1e03b63a5121f2ca578">More...</a><br /></td></tr>
+<tr class="separator:aa5e30d1de7e1d1e03b63a5121f2ca578"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a31907aada26bcb9d3a39956e1b2c354f" name="a31907aada26bcb9d3a39956e1b2c354f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31907aada26bcb9d3a39956e1b2c354f">&#9670;&nbsp;</a></span>getEntryNML()</h2>
+<a id="aa5e30d1de7e1d1e03b63a5121f2ca578" name="aa5e30d1de7e1d1e03b63a5121f2ca578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5e30d1de7e1d1e03b63a5121f2ca578">&#9670;&nbsp;</a></span>getEntryNML()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,7 +182,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>varsize</em>&#160;</td>
+          <td class="paramname"><em>maxlen</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -202,56 +202,64 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">varname</td><td>: The input scalar MATLAB string containing the label to assign to the namelist-converted value in the output <code>entry</code>.<br  />
  The specified value of <code>varname</code> will be trimmed (to remove leading and trailing blanks).<br  />
  </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">varval</td><td>: The input value to be converted to namelist-compatible value. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">vartype</td><td>: See the documentation of the corresponding argument of <a class="el" href="istype_8m.html#a2c12c7b7101bbce83956059fb4de8da3">pm.introspection.istype()</a>. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">varsize</td><td>: See the documentation of the corresponding argument of <a class="el" href="istype_8m.html#a2c12c7b7101bbce83956059fb4de8da3">pm.introspection.istype()</a>.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">varval</td><td>: The input value to be converted to namelist-compatible value.<br  />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vartype</td><td>: See the documentation of the corresponding argument of <a class="el" href="istype_8m.html#a12f593738c97bf2ee75d6d813d19ca12">pm.introspection.istype()</a>.<br  />
+ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">maxlen</td><td>: See the documentation of the corresponding argument of <a class="el" href="islenleq_8m.html#a60aaf8226920f78a05e8cf0bf9bdb32f">pm.introspection.islenleq()</a>.<br  />
+</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>entry</code> : The output scalar MATLAB string containing the namelist-compatible conversion of the input value <code>varval</code> and the given <code>varname</code> in the following format: <code>varname=namelist-compatible-varval</code>.</dd></dl>
 <p><br  />
-<a class="anchor" id="interface-getEntryNML"></a><b>Possible calling interfaces</b> <a href="#interface-getEntryNML">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">entry = pm.introspection.getEntryNML(varname, varval, vartype, varsize)</div>
+<a class="anchor" id="interface-getEntryNML"></a><b>Possible calling interfaces</b> <a href="#interface-getEntryNML">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">entry = pm.fortran.getEntryNML(varname, varval, vartype, maxlen)</div>
 </div><!-- fragment --></dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If the input value is string, it will be quoted properly.<br  />
  If the input <code>varval</code> is an array, its elements will be comma-separated.<br  />
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_09sys_2_09path_2_09mpiexec_2verify_8m.html#ae99fb244a8e43a13722b2caa9eaeafa9">pm.introspection.verify</a><br  />
+ <a class="el" href="verified_8m.html#af90f3d438fcdcb1898dfd9998a28da98">pm.introspection.verified</a><br  />
+ <a class="el" href="islenleq_8m.html#a60aaf8226920f78a05e8cf0bf9bdb32f">pm.introspection.islenleq</a><br  />
+ <a class="el" href="istype_8m.html#a12f593738c97bf2ee75d6d813d19ca12">pm.introspection.istype</a><br  />
 </dd></dl>
 <p><br  />
 <a class="anchor" id="example-getEntryNML"></a><b>Example usage</b> <a href="#example-getEntryNML">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>addpath(<span class="stringliteral">&#39;../../../&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory to the search path.</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>disp(<span class="stringliteral">&#39;pm.introspection.getEntryNML(&quot;outputChainSize&quot;, 10000, &quot;integer&quot;, 1)&#39;</span>)</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>disp( pm.introspection.getEntryNML(<span class="stringliteral">&quot;outputChainSize&quot;</span>, 10000, <span class="stringliteral">&quot;integer&quot;</span>, 1) )</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>disp(<span class="stringliteral">&#39;pm.fortran.getEntryNML(&quot;outputChainSize&quot;, 10000, &quot;integer&quot;, 1)&#39;</span>)</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>disp( pm.fortran.getEntryNML(<span class="stringliteral">&quot;outputChainSize&quot;</span>, 10000, <span class="stringliteral">&quot;integer&quot;</span>, 1) )</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>disp(&#39;pm.introspection.<a class="code hl_function" href="getEntryNML_8m.html#a31907aada26bcb9d3a39956e1b2c354f">getEntryNML</a>(&quot;proposalMean&quot;, [1, 0], &quot;<span class="keywordtype">double</span>&quot;, 2)&#39;)</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>disp( pm.introspection.<a class="code hl_function" href="getEntryNML_8m.html#a31907aada26bcb9d3a39956e1b2c354f">getEntryNML</a>(&quot;proposalMean&quot;, [1, 0], &quot;<span class="keywordtype">double</span>&quot;, 2) )</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>disp(&#39;pm.fortran.<a class="code hl_function" href="getEntryNML_8m.html#aa5e30d1de7e1d1e03b63a5121f2ca578">getEntryNML</a>(&quot;proposalMean&quot;, [1, 0], &quot;<span class="keywordtype">double</span>&quot;, 2)&#39;)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>disp( pm.fortran.<a class="code hl_function" href="getEntryNML_8m.html#aa5e30d1de7e1d1e03b63a5121f2ca578">getEntryNML</a>(&quot;proposalMean&quot;, [1, 0], &quot;<span class="keywordtype">double</span>&quot;, 2) )</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>disp(&#39;pm.introspection.<a class="code hl_function" href="getEntryNML_8m.html#a31907aada26bcb9d3a39956e1b2c354f">getEntryNML</a>(&quot;mpiEnabled&quot;, false, &quot;logical&quot;, 1)&#39;)</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>disp( pm.introspection.<a class="code hl_function" href="getEntryNML_8m.html#a31907aada26bcb9d3a39956e1b2c354f">getEntryNML</a>(&quot;mpiEnabled&quot;, false, &quot;logical&quot;, 1) )</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>disp(&#39;pm.fortran.<a class="code hl_function" href="getEntryNML_8m.html#aa5e30d1de7e1d1e03b63a5121f2ca578">getEntryNML</a>(&quot;mpiEnabled&quot;, false, &quot;logical&quot;, 1)&#39;)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>disp( pm.fortran.<a class="code hl_function" href="getEntryNML_8m.html#aa5e30d1de7e1d1e03b63a5121f2ca578">getEntryNML</a>(&quot;mpiEnabled&quot;, false, &quot;logical&quot;, 1) )</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>disp(&#39;pm.introspection.<a class="code hl_function" href="getEntryNML_8m.html#a31907aada26bcb9d3a39956e1b2c354f">getEntryNML</a>(&quot;description&quot;, &quot;This is the description&quot;, &quot;<span class="keywordtype">string</span>&quot;, 1)&#39;)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>disp( pm.introspection.<a class="code hl_function" href="getEntryNML_8m.html#a31907aada26bcb9d3a39956e1b2c354f">getEntryNML</a>(&quot;description&quot;, &quot;This is the description&quot;, &quot;<span class="keywordtype">string</span>&quot;, 1) )</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>disp(&#39;pm.fortran.<a class="code hl_function" href="getEntryNML_8m.html#aa5e30d1de7e1d1e03b63a5121f2ca578">getEntryNML</a>(&quot;description&quot;, &quot;This is the description&quot;, &quot;<span class="keywordtype">string</span>&quot;, 1)&#39;)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>disp( pm.fortran.<a class="code hl_function" href="getEntryNML_8m.html#aa5e30d1de7e1d1e03b63a5121f2ca578">getEntryNML</a>(&quot;description&quot;, &quot;This is the description&quot;, &quot;<span class="keywordtype">string</span>&quot;, 1) )</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>try</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    pm.introspection.<a class="code hl_function" href="getEntryNML_8m.html#a31907aada26bcb9d3a39956e1b2c354f">getEntryNML</a>(&quot;varname&quot;, &quot;value&quot;, &quot;cell&quot;, 1);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    pm.fortran.<a class="code hl_function" href="getEntryNML_8m.html#aa5e30d1de7e1d1e03b63a5121f2ca578">getEntryNML</a>(&quot;varname&quot;, &quot;value&quot;, &quot;cell&quot;, 1);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>catch me</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    warning(<span class="keywordtype">string</span>(me.identifier) + newline + <span class="keywordtype">string</span>(me.message));</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>end</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>try</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    pm.introspection.<a class="code hl_function" href="getEntryNML_8m.html#a31907aada26bcb9d3a39956e1b2c354f">getEntryNML</a>(&quot;varname&quot;, [1, 2], &quot;array&quot;, 1);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    pm.fortran.<a class="code hl_function" href="getEntryNML_8m.html#aa5e30d1de7e1d1e03b63a5121f2ca578">getEntryNML</a>(&quot;varname&quot;, [1, 2], &quot;array&quot;, 1);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>catch me</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    warning(<span class="keywordtype">string</span>(me.identifier) + newline + <span class="keywordtype">string</span>(me.message));</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>end</div>
-<div class="ttc" id="agetEntryNML_8m_html_a31907aada26bcb9d3a39956e1b2c354f"><div class="ttname"><a href="getEntryNML_8m.html#a31907aada26bcb9d3a39956e1b2c354f">getEntryNML</a></div><div class="ttdeci">function getEntryNML(in varname, in varval, in vartype, in varsize)</div><div class="ttdoc">Return a Fortran-namelist-compatible conversion of the input varval.</div></div>
+<div class="ttc" id="agetEntryNML_8m_html_aa5e30d1de7e1d1e03b63a5121f2ca578"><div class="ttname"><a href="getEntryNML_8m.html#aa5e30d1de7e1d1e03b63a5121f2ca578">getEntryNML</a></div><div class="ttdeci">function getEntryNML(in varname, in varval, in vartype, in maxlen)</div><div class="ttdoc">Return a Fortran-namelist-compatible conversion of the input varval.</div></div>
 <div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
 </div><!-- fragment --> <br  />
-<a class="anchor" id="output-getEntryNML"></a><b>Example output</b> <a href="#output-getEntryNML">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>pm.introspection.getEntryNML(<span class="stringliteral">&quot;outputChainSize&quot;</span>, 10000, <span class="stringliteral">&quot;integer&quot;</span>, 1)</div>
+<a class="anchor" id="output-getEntryNML"></a><b>Example output</b> <a href="#output-getEntryNML">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>pm.fortran.getEntryNML(<span class="stringliteral">&quot;outputChainSize&quot;</span>, 10000, <span class="stringliteral">&quot;integer&quot;</span>, 1)</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>outputChainSize=10000 </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>pm.introspection.getEntryNML(<span class="stringliteral">&quot;proposalMean&quot;</span>, [1, 0], <span class="stringliteral">&quot;double&quot;</span>, 2)</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>pm.fortran.getEntryNML(<span class="stringliteral">&quot;proposalMean&quot;</span>, [1, 0], <span class="stringliteral">&quot;double&quot;</span>, 2)</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>proposalMean=1 0 </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>pm.introspection.getEntryNML(<span class="stringliteral">&quot;mpiEnabled&quot;</span>, <span class="keyword">false</span>, <span class="stringliteral">&quot;logical&quot;</span>, 1)</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>pm.fortran.getEntryNML(<span class="stringliteral">&quot;mpiEnabled&quot;</span>, <span class="keyword">false</span>, <span class="stringliteral">&quot;logical&quot;</span>, 1)</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>mpiEnabled=.false. </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>pm.introspection.getEntryNML(<span class="stringliteral">&quot;description&quot;</span>, <span class="stringliteral">&quot;This is the description&quot;</span>, <span class="stringliteral">&quot;string&quot;</span>, 1)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>pm.fortran.getEntryNML(<span class="stringliteral">&quot;description&quot;</span>, <span class="stringliteral">&quot;This is the description&quot;</span>, <span class="stringliteral">&quot;string&quot;</span>, 1)</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>description=<span class="stringliteral">&quot;This is the description&quot;</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>varname = </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>value</div>
@@ -261,7 +269,7 @@ Functions</h2></td></tr>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-getEntryNML"></a><b>Final Remarks</b> <a href="#final-getEntryNML">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+introspection/getEntryNML.m#L40 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+fortran/getEntryNML.m#L46 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -276,7 +284,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000022">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 5:38 PM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000018">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 5:38 PM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -288,8 +296,8 @@ Help us justify its continued development and maintenance by acknowledging its b
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_f9605479ce94a868b8c276b182b85c2e.html">+introspection</a></li><li class="navelem"><a class="el" href="getEntryNML_8m.html">getEntryNML.m</a></li>
-        <li class="footer">Generated on Mon Dec 2 2024 10:04:18 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_e6c9e01131b7114f011716a556684cfb.html">+fortran</a></li><li class="navelem"><a class="el" href="getEntryNML_8m.html">getEntryNML.m</a></li>
+        <li class="footer">Generated on Mon Dec 16 2024 23:24:36 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

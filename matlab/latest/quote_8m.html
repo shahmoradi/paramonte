@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11"/>
     <meta name="generator" content="Doxygen 1.9.3"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>ParaMonte MATLAB 3.0.0: src/matlab/main/+pm/+str/quote.m File Reference</title>
+    <title>ParaMonte MATLAB 3.0.0: src/matlab/main/+pm/+fortran/quote.m File Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -182,35 +182,35 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>strQuoted</code> : The output scalar MATLAB string containing the doubly-quoted escaped input string.<br  />
 </dd></dl>
 <p><br  />
-<a class="anchor" id="interface-quote"></a><b>Possible calling interfaces</b> <a href="#interface-quote">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">strQuoted = pm.str.quote(str)</div>
+<a class="anchor" id="interface-quote"></a><b>Possible calling interfaces</b> <a href="#interface-quote">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line">strQuoted = pm.fortran.quote(str)</div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="example-quote"></a><b>Example usage</b> <a href="#example-quote">⛓</a> </p><dl class="section user"><dt></dt><dd><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>cd(fileparts(mfilename(<span class="stringliteral">&#39;fullpath&#39;</span>))); % Change working directory to source code directory.</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>addpath(<span class="stringliteral">&#39;../../../&#39;</span>); % Add the ParaMonte library <a class="code hl_function" href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a> directory to the search path.</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>pm.matlab.show()</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>pm.matlab.show(<span class="stringliteral">&#39;pm.str.quote(&quot;paramonte&quot;)&#39;</span>)</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>pm.matlab.show( pm.str.quote(<span class="stringliteral">&quot;paramonte&quot;</span>) )</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>assert(pm.str.quote(<span class="stringliteral">&quot;paramonte&quot;</span>) == <span class="stringliteral">&quot;&quot;</span><span class="stringliteral">&quot;paramonte&quot;</span><span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>pm.matlab.show(<span class="stringliteral">&#39;pm.fortran.quote(&quot;paramonte&quot;)&#39;</span>)</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>pm.matlab.show( pm.fortran.quote(<span class="stringliteral">&quot;paramonte&quot;</span>) )</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>assert(pm.fortran.quote(<span class="stringliteral">&quot;paramonte&quot;</span>) == <span class="stringliteral">&quot;&quot;</span><span class="stringliteral">&quot;paramonte&quot;</span><span class="stringliteral">&quot;&quot;</span>)</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>pm.matlab.<a class="code hl_function" href="show_8m.html#a1dd7d7719e0c40b6784084cb5ff75456">show</a>()</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>pm.matlab.<a class="code hl_function" href="show_8m.html#a1dd7d7719e0c40b6784084cb5ff75456">show</a>(&#39;pm.str.<a class="code hl_function" href="quote_8m.html#ac1439b42c85502a16b509379c0fc59ce">quote</a>(&quot;&quot;the&quot; paramonte&quot;)&#39;)</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>pm.matlab.<a class="code hl_function" href="show_8m.html#a1dd7d7719e0c40b6784084cb5ff75456">show</a>( pm.str.<a class="code hl_function" href="quote_8m.html#ac1439b42c85502a16b509379c0fc59ce">quote</a>(&#39;&quot;the&quot; paramonte&#39;) )</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>assert(pm.str.<a class="code hl_function" href="quote_8m.html#ac1439b42c85502a16b509379c0fc59ce">quote</a>(&#39;&quot;the&quot; paramonte&#39;) == &quot;&quot;&quot;&quot;&quot;&quot;&quot;the&quot;&quot;&quot;&quot; paramonte&quot;&quot;&quot;)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>pm.matlab.<a class="code hl_function" href="show_8m.html#a1dd7d7719e0c40b6784084cb5ff75456">show</a>(&#39;pm.fortran.<a class="code hl_function" href="quote_8m.html#ac1439b42c85502a16b509379c0fc59ce">quote</a>(&quot;&quot;the&quot; paramonte&quot;)&#39;)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>pm.matlab.<a class="code hl_function" href="show_8m.html#a1dd7d7719e0c40b6784084cb5ff75456">show</a>( pm.fortran.<a class="code hl_function" href="quote_8m.html#ac1439b42c85502a16b509379c0fc59ce">quote</a>(&#39;&quot;the&quot; paramonte&#39;) )</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>assert(pm.fortran.<a class="code hl_function" href="quote_8m.html#ac1439b42c85502a16b509379c0fc59ce">quote</a>(&#39;&quot;the&quot; paramonte&#39;) == &quot;&quot;&quot;&quot;&quot;&quot;&quot;the&quot;&quot;&quot;&quot; paramonte&quot;&quot;&quot;)</div>
 <div class="ttc" id="aquote_8m_html_ac1439b42c85502a16b509379c0fc59ce"><div class="ttname"><a href="quote_8m.html#ac1439b42c85502a16b509379c0fc59ce">quote</a></div><div class="ttdeci">function quote(in str)</div><div class="ttdoc">Return the input scalar MATLAB string as doubly quoted string such that the first and last character ...</div></div>
 <div class="ttc" id="aroot_8m_html_a89008b0d9aee9934beddaed8433fec4d"><div class="ttname"><a href="root_8m.html#a89008b0d9aee9934beddaed8433fec4d">root</a></div><div class="ttdeci">function root()</div><div class="ttdoc">Return a scalar MATLAB string containing the root directory of the ParaMonte library package.</div></div>
 <div class="ttc" id="ashow_8m_html_a1dd7d7719e0c40b6784084cb5ff75456"><div class="ttname"><a href="show_8m.html#a1dd7d7719e0c40b6784084cb5ff75456">show</a></div><div class="ttdeci">function show(in obj, in name, in hidden)</div><div class="ttdoc">Display the components of an input MATLAB variable on MATLAB Console recursively.</div></div>
 </div><!-- fragment --> <br  />
 <a class="anchor" id="output-quote"></a><b>Example output</b> <a href="#output-quote">⛓</a> <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>pm.str.quote(<span class="stringliteral">&quot;paramonte&quot;</span>)</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>pm.fortran.quote(<span class="stringliteral">&quot;paramonte&quot;</span>)</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="stringliteral">&quot;paramonte&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>pm.str.quote(<span class="stringliteral">&quot;&quot;</span>the<span class="stringliteral">&quot; paramonte&quot;</span>)</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>pm.fortran.quote(<span class="stringliteral">&quot;&quot;</span>the<span class="stringliteral">&quot; paramonte&quot;</span>)</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="stringliteral">&quot;&quot;</span><span class="stringliteral">&quot;the&quot;</span><span class="stringliteral">&quot; paramonte&quot;</span></div>
 </div><!-- fragment --></dd></dl>
 <p><br  />
 <a class="anchor" id="final-quote"></a><b>Final Remarks</b> <a href="#final-quote">⛓</a> </p><hr  />
-<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+str/quote.m#L24 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
+<p> If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> <a href="https://github.com/cdslaborg/paramonte/tree/main/src/matlab/main/+pm/+fortran/quote.m#L25 " target="_blank"><b>to edit this page's documentation and source file on GitHub</b></a>.<br  />
  For details on the naming abbreviations, see <a class="el" href="index.html#ParaMonteLangAbbreviationGuidlines">this page</a>.<br  />
  For details on the naming conventions, see <a class="el" href="index.html#ParaMonteLangNamingConventions">this page</a>.<br  />
  This software is distributed under the <a href="https://github.com/cdslaborg/paramonte#license" target="_blank">MIT license</a> <b>with additional terms outlined below.</b><br  />
@@ -225,7 +225,7 @@ If you regenerate any parts/ideas from this library in a programming environment
 <p>This software is available to the public under a highly permissive license.<br  />
 Help us justify its continued development and maintenance by acknowledging its benefit to society, distributing it, and contributing to it.<br  />
  </p><dl class="section copyright"><dt>Copyright</dt><dd><a href="https://www.cdslab.org" target="_blank">Computational Data Science Lab</a></dd></dl>
-<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000214">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 4:40 AM, University of Texas at Arlington<br  />
+<dl class="authors"><dt><b><a class="el" href="authors.html#_authors000019">Author:</a></b></dt><dd><a href="https://www.github.com/JoshuaOsborneDATA" target="_blank">Joshua Alexander Osborne</a>, May 21 2024, 4:40 AM, University of Texas at Arlington<br  />
  <a href="https://www.faba.one" target="_blank">Fatemeh Bagheri</a>, May 20 2024, 1:25 PM, NASA Goddard Space Flight Center (GSFC), Washington, D.C.<br  />
  <a href="https://www.github.com/shahmoradi" target="_blank">Amir Shahmoradi</a>, May 16 2016, 9:03 AM, Oden Institute for Computational Engineering and Sciences (ICES), UT Austin<br  />
  </dd></dl>
@@ -237,8 +237,8 @@ Help us justify its continued development and maintenance by acknowledging its b
     <!-- start footer part -->
     <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
       <ul>
-        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_b051662a69b2d462e6e42f329ca2dcb1.html">+str</a></li><li class="navelem"><a class="el" href="quote_8m.html">quote.m</a></li>
-        <li class="footer">Generated on Mon Dec 2 2024 10:04:19 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+        <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_218a9e3cb5b25b749a8b0dc29285ef3b.html">matlab</a></li><li class="navelem"><a class="el" href="dir_1d0f54ae377bf4754b3c7496f723c18b.html">main</a></li><li class="navelem"><a class="el" href="dir_5f2ea114d2e8401892a7eda9e51589e0.html">+pm</a></li><li class="navelem"><a class="el" href="dir_e6c9e01131b7114f011716a556684cfb.html">+fortran</a></li><li class="navelem"><a class="el" href="quote_8m.html">quote.m</a></li>
+        <li class="footer">Generated on Mon Dec 16 2024 23:24:36 for ParaMonte MATLAB 3.0.0 by <a href="http://www.doxygen.org/index.html" target="_blank"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
       </ul>
     </div>
     <div style="color: #ffffff; float: none; width: 100%;">

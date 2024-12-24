@@ -8,7 +8,7 @@ var searchData=
   ['getcdf_5',['getCDF',['../getCDF_8m.html#a2c9db828a68185e10c4a0c33652d74fb',1,'getCDF.m']]],
   ['getcontents_6',['getContents',['../_09bashrc_2getContents_8m.html#a54034ba01900faa2926b4713e9372fb2',1,'getContents():&#160;getContents.m'],['../_09bash__profile_2getContents_8m.html#a54034ba01900faa2926b4713e9372fb2',1,'getContents():&#160;getContents.m']]],
   ['getentriesnml_7',['getEntriesNML',['../classSpecMCMC.html#ad7ffbaa23bc6d5cbef50f42050304bfc',1,'SpecMCMC::getEntriesNML()'],['../classSpecDRAM.html#ae2fc7420bbd06d80a8371604e544425b',1,'SpecDRAM::getEntriesNML()'],['../classSpecBase.html#a282ea8d2c506394d925742732cdf18c2',1,'SpecBase::getEntriesNML()']]],
-  ['getentrynml_8',['getEntryNML',['../getEntryNML_8m.html#a31907aada26bcb9d3a39956e1b2c354f',1,'getEntryNML.m']]],
+  ['getentrynml_8',['getEntryNML',['../getEntryNML_8m.html#aa5e30d1de7e1d1e03b63a5121f2ca578',1,'getEntryNML.m']]],
   ['getfilename_9',['getFileName',['../getFileName_8m.html#a312354c4d4331723132042679ee9c1b3',1,'getFileName.m']]],
   ['getfunc_10',['getFunc',['../getFunc_8m.html#a64af94ae04daee963903f90460f94f86',1,'getFunc.m']]],
   ['getjavaimage_11',['getJavaImage',['../print2array_8m.html#ac6b291c142046fd4f0da1db6cc0f5e63',1,'print2array.m']]],
