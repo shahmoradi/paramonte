@@ -1,3 +1,3 @@
 ### ParaMonte library documentation repository  
 
-This repository contains the final, automatically-generated ParaMonte library documentations.
+This repository contains the final, automatically-generated ParaMonte library documentation.
